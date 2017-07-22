@@ -213,7 +213,7 @@ def sausageplot(Vari,M,time,flux,delta_f,Tau,dt,sigma_sq):
        
         #Set up our guess for the flux
         if t  == min(time) :
-            Fg1 = (flux[0] + flux[1]) / 2
+            Fg1 = (delta_f[0] + delta_f[1]) / 2
             Fg1 = (Fg1 - mu)/mu
             Fg2 = Fg1 - 1
             Fg3 = Fg1 + 1
@@ -228,7 +228,7 @@ def sausageplot(Vari,M,time,flux,delta_f,Tau,dt,sigma_sq):
             time_ind1 = np.where(time == t1)
             tp_0 = t0 / t
             tp_1 = t1 / t
-            Fg1 = (tp_0 * flux[time_ind0]) + (tp_1 * flux[time_ind1])
+            Fg1 = (tp_0 * delta_f[time_ind0]) + (tp_1 * delta_f[time_ind1])
             Fg1 = (Fg1 - mu)/mu
             Fg2 = Fg1 - 1
             Fg3 = Fg1 + 1
@@ -241,9 +241,9 @@ def sausageplot(Vari,M,time,flux,delta_f,Tau,dt,sigma_sq):
         sign, value = np.linalg.slogdet(S)
         deter = sign * np.exp(value.item())
             #calculate the Log Probs
-        logP = -.5*np.log((deter))*((np.dot(delf1,(np.dot(delf1,np.linalg.inv(S))))))
-        logP1 = -.5*np.log((deter))*((np.dot(delf2,(np.dot((delf2),np.linalg.inv(S))))))
-        logP2 = -.5*np.log((deter))*((np.dot(delf3,(np.dot((delf3),np.linalg.inv(S)))))) 
+        logP = -.5*np.log((deter))-.5*((np.dot(delf1,(np.dot(delf1,np.linalg.inv(S))))))
+        logP1 = -.5*np.log((deter))-.5*((np.dot(delf2,(np.dot((delf2),np.linalg.inv(S))))))
+        logP2 = -.5*np.log((deter))-.5*((np.dot(delf3,(np.dot((delf3),np.linalg.inv(S)))))) 
 
         X = [Fg2,Fg1,Fg3]
         Y = [logP1,logP,logP2]
@@ -252,10 +252,11 @@ def sausageplot(Vari,M,time,flux,delta_f,Tau,dt,sigma_sq):
             X = np.array(X)
             X = (X.T)[0]
        
-        Matr = [[X[0]**2,X[0],1],[X[1]**2,X[1],1],[X[2]**2,X[2],1]]
+        Matr = np.array([[X[0]**2,X[0],1],[X[1]**2,X[1],1],[X[2]**2,X[2],1]])
        
         result = np.linalg.solve(Matr, Y) 
-        sig_sq = 1/(2*result[0])
+        sig_sq = -1/(2*result[0])
+        print(sig_sq)
         f_0 = -(result[1]/(2*result[0]))
         
         parabola = np.polyfit(X,Y,2)
