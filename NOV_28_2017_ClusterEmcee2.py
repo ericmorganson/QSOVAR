@@ -98,4 +98,8 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
         filename = '/scratch/users/nschwei2/'+ str(ROW) + 'object' + '.txt'
         with open(filename, 'w') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
-    preform_emcee(time, delta_f, sigma_sq)
+    try:
+        preform_emcee(time, delta_f, sigma_sq)
+    except np.linalg.linalg.LinAlgError as err:
+        continue
+
