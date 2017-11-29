@@ -62,7 +62,7 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
         M,delta_f,sigma_sq = Make_M(10**logV,10**logTau,10**logC)
         sign, value = np.linalg.slogdet(M)
         deter = sign * np.exp(value.item())
-        lnP = -.5*np.log(deter)-.5*((np.dot(delta_f,(np.dot(delta_f,np.linalg.in                                                                                                          v(M))))))
+        lnP = -.5*np.log(deter)-.5*((np.dot(delta_f,(np.dot(delta_f,np.linalg.inv(M))))))
         return lnP
 
     def lnprior(theta):
@@ -84,19 +84,19 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
         M,delta_f,sigma_sq = Make_M(V,Tau,C)
 
         nll = lambda *args: -lnlike(*args)
-        result = op.minimize(nll, [np.log10(V), np.log10(Tau),np.log10(C)],args=                                                                                                          (time,delta_f,sigma_sq))
+        result = op.minimize(nll, [np.log10(V), np.log10(Tau),np.log10(C)],args=(time,delta_f,sigma_sq))
         ndim, nwalkers = 3, 100
-        pos = [result["x"] + 1e-4*np.random.randn(ndim) for i in range(nwalkers)                                                                                                          ]
-        sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, delt                                                                                                          a_f, sigma_sq))
+        pos = [result["x"] + 1e-4*np.random.randn(ndim) for i in range(nwalkers)]
+        sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, delta_f, sigma_sq))
 
         sampler.run_mcmc(pos, 500)
         samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
         max_theta = logvals[logprobs.index(max(logprobs))]
-        V_mcmc, Tau_mcmc, C_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zi                                                                                                          p(*np.percentile(samples, [16, 50, 84],axis=0)))
+        V_mcmc, Tau_mcmc, C_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
         #plotdata(sys.argv)
         print(samples)
         print(sys.argv[2], type(sys.argv[2]))
         filename = '/scratch/users/nschwei2/'+ str(ROW) + 'object' + '.txt'
         with open(filename, 'w') as fout:
-            fout.write('Object: ' + sys.argv[2]+ ' ' + 'Tau: ' + str(max_theta[1                                                                                                          ])+' ' + 'V: '+ str(max_theta[0]) + '\n')
+            fout.write('Object: ' + sys.argv[2]+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
     preform_emcee(time, delta_f, sigma_sq)
