@@ -1,3 +1,4 @@
+
 import sys
 
 if len(sys.argv) < 4:
@@ -10,7 +11,7 @@ string = """#!/bin/bash\n
 # request 1 node\n
 #PBS -l nodes=1:ppn=24\n
 # request 4 hours of cpu time\n
-#PBS -l walltime=04:00:00\n
+#PBS -l walltime=02:00:00\n
 # mail is sent to you when the job starts and when it terminates or aborts \n
 #PBS -m bea\n
 # specify your email address\n
@@ -23,18 +24,18 @@ module load python/2\n
 #export PYTHONPATH=$PYTHONPATH:/usr/local/python/3.6.0/lib/python3.6/site-packages:/usr/local/python/2.7.13/mkl-numpy-scipy/lib/python2.7/site-packages:/usr/local/python/2.7.13/lib/python2.7/site-packages\n"""
 def makepbs(fits,start,color,string):
     begin = int(start)
-    end = begin + 240
+    end = begin + 2400
     for core in range(24):
-        string += "python /home/nschwei2/ClusterEmcee2.py " + fits + " " + str(begin) + " " + str(begin + 10) + " " + color  + "&"  + "\n"
-        begin += 10
-    string += "wait\n" + "exit 0;\n"
+        string += "python /home/nschwei2/ClusterEmcee2.py " + fits + " " + str(begin) + " " + str(begin + 100) + " " + color + " &"  + "\n"
+        begin += 100
+    string +=  "wait\n" + "exit 0;\n"
     file_name = "submit_" + start + "_" + str(end) + ".pbs"
     with open(file_name, 'w') as fout:
         fout.write(string)
     return file_name
 text = ""
 for num in range(10):
-    start = int(sys.argv[2]) + num*240
+    start = int(sys.argv[2]) + num*2400
     text += "qsub " + makepbs(sys.argv[1],str(start),sys.argv[3],string) + "\n"
 
 with open('pbs_file_list.txt','w') as fout:
