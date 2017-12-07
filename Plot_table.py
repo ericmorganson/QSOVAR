@@ -15,29 +15,37 @@ data = pd.read_csv(r'C:\Users\Neal\Desktop\ASTR406\table.txt', sep=" ", header=N
 data.columns = ["str1", "object", "str2", "Tau","str3","V"]
 
 
+blue = (FITS[1].data['MAG_AUTO_G']- FITS[1].data['MAG_AUTO_R']) < 0.4
+bright = FITS[1].data['MAG_AUTO_G'] < 23.5
+long = np.sum(FITS[1].data["LC_FLUX_PSF_G"] > 0, axis = 1) > 10
+point_like = np.abs(FITS[1].data['SPREAD_MODEL_G']) < .003
+unsat = FITS[1].data['MAG_AUTO_G'] > 18
 
+good = bright & long & point_like & unsat
+goodobjects = np.array(range(good.size))[good]
 
-for i in range(len(data['V'])):
-    lis2.append(np.mean(FITS[1].data['MAG_AUTO_G'][i]) - np.mean(FITS[1].data['MAG_AUTO_R'][i]))
-for i in range(len(lis2)):
-    if lis2[i] <= -0.4:
-        length = ((FITS[1].data['LC_FLUX_PSF_G'][i]))
-        length = length[length != 0.]
-        if len(length) > 10:
-            if FITS[1].data['MAGERR_AUTO_G'][i] < 22.5:
-                if np.abs(FITS[1].data['SPREAD_MODEL_G'][i]) < .03:
-                    filter_G_R_V.append(data['V'][i])
-                    filter_G_R_T.append(data['Tau'][i])
-                    lis1.append(data['object'][i])
+print(np.sum(blue),np.sum(long),np.sum(bright),np.sum(point_like),np.sum(unsat))
+
+tablegood = np.zeros(data.size)
+num = 0
+for objectid in data['object']:
+    if objectid in goodobjects:
+        tablegood[num] = 1
+    num+= 1
+tablegood = tablegood > 0
+print((tablegood), data.size)
+filter_G_R_V = (data['V'][tablegood])
+filter_G_R_T = (data['Tau'][tablegood])
+lis1 = (data['object'][tablegood])
 
 for i in range(len(data['V'])):
     if i >= -1:
         count += 1
         too_big.append(data["object"][i])
 plt.scatter(filter_G_R_T,filter_G_R_V)
-plt.figure()
-cs = plt.scatter(data['Tau'],data['V'], c = lis2, vmin= -1, vmax= 2)
-plt.colorbar(cs)
+#plt.figure()
+#cs = plt.scatter(data['Tau'],data['V'], c = lis2, vmin= -1, vmax= 2)
+#plt.colorbar(cs)
 
 def boundaries(mjds,mags):
   mjdmin = 100*np.floor(np.min(mjds)*.01)
@@ -83,8 +91,8 @@ def plotdata(file,VarRows):
     plt.title('C1'+' Object '+ str(VarRows))
     plt.savefig(r'C:\Users\Neal\Documents\LiClipse Workspace\Hw7astr\Fin_curves\\' + 'C1'+'_lc_'+ str(VarRows) +'.png')
 
-for item in lis1:
-    plotdata(r'C:\Users\Neal\My Documents\LiClipse Workspace\HW7\C1_lc.fits', item)
+#for item in lis1:
+    #plotdata(r'C:\Users\Neal\My Documents\LiClipse Workspace\HW7\C1_lc.fits', item)
 
 plt.axes().set_xlabel("$log_{10}(Tau)$")
 plt.axes().set_ylabel("$log_{10}(V)$")
