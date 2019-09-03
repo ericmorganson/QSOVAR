@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# declare a name for this job to be sample_job
+
+#PBS -N nschwei2_job
+
+# request the queue (enter the possible names, if omitted, serial is the default)
+
+#PBS -q secondary
+
+# request 1 node
+
+#PBS -l nodes=1:ppn=24
+
+# request 4 hours of cpu time
+
+#PBS -l walltime=04:00:00
+
+# mail is sent to you when the job starts and when it terminates or aborts
+
+#PBS -m bea
+
+# specify your email address
+
+
+#PBS -M nschwei2@illinois.edu
+
+
+cd /home/nschwei2/
+
+# run the program
+
+module load python/2
+
+#export PYTHONPATH=$PYTHONPATH:/usr/local/python/3.6.0/lib/python3.6/site-packages:/usr/local/python/2.7.13/mkl-numpy-scipy/lib/python2.7/site-packages:/usr/local/python/2.7.13/lib/python2.7/site-packages
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 0 10 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 10 20 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 20 30 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 30 40 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 40 50 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 50 60 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 60 70 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 70 80 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 80 90 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 90 100 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 100 110 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 110 120 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 120 130 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 130 140 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 140 150 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 150 160 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 160 170 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 170 180 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 180 190 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 190 200 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 200 210 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 210 220 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 220 230 g&
+python /home/nschwei2/ClusterEmcee2.py C1_lc.fits 230 240 g&
+wait
+exit 0;
