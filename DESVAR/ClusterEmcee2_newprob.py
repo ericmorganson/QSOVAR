@@ -78,6 +78,8 @@ def lnlike(theta, time, flux, flux_err_sq):
         lnp = lognorm(state, flux[0], flux_err_sq[0]) 
         state = weightedmean(state, flux[0], flux_err_sq[0])
         for n in range(1,len(flux)):
+            if time[n]-time[n-1] < 0:
+                print('AHHHHH, NEGATIVE TIME!!!')
             state=evolvestate(state, Tau, time[n]-time[n-1], mu, V**2) ### NEED TO WORK ON THIS
             lnp += lognorm(state, flux[n], flux_err_sq[n])
             state = weightedmean(state, flux[n], flux_err_sq[n])
@@ -105,9 +107,11 @@ def lnprob(theta, x, y, yerr):
 
 def preform_emcee(time,flux,sigma_sq,ROW):
         flux, err, time, mu, FITS = get_vals(sys.argv, ROW)
+        diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
+        print(min(diff_time))
         plt.figure()
         plt.errorbar(time, flux, err)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/'+ str(ROW) + 'LC' + '.pdf')
+        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/'+ str(ROW) + 'LC' + '.pdf')
         plt.show()
 
         #print(flux, err, time, mu)
@@ -116,7 +120,7 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         nll = lambda *args: -lnlike(*args)
         result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err**2)) #,np.log10(C)
         ndim, nwalkers = 2, 100
-        pos = [result["x"] + 1e-4*np.random.randn(ndim) for i in range(nwalkers)]
+        pos = [result["x"] + 1e-2*np.random.randn(ndim) for i in range(nwalkers)]
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
 
         sampler.run_mcmc(pos, 500)
@@ -124,16 +128,16 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         #print('logprobs', logprobs)
         plt.figure()
         plt.plot(logprobs)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/'+ str(ROW) + 'logprob' + '.pdf')
+        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/'+ str(ROW) + 'logprob' + '.pdf')
         plt.show()
 
         max_theta = logvals[logprobs.index(max(logprobs))]
         V_mcmc, Tau_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
-        
+        print("YAY!  i CAN MOD!!")
         print('V_mcmc:',V_mcmc, 'Tau_mcmc:',Tau_mcmc, max_theta[0], max_theta[1])
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
-        filename ='/home/sam/Documents/Morganson_research/QSOVAR/scratch_new/'+ str(ROW) + 'object' + '.txt' 
-        with open(filename, 'w') as fout:
+        filename ='/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/scratch_new/'+ str(ROW) + 'object' + '.txt' 
+        with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
 
 

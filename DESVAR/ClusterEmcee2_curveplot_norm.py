@@ -110,19 +110,21 @@ def preform_emcee(time,delta_f,sigma_sq,ROW):
         #print(flux, err, time, mu)
         #M,delta_f,sigma_sq = Make_M(V,Tau,C)
 
-        X = np.arange(np.log10(1), np.log10(1000), .2)
+        X = np.arange(0, 4, .1) #tau
  
-        Y = np.arange(np.log10(.001), np.log10(1000), .2) 
+        Y = np.arange(-3, 2, .1) #variance
         X, Y = np.meshgrid(X, Y)
                 #theta = lnV, lnT
         lprob = lnprob((Y, X), time, flux, err)
                 #print(l)
 
         fig = plt.figure()
-        ax = fig.gca(projection='3d')
-        surf = ax.plot_surface(X, Y, lprob, cmap=cm.rainbow,
-                                linewidth=0, antialiased=False)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/'+ str(ROW) + 'logprob_curve3d_norm' + '.pdf')
+        #ax = fig.gca(projection='3d')
+        plt.contour(X, Y, lprob, cmap=cm.rainbow)#,
+                                #linewidth=0, antialiased=False)
+        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/'+ str(ROW) + 'logprob_contour_norm' + '.pdf')
+        plt.xlabel("Tau")
+        plt.ylabel("Variance")
         plt.show()
         
         #result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err)) #,np.log10(C)

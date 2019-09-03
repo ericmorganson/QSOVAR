@@ -48,7 +48,7 @@ def Make_M(V,Tau,C):
         delta_f = (flux - fmean)/fmean
         sigma_sq = (err * err) / (fmean**2)
         time_array = np.fabs(np.array(time,ndmin=2)-np.array(time,ndmin=2).T)
-        print(C)
+        #print(C)
         M = np.diag(sigma_sq+C**2) + (V ** 2) * np.exp(-1.0 * (time_array)/Tau)
         return M,delta_f,sigma_sq
 
@@ -80,22 +80,28 @@ def lnprob(theta, x, y, yerr):
 def preform_emcee(time,delta_f,sigma_sq,ROW):
         flux, err, time, fmean, FITS = get_vals(sys.argv, ROW)
         #print(flux, err, time, mu)
-        M,delta_f,sigma_sq = Make_M(V,Tau,C)
-
-        X = np.arange(0, 3, 3/100)
+        X = np.arange(0, 4, .100) #tau
  
-        Y = np.arange(-3, 3, 6/100) 
-        Z = np.arange(-3, 2, 5/100)
-        Y, X, Z = np.meshgrid(Y, X, Z)
-        theta = Y, X, Z
-        lprob = lnprob(theta, time, delta_f, sigma_sq)
+        Y = np.arange(-3, 2, .100) #variance 
+        print(len(X), len(Y))
+        #C = np.arange(-3, 2, 5/100)
+        #Y, X = np.meshgrid(Y, X)
+        lprob = np.empty((len(X), len(Y)))
+        print(lprob.shape)
+        
+        for j in range(len(Y)):
+            for k in range(len(X)):
+                theta = Y[j], X[k], np.log10(C)
+
+                M,delta_f,sigma_sq = Make_M(V,Tau,C)
+                lprob[k][j] = lnprob(theta, time, delta_f, sigma_sq)
                 #print(l)
 
         fig = plt.figure()
-        ax = fig.gca(projection='3d')
-        surf = ax.plot_surface(X, Y, lprob, cmap=cm.rainbow,
-                                linewidth=0, antialiased=False)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/'+ str(ROW) + 'logprob_curve3d_norm' + '.pdf')
+        #ax = fig.gca(projection='3d')
+        plt.contour(X, Y, lprob, cmap=cm.rainbow)#,
+                                #linewidth=0, antialiased=False)
+        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/'+ str(ROW) + 'logprob_contour_matrix' + '.pdf')
         plt.show()
         
         #result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err)) #,np.log10(C)
