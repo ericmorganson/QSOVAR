@@ -195,7 +195,7 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq):
     plt.plot(times,Logpr, color = 'b')
     plt.plot(times,err_bot, color = 'g')
     plt.title(' Object '+sys.argv[2])
-    plt.savefig('sausage' + sys.argv[1] +  sys.argv[2] + '.png')
+    plt.savefig('sausage' + 'C1_lc' +  sys.argv[2] + '.png')
 
     plt.show()
 def preform_emcee(time,delta_f,sigma_sq):

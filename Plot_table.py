@@ -10,8 +10,8 @@ lis1 = []
 lis2 = []
 filter_G_R_V = []
 filter_G_R_T = []
-FITS = pyfit.open(r'C:\Users\Neal\My Documents\LiClipse Workspace\HW7\C1_lc.fits')
-data = pd.read_csv(r'C:\Users\Neal\Desktop\ASTR406\table.txt', sep=" ", header=None)
+FITS = pyfit.open(r'/home/sam/Documents/Morganson_research/C1_lc.fits')
+data = pd.read_csv(r'/home/sam/Documents/Morganson_research/QSOVAR/table.txt', sep=" ", header=None)
 data.columns = ["str1", "object", "str2", "Tau","str3","V"]
 
 
