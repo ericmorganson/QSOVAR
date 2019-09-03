@@ -15,7 +15,7 @@ lis = []
 logprobs = []
 logvals = []
 np.set_printoptions(precision=20)
-leng = (len(pyfit.open(r'C:\Users\Neal\Desktop\Variability\C1_lc.fits')[1].data))
+leng = (len(pyfit.open(r'../C1_lc.fits')[1].data))
 
 QuasarList = [3347,9004,17999,47662,60141,63815,64167,72126,74440,75375]
 
@@ -280,7 +280,7 @@ def sausageplot(Vari,M,time,flux,delta_f,Tau,dt,sigma_sq):
         err_top.append(err_t)
         err_bot.append(err_b)
         
-    plotdata(r'C:\Users\Neal\Desktop\Variability\C1_lc.fits', 17999)
+    plotdata(r'../C1_lc.fits', 17999)
     timef = time - 57000
     print(err_bot)
     plt.plot(times,err_top, color = 'g')
@@ -298,7 +298,7 @@ for alt in range(1):
         row = 17999
         alt = 0
             #get flux, err, mean, and time
-        flux, err, time, fmean, FITS = get_vals(r'C:\Users\Neal\Desktop\Variability\C1_lc.fits',row)
+        flux, err, time, fmean, FITS = get_vals(r'../C1_lc.fits',row)
         a = ((V ** 2 * (1- np.exp(-(np.array(time,ndmin=2)-np.array(time,ndmin=2).T)/Tau))))
         
         if len(flux) < 20:
@@ -360,7 +360,7 @@ for alt in range(1):
             #print(lis)
             VarRows.append(row)
             
-            plotdata(r'C:\Users\Neal\Desktop\Variability\C1_lc.fits', row)
+            plotdata(r'../C1_lc.fits', row)
             
             sausageplot(max_theta[0], M, time, flux, delta_f,max_theta[1], 5,sigma_sq)
         else:

@@ -70,6 +70,7 @@ def lnprob(theta, x, y, yerr):
         logvals.append(theta)
         return lp + lnlike(theta, x, y, yerr)
 
+
 def preform_emcee(time,delta_f,sigma_sq,ROW):
         flux, err, time, fmean, FITS = get_vals(sys.argv, ROW)
         M,delta_f,sigma_sq = Make_M(V,Tau,C)
@@ -84,10 +85,15 @@ def preform_emcee(time,delta_f,sigma_sq,ROW):
         samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
         max_theta = logvals[logprobs.index(max(logprobs))]
         V_mcmc, Tau_mcmc, C_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
-        #plotdata(sys.argv)
+        
+        plt.figure()
+        plt.plot(logprobs)
+        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/'+ str(ROW) + 'logprob_matrix' + '.pdf')
+        plt.show()
+
         print('V_mcmc:',V_mcmc, 'Tau_mcmc:',Tau_mcmc, max_theta[0], max_theta[1])
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
-        filename = '/scratch/users/nschwei2/'+ str(ROW) + 'object' + '.txt'
+        filename ='/home/sam/Documents/Morganson_research/QSOVAR/scratch/'+ str(ROW) + 'object' + '.txt' 
         with open(filename, 'w') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
 for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
