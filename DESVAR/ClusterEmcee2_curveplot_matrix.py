@@ -101,7 +101,7 @@ def preform_emcee(time,delta_f,sigma_sq,ROW):
         #ax = fig.gca(projection='3d')
         plt.contour(X, Y, lprob, cmap=cm.rainbow)#,
                                 #linewidth=0, antialiased=False)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/'+ str(ROW) + 'logprob_contour_matrix' + '.pdf')
+        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/figure'+ str(ROW) + 'logprob_contour_matrix' + '.pdf')
         plt.show()
         
         #result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err)) #,np.log10(C)

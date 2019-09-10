@@ -7,6 +7,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import emcee
 import scipy.optimize as op
+import corner
 
 if len(sys.argv) < 5:
   print("lightcurveplot.py INFITS ROWSTART ROWEND BAND")
@@ -77,6 +78,7 @@ def preform_emcee(time,delta_f,sigma_sq,ROW):
 
         nll = lambda *args: -lnlike(*args)
         result = op.minimize(nll, [np.log10(V), np.log10(Tau),np.log10(C)],args=(time,delta_f,sigma_sq))
+        #print(result)
         ndim, nwalkers = 3, 100
         pos = [result["x"] + 1e-4*np.random.randn(ndim) for i in range(nwalkers)]
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, delta_f, sigma_sq))
@@ -88,12 +90,18 @@ def preform_emcee(time,delta_f,sigma_sq,ROW):
         
         plt.figure()
         plt.plot(logprobs)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/'+ str(ROW) + 'logprob_matrix' + '.pdf')
+        plt.savefig('figure/'+ str(ROW) + 'logprob_matrix' + '.pdf')
         plt.show()
+
+        fig = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"log$_{10}$C"],
+                                                truths=[max_theta[0], max_theta[1], max_theta[2]])
+        #make the png
+        
+        fig.savefig("figure/"+str(ROW)+"triangle_matrix.pdf")
 
         print('V_mcmc:',V_mcmc, 'Tau_mcmc:',Tau_mcmc, max_theta[0], max_theta[1])
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
-        filename ='/home/sam/Documents/Morganson_research/QSOVAR/scratch/'+ str(ROW) + 'object' + '.txt' 
+        filename ='scratch/'+ str(ROW) + 'object' + '.txt' 
         with open(filename, 'w') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
 for ROW in range(int(sys.argv[2]),int(sys.argv[3])):

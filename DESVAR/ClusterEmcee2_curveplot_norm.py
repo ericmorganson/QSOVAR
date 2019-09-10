@@ -112,7 +112,7 @@ def preform_emcee(time,delta_f,sigma_sq,ROW):
 
         X = np.arange(0, 4, .1) #tau
  
-        Y = np.arange(-3, 2, .1) #variance
+        Y = np.arange(-2.5, 1.5, .1) #variance
         X, Y = np.meshgrid(X, Y)
                 #theta = lnV, lnT
         lprob = lnprob((Y, X), time, flux, err)
@@ -120,11 +120,15 @@ def preform_emcee(time,delta_f,sigma_sq,ROW):
 
         fig = plt.figure()
         #ax = fig.gca(projection='3d')
-        plt.contour(X, Y, lprob, cmap=cm.rainbow)#,
+        plt.pcolormesh(X, Y, lprob.reshape(X.shape), shading='gouraud', cmap=cm.rainbow)
+        cbar = plt.colorbar()
+        cbar.set_label('log(probability)')
+        #plt.contour(X, Y, lprob, cmap=cm.rainbow)#,
                                 #linewidth=0, antialiased=False)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/'+ str(ROW) + 'logprob_contour_norm' + '.pdf')
         plt.xlabel("Tau")
         plt.ylabel("Variance")
+        
+        plt.savefig('figure/'+ str(ROW) + 'logprob_density_norm' + '.pdf')
         plt.show()
         
         #result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err)) #,np.log10(C)
@@ -150,6 +154,9 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     logvals = []
     print(ROW)
     flux, err, time, mu, FITS = get_vals(sys.argv,ROW)
+    if len(flux) == 0:
+        print("Flux length is zero")
+        continue
 
     #M,delta_f,sigma_sq = Make_M(V,Tau,C)
 

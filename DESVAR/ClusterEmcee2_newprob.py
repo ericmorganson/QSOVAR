@@ -7,6 +7,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import emcee
 import scipy.optimize as op
+import corner
 
 if len(sys.argv) < 5:
   print("lightcurveplot.py INFITS ROWSTART ROWEND BAND")
@@ -27,6 +28,7 @@ def lognorm(state, flux, flux_err_sq):
         #return np.log(np.exp(-((flux-fmean)**2)/(2*(V_sq + flux_err_sq)))/np.sqrt(2*np.pi*(V_sq + flux_err_sq))) #good & stable; didn't use normalized flux or errors
         #return -(flux**2/(2*(V_sq + flux_err_sq))) + (flux*fmean/(V_sq + flux_err_sq)) - (fmean**2/(2*(V_sq + flux_err_sq))) -0.5*np.log(2*np.pi*(V_sq + flux_err_sq)) # assume all values are real; stable; didn't use norm. flux or errors
         return np.log(np.exp(-((flux*fmean)**2)/(2*(V_sq + flux_err_sq*fmean**2)))/np.sqrt(2*np.pi*(V_sq + flux_err_sq*fmean**2)))
+        #return 0.5*(-((flux*fmean)**2)/(2*(V_sq + flux_err_sq*fmean**2))) - np.log(2*np.pi*(V_sq + flux_err_sq*fmean**2))
 
 def evolvestate(state, Tau, dt, mu, V_sq_old):
         fmean, V_sq = state
@@ -111,7 +113,7 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         print(min(diff_time))
         plt.figure()
         plt.errorbar(time, flux, err)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/'+ str(ROW) + 'LC' + '.pdf')
+        plt.savefig('figure/'+ str(ROW) + 'LC' + '.pdf')
         plt.show()
 
         #print(flux, err, time, mu)
@@ -130,15 +132,21 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         #print('logprobs', logprobs)
         plt.figure()
         plt.plot(logprobs)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/'+ str(ROW) + 'logprob' + '.pdf')
+        plt.savefig('figure/'+ str(ROW) + 'logprob' + '.pdf')
         plt.show()
 
         max_theta = logvals[logprobs.index(max(logprobs))]
+
+        fig = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
+                                                truths=[max_theta[0], max_theta[1]])
+        #make the png
+        
+        fig.savefig("figure/"+str(ROW)+"triangle_np.pdf")
         V_mcmc, Tau_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
         #print("YAY!  i CAN MOD!!")
         print('V_mcmc:',V_mcmc, 'Tau_mcmc:',Tau_mcmc, max_theta[0], max_theta[1])
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
-        filename ='/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/scratch_new/'+ str(ROW) + 'object' + '.txt' 
+        filename ='scratch_new/'+ str(ROW) + 'object' + '.txt' 
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
 
@@ -148,6 +156,9 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     logvals = []
     print(ROW)
     flux, err, time, mu, FITS = get_vals(sys.argv,ROW)
+    if len(flux) == 0:
+        print("Flux length is zero")
+        continue
 
     #M,delta_f,sigma_sq = Make_M(V,Tau,C)
 
