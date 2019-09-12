@@ -27,8 +27,8 @@ def lognorm(state, flux, flux_err_sq):
         fmean, V_sq = state
         #return np.log(np.exp(-((flux-fmean)**2)/(2*(V_sq + flux_err_sq)))/np.sqrt(2*np.pi*(V_sq + flux_err_sq))) #good & stable; didn't use normalized flux or errors
         #return -(flux**2/(2*(V_sq + flux_err_sq))) + (flux*fmean/(V_sq + flux_err_sq)) - (fmean**2/(2*(V_sq + flux_err_sq))) -0.5*np.log(2*np.pi*(V_sq + flux_err_sq)) # assume all values are real; stable; didn't use norm. flux or errors
-        return np.log(np.exp(-((flux*fmean)**2)/(2*(V_sq + flux_err_sq*fmean**2)))/np.sqrt(2*np.pi*(V_sq + flux_err_sq*fmean**2)))
-        #return 0.5*(-((flux*fmean)**2)/(2*(V_sq + flux_err_sq*fmean**2))) - np.log(2*np.pi*(V_sq + flux_err_sq*fmean**2))
+        #return np.log(np.exp(-((flux*fmean)**2)/(2*(V_sq + flux_err_sq*fmean**2)))/np.sqrt(2*np.pi*(V_sq + flux_err_sq*fmean**2)))
+        return -0.5*(((flux-fmean)**2)/(V_sq + flux_err_sq) + np.log(2*np.pi*(V_sq + flux_err_sq)))
 
 def evolvestate(state, Tau, dt, mu, V_sq_old):
         fmean, V_sq = state
@@ -123,7 +123,7 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         #result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err**2)) #,np.log10(C)
         result = [np.log10(V), np.log10(Tau)]
         ndim, nwalkers = 2, 100
-        pos = [result + 1e-4*np.random.randn(ndim) for i in range(nwalkers)] #['x']
+        pos = [result + -0.5+np.random.randn(ndim) for i in range(nwalkers)] #['x']
         #print(pos)
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
 
