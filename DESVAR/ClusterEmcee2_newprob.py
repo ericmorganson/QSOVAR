@@ -8,6 +8,10 @@ import matplotlib.pyplot as plt
 import emcee
 import scipy.optimize as op
 import corner
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+
+
 
 if len(sys.argv) < 5:
   print("lightcurveplot.py INFITS ROWSTART ROWEND BAND")
@@ -39,8 +43,8 @@ def evolvestate(state, Tau, dt, mu, V_sq_old):
 
 def weightedmean(state, flux, flux_err_sq):
         fmean, V_sq = state
-        fmean_new = ((flux*fmean + fmean)*V_sq + (fmean**3)*flux_err_sq)/(V_sq + flux_err_sq*fmean**2)
-        V_sq_new = flux_err_sq*(fmean**2)*V_sq/(flux_err_sq*(fmean**2) + V_sq)
+        fmean_new = ((flux)*V_sq + fmean*flux_err_sq)/(V_sq + flux_err_sq)
+        V_sq_new = flux_err_sq*V_sq/(flux_err_sq + V_sq)
         state = (fmean_new, V_sq_new)
         return state
     
@@ -107,14 +111,167 @@ def lnprob(theta, x, y, yerr):
         return lp + lnlike(theta, x, y, yerr)
 
 
+def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq):
+    #mu = fmean
+    err_top = []
+    err_bot = []
+    Logpr = []
+    Vari = 10 ** Vari
+    Tau = 10 ** Tau
+    times = []
+   
+    for t in np.arange(min(time),max(time),dt):
+        sigma_sq_s = np.append(sigma_sq, 0.0)
+        dtime = np.append(time,t)
+        delta_time = np.fabs(np.array(dtime,ndmin=2)-np.array(dtime,ndmin=2).T)
+        #Make the modified matrix
+        S = np.diag(sigma_sq_s) + (Vari**2) * np.exp(-1.0 * delta_time / Tau)
+        times.append(t-57000)
+        #Set up our guess for the flux
+        t0 = [i for i in time if i >= t]
+        t1 = [i for i in time if i <= t]
+        t0 = t0[0]
+        time_ind0 = np.where(time == t0)
+        t1 = t1[-1]
+        time_ind1 = np.where(time == t1)
+        tp_0 = t0 / t
+        tp_1 = t1 / t
+        Fg1 = (tp_0 * delta_f[time_ind0]) + (tp_1 * delta_f[time_ind1])
+        Fg1 = (Fg1 - mu)/mu
+        Fg2 = Fg1 - 1
+        Fg3 = Fg1 + 1
+       
+        delf1 = np.append(delta_f,Fg1)
+        delf2 = np.append(delta_f,Fg2)
+        delf3 = np.append(delta_f,Fg3)
+       
+        sign, value = np.linalg.slogdet(S)
+        deter = sign * np.exp(value.item())
+        #calculate the Log Probs
+        logP = -.5*np.log((deter))-.5*((np.dot(delf1,(np.dot(delf1,np.linalg.inv(S))))))
+        logP1 = -.5*np.log((deter))-.5*((np.dot(delf2,(np.dot((delf2),np.linalg.inv(S))))))
+        logP2 = -.5*np.log((deter))-.5*((np.dot(delf3,(np.dot((delf3),np.linalg.inv(S)))))) 
+
+        X = [Fg2,Fg1,Fg3]
+        Y = [logP1,logP,logP2]
+        X = np.array(X)
+        X = (X.T)[0]
+        Matr = np.array([[X[0]**2,X[0],1],[X[1]**2,X[1],1],[X[2]**2,X[2],1]])
+        #Matr = Matr.astype(np.float64)
+        result = np.linalg.solve(Matr, Y) 
+        sig_sq = -1/(2*result[0])
+        f_0 = -(result[1]/(2*result[0]))
+        
+        parabola = np.polyfit(X,Y,2)
+        f = np.poly1d(parabola)
+       
+        x_new = np.linspace(X[0], X[-1], 5000)
+        y_new = f(x_new)
+       
+        delf = delta_f
+        Fm = op.fmin(lambda x: -f(x),0)
+        sig = 22.5-2.5*np.log10((sig_sq))
+        logPn = result[0]*((Fm - f_0)**2) + result[2] - (result[1]**2)/(4*result[0])
+        
+        sig1 = mu * (np.sqrt(sig_sq) + f_0) + mu
+        sig2 = mu * (-np.sqrt(sig_sq) + f_0) + mu
+        center = 22.5-2.5*np.log10((mu * (f_0))+mu)
+        err_t = 22.5-2.5*np.log10((mu * (f_0 + np.sqrt(sig_sq)))+mu)
+        err_b = 22.5-2.5*np.log10((mu * (f_0 - np.sqrt(sig_sq)))+mu)
+        Logpr.append(center)
+        err_top.append(err_t)
+        err_bot.append(err_b)
+        
+    plotdata(sys.argv)
+    plt.plot(times,err_top, color = 'g')
+    plt.plot(times,Logpr, color = 'b')
+    plt.plot(times,err_bot, color = 'g')
+    plt.title(' Object '+sys.argv[2])
+    plt.savefig('sausage' + 'C1_lc' +  sys.argv[2] + '.png')
+
+    plt.show()
+
+def lnprob_dens(theta, x, y, yerr):
+        #lp = lnprior(theta)
+        #print(lp)
+        #if not np.isfinite(lp):
+        #    return -np.inf
+        #print(lp + lnlike(theta, x, y, yerr))
+        logprobs_dens.append(lnlike(theta, x, y, yerr))
+        logvals_dens.append(theta)
+        return lnlike(theta, x, y, yerr)
+
+def goodrow(mags,errs,mjds):
+  good = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags) & (errs > 0) & (errs != np.inf) & ~np.isnan(errs) & (mjds > 0) & (mjds != np.inf) & ~np.isnan(mjds)  
+  return [mags[good], errs[good], mjds[good]]
+
+def plotdata(args):
+    fits = pyfit.open(args[1])[1].data 
+    VarRows = int(args[2])
+    [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z] = getdata(fits,17999)
+    rownum = args[2]
+    
+    plt.rcParams['font.size'] = 18
+    plt.figure()
+    plt.subplot(111)
+    plt.errorbar(mjds_g-57000, mags_g, yerr = errs_g, fmt = 'og')
+    plt.errorbar(mjds_r-57000, mags_r, yerr = errs_r, fmt = 'or')
+    plt.errorbar(mjds_i-57000, mags_i, yerr = errs_i, fmt = 'ok')
+    plt.errorbar(mjds_z-57000, mags_z, yerr = errs_z, fmt = 'ob')
+    [xlim,ylim] = boundaries(np.hstack([mjds_g,mjds_r,mjds_i,mjds_z]),np.hstack([mags_g,mags_r,mags_i,mags_z]))
+
+    plt.ylim(ylim)
+    plt.xlabel('MJD-57000')
+    plt.ylabel('Mags')
+    field = args[1].split('_')[0]
+    plt.title(field+' Object '+rownum)
+
+def boundaries(mjds,mags):
+  mjdmin = 100*np.floor(np.min(mjds)*.01)
+  mjdmax = 100*np.ceil(np.max(mags)*.01)
+  [magmin,magmax] = np.percentile(mags,[2,98])
+  magmin = 0.5*np.floor(2.*(magmin-0.1))
+  magmax = 0.5*np.ceil(2.*(magmax+0.1))
+  return [[mjdmin,mjdmax],[magmax,magmin]]
+
+def getdata(fits,num):
+  
+  [mags_g, errs_g, mjds_g] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_G']), fits[num]['LC_FLUXERR_PSF_G']/fits[num]['LC_FLUX_PSF_G'], fits[num]['LC_MJD_G'])
+  [mags_r, errs_r, mjds_r] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_R']), fits[num]['LC_FLUXERR_PSF_R']/fits[num]['LC_FLUX_PSF_R'], fits[num]['LC_MJD_R'])
+  [mags_i, errs_i, mjds_i] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_I']), fits[num]['LC_FLUXERR_PSF_I']/fits[num]['LC_FLUX_PSF_I'], fits[num]['LC_MJD_I'])
+  [mags_z, errs_z, mjds_z] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_Z']), fits[num]['LC_FLUXERR_PSF_Z']/fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_MJD_Z'])
+  return [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z]
+
 def preform_emcee(time,flux,sigma_sq,ROW):
-        flux, err, time, mu, FITS = get_vals(sys.argv, ROW)
+        #flux, err, time, mu, FITS = get_vals(sys.argv, ROW)
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         print(min(diff_time))
         plt.figure()
         plt.errorbar(time, flux, err)
         plt.savefig('figure/'+ str(ROW) + 'LC' + '.pdf')
         plt.show()
+
+        X = np.arange(-1, 5, .1) #tau
+ 
+        Y = np.arange(-2.5, 1.5, .1) #variance
+        X, Y = np.meshgrid(X, Y)
+                #theta = lnV, lnT
+        lprob_dens = lnprob_dens((Y, X), time, flux, err)
+                #print(l)
+
+        fig = plt.figure()
+        #ax = fig.gca(projection='3d')
+        plt.pcolormesh(X, Y, lprob_dens.reshape(X.shape), shading='gouraud', cmap=cm.rainbow)
+        cbar = plt.colorbar()
+        cbar.set_label('log(probability)')
+        #plt.contour(X, Y, lprob, cmap=cm.rainbow)#,
+                                #linewidth=0, antialiased=False)
+        plt.xlabel("Tau")
+        plt.ylabel("Variance")
+        
+        plt.savefig('figure/'+ str(ROW) + 'logprob_density_norm' + '.pdf')
+        plt.show()
+        
 
         #print(flux, err, time, mu)
         #M,delta_f,sigma_sq = Make_M(V,Tau,C)
@@ -123,12 +280,12 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         #result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err**2)) #,np.log10(C)
         result = [np.log10(V), np.log10(Tau)]
         ndim, nwalkers = 2, 100
-        pos = [result + -0.5+np.random.randn(ndim) for i in range(nwalkers)] #['x']
+        pos = [result + (-0.5+np.random.randn(ndim)) for i in range(nwalkers)] #['x']
         #print(pos)
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
 
-        sampler.run_mcmc(pos, 500)
-        samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
+        sampler.run_mcmc(pos, 50)
+        samples = sampler.chain[:, 5:, :].reshape((-1, ndim))
         #print('logprobs', logprobs)
         plt.figure()
         plt.plot(logprobs)
@@ -140,6 +297,7 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         fig = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
                                                 truths=[max_theta[0], max_theta[1]])
         #make the png
+
         
         fig.savefig("figure/"+str(ROW)+"triangle_np.pdf")
         V_mcmc, Tau_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
@@ -149,11 +307,17 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         filename ='scratch_new/'+ str(ROW) + 'object' + '.txt' 
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
+        sausageplot(max_theta[0],time,flux,max_theta[1],5,err**2)
 
 
 for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     logprobs = []
     logvals = []
+
+    logprobs_dens = []
+    logvals_dens = []
+
+
     print(ROW)
     flux, err, time, mu, FITS = get_vals(sys.argv,ROW)
     if len(flux) == 0:
