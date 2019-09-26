@@ -13,10 +13,11 @@ from matplotlib import cm
 
 
 
-if len(sys.argv) < 5:
-  print("lightcurveplot.py INFITS ROWSTART ROWEND BAND")
+if len(sys.argv) < 6:
+  print("lightcurveplot.py INFITS ROWSTART ROWEND BAND MCMC_TYPE")
   print("INFITS is a fits table of DES Data,")
   print("ROWNUM is a row in that file")
+  print("MCMC_TYPE is how you set up the MCMC search array: 'grid' or 'normal'")
   sys.exit()
 # These are the guesses that emcee starts with
 V =0.3
@@ -29,9 +30,7 @@ def lognorm(state, flux, flux_err_sq):
         # This finds the normal distribution for any measurement (x), 
         # mean(mu), and variance squared (var2).
         fmean, V_sq = state
-        #return np.log(np.exp(-((flux-fmean)**2)/(2*(V_sq + flux_err_sq)))/np.sqrt(2*np.pi*(V_sq + flux_err_sq))) #good & stable; didn't use normalized flux or errors
-        #return -(flux**2/(2*(V_sq + flux_err_sq))) + (flux*fmean/(V_sq + flux_err_sq)) - (fmean**2/(2*(V_sq + flux_err_sq))) -0.5*np.log(2*np.pi*(V_sq + flux_err_sq)) # assume all values are real; stable; didn't use norm. flux or errors
-        #return np.log(np.exp(-((flux*fmean)**2)/(2*(V_sq + flux_err_sq*fmean**2)))/np.sqrt(2*np.pi*(V_sq + flux_err_sq*fmean**2)))
+
         return -0.5*(((flux-fmean)**2)/(V_sq + flux_err_sq) + np.log(2*np.pi*(V_sq + flux_err_sq)))
 
 def evolvestate(state, Tau, dt, mu, V_sq_old):
@@ -172,12 +171,12 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq):
         Fm = op.fmin(lambda x: -f(x),0)
         sig = 22.5-2.5*np.log10((sig_sq))
         logPn = result[0]*((Fm - f_0)**2) + result[2] - (result[1]**2)/(4*result[0])
-        
+        nsig=2
         sig1 = mu * (np.sqrt(sig_sq) + f_0) + mu
         sig2 = mu * (-np.sqrt(sig_sq) + f_0) + mu
         center = 22.5-2.5*np.log10((mu * (f_0))+mu)
-        err_t = 22.5-2.5*np.log10((mu * (f_0 + np.sqrt(sig_sq)))+mu)
-        err_b = 22.5-2.5*np.log10((mu * (f_0 - np.sqrt(sig_sq)))+mu)
+        err_t = 22.5-2.5*np.log10((mu * (f_0 + nsig*np.sqrt(sig_sq)))+mu)
+        err_b = 22.5-2.5*np.log10((mu * (f_0 - nsig*np.sqrt(sig_sq)))+mu)
         Logpr.append(center)
         err_top.append(err_t)
         err_bot.append(err_b)
@@ -187,7 +186,7 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq):
     plt.plot(times,Logpr, color = 'b')
     plt.plot(times,err_bot, color = 'g')
     plt.title(' Object '+sys.argv[2])
-    plt.savefig('sausage' + 'C1_lc' +  sys.argv[2] + '.png')
+    plt.savefig('figure/sausage' + 'C1_lc' + sys.argv[5] + sys.argv[2] + '.png')
 
     plt.show()
 
@@ -277,19 +276,35 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         #M,delta_f,sigma_sq = Make_M(V,Tau,C)
 
         nll = lambda *args: -lnlike(*args)
-        #result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err**2)) #,np.log10(C)
-        result = [np.log10(V), np.log10(Tau)]
         ndim, nwalkers = 2, 100
-        pos = [result + (-0.5+np.random.randn(ndim)) for i in range(nwalkers)] #['x']
-        #print(pos)
+
+        if sys.argv[5].lower() == 'normal':
+            #result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err**2)) #,np.log10(C)
+            result = [np.log10(V), np.log10(Tau)]
+            pos = [result + (-0.5+np.random.randn(ndim)) for i in range(nwalkers)] #['x']
+            #print(pos)
+        elif sys.argv[5].lower() == 'grid':
+            v_grid = np.arange(-1, 0, 0.1)
+            t_grid = np.arange(1, 2, 0.1)
+            VG, TG = np.meshgrid(v_grid, t_grid)
+            result = [np.array(thing) for thing in zip(VG.flatten(), TG.flatten())] # for python 2.7
+            pos = [result[i] + 1e-7*np.random.randn(ndim) for i in range(nwalkers)] #['x']
+        elif sys.argv[5].lower() == 'optimal':
+            result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err**2)) #,np.log10(C)
+            pos = [result['x'] + 1e-4*np.random.randn(ndim) for i in range(nwalkers)] #['x']
+            #print(pos)
+        else: 
+            print("What the hell do you want to do?")
+            print("'grid', 'optimal', or 'normal' search through MCMC?")
+            exit()
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
 
-        sampler.run_mcmc(pos, 50)
-        samples = sampler.chain[:, 5:, :].reshape((-1, ndim))
+        sampler.run_mcmc(pos, 100)
+        samples = sampler.chain[:, 20:, :].reshape((-1, ndim))
         #print('logprobs', logprobs)
         plt.figure()
         plt.plot(logprobs)
-        plt.savefig('figure/'+ str(ROW) + 'logprob' + '.pdf')
+        plt.savefig('figure/'+ str(ROW) + sys.argv[5]+ 'logprob' + '.pdf')
         plt.show()
 
         max_theta = logvals[logprobs.index(max(logprobs))]
@@ -299,12 +314,12 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         #make the png
 
         
-        fig.savefig("figure/"+str(ROW)+"triangle_np.pdf")
+        fig.savefig("figure/"+str(ROW)+sys.argv[5]+"triangle_np.pdf")
         V_mcmc, Tau_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
         #print("YAY!  i CAN MOD!!")
         print('V_mcmc:',V_mcmc, 'Tau_mcmc:',Tau_mcmc, max_theta[0], max_theta[1])
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
-        filename ='scratch_new/'+ str(ROW) + 'object' + '.txt' 
+        filename ='scratch_new/'+ str(ROW) + sys.argv[5]+'object' + '.txt' 
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
         sausageplot(max_theta[0],time,flux,max_theta[1],5,err**2)

@@ -94,13 +94,16 @@ def preform_emcee(time,delta_f,sigma_sq,ROW):
                 theta = Y[j], X[k], np.log10(C)
 
                 M,delta_f,sigma_sq = Make_M(V,Tau,C)
+
                 lprob[k][j] = lnprob(theta, time, delta_f, sigma_sq)
                 #print(l)
 
         fig = plt.figure()
         #ax = fig.gca(projection='3d')
-        plt.contour(X, Y, lprob, cmap=cm.rainbow)#,
-                                #linewidth=0, antialiased=False)
+        Y, X = np.meshgrid(Y, X)
+        plt.pcolormesh(X, Y, lprob.reshape(X.shape), shading='gouraud', cmap=cm.rainbow)
+        cbar = plt.colorbar()
+        cbar.set_label('log(probability)')
         plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/DESVAR/figure'+ str(ROW) + 'logprob_contour_matrix' + '.pdf')
         plt.show()
         
