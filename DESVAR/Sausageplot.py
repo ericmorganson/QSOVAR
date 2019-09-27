@@ -72,7 +72,7 @@ def get_vals(args):
     #get the flux, err, and time arrays
     row = int(args[2])
     lc_flux = FITS[1].data['LC_FLUX_PSF_G'][row]
-    lc_mean = FITS[1].data['MEAN_PSF_G'][row]
+    lc_mean = FITS[1].data['MEDIAN_PSF_G'][row]
     lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_G'][row]
     lc_time = FITS[1].data['LC_MJD_G'][row]
            #remove the zeros
