@@ -42,8 +42,9 @@ def evolvestate(state, exp_dt_Tau, mu, V_sq_old):
 
 def weightedmean(state, flux, flux_err_sq):
         fmean, V_sq = state
-        fmean_new = ((flux)*V_sq + fmean*flux_err_sq)/(V_sq + flux_err_sq)
-        V_sq_new = flux_err_sq*V_sq/(flux_err_sq + V_sq)
+        denom = 1/(V_sq + flux_err_sq)
+        fmean_new = ((flux)*V_sq + fmean*flux_err_sq)*denom
+        V_sq_new = flux_err_sq*V_sq*denom
         state = (fmean_new, V_sq_new)
         return state
 
