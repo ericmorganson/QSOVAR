@@ -48,12 +48,11 @@ def weightedmean(state, flux, flux_err_sq):
         state = (fmean_new, V_sq_new)
         return state
 
-
 def get_vals(args, ROW):
         FITS = pyfit.open(args[1])
         color = sys.argv[4]
         color = color.upper()
-            #get the flux, err, and time arrays
+        #get the flux, err, and time arrays
         try:
             lc_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
         except IndexError:
@@ -62,8 +61,7 @@ def get_vals(args, ROW):
         lc_median = FITS[1].data['MEDIAN_PSF_'+color][ROW] #yes, I know this isn't the mean
         lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
         lc_time = FITS[1].data['LC_MJD_'+color][ROW]
-           #remove the zeros
-        lc_time = lc_time[lc_time != 0.]
+        lc_time = lc_time[lc_time != 0.] #remove the zeros
 
         limit = len(lc_time)
         lc_flux = lc_flux[:limit]
@@ -76,22 +74,23 @@ def get_vals(args, ROW):
 
 def lnlike(theta, time, flux, flux_err_sq):
         logV, logTau = theta
-        V = 10**logV
-        Tau = 10**logTau
-
-
-        state=(mu,V**2)
+        #print(theta[:10])
+        V_ten = 10**logV
+        Tau_ten = 10**logTau
+        #print(Tau_ten)
+        state=(mu,V_ten**2)
         lnp = lognorm(state, flux[0], flux_err_sq[0])
         state = weightedmean(state, flux[0], flux_err_sq[0])
-        #exp_dt_Tau = np.exp(-(np.subtract(time[1:], time[:-1])/Tau)) #DIDN'T WORK DUE TO TAU BEING A 2D ARRAY... NEED TO FIGURE OUT HOW TO DIVIDE TIME ARRAY BY TAU WITHOUT FOR LOOP.
+        #print(Tau_ten)
+        #exp_dt_Tau = np.exp(-(np.subtract(time[1:], time[:-1])/Tau_ten)) #DIDN'T WORK DUE TO TAU BEING A 2D ARRAY... NEED TO FIGURE OUT HOW TO DIVIDE TIME ARRAY BY TAU WITHOUT FOR LOOP.
+        #print(exp_dt_Tau.shape)
         for n in range(1,len(flux)):
             if time[n]-time[n-1] < 0:
                 print('AHHHHH, NEGATIVE TIME!!!')
-            exp_dt_Tau = np.exp(-(time[n] - time[n-1])/Tau)
-            state=evolvestate(state, exp_dt_Tau, mu, V**2) ### NEED TO WORK ON THIS
+            exp_dt_Tau = np.exp(-(time[n] - time[n-1])/Tau_ten)
+            state=evolvestate(state, exp_dt_Tau, mu, V_ten**2) ### NEED TO WORK ON THIS
             lnp += lognorm(state, flux[n], flux_err_sq[n])
             state = weightedmean(state, flux[n], flux_err_sq[n])
-        #print(lnp)
         return lnp
 
 
@@ -104,14 +103,11 @@ def lnprior(theta):
 
 def lnprob(theta, x, y, yerr):
         lp = lnprior(theta)
-        #print(lp)
         if not np.isfinite(lp):
             return -np.inf
-        #print(lp + lnlike(theta, x, y, yerr))
         logprobs.append(lp + lnlike(theta, x, y, yerr))
         logvals.append(theta)
         return lp + lnlike(theta, x, y, yerr)
-
 
 def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW):
         #mu = fmean
@@ -191,14 +187,9 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW):
         plt.title(' Object '+sys.argv[2])
         plt.savefig('figure/sausage' + 'C1_lc' + sys.argv[5] + sys.argv[2] + '.png')
 
-        plt.show()
+        #plt.show()
 
 def lnprob_dens(theta, x, y, yerr):
-        #lp = lnprior(theta)
-        #print(lp)
-        #if not np.isfinite(lp):
-        #    return -np.inf
-        #print(lp + lnlike(theta, x, y, yerr))
         logprobs_dens.append(lnlike(theta, x, y, yerr))
         logvals_dens.append(theta)
         return lnlike(theta, x, y, yerr)
@@ -217,9 +208,9 @@ def plotdata(args, ROW):
         plt.figure()
         plt.subplot(111)
         plt.errorbar(mjds_g-57000, mags_g, yerr = errs_g, fmt = 'og')
-        plt.errorbar(mjds_r-57000, mags_r, yerr = errs_r, fmt = 'or')
-        plt.errorbar(mjds_i-57000, mags_i, yerr = errs_i, fmt = 'ok')
-        plt.errorbar(mjds_z-57000, mags_z, yerr = errs_z, fmt = 'ob')
+        #plt.errorbar(mjds_r-57000, mags_r, yerr = errs_r, fmt = 'or')
+        #plt.errorbar(mjds_i-57000, mags_i, yerr = errs_i, fmt = 'ok')
+        #plt.errorbar(mjds_z-57000, mags_z, yerr = errs_z, fmt = 'ob')
         [xlim,ylim] = boundaries(np.hstack([mjds_g,mjds_r,mjds_i,mjds_z]),np.hstack([mags_g,mags_r,mags_i,mags_z]))
 
         plt.ylim(ylim)
@@ -245,86 +236,69 @@ def getdata(fits,num):
         return [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z]
 
 def preform_emcee(time,flux,sigma_sq,ROW):
-        #flux, err, time, mu, FITS = get_vals(sys.argv, ROW)
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         print(min(diff_time))
         plt.figure()
         plt.errorbar(time, flux, err)
         plt.savefig('figure/'+ str(ROW) + 'LC' + '.pdf')
-        plt.show()
+        #plt.show()
 
         X = np.arange(-1, 5, .1) #tau
-
         Y = np.arange(-2.5, 1.5, .1) #variance
         X, Y = np.meshgrid(X, Y)
-                #theta = lnV, lnT
         lprob_dens = lnprob_dens((Y, X), time, flux, err)
-                #print(l)
-
         fig = plt.figure()
-        #ax = fig.gca(projection='3d')
         plt.pcolormesh(X, Y, lprob_dens.reshape(X.shape), shading='gouraud', cmap=cm.rainbow)
         cbar = plt.colorbar()
         cbar.set_label('log(probability)')
-        #plt.contour(X, Y, lprob, cmap=cm.rainbow)#,
-                                #linewidth=0, antialiased=False)
         plt.xlabel("Tau")
         plt.ylabel("Variance")
-
         plt.savefig('figure/'+ str(ROW) + 'logprob_density_norm' + '.pdf')
-        plt.show()
-
-
-        #print(flux, err, time, mu)
-        #M,delta_f,sigma_sq = Make_M(V,Tau,C)
+        #plt.show()
 
         nll = lambda *args: -lnlike(*args)
         ndim, nwalkers = 2, 100
 
         if sys.argv[5].lower() == 'normal':
-            #result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err**2)) #,np.log10(C)
             result = [np.log10(V), np.log10(Tau)]
-            pos = [result + (-0.5+np.random.randn(ndim)) for i in range(nwalkers)] #['x']
-            #print(pos)
+            pos = [result + (-0.5+np.random.randn(ndim)) for i in range(nwalkers)]
         elif sys.argv[5].lower() == 'grid':
             v_grid = np.arange(-1, 0, 0.1)
             t_grid = np.arange(1, 2, 0.1)
             VG, TG = np.meshgrid(v_grid, t_grid)
             result = [np.array(thing) for thing in zip(VG.flatten(), TG.flatten())] # for python 2.7
-            pos = [result[i] + 1e-7*np.random.randn(ndim) for i in range(nwalkers)] #['x']
+            pos = [result[i] + 1e-7*np.random.randn(ndim) for i in range(nwalkers)]
         elif sys.argv[5].lower() == 'optimal':
-            result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err**2)) #,np.log10(C)
-            pos = [result['x'] + 1e-4*np.random.randn(ndim) for i in range(nwalkers)] #['x']
-            #print(pos)
+            result = op.minimize(nll, [np.log10(V), np.log10(Tau)],args=(time,flux, err**2))
+            pos = [result['x'] + 1e-4*np.random.randn(ndim) for i in range(nwalkers)]
         else:
             print("What the hell do you want to do?")
             print("'grid', 'optimal', or 'normal' search through MCMC?")
             exit()
-        sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
 
+        sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
+        print(np.array(pos).shape)
         sampler.run_mcmc(pos, 100)
         samples = sampler.chain[:, 20:, :].reshape((-1, ndim))
-        #print('logprobs', logprobs)
+
         plt.figure()
         plt.plot(logprobs)
         plt.savefig('figure/'+ str(ROW) + sys.argv[5]+ 'logprob' + '.pdf')
-        plt.show()
+        #plt.show()
 
         max_theta = logvals[logprobs.index(max(logprobs))]
 
         fig = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
                                                 truths=[max_theta[0], max_theta[1]])
-        #make the png
-
-
         fig.savefig("figure/"+str(ROW)+sys.argv[5]+"triangle_np.pdf")
+
         V_mcmc, Tau_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
-        #print("YAY!  i CAN MOD!!")
         print('V_mcmc:',V_mcmc, 'Tau_mcmc:',Tau_mcmc, max_theta[0], max_theta[1])
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
         filename ='scratch_new/'+ str(ROW) + sys.argv[5]+'object' + '.txt'
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
+
         sausageplot(max_theta[0],time,flux,max_theta[1],5,err**2, ROW)
 
 
