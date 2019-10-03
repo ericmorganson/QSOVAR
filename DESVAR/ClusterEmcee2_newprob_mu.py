@@ -76,7 +76,7 @@ def lnlike(theta, time, flux, flux_err_sq):
 
         V_ten = 10**logV
         Tau_ten = 10**logTau
-        dMu_ten = 10**logdMu
+        dMu_ten = logdMu
 
         state=(mu + dMu_ten ,V_ten**2)
         lnp = lognorm(state, flux[0], flux_err_sq[0])
@@ -285,17 +285,17 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         ndim, nwalkers = 3, 100
 
         if sys.argv[5].lower() == 'normal':
-            result = [np.log10(V), np.log10(Tau), np.log10(dMu)]
+            result = [np.log10(V), np.log10(Tau), dMu]
             pos = [result + (-0.5+np.random.randn(ndim)) for i in range(nwalkers)]
         elif sys.argv[5].lower() == 'grid':
-            v_grid = np.arange(-1, 0, 0.1)
-            t_grid = np.arange(1, 2, 0.1)
-            dmu_grid = np.arange(-1, 1, 0.1)
+            v_grid = np.arange(-1, 0, 0.01)
+            t_grid = np.arange(1, 2, 0.01)
+            dmu_grid = np.arange(-0.5, 0.5, 0.01)
             VG, TG, MG = np.meshgrid(v_grid, t_grid, dmu_grid)
             result = [np.array(thing) for thing in zip(VG.flatten(), TG.flatten(), MG.flatten())] # for python 2.7
             pos = [result[i] + 1e-7*np.random.randn(ndim) for i in range(nwalkers)]
         elif sys.argv[5].lower() == 'optimal':
-            result = op.minimize(nll, [np.log10(V), np.log10(Tau), np.log10(dMu)],args=(time,flux, err**2))
+            result = op.minimize(nll, [np.log10(V), np.log10(Tau), dMu],args=(time,flux, err**2))
             pos = [result['x'] + 1e-4*np.random.randn(ndim) for i in range(nwalkers)]
         else:
             print("What the hell do you want to do?")
@@ -324,7 +324,7 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         filename ='scratch_new/'+ str(ROW) + sys.argv[5]+'object_dMu' + '.txt'
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
-
+            fout.write('Object: ' + str(ROW)+ ' ' + 'dMu: ' + str(max_theta[2])+ '\n')
         sausageplot(max_theta[0],time,flux,max_theta[1],5,err**2, ROW)
 
 
