@@ -22,7 +22,7 @@ if len(sys.argv) < 6:
 # These are the guesses that emcee starts with
 V =0.3
 Tau = 365.0
-dMu = 0.01
+dMu = 0.0
 print(sys.argv[2],sys.argv[3],sys.argv[4],type(sys.argv[3]))
 
 def lognorm(state, flux, flux_err_sq):
@@ -286,7 +286,8 @@ def preform_emcee(time,flux,sigma_sq,ROW):
 
         if sys.argv[5].lower() == 'normal':
             result = [np.log10(V), np.log10(Tau), dMu]
-            pos = [result + (-0.5+np.random.randn(ndim)) for i in range(nwalkers)]
+#            pos = [result + (-0.5+np.random.randn(ndim)) for i in range(nwalkers)]
+            pos = (np.random.rand(100,3)-0.5)*np.array([1,1,0.2])+result
         elif sys.argv[5].lower() == 'grid':
             v_grid = np.arange(-1, 0, 0.01)
             t_grid = np.arange(1, 2, 0.01)
