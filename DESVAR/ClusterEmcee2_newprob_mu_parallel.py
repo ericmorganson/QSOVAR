@@ -10,14 +10,17 @@ import scipy.optimize as op
 import corner
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
+import time as t
+from multiprocessing import Pool
+#from pathos.multiprocessing import ProcessingPool as Pool
 
-
-
-if len(sys.argv) < 6:
-  print("lightcurveplot.py INFITS ROWSTART ROWEND BAND MCMC_TYPE")
+if len(sys.argv) < 7:
+  print("lightcurveplot.py INFITS ROWSTART ROWEND BAND MCMC_TYPE CORENUM")
   print("INFITS is a fits table of DES Data,")
   print("ROWNUM is a row in that file")
-  print("MCMC_TYPE is how you set up the MCMC search array: 'grid' or 'normal'")
+  print("MCMC_TYPE is how you set up the MCMC search array:")
+  print("'grid', 'normal', or 'optimal'")
+  print("CORENUM is the number of CPUs you're going to use")
   sys.exit()
 # These are the guesses that emcee starts with
 V =0.3
@@ -305,9 +308,14 @@ def preform_emcee(time,flux,sigma_sq,ROW):
             print("'grid', 'optimal', or 'normal' search through MCMC?")
             exit()
         #print(pos.shape())
-        sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
-        print(np.array(pos).shape)
+        #pool = Pool(int(sys.argv[6]))
+        sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2), threads=int(sys.argv[6]))
+        start = t.time()
+        #print(np.array(pos).shape)
         sampler.run_mcmc(pos, 200)
+        end = t.time()
+        multi_time = end - start
+        print("Multiprocessing took {0:.1f} seconds".format(multi_time))
         samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
 
         plt.figure()
