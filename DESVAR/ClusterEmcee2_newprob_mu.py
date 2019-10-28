@@ -3,14 +3,13 @@ import sys
 import numpy as np
 import astropy.io.fits as pyfit
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import emcee
 import scipy.optimize as op
 import corner
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
-
 
 
 if len(sys.argv) < 6:
@@ -132,7 +131,7 @@ def lnprob(theta, x, y, yerr):
         logvals.append(theta)
         return lp + lnlike(theta, x, y, yerr)
 
-def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW):
+def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
         #mu = fmean
         err_top = []
         err_bot = []
@@ -202,18 +201,17 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW):
             Logpr.append(center)
             err_top.append(err_t)
             err_bot.append(err_b)
-
-        plotdata(sys.argv, ROW)
-        plt.plot(times,err_top, color = 'g')
-        plt.plot(times,Logpr, color = 'b')
-        plt.plot(times,err_bot, color = 'g')
-        plt.title(' Object '+str(ROW))
-        plt.savefig('figure/sausage_mu_' + 'C1_lc' + sys.argv[5] + str(ROW) + '.png')
-        plt.close()
+        ax4 = fig.add_subplot(2, 2, 4)
+        plotdata(sys.argv, ROW, ax4)
+        ax4.plot(times,err_top, color = 'g')
+        ax4.plot(times,Logpr, color = 'b')
+        ax4.plot(times,err_bot, color = 'g')
+        ax4.set_title(' Object '+str(ROW)+ " Sausage Plot")
+        #plt.savefig('figure/sausage_mu_' + 'C1_lc' + sys.argv[5] + str(ROW) + '.png')
         #plt.show()
 
 def lnprob_dens(theta, x, y, yerr):
-        logprobs_dens.append(lnlike_old(theta, x, y, yerr))
+        logprobs_dens.append(lnlike(theta, x, y, yerr))
         logvals_dens.append(theta)
         return logprobs_dens
 
@@ -221,26 +219,26 @@ def goodrow(mags,errs,mjds):
         good = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags) & (errs > 0) & (errs != np.inf) & ~np.isnan(errs) & (mjds > 0) & (mjds != np.inf) & ~np.isnan(mjds)
         return [mags[good], errs[good], mjds[good]]
 
-def plotdata(args, ROW):
+def plotdata(args, ROW, ax4):
         fits = pyfit.open(args[1])[1].data
         VarRows = ROW #int(args[2])
         [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z] = getdata(fits, ROW) #17999
         rownum = str(ROW) #args[2]
 
-        plt.rcParams['font.size'] = 18
-        plt.figure()
-        plt.subplot(111)
-        plt.errorbar(mjds_g-57000, mags_g, yerr = errs_g, fmt = 'og')
+        #ax4.rcParams['font.size'] = 18
+        #plt.figure()
+        #plt.subplot(111)
+        ax4.errorbar(mjds_g-57000, mags_g, yerr = errs_g, fmt = 'og')
         #plt.errorbar(mjds_r-57000, mags_r, yerr = errs_r, fmt = 'or')
         #plt.errorbar(mjds_i-57000, mags_i, yerr = errs_i, fmt = 'ok')
         #plt.errorbar(mjds_z-57000, mags_z, yerr = errs_z, fmt = 'ob')
-        [xlim,ylim] = boundaries(np.hstack([mjds_g,mjds_r,mjds_i,mjds_z]),np.hstack([mags_g,mags_r,mags_i,mags_z]))
+        [xlim,ylim] = boundaries(np.hstack([mjds_g]),np.hstack([mags_g]))#,mjds_r,mjds_i,mjds_z #,mags_r,mags_i,mags_z
 
-        plt.ylim(ylim)
-        plt.xlabel('MJD-57000')
-        plt.ylabel('Mags')
+        ax4.set_ylim(ylim)
+        ax4.set_xlabel('MJD-57000')
+        ax4.set_ylabel('Mags')
         field = args[1].split('_')[0]
-        plt.title(field+' Object '+rownum)
+        ax4.set_title(field+' Object '+rownum)
 
 def boundaries(mjds,mags):
         mjdmin = 100*np.floor(np.min(mjds)*.01)
@@ -261,26 +259,7 @@ def getdata(fits,num):
 def preform_emcee(time,flux,sigma_sq,ROW):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         print(min(diff_time))
-        plt.figure()
-        plt.errorbar(time, flux, err)
-        plt.savefig('figure/'+ str(ROW) + 'LC_mu' + '.pdf')
-        #plt.show()
-
-        X = np.arange(-1, 5, .1) #tau
-        Y = np.arange(-2.5, 1.5, .1) #variance
-        X, Y = np.meshgrid(X, Y)
-        lprob_dens = lnprob_dens((Y, X), time, flux, err)
-        fig = plt.figure()
-        #print(np.array(lprob_dens).shape())
-        lprob_dens=np.array(lprob_dens)
-        print(lprob_dens.shape)
-        plt.pcolormesh(X, Y, lprob_dens.reshape(X.shape), shading='gouraud', cmap=cm.rainbow)
-        cbar = plt.colorbar()
-        cbar.set_label('log(probability)')
-        plt.xlabel("Tau")
-        plt.ylabel("Variance")
-        plt.savefig('figure/'+ str(ROW) + 'logprob_density_norm_mu' + '.pdf')
-        #plt.show()
+        fig = plt.figure(figsize=(10,10))
 
         nll = lambda *args: -lnlike(*args)
         ndim, nwalkers = 3, 100
@@ -310,21 +289,61 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         sampler.run_mcmc(pos, 200)
         samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
 
-        plt.figure()
-        plt.plot(logprobs)
-        plt.savefig('figure/'+ str(ROW) + sys.argv[5]+ 'logprob_mu' + '.pdf')
-        plt.close()
+        #plt.figure()
+        ax3 = fig.add_subplot(2, 2, 2)
+        ax3.plot(logprobs)
+        ax3.set_title("MCMC burn-in log(probability)")
+        #plt.savefig('figure/'+ str(ROW) + sys.argv[5]+ 'logprob_mu' + '.pdf')
 
         max_theta = logvals[logprobs.index(max(logprobs))]
-        fig = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu$"],
-                                                    truths=[max_theta[0], max_theta[1], max_theta[2]])
+        fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu$"],
+                            truths=[max_theta[0], max_theta[1], max_theta[2]])
 
-        fig.savefig("figure/"+str(ROW)+sys.argv[5]+"triangle_np_mu.pdf")
-        
+        fig1.savefig("figure/"+str(ROW)+sys.argv[5]+"triangle_np_mu.pdf")
+
         V_mcmc, Tau_mcmc, dMu_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
         print('V_mcmc:',V_mcmc, 'Tau_mcmc:',Tau_mcmc, 'dMu_mcmc:', dMu_mcmc, max_theta[0], max_theta[1], max_theta[2])
+        #stack = np.stack(logvals, axis=0)
+        stack = np.asarray(logvals)
+        V_stack = [x[0] for x in stack]
+        T_stack = [x[1] for x in stack]
+        print(stack[-1])
+        print(V_stack[-1])
+        print(T_stack[-1])
+        ax1 = fig.add_subplot(2,2,3)
+        a1 = ax1.hexbin(T_stack, V_stack, gridsize=(25,25), cmap=cm.viridis )
+        cbar = fig.colorbar(a1, ax=ax1)
+        ax1.set_ylabel(r"log$_{10}V$")
+        ax1.set_xlabel(r"log$_{10}\tau$")
+        ax1.set_title("MCMC heatmap of V and Tau")
+
+        #print(logvals[:-1])
+
+        X = np.arange(-1, 5, .1) #tau
+        Y = np.arange(-2.5, 1.5, .1) #variance
+        X, Y = np.meshgrid(X, Y)
+        lprob_dens = lnprob_dens((Y, X, max_theta[2]), time, flux, err)
+        lprob_dens=np.array(lprob_dens)
+        #lprob_dens[lprob_dens < -100] = -100
+
+
+        ax2 = fig.add_subplot(2, 2, 1)
+        #print(lprob_dens.shape)
+        a2 = ax2.pcolormesh(X, Y, lprob_dens.reshape(X.shape), shading='gouraud', cmap=cm.viridis)
+        cbar = fig.colorbar(a2, ax=ax2)
+        cbar.set_clim(-100,np.max(lprob_dens))
+        cbar.set_label('log(probability)')
+        ax2.set_ylabel(r"log$_{10}V$")
+        ax2.set_xlabel(r"log$_{10}\tau$")
+        ax2.set_title("Probability Density")
+        #plt.savefig('figure/'+ str(ROW) + 'logprob_density_norm_mu' + '.pdf')
+        #plt.show()
+
+        ax2.scatter(max_theta[1], max_theta[0], label="max_theta")
+        ax2.legend()
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
-        sausageplot(max_theta[0],time,flux,max_theta[1],5,err**2, ROW)
+        sausageplot(max_theta[0],time,flux,max_theta[1],5,err**2, ROW, fig)
+        fig.savefig("figure/"+str(ROW)+sys.argv[5]+"all_plot_mu.pdf")
         filename ='scratch_new/'+ str(ROW) + sys.argv[5]+'object_dMu' + '.txt'
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
@@ -342,9 +361,25 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
 
     print(ROW)
     flux, err, time, mu, FITS = get_vals(sys.argv,ROW)
+
+
+    print(len(flux))
     if len(flux) == 0:
         print("Flux length is zero")
         continue
+    zip_tfe = zip(time, flux, err)
+    filter_tfe = [(t, f, e) for t, f, e in zip_tfe if f > -1 and e > 0]
+    time, flux, err = zip(*filter_tfe)
+    time = np.array(time)
+    flux = np.array(flux)
+    err = np.array(err)
+
+    #if float(22.5-2.5*np.log10(mu)) > 21:
+    #    print("Row is too dim")
+    #    continue
+    #if float(22.5-2.5*np.log10(mu)) < 16:
+    #    print("Row is HELLA bright")
+    #    continue
 
     #M,delta_f,sigma_sq = Make_M(V,Tau,C)
 
