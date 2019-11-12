@@ -22,7 +22,7 @@ if len(sys.argv) < 6:
 V =0.3
 Tau = 365.0
 dMu = 0.1
-#print(sys.argv[2],sys.argv[3],sys.argv[4],type(sys.argv[3]))
+print(sys.argv[2],sys.argv[3],sys.argv[4],type(sys.argv[3]))
 
 def lognorm(state, flux, flux_err_sq):
         # This finds the normal distribution for any measurement (x),
@@ -144,25 +144,68 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
         Vari = 10 ** Vari
         Tau = 10 ** Tau
         times = []
+        #print(time)
+        #print(len(list(time)))
+        #print(np.count_nonzero((time[1:] - time[:-1])==0))
+
+        #print((len(list(time))))
+        #print(np.count_nonzero((time[1:] - time[:-1])<0.004))
+        t_df_sig = list(zip(time, delta_f, sigma_sq))
+        while np.count_nonzero((time[1:] - time[:-1])<0.004) > 0:
+            #print((len(list(time))))
+            #print(np.count_nonzero((time[1:] - time[:-1])==0))
+            t_df_sig = list(zip(time, delta_f, sigma_sq))
+            t_new=[]
+            df_new=[]
+            sig_new=[]
+            i = 0
+            while i < len(t_df_sig)-1:
+                if t_df_sig[i+1][0]- t_df_sig[i][0] < 0.004:
+                    t_new.append(np.mean((t_df_sig[i][0], t_df_sig[i+1][0])))
+                    df_new.append(np.mean((t_df_sig[i][1], t_df_sig[i+1][1])))
+                    sig_new.append(np.mean((t_df_sig[i][2], t_df_sig[i+1][2])))
+                    i= i+2
+                else:
+                    t_new.append(t_df_sig[i][0])
+                    df_new.append(t_df_sig[i][1])
+                    sig_new.append(t_df_sig[i][2])
+                    i=i+1
+            time = np.asarray(t_new)
+            #print(time[1:] - time[:-1])
+            delta_f = np.asarray(df_new)
+            sigma_sq = np.asarray(sig_new)
 
         for t in np.arange(min(time),max(time),dt):
             sigma_sq_s = np.append(sigma_sq, 0.0)
             dtime = np.append(time,t)
             delta_time = np.fabs(np.array(dtime,ndmin=2)-np.array(dtime,ndmin=2).T)
             #Make the modified matrix
+            #print(sigma_sq_s)
+            #print(Vari)
+            #print(delta_time)
+            #print(Tau)
             S = np.diag(sigma_sq_s) + (Vari**2) * np.exp(-1.0 * delta_time / Tau)
             times.append(t-57000)
             #Set up our guess for the flux
             t0 = [i for i in time if i >= t]
             t1 = [i for i in time if i <= t]
+
             t0 = t0[0]
             time_ind0 = np.where(time == t0)
+            if len(list(time_ind0[0]))>1:
+                time_ind0 = (np.asarray([time_ind0[0][0]]), )
+
             t1 = t1[-1]
             time_ind1 = np.where(time == t1)
+            if len(list(time_ind1[0]))>1:
+                time_ind1 = (np.asarray([time_ind1[0][0]]), )
+            #print(time_ind0, time_ind1)
+
             tp_0 = t0 / t
             tp_1 = t1 / t
             Fg1 = (tp_0 * delta_f[time_ind0]) + (tp_1 * delta_f[time_ind1])
             Fg1 = (Fg1 - mu)/mu
+            #Fg1 = (Fg1)
             Fg2 = Fg1 - 1
             Fg3 = Fg1 + 1
 
@@ -173,12 +216,15 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
             sign, value = np.linalg.slogdet(S)
             deter = sign * np.exp(value.item())
             #calculate the Log Probs
-            logP = -.5*np.log((deter))-.5*((np.dot(delf1,(np.dot(delf1,np.linalg.inv(S))))))
+            #print(len(delf1), len(delf2), len(delf3), np.linalg.inv(S).shape)
+
+            logP  = -.5*np.log((deter))-.5*((np.dot(delf1,(np.dot((delf1),np.linalg.inv(S))))))
             logP1 = -.5*np.log((deter))-.5*((np.dot(delf2,(np.dot((delf2),np.linalg.inv(S))))))
             logP2 = -.5*np.log((deter))-.5*((np.dot(delf3,(np.dot((delf3),np.linalg.inv(S))))))
 
             X = [Fg2,Fg1,Fg3]
             Y = [logP1,logP,logP2]
+            #print(type(logP1), print(Y))
             X = np.array(X)
             X = (X.T)[0]
             Matr = np.array([[X[0]**2,X[0],1],[X[1]**2,X[1],1],[X[2]**2,X[2],1]])
@@ -206,6 +252,9 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
             Logpr.append(center)
             err_top.append(err_t)
             err_bot.append(err_b)
+        #print(err_top)
+        #print(Logpr)
+        #print(err_bot)
         ax4 = fig.add_subplot(2, 2, 4)
         plotdata(sys.argv, ROW, ax4)
         ax4.plot(times,err_top, color = 'g')
@@ -243,9 +292,9 @@ def plotdata(args, ROW, ax4):
         #plt.figure()
         #plt.subplot(111)
         ax4.errorbar(mjds_g-57000, mags_g, yerr = errs_g, fmt = 'og')
-        ax4.errorbar(mjds_r-57000, mags_r + diff_r, yerr = errs_r, fmt = 'or')
-        ax4.errorbar(mjds_i-57000, mags_i + diff_i, yerr = errs_i, fmt = 'ok')
-        ax4.errorbar(mjds_z-57000, mags_z + diff_z, yerr = errs_z, fmt = 'ob')
+        ax4.errorbar(mjds_r-57000, mags_r, yerr = errs_r, fmt = 'or')
+        ax4.errorbar(mjds_i-57000, mags_i, yerr = errs_i, fmt = 'ok')
+        ax4.errorbar(mjds_z-57000, mags_z, yerr = errs_z, fmt = 'ob')
         [xlim,ylim] = boundaries(np.hstack([mjds_g,mjds_r,mjds_i,mjds_z]),np.hstack([mags_g,mags_r,mags_i,mags_z]))# #
 
         ax4.set_ylim(ylim)
@@ -272,15 +321,13 @@ def getdata(fits,num):
 
 def preform_emcee(time,flux,sigma_sq,ROW):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
-        #print(min(diff_time))
         fig = plt.figure(figsize=(10,10))
 
         nll = lambda *args: -lnlike(*args)
         ndim, nwalkers = 3, 100
-        #print("make pos")
+        #MAKE POSITION ARRAY ARRAY FOR WALKERS
         if sys.argv[5].lower() == 'normal':
             result = [np.log10(V), np.log10(Tau), dMu]
-#            pos = [result + (-0.5+np.random.randn(ndim)) for i in range(nwalkers)]
             pos = (np.random.rand(100,3)-0.5)*np.array([1,1,0.2])+result
         elif sys.argv[5].lower() == 'optimal':
             result = op.minimize(nll, [np.log10(V), np.log10(Tau), dMu],args=(time,flux, err**2))
@@ -289,29 +336,25 @@ def preform_emcee(time,flux,sigma_sq,ROW):
             print("What the hell do you want to do?")
             print("'optimal', or 'normal' search through MCMC?")
             exit()
-        #print(pos.shape())
-        #print("run sampler")
+
+        #run sampler
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
-        #print(np.array(pos).shape)
-        #print("run mcmc")
+        # run mcmc
         sampler.run_mcmc(pos, 200)
         samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
-        #print("sampler done")
 
         #plt.figure()
         ax3 = fig.add_subplot(2, 2, 2)
         ax3.plot(logprobs)
         ax3.set_title("MCMC burn-in log(probability)")
-        #plt.savefig('figure/'+ str(ROW) + sys.argv[5]+ 'logprob_mu' + '.pdf')
-        #print("log_prob plot")
 
+        #make corner plot
         max_theta = logvals[logprobs.index(max(logprobs))]
-        #print("max theta done")
         fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu$"],
                             truths=[max_theta[0], max_theta[1], max_theta[2]])
-        #print("corner plot")
 
-        fig1.savefig("figure/"+str(ROW)+sys.argv[5]+"triangle_np_mu.pdf")
+
+        fig1.savefig("figure/"+str(ROW)+sys.argv[5]+"_"+sys.argv[4]+"_"+"triangle_np_mu.pdf")
 
         V_mcmc, Tau_mcmc, dMu_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
         #print('V_mcmc:',V_mcmc, 'Tau_mcmc:',Tau_mcmc, 'dMu_mcmc:', dMu_mcmc, max_theta[0], max_theta[1], max_theta[2])
@@ -357,10 +400,10 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
 
         sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig)
-        fig.savefig("figure/"+str(ROW)+sys.argv[5]+"all_plot_mu.pdf")
+        fig.savefig("figure/"+str(ROW)+sys.argv[5]+"_"+sys.argv[4]+"_"+"all_plot_mu.pdf")
 
         #WRITE THE FOUND MAX THETA VALUES TO FILE
-        filename ='scratch_new/'+ str(ROW) + sys.argv[5]+'object_dMu' + '.txt'
+        filename ='scratch_new/'+ str(ROW) + sys.argv[5]+"_"+sys.argv[4]+"_"+'object_dMu' + '.txt'
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
             fout.write('Object: ' + str(ROW)+ ' ' + 'dMu: ' + str(max_theta[2])+ '\n')
