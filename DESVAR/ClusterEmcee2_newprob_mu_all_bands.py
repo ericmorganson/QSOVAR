@@ -12,8 +12,8 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 
 
-if len(sys.argv) < 6:
-  print("lightcurveplot.py INFITS ROWSTART ROWEND BAND MCMC_TYPE")
+if len(sys.argv) < 5:
+  print("lightcurveplot.py INFITS ROWSTART ROWEND MCMC_TYPE")
   print("INFITS is a fits table of DES Data,")
   print("ROWNUM is a row in that file")
   print("MCMC_TYPE is how you set up the MCMC search array: 'grid' or 'normal'")
@@ -22,7 +22,7 @@ if len(sys.argv) < 6:
 V =0.3
 Tau = 365.0
 dMu = 0.1
-print(sys.argv[2],sys.argv[3],sys.argv[4],type(sys.argv[3]))
+print(sys.argv[2],sys.argv[3],sys.argv[4])
 
 def lognorm(state, flux, flux_err_sq):
         # This finds the normal distribution for any measurement (x),
@@ -47,28 +47,37 @@ def weightedmean(state, flux, flux_err_sq):
         return state
 
 def get_vals(args, ROW):
-        FITS = pyfit.open(args[1])
-        color = sys.argv[4]
-        color = color.upper()
-        #Obtain flux, err, and time arrays
-        try:
-            lc_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
-        except IndexError:
-            print('Error')
-            exit()
-        lc_median = FITS[1].data['MEDIAN_PSF_'+color][ROW]
-        lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
-        lc_time = FITS[1].data['LC_MJD_'+color][ROW]
-        lc_time = lc_time[lc_time != 0.] #remove the zeros
+        color_dict = {"g":1, "r":2, "i":3, "z":4}
+        lc_median = {}
+        time = np.array([])
+        flux_norm = np.array([])
+        flux_err_norm = np.array([])
+        array_org = np.array([])
+        for color in "griz":
+            FITS = pyfit.open(args[1])
+            #color = sys.argv[4]
+            #color = color.upper()
+            #Obtain flux, err, and time arrays
+            try:
+                lc_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
+            except IndexError:
+                print('Error')
+                exit()
+            lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW]
+            lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
+            lc_time = FITS[1].data['LC_MJD_'+color][ROW]
+            time = np.append(time, lc_time[lc_time != 0.]) #remove the zeros
 
-        limit = len(lc_time)
-        lc_flux = lc_flux[:limit]
-        lc_flux_err = lc_flux_err[:limit]
+            limit = len(lc_time)
+            array_org = np.append(array_org, color_dict[color]*np.ones(limit))
+            lc_flux = lc_flux[:limit]
+            lc_flux_err = lc_flux_err[:limit]
 
-        lc_flux_norm = (lc_flux - lc_median)/lc_median
-        lc_flux_err_norm = lc_flux_err/lc_median
+            flux_norm = np.append(flux_norm, (lc_flux - lc_median[color])/lc_median[color])
+            flux_err_norm = np.append(flux_err_norm, lc_flux_err/lc_median[color])
 
-        return lc_flux_norm, lc_flux_err_norm, lc_time,lc_median, FITS
+        lc_time, lc_flux_norm, lc_flux_err_norm, lc_array_org = map(list, zip(*sorted(zip(time, flux_norm, flux_err_norm, array_org))))
+        return lc_flux_norm, lc_flux_err_norm, lc_time,lc_median, lc_array_org, FITS
 
 def lnlike(theta, time, flux, flux_err_sq):
         logV, logTau, logdMu = theta
@@ -76,9 +85,9 @@ def lnlike(theta, time, flux, flux_err_sq):
         V_ten = 10**logV
         Tau_ten = 10**logTau
         dMu_ten = logdMu
-        flux = flux - dMu_ten
+        flux = (flux-dMu_griz)*scale_griz
         # For multiband, this line will be  flux = (flux-dMu_griz)*scale_griz
-        # dMu_griz will containt du_g, dmu_r, etc.
+        # dMu_griz will containt dmu_g, dmu_r, etc.
         # scale_griz will by one for r band and the others will be set relative to other bands
         #due to normalization, mu is by definition 0
         state=(0,V_ten**2)
@@ -295,10 +304,10 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         nll = lambda *args: -lnlike(*args)
         ndim, nwalkers = 3, 100
         #MAKE POSITION ARRAY ARRAY FOR WALKERS
-        if sys.argv[5].lower() == 'normal':
+        if sys.argv[4].lower() == 'normal':
             result = [np.log10(V), np.log10(Tau), dMu]
             pos = (np.random.rand(100,3)-0.5)*np.array([1,1,0.2])+result
-        elif sys.argv[5].lower() == 'optimal':
+        elif sys.argv[4].lower() == 'optimal':
             result = op.minimize(nll, [np.log10(V), np.log10(Tau), dMu],args=(time,flux, err**2))
             pos = [result['x'] + 1e-4*np.random.rand(ndim) for i in range(nwalkers)]
         else:
@@ -322,7 +331,7 @@ def preform_emcee(time,flux,sigma_sq,ROW):
                             truths=[max_theta[0], max_theta[1], max_theta[2]])
 
 
-        fig1.savefig("figure/"+str(ROW)+sys.argv[5]+"_"+sys.argv[4]+"_"+"triangle_np_mu.pdf")
+        fig1.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"triangle_np_mu.pdf")
 
         V_mcmc, Tau_mcmc, dMu_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
         stack = np.asarray(logvals)
@@ -360,10 +369,10 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
 
         sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig)
-        fig.savefig("figure/"+str(ROW)+sys.argv[5]+"_"+sys.argv[4]+"_"+"all_plot_mu.pdf")
+        fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu.pdf")
 
         #WRITE THE FOUND MAX THETA VALUES TO FILE
-        filename ='scratch_new/'+ str(ROW) + sys.argv[5]+"_"+sys.argv[4]+"_"+'object_dMu' + '.txt'
+        filename ='scratch_new/'+ str(ROW) + sys.argv[4]+"_all_band_"+'object_dMu' + '.txt'
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
             fout.write('Object: ' + str(ROW)+ ' ' + 'dMu: ' + str(max_theta[2])+ '\n')
@@ -379,7 +388,10 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
 
 
     print("Running object "+str(ROW))
-    flux, err, time, mu, FITS = get_vals(sys.argv,ROW)
+    flux, err, time, mu, color_sort,  FITS = get_vals(sys.argv,ROW)
+
+    print(mu)
+    print(color_sort)
 
 
     #DOESN'T MAKE SENSE TO LOOK AT ROWS WITH NO FLUX MEASUREMENTS
@@ -389,22 +401,30 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
 
     #ONLY LET POSITIVE FLUXES AND ERRORS THROUGH
     #NOTE: FLUXES HERE ARE NORMALIZED, SO IF FLUX = 0, THEN norm(FLUX) = -1
-    zip_tfe = zip(time, flux, err)
-    filter_tfe = [(t, f, e) for t, f, e in zip_tfe if f > -1 and e > 0]
-    time, flux, err = zip(*filter_tfe)
+    zip_tfe = zip(time, flux, err, color_sort)
+    filter_tfe = [(t, f, e, c) for t, f, e, c in zip_tfe if f > -1 and e > 0]
+    time, flux, err, color_sort = zip(*filter_tfe)
     time = np.array(time)
     flux = np.array(flux)
     err = np.array(err)
+    color_sort = np.array(color_sort)
+
+    color_sort_ones = [(color_sort == 1).astype(int)]
+    for num in range(2,5):
+        color_sort_ones = np.concatenate((color_sort_ones,[(color_sort == num).astype(int)]), axis=0)
+    np.set_printoptions(threshold=np.inf)
+    print(color_sort_ones)
 
     #ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
-    if float(22.5-2.5*np.log10(mu)) > 21:
-        print("Row is too dim")
-        continue
-    if float(22.5-2.5*np.log10(mu)) < 16:
-        print("Row is HELLA bright")
-        continue
+    #for color in 'griz':
+    #    if float(22.5-2.5*np.log10(mu[color])) > 21:
+    #        print("Row is too dim in band: "+ color)
+    #        continue
+    #    if float(22.5-2.5*np.log10(mu[color])) < 16:
+    #        print("Row is HELLA bright in band: "+color)
+    #        continue
 
-    try:
-        preform_emcee(time, flux, err, ROW)
-    except np.linalg.linalg.LinAlgError as err:
-        continue
+    #try:
+    #    preform_emcee(time, flux, err, ROW)
+    #except np.linalg.linalg.LinAlgError as err:
+    #    continue
