@@ -1,0 +1,2 @@
+# In any package that needs
+python setup.py build_ext --inplace
