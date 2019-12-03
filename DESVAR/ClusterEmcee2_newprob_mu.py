@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import emcee
 import scipy.optimize as op
 import corner
+import lnlike_fast
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 
@@ -292,6 +293,7 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
 
+#        nll = lambda *args: -lnlike_fast.lnlike(*args)
         nll = lambda *args: -lnlike(*args)
         ndim, nwalkers = 3, 100
         #MAKE POSITION ARRAY ARRAY FOR WALKERS
@@ -397,7 +399,8 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     err = np.array(err)
 
     #ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
-    if float(22.5-2.5*np.log10(mu)) > 21:
+    if float(22.5-2.5*np.log10(mu)) > 22:
+        print(22.5-2.5*np.log10(mu))
         print("Row is too dim")
         continue
     if float(22.5-2.5*np.log10(mu)) < 16:

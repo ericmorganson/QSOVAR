@@ -88,12 +88,12 @@ def preform_emcee(time,delta_f,sigma_sq,ROW):
         
         plt.figure()
         plt.plot(logprobs)
-        plt.savefig('/home/sam/Documents/Morganson_research/QSOVAR/'+ str(ROW) + 'logprob_matrix' + '.pdf')
+        plt.savefig('scratch/'+str(ROW) + 'logprob_matrix' + '.pdf')
         plt.show()
 
         print('V_mcmc:',V_mcmc, 'Tau_mcmc:',Tau_mcmc, max_theta[0], max_theta[1])
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
-        filename ='/home/sam/Documents/Morganson_research/QSOVAR/scratch/'+ str(ROW) + 'object' + '.txt' 
+        filename ='scratch/'+ str(ROW) + 'object' + '.txt' 
         with open(filename, 'w') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
 for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
