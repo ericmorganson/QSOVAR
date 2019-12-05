@@ -22,6 +22,7 @@ if len(sys.argv) < 5:
 V =0.3
 Tau = 365.0
 dMu = 0.1
+scale = 1
 print(sys.argv[2],sys.argv[3],sys.argv[4])
 
 def lognorm(state, flux, flux_err_sq):
@@ -79,13 +80,17 @@ def get_vals(args, ROW):
         lc_time, lc_flux_norm, lc_flux_err_norm, lc_array_org = map(list, zip(*sorted(zip(time, flux_norm, flux_err_norm, array_org))))
         return lc_flux_norm, lc_flux_err_norm, lc_time,lc_median, lc_array_org, FITS
 
-def lnlike(theta, time, flux, flux_err_sq):
-        logV, logTau, logdMu = theta
+def lnlike(theta, time, flux_og, flux_err_sq, color_sort_ones):
+        logV, logTau, dMu_g, dMu_r, dMu_i, dMu_z, scale_g, scale_i, scale_z = theta
 
         V_ten = 10**logV
         Tau_ten = 10**logTau
-        dMu_ten = logdMu
-        flux = (flux-dMu_griz)*scale_griz
+        color_dict = {"g":0, "r":1, "i":2, "z":3}
+        dMu_dict = {"g":dMu_g, "r":dMu_r, "i":dMu_i, "z":dMu_z}
+        scale_dict = {"g":scale_g, "r":1, "i":scale_i, "z":scale_z}
+        flux = np.zeros_like(flux_og)
+        for color in 'griz':
+            flux += (flux_og*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]
         # For multiband, this line will be  flux = (flux-dMu_griz)*scale_griz
         # dMu_griz will containt dmu_g, dmu_r, etc.
         # scale_griz will by one for r band and the others will be set relative to other bands
@@ -126,18 +131,18 @@ def lnlike_old(theta, time, flux, flux_err_sq):
 
 
 def lnprior(theta):
-        logV, logTau, dMu = theta
-        if -3 < logV < 2 and 0 < logTau < 4 and -0.5 < dMu < 0.5 :
+        logV, logTau, dMu_g, dMu_r, dMu_i, dMu_z, scale_g, scale_i, scale_z = theta
+        if -3 < logV < 2 and 0 < logTau < 4 and list(x for x in [dMu_g, dMu_r, dMu_i, dMu_z] if -1 < x < 1) and list(y for y in [scale_g, scale_i, scale_z] if 0 < y <5):
             return 0.0
         return -np.inf
 
-def lnprob(theta, x, y, yerr):
+def lnprob(theta, x, y, yerr, color_sort_ones):
         lp = lnprior(theta)
         if not np.isfinite(lp):
             return -np.inf
-        logprobs.append(lp + lnlike(theta, x, y, yerr))
+        logprobs.append(lp + lnlike(theta, x, y, yerr, color_sort_ones))
         logvals.append(theta)
-        return lp + lnlike(theta, x, y, yerr)
+        return lp + lnlike(theta, x, y, yerr, color_sort_ones)
 
 def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
         err_top = []
@@ -297,18 +302,18 @@ def getdata(fits,num):
         [mags_z, errs_z, mjds_z] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_Z']), fits[num]['LC_FLUXERR_PSF_Z']/fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_MJD_Z'])
         return [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z]
 
-def preform_emcee(time,flux,sigma_sq,ROW):
+def perform_emcee(time, flux, sigma_sq, color_sort_ones, ROW):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
 
         nll = lambda *args: -lnlike(*args)
-        ndim, nwalkers = 3, 100
+        ndim, nwalkers = 9, 100
         #MAKE POSITION ARRAY ARRAY FOR WALKERS
         if sys.argv[4].lower() == 'normal':
-            result = [np.log10(V), np.log10(Tau), dMu]
-            pos = (np.random.rand(100,3)-0.5)*np.array([1,1,0.2])+result
+            result = [np.log10(V), np.log10(Tau), dMu, dMu, dMu, dMu, scale, scale, scale]
+            pos = (np.random.rand(nwalkers,ndim)-0.5)*np.array([1, 1, 0.2, 0.2, 0.2, 0.2, .5, .5, .5])+result
         elif sys.argv[4].lower() == 'optimal':
-            result = op.minimize(nll, [np.log10(V), np.log10(Tau), dMu],args=(time,flux, err**2))
+            result = op.minimize(nll, [np.log10(V), np.log10(Tau), dMu],args=(time,flux, err**2)) #not sure how this will work for the multi-band situation??
             pos = [result['x'] + 1e-4*np.random.rand(ndim) for i in range(nwalkers)]
         else:
             print("What the hell do you want to do?")
@@ -316,7 +321,7 @@ def preform_emcee(time,flux,sigma_sq,ROW):
             exit()
 
         #run sampler
-        sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
+        sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2, color_sort_ones))
         # run mcmc
         sampler.run_mcmc(pos, 200)
         samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
@@ -327,8 +332,10 @@ def preform_emcee(time,flux,sigma_sq,ROW):
 
         #make corner plot
         max_theta = logvals[logprobs.index(max(logprobs))]
-        fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu$"],
-                            truths=[max_theta[0], max_theta[1], max_theta[2]])
+        print(max_theta)
+        print(max_theta.shape)
+        fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu_g$", r"$d\mu_r$", r"$d\mu_i$", r"$d\mu_z$", r"scale$_g$", r"scale$_i$", r"scale$_z$"],
+                            truths=[max_theta[0], max_theta[1], max_theta[2], max_theta[3], max_theta[4], max_theta[5], max_theta[6], max_theta[7], max_theta[8]])
 
 
         fig1.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"triangle_np_mu.pdf")
@@ -390,8 +397,8 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     print("Running object "+str(ROW))
     flux, err, time, mu, color_sort,  FITS = get_vals(sys.argv,ROW)
 
-    print(mu)
-    print(color_sort)
+    #print(mu)
+    #print(color_sort)
 
 
     #DOESN'T MAKE SENSE TO LOOK AT ROWS WITH NO FLUX MEASUREMENTS
@@ -413,7 +420,7 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     for num in range(2,5):
         color_sort_ones = np.concatenate((color_sort_ones,[(color_sort == num).astype(int)]), axis=0)
     np.set_printoptions(threshold=np.inf)
-    print(color_sort_ones)
+    #print(color_sort_ones)
 
     #ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
     #for color in 'griz':
@@ -424,7 +431,7 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     #        print("Row is HELLA bright in band: "+color)
     #        continue
 
-    #try:
-    #    preform_emcee(time, flux, err, ROW)
-    #except np.linalg.linalg.LinAlgError as err:
-    #    continue
+    try:
+        perform_emcee(time, flux, err, color_sort_ones, ROW)
+    except np.linalg.linalg.LinAlgError as err:
+        continue

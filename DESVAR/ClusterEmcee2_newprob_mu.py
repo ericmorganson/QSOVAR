@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import emcee
 import scipy.optimize as op
 import corner
-import lnlike_fast
+#import lnlike_fast
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 
@@ -227,12 +227,16 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
             Logpr.append(center)
             err_top.append(err_t)
             err_bot.append(err_b)
-        ax4 = fig.add_subplot(2, 2, 4)
+
+        fig = plt.figure()
+        ax4 = plt.subplot(111)
+        #ax4 = fig.add_subplot(2, 2, 4)
         plotdata(sys.argv, ROW, ax4)
         ax4.plot(times,err_top, color = 'g')
         ax4.plot(times,Logpr, color = 'b')
         ax4.plot(times,err_bot, color = 'g')
         ax4.set_title(' Object '+str(ROW)+ " Sausage Plot")
+        fig.savefig("figure/"+str(ROW)+sys.argv[5]+"_"+sys.argv[4]+"_sausageplot.pdf")
 
 
 def lnprob_dens(theta, x, y, yerr):
@@ -261,15 +265,16 @@ def plotdata(args, ROW, ax4):
 
         #ax4.rcParams['font.size'] = 18
 
-        ax4.errorbar(mjds_g-57000, mags_g, yerr = errs_g, fmt = 'og')
-        ax4.errorbar(mjds_r-57000, mags_r, yerr = errs_r, fmt = 'or')
-        ax4.errorbar(mjds_i-57000, mags_i, yerr = errs_i, fmt = 'ok')
-        ax4.errorbar(mjds_z-57000, mags_z, yerr = errs_z, fmt = 'ob')
+        ax4.errorbar(mjds_g-57000, mags_g, yerr = errs_g, fmt = 'og', label = "g-band")
+        ax4.errorbar(mjds_r-57000, mags_r, yerr = errs_r, fmt = 'or', label = "r-band")
+        ax4.errorbar(mjds_i-57000, mags_i, yerr = errs_i, fmt = 'ok', label = "i-band")
+        ax4.errorbar(mjds_z-57000, mags_z, yerr = errs_z, fmt = 'ob', label = "z-band")
         [xlim,ylim] = boundaries(np.hstack([mjds_g,mjds_r,mjds_i,mjds_z]),np.hstack([mags_g,mags_r,mags_i,mags_z]))# #
 
         ax4.set_ylim(ylim)
         ax4.set_xlabel('MJD-57000')
         ax4.set_ylabel('Mags')
+        ax4.legend()
         field = args[1].split('_')[0]
         ax4.set_title(field+' Object '+rownum)
 
@@ -293,8 +298,8 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
 
-#        nll = lambda *args: -lnlike_fast.lnlike(*args)
         nll = lambda *args: -lnlike(*args)
+        #nll = lambda *args: -lnlike_fast.lnlike(*args)
         ndim, nwalkers = 3, 100
         #MAKE POSITION ARRAY ARRAY FOR WALKERS
         if sys.argv[5].lower() == 'normal':
@@ -311,8 +316,8 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         #run sampler
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2))
         # run mcmc
-        sampler.run_mcmc(pos, 200)
-        samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
+        sampler.run_mcmc(pos, 500)
+        samples = sampler.chain[:, 20:, :].reshape((-1, ndim))
 
         ax3 = fig.add_subplot(2, 2, 2)
         ax3.plot(logprobs)
@@ -399,13 +404,13 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     err = np.array(err)
 
     #ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
-    if float(22.5-2.5*np.log10(mu)) > 22:
-        print(22.5-2.5*np.log10(mu))
-        print("Row is too dim")
-        continue
-    if float(22.5-2.5*np.log10(mu)) < 16:
-        print("Row is HELLA bright")
-        continue
+    #if float(22.5-2.5*np.log10(mu)) > 22:
+        #print(22.5-2.5*np.log10(mu))
+        #print("Row is too dim")
+        #continue
+    #if float(22.5-2.5*np.log10(mu)) < 16:
+    #    print("Row is HELLA bright")
+    #    continue
 
     try:
         preform_emcee(time, flux, err, ROW)
