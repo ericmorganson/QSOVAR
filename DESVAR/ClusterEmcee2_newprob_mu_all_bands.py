@@ -22,7 +22,7 @@ if len(sys.argv) < 5:
 V =0.3
 Tau = 365.0
 dMu = 0.1
-scale = 1
+scale = 1 #aka, scaling is the same as r band
 print(sys.argv[2],sys.argv[3],sys.argv[4])
 
 def lognorm(state, flux, flux_err_sq):
