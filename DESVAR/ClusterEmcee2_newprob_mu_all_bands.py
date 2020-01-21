@@ -78,7 +78,7 @@ def get_vals(args, ROW):
             flux_err_norm = np.append(flux_err_norm, lc_flux_err/lc_median[color])
 
         lc_time, lc_flux_norm, lc_flux_err_norm, lc_array_org = map(list, zip(*sorted(zip(time, flux_norm, flux_err_norm, array_org))))
-        return lc_flux_norm, lc_flux_err_norm, lc_time,lc_median, lc_array_org, FITS
+        return lc_flux_norm, lc_flux_err_norm, lc_time, lc_median, lc_array_org, FITS
 
 def lnlike(theta, time, flux_og, flux_err_sq, color_sort_ones):
         logV, logTau, dMu_g, dMu_r, dMu_i, dMu_z, scale_g, scale_i, scale_z = theta
@@ -144,13 +144,22 @@ def lnprob(theta, x, y, yerr, color_sort_ones):
         logvals.append(theta)
         return lp + lnlike(theta, x, y, yerr, color_sort_ones)
 
-def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
+def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_sort_ones):
         err_top = []
         err_bot = []
         Logpr = []
         Vari = 10 ** Vari
         Tau = 10 ** Tau
         times = []
+
+        color_dict = {"g":0, "r":1, "i":2, "z":3}
+        dMu_dict = {"g":dmu_scales[0], "r":dmu_scales[1], "i":dmu_scales[2], "z":dmu_scales[3]}
+        scale_dict = {"g":dmu_scales[4], "r":1, "i":dmu_scales[5], "z":dmu_scales[6]}
+        flux = np.zeros_like(delta_f)
+        for color in 'griz':
+            flux += (delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]
+        delta_f = flux
+        print(type(delta_f))
 
         while np.count_nonzero((time[1:] - time[:-1])<0.004) > 0:
             t_df_sig = list(zip(time, delta_f, sigma_sq))
@@ -197,6 +206,7 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
             tp_0 = t0 / t
             tp_1 = t1 / t
             Fg1 = (tp_0 * delta_f[time_ind0]) + (tp_1 * delta_f[time_ind1])
+            print(mu)
             Fg1 = (Fg1 - mu)/mu
             Fg2 = Fg1 - 1
             Fg3 = Fg1 + 1
@@ -240,8 +250,8 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
             Logpr.append(center)
             err_top.append(err_t)
             err_bot.append(err_b)
-        ax4 = fig.add_subplot(2, 2, 4)
-        plotdata(sys.argv, ROW, ax4)
+        ax4 = fig.add_subplot(111)
+        plotdata(sys.argv, ROW, ax4, dmu_scales)
         ax4.plot(times,err_top, color = 'g')
         ax4.plot(times,Logpr, color = 'b')
         ax4.plot(times,err_bot, color = 'g')
@@ -302,7 +312,7 @@ def getdata(fits,num):
         [mags_z, errs_z, mjds_z] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_Z']), fits[num]['LC_FLUXERR_PSF_Z']/fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_MJD_Z'])
         return [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z]
 
-def perform_emcee(time, flux, sigma_sq, color_sort_ones, ROW):
+def perform_emcee(time, flux, sigma_sq, color_sort, ROW):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
 
@@ -326,9 +336,9 @@ def perform_emcee(time, flux, sigma_sq, color_sort_ones, ROW):
         sampler.run_mcmc(pos, 200)
         samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
 
-        ax3 = fig.add_subplot(2, 2, 2)
-        ax3.plot(logprobs)
-        ax3.set_title("MCMC burn-in log(probability)")
+        #ax3 = fig.add_subplot(2, 2, 2)
+        #ax3.plot(logprobs)
+        #ax3.set_title("MCMC burn-in log(probability)")
 
         #make corner plot
         max_theta = logvals[logprobs.index(max(logprobs))]
@@ -340,42 +350,42 @@ def perform_emcee(time, flux, sigma_sq, color_sort_ones, ROW):
 
         fig1.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"triangle_np_mu.pdf")
 
-        V_mcmc, Tau_mcmc, dMu_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
-        stack = np.asarray(logvals)
-        V_stack = [x[0] for x in stack]
-        T_stack = [x[1] for x in stack]
-        ax1 = fig.add_subplot(2,2,3)
-        a1 = ax1.hexbin(T_stack, V_stack, gridsize=(25,25), cmap=cm.viridis )
-        ax1.scatter(max_theta[1], max_theta[0], label="max_theta", color="xkcd:orange")
-        ax1.legend()
-        cbar = fig.colorbar(a1, ax=ax1)
-        ax1.set_ylabel(r"log$_{10}V$")
-        ax1.set_xlabel(r"log$_{10}\tau$")
-        ax1.set_title("MCMC heatmap of V and Tau")
+        #V_mcmc, Tau_mcmc, dMu_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
+        #stack = np.asarray(logvals)
+        #V_stack = [x[0] for x in stack]
+        #T_stack = [x[1] for x in stack]
+        #ax1 = fig.add_subplot(2,2,3)
+        #a1 = ax1.hexbin(T_stack, V_stack, gridsize=(25,25), cmap=cm.viridis )
+        #ax1.scatter(max_theta[1], max_theta[0], label="max_theta", color="xkcd:orange")
+        #ax1.legend()
+        #cbar = fig.colorbar(a1, ax=ax1)
+        #ax1.set_ylabel(r"log$_{10}V$")
+        #ax1.set_xlabel(r"log$_{10}\tau$")
+        #ax1.set_title("MCMC heatmap of V and Tau")
 
-        X = np.arange(-1, 5, .1) #tau
-        Y = np.arange(-2.5, 1.5, .1) #variance
-        X, Y = np.meshgrid(X, Y)
-        lprob_dens = lnprob_dens((Y, X, max_theta[2]), time, flux, err)
-        lprob_dens=np.array(lprob_dens)
+        #X = np.arange(-1, 5, .1) #tau
+        #Y = np.arange(-2.5, 1.5, .1) #variance
+        #X, Y = np.meshgrid(X, Y)
+        #lprob_dens = lnprob_dens((Y, X, max_theta[2]), time, flux, err)
+        #lprob_dens=np.array(lprob_dens)
         #lprob_dens[lprob_dens < -100] = -100
 
 
-        ax2 = fig.add_subplot(2, 2, 1)
-        a2 = ax2.pcolormesh(X, Y, lprob_dens.reshape(X.shape), shading='gouraud', cmap=cm.viridis)
-        cbar = fig.colorbar(a2, ax=ax2)
-        cbar.set_clim(-100,np.max(lprob_dens))
-        cbar.set_label('log(probability)')
-        ax2.set_ylabel(r"log$_{10}V$")
-        ax2.set_xlabel(r"log$_{10}\tau$")
-        ax2.set_title("Probability Density")
-        ax2.scatter(max_theta[1], max_theta[0], label="max_theta", color="xkcd:orange")
-        ax2.legend()
+        #ax2 = fig.add_subplot(2, 2, 1)
+        #a2 = ax2.pcolormesh(X, Y, lprob_dens.reshape(X.shape), shading='gouraud', cmap=cm.viridis)
+        #cbar = fig.colorbar(a2, ax=ax2)
+        #cbar.set_clim(-100,np.max(lprob_dens))
+        #cbar.set_label('log(probability)')
+        #ax2.set_ylabel(r"log$_{10}V$")
+        #ax2.set_xlabel(r"log$_{10}\tau$")
+        #ax2.set_title("Probability Density")
+        #ax2.scatter(max_theta[1], max_theta[0], label="max_theta", color="xkcd:orange")
+        #ax2.legend()
 
         #PRINT MAX THETA VALUES TO THE SCREEN
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
 
-        sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig)
+        sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones)
         fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu.pdf")
 
         #WRITE THE FOUND MAX THETA VALUES TO FILE
@@ -415,6 +425,7 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     flux = np.array(flux)
     err = np.array(err)
     color_sort = np.array(color_sort)
+    #print(color_sort)
 
     color_sort_ones = [(color_sort == 1).astype(int)]
     for num in range(2,5):
@@ -432,6 +443,6 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     #        continue
 
     try:
-        perform_emcee(time, flux, err, color_sort_ones, ROW)
+        perform_emcee(time, flux, err, color_sort, ROW)
     except np.linalg.linalg.LinAlgError as err:
         continue

@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import emcee
 import scipy.optimize as op
 import corner
-#import lnlike_fast
+import lnlike_fast
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 
@@ -127,9 +127,9 @@ def lnprob(theta, x, y, yerr):
         lp = lnprior(theta)
         if not np.isfinite(lp):
             return -np.inf
-        logprobs.append(lp + lnlike(theta, x, y, yerr))
+        logprobs.append(lp + lnlike_fast.lnlike(theta, x, y, yerr))
         logvals.append(theta)
-        return lp + lnlike(theta, x, y, yerr)
+        return lp + lnlike_fast.lnlike(theta, x, y, yerr)
 
 def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
         err_top = []
@@ -298,8 +298,8 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
 
-        
-        nll = lambda *args: -lnlike(*args)
+        #nll = lambda *args: -lnlike(*args)
+        nll = lambda *args: -lnlike_fast.lnlike(*args)
         ndim, nwalkers = 3, 100
         #MAKE POSITION ARRAY ARRAY FOR WALKERS
         if sys.argv[5].lower() == 'normal':
