@@ -21,7 +21,7 @@ if len(sys.argv) < 5:
 # Initial MCMC guesses
 V =0.3
 Tau = 365.0
-dMu = 0.1
+dMu = 0.0
 scale = 1 #aka, scaling is the same as r band
 print(sys.argv[2],sys.argv[3],sys.argv[4])
 
@@ -54,6 +54,9 @@ def get_vals(args, ROW):
         flux_norm = np.array([])
         flux_err_norm = np.array([])
         array_org = np.array([])
+        fig = plt.figure(figsize=(10,10))
+        ax5 = fig.add_subplot(111)
+        color_plt=iter(cm.rainbow(np.linspace(0,1,5)))
         for color in "griz":
             FITS = pyfit.open(args[1])
             #color = sys.argv[4]
@@ -69,14 +72,21 @@ def get_vals(args, ROW):
             lc_time = FITS[1].data['LC_MJD_'+color][ROW]
             time = np.append(time, lc_time[lc_time != 0.]) #remove the zeros
 
-            limit = len(lc_time)
+            limit = len(lc_time[lc_time!=0])
             array_org = np.append(array_org, color_dict[color]*np.ones(limit))
             lc_flux = lc_flux[:limit]
             lc_flux_err = lc_flux_err[:limit]
+            c=next(color_plt)
+            #print(len(lc_time[lc_time!=0]))
+            #print(len((lc_flux[0:limit] - lc_median[color])/lc_median[color]))
+            ax5.scatter(lc_time[lc_time!=0], (lc_flux[0:limit] - lc_median[color])/lc_median[color], c = c, label=color)
+            ax5.legend()
+
 
             flux_norm = np.append(flux_norm, (lc_flux - lc_median[color])/lc_median[color])
             flux_err_norm = np.append(flux_err_norm, lc_flux_err/lc_median[color])
 
+        fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu_before.pdf")
         lc_time, lc_flux_norm, lc_flux_err_norm, lc_array_org = map(list, zip(*sorted(zip(time, flux_norm, flux_err_norm, array_org))))
         return lc_flux_norm, lc_flux_err_norm, lc_time, lc_median, lc_array_org, FITS
 
@@ -132,8 +142,9 @@ def lnlike_old(theta, time, flux, flux_err_sq):
 
 def lnprior(theta):
         logV, logTau, dMu_g, dMu_r, dMu_i, dMu_z, scale_g, scale_i, scale_z = theta
-        if -3 < logV < 2 and 0 < logTau < 4 and list(x for x in [dMu_g, dMu_r, dMu_i, dMu_z] if -1 < x < 1) and list(y for y in [scale_g, scale_i, scale_z] if 0 < y <5):
-            return 0.0
+        if -3 < logV < 2 and 0 < logTau < 4 and list(x for x in [dMu_g, dMu_r, dMu_i, dMu_z] if -1.0 < x < 1.0) and list(y for y in [scale_g, scale_i, scale_z] if 0 < y <5):
+            #return 0.0
+            return logTau-dMu_g**2/0.1**2 - dMu_r**2/0.1**2 - dMu_i**2/0.1**2 - dMu_z**2/0.1**2
         return -np.inf
 
 def lnprob(theta, x, y, yerr, color_sort_ones):
@@ -144,7 +155,7 @@ def lnprob(theta, x, y, yerr, color_sort_ones):
         logvals.append(theta)
         return lp + lnlike(theta, x, y, yerr, color_sort_ones)
 
-def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_sort_ones):
+def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_sort_ones, mu):
         err_top = []
         err_bot = []
         Logpr = []
@@ -157,9 +168,9 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
         scale_dict = {"g":dmu_scales[4], "r":1, "i":dmu_scales[5], "z":dmu_scales[6]}
         flux = np.zeros_like(delta_f)
         for color in 'griz':
-            flux += (delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]
+            flux += ((delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color] + dMu_dict['r'])*mu['r'] + mu['r'] #(delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color] + dMu_dict['r']
         delta_f = flux
-        print(type(delta_f))
+        #print(type(delta_f))
 
         while np.count_nonzero((time[1:] - time[:-1])<0.004) > 0:
             t_df_sig = list(zip(time, delta_f, sigma_sq))
@@ -188,6 +199,12 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
             delta_time = np.fabs(np.array(dtime,ndmin=2)-np.array(dtime,ndmin=2).T)
             #Make the modified matrix
             S = np.diag(sigma_sq_s) + (Vari**2) * np.exp(-1.0 * delta_time / Tau)
+
+            print("sigma_sqr_s= "+sigma_sqr_s)
+            print("Vari= " + Vari)
+            print("delta_time= "+delta_time)
+            print("Tau= "+Tau)
+            print(np.exp(-1.0 * delta_time / Tau))
             times.append(t-57000)
             #Set up our guess for the flux
             t0 = [i for i in time if i >= t]
@@ -206,8 +223,10 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
             tp_0 = t0 / t
             tp_1 = t1 / t
             Fg1 = (tp_0 * delta_f[time_ind0]) + (tp_1 * delta_f[time_ind1])
-            print(mu)
-            Fg1 = (Fg1 - mu)/mu
+            #print(mu)
+            mu_r = mu['r']
+            #print(mu_r)
+            Fg1 = (Fg1 - mu_r)/mu_r
             Fg2 = Fg1 - 1
             Fg3 = Fg1 + 1
 
@@ -217,6 +236,9 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
 
             sign, value = np.linalg.slogdet(S)
             deter = sign * np.exp(value.item())
+            #print(delf1)
+            if np.any(S < 0):
+                print(S)
 
             logP  = -.5*np.log((deter))-.5*((np.dot(delf1,(np.dot((delf1),np.linalg.inv(S))))))
             logP1 = -.5*np.log((deter))-.5*((np.dot(delf2,(np.dot((delf2),np.linalg.inv(S))))))
@@ -242,16 +264,19 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
             sig = 22.5-2.5*np.log10((sig_sq))
             logPn = result[0]*((Fm - f_0)**2) + result[2] - (result[1]**2)/(4*result[0])
             nsig=2
-            sig1 = mu * (np.sqrt(sig_sq) + f_0) + mu
-            sig2 = mu * (-np.sqrt(sig_sq) + f_0) + mu
-            center = 22.5-2.5*np.log10((mu * (f_0))+mu)
-            err_t = 22.5-2.5*np.log10((mu * (f_0 + nsig*np.sqrt(sig_sq)))+mu)
-            err_b = 22.5-2.5*np.log10((mu * (f_0 - nsig*np.sqrt(sig_sq)))+mu)
+            sig1 = mu_r * (np.sqrt(sig_sq) + f_0) + mu_r
+            sig2 = mu_r * (-np.sqrt(sig_sq) + f_0) + mu_r
+            center = 22.5-2.5*np.log10((mu_r * (f_0))+mu_r)
+            err_t = 22.5-2.5*np.log10((mu_r * (f_0 + nsig*np.sqrt(sig_sq)))+mu_r)
+            err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
             Logpr.append(center)
             err_top.append(err_t)
             err_bot.append(err_b)
         ax4 = fig.add_subplot(111)
-        plotdata(sys.argv, ROW, ax4, dmu_scales)
+        plotdata(sys.argv, ROW, ax4, dmu_scales, color_sort_ones)
+        #print(err_top)
+        #print(Logpr)
+        #print(err_bot)
         ax4.plot(times,err_top, color = 'g')
         ax4.plot(times,Logpr, color = 'b')
         ax4.plot(times,err_bot, color = 'g')
@@ -267,32 +292,43 @@ def goodrow(mags,errs,mjds):
         good = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags) & (errs > 0) & (errs != np.inf) & ~np.isnan(errs) & (mjds > 0) & (mjds != np.inf) & ~np.isnan(mjds)
         return [mags[good], errs[good], mjds[good]]
 
-def plotdata(args, ROW, ax4):
+def plotdata(args, ROW, ax4, dmu_scales, color_sort_ones):
         fits = pyfit.open(args[1])[1].data
         VarRows = ROW
         [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z] = getdata(fits, ROW) #17999
         rownum = str(ROW)
 
-        mean_g = np.mean(mags_g)
-        mean_r = np.mean(mags_r)
-        mean_i = np.mean(mags_i)
-        mean_z = np.mean(mags_z)
+        mean_g = np.median(mags_g)
+        mean_r = np.median(mags_r)
+        mean_i = np.median(mags_i)
+        mean_z = np.median(mags_z)
 
-        diff_r = mean_g - mean_r
-        diff_i = mean_g - mean_i
-        diff_z = mean_g - mean_z
+        mags_g = (mags_g - mean_g)/mean_g
+        mags_r = (mags_r - mean_r)/mean_r
+        mags_i = (mags_i - mean_i)/mean_i
+        mags_z = (mags_z - mean_z)/mean_z
+        #dmu_scales[0:4] = 22.5 - 2.5*np.log10(dmu_scales)[0:4]
+
+        dMu_dict = {"g":dmu_scales[0], "r":dmu_scales[1], "i":dmu_scales[2], "z":dmu_scales[3]}
+        scale_dict = {"g":dmu_scales[4], "r":1, "i":dmu_scales[5], "z":dmu_scales[6]}
+
+        mags_g = 22.5-2.5*np.log10(((mags_g-dMu_dict['g'])*scale_dict['g'] + dMu_dict['r'])*mean_r + mean_r) #(mags_g-(dMu_dict['g']) - mean_g)*scale_dict['g'] +mean_r + dMu_dict['r']
+        mags_r = 22.5-2.5*np.log10(((mags_r-dMu_dict['r'])*scale_dict['r'] + dMu_dict['r'])*mean_r + mean_r) #(mags_r-(dMu_dict['r']) - mean_r)*scale_dict['r'] +mean_r + dMu_dict['r']
+        mags_i = 22.5-2.5*np.log10(((mags_i-dMu_dict['i'])*scale_dict['i'] + dMu_dict['r'])*mean_r + mean_r) #(mags_i-(dMu_dict['i']) - mean_i)*scale_dict['i'] +mean_r + dMu_dict['r']
+        mags_z = 22.5-2.5*np.log10(((mags_z-dMu_dict['z'])*scale_dict['z'] + dMu_dict['r'])*mean_r + mean_r) #(mags_z-(dMu_dict['z']) - mean_z)*scale_dict['z'] +mean_r + dMu_dict['r']
 
         #ax4.rcParams['font.size'] = 18
 
-        ax4.errorbar(mjds_g-57000, mags_g, yerr = errs_g, fmt = 'og')
-        ax4.errorbar(mjds_r-57000, mags_r, yerr = errs_r, fmt = 'or')
-        ax4.errorbar(mjds_i-57000, mags_i, yerr = errs_i, fmt = 'ok')
-        ax4.errorbar(mjds_z-57000, mags_z, yerr = errs_z, fmt = 'ob')
+        ax4.errorbar(mjds_g-57000, mags_g, yerr = errs_g, fmt = 'og', label='G, dmu='+str(round(dMu_dict['g'], 5))+', scale='+str(round(scale_dict['g'], 5)))
+        ax4.errorbar(mjds_r-57000, mags_r, yerr = errs_r, fmt = 'or', label='R, dmu='+str(round(dMu_dict['r'], 5))+', scale='+str(round(scale_dict['r'], 5)))
+        ax4.errorbar(mjds_i-57000, mags_i, yerr = errs_i, fmt = 'ok', label='I, dmu='+str(round(dMu_dict['i'], 5))+', scale='+str(round(scale_dict['i'], 5)))
+        ax4.errorbar(mjds_z-57000, mags_z, yerr = errs_z, fmt = 'ob', label='Z, dmu='+str(round(dMu_dict['z'], 5))+', scale='+str(round(scale_dict['z'], 5)))
         [xlim,ylim] = boundaries(np.hstack([mjds_g,mjds_r,mjds_i,mjds_z]),np.hstack([mags_g,mags_r,mags_i,mags_z]))# #
 
         ax4.set_ylim(ylim)
         ax4.set_xlabel('MJD-57000')
         ax4.set_ylabel('Mags')
+        ax4.legend()
         field = args[1].split('_')[0]
         ax4.set_title(field+' Object '+rownum)
 
@@ -306,13 +342,13 @@ def boundaries(mjds,mags):
 
 def getdata(fits,num):
 
-        [mags_g, errs_g, mjds_g] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_G']), fits[num]['LC_FLUXERR_PSF_G']/fits[num]['LC_FLUX_PSF_G'], fits[num]['LC_MJD_G'])
-        [mags_r, errs_r, mjds_r] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_R']), fits[num]['LC_FLUXERR_PSF_R']/fits[num]['LC_FLUX_PSF_R'], fits[num]['LC_MJD_R'])
-        [mags_i, errs_i, mjds_i] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_I']), fits[num]['LC_FLUXERR_PSF_I']/fits[num]['LC_FLUX_PSF_I'], fits[num]['LC_MJD_I'])
-        [mags_z, errs_z, mjds_z] = goodrow(22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_Z']), fits[num]['LC_FLUXERR_PSF_Z']/fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_MJD_Z'])
+        [mags_g, errs_g, mjds_g] = goodrow(fits[num]['LC_FLUX_PSF_G'], fits[num]['LC_FLUXERR_PSF_G']/fits[num]['LC_FLUX_PSF_G'], fits[num]['LC_MJD_G']) #22.5-2.5*np.log10(fits[num]['LC_FLUX_PSF_G'])
+        [mags_r, errs_r, mjds_r] = goodrow(fits[num]['LC_FLUX_PSF_R'], fits[num]['LC_FLUXERR_PSF_R']/fits[num]['LC_FLUX_PSF_R'], fits[num]['LC_MJD_R'])
+        [mags_i, errs_i, mjds_i] = goodrow(fits[num]['LC_FLUX_PSF_I'], fits[num]['LC_FLUXERR_PSF_I']/fits[num]['LC_FLUX_PSF_I'], fits[num]['LC_MJD_I'])
+        [mags_z, errs_z, mjds_z] = goodrow(fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_FLUXERR_PSF_Z']/fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_MJD_Z'])
         return [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z]
 
-def perform_emcee(time, flux, sigma_sq, color_sort, ROW):
+def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
 
@@ -321,9 +357,9 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW):
         #MAKE POSITION ARRAY ARRAY FOR WALKERS
         if sys.argv[4].lower() == 'normal':
             result = [np.log10(V), np.log10(Tau), dMu, dMu, dMu, dMu, scale, scale, scale]
-            pos = (np.random.rand(nwalkers,ndim)-0.5)*np.array([1, 1, 0.2, 0.2, 0.2, 0.2, .5, .5, .5])+result
+            pos = (np.random.rand(nwalkers,ndim)-0.5)*np.array([1, 1, 0.1, 0.1, 0.1, 0.1, .5, .5, .5])+result
         elif sys.argv[4].lower() == 'optimal':
-            result = op.minimize(nll, [np.log10(V), np.log10(Tau), dMu],args=(time,flux, err**2)) #not sure how this will work for the multi-band situation??
+            result = op.minimize(nll, [np.log10(V), np.log10(Tau), dMu, dMu, dMu, dMu, scale, scale, scale],args=(time,flux, err**2, color_sort_ones)) #not sure how this will work for the multi-band situation??
             pos = [result['x'] + 1e-4*np.random.rand(ndim) for i in range(nwalkers)]
         else:
             print("What the hell do you want to do?")
@@ -339,6 +375,7 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW):
         #ax3 = fig.add_subplot(2, 2, 2)
         #ax3.plot(logprobs)
         #ax3.set_title("MCMC burn-in log(probability)")
+        #print(logprobs)
 
         #make corner plot
         max_theta = logvals[logprobs.index(max(logprobs))]
@@ -385,7 +422,7 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW):
         #PRINT MAX THETA VALUES TO THE SCREEN
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
 
-        sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones)
+        sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones, mu)
         fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu.pdf")
 
         #WRITE THE FOUND MAX THETA VALUES TO FILE
@@ -402,7 +439,6 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
 
     logprobs_dens = []
     logvals_dens = []
-
 
     print("Running object "+str(ROW))
     flux, err, time, mu, color_sort,  FITS = get_vals(sys.argv,ROW)
@@ -441,8 +477,8 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     #    if float(22.5-2.5*np.log10(mu[color])) < 16:
     #        print("Row is HELLA bright in band: "+color)
     #        continue
-
+    print(mu)
     try:
-        perform_emcee(time, flux, err, color_sort, ROW)
+        perform_emcee(time, flux, err, color_sort, ROW, mu)
     except np.linalg.linalg.LinAlgError as err:
         continue
