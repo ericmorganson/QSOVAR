@@ -10,6 +10,7 @@ import scipy.optimize as op
 import corner
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
+import itertools
 
 
 if len(sys.argv) < 5:
@@ -59,8 +60,6 @@ def get_vals(args, ROW):
         color_plt=iter(cm.rainbow(np.linspace(0,1,5)))
         for color in "griz":
             FITS = pyfit.open(args[1])
-            #color = sys.argv[4]
-            #color = color.upper()
             #Obtain flux, err, and time arrays
             try:
                 lc_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
@@ -76,11 +75,11 @@ def get_vals(args, ROW):
             array_org = np.append(array_org, color_dict[color]*np.ones(limit))
             lc_flux = lc_flux[:limit]
             lc_flux_err = lc_flux_err[:limit]
-            c=next(color_plt)
-            #print(len(lc_time[lc_time!=0]))
-            #print(len((lc_flux[0:limit] - lc_median[color])/lc_median[color]))
-            ax5.scatter(lc_time[lc_time!=0], (lc_flux[0:limit] - lc_median[color])/lc_median[color], c = c, label=color)
+            col=next(color_plt)
+
+            ax5.scatter(lc_time[lc_time!=0], (lc_flux[0:limit] - lc_median[color])/lc_median[color], label=color, c=np.array([col]))
             ax5.legend()
+            ax5.set_title("Pre-correction light curve")
 
 
             flux_norm = np.append(flux_norm, (lc_flux - lc_median[color])/lc_median[color])
@@ -167,29 +166,49 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
         dMu_dict = {"g":dmu_scales[0], "r":dmu_scales[1], "i":dmu_scales[2], "z":dmu_scales[3]}
         scale_dict = {"g":dmu_scales[4], "r":1, "i":dmu_scales[5], "z":dmu_scales[6]}
         flux = np.zeros_like(delta_f)
+        color_array = np.zeros_like(delta_f)
         for color in 'griz':
-            flux += ((delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color] + dMu_dict['r'])*mu['r'] + mu['r'] #(delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color] + dMu_dict['r']
+            #flux += ((delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]
+            #        + dMu_dict['r'])*mu['r'] + mu['r']
+            flux += (delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]+ dMu_dict['r']
+            color_array += color_dict[color]*color_sort_ones[color_dict[color]]
         delta_f = flux
-        #print(type(delta_f))
+        #print(color_array)
 
         while np.count_nonzero((time[1:] - time[:-1])<0.004) > 0:
-            t_df_sig = list(zip(time, delta_f, sigma_sq))
+            t_df_sig = list(zip(time, delta_f, sigma_sq, color_array))
             t_new=[]
             df_new=[]
             sig_new=[]
+            color_iter = itertools.cycle([0, 1, 2, 3])
             i = 0
             while i < len(t_df_sig)-1:
-                if t_df_sig[i+1][0]- t_df_sig[i][0] < 0.004:
-                    t_new.append(np.mean((t_df_sig[i][0], t_df_sig[i+1][0])))
-                    df_new.append(np.mean((t_df_sig[i][1], t_df_sig[i+1][1])))
-                    sig_new.append(np.mean((t_df_sig[i][2], t_df_sig[i+1][2])))
-                    i= i+2
+                col = next(color_iter)
+                #print(col)
+                #if t_df_sig[i+1][0]- t_df_sig[i][0] < 0.004:
+
+                    #print(str(t_df_sig[i+1][0]- t_df_sig[i][0]) + "\t" + str(t_df_sig[i+1][0]) + "\t" + str(t_df_sig[i][0]))
+                    #t_new.append(np.mean((t_df_sig[i][0], t_df_sig[i+1][0])))
+                    #df_new.append(np.mean((t_df_sig[i][1], t_df_sig[i+1][1])))
+                    #sig_new.append(np.mean((t_df_sig[i][2], t_df_sig[i+1][2])))
+                    #i= i+2
+                if int(t_df_sig[i][0]) in [int(t) for t in t_new]:
+                    i=i+1
+                elif col != t_df_sig[i][3]:
+                    i=i+1
                 else:
+                    #print(str(col) + "\t"+ str(t_df_sig[i][3]))
+                    #print(t_df_sig[i][0])
                     t_new.append(t_df_sig[i][0])
                     df_new.append(t_df_sig[i][1])
                     sig_new.append(t_df_sig[i][2])
-                    i=i+1
+                    i = i+1
             time = np.asarray(t_new)
+
+            #for i in range(len(time)-1):
+            #    if((time[i+1]-time[i])<0.004):
+            #        print(time[i+1] - time[i])
+
             delta_f = np.asarray(df_new)
             sigma_sq = np.asarray(sig_new)
 
@@ -197,14 +216,15 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
             sigma_sq_s = np.append(sigma_sq, 0.0)
             dtime = np.append(time,t)
             delta_time = np.fabs(np.array(dtime,ndmin=2)-np.array(dtime,ndmin=2).T)
+            #print(delta_time)
             #Make the modified matrix
             S = np.diag(sigma_sq_s) + (Vari**2) * np.exp(-1.0 * delta_time / Tau)
 
-            print("sigma_sqr_s= "+sigma_sqr_s)
-            print("Vari= " + Vari)
-            print("delta_time= "+delta_time)
-            print("Tau= "+Tau)
-            print(np.exp(-1.0 * delta_time / Tau))
+            #print("sigma_sq_s= "+str(sigma_sq_s))
+            #print("Vari= " + str(Vari))
+            #print("delta_time= "+ str(delta_time))
+            #print("Tau= "+str(Tau))
+            #print(np.exp(-1.0 * delta_time / Tau))
             times.append(t-57000)
             #Set up our guess for the flux
             t0 = [i for i in time if i >= t]
@@ -236,9 +256,8 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
 
             sign, value = np.linalg.slogdet(S)
             deter = sign * np.exp(value.item())
-            #print(delf1)
-            if np.any(S < 0):
-                print(S)
+            #print(value)
+            #print(deter)
 
             logP  = -.5*np.log((deter))-.5*((np.dot(delf1,(np.dot((delf1),np.linalg.inv(S))))))
             logP1 = -.5*np.log((deter))-.5*((np.dot(delf2,(np.dot((delf2),np.linalg.inv(S))))))
@@ -421,7 +440,7 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
 
         #PRINT MAX THETA VALUES TO THE SCREEN
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
-
+        #dt = 5; currently 2 below :/
         sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones, mu)
         fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu.pdf")
 
@@ -455,19 +474,19 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     #ONLY LET POSITIVE FLUXES AND ERRORS THROUGH
     #NOTE: FLUXES HERE ARE NORMALIZED, SO IF FLUX = 0, THEN norm(FLUX) = -1
     zip_tfe = zip(time, flux, err, color_sort)
-    filter_tfe = [(t, f, e, c) for t, f, e, c in zip_tfe if f > -1 and e > 0]
+    filter_tfe = [(t, f, e, col) for t, f, e, col in zip_tfe if f > -1 and e > 0]
     time, flux, err, color_sort = zip(*filter_tfe)
     time = np.array(time)
     flux = np.array(flux)
     err = np.array(err)
     color_sort = np.array(color_sort)
-    #print(color_sort)
+
 
     color_sort_ones = [(color_sort == 1).astype(int)]
     for num in range(2,5):
         color_sort_ones = np.concatenate((color_sort_ones,[(color_sort == num).astype(int)]), axis=0)
     np.set_printoptions(threshold=np.inf)
-    #print(color_sort_ones)
+
 
     #ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
     #for color in 'griz':

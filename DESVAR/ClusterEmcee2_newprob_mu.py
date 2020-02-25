@@ -147,6 +147,7 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
             i = 0
             while i < len(t_df_sig)-1:
                 if t_df_sig[i+1][0]- t_df_sig[i][0] < 0.004:
+                    print(t_df_sig[i+1][0]- t_df_sig[i][0])
                     t_new.append(np.mean((t_df_sig[i][0], t_df_sig[i+1][0])))
                     df_new.append(np.mean((t_df_sig[i][1], t_df_sig[i+1][1])))
                     sig_new.append(np.mean((t_df_sig[i][2], t_df_sig[i+1][2])))
@@ -298,7 +299,7 @@ def preform_emcee(time,flux,sigma_sq,ROW):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
 
-        
+
         nll = lambda *args: -lnlike(*args)
         ndim, nwalkers = 3, 100
         #MAKE POSITION ARRAY ARRAY FOR WALKERS
