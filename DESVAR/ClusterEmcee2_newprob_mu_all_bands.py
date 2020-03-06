@@ -14,10 +14,12 @@ import itertools
 
 
 if len(sys.argv) < 5:
-  print("lightcurveplot.py INFITS ROWSTART ROWEND MCMC_TYPE")
+  print(len(sys.argv))
+  print("lightcurveplot.py INFITS ROWSTART ROWEND MCMC_TYPE NAME")
   print("INFITS is a fits table of DES Data,")
   print("ROWNUM is a row in that file")
   print("MCMC_TYPE is how you set up the MCMC search array: 'grid' or 'normal'")
+  print("NAME is the additional identifying name for all output files.")
   sys.exit()
 # Initial MCMC guesses
 V =0.3
@@ -60,12 +62,14 @@ def get_vals(args, ROW):
         color_plt=iter(cm.rainbow(np.linspace(0,1,5)))
         for color in "griz":
             FITS = pyfit.open(args[1])
+
             #Obtain flux, err, and time arrays
             try:
                 lc_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
             except IndexError:
                 print('Error')
                 exit()
+
             lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW]
             lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
             lc_time = FITS[1].data['LC_MJD_'+color][ROW]
@@ -143,7 +147,7 @@ def lnprior(theta):
         logV, logTau, dMu_g, dMu_r, dMu_i, dMu_z, scale_g, scale_i, scale_z = theta
         if -3 < logV < 2 and 0 < logTau < 4 and list(x for x in [dMu_g, dMu_r, dMu_i, dMu_z] if -1.0 < x < 1.0) and list(y for y in [scale_g, scale_i, scale_z] if 0 < y <5):
             #return 0.0
-            return logTau-dMu_g**2/0.1**2 - dMu_r**2/0.1**2 - dMu_i**2/0.1**2 - dMu_z**2/0.1**2
+            return  logTau + (-dMu_g**2/0.1**2 - dMu_r**2/0.1**2 - dMu_i**2/0.1**2 - dMu_z**2/0.1**2) #- logV
         return -np.inf
 
 def lnprob(theta, x, y, yerr, color_sort_ones):
@@ -154,26 +158,39 @@ def lnprob(theta, x, y, yerr, color_sort_ones):
         logvals.append(theta)
         return lp + lnlike(theta, x, y, yerr, color_sort_ones)
 
-def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_sort_ones, mu):
+def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_sort_ones, mu, err_sig):
         err_top = []
         err_bot = []
         Logpr = []
         Vari = 10 ** Vari
         Tau = 10 ** Tau
         times = []
-
+        ax4 = fig.add_subplot(111)
         color_dict = {"g":0, "r":1, "i":2, "z":3}
+        plot_dict = {"g":"og", "r":"or", "i":"ok", "z":"ob"}
         dMu_dict = {"g":dmu_scales[0], "r":dmu_scales[1], "i":dmu_scales[2], "z":dmu_scales[3]}
         scale_dict = {"g":dmu_scales[4], "r":1, "i":dmu_scales[5], "z":dmu_scales[6]}
         flux = np.zeros_like(delta_f)
         color_array = np.zeros_like(delta_f)
+        mag_arr=np.array([])
         for color in 'griz':
-            #flux += ((delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]
-            #        + dMu_dict['r'])*mu['r'] + mu['r']
             flux += (delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]+ dMu_dict['r']
             color_array += color_dict[color]*color_sort_ones[color_dict[color]]
+
+            mag = 22.5-2.5*np.log10(((delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]+ dMu_dict['r'])*mu['r'] + mu['r'])
+            t = time*color_sort_ones[color_dict[color]]
+            e = err*color_sort_ones[color_dict[color]]
+            [mag, e, t] =  goodrow(mag,e,t)
+            mag_arr = np.append(mag_arr, mag)
+            ax4.errorbar(t-57000, mag, yerr = e, fmt = plot_dict[color], label=color.upper()+', dmu='+str(round(dMu_dict[color], 5))+', scale='+str(round(scale_dict[color], 5)))
+
+        [xlim,ylim] = boundaries(time-57000, np.array(mag_arr))
+        ax4.set_ylim(ylim)
+        ax4.set_xlabel('MJD-57000')
+        ax4.set_ylabel('Mags')
+        ax4.legend()
+
         delta_f = flux
-        #print(color_array)
 
         while np.count_nonzero((time[1:] - time[:-1])<0.004) > 0:
             t_df_sig = list(zip(time, delta_f, sigma_sq, color_array))
@@ -291,15 +308,15 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
             Logpr.append(center)
             err_top.append(err_t)
             err_bot.append(err_b)
-        ax4 = fig.add_subplot(111)
-        plotdata(sys.argv, ROW, ax4, dmu_scales, color_sort_ones)
+
+        #plotdata(sys.argv, ROW, ax4, dmu_scales, color_sort_ones)
         #print(err_top)
         #print(Logpr)
         #print(err_bot)
         ax4.plot(times,err_top, color = 'g')
         ax4.plot(times,Logpr, color = 'b')
         ax4.plot(times,err_bot, color = 'g')
-        ax4.set_title(' Object '+str(ROW)+ " Sausage Plot")
+        ax4.set_title(' Object '+str(ROW)+ " Sausage Plot"+"\nV="+str(Vari)+" Tau="+str(Tau))
 
 
 def lnprob_dens(theta, x, y, yerr):
@@ -397,14 +414,14 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
         #print(logprobs)
 
         #make corner plot
-        max_theta = logvals[logprobs.index(max(logprobs))]
-        print(max_theta)
+        max_theta = logvals[np.argmax(logprobs)] #logprobs.index(max(logprobs))]
+        #print(logprobs)
         print(max_theta.shape)
         fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu_g$", r"$d\mu_r$", r"$d\mu_i$", r"$d\mu_z$", r"scale$_g$", r"scale$_i$", r"scale$_z$"],
                             truths=[max_theta[0], max_theta[1], max_theta[2], max_theta[3], max_theta[4], max_theta[5], max_theta[6], max_theta[7], max_theta[8]])
 
 
-        fig1.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"triangle_np_mu.pdf")
+        fig1.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"triangle_np_mu_"+str(sys.argv[5])+ ".pdf")
 
         #V_mcmc, Tau_mcmc, dMu_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
         #stack = np.asarray(logvals)
@@ -441,11 +458,11 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
         #PRINT MAX THETA VALUES TO THE SCREEN
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
         #dt = 5; currently 2 below :/
-        sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones, mu)
-        fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu.pdf")
+        sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones, mu, sigma_sq)
+        fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu"+ str(sys.argv[5])+ ".pdf")
 
         #WRITE THE FOUND MAX THETA VALUES TO FILE
-        filename ='scratch_new/'+ str(ROW) + sys.argv[4]+"_all_band_"+'object_dMu' + '.txt'
+        filename ='scratch_new/'+ str(ROW) + sys.argv[4]+"_all_band_"+'object_dMu_' + str(sys.argv[5]) +'.txt'
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
             fout.write('Object: ' + str(ROW)+ ' ' + 'dMu: ' + str(max_theta[2])+ '\n')
