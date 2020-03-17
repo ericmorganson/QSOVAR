@@ -13,7 +13,7 @@ from matplotlib import cm
 import itertools
 
 
-if len(sys.argv) < 5:
+if len(sys.argv) < 6:
   print(len(sys.argv))
   print("lightcurveplot.py INFITS ROWSTART ROWEND MCMC_TYPE NAME")
   print("INFITS is a fits table of DES Data,")
@@ -146,8 +146,10 @@ def lnlike_old(theta, time, flux, flux_err_sq):
 def lnprior(theta):
         logV, logTau, dMu_g, dMu_r, dMu_i, dMu_z, scale_g, scale_i, scale_z = theta
         if -3 < logV < 2 and 0 < logTau < 4 and list(x for x in [dMu_g, dMu_r, dMu_i, dMu_z] if -1.0 < x < 1.0) and list(y for y in [scale_g, scale_i, scale_z] if 0 < y <5):
+            #print('yay!')
             #return 0.0
-            return  logTau + (-dMu_g**2/0.1**2 - dMu_r**2/0.1**2 - dMu_i**2/0.1**2 - dMu_z**2/0.1**2) #- logV
+            return  0.5*logTau + (-dMu_g**2/0.1**2 - dMu_r**2/0.1**2 - dMu_i**2/0.1**2 - dMu_z**2/0.1**2) #- logV
+        #print(logV, logTau, dMu_g, dMu_r, dMu_i, dMu_z, scale_g, scale_i, scale_z)
         return -np.inf
 
 def lnprob(theta, x, y, yerr, color_sort_ones):
@@ -405,8 +407,12 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
         #run sampler
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2, color_sort_ones))
         # run mcmc
-        sampler.run_mcmc(pos, 200)
+        sampler.run_mcmc(pos, 300)
         samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
+        #print(len(samples))
+        #print(sampler.lnprobability[50:].shape)
+        #print(len(logprobs))
+        #print(len(logvals))
 
         #ax3 = fig.add_subplot(2, 2, 2)
         #ax3.plot(logprobs)
@@ -414,8 +420,13 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
         #print(logprobs)
 
         #make corner plot
-        max_theta = logvals[np.argmax(logprobs)] #logprobs.index(max(logprobs))]
         #print(logprobs)
+        max_theta = logvals[np.argmax(logprobs)] #logprobs.index(max(logprobs))]
+        mcmc_result = list(map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0))))
+        mres = np.array([mr[0] for mr in mcmc_result])
+        print(mres)
+        print(max_theta)
+
         print(max_theta.shape)
         fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu_g$", r"$d\mu_r$", r"$d\mu_i$", r"$d\mu_z$", r"scale$_g$", r"scale$_i$", r"scale$_z$"],
                             truths=[max_theta[0], max_theta[1], max_theta[2], max_theta[3], max_theta[4], max_theta[5], max_theta[6], max_theta[7], max_theta[8]])
@@ -460,6 +471,7 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
         #dt = 5; currently 2 below :/
         sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones, mu, sigma_sq)
         fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu"+ str(sys.argv[5])+ ".pdf")
+        plt.close("all")
 
         #WRITE THE FOUND MAX THETA VALUES TO FILE
         filename ='scratch_new/'+ str(ROW) + sys.argv[4]+"_all_band_"+'object_dMu_' + str(sys.argv[5]) +'.txt'
@@ -515,6 +527,12 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     #        continue
     print(mu)
     try:
+        print("Tring optimal initialization")
+        sys.argv[4] = 'optimal'
+        perform_emcee(time, flux, err, color_sort, ROW, mu)
+    except ValueError:
+        print("Falling back to normal initialization")
+        sys.argv[4] = 'normal'
         perform_emcee(time, flux, err, color_sort, ROW, mu)
     except np.linalg.linalg.LinAlgError as err:
         continue
