@@ -148,7 +148,7 @@ def lnprior(theta):
         if -3 < logV < 2 and 0 < logTau < 4 and list(x for x in [dMu_g, dMu_r, dMu_i, dMu_z] if -1.0 < x < 1.0) and list(y for y in [scale_g, scale_i, scale_z] if 0 < y <5):
             #print('yay!')
             #return 0.0
-            return  0.5*logTau + (-dMu_g**2/0.1**2 - dMu_r**2/0.1**2 - dMu_i**2/0.1**2 - dMu_z**2/0.1**2) #- logV
+            return  0.5*logTau + 1*(-dMu_g**2/0.1**2 - dMu_r**2/0.1**2 - dMu_i**2/0.1**2 - dMu_z**2/0.1**2) #- logV
         #print(logV, logTau, dMu_g, dMu_r, dMu_i, dMu_z, scale_g, scale_i, scale_z)
         return -np.inf
 
@@ -398,38 +398,56 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
             pos = (np.random.rand(nwalkers,ndim)-0.5)*np.array([1, 1, 0.1, 0.1, 0.1, 0.1, .5, .5, .5])+result
         elif sys.argv[4].lower() == 'optimal':
             result = op.minimize(nll, [np.log10(V), np.log10(Tau), dMu, dMu, dMu, dMu, scale, scale, scale],args=(time,flux, err**2, color_sort_ones)) #not sure how this will work for the multi-band situation??
-            pos = [result['x'] + 1e-4*np.random.rand(ndim) for i in range(nwalkers)]
+            pos = [result['x'] + 1e-1*np.random.rand(ndim) for i in range(nwalkers)]
         else:
             print("What the hell do you want to do?")
             print("'optimal', or 'normal' search through MCMC?")
             exit()
 
+        print(pos)
+
         #run sampler
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2, color_sort_ones))
         # run mcmc
         sampler.run_mcmc(pos, 300)
-        samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
-        #print(len(samples))
-        #print(sampler.lnprobability[50:].shape)
-        #print(len(logprobs))
-        #print(len(logvals))
+        samples_pick = sampler.chain[:,:,:].reshape((-1, ndim))
+        logprobs_pick_2d = sampler.lnprobability[:,:]
+        logprobs_pick = sampler.lnprobability[:,:].reshape((-1))
 
-        #ax3 = fig.add_subplot(2, 2, 2)
-        #ax3.plot(logprobs)
-        #ax3.set_title("MCMC burn-in log(probability)")
-        #print(logprobs)
+        logprobs_samp_2d = sampler.lnprobability[:,50:]
+        samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
+        logprobs_samp = sampler.lnprobability[:,50:].reshape((-1))
 
         #make corner plot
-        #print(logprobs)
-        max_theta = logvals[np.argmax(logprobs)] #logprobs.index(max(logprobs))]
+
+        max_theta_old = logvals[np.argmax(logprobs)] #old way with non-sampler values; for optimal/normal differentiation
+
+        #np.savetxt("samp"+str(ROW)+sys.argv[4]+".txt", samples)
+        #np.savetxt("samp_full"+str(ROW)+sys.argv[4]+".txt", samples_pick)
+        #np.savetxt("lprob_full"+str(ROW)+sys.argv[4]+".txt", logprobs_pick)
+        #np.savetxt("lprob"+str(ROW)+sys.argv[4]+".txt", logprobs_samp)
+
+        max_theta = samples[np.argmax(logprobs_samp)]
+
+        print(np.unravel_index(logprobs_pick_2d.argmax(), logprobs_pick_2d.shape))
+        print(np.argmax(logprobs_pick))
+        print(logprobs_pick[np.argmax(logprobs_pick)])
+        print(samples_pick[np.argmax(logprobs_pick)])
+
+        print(np.unravel_index(logprobs_samp_2d.argmax(), logprobs_samp_2d.shape))
+        print(np.argmax(logprobs_samp))
+        print(logprobs_samp[np.argmax(logprobs_samp)])
+
         mcmc_result = list(map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0))))
         mres = np.array([mr[0] for mr in mcmc_result])
-        print(mres)
+        #print(mres)
         print(max_theta)
 
-        print(max_theta.shape)
+
         fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu_g$", r"$d\mu_r$", r"$d\mu_i$", r"$d\mu_z$", r"scale$_g$", r"scale$_i$", r"scale$_z$"],
                             truths=[max_theta[0], max_theta[1], max_theta[2], max_theta[3], max_theta[4], max_theta[5], max_theta[6], max_theta[7], max_theta[8]])
+                            #[mres[0], mres[1], mres[2], mres[3], mres[4], mres[5], mres[6], mres[7], mres[8]])
+
 
 
         fig1.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"triangle_np_mu_"+str(sys.argv[5])+ ".pdf")
@@ -491,10 +509,6 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     print("Running object "+str(ROW))
     flux, err, time, mu, color_sort,  FITS = get_vals(sys.argv,ROW)
 
-    #print(mu)
-    #print(color_sort)
-
-
     #DOESN'T MAKE SENSE TO LOOK AT ROWS WITH NO FLUX MEASUREMENTS
     if len(flux) == 0:
         print("Flux length is zero")
@@ -527,7 +541,7 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     #        continue
     print(mu)
     try:
-        print("Tring optimal initialization")
+        print("Trying optimal initialization")
         sys.argv[4] = 'optimal'
         perform_emcee(time, flux, err, color_sort, ROW, mu)
     except ValueError:
