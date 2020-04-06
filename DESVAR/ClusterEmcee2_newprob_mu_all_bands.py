@@ -145,7 +145,7 @@ def lnlike_old(theta, time, flux, flux_err_sq):
 
 def lnprior(theta):
         logV, logTau, dMu_g, dMu_r, dMu_i, dMu_z, scale_g, scale_i, scale_z = theta
-        if -3 < logV < 2 and 0 < logTau < 4 and list(x for x in [dMu_g, dMu_r, dMu_i, dMu_z] if -1.0 < x < 1.0) and list(y for y in [scale_g, scale_i, scale_z] if 0 < y <5):
+        if -3 < logV < 2 and 1 < logTau < 4 and list(x for x in [dMu_g, dMu_r, dMu_i, dMu_z] if -1.0 < x < 1.0) and list(y for y in [scale_g, scale_i, scale_z] if 0 < y <5):
             #print('yay!')
             #return 0.0
             return  0.5*logTau + 1*(-dMu_g**2/0.1**2 - dMu_r**2/0.1**2 - dMu_i**2/0.1**2 - dMu_z**2/0.1**2) #- logV
@@ -404,7 +404,7 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
             print("'optimal', or 'normal' search through MCMC?")
             exit()
 
-        print(pos)
+        print(pos[:,1].reshape((-1)))
 
         #run sampler
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2, color_sort_ones))
@@ -422,11 +422,6 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
 
         max_theta_old = logvals[np.argmax(logprobs)] #old way with non-sampler values; for optimal/normal differentiation
 
-        #np.savetxt("samp"+str(ROW)+sys.argv[4]+".txt", samples)
-        #np.savetxt("samp_full"+str(ROW)+sys.argv[4]+".txt", samples_pick)
-        #np.savetxt("lprob_full"+str(ROW)+sys.argv[4]+".txt", logprobs_pick)
-        #np.savetxt("lprob"+str(ROW)+sys.argv[4]+".txt", logprobs_samp)
-
         max_theta = samples[np.argmax(logprobs_samp)]
 
         print(np.unravel_index(logprobs_pick_2d.argmax(), logprobs_pick_2d.shape))
@@ -438,57 +433,34 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
         print(np.argmax(logprobs_samp))
         print(logprobs_samp[np.argmax(logprobs_samp)])
 
-        mcmc_result = list(map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0))))
-        mres = np.array([mr[0] for mr in mcmc_result])
-        #print(mres)
         print(max_theta)
 
 
         fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu_g$", r"$d\mu_r$", r"$d\mu_i$", r"$d\mu_z$", r"scale$_g$", r"scale$_i$", r"scale$_z$"],
                             truths=[max_theta[0], max_theta[1], max_theta[2], max_theta[3], max_theta[4], max_theta[5], max_theta[6], max_theta[7], max_theta[8]])
-                            #[mres[0], mres[1], mres[2], mres[3], mres[4], mres[5], mres[6], mres[7], mres[8]])
-
 
 
         fig1.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"triangle_np_mu_"+str(sys.argv[5])+ ".pdf")
-
-        #V_mcmc, Tau_mcmc, dMu_mcmc = map(lambda v: (v[1], v[2]-v[1], v[1]-v[0]),zip(*np.percentile(samples, [16, 50, 84],axis=0)))
-        #stack = np.asarray(logvals)
-        #V_stack = [x[0] for x in stack]
-        #T_stack = [x[1] for x in stack]
-        #ax1 = fig.add_subplot(2,2,3)
-        #a1 = ax1.hexbin(T_stack, V_stack, gridsize=(25,25), cmap=cm.viridis )
-        #ax1.scatter(max_theta[1], max_theta[0], label="max_theta", color="xkcd:orange")
-        #ax1.legend()
-        #cbar = fig.colorbar(a1, ax=ax1)
-        #ax1.set_ylabel(r"log$_{10}V$")
-        #ax1.set_xlabel(r"log$_{10}\tau$")
-        #ax1.set_title("MCMC heatmap of V and Tau")
-
-        #X = np.arange(-1, 5, .1) #tau
-        #Y = np.arange(-2.5, 1.5, .1) #variance
-        #X, Y = np.meshgrid(X, Y)
-        #lprob_dens = lnprob_dens((Y, X, max_theta[2]), time, flux, err)
-        #lprob_dens=np.array(lprob_dens)
-        #lprob_dens[lprob_dens < -100] = -100
-
-
-        #ax2 = fig.add_subplot(2, 2, 1)
-        #a2 = ax2.pcolormesh(X, Y, lprob_dens.reshape(X.shape), shading='gouraud', cmap=cm.viridis)
-        #cbar = fig.colorbar(a2, ax=ax2)
-        #cbar.set_clim(-100,np.max(lprob_dens))
-        #cbar.set_label('log(probability)')
-        #ax2.set_ylabel(r"log$_{10}V$")
-        #ax2.set_xlabel(r"log$_{10}\tau$")
-        #ax2.set_title("Probability Density")
-        #ax2.scatter(max_theta[1], max_theta[0], label="max_theta", color="xkcd:orange")
-        #ax2.legend()
 
         #PRINT MAX THETA VALUES TO THE SCREEN
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
         #dt = 5; currently 2 below :/
         sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones, mu, sigma_sq)
         fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu"+ str(sys.argv[5])+ ".pdf")
+
+        fig3=plt.figure(figsize=(10,10))
+        ax6 = fig3.add_subplot(111)
+        for i in range(nwalkers):
+            ax6.plot(sampler.chain[i, 50:, 0].reshape((-1)))
+        ax6.set_title("MCMC V values")   #log(probability)")
+        fig3.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_V"+ str(sys.argv[5])+ ".pdf")
+
+        fig4=plt.figure(figsize=(10,10))
+        ax7 = fig4.add_subplot(111)
+        for i in range(nwalkers):
+            ax7.plot(sampler.chain[i, 50:, 1].reshape((-1)))
+        ax7.set_title("MCMC tau values")   #log(probability)")
+        fig4.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_tau"+ str(sys.argv[5])+ ".pdf")
         plt.close("all")
 
         #WRITE THE FOUND MAX THETA VALUES TO FILE
@@ -508,6 +480,7 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
 
     print("Running object "+str(ROW))
     flux, err, time, mu, color_sort,  FITS = get_vals(sys.argv,ROW)
+    print(min(np.array(time[1:]) - np.array(time[:-1])))
 
     #DOESN'T MAKE SENSE TO LOOK AT ROWS WITH NO FLUX MEASUREMENTS
     if len(flux) == 0:
@@ -541,12 +514,12 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     #        continue
     print(mu)
     try:
-        print("Trying optimal initialization")
-        sys.argv[4] = 'optimal'
+        #print("Trying optimal initialization")
+        #sys.argv[4] = 'optimal'
         perform_emcee(time, flux, err, color_sort, ROW, mu)
-    except ValueError:
-        print("Falling back to normal initialization")
-        sys.argv[4] = 'normal'
-        perform_emcee(time, flux, err, color_sort, ROW, mu)
+    #except ValueError:
+    #    print("Falling back to normal initialization")
+    #    sys.argv[4] = 'normal'
+    #    perform_emcee(time, flux, err, color_sort, ROW, mu)
     except np.linalg.linalg.LinAlgError as err:
         continue
