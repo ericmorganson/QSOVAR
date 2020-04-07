@@ -404,7 +404,7 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
             print("'optimal', or 'normal' search through MCMC?")
             exit()
 
-        print(pos[:,1].reshape((-1)))
+        #print(pos[:,1].reshape((-1)))
 
         #run sampler
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2, color_sort_ones))
