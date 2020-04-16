@@ -335,7 +335,7 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
         ax4.plot(times,err_bot, color = 'g')
         ax4.set_title(' Object '+str(ROW)+ " Sausage Plot"+"\nV="+str(Vari)+" Tau="+str(Tau))
 
-def sausageplot_step2(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
+def sausageplot_step2(Vari,time,delta_f,Tau,dt,sigma_sq, color_sort_ones, dmu_scales, mu, ROW, fig):
         err_top = []
         err_bot = []
         Logpr = []
@@ -343,24 +343,72 @@ def sausageplot_step2(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
         Tau = 10 ** Tau
         times = []
 
+        ax4 = fig.add_subplot(111)
+        color_dict = {"g":0, "r":1, "i":2, "z":3}
+        plot_dict = {"g":"og", "r":"or", "i":"ok", "z":"ob"}
+        dMu_dict = {"g":dmu_scales[0], "r":dmu_scales[1], "i":dmu_scales[2], "z":dmu_scales[3]}
+        scale_dict = {"g":dmu_scales[4], "r":1, "i":dmu_scales[5], "z":dmu_scales[6]}
+        #flux = np.zeros_like(delta_f)
+        color_array = np.zeros_like(delta_f)
+        mag_arr=np.array([])
+        for color in 'griz':
+            #flux += (delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]+ dMu_dict['r']
+            color_array += color_dict[color]*color_sort_ones[color_dict[color]]
+
+            mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+            t = time*color_sort_ones[color_dict[color]]
+            e = np.sqrt(sigma_sq)*color_sort_ones[color_dict[color]]
+            [mag, e, t] =  goodrow(mag,e,t)
+            mag_arr = np.append(mag_arr, mag)
+            ax4.errorbar(t-57000, mag, yerr = e, fmt = plot_dict[color], label=color.upper()+', dmu='+str(round(dMu_dict[color], 5))+', scale='+str(round(scale_dict[color], 5)))
+
+        [xlim,ylim] = boundaries(time-57000, np.array(mag_arr))
+        ax4.set_ylim(ylim)
+        ax4.set_xlabel('MJD-57000')
+        ax4.set_ylabel('Mags')
+        ax4.set_title(' Object '+str(ROW)+ " Sausage Plot"+"\nV="+str(Vari)+" Tau="+str(Tau))
+        ax4.legend()
+
         while np.count_nonzero((time[1:] - time[:-1])<0.004) > 0:
-            t_df_sig = list(zip(time, delta_f, sigma_sq))
+            t_df_sig = list(zip(time, delta_f, sigma_sq, color_array))
             t_new=[]
             df_new=[]
             sig_new=[]
+            color_iter = itertools.cycle([0, 1, 2, 3])
             i = 0
+            #while i < len(t_df_sig)-1:
+            #    if t_df_sig[i+1][0]- t_df_sig[i][0] < 0.004:
+            #        print(t_df_sig[i+1][0]- t_df_sig[i][0])
+            #        t_new.append(np.mean((t_df_sig[i][0], t_df_sig[i+1][0])))
+            #        df_new.append(np.mean((t_df_sig[i][1], t_df_sig[i+1][1])))
+            #        sig_new.append(np.mean((t_df_sig[i][2], t_df_sig[i+1][2])))
+            #        i= i+2
+            #    else:
+            #        t_new.append(t_df_sig[i][0])
+            #        df_new.append(t_df_sig[i][1])
+            #        sig_new.append(t_df_sig[i][2])
+            #        i=i+1
             while i < len(t_df_sig)-1:
-                if t_df_sig[i+1][0]- t_df_sig[i][0] < 0.004:
-                    print(t_df_sig[i+1][0]- t_df_sig[i][0])
-                    t_new.append(np.mean((t_df_sig[i][0], t_df_sig[i+1][0])))
-                    df_new.append(np.mean((t_df_sig[i][1], t_df_sig[i+1][1])))
-                    sig_new.append(np.mean((t_df_sig[i][2], t_df_sig[i+1][2])))
-                    i= i+2
+                col = next(color_iter)
+                #print(col)
+                #if t_df_sig[i+1][0]- t_df_sig[i][0] < 0.004:
+
+                    #print(str(t_df_sig[i+1][0]- t_df_sig[i][0]) + "\t" + str(t_df_sig[i+1][0]) + "\t" + str(t_df_sig[i][0]))
+                    #t_new.append(np.mean((t_df_sig[i][0], t_df_sig[i+1][0])))
+                    #df_new.append(np.mean((t_df_sig[i][1], t_df_sig[i+1][1])))
+                    #sig_new.append(np.mean((t_df_sig[i][2], t_df_sig[i+1][2])))
+                    #i= i+2
+                if int(t_df_sig[i][0]) in [int(t) for t in t_new]:
+                    i=i+1
+                elif col != t_df_sig[i][3]:
+                    i=i+1
                 else:
+                    #print(str(col) + "\t"+ str(t_df_sig[i][3]))
+                    #print(t_df_sig[i][0])
                     t_new.append(t_df_sig[i][0])
                     df_new.append(t_df_sig[i][1])
                     sig_new.append(t_df_sig[i][2])
-                    i=i+1
+                    i = i+1
             time = np.asarray(t_new)
             delta_f = np.asarray(df_new)
             sigma_sq = np.asarray(sig_new)
@@ -436,15 +484,13 @@ def sausageplot_step2(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig):
             err_top.append(err_t)
             err_bot.append(err_b)
 
-        fig = plt.figure()
-        ax4 = plt.subplot(111)
+
         #ax4 = fig.add_subplot(2, 2, 4)
-        plotdata_step2(sys.argv, ROW, ax4)
+        #plotdata_step2(sys.argv, ROW, ax4)
         ax4.plot(times,err_top, color = 'g')
         ax4.plot(times,Logpr, color = 'b')
         ax4.plot(times,err_bot, color = 'g')
-        ax4.set_title(' Object '+str(ROW)+ " Sausage Plot")
-        fig.savefig("figure/"+str(ROW)+sys.argv[5]+"_"+sys.argv[4]+"_sausageplot.pdf")
+        #fig.savefig("figure/"+str(ROW)+sys.argv[5]+"_"+sys.argv[4]+"_sausageplot_step2.pdf")
 
 
 def lnprob_dens(theta, x, y, yerr):
@@ -543,7 +589,7 @@ def getdata(fits,num):
         [mags_z, errs_z, mjds_z] = goodrow(fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_FLUXERR_PSF_Z']/fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_MJD_Z'])
         return [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z]
 
-def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
+def perform_emcee(time, flux, sigma_sq, color_sort_ones, ROW, mu):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
 
@@ -603,21 +649,21 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
         #dt = 5; currently 2 below :/
         sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones, mu, sigma_sq)
-        fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"all_plot_mu"+ str(sys.argv[5])+ ".pdf")
+        fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_mu_sausage"+ str(sys.argv[5])+ ".pdf")
 
         fig3=plt.figure(figsize=(10,10))
         ax6 = fig3.add_subplot(111)
         for i in range(nwalkers):
             ax6.plot(sampler.chain[i, 50:, 0].reshape((-1)))
         ax6.set_title("MCMC V values")   #log(probability)")
-        fig3.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_V"+ str(sys.argv[5])+ ".pdf")
+        #fig3.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_V"+ str(sys.argv[5])+ ".pdf")
 
         fig4=plt.figure(figsize=(10,10))
         ax7 = fig4.add_subplot(111)
         for i in range(nwalkers):
             ax7.plot(sampler.chain[i, 50:, 1].reshape((-1)))
         ax7.set_title("MCMC tau values")   #log(probability)")
-        fig4.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_tau"+ str(sys.argv[5])+ ".pdf")
+        #fig4.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_tau"+ str(sys.argv[5])+ ".pdf")
         plt.close("all")
 
         #WRITE THE FOUND MAX THETA VALUES TO FILE
@@ -628,7 +674,7 @@ def perform_emcee(time, flux, sigma_sq, color_sort, ROW, mu):
 
         return max_theta
 
-def perform_emcee_step2(time, flux, sigma_sq, ROW, mu):
+def perform_emcee_step2(time, flux, sigma_sq, color_sort_ones, dmu_scales, ROW, mu):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
 
@@ -670,7 +716,7 @@ def perform_emcee_step2(time, flux, sigma_sq, ROW, mu):
         #PRINT MAX THETA VALUES TO THE SCREEN
         print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
         #dt = 5; currently 2 below :/
-        sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig)
+        sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, color_sort_ones, dmu_scales, mu, ROW, fig)
         fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"sausage_step2"+ str(sys.argv[5])+ ".pdf")
 
         plt.close("all")
@@ -726,7 +772,7 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     try:
         #print("Trying optimal initialization")
         #sys.argv[4] = 'optimal'
-        max_theta = perform_emcee(time, flux, err, color_sort, ROW, mu)
+        max_theta = perform_emcee(time, flux, err, color_sort_ones, ROW, mu)
 
         color_dict = {"g":0, "r":1, "i":2, "z":3}
         dMu_dict = {"g":max_theta[2], "r":max_theta[3], "i":max_theta[4], "z":max_theta[5]}
@@ -735,7 +781,7 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
         for color in 'griz':
             flux_mod += (flux*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]+ dMu_dict['r']
 
-        perform_emcee_step2(time, flux_mod, err, ROW, mu)
+        perform_emcee_step2(time, flux_mod, err, color_sort_ones, max_theta[2:], ROW, mu)
 
     #except ValueError:
     #    print("Falling back to normal initialization")
