@@ -489,7 +489,7 @@ def sausageplot_step2(Vari,time,delta_f,Tau,dt,sigma_sq, dMu_dict, scale_dict, c
         ax4.plot(times,err_top, color = 'g')
         ax4.plot(times,Logpr, color = 'b')
         ax4.plot(times,err_bot, color = 'g')
-        ax4.set_title(' Object '+str(ROW)+ " Sausage Plot")
+        ax4.set_title(' Object '+str(ROW)+ " Sausage Plot"+"\nV="+str(Vari)+" Tau="+str(Tau))
         #fig.savefig("figure/"+str(ROW)+sys.argv[5]+"_"+sys.argv[4]+"_sausageplot_step2.pdf")
 
 
@@ -784,14 +784,14 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
                 f_r = flux_dict["r"]
                 if len(flux_dict["g"]) !=0:
                     for f_g in flux_dict["g"]:
-                        g_flux.append([f_r, f_g - f_r])
+                        g_flux.append([f_r, f_g])
                 if len(flux_dict["i"]) !=0:
                     for f_i in flux_dict["i"]:
-                        i_flux.append([f_r, f_i - f_r])
+                        i_flux.append([f_r, f_i])
                 if len(flux_dict["z"]) !=0:
                     #print(len(flux_dict["z"]))
                     for f_z in flux_dict["z"]:
-                        z_flux.append([f_r, f_z - f_r])
+                        z_flux.append([f_r, f_z])
             #start new count
             flux_dict = {"g":[], "r":0, "i":[], "z":[]}
             prev_time = int_time[i]
@@ -815,15 +815,15 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     fig_lin.suptitle('Vertically stacked subplots')
     axs[0].scatter(g_flux[:,0], g_flux[:,1])
     axs[0].plot(g_flux[:,0], g_flux[:,0]*m_g +b_g)
-    axs[0].set_title('g-r')
+    axs[0].set_title('g vs. r')
 
     axs[1].scatter(i_flux[:,0], i_flux[:,1])
     axs[1].plot(i_flux[:,0], i_flux[:,0]*m_i +b_i)
-    axs[1].set_title('i-r')
+    axs[1].set_title('i vs. r')
 
     axs[2].scatter(z_flux[:,0], z_flux[:,1])
     axs[2].plot(z_flux[:,0], z_flux[:,0]*m_z +b_z)
-    axs[2].set_title('z-r')
+    axs[2].set_title('z vs. r')
     fig_lin.savefig("figure/"+str(ROW)+sys.argv[4]+sys.argv[5]+"_linear_scatter.pdf")
 
     #ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
