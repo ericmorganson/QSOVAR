@@ -767,12 +767,9 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     g_flux = []
     i_flux = []
     z_flux = []
-    z_count = 0
     prev_time = int_time[0]
     for i in range(0,len(int_time)):
-        if color_sort_dict[color_sort[i]] == 'z':
-            z_count+=1
-        if abs(int_time[i] - prev_time) < 1:
+        if abs(int_time[i] - prev_time) <= 1:
             if color_sort_dict[color_sort[i]] == 'r':
                 flux_dict["r"] = flux[i]
             else:
@@ -808,22 +805,31 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     z_flux = np.array(z_flux)
     m_z, b_z = np.polyfit(z_flux[:,0], z_flux[:,1], 1)
     print(m_g, 1, m_i, m_z)
-    print(b_g, b_i, b_z)
+    print(b_g, 0, b_i, b_z)
 
 
     fig_lin, axs = plt.subplots(3)
-    fig_lin.suptitle('Vertically stacked subplots')
+    fig_lin.suptitle('r vs flux scatter')
     axs[0].scatter(g_flux[:,0], g_flux[:,1])
-    axs[0].plot(g_flux[:,0], g_flux[:,0]*m_g +b_g)
-    axs[0].set_title('g vs. r')
+    axs[0].set_xlabel('r')
+    axs[0].set_ylabel('g')
+    axs[0].plot(g_flux[:,0], g_flux[:,0]*m_g +b_g, label="{0:.3f}x + {1:.3f}".format(m_g, b_g))
+    axs[0].legend()
+    #axs[0].set_title('g vs. r')
 
     axs[1].scatter(i_flux[:,0], i_flux[:,1])
-    axs[1].plot(i_flux[:,0], i_flux[:,0]*m_i +b_i)
-    axs[1].set_title('i vs. r')
+    axs[1].plot(i_flux[:,0], i_flux[:,0]*m_i +b_i, label="{0:.3f}x + {1:.3f}".format(m_i, b_i))
+    axs[1].legend()
+    axs[1].set_xlabel('r')
+    axs[1].set_ylabel('i')
+    #axs[1].set_title('i vs. r')
 
     axs[2].scatter(z_flux[:,0], z_flux[:,1])
-    axs[2].plot(z_flux[:,0], z_flux[:,0]*m_z +b_z)
-    axs[2].set_title('z vs. r')
+    axs[2].plot(z_flux[:,0], z_flux[:,0]*m_z +b_z, label="{0:.3f}x + {1:.3f}".format(m_z, b_z))
+    axs[2].legend()
+    axs[2].set_xlabel('r')
+    axs[2].set_ylabel('z')
+    #axs[2].set_title('z vs. r')
     fig_lin.savefig("figure/"+str(ROW)+sys.argv[4]+sys.argv[5]+"_linear_scatter.pdf")
 
     #ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
@@ -842,10 +848,10 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
 
         color_dict = {"g":0, "r":1, "i":2, "z":3}
         dMu_dict = {"g":b_g, "r":0, "i":b_i, "z":b_z}
-        scale_dict = {"g":m_g+1, "r":1, "i":m_i+1, "z":m_z+1}
+        scale_dict = {"g":m_g, "r":1, "i":m_i, "z":m_z}
         flux_mod = np.zeros_like(flux)
         for color in 'griz':
-            flux_mod += (flux*color_sort_ones[color_dict[color]]-dMu_dict[color])/scale_dict[color]+ dMu_dict['r']
+            flux_mod += ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color]+ dMu_dict['r']
 
         perform_emcee_step2(time, flux_mod, err, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
 
