@@ -18,7 +18,7 @@ if len(sys.argv) < 6:
   print("lightcurveplot.py INFITS ROWSTART ROWEND MCMC_TYPE NAME")
   print("INFITS is a fits table of DES Data,")
   print("ROWNUM is a row in that file")
-  print("MCMC_TYPE is how you set up the MCMC search array: 'grid' or 'normal'")
+  print("MCMC_TYPE is how you set up the MCMC search array: 'grid', 'normal', or 'optimal'")
   print("NAME is the additional identifying name for all output files.")
   sys.exit()
 # Initial MCMC guesses
@@ -103,7 +103,7 @@ def lnlike(theta, time, flux_og, flux_err_sq, color_sort_ones):
         scale_dict = {"g":scale_g, "r":1, "i":scale_i, "z":scale_z}
         flux = np.zeros_like(flux_og)
         for color in 'griz':
-            flux += (flux_og*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]
+            flux += (flux_og-dMu_dict[color])*color_sort_ones[color_dict[color]]*scale_dict[color]
         # For multiband, this line will be  flux = (flux-dMu_griz)*scale_griz
         # dMu_griz will containt dmu_g, dmu_r, etc.
         # scale_griz will by one for r band and the others will be set relative to other bands
@@ -176,10 +176,10 @@ def sausageplot(Vari,time,delta_f,Tau,dt,sigma_sq, ROW, fig, dmu_scales, color_s
         color_array = np.zeros_like(delta_f)
         mag_arr=np.array([])
         for color in 'griz':
-            flux += (delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]+ dMu_dict['r']
+            flux += (delta_f-dMu_dict[color])*color_sort_ones[color_dict[color]]*scale_dict[color]+ dMu_dict['r']
             color_array += color_dict[color]*color_sort_ones[color_dict[color]]
 
-            mag = 22.5-2.5*np.log10(((delta_f*color_sort_ones[color_dict[color]]-dMu_dict[color])*scale_dict[color]+ dMu_dict['r'])*mu['r'] + mu['r'])
+            mag = 22.5-2.5*np.log10(((delta_f-dMu_dict[color])*color_sort_ones[color_dict[color]]*scale_dict[color]+ dMu_dict['r'])*mu['r'] + mu['r'])
             t = time*color_sort_ones[color_dict[color]]
             e = err*color_sort_ones[color_dict[color]]
             [mag, e, t] =  goodrow(mag,e,t)

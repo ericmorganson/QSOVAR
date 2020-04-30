@@ -752,15 +752,34 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
     flux = np.array(flux)
     err = np.array(err)
     color_sort = np.array(color_sort)
+    unique, count = np.unique(color_sort, return_counts=True)
+    color_sort_dict = {1:"g", 2:"r", 3:"i", 4:"z"}
+    color_counts = dict(zip([color_sort_dict[u] for u in unique], count))
+    print(color_counts)
 
+    #ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
+    #dim = [i for i in mu if 22.5-2.5*np.log10(mu[i])>21]
+    #dim_val = [22.5-2.5*np.log10(mu[i]) for i in mu if 22.5-2.5*np.log10(mu[i])>21]
+    #bright = [i for i in mu if 22.5-2.5*np.log10(mu[i])<16]
+    #bright_val = [22.5-2.5*np.log10(mu[i]) for i in mu if 22.5-2.5*np.log10(mu[i])<16]
+    #if dim:
+    #    print("Row is too dim in band: "+ str(dim))
+    #    print(dim_val)
+    #    plt.close("all")
+    #    continue
+    #if bright:
+    #    print("Row is HELLA bright in band: "+str(bright))
+    #    print(bright_val)
+    #    plt.close("all")
+    #    continue
+
+    print(mu)
 
 
     color_sort_ones = [(color_sort == 1).astype(int)]
     for num in range(2,5):
         color_sort_ones = np.concatenate((color_sort_ones,[(color_sort == num).astype(int)]), axis=0)
     np.set_printoptions(threshold=np.inf)
-
-    color_sort_dict = {1:"g", 2:"r", 3:"i", 4:"z"}
 
     int_time = time.astype(int)
     flux_dict = {"g":[], "r":0, "i":[], "z":[]}
@@ -796,59 +815,88 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
                 flux_dict["r"] = flux[i]
             else:
                 flux_dict[color_sort_dict[color_sort[i]]].append(flux[i])
-    g_flux = np.array(g_flux)
-    m_g, b_g = np.polyfit(g_flux[:,0], g_flux[:,1], 1)
-
-    i_flux = np.array(i_flux)
-    m_i, b_i = np.polyfit(i_flux[:,0], i_flux[:,1], 1)
-
-    z_flux = np.array(z_flux)
-    m_z, b_z = np.polyfit(z_flux[:,0], z_flux[:,1], 1)
-    print(m_g, 1, m_i, m_z)
-    print(b_g, 0, b_i, b_z)
-
 
     fig_lin, axs = plt.subplots(3)
     fig_lin.suptitle('r vs flux scatter')
-    axs[0].scatter(g_flux[:,0], g_flux[:,1])
+
+    if g_flux:
+        g_flux = np.array(g_flux)
+        p_g, res_g = np.polyfit(g_flux[:,0], g_flux[:,1] - g_flux[:,0], 1, cov=True)
+        axs[0].scatter(g_flux[:,0], g_flux[:,1]- g_flux[:,0])
+        axs[0].plot(g_flux[:,0], g_flux[:,0]*p_g[0] +p_g[1], label="{0:.3f}x + {1:.3f}".format(*p_g))
+    else:
+        p_g = (1, 0)
     axs[0].set_xlabel('r')
-    axs[0].set_ylabel('g')
-    axs[0].plot(g_flux[:,0], g_flux[:,0]*m_g +b_g, label="{0:.3f}x + {1:.3f}".format(m_g, b_g))
+    axs[0].set_ylabel('g - r')
     axs[0].legend()
     #axs[0].set_title('g vs. r')
 
-    axs[1].scatter(i_flux[:,0], i_flux[:,1])
-    axs[1].plot(i_flux[:,0], i_flux[:,0]*m_i +b_i, label="{0:.3f}x + {1:.3f}".format(m_i, b_i))
+    #print(i_flux)
+    if i_flux:
+        i_flux = np.array(i_flux)
+        p_i, res_i= np.polyfit(i_flux[:,0], i_flux[:,1] - i_flux[:,0], 1, cov=True)
+        axs[1].scatter(i_flux[:,0], i_flux[:,1]- i_flux[:,0])
+        axs[1].plot(i_flux[:,0], i_flux[:,0]*p_i[0] +p_i[1], label="{0:.3f}x + {1:.3f}".format(*p_i))
+    else:
+        p_i = (1, 0)
     axs[1].legend()
     axs[1].set_xlabel('r')
-    axs[1].set_ylabel('i')
+    axs[1].set_ylabel('i - r')
     #axs[1].set_title('i vs. r')
 
-    axs[2].scatter(z_flux[:,0], z_flux[:,1])
-    axs[2].plot(z_flux[:,0], z_flux[:,0]*m_z +b_z, label="{0:.3f}x + {1:.3f}".format(m_z, b_z))
+    if z_flux:
+        z_flux = np.array(z_flux)
+        p_z, res_z= np.polyfit(z_flux[:,0], z_flux[:,1] - z_flux[:,0], 1, cov=True)
+        axs[2].scatter(z_flux[:,0], z_flux[:,1]- z_flux[:,0])
+        axs[2].plot(z_flux[:,0], z_flux[:,0]*p_z[0] +p_z[1], label="{0:.3f}x + {1:.3f}".format(*p_z))
+    else:
+        p_z = (1, 0)
     axs[2].legend()
     axs[2].set_xlabel('r')
-    axs[2].set_ylabel('z')
+    axs[2].set_ylabel('z - r')
     #axs[2].set_title('z vs. r')
+
+    slope = [p_g[0]+1, 1, p_i[0]+1, p_z[0]+1]
+    slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
+    std_col = []
+    for col in 'GRIZ':
+        sd = FITS[1].data['STD_PSF_'+col][ROW]
+        print("initial STD: "+str(sd))
+        arr = np.array(FITS[1].data['LC_FLUX_PSF_'+col][ROW])
+        final_list = [x for x in arr if (x > np.mean(arr) - 2 * sd)]
+        final_list = [x for x in final_list if (x < np.mean(arr) + 2 * sd)]
+        print('final STD: '+str(np.std(np.array(final_list))))
+
+        #std_col.append(0.5*(np.percentile(flux_color, 84) - np.percentile(flux_color, 16)))
+        #print(np.percentile(flux_color, 84))
+        #print(np.percentile(flux_color, 16))
+    intercept = [p_g[1], 0, p_i[1], p_z[1]]
+
+
+    for i in range(len(slope)):
+        if slope_err[i]*2>slope[i]:
+            print(color_sort_dict[i+1], ROW)
+            print(slope[i])
+            slope[i] = std_col[i]/std_col[1]
+            print(slope[i])
+
+
+    print("Slope: "+ str(slope))
+    print("intercepts: "+str(intercept))
+    print("Slope Error: "+str(slope_err))
+    print("StDev: "+ str(std_col))
+
     fig_lin.savefig("figure/"+str(ROW)+sys.argv[4]+sys.argv[5]+"_linear_scatter.pdf")
 
-    #ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
-    #for color in 'griz':
-    #    if float(22.5-2.5*np.log10(mu[color])) > 21:
-    #        print("Row is too dim in band: "+ color)
-    #        continue
-    #    if float(22.5-2.5*np.log10(mu[color])) < 16:
-    #        print("Row is HELLA bright in band: "+color)
-    #        continue
-    print(mu)
+
     try:
         #print("Trying optimal initialization")
         #sys.argv[4] = 'optimal'
         #max_theta = perform_emcee(time, flux, err, color_sort_ones, ROW, mu)
 
         color_dict = {"g":0, "r":1, "i":2, "z":3}
-        dMu_dict = {"g":b_g, "r":0, "i":b_i, "z":b_z}
-        scale_dict = {"g":m_g, "r":1, "i":m_i, "z":m_z}
+        dMu_dict = {"g":intercept[0], "r":intercept[1], "i":intercept[2], "z":intercept[3]}
+        scale_dict = {"g":slope[0], "r":slope[1], "i":slope[2], "z":slope[3]}
         flux_mod = np.zeros_like(flux)
         for color in 'griz':
             flux_mod += ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color]+ dMu_dict['r']
