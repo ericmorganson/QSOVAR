@@ -589,91 +589,6 @@ def getdata(fits,num):
         [mags_z, errs_z, mjds_z] = goodrow(fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_FLUXERR_PSF_Z']/fits[num]['LC_FLUX_PSF_Z'], fits[num]['LC_MJD_Z'])
         return [mags_g, errs_g, mjds_g, mags_r, errs_r, mjds_r, mags_i, errs_i, mjds_i, mags_z, errs_z, mjds_z]
 
-def perform_emcee(time, flux, sigma_sq, color_sort_ones, ROW, mu):
-        diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
-        fig = plt.figure(figsize=(10,10))
-
-        nll = lambda *args: -lnlike(*args)
-        ndim, nwalkers = 9, 100
-        #MAKE POSITION ARRAY ARRAY FOR WALKERS
-        if sys.argv[4].lower() == 'normal':
-            result = [np.log10(V), np.log10(Tau), dMu, dMu, dMu, dMu, scale, scale, scale]
-            pos = (np.random.rand(nwalkers,ndim)-0.5)*np.array([1, 1, 0.1, 0.1, 0.1, 0.1, .5, .5, .5])+result
-        elif sys.argv[4].lower() == 'optimal':
-            result = op.minimize(nll, [np.log10(V), np.log10(Tau), dMu, dMu, dMu, dMu, scale, scale, scale],args=(time,flux, err**2, color_sort_ones)) #not sure how this will work for the multi-band situation??
-            pos = [result['x'] + 1e-1*np.random.rand(ndim) for i in range(nwalkers)]
-        else:
-            print("What the hell do you want to do?")
-            print("'optimal', or 'normal' search through MCMC?")
-            exit()
-
-        #print(pos[:,1].reshape((-1)))
-
-        #run sampler
-        sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob, args=(time, flux, err**2, color_sort_ones))
-        # run mcmc
-        sampler.run_mcmc(pos, 300)
-        samples_pick = sampler.chain[:,:,:].reshape((-1, ndim))
-        logprobs_pick_2d = sampler.lnprobability[:,:]
-        logprobs_pick = sampler.lnprobability[:,:].reshape((-1))
-
-        logprobs_samp_2d = sampler.lnprobability[:,50:]
-        samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
-        logprobs_samp = sampler.lnprobability[:,50:].reshape((-1))
-
-        #make corner plot
-
-        max_theta_old = logvals[np.argmax(logprobs)] #old way with non-sampler values; for optimal/normal differentiation
-
-        max_theta = samples[np.argmax(logprobs_samp)]
-
-        print(np.unravel_index(logprobs_pick_2d.argmax(), logprobs_pick_2d.shape))
-        print(np.argmax(logprobs_pick))
-        print(logprobs_pick[np.argmax(logprobs_pick)])
-        print(samples_pick[np.argmax(logprobs_pick)])
-
-        print(np.unravel_index(logprobs_samp_2d.argmax(), logprobs_samp_2d.shape))
-        print(np.argmax(logprobs_samp))
-        print(logprobs_samp[np.argmax(logprobs_samp)])
-
-        print(max_theta)
-
-
-        fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$",r"$d\mu_g$", r"$d\mu_r$", r"$d\mu_i$", r"$d\mu_z$", r"scale$_g$", r"scale$_i$", r"scale$_z$"],
-                            truths=[max_theta[0], max_theta[1], max_theta[2], max_theta[3], max_theta[4], max_theta[5], max_theta[6], max_theta[7], max_theta[8]])
-
-
-        fig1.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_"+"triangle_np_mu_"+str(sys.argv[5])+ ".pdf")
-
-        #PRINT MAX THETA VALUES TO THE SCREEN
-        print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]), 'dMu:', str(max_theta[2]))
-        #dt = 5; currently 2 below :/
-        sausageplot(max_theta[0], time, flux, max_theta[1], 5, err**2, ROW, fig, max_theta[2:], color_sort_ones, mu, sigma_sq)
-        fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_mu_sausage"+ str(sys.argv[5])+ ".pdf")
-
-        fig3=plt.figure(figsize=(10,10))
-        ax6 = fig3.add_subplot(111)
-        for i in range(nwalkers):
-            ax6.plot(sampler.chain[i, 50:, 0].reshape((-1)))
-        ax6.set_title("MCMC V values")   #log(probability)")
-        fig3.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_V"+ str(sys.argv[5])+ ".pdf")
-
-        fig4=plt.figure(figsize=(10,10))
-        ax7 = fig4.add_subplot(111)
-        for i in range(nwalkers):
-            ax7.plot(sampler.chain[i, 50:, 1].reshape((-1)))
-        ax7.set_title("MCMC tau values")   #log(probability)")
-        fig4.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_tau"+ str(sys.argv[5])+ ".pdf")
-        plt.close("all")
-
-        #WRITE THE FOUND MAX THETA VALUES TO FILE
-        filename ='scratch_new/'+ str(ROW) + sys.argv[4]+"_all_band_"+'object_dMu_' + str(sys.argv[5]) +'.txt'
-        with open(filename, 'w+') as fout:
-            fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
-            fout.write('Object: ' + str(ROW)+ ' ' + 'dMu: ' + str(max_theta[2])+ '\n')
-
-        return max_theta
-
 def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict, color_sort_ones, ROW, mu):
         diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
         fig = plt.figure(figsize=(10,10))
@@ -697,7 +612,7 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict, color_sort_o
         #run sampler
         sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob_step2, args=(time, flux, err**2))
         # run mcmc
-        sampler.run_mcmc(pos, 300)
+        sampler.run_mcmc(pos, 200)
 
         samples = sampler.chain[:, 50:, :].reshape((-1, ndim))
         logprobs_samp = sampler.lnprobability[:,50:].reshape((-1))
@@ -705,7 +620,7 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict, color_sort_o
         #make corner plot
         max_theta = samples[np.argmax(logprobs_samp)]
 
-        print(max_theta)
+        #print(max_theta)
 
         fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
                             truths=[max_theta[0], max_theta[1]])
@@ -725,6 +640,59 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict, color_sort_o
         filename ='scratch_new/'+ str(ROW) + sys.argv[4]+"_all_band_step2_linear_"+'object_dMu_' + str(sys.argv[5]) +'.txt'
         with open(filename, 'w+') as fout:
             fout.write('Object: ' + str(ROW)+ ' ' + 'Tau: ' + str(max_theta[1])+' ' + 'V: '+ str(max_theta[0]) + '\n')
+
+def lin_color_sort(time, color_sort_dict, color_sort):
+        int_time = time.astype(int)
+        flux_dict = {"g":[], "r":0, "i":[], "z":[]}
+        g_flux = []
+        i_flux = []
+        z_flux = []
+        prev_time = int_time[0]
+        for i in range(0,len(int_time)):
+            if abs(int_time[i] - prev_time) <= 1:
+                if color_sort_dict[color_sort[i]] == 'r':
+                    flux_dict["r"] = flux[i]
+                else:
+                    flux_dict[color_sort_dict[color_sort[i]]].append(flux[i])
+            else:
+                #record results
+                if flux_dict["r"] != 0:
+                    f_r = flux_dict["r"]
+                    if len(flux_dict["g"]) !=0:
+                        for f_g in flux_dict["g"]:
+                            g_flux.append([f_r, f_g])
+                    if len(flux_dict["i"]) !=0:
+                        for f_i in flux_dict["i"]:
+                            i_flux.append([f_r, f_i])
+                    if len(flux_dict["z"]) !=0:
+                        for f_z in flux_dict["z"]:
+                            z_flux.append([f_r, f_z])
+                #start new count
+                flux_dict = {"g":[], "r":0, "i":[], "z":[]}
+                prev_time = int_time[i]
+                if color_sort_dict[color_sort[i]] == 'r':
+                    flux_dict["r"] = flux[i]
+                else:
+                    flux_dict[color_sort_dict[color_sort[i]]].append(flux[i])
+        return g_flux, i_flux, z_flux
+
+def plot_lin(flux, ax, y_label):
+        if flux and len(flux)>2:
+            flux = np.array(flux)
+            def linear(x, a, b):
+                return a * x + b
+            p, res = op.curve_fit(linear, flux[:,0], flux[:,1] - flux[:,0])
+
+            ax.scatter(flux[:,0], flux[:,1]- flux[:,0])
+            ax.plot(flux[:,0], flux[:,0]*p[0] +p[1], label="{0:.3f}x + {1:.3f}".format(*p))
+        else:
+            p = (0, 0)
+            res = np.zeros((2,2))
+        ax.legend()
+        ax.set_xlabel('r')
+        ax.set_ylabel(y_label)
+
+        return p, res
 
 
 for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
@@ -781,131 +749,66 @@ for ROW in range(int(sys.argv[2]),int(sys.argv[3])):
         color_sort_ones = np.concatenate((color_sort_ones,[(color_sort == num).astype(int)]), axis=0)
     np.set_printoptions(threshold=np.inf)
 
-    int_time = time.astype(int)
-    flux_dict = {"g":[], "r":0, "i":[], "z":[]}
-    g_flux = []
-    i_flux = []
-    z_flux = []
-    prev_time = int_time[0]
-    for i in range(0,len(int_time)):
-        if abs(int_time[i] - prev_time) <= 1:
-            if color_sort_dict[color_sort[i]] == 'r':
-                flux_dict["r"] = flux[i]
-            else:
-                flux_dict[color_sort_dict[color_sort[i]]].append(flux[i])
-        else:
-            #record results
-            #print(prev_time, flux_dict)
-            if flux_dict["r"] != 0:
-                f_r = flux_dict["r"]
-                if len(flux_dict["g"]) !=0:
-                    for f_g in flux_dict["g"]:
-                        g_flux.append([f_r, f_g])
-                if len(flux_dict["i"]) !=0:
-                    for f_i in flux_dict["i"]:
-                        i_flux.append([f_r, f_i])
-                if len(flux_dict["z"]) !=0:
-                    #print(len(flux_dict["z"]))
-                    for f_z in flux_dict["z"]:
-                        z_flux.append([f_r, f_z])
-            #start new count
-            flux_dict = {"g":[], "r":0, "i":[], "z":[]}
-            prev_time = int_time[i]
-            if color_sort_dict[color_sort[i]] == 'r':
-                flux_dict["r"] = flux[i]
-            else:
-                flux_dict[color_sort_dict[color_sort[i]]].append(flux[i])
+    g_flux, i_flux, z_flux = lin_color_sort(time, color_sort_dict, color_sort)
 
     fig_lin, axs = plt.subplots(3)
-    fig_lin.suptitle('r vs flux scatter')
+    fig_lin.suptitle('r vs color')
 
-    if g_flux:
-        g_flux = np.array(g_flux)
-        p_g, res_g = np.polyfit(g_flux[:,0], g_flux[:,1] - g_flux[:,0], 1, cov=True)
-        axs[0].scatter(g_flux[:,0], g_flux[:,1]- g_flux[:,0])
-        axs[0].plot(g_flux[:,0], g_flux[:,0]*p_g[0] +p_g[1], label="{0:.3f}x + {1:.3f}".format(*p_g))
-    else:
-        p_g = (1, 0)
-    axs[0].set_xlabel('r')
-    axs[0].set_ylabel('g - r')
-    axs[0].legend()
-    #axs[0].set_title('g vs. r')
+    p_g, res_g = plot_lin(g_flux, axs[0], "g-r")
+    p_i, res_i= plot_lin(i_flux, axs[1], "i-r")
+    p_z, res_z= plot_lin(z_flux, axs[2], "z-r")
 
-    #print(i_flux)
-    if i_flux:
-        i_flux = np.array(i_flux)
-        p_i, res_i= np.polyfit(i_flux[:,0], i_flux[:,1] - i_flux[:,0], 1, cov=True)
-        axs[1].scatter(i_flux[:,0], i_flux[:,1]- i_flux[:,0])
-        axs[1].plot(i_flux[:,0], i_flux[:,0]*p_i[0] +p_i[1], label="{0:.3f}x + {1:.3f}".format(*p_i))
-    else:
-        p_i = (1, 0)
-    axs[1].legend()
-    axs[1].set_xlabel('r')
-    axs[1].set_ylabel('i - r')
-    #axs[1].set_title('i vs. r')
-
-    if z_flux:
-        z_flux = np.array(z_flux)
-        p_z, res_z= np.polyfit(z_flux[:,0], z_flux[:,1] - z_flux[:,0], 1, cov=True)
-        axs[2].scatter(z_flux[:,0], z_flux[:,1]- z_flux[:,0])
-        axs[2].plot(z_flux[:,0], z_flux[:,0]*p_z[0] +p_z[1], label="{0:.3f}x + {1:.3f}".format(*p_z))
-    else:
-        p_z = (1, 0)
-    axs[2].legend()
-    axs[2].set_xlabel('r')
-    axs[2].set_ylabel('z - r')
-    #axs[2].set_title('z vs. r')
 
     slope = [p_g[0]+1, 1, p_i[0]+1, p_z[0]+1]
     slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
+    int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
     std_col = []
     for col in 'GRIZ':
-        sd = FITS[1].data['STD_PSF_'+col][ROW]
-        print("initial STD: "+str(sd))
-        arr = np.array(FITS[1].data['LC_FLUX_PSF_'+col][ROW])
-        final_list = [x for x in arr if (x > np.mean(arr) - 2 * sd)]
-        final_list = [x for x in final_list if (x < np.mean(arr) + 2 * sd)]
-        print('final STD: '+str(np.std(np.array(final_list))))
-
-        #std_col.append(0.5*(np.percentile(flux_color, 84) - np.percentile(flux_color, 16)))
-        #print(np.percentile(flux_color, 84))
-        #print(np.percentile(flux_color, 16))
+        std_col.append(FITS[1].data['STD_PSF_'+col][ROW])
     intercept = [p_g[1], 0, p_i[1], p_z[1]]
 
-
     for i in range(len(slope)):
-        if slope_err[i]*2>slope[i]:
-            print(color_sort_dict[i+1], ROW)
-            print(slope[i])
-            slope[i] = std_col[i]/std_col[1]
-            print(slope[i])
+        if np.count_nonzero(color_sort_ones[i]) > 1:
+            var_crit = np.sum((std_col[i] - err*color_sort_ones[i])/np.sqrt(np.count_nonzero(color_sort_ones[i])))
+        else:
+            var_crit = 0
+        print("Variable??")
+        print(var_crit)
+        if var_crit > 6:
+            print("Variable Source!")
+            #if slope_err[i]*2>slope[i]:
+            #    slope[i] = std_col[i]/std_col[1]
+        else: #if nonvariable
+            print("Non-Variable source in "+ str(color_sort_dict[i+1]))
+            if slope_err[i]*2>slope[i]:
+                #print(color_sort_dict[i+1], ROW)
+                #print(slope[i])
+                slope[i] = 1
+                #print(slope[i])
 
 
     print("Slope: "+ str(slope))
-    print("intercepts: "+str(intercept))
     print("Slope Error: "+str(slope_err))
+    print("intercepts: "+str(intercept))
+    print("Int Error: "+str(int_err))
     print("StDev: "+ str(std_col))
+
 
     fig_lin.savefig("figure/"+str(ROW)+sys.argv[4]+sys.argv[5]+"_linear_scatter.pdf")
 
 
     try:
-        #print("Trying optimal initialization")
-        #sys.argv[4] = 'optimal'
-        #max_theta = perform_emcee(time, flux, err, color_sort_ones, ROW, mu)
-
         color_dict = {"g":0, "r":1, "i":2, "z":3}
         dMu_dict = {"g":intercept[0], "r":intercept[1], "i":intercept[2], "z":intercept[3]}
+        dMu_dict_err = {"g":int_err[0], "r":int_err[1], "i":int_err[2], "z":int_err[3]}
         scale_dict = {"g":slope[0], "r":slope[1], "i":slope[2], "z":slope[3]}
         flux_mod = np.zeros_like(flux)
+        err_mod = np.zeros_like(flux)
         for color in 'griz':
             flux_mod += ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color]+ dMu_dict['r']
+            err_mod += np.sqrt(err**2+dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2) / scale_dict[color] *color_sort_ones[color_dict[color]]
 
-        perform_emcee_step2(time, flux_mod, err, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
+        perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
 
-    #except ValueError:
-    #    print("Falling back to normal initialization")
-    #    sys.argv[4] = 'normal'
-    #    perform_emcee(time, flux, err, color_sort, ROW, mu)
     except np.linalg.linalg.LinAlgError as err:
         continue
