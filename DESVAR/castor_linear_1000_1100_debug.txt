@@ -1,0 +1,155 @@
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+('1000', '1100', 'normal')
+Running object 1000
+0.0
+{'i': 80, 'r': 71, 'z': 134, 'g': 49}
+{'i': 1.0147784, 'r': 0.81958145, 'z': 1.0873928, 'g': 0.5388031}
+Variable??
+2.2621163811002463
+Non-Variable source in g
+Variable??
+2.9878972951474365
+Non-Variable source in r
+Variable??
+3.443208974676539
+Non-Variable source in i
+Variable??
+3.1477104320696654
+Non-Variable source in z
+Slope:       [0.48948343578889153, 1, 0.344829752209304, 0.6088906109688006]
+Slope Error: [0.1789507308607762, 0, 0.11249237414365715, 0.10730058705023288]
+intercepts:  [-0.00826751577367868, 0, -0.007612768518835633, 0.013547334733602256]
+Int Error:   [0.015777083528849423, 0, 0.012735788473481988, 0.011889508742376743]
+StDev:       [0.058296308, 0.0903547, 0.10908917, 0.15090726]
+('ROW:', 1000, 'Tau:', '1.4059824806320759e-05', 'V:', '-0.7101265990815803')
+Running object 1001
+0.0
+{'i': 71, 'r': 53, 'z': 98, 'g': 48}
+{'i': 0.7103909, 'r': 0.5570811, 'z': 0.89261085, 'g': 0.4429897}
+Variable??
+3.1665032116046206
+Non-Variable source in g
+Variable??
+1.4388784800507
+Non-Variable source in r
+Variable??
+1.9157723057748628
+Non-Variable source in i
+Variable??
+2.5721196898260645
+Non-Variable source in z
+Slope:       [1.5541794598260668, 1, 1, 1]
+Slope Error: [0.2826202328992337, 0, 0.14947875501137825, 0.17950411410206438]
+intercepts:  [0.04402344737496733, 0, -0.02160311033738137, 0.00060008562106173]
+Int Error:   [0.028282093295897506, 0, 0.015704749467702082, 0.016317916421265576]
+StDev:       [0.09854912, 0.057357125, 0.08616645, 0.13885069]
+('ROW:', 1001, 'Tau:', '0.3331114342944093', 'V:', '-1.2850943434242423')
+Running object 1002
+0.0
+{'i': 79, 'r': 76, 'z': 4, 'g': 60}
+{'i': 5.634019, 'r': 3.8587556, 'z': 7.8902674, 'g': 1.3400469}
+Variable??
+5.975756425032788
+Non-Variable source in g
+Variable??
+12.869937077605591
+Variable Source!
+Variable??
+18.670469497302136
+Variable Source!
+Variable??
+92.90133413299918
+Variable Source!
+Slope:       [1.0789704002479321, 1, 0.7954772286135332, 10.272996102568728]
+Slope Error: [0.0745245304066108, 0, 0.05225975975176728, 3.3645410828709936]
+intercepts:  [0.023325717016486558, 0, 0.0013417036883784927, -0.7977633771003332]
+Int Error:   [0.00983402296693253, 0, 0.007070212326152854, 0.24768656154193172]
+StDev:       [0.22229649, 0.5185327, 0.76324606, 0.8493104]
+('ROW:', 1002, 'Tau:', '0.0001487195344638502', 'V:', '-0.6033146910208859')
+Running object 1003
+0.0
+{'i': 80, 'r': 71, 'z': 165, 'g': 61}
+{'i': 2.1497912, 'r': 1.8698902, 'z': 2.6053238, 'g': 1.0529155}
+Variable??
+5.165192967869729
+Non-Variable source in g
+Variable??
+7.852703341978211
+Variable Source!
+Variable??
+9.495999838907396
+Variable Source!
+Variable??
+8.961664507137282
+Variable Source!
+Slope:       [0.8230845014100955, 1, 0.762648276399996, 0.815708201653677]
+Slope Error: [0.11199977689251599, 0, 0.08176395776040066, 0.07147558266218045]
+intercepts:  [0.003925456010649037, 0, -0.008515270556195276, -0.012803168072912596]
+Int Error:   [0.010851457443521045, 0, 0.008167289709958565, 0.007077770235872297]
+StDev:       [0.115496464, 0.1819277, 0.23271774, 0.32610676]
+('ROW:', 1003, 'Tau:', '1.1121273531919992e-05', 'V:', '-0.7403361158332853')
+Running object 1004
+0.0
+{'i': 81, 'r': 69, 'z': 154, 'g': 39}
+{'i': 1.1964203, 'r': 0.8055036, 'z': 1.430044, 'g': 0.3667513}
+Variable??
+2.191772262200317
+Non-Variable source in g
+Variable??
+2.001330003690691
+Non-Variable source in r
+Variable??
+2.4012491243580976
+Non-Variable source in i
+Variable??
+2.884691000968864
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.386157682242101, 0, 0.1025170633008391, 0.10742160904072039]
+intercepts:  [0.037427993033780686, 0, -0.002056461739693871, 0.0018152521704782876]
+Int Error:   [0.023559963885875158, 0, 0.008173043078490361, 0.00848901422414339]
+StDev:       [0.050141744, 0.062511936, 0.077548034, 0.14240025]
+('ROW:', 1004, 'Tau:', '0.573545659249387', 'V:', '-1.5160534750674084')
+Running object 1005
+0.0
+{'i': 67, 'r': 36, 'z': 98}
+{'i': 0.7145978, 'r': 0.41831374, 'z': 0.9235771, 'g': 0.0}
+Variable??
+0
+Non-Variable source in g
+Variable??
+1.5885799812773862
+Non-Variable source in r
+Variable??
+1.9090729845863041
+Non-Variable source in i
+Variable??
+1.4502530691169575
+Non-Variable source in z
+Slope:       [1, 1, 1, 0.42426261360858997]
+Slope Error: [0.0, 0, 0.11585837534532245, 0.10109282813572701]
+intercepts:  [0, 0, -0.0073152287488631425, 0.009011529344517578]
+Int Error:   [0.0, 0, 0.018313594792419646, 0.01537632731591068]
+StDev:       [0.0, 0.06699064, 0.11122377, 0.12873898]
+('ROW:', 1005, 'Tau:', '0.9037424328606103', 'V:', '-0.7524823609740682')
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_2step.py", line 509, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
+  File "ClusterEmcee2_linear_mu_2step.py", line 339, in perform_emcee_step2
+    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
+  File "ClusterEmcee2_linear_mu_2step.py", line 178, in sausageplot_step2
+    ax4.legend()
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py", line 564, in legend
+    self.legend_ = mlegend.Legend(self, handles, labels, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend.py", line 386, in __init__
+    self._init_legend_box(handles, labels, markerfirst)
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend.py", line 655, in _init_legend_box
+    fontsize, handlebox))
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend_handler.py", line 119, in legend_artist
+    fontsize, handlebox.get_transform())
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend_handler.py", line 476, in create_artists
+    self.update_prop(coll, barlinecols[0], legend)
+IndexError: tuple index out of range

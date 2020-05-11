@@ -3,7 +3,7 @@ import sys
 import numpy as np
 import astropy.io.fits as pyfit
 import matplotlib
-# matplotlib.use('Agg')
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import emcee
 import scipy.optimize as op
@@ -23,6 +23,7 @@ if len(sys.argv) < 6:
     print("NAME is the additional identifying name for all output files.")
     sys.exit()
 # Initial MCMC guesses
+file_path ="fig_ssh/" #"figure/" 
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -98,7 +99,7 @@ def get_vals(args, ROW):
         normed_err = lc_flux_err/lc_median[color]
         err_norm = np.append(err_norm, normed_err)
     # TODO: label plot with more descriptive headers
-    fig.savefig("figure/"+str(ROW)+sys.argv[4]+"_all_band_scatter_before.pdf")
+    fig.savefig(file_path+str(ROW)+sys.argv[4]+"_all_band_scatter_before.pdf")
     time, flux_norm, err_norm, array_org = map(list,
                                                zip(*sorted(zip(time,
                                                                flux_norm,
@@ -330,13 +331,13 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict,
     max_theta = samples[np.argmax(logprobs_samp)]
     fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
                          truths=[max_theta[0], max_theta[1]])
-    fig1.savefig("figure/" + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + ".pdf")
+    fig1.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + ".pdf")
 
     # PRINT MAX THETA VALUES TO THE SCREEN
     print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
 
     sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
-    fig.savefig("figure/" + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
+    fig.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
 
     plt.close("all")
 
@@ -492,7 +493,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     print("Int Error:   " + str(int_err))
     print("StDev:       " + str(std_col))
 
-    fig_lin.savefig("figure/"+str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
+    fig_lin.savefig(file_path + str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
 
     try:
         color_dict = {"g": 0, "r": 1, "i": 2, "z": 3}

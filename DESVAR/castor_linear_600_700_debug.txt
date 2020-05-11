@@ -1,0 +1,70 @@
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+WARNING:root:Too few points to create valid contours
+ClusterEmcee2_linear_mu_2step.py:165: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_2step.py:285: RuntimeWarning: invalid value encountered in greater
+  mag_crit = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags)
+('600', '700', 'normal')
+Running object 600
+0.0
+{'i': 62, 'r': 37, 'z': 89, 'g': 28}
+{'i': 0.7566494, 'r': 0.4601947, 'z': 0.89302254, 'g': 0.35287714}
+Variable??
+2.039620272357969
+Non-Variable source in g
+Variable??
+2.31373838104074
+Non-Variable source in r
+Variable??
+3.5632756957784832
+Non-Variable source in i
+Variable??
+2.881184459095518
+Non-Variable source in z
+Slope:       [0.7152615910806204, 1, 0.9087842462870401, 0.8604522424324412]
+Slope Error: [0.1911618010543749, 0, 0.16332509279374652, 0.19099268318954848]
+intercepts:  [0.043297135340280055, 0, 0.03130373869992087, 0.09165653066618507]
+Int Error:   [0.032142520832676054, 0, 0.026122373638729334, 0.030664243171023838]
+StDev:       [0.06321355, 0.08329421, 0.15763734, 0.17613271]
+('ROW:', 600, 'Tau:', '0.0006595395518126379', 'V:', '-0.7185241177940029')
+Running object 601
+0.0
+{'i': 83, 'r': 58, 'z': 166}
+{'i': 1.6412215, 'r': 0.5139371, 'z': 3.059978, 'g': 0.0}
+Variable??
+0
+Non-Variable source in g
+Variable??
+2.2252545631927227
+Non-Variable source in r
+Variable??
+4.6721113746459455
+Non-Variable source in i
+Variable??
+6.270481544093678
+Variable Source!
+Slope:       [1, 1, 0.22225927429123116, 0.16813360632529628]
+Slope Error: [0.0, 0, 0.06727624461900264, 0.0534682959730648]
+intercepts:  [0, 0, -0.012717621052927591, -0.013210143258241658]
+Int Error:   [0.0, 0, 0.0101738162728116, 0.00804297397595211]
+StDev:       [0.0, 0.074122496, 0.15107769, 0.28535485]
+('ROW:', 601, 'Tau:', '1.4288303874072494e-05', 'V:', '0.5186471979686751')
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_2step.py", line 509, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
+  File "ClusterEmcee2_linear_mu_2step.py", line 339, in perform_emcee_step2
+    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
+  File "ClusterEmcee2_linear_mu_2step.py", line 178, in sausageplot_step2
+    ax4.legend()
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py", line 564, in legend
+    self.legend_ = mlegend.Legend(self, handles, labels, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend.py", line 386, in __init__
+    self._init_legend_box(handles, labels, markerfirst)
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend.py", line 655, in _init_legend_box
+    fontsize, handlebox))
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend_handler.py", line 119, in legend_artist
+    fontsize, handlebox.get_transform())
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend_handler.py", line 476, in create_artists
+    self.update_prop(coll, barlinecols[0], legend)
+IndexError: tuple index out of range

@@ -1,0 +1,409 @@
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+ClusterEmcee2_linear_mu_2step.py:270: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+('1200', '1300', 'normal')
+Running object 1200
+0.0
+{'i': 83, 'r': 75, 'z': 164, 'g': 75}
+{'i': 7.377783, 'r': 4.8351808, 'z': 9.061226, 'g': 2.0055857}
+Variable??
+7.683573664254146
+Variable Source!
+Variable??
+12.943030454692009
+Variable Source!
+Variable??
+19.504086810676586
+Variable Source!
+Variable??
+19.52253295444912
+Variable Source!
+Slope:       [0.7064377820239571, 1, 0.8643103159924101, 0.8727789383057714]
+Slope Error: [0.1529039655284654, 0, 0.052086649771228566, 0.059788909634723886]
+intercepts:  [-0.011144411926241826, 0, -0.011993113361093547, -0.013412328655064096]
+Int Error:   [0.008974146136632688, 0, 0.003124552511006688, 0.003527212951607335]
+StDev:       [0.1740456, 0.28530112, 0.45015424, 0.6362976]
+('ROW:', 1200, 'Tau:', '1.761613284918459e-05', 'V:', '-0.613420448653642')
+Running object 1201
+0.0
+{'i': 82, 'r': 76, 'z': 167, 'g': 75}
+{'i': 15.376148, 'r': 14.419744, 'z': 15.543458, 'g': 10.822104}
+Variable??
+6.381908791110089
+Variable Source!
+Variable??
+8.658898735220657
+Variable Source!
+Variable??
+5.468593567551004
+Non-Variable source in i
+Variable??
+8.785842772776611
+Variable Source!
+Slope:       [0.2754628461520333, 1, 1, -0.3814300679631628]
+Slope Error: [0.10668056798161839, 0, 0.06598169851555584, 0.11174963633210497]
+intercepts:  [0.00015463070592058214, 0, -0.0004945006434123372, -0.0018327843157477106]
+Int Error:   [0.0014416305716197309, 0, 0.000877512881890991, 0.0014750573821824201]
+StDev:       [0.1397419, 0.19001953, 0.125219, 0.28801817]
+('ROW:', 1201, 'Tau:', '9.81454184739057e-05', 'V:', '-0.726420309486354')
+Running object 1202
+0.0
+{'i': 82, 'r': 76, 'z': 165, 'g': 53}
+{'i': 2.6917462, 'r': 1.611476, 'z': 3.4154408, 'g': 0.6279608}
+Variable??
+3.018355723676261
+Non-Variable source in g
+Variable??
+7.248071935654707
+Variable Source!
+Variable??
+11.088177527610302
+Variable Source!
+Variable??
+10.20079844424368
+Variable Source!
+Slope:       [0.7659161774953736, 1, 0.5834669416994345, 0.4719905010357901]
+Slope Error: [0.12841067694938302, 0, 0.06720243012132536, 0.05904337258168705]
+intercepts:  [-0.0052291525799468275, 0, -0.022295117350652705, -0.011575983906463971]
+Int Error:   [0.012082712568246005, 0, 0.008007952568750374, 0.007000593639735238]
+StDev:       [0.06852571, 0.17628591, 0.2733691, 0.36499262]
+('ROW:', 1202, 'Tau:', '7.86589128849817e-05', 'V:', '-0.06061539730518216')
+Running object 1203
+0.0
+{'i': 80, 'r': 71, 'z': 151, 'g': 56}
+{'i': 1.6585197, 'r': 1.3525506, 'z': 1.8373346, 'g': 0.7738323}
+Variable??
+4.520449287252166
+Non-Variable source in g
+Variable??
+7.284707390428553
+Variable Source!
+Variable??
+13.030956408388349
+Variable Source!
+Variable??
+8.21176049015207
+Variable Source!
+Slope:       [0.8248460454311481, 1, 0.9013906198077304, 0.8204505267628882]
+Slope Error: [0.11009852528672094, 0, 0.08058035860375833, 0.07236959754702657]
+intercepts:  [-0.005856500558539482, 0, -0.012346210227767385, -0.034362062306243266]
+Int Error:   [0.013838102954365793, 0, 0.010819347199970615, 0.009262914795688486]
+StDev:       [0.10485082, 0.18070039, 0.3362181, 0.3104031]
+('ROW:', 1203, 'Tau:', '1.0025923975989781e-05', 'V:', '-0.7132043571329654')
+Running object 1204
+0.0
+{'i': 84, 'r': 66, 'z': 167, 'g': 27}
+{'i': 5.2533245, 'r': 2.1914077, 'z': 7.6327505, 'g': 0.6289822}
+Variable??
+5.133529683558713
+Non-Variable source in g
+Variable??
+2.77529249877034
+Non-Variable source in r
+Variable??
+7.454615041797782
+Variable Source!
+Variable??
+5.948520584285872
+Non-Variable source in z
+Slope:       [1, 1, 0.04609552052994392, 1]
+Slope Error: [0.9182389423225777, 0, 0.05249669259519488, 0.0895592010629422]
+intercepts:  [0.04287503174105367, 0, 0.0001515135548472117, 0.0038147650817573764]
+Int Error:   [0.02862357546260385, 0, 0.0016846384810341362, 0.0028869747118255547]
+StDev:       [0.08577718, 0.071342215, 0.2025431, 0.23201807]
+('ROW:', 1204, 'Tau:', '6.075904477577387e-06', 'V:', '0.5998714986388717')
+Running object 1205
+0.0
+{'i': 76, 'r': 69, 'z': 109, 'g': 39}
+{'i': 1.1032424, 'r': 0.89694, 'z': 1.1279609, 'g': 0.47307393}
+Variable??
+2.326902693017786
+Non-Variable source in g
+Variable??
+3.08785WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+57796382546
+Non-Variable source in r
+Variable??
+3.677091242233974
+Non-Variable source in i
+Variable??
+3.8657985150836147
+Non-Variable source in z
+Slope:       [0.6133896672496704, 1, 0.38051495675170055, 0.41149543385846954]
+Slope Error: [0.2095145822477691, 0, 0.09414879199835488, 0.13221268505938497]
+intercepts:  [0.025515599481869766, 0, 0.0034053236054383262, 0.005210107300827527]
+Int Error:   [0.019741963560190128, 0, 0.011054564931241056, 0.014220876589008467]
+StDev:       [0.060761355, 0.10380606, 0.12698796, 0.17490105]
+('ROW:', 1205, 'Tau:', '3.891854049041174e-05', 'V:', '0.12102220639173461')
+Running object 1206
+0.0
+{'i': 81, 'r': 73, 'z': 150, 'g': 51}
+{'i': 1.2642388, 'r': 1.0583475, 'z': 1.3847585, 'g': 0.5019885}
+Variable??
+2.1545029741036705
+Non-Variable source in g
+Variable??
+3.956579707527016
+Non-Variable source in r
+Variable??
+3.6767464983794427
+Non-Variable source in i
+Variable??
+3.8538599779881686
+Non-Variable source in z
+Slope:       [0.3204362310100175, 1, 0.4376055876092704, 0.4090467427800184]
+Slope Error: [0.1533103664029874, 0, 0.07634508623694443, 0.0945340776388385]
+intercepts:  [0.026880275392425212, 0, 0.0029805394277554464, -0.0036888096619851485]
+Int Error:   [0.014788205482320687, 0, 0.007945885446995175, 0.009647901744276365]
+StDev:       [0.05549058, 0.107710995, 0.10688152, 0.16974902]
+('ROW:', 1206, 'Tau:', '4.656246400819644e-05', 'V:', '0.22868919377402852')
+Running object 1207
+0.0
+{'i': 51, 'r': 44, 'z': 126, 'g': 20}
+{'i': 3.5183985, 'r': 1.4930487, 'z': 5.0099726, 'g': 0.36084217}
+Variable??
+1.8826712174840887
+Non-Variable source in g
+Variable??
+3.5470228422916135
+Non-Variable source in r
+Variable??
+2.404546429516185
+Non-Variable source in i
+Variable??
+2.8577693196035816
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.9175685529158569, 0, 0.04786906160087313, 0.041482740729469864]
+intercepts:  [-0.01171204999408514, 0, -0.0007335926797773507, 0.003116794233663124]
+Int Error:   [0.03378971350202206, 0, 0.0037003217846553528, 0.0034868648286576305]
+StDev:       [0.04269548, 0.106891744, 0.075923964, 0.14645046]
+('ROW:', 1207, 'Tau:', '0.2087433228291331', 'V:', '-2.013312238855835')
+Running object 1208
+0.0
+{'i': 61, 'r': 75, 'z': 73, 'g': 73}
+{'i': 318.6157, 'r': 139.96002, 'z': 453.8324, 'g': 38.350555}
+Variable??
+16.498064679233362
+Variable Source!
+Variable??
+43.97016688345626
+Variable Source!
+Variable??
+58.31065025294856
+Variable Source!
+Variable??
+126.6126809837202
+Variable Source!
+Slope:       [0.8982698734643622, 1, 0.31130327384045064, 0.35935216624266153]
+Slope Error: [0.12229537534717277, 0, 0.06649588860288912, 0.05963234723940667]
+intercepts:  [0.0011074493496635708, 0, 0.0014164710310130418, 0.0017474488667068011]
+Int Error:   [0.0012023403966626722, 0, 0.0005665757368150846, 0.0005002580055710879]
+StDev:       [0.5010144, 1.3512281, 1.6156577, 3.8370035]
+('ROW:', 1208, 'Tau:', '1.2854782229227433e-05', 'V:', '-1.2516033703507352')
+Running object 1209
+0.0
+{'i': 79, 'r': 73, 'z': 100, 'g': 52}
+{'i': 0.93746775, 'r': 0.8639763, 'z': 0.939976, 'g': 0.5609827}
+Variable??
+1.4237415071895505
+Non-Variable source in g
+Variable??
+1.799891910997012
+Non-Variable source in r
+Variable??
+2.2810365285145107
+Non-Variable source in i
+Variable??
+2.6616463787853712
+Non-Variable source in z
+Slope:       [1, 1, 1, 0.411046777950264]
+Slope Error: [0.15928447139408186, 0, 0.15274888922497093, 0.20117656538013945]
+intercepts:  [0.015384113582632475, 0, -0.021505857147096248, 0.01235292211842387]
+Int Error:   [0.01218095977082185, 0, 0.010872708273374013, 0.013385983307655969]
+StDev:       [0.04712143, 0.06785559, 0.087069884, 0.12582459]
+('ROW:', 1209, 'Tau:', '0.6013020125322714', 'V:', '-1.355756888043917')
+Running object 1210
+0.0
+{'i': 50, 'r': 23, 'z': 77, 'g': 6}
+{'i': 0.8743309, 'r': 0.47282848, 'z': 1.6137108, 'g': 0.30781195}
+Variable??
+2.0577217919430284
+Non-Variable source in g
+Variable??
+3.0710217059917286
+Non-Variable source in r
+Variable??
+2.7928143574776794
+Non-Variable source in i
+Variable??
+4.208240926123302
+Non-Variable source in z
+Slope:       [1, 1, 0.785WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+3606565639925, 0.6080582432179946]
+Slope Error: [0.0, 0, 0.0761049574994339, 0.14308888490788726]
+intercepts:  [0, 0, 0.08295410481182615, 0.076198219964984]
+Int Error:   [0.0, 0, 0.0167615681211125, 0.03292020052061538]
+StDev:       [0.036478277, 0.10843191, 0.15150218, 0.27476057]
+('ROW:', 1210, 'Tau:', '0.00029004711968516617', 'V:', '-0.6163651710074076')
+Running object 1211
+0.0
+{'i': 82, 'r': 66, 'z': 166, 'g': 36}
+{'i': 7.8270006, 'r': 7.4861593, 'z': 7.7965803, 'g': 6.031329}
+Variable??
+6.608492276476076
+Variable Source!
+Variable??
+4.1767448825496665
+Non-Variable source in r
+Variable??
+4.292035758281552
+Non-Variable source in i
+Variable??
+4.5770007282080964
+Non-Variable source in z
+Slope:       [-0.11727746514311477, 1, 1, 1]
+Slope Error: [0.230068009582968, 0, 0.13850365501819337, 0.15220906152290037]
+intercepts:  [0.00011774773261508109, 0, 0.0005847374197739895, -0.001568771396363142]
+Int Error:   [0.003347218227321935, 0, 0.001949104015095508, 0.002084411177586589]
+StDev:       [0.1148587, 0.0989836, 0.11372061, 0.17682967]
+('ROW:', 1211, 'Tau:', '7.277690746501642e-06', 'V:', '-0.365219698313234')
+Running object 1212
+0.0
+{'i': 83, 'r': 71, 'z': 165, 'g': 26}
+{'i': 2.4346051, 'r': 1.2349718, 'z': 3.4823875, 'g': 0.32153925}
+Variable??
+4.572030909405629
+Non-Variable source in g
+Variable??
+4.681637406950643
+Non-Variable source in r
+Variable??
+8.573391102673565
+Variable Source!
+Variable??
+8.60019638602017
+Variable Source!
+Slope:       [1.4026226712888037, 1, 0.6591993340930689, 0.6145438715303958]
+Slope Error: [0.478730690946455, 0, 0.06183918937721635, 0.054834102805774367]
+intercepts:  [0.039402207311869164, 0, -0.022784250195367055, -0.015210419415753315]
+Int Error:   [0.04506415276758404, 0, 0.006159233728523551, 0.005366572679940437]
+StDev:       [0.07581658, 0.12503546, 0.23416893, 0.33825767]
+('ROW:', 1212, 'Tau:', '0.00010211091650155768', 'V:', '-0.69297641373665')
+Running object 1213
+0.0
+{'i': 70, 'r': 54, 'z': 72, 'g': 28}
+{'i': 0.7399639, 'r': 0.53329897, 'z': 0.82160074, 'g': 0.35126954}
+Variable??
+0.9211222838891722
+Non-Variable source in g
+Variable??
+1.3116434813884825
+Non-Variable source in r
+Variable??
+1.6474996485536155
+Non-Variable source in i
+Variable??
+2.392406720180202
+Non-Variable source in z
+Slope:       [0.5190316316023267, 1, 1, 1]
+Slope Error: [0.18301777075725045, 0, 0.12823097018213447, 0.17588453343317312]
+intercepts:  [-0.01862180307530026, 0, -0.03176237332731285, 0.0007412332440634994]
+Int Error:   [0.01653241707951941, 0, 0.01658017537855621, 0.022254406776356688]
+StDev:       [0.033786304, 0.066978164, 0.09183246, 0.13312486]
+('ROW:', 1213, 'Tau:', '1.3451164931737452', 'V:', '-1.23071927804057')
+Running object 1214
+0.0
+{'i': 79, 'r': 44, 'z': 164, 'g': 1}
+{'i': 1.3166361, 'r': 0.48208722, 'z': 2.2192566, 'g': 0.16343813}
+Variable??
+0
+Non-Variable source in g
+Variable??
+2.5735498174762745
+Non-Variable source in r
+Variable??
+3.8895702141518607
+Non-Variable source in i
+Variable??
+5.158349496329485
+Non-Variable source in z
+Slope:       [1, 1, 0.3442073254895526, 0.26840483236409174]
+Slope Error: [0.0, 0, 0.0727131216137741, 0.053035213089146646]
+intercepts:  [0, 0, 0.010240695052457784, -0.01170213768060635]
+Int Error:   [0.0, 0, 0.01134728527625165, 0.00824820044581074]
+StDev:       [0.0, 0.07457626, 0.13566963, 0.26296836]
+('ROW:', 1214, 'Tau:', '1.820281700158459e-06', 'V:', '0.36628802468942906')
+Running object 1215
+0.0
+{'i': 45, 'r': 8, 'z': 56, 'g': 3}
+{'i': 0.5917762, 'r': 0.38927194, 'z': 0.79255855, 'g': 0.25699487}
+Variable??
+1.0972100304498502
+Non-Variable source in g
+Variable??
+1.2144268004002916
+Non-Variable source in r
+Variable??
+0.6905610577131083
+Non-Variable source in i
+Variable??
+0.6902403343872742
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.43637811323624354, 0.23713655100412256]
+intercepts:  [0, 0, -0.05690355726991692, -0.04105388533932282]
+Int Error:   [0.0, 0, 0.050566460568093795, 0.03264224882145994]
+StDev:       [0.019769799, 0.039275143, 0.085368164, 0.10597813]
+('ROW:', 1215, 'Tau:', '0.8133491027606823', 'V:', '-1.15157926WARNING:root:Too few points to create valid contours
+0831242')
+Running object 1216
+0.0
+{'i': 80, 'r': 49, 'z': 166}
+{'i': 2.2781925, 'r': 0.6392979, 'z': 4.1325917, 'g': 0.0}
+Variable??
+0
+Non-Variable source in g
+Variable??
+3.322297276662928
+Non-Variable source in r
+Variable??
+9.166987976433568
+Variable Source!
+Variable??
+12.868859378152347
+Variable Source!
+Slope:       [1, 1, 0.5571683618565293, 0.6779770864390455]
+Slope Error: [0.0, 0, 0.0843311566999684, 0.06852189182775652]
+intercepts:  [0, 0, -0.042921427037733384, -0.01375748505762901]
+Int Error:   [0.0, 0, 0.01251843994910719, 0.009951850142410476]
+StDev:       [0.0, 0.09333381, 0.28669372, 0.57883954]
+('ROW:', 1216, 'Tau:', '1.4084867249190142e-05', 'V:', '-0.21694709985721486')
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_2step.py", line 509, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
+  File "ClusterEmcee2_linear_mu_2step.py", line 339, in perform_emcee_step2
+    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
+  File "ClusterEmcee2_linear_mu_2step.py", line 178, in sausageplot_step2
+    ax4.legend()
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py", line 564, in legend
+    self.legend_ = mlegend.Legend(self, handles, labels, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend.py", line 386, in __init__
+    self._init_legend_box(handles, labels, markerfirst)
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend.py", line 655, in _init_legend_box
+    fontsize, handlebox))
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend_handler.py", line 119, in legend_artist
+    fontsize, handlebox.get_transform())
+  File "/usr/local/lib/python2.7/dist-packages/matplotlib/legend_handler.py", line 476, in create_artists
+    self.update_prop(coll, barlinecols[0], legend)
+IndexError: tuple index out of range
