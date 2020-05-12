@@ -1,0 +1,86 @@
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+WARNING:root:Too few points to create valid contours
+ClusterEmcee2_linear_mu_2step.py:165: RuntimeWarning: divide by zero encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+('1302', '1305', 'normal')
+Running object 1302
+0.0
+{'i': 79, 'r': 61, 'z': 150}
+{'i': 0.9570166, 'r': 0.54349726, 'z': 1.3367919, 'g': 0.0}
+Variable??
+0
+Non-Variable source in g
+Variable??
+1.1608766436621272
+Non-Variable source in r
+Variable??
+1.44695722359342
+Non-Variable source in i
+Variable??
+1.7460482056552193
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.08715140909471435, 0.08652043991904565]
+intercepts:  [0, 0, -0.013468132493678064, 0.00568331195501004]
+Int Error:   [0.0, 0, 0.009232724847636445, 0.008821440554381194]
+StDev:       [0.0, 0.052770294, 0.06544219, 0.12046964]
+('ROW:', 1302, 'Tau:', '0.4426749820913317', 'V:', '-1.6101312839612871')
+Running object 1303
+0.0
+{'i': 83, 'r': 75, 'z': 162, 'g': 57}
+{'i': 2.4309087, 'r': 1.8662821, 'z': 2.8183146, 'g': 0.8062733}
+Variable??
+5.82963636385038
+Non-Variable source in g
+Variable??
+11.58244335454673
+Variable Source!
+Variable??
+15.607047786461097
+Variable Source!
+Variable??
+13.915693306785924
+Variable Source!
+Slope:       [0.8264455598801472, 1, 0.8607260138086692, 0.8167897630265066]
+Slope Error: [0.10848626500769884, 0, 0.05246254784031144, 0.052240934984179054]
+intercepts:  [0.005947790154088306, 0, -0.014343810307295257, -0.01627190093134243]
+Int Error:   [0.014489855535526248, 0, 0.007741336948946212, 0.007603844902122048]
+StDev:       [0.1265998, 0.27298912, 0.3842494, 0.4895153]
+('ROW:', 1303, 'Tau:', '0.00016549448125916053', 'V:', '-0.5469708979548608')
+Running object 1304
+0.0
+{'i': 22, 'z': 112}
+{'i': 0.4019144, 'r': 0.0, 'z': 0.9802508, 'g': 0.0}
+Variable??
+0
+Non-Variable source in g
+Variable??
+0
+Non-Variable source in r
+Variable??
+1.2507904090125654
+Non-Variable source in i
+Variable??
+0.4744068236426922
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.0, 0.0, 0.06720097, 0.13314545]
+('ROW:', 1304, 'Tau:', '0.5837215474170985', 'V:', '-1.207281092270201')
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_2step.py", line 512, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
+  File "ClusterEmcee2_linear_mu_2step.py", line 341, in perform_emcee_step2
+    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
+  File "ClusterEmcee2_linear_mu_2step.py", line 173, in sausageplot_step2
+    [xlim, ylim] = boundaries(time-57000, np.array(mag_arr))
+  File "ClusterEmcee2_linear_mu_2step.py", line 296, in boundaries
+    mjdmax = 100*np.ceil(np.max(mags)*.01)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/fromnumeric.py", line 2320, in amax
+    out=out, **kwargs)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/_methods.py", line 26, in _amax
+    return umr_maximum(a, axis, None, out, keepdims)
+ValueError: zero-size array to reduction operation maximum which has no identity

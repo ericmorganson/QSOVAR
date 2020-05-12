@@ -23,7 +23,7 @@ if len(sys.argv) < 6:
     print("NAME is the additional identifying name for all output files.")
     sys.exit()
 # Initial MCMC guesses
-file_path = "figure/" #"fig_ssh/" #"figure/"
+file_path = "fig_ssh/" #"fig_ssh/" #"figure/"
 V = 0.3
 Tau = 365.0
 dMu = 0.0
