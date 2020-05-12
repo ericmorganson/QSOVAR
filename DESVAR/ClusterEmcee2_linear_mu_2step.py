@@ -23,7 +23,7 @@ if len(sys.argv) < 6:
     print("NAME is the additional identifying name for all output files.")
     sys.exit()
 # Initial MCMC guesses
-file_path ="fig_ssh/" #"figure/" 
+file_path = "figure/" #"fig_ssh/" #"figure/"
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -175,7 +175,9 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
     ax4.set_xlabel('MJD-57000')
     ax4.set_ylabel('Mags')
     ax4.set_title('Row ' + str(ROW) + "\nV=" + str(Vari) + " Tau=" + str(Tau))
-    ax4.legend()
+    handles, labels = ax4.get_legend_handles_labels()
+    handles = [h[0] for h in handles]
+    ax4.legend(handles, labels)
 
     while np.count_nonzero((time[1:] - time[:-1]) < 0.004) > 0:
         t_df_sig = list(zip(time, delta_f, sigma_sq, color_array))
@@ -397,6 +399,7 @@ def plot_lin(flux, ax, y_label):
     else:
         p = (0, 0)
         res = np.zeros((2, 2))
+
     ax.legend()
     ax.set_xlabel('r')
     ax.set_ylabel(y_label)
