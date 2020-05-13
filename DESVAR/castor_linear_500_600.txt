@@ -1,0 +1,221 @@
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+('500', '600', 'normal')
+Running object 500
+0.0
+{'i': 31, 'r': 25, 'z': 42, 'g': 32}
+{'i': 0.49411544, 'r': 0.3214633, 'z': 0.72811073, 'g': 0.29783806}
+Variable??
+1.1469900489076212
+Non-Variable source in g
+Variable??
+0.6118379026651383
+Non-Variable source in r
+Variable??
+0.7828139836639465
+Non-Variable source in i
+Variable??
+1.3734129502947885
+Non-Variable source in z
+Slope:       [0.7196219812357691, 1, 1, 1.1118381724457627]
+Slope Error: [0.1996838253921096, 0, 0.23256120146417475, 0.3977078031885831]
+intercepts:  [-0.030583504805359287, 0, -0.023505571492254518, -0.0187849162187268]
+Int Error:   [0.029598915483400323, 0, 0.028591881116214076, 0.03450306322271933]
+StDev:       [0.07707957, 0.048358988, 0.06247328, 0.11236863]
+('ROW:', 500, 'Tau:', '0.5743588312346941', 'V:', '-0.8756081096282362')
+Running object 501
+0.0
+{'i': 49, 'r': 52, 'z': 39, 'g': 28}
+{'i': 0.53346664, 'r': 0.46585384, 'z': 0.67687833, 'g': 0.25195652}
+Variable??
+0.2264318759597345
+Non-Variable source in g
+Variable??
+0.9225784844615874
+Non-Variable source in r
+Variable??
+0.8989463906202999
+Non-Variable source in i
+Variable??
+1.4317351971418275
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.22018997081911215, 0, 0.18512514469402366, 0.12166733660251537]
+intercepts:  [-0.007350703991109819, 0, -0.031013274442603767, -0.026868257599382384]
+Int Error:   [0.01980899989851115, 0, 0.020880837391107236, 0.01754027423475545]
+StDev:       [0.02630923, 0.07372062, 0.072106406, 0.08503837]
+('ROW:', 501, 'Tau:', '3.994947179841983', 'V:', '-2.96590189636955')
+Running object 502
+0.0
+{'i': 62, 'r': 48, 'z': 51, 'g': 17}
+{'i': 0.6591624, 'r': 0.47584957, 'z': 0.7207629, 'g': 0.25969177}
+Variable??
+1.4431702647931697
+Non-Variable source in g
+Variable??
+0.9610315177641005
+Non-Variable source in r
+Variable??
+1.1894263086555643
+Non-Variable source in i
+Variable??
+2.40395021290709
+Non-Variable source in z
+Slope:       [1.1963564751423268, 1, 0.43148068815420526, 0.9182307162716481]
+Slope Error: [0.3596650031671185, 0, 0.10659905871039532, 0.18558207504851176]
+intercepts:  [0.07460325889678343, 0, 0.011479215841169732, 0.054426346313381835]
+Int Error:   [0.03918752984116953, 0, 0.014233520543260448, 0.026452164476941067]
+StDev:       [0.04485964, 0.06595977, 0.08942336, 0.13770592]
+('ROW:', 502, 'Tau:', '0.4370415277679009', 'V:', '-0.6686557786508447')
+Running object 503
+0.0
+{'i': 82, 'r': 76, 'z': 166, 'g': 55}
+{'i': 2.4417775, 'r': 1.6804459, 'z': 2.950488, 'g': 0.6014727}
+Variable??
+2.1485924944297117
+Non-Variable source in g
+Variable??
+2.6726932043851255
+Non-Variable source in r
+Variable??
+3.3002357674918565
+Non-Variable source in i
+Variable??
+3.7082234018691205
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.3981487887415212, 0, 0.0921109091728635, 0.09177302229242913]
+intercepts:  [-0.0020514912176954913, 0, 0.0006937274670746341, -0.004519281037485742]
+Int Error:   [0.012319421171172901, 0, 0.0037829539678967527, 0.0037359913152487847]
+StDev:       [0.05311165, 0.06947523, 0.08596854, 0.14561145]
+('ROW:', 503, 'Tau:', '3.9795957925695844', 'V:', '-2.9889987268083558')
+Running object 504
+0.0
+{'i': 40, 'r': 2, 'z': 114}
+{'i': 0.528686, 'r': 0.19116665, 'z': 0.99312645, 'g': 0.0}
+Variable??
+0
+Non-Variable source in g
+Variable??
+2.185633958259916
+Non-Variable source in r
+Variable??
+0.8611345878532481
+Non-Variable source in i
+Variable??
+0.3460053976402951
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.4533989832969927]
+intercepts:  [0, 0, 0, 0.04575341543905942]
+Int Error:   [0.0, 0, 0.0, 0.05255076531733726]
+StDev:       [0.0, 0.022156984, 0.06594887, 0.10717512]
+('ROW:', 504, 'Tau:', '3.998919763623952', 'V:', '-1.3560818927604699')
+Running object 505
+0.0
+{'i': 82, 'r': 65, 'z': 161, 'g': 24}
+{'i': 1.5774856, 'r': 0.7499484, 'z': 2.0227468, 'g': 0.29824635}
+Variable??
+4.89769875292586
+Non-Variable source in g
+Variable??
+4.4202668594272865
+Non-Variable source in r
+Variable??
+5.417168706082664
+Non-Variable source in i
+Variable??
+4.333103577057718
+Non-Variable source in z
+Slope:       [1.494295WARNING:root:Too few points to create valid contours
+ClusterEmcee2_linear_mu_2step.py:272: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
+WARNING:root:Too few points to create valid contours
+ClusterEmcee2_linear_mu_2step.py:165: RuntimeWarning: divide by zero encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+330712483, 1, 0.44425815710383976, 0.36309201058203344]
+Slope Error: [0.17750686516111294, 0, 0.05874081208499835, 0.03784508187274886]
+intercepts:  [0.07490265993918566, 0, 0.0034257445562578814, 0.0017205188641546965]
+Int Error:   [0.027607046052719738, 0, 0.009909249893720376, 0.006488375395006072]
+StDev:       [0.08074655, 0.12329338, 0.16006713, 0.19639899]
+('ROW:', 505, 'Tau:', '9.10713685781904e-05', 'V:', '0.05049753826364567')
+Running object 506
+0.0
+{'i': 60, 'r': 39, 'z': 127, 'g': 25}
+{'i': 0.6791905, 'r': 0.4518374, 'z': 1.1975403, 'g': 0.25853252}
+Variable??
+3.887796726822854
+Non-Variable source in g
+Variable??
+2.3850584845562977
+Non-Variable source in r
+Variable??
+3.3595064834021837
+Non-Variable source in i
+Variable??
+5.2595091678755885
+Non-Variable source in z
+Slope:       [0.40478875882399845, 1, 0.5266591873260995, 0.7613073135913027]
+Slope Error: [0.1700452768921236, 0, 0.15001255970478167, 0.11904886920620548]
+intercepts:  [0.010078010648172708, 0, -0.024985046326377214, -0.04014057511226499]
+Int Error:   [0.025398956569278347, 0, 0.025330600823164424, 0.02065402356715499]
+StDev:       [0.088280395, 0.07476669, 0.12725383, 0.28513664]
+('ROW:', 506, 'Tau:', '2.3363848035272416e-05', 'V:', '0.497308452829832')
+Running object 507
+0.0
+{'i': 77, 'r': 59, 'z': 160, 'g': 32}
+{'i': 1.2483752, 'r': 0.6388357, 'z': 2.295412, 'g': 0.29891774}
+Variable??
+2.1470290505554486
+Non-Variable source in g
+Variable??
+3.469350631721966
+Non-Variable source in r
+Variable??
+6.253654224697134
+Variable Source!
+Variable??
+9.139158165970848
+Variable Source!
+Slope:       [0.7937818309562954, 1, 0.7037686126872407, 0.760649907024378]
+Slope Error: [0.16232101341054483, 0, 0.08641749382983119, 0.06753624244089278]
+intercepts:  [0.013753266403639164, 0, 0.010885599622013187, -1.4692268863303326e-05]
+Int Error:   [0.023880761089171497, 0, 0.013071674521916243, 0.010235748125264107]
+StDev:       [0.047282647, 0.09622157, 0.1808184, 0.37821057]
+('ROW:', 507, 'Tau:', '0.0006587813006906224', 'V:', '-0.6627506272388977')
+Running object 508
+0.0
+{'i': 33, 'z': 140}
+{'i': 0.50320095, 'r': 0.0, 'z': 1.2139006, 'g': 0.0}
+Variable??
+0
+Non-Variable source in g
+Variable??
+0
+Non-Variable source in r
+Variable??
+1.4921647644191625
+Non-Variable source in i
+Variable??
+0.8577379862498475
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.0, 0.0, 0.07309659, 0.13745347]
+('ROW:', 508, 'Tau:', '1.1810597252831554', 'V:', '-1.3118252669342778')
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_2step.py", line 512, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
+  File "ClusterEmcee2_linear_mu_2step.py", line 341, in perform_emcee_step2
+    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
+  File "ClusterEmcee2_linear_mu_2step.py", line 173, in sausageplot_step2
+    [xlim, ylim] = boundaries(time-57000, np.array(mag_arr))
+  File "ClusterEmcee2_linear_mu_2step.py", line 296, in boundaries
+    mjdmax = 100*np.ceil(np.max(mags)*.01)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/fromnumeric.py", line 2320, in amax
+    out=out, **kwargs)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/_methods.py", line 26, in _amax
+    return umr_maximum(a, axis, None, out, keepdims)
+ValueError: zero-size array to reduction operation maximum which has no identity

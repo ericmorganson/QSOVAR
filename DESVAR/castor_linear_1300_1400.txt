@@ -1,0 +1,130 @@
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+WARNING:root:Too few points to create valid contours
+ClusterEmcee2_linear_mu_2step.py:165: RuntimeWarning: divide by zero encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+('1300', '1400', 'normal')
+Running object 1300
+0.0
+{'i': 48, 'r': 53, 'z': 47, 'g': 14}
+{'i': 0.63568234, 'r': 0.58850545, 'z': 0.79396325, 'g': 0.2539432}
+Variable??
+1.9007871367618534
+Non-Variable source in g
+Variable??
+1.1819702982638591
+Non-Variable source in r
+Variable??
+1.4086490477966902
+Non-Variable source in i
+Variable??
+3.502214650528318
+Non-Variable source in z
+Slope:       [1.4507220259924107, 1, 0.470737529704349, 0.896332225765653]
+Slope Error: [0.2945001599941945, 0, 0.17009729979285154, 0.20863056894212562]
+intercepts:  [0.20704546825598613, 0, 0.00945083086762788, 0.0765540251889405]
+Int Error:   [0.04947232948753643, 0, 0.024504817425820242, 0.03399482533236959]
+StDev:       [0.054373898, 0.082188465, 0.09135292, 0.18825325]
+('ROW:', 1300, 'Tau:', '0.0022069154081259534', 'V:', '-0.7677204303685137')
+Running object 1301
+0.0
+{'i': 61, 'r': 52, 'z': 65, 'g': 23}
+{'i': 0.69772166, 'r': 0.57036877, 'z': 0.8239112, 'g': 0.28864875}
+Variable??
+1.446365723718993
+Non-Variable source in g
+Variable??
+1.3203387594704576
+Non-Variable source in r
+Variable??
+1.336604765667488
+Non-Variable source in i
+Variable??
+2.515043267267009
+Non-Variable source in z
+Slope:       [0.7047361460449406, 1, 1, 0.9883143435540198]
+Slope Error: [0.3477433960234725, 0, 0.10864450474989856, 0.1692717961579259]
+intercepts:  [0.002058455277680913, 0, -0.019551942762543906, 0.006119733567286123]
+Int Error:   [0.0330396516103113, 0, 0.013787481563031693, 0.018961143784426673]
+StDev:       [0.0473891, 0.07056109, 0.081920154, 0.1407813]
+('ROW:', 1301, 'Tau:', '0.4146643435600778', 'V:', '-1.059971356604004')
+Running object 1302
+0.0
+{'i': 79, 'r': 61, 'z': 150}
+{'i': 0.9570166, 'r': 0.54349726, 'z': 1.3367919, 'g': 0.0}
+Variable??
+0
+Non-Variable source in g
+Variable??
+1.1608766436621272
+Non-Variable source in r
+Variable??
+1.44695722359342
+Non-Variable source in i
+Variable??
+1.7460482056552193
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.08715140909471435, 0.08652043991904565]
+intercepts:  [0, 0, -0.013468132493678064, 0.00568331195501004]
+Int Error:   [0.0, 0, 0.009232724847636445, 0.008821440554381194]
+StDev:       [0.0, 0.052770294, 0.06544219, 0.12046964]
+('ROW:', 1302, 'Tau:', '0.4481902880528447', 'V:', '-1.6114570569433089')
+Running object 1303
+0.0
+{'i': 83, 'r': 75, 'z': 162, 'g': 57}
+{'i': 2.4309087, 'r': 1.8662821, 'z': 2.8183146, 'g': 0.8062733}
+Variable??
+5.82963636385038
+Non-Variable source in g
+Variable??
+11.58244335454673
+Variable Source!
+Variable??
+15.607047786461097
+Variable Source!
+Variable??
+13.915693306785924
+Variable Source!
+Slope:       [0.8264455598801472, 1, 0.8607260138086692, 0.8167897630265066]
+Slope Error: [0.10848626500769884, 0, 0.05246254784031144, 0.052240934984179054]
+intercepts:  [0.005947790154088306, 0, -0.014343810307295257, -0.01627190093134243]
+Int Error:   [0.014489855535526248, 0, 0.007741336948946212, 0.007603844902122048]
+StDev:       [0.1265998, 0.27298912, 0.3842494, 0.4895153]
+('ROW:', 1303, 'Tau:', '1.3764529791579841e-05', 'V:', '-0.5442792049232275')
+Running object 1304
+0.0
+{'i': 22, 'z': 112}
+{'i': 0.4019144, 'r': 0.0, 'z': 0.9802508, 'g': 0.0}
+Variable??
+0
+Non-Variable source in g
+Variable??
+0
+Non-Variable source in r
+Variable??
+1.2507904090125654
+Non-Variable source in i
+Variable??
+0.4744068236426922
+Non-Variable source in z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.0, 0.0, 0.06720097, 0.13314545]
+('ROW:', 1304, 'Tau:', '0.5625786670718717', 'V:', '-1.2058105542242439')
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_2step.py", line 512, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
+  File "ClusterEmcee2_linear_mu_2step.py", line 341, in perform_emcee_step2
+    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
+  File "ClusterEmcee2_linear_mu_2step.py", line 173, in sausageplot_step2
+    [xlim, ylim] = boundaries(time-57000, np.array(mag_arr))
+  File "ClusterEmcee2_linear_mu_2step.py", line 296, in boundaries
+    mjdmax = 100*np.ceil(np.max(mags)*.01)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/fromnumeric.py", line 2320, in amax
+    out=out, **kwargs)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/_methods.py", line 26, in _amax
+    return umr_maximum(a, axis, None, out, keepdims)
+ValueError: zero-size array to reduction operation maximum which has no identity

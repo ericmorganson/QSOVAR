@@ -1,0 +1,5 @@
+WARNING:root:Too few points to create valid contours
+ClusterEmcee2_linear_mu_2step.py:165: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_2step.py:287: RuntimeWarning: invalid value encountered in greater
+  mag_crit = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags)
