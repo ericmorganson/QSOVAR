@@ -7,10 +7,12 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import emcee
 import scipy.optimize as op
+from scipy import stats
 import corner
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 import itertools
+import pandas as pd
 
 
 if len(sys.argv) < 6:
@@ -23,7 +25,7 @@ if len(sys.argv) < 6:
     print("NAME is the additional identifying name for all output files.")
     sys.exit()
 # Initial MCMC guesses
-file_path = "fig_ssh/" #"fig_ssh/" #"figure/"
+file_path = "figure/" #"fig_ssh/" #"figure/"
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -58,6 +60,10 @@ def weightedmean(state, flux, flux_err_sq):
     return state
 
 
+def read_a_b_chi2(fit, color):
+    return a, b
+
+
 def get_vals(args, ROW):
     color_dict = {"g": 1, "r": 2, "i": 3, "z": 4}
     lc_median = {}
@@ -87,6 +93,13 @@ def get_vals(args, ROW):
         lc_flux = lc_flux[:limit]
         lc_flux_err = lc_flux_err[:limit]
         col = next(color_plt)
+
+        #mean_err = FITS[1].data['MEANERR_PSF_'+color][ROW]
+        #a, b = read_a_b_chi2(sys.argv[2], color)
+        #print(a, b)
+
+        #flux_err_corr = np.sqrt(np.abs((a**2)*lc_flux*np.sqrt(np.abs(lc_flux_err**2 - mean_err**2)) + (b**2)*(lc_flux_err**2 - mean_err**2)))
+
 
         ax5.scatter(lc_time[lc_time != 0],
                     (lc_flux[0:limit] - lc_median[color])/lc_median[color],
@@ -162,14 +175,17 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
     mag_arr = np.array([])
     for color in 'griz':
         color_array += color_dict[color]*color_sort_ones[color_dict[color]]
+        #if mu['r'] != 0:
         mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+        #else:
+
         t = time*color_sort_ones[color_dict[color]]
         e = np.sqrt(sigma_sq)*color_sort_ones[color_dict[color]]
         [mag, e, t] = goodrow(mag, e, t)
         mag_arr = np.append(mag_arr, mag)
         ax4.errorbar(t-57000, mag, yerr=e, fmt=plot_dict[color],
                      label=color.upper()+', dmu='+str(round(dMu_dict[color], 5))+', scale='+str(round(scale_dict[color], 5)))
-
+    print(len(mag_arr))
     [xlim, ylim] = boundaries(time-57000, np.array(mag_arr))
     ax4.set_ylim(ylim)
     ax4.set_xlabel('MJD-57000')
@@ -483,8 +499,6 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
         print(var_crit)
         if var_crit > 6:
             print("Variable Source!")
-            # if slope_err[i]*2>slope[i]:
-            #    slope[i] = std_col[i]/std_col[1]
         else:  # if nonvariable
             print("Non-Variable source in " + str(color_sort_dict[i+1]))
             if slope_err[i]*2 > slope[i]:
