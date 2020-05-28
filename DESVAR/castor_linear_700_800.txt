@@ -1,5 +1,5 @@
 WARNING:root:Too few points to create valid contours
-ClusterEmcee2_linear_mu_2step.py:272: RuntimeWarning: invalid value encountered in log10
+ClusterEmcee2_linear_mu_2step.py:314: RuntimeWarning: invalid value encountered in log10
   err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
 /usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
   warnings.warn("No labelled objects found. "
@@ -9,111 +9,116 @@ Running object 700
 {'i': 80, 'r': 68, 'z': 133, 'g': 62}
 {'i': 1.2106731, 'r': 1.1613793, 'z': 1.1834742, 'g': 0.8314157}
 Variable??
-3.312876390406598
+3.2361431374624114
 Non-Variable source in g
 Variable??
-4.299107169482074
+4.266481784111596
 Non-Variable source in r
 Variable??
-4.4516604562559445
+4.420709858780599
 Non-Variable source in i
 Variable??
-4.837062649847438
+4.767318167656974
 Non-Variable source in z
 Slope:       [0.5016382743331718, 1, 0.4872257888431659, 0.6378476285633197]
 Slope Error: [0.1395842335380725, 0, 0.11077523143558558, 0.13800547811308606]
 intercepts:  [0.006602747063356618, 0, -0.017527646464872593, 0.026817604039614862]
 Int Error:   [0.01318375336187731, 0, 0.01077730571752534, 0.013424482880087194]
 StDev:       [0.087441, 0.11388774, 0.12997207, 0.19928946]
-('ROW:', 700, 'Tau:', '4.500367561295973e-05', 'V:', '0.04550818431792849')
+('ROW:', 700, 'Tau:', '4.1682054272018654e-05', 'V:', '-0.03911402612196632')
+343
 Running object 701
 0.0
 {'i': 53, 'r': 41, 'z': 56, 'g': 8}
 {'i': 0.56737006, 'r': 0.41210437, 'z': 0.70813215, 'g': 0.16550861}
 Variable??
-0.7782807306151709
+0.7482878109562119
 Non-Variable source in g
 Variable??
-0.660937679107148
+0.6216688870892977
 Non-Variable source in r
 Variable??
-0.552630902643921
+0.5142976566512588
 Non-Variable source in i
 Variable??
-1.1359422051807382
+1.0763734290047946
 Non-Variable source in z
 Slope:       [1, 1, 1, 0.37189400240063963]
 Slope Error: [0.5016258279432048, 0, 0.1212692280911048, 0.16221976339581362]
 intercepts:  [-0.0704630146139086, 0, -0.022897827613050672, -0.013570231456319304]
 Int Error:   [0.03852528352866891, 0, 0.015021139975506505, 0.019729444527202843]
 StDev:       [0.021649983, 0.05480689, 0.063539594, 0.10354315]
-('ROW:', 701, 'Tau:', '0.0009806143874214746', 'V:', '-0.894665105029807')
+('ROW:', 701, 'Tau:', '0.0006374180172294512', 'V:', '-0.9251110649170978')
+158
 Running object 702
 0.0
 {'i': 71, 'r': 52, 'z': 89, 'g': 10}
 {'i': 0.6944773, 'r': 0.49327093, 'z': 0.84862787, 'g': 0.17224091}
 Variable??
-1.2472881300325098
+1.2075937158216088
 Non-Variable source in g
 Variable??
-0.9532744565110493
+0.9097995571333362
 Non-Variable source in r
 Variable??
-1.1729813666317497
+1.1313636835501684
 Non-Variable source in i
 Variable??
-1.9121984951990714
+1.8424379258962702
 Non-Variable source in z
 Slope:       [1, 1, 1, 0.3990766976243978]
 Slope Error: [0.44717252135594626, 0, 0.14756945300967664, 0.19005808485629566]
 intercepts:  [0.01616464956451887, 0, -0.0033711852018640798, 0.024372340732775832]
 Int Error:   [0.0585657127696436, 0, 0.0158372427600799, 0.020553717832867406]
 StDev:       [0.024364581, 0.05438046, 0.076052986, 0.13013104]
-('ROW:', 702, 'Tau:', '3.980005795632506e-05', 'V:', '-0.8751833883580107')
+('ROW:', 702, 'Tau:', '0.0027349846320402493', 'V:', '-0.8942780443380336')
+222
 Running object 703
 0.0
 {'i': 80, 'r': 75, 'z': 156, 'g': 49}
 {'i': 1.6624644, 'r': 1.2830101, 'z': 1.813478, 'g': 0.60927874}
 Variable??
-5.457479501941376
+5.383796403450626
 Non-Variable source in g
 Variable??
-7.219728905865148
+7.187390270665386
 Variable Source!
 Variable??
-8.714973492164841
+8.689229930215518
 Variable Source!
 Variable??
-6.862143328131729
+6.806727410639562
 Variable Source!
 Slope:       [0.8037085832564812, 1, 0.7338521927061936, 0.6624694957229444]
 Slope Error: [0.17702566312700682, 0, 0.058685310179578766, 0.05749462273574858]
 intercepts:  [0.01555744314682006, 0, -0.026869496058254165, -0.014650086088262146]
 Int Error:   [0.023014829372780075, 0, 0.008353580814958574, 0.007914378236972124]
 StDev:       [0.11568931, 0.18366502, 0.22646658, 0.26679912]
-('ROW:', 703, 'Tau:', '0.00012721813560110165', 'V:', '-0.5924830243408503')
+('ROW:', 703, 'Tau:', '0.00036737524619451234', 'V:', '-0.663959099743697')
+360
 Running object 704
 0.0
 {'i': 35, 'r': 39, 'z': 12, 'g': 21}
 {'i': 0.464974, 'r': 0.39990732, 'z': 0.55523276, 'g': 0.26591304}
 Variable??
-0.0716359690715412
+0.008277707475429991
 Non-Variable source in g
 Variable??
-0.13119983132274188
+0.09111205248914199
 Non-Variable source in r
 Variable??
-0.4885699880107124
+0.4559173067957396
 Non-Variable source in i
 Variable??
-1.705966842713399
+1.6936526073054434
 Non-Variable source in z
 Slope:       [1, 1, 1, 1]
 Slope Error: [0.2508821867146525, 0, 0.2304269880008535, 0.8942165438033616]
 intercepts:  [0.017650328938415893, 0, 0.022585435670017563, 0.031725755679565676]
 Int Error:   [0.022993772699552346, 0, 0.027665317304182792, 0.05557197667164957]
 StDev:       [0.025797525, 0.04992011, 0.071689524, 0.07359006]
-('ROW:', 704, 'Tau:', '3.9994099444746447', 'V:', '-2.887795819335131')
+('ROW:', 704, 'Tau:', '3.999954352532207', 'V:', '-2.961850577994192')
+107
 Running object 705
 0.0
 {'i': 36, 'r': 3, 'z': 100}
@@ -122,67 +127,72 @@ Variable??
 0
 Non-Variable source in g
 Variable??
-0.9104138585913288
-Non-VariableWARNING:root:Too few points to create valid contours
-ClusterEmcee2_linear_mu_2step.py:165: RuntimeWarning: divide by zero encountered in log10
-  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
- source in r
+0.942WARNING:root:Too few points to create valid contours
+ClusterEmcee2_linear_mu_2step.py:273: RuntimeWarning: divide by zero encountered in divide
+  Fg1 = (Fg1 - mu_r)/mu_r
+/home/thrush2/.local/lib/python2.7/site-packages/numpy/lib/polynomial.py:584: RuntimeWarning: invalid value encountered in true_divide
+  lhs /= scale
+4794210309031
+Non-Variable source in r
 Variable??
-1.1858097637693088
+1.1546213328838348
 Non-Variable source in i
 Variable??
-0.643876175582409
+0.567510587722063
 Non-Variable source in z
 Slope:       [1, 1, 1, 1]
 Slope Error: [0.0, 0, 0.0, 0.0]
 intercepts:  [0, 0, 0, 0]
 Int Error:   [0.0, 0, 0.0, 0.0]
 StDev:       [0.0, 0.014475826, 0.08404412, 0.1361132]
-('ROW:', 705, 'Tau:', '0.8089924003765607', 'V:', '-0.9491496266402251')
+('ROW:', 705, 'Tau:', '0.8771965135739328', 'V:', '-0.9729347829198921')
+139
 Running object 706
 0.0
 {'i': 23, 'r': 40, 'z': 11, 'g': 39}
 {'i': 0.4253912, 'r': 0.373663, 'z': 0.552127, 'g': 0.3583949}
 Variable??
-0.05652058005747833
+-0.021939343975215884
 Non-Variable source in g
 Variable??
-0.0389328229833538
+-0.0035241214810780314
 Non-Variable source in r
 Variable??
-0.8577222212602819
+0.8375614692104507
 Non-Variable source in i
 Variable??
-1.7996260828028856
+1.7910689597320173
 Non-Variable source in z
 Slope:       [1, 1, 1, 1]
 Slope Error: [0.17527893010663884, 0, 0.23580882945344322, 0.5083339086952047]
 intercepts:  [-0.019832909592166548, 0, -0.010974791307534204, 0.009905531047342231]
 Int Error:   [0.016576523838896677, 0, 0.029494355073429856, 0.044196071785953334]
 StDev:       [0.0348826, 0.045066826, 0.06293217, 0.06699269]
-('ROW:', 706, 'Tau:', '3.9932397026151034', 'V:', '-2.94679411821172')
+('ROW:', 706, 'Tau:', '3.9973562941147245', 'V:', '-2.9741992845147776')
+113
 Running object 707
 0.0
 {'i': 84, 'r': 76, 'z': 166, 'g': 68}
 {'i': 4.531243, 'r': 2.8521433, 'z': 5.6664906, 'g': 0.88368785}
 Variable??
-4.340113973597294
+4.2617140783761105
 Non-Variable source in g
 Variable??
-3.672220682730527
+3.650598434717199
 Non-Variable source in r
 Variable??
-4.392331232907162
+4.375624174115846
 Non-Variable source in i
 Variable??
-4.842136233818696
+4.817339378891479
 Non-Variable source in z
 Slope:       [1, 1, 0.28281334290871396, 1]
 Slope Error: [0.6303331016715689, 0, 0.07172285586848372, 0.08951409141390423]
 intercepts:  [0.022237233941937485, 0, 0.0012059740889280802, -0.00012245741145755495]
 Int Error:   [0.013981888324914156, 0, 0.0021546650068825844, 0.002446473113235752]
 StDev:       [0.10126122, 0.08586901, 0.10614396, 0.1682743]
-('ROW:', 707, 'Tau:', '0.0005127113972868136', 'V:', '-1.5730255076365622')
+('ROW:', 707, 'Tau:', '0.00038844450827191235', 'V:', '-1.5982623466226662')
+394
 Running object 708
 0.0
 {'i': 33, 'z': 134}
@@ -194,28 +204,27 @@ Variable??
 0
 Non-Variable source in r
 Variable??
-1.4746491222854825
+1.4483315617783648
 Non-Variable source in i
 Variable??
-1.5460702575893062
+1.476337582803871
 Non-Variable source in z
 Slope:       [1, 1, 1, 1]
 Slope Error: [0.0, 0, 0.0, 0.0]
 intercepts:  [0, 0, 0, 0]
 Int Error:   [0.0, 0, 0.0, 0.0]
 StDev:       [0.0, 0.0, 0.072978914, 0.1827759]
-('ROW:', 708, 'Tau:', '0.6659022812763861', 'V:', '-1.0427734192597011')
+('ROW:', 708, 'Tau:', '0.7378152721975986', 'V:', '-1.0747614847335392')
+167
 Traceback (most recent call last):
-  File "ClusterEmcee2_linear_mu_2step.py", line 512, in <module>
+  File "ClusterEmcee2_linear_mu_2step.py", line 552, in <module>
     perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
-  File "ClusterEmcee2_linear_mu_2step.py", line 341, in perform_emcee_step2
+  File "ClusterEmcee2_linear_mu_2step.py", line 383, in perform_emcee_step2
     sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
-  File "ClusterEmcee2_linear_mu_2step.py", line 173, in sausageplot_step2
-    [xlim, ylim] = boundaries(time-57000, np.array(mag_arr))
-  File "ClusterEmcee2_linear_mu_2step.py", line 296, in boundaries
-    mjdmax = 100*np.ceil(np.max(mags)*.01)
-  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/fromnumeric.py", line 2320, in amax
-    out=out, **kwargs)
-  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/_methods.py", line 26, in _amax
-    return umr_maximum(a, axis, None, out, keepdims)
-ValueError: zero-size array to reduction operation maximum which has no identity
+  File "ClusterEmcee2_linear_mu_2step.py", line 299, in sausageplot_step2
+    parabola = np.polyfit(X, Y, 2)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/lib/polynomial.py", line 585, in polyfit
+    c, resids, rank, s = lstsq(lhs, rhs, rcond)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/linalg/linalg.py", line 2041, in lstsq
+    0, work, lwork, iwork, 0)
+ValueError: On entry to DLASCL parameter number 4 had an illegal value

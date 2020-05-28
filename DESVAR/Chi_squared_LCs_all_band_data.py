@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 #import libraries
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import numpy as np
@@ -42,13 +44,14 @@ def find_a_b(fits, LC_file, color):
     groups = df.groupby(pd.cut(df.sig_m, bins))
     #print(groups.size())
 
-    x = np.array(groups.median().sig_m)
+    x = np.nan_to_num(np.array(groups.median().sig_m))
     #print(x)
-    y = np.array(groups.median().chi2r)
+    y = np.nan_to_num(np.array(groups.median().chi2r))
     #print(y)
 
     #print(groups.chi2r)
     dy = np.array((groups.chi2r.quantile(.85) - groups.chi2r.quantile(.15))/(2*np.sqrt(groups.size())))
+    dy = np.nan_to_num(dy) 
     #print(dy)
 
     j = x[:-1] # sigma
@@ -60,10 +63,10 @@ def find_a_b(fits, LC_file, color):
     def test_func(sigma, a, b):
         return a**2/(sigma**1) + b**2
 
-    params, params_covariance = optimize.curve_fit(test_func, j, k, p0=[1, 3],
+    params, params_covariance = optimize.curve_fit(test_func, j, k, p0=[0.05, 1.08],
                                                    sigma=dk)
 
-    print(LC_file, color, params[0], params[1], flush=True)
+    print(LC_file, color, params[0], params[1])
 
     # calculate new x's and y's
     x_new = np.linspace(j[0], j[-1], 50)
@@ -78,14 +81,17 @@ def find_a_b(fits, LC_file, color):
 
 
 if __name__ == "__main__":
-    files = ['/home/sam/Documents/Morganson_research/C1_lc.fits', '/home/sam/Documents/Morganson_research/C2_lc.fits'] #,
+    files = ['../../C1_lc.fits', '../../C2_lc.fits', '../../E1_lc.fits', '../../E2_lc.fits', 
+             '../../S1_lc.fits', '../../S2_lc.fits', '../../X1_lc.fits', '../../X2_lc.fits']
+    
+            #['/home/sam/Documents/Morganson_research/C1_lc.fits', '/home/sam/Documents/Morganson_research/C2_lc.fits'] #,
             # '/home/sam/Documents/Morganson_research/E1_lc.fits', '/home/sam/Documents/Morganson_research/E2_lc.fits',
             # '/home/sam/Documents/Morganson_research/S1_lc.fits', '/home/sam/Documents/Morganson_research/S2_lc.fits',
             # '/home/sam/Documents/Morganson_research/X1_lc.fits', '/home/sam/Documents/Morganson_research/X2_lc.fits']
 
     for file in files:
-        fits = pyfit.open(file)[1].data
-        LC_file = file.split('/')[5][0:2]
-        for color in 'GRIZ':
-            find_a_b(fits, LC_file, color)
-        fits.close()
+        with pyfit.open(file) as fits:
+            fits = pyfit.open(file)[1].data
+            LC_file = file.split('/')[2][0:2]  # [5][0:2]
+            for color in 'GRIZ':
+                find_a_b(fits, LC_file, color)

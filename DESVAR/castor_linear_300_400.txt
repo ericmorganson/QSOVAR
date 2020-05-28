@@ -1,7 +1,9 @@
 /usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
   warnings.warn("No labelled objects found. "
-ClusterEmcee2_linear_mu_2step.py:165: RuntimeWarning: divide by zero encountered in log10
-  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_2step.py:273: RuntimeWarning: divide by zero encountered in divide
+  Fg1 = (Fg1 - mu_r)/mu_r
+/home/thrush2/.local/lib/python2.7/site-packages/numpy/lib/polynomial.py:584: RuntimeWarning: invalid value encountered in true_divide
+  lhs /= scale
 ('300', '400', 'normal')
 Running object 300
 0.0
@@ -14,28 +16,27 @@ Variable??
 0
 Non-Variable source in r
 Variable??
-0.9429948596901492
+0.9040292083405426
 Non-Variable source in i
 Variable??
-1.1121766071072368
+1.0484563273324397
 Non-Variable source in z
 Slope:       [1, 1, 1, 1]
 Slope Error: [0.0, 0, 0.0, 0.0]
 intercepts:  [0, 0, 0, 0]
 Int Error:   [0.0, 0, 0.0, 0.0]
 StDev:       [0.0, 0.0, 0.06274773, 0.123578146]
-('ROW:', 300, 'Tau:', '2.4960711593407385', 'V:', '-1.7015284685832153')
+('ROW:', 300, 'Tau:', '2.538199489396872', 'V:', '-1.7538665546062977')
+210
 Traceback (most recent call last):
-  File "ClusterEmcee2_linear_mu_2step.py", line 512, in <module>
+  File "ClusterEmcee2_linear_mu_2step.py", line 552, in <module>
     perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
-  File "ClusterEmcee2_linear_mu_2step.py", line 341, in perform_emcee_step2
+  File "ClusterEmcee2_linear_mu_2step.py", line 383, in perform_emcee_step2
     sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
-  File "ClusterEmcee2_linear_mu_2step.py", line 173, in sausageplot_step2
-    [xlim, ylim] = boundaries(time-57000, np.array(mag_arr))
-  File "ClusterEmcee2_linear_mu_2step.py", line 296, in boundaries
-    mjdmax = 100*np.ceil(np.max(mags)*.01)
-  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/fromnumeric.py", line 2320, in amax
-    out=out, **kwargs)
-  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/_methods.py", line 26, in _amax
-    return umr_maximum(a, axis, None, out, keepdims)
-ValueError: zero-size array to reduction operation maximum which has no identity
+  File "ClusterEmcee2_linear_mu_2step.py", line 299, in sausageplot_step2
+    parabola = np.polyfit(X, Y, 2)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/lib/polynomial.py", line 585, in polyfit
+    c, resids, rank, s = lstsq(lhs, rhs, rcond)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/linalg/linalg.py", line 2041, in lstsq
+    0, work, lwork, iwork, 0)
+ValueError: On entry to DLASCL parameter number 4 had an illegal value

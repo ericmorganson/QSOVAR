@@ -25,7 +25,7 @@ if len(sys.argv) < 6:
     print("NAME is the additional identifying name for all output files.")
     sys.exit()
 # Initial MCMC guesses
-file_path = "figure/" #"fig_ssh/" #"figure/"
+file_path = "fig_ssh/" #"figure/"
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -60,7 +60,29 @@ def weightedmean(state, flux, flux_err_sq):
     return state
 
 
-def read_a_b_chi2(fit, color):
+def read_a_b_chi2():
+    # must have a_b_calc.txt for this to work
+    # a_b_calc.txt is made with the following command:
+    # python chi_squared_LCs_all_band_data.py > a_b_calc.txt
+    a_b_vals = []
+    with open("a_b_calc.txt","r") as infile:
+        for line in infile:
+            #print(line)
+            line = line.split('\n')[0]
+
+            field, col, a, b = line.strip('()').split(',')
+
+            a_b_vals.append((field.replace("'", "").strip(), col.replace("'", "").strip(), float(a), float(b)))
+    return a_b_vals
+
+
+def get_a_b_chi2(fit, color, a_b_vals):
+    #print(a_b_vals)
+    field_name = fit.split("/")[1].split("_")[0]
+    for item in a_b_vals:
+        if item[0] == field_name and item[1] == color.upper():
+            a, b = item[2], item[3]
+            #print(item)
     return a, b
 
 
@@ -74,6 +96,8 @@ def get_vals(args, ROW):
     fig = plt.figure(figsize=(10, 10))
     ax5 = fig.add_subplot(111)
     color_plt = iter(cm.rainbow(np.linspace(0, 1, 5)))
+    a_b_list = read_a_b_chi2()
+    #print(a_b_list)
     for color in "griz":
         FITS = pyfit.open(args[1])
         # Obtain flux, err, and time arrays
@@ -94,11 +118,11 @@ def get_vals(args, ROW):
         lc_flux_err = lc_flux_err[:limit]
         col = next(color_plt)
 
-        #mean_err = FITS[1].data['MEANERR_PSF_'+color][ROW]
-        #a, b = read_a_b_chi2(sys.argv[2], color)
+        mean_err = FITS[1].data['MEANERR_PSF_'+color][ROW]
+        a, b = get_a_b_chi2(sys.argv[1], color, a_b_list)
         #print(a, b)
 
-        #flux_err_corr = np.sqrt(np.abs((a**2)*lc_flux*np.sqrt(np.abs(lc_flux_err**2 - mean_err**2)) + (b**2)*(lc_flux_err**2 - mean_err**2)))
+        flux_err_corr = np.sqrt(np.abs((a**2)*lc_flux*np.sqrt(np.abs(lc_flux_err**2 - mean_err**2)) + (b**2)*(lc_flux_err**2 - mean_err**2)))
 
 
         ax5.scatter(lc_time[lc_time != 0],
@@ -109,7 +133,7 @@ def get_vals(args, ROW):
         normed_flux = (lc_flux - lc_median[color])/lc_median[color]
 
         flux_norm = np.append(flux_norm, normed_flux)
-        normed_err = lc_flux_err/lc_median[color]
+        normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color]
         err_norm = np.append(err_norm, normed_err)
     # TODO: label plot with more descriptive headers
     fig.savefig(file_path+str(ROW)+sys.argv[4]+"_all_band_scatter_before.pdf")
@@ -175,10 +199,12 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
     mag_arr = np.array([])
     for color in 'griz':
         color_array += color_dict[color]*color_sort_ones[color_dict[color]]
-        #if mu['r'] != 0:
-        mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
-        #else:
-
+        if mu['r'] != 0:
+            mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+        elif mu['g'] != 0:
+            mag = 22.5-2.5*np.log10(delta_f*mu['g'] + mu['g'])
+        else:
+            mag = 22.5-2.5*np.log10(delta_f*mu['i'] + mu['i'])
         t = time*color_sort_ones[color_dict[color]]
         e = np.sqrt(sigma_sq)*color_sort_ones[color_dict[color]]
         [mag, e, t] = goodrow(mag, e, t)
