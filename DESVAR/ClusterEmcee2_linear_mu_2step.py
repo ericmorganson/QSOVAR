@@ -25,7 +25,7 @@ if len(sys.argv) < 6:
     print("NAME is the additional identifying name for all output files.")
     sys.exit()
 # Initial MCMC guesses
-file_path = "fig_ssh/" #"figure/"
+file_path =  "figure/" #"fig_ssh/" #"figure/"
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -78,7 +78,7 @@ def read_a_b_chi2():
 
 def get_a_b_chi2(fit, color, a_b_vals):
     #print(a_b_vals)
-    field_name = fit.split("/")[1].split("_")[0]
+    field_name = fit.split("/")[-1].split("_")[0]
     for item in a_b_vals:
         if item[0] == field_name and item[1] == color.upper():
             a, b = item[2], item[3]
@@ -267,8 +267,15 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
         tp_0 = t0 / t
         tp_1 = t1 / t
 
-        mu_r = mu['r']
-
+        if mu['r'] != 0:
+            mu_r = mu['r']
+        elif mu['g'] != 0:
+            mu_r = mu['g']
+        elif mu['i'] != 0:
+            mu_r = mu['i']
+        else:
+            print("PANIC!!")
+        
         Fg1 = (tp_0 * delta_f[time_ind0]) + (tp_1 * delta_f[time_ind1])
         Fg1 = (Fg1 - mu_r)/mu_r
         Fg2 = Fg1 - 1
@@ -295,7 +302,8 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
         result = np.linalg.solve(Matr, Y)
         sig_sq = -1/(2*result[0])
         f_0 = -(result[1]/(2*result[0]))
-
+        print(X)
+        print(Y)
         parabola = np.polyfit(X, Y, 2)
         f = np.poly1d(parabola)
 
