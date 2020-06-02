@@ -22,7 +22,7 @@ Slope Error: [0.1996838253921096, 0, 0.23256120146417475, 0.3977078031885831]
 intercepts:  [-0.030583504805359287, 0, -0.023505571492254518, -0.0187849162187268]
 Int Error:   [0.029598915483400323, 0, 0.028591881116214076, 0.03450306322271933]
 StDev:       [0.07707957, 0.048358988, 0.06247328, 0.11236863]
-('ROW:', 500, 'Tau:', '0.6024817594951973', 'V:', '-0.9199601005915464')
+('ROW:', 500, 'Tau:', '0.6068871756299348', 'V:', '-0.9194795855976965')
 130
 Running object 501
 0.0
@@ -45,7 +45,7 @@ Slope Error: [0.22018997081911215, 0, 0.18512514469402366, 0.12166733660251537]
 intercepts:  [-0.007350703991109819, 0, -0.031013274442603767, -0.026868257599382384]
 Int Error:   [0.01980899989851115, 0, 0.020880837391107236, 0.01754027423475545]
 StDev:       [0.02630923, 0.07372062, 0.072106406, 0.08503837]
-('ROW:', 501, 'Tau:', '3.998084338708842', 'V:', '-2.9649786265554914')
+('ROW:', 501, 'Tau:', '3.999781106248954', 'V:', '-2.8782718475382056')
 168
 Running object 502
 0.0
@@ -68,7 +68,7 @@ Slope Error: [0.3596650031671185, 0, 0.10659905871039532, 0.18558207504851176]
 intercepts:  [0.07460325889678343, 0, 0.011479215841169732, 0.054426346313381835]
 Int Error:   [0.03918752984116953, 0, 0.014233520543260448, 0.026452164476941067]
 StDev:       [0.04485964, 0.06595977, 0.08942336, 0.13770592]
-('ROW:', 502, 'Tau:', '0.4405874057552463', 'V:', '-0.6757869238755769')
+('ROW:', 502, 'Tau:', '0.4418376096639762', 'V:', '-0.6760413902966026')
 178
 Running object 503
 0.0
@@ -91,7 +91,7 @@ Slope Error: [0.3981487887415212, 0, 0.0921109091728635, 0.09177302229242913]
 intercepts:  [-0.0020514912176954913, 0, 0.0006937274670746341, -0.004519281037485742]
 Int Error:   [0.012319421171172901, 0, 0.0037829539678967527, 0.0037359913152487847]
 StDev:       [0.05311165, 0.06947523, 0.08596854, 0.14561145]
-('ROW:', 503, 'Tau:', '3.9967860537836675', 'V:', '-2.9963201794749237')
+('ROW:', 503, 'Tau:', '3.988961233236245', 'V:', '-2.9968704105400548')
 379
 Running object 504
 0.0
@@ -114,7 +114,7 @@ Slope Error: [0.0, 0, 0.0, 0.4533989832969927]
 intercepts:  [0, 0, 0, 0.04575341543905942]
 Int Error:   [0.0, 0, 0.0, 0.05255076531733726]
 StDev:       [0.0, 0.022156984, 0.06594887, 0.10717512]
-('ROW:', 504, 'Tau:', '3.9944953451169227', 'V:', '-1.3519677167782203')
+('ROW:', 504, 'Tau:', '3.9967899228280324', 'V:', '-1.350262268112727')
 156
 Running object 505
 0.0
@@ -132,99 +132,6 @@ Non-Variable source in i
 Variable??
 4.278817049947083
 Non-Variable source in z
-SClusterEmcee2_linear_mu_2step.py:314: RuntimeWarning: invalid value encountered in log10
+SloClusterEmcee2_linear_mu_2step.py:326: RuntimeWarning: invalid value encountered in log10
   err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
 WARNING:root:Too few points to create valid contours
-WARNING:root:Too few points to create valid contours
-ClusterEmcee2_linear_mu_2step.py:273: RuntimeWarning: divide by zero encountered in divide
-  Fg1 = (Fg1 - mu_r)/mu_r
-/home/thrush2/.local/lib/python2.7/site-packages/numpy/lib/polynomial.py:584: RuntimeWarning: invalid value encountered in true_divide
-  lhs /= scale
-lope:       [1.494295330712483, 1, 0.44425815710383976, 0.36309201058203344]
-Slope Error: [0.17750686516111294, 0, 0.05874081208499835, 0.03784508187274886]
-intercepts:  [0.07490265993918566, 0, 0.0034257445562578814, 0.0017205188641546965]
-Int Error:   [0.027607046052719738, 0, 0.009909249893720376, 0.006488375395006072]
-StDev:       [0.08074655, 0.12329338, 0.16006713, 0.19639899]
-('ROW:', 505, 'Tau:', '0.00037846245847248175', 'V:', '-0.010984454948892053')
-332
-Running object 506
-0.0
-{'i': 60, 'r': 39, 'z': 127, 'g': 25}
-{'i': 0.6791905, 'r': 0.4518374, 'z': 1.1975403, 'g': 0.25853252}
-Variable??
-3.818968361616135
-Non-Variable source in g
-Variable??
-2.3493363089068313
-Non-Variable source in r
-Variable??
-3.3219871214262944
-Non-Variable source in i
-Variable??
-5.189930101728949
-Non-Variable source in z
-Slope:       [0.40478875882399845, 1, 0.5266591873260995, 0.7613073135913027]
-Slope Error: [0.1700452768921236, 0, 0.15001255970478167, 0.11904886920620548]
-intercepts:  [0.010078010648172708, 0, -0.024985046326377214, -0.04014057511226499]
-Int Error:   [0.025398956569278347, 0, 0.025330600823164424, 0.02065402356715499]
-StDev:       [0.088280395, 0.07476669, 0.12725383, 0.28513664]
-('ROW:', 506, 'Tau:', '9.610112869528828e-05', 'V:', '0.4626569526268475')
-251
-Running object 507
-0.0
-{'i': 77, 'r': 59, 'z': 160, 'g': 32}
-{'i': 1.2483752, 'r': 0.6388357, 'z': 2.295412, 'g': 0.29891774}
-Variable??
-2.06908360668678
-Non-Variable source in g
-Variable??
-3.428022065178794
-Non-Variable source in r
-Variable??
-6.223887043974759
-Variable Source!
-Variable??
-9.092946579640806
-Variable Source!
-Slope:       [0.7937818309562954, 1, 0.7037686126872407, 0.760649907024378]
-Slope Error: [0.16232101341054483, 0, 0.08641749382983119, 0.06753624244089278]
-intercepts:  [0.013753266403639164, 0, 0.010885599622013187, -1.4692268863303326e-05]
-Int Error:   [0.023880761089171497, 0, 0.013071674521916243, 0.010235748125264107]
-StDev:       [0.047282647, 0.09622157, 0.1808184, 0.37821057]
-('ROW:', 507, 'Tau:', '0.00016468244096002477', 'V:', '-0.679655582412151')
-328
-Running object 508
-0.0
-{'i': 33, 'z': 140}
-{'i': 0.50320095, 'r': 0.0, 'z': 1.2139006, 'g': 0.0}
-Variable??
-0
-Non-Variable source in g
-Variable??
-0
-Non-Variable source in r
-Variable??
-1.4637464821535568
-Non-Variable source in i
-Variable??
-0.7841498774661826
-Non-Variable source in z
-Slope:       [1, 1, 1, 1]
-Slope Error: [0.0, 0, 0.0, 0.0]
-intercepts:  [0, 0, 0, 0]
-Int Error:   [0.0, 0, 0.0, 0.0]
-StDev:       [0.0, 0.0, 0.07309659, 0.13745347]
-('ROW:', 508, 'Tau:', '1.394536883237421', 'V:', '-1.3664780139829409')
-173
-Traceback (most recent call last):
-  File "ClusterEmcee2_linear_mu_2step.py", line 552, in <module>
-    perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
-  File "ClusterEmcee2_linear_mu_2step.py", line 383, in perform_emcee_step2
-    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
-  File "ClusterEmcee2_linear_mu_2step.py", line 299, in sausageplot_step2
-    parabola = np.polyfit(X, Y, 2)
-  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/lib/polynomial.py", line 585, in polyfit
-    c, resids, rank, s = lstsq(lhs, rhs, rcond)
-  File "/home/thrush2/.local/lib/python2.7/site-packages/numpy/linalg/linalg.py", line 2041, in lstsq
-    0, work, lwork, iwork, 0)
-ValueError: On entry to DLASCL parameter number 4 had an illegal value

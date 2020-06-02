@@ -13,19 +13,21 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 import itertools
 import pandas as pd
+import os
 
 
-if len(sys.argv) < 6:
+if len(sys.argv) < 7:
     print(len(sys.argv))
-    print("lightcurveplot.py INFITS ROWSTART ROWEND MCMC_TYPE NAME")
+    print("lightcurveplot.py INFITS ROWSTART ROWEND MCMC_TYPE NAME FIGURE_PATH")
     print("INFITS is a fits table of DES Data,")
     print("ROWNUM is a row in that file")
     print("MCMC_TYPE is how you set up the MCMC search ")
     print("array: 'optimal' or 'normal'")
     print("NAME is the additional identifying name for all output files.")
+    print("FIGURE_PATH is the folder where you want to put your files")
     sys.exit()
 # Initial MCMC guesses
-file_path =  "figure/" #"fig_ssh/" #"figure/"
+file_path = str(sys.argv[6])  #"fig_ssh/" #"figure/"
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -136,6 +138,8 @@ def get_vals(args, ROW):
         normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color]
         err_norm = np.append(err_norm, normed_err)
     # TODO: label plot with more descriptive headers
+    if not os.path.exists(file_path):
+        os.makedirs(file_path)
     fig.savefig(file_path+str(ROW)+sys.argv[4]+"_all_band_scatter_before.pdf")
     time, flux_norm, err_norm, array_org = map(list,
                                                zip(*sorted(zip(time,
@@ -302,8 +306,8 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
         result = np.linalg.solve(Matr, Y)
         sig_sq = -1/(2*result[0])
         f_0 = -(result[1]/(2*result[0]))
-        print(X)
-        print(Y)
+        #print(X)
+        #print(Y)
         parabola = np.polyfit(X, Y, 2)
         f = np.poly1d(parabola)
 
