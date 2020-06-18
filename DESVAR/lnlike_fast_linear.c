@@ -590,8 +590,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__lnlike_fast
-#define __PYX_HAVE_API__lnlike_fast
+#define __PYX_HAVE__lnlike_fast_linear
+#define __PYX_HAVE_API__lnlike_fast_linear
 /* Early includes */
 #include "math.h"
 #ifdef _OPENMP
@@ -802,7 +802,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "lnlike_fast.pyx",
+  "lnlike_fast_linear.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1143,12 +1143,12 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'lnlike_fast' */
-#define __Pyx_MODULE_NAME "lnlike_fast"
-extern int __pyx_module_is_main_lnlike_fast;
-int __pyx_module_is_main_lnlike_fast = 0;
+/* Module declarations from 'lnlike_fast_linear' */
+#define __Pyx_MODULE_NAME "lnlike_fast_linear"
+extern int __pyx_module_is_main_lnlike_fast_linear;
+int __pyx_module_is_main_lnlike_fast_linear = 0;
 
-/* Implementation of 'lnlike_fast' */
+/* Implementation of 'lnlike_fast_linear' */
 static PyObject *__pyx_builtin_range;
 static const char __pyx_k_n[] = "n";
 static const char __pyx_k_mu[] = "mu";
@@ -1166,7 +1166,6 @@ static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_time[] = "time";
 static const char __pyx_k_V_ten[] = "V_ten";
 static const char __pyx_k_denom[] = "denom";
-static const char __pyx_k_dflux[] = "dflux";
 static const char __pyx_k_fmean[] = "fmean";
 static const char __pyx_k_print[] = "print";
 static const char __pyx_k_range[] = "range";
@@ -1176,11 +1175,10 @@ static const char __pyx_k_theta[] = "theta";
 static const char __pyx_k_fluxes[] = "fluxes";
 static const char __pyx_k_lnlike[] = "lnlike";
 static const char __pyx_k_logTau[] = "logTau";
-static const char __pyx_k_logdMu[] = "logdMu";
 static const char __pyx_k_output[] = "output";
 static const char __pyx_k_Tau_ten[] = "Tau_ten";
-static const char __pyx_k_dMu_ten[] = "dMu_ten";
 static const char __pyx_k_lognorm[] = "lognorm";
+static const char __pyx_k_var_err[] = "var_err";
 static const char __pyx_k_V_sq_new[] = "V_sq_new";
 static const char __pyx_k_V_sq_old[] = "V_sq_old";
 static const char __pyx_k_cos_func[] = "cos_func";
@@ -1189,11 +1187,11 @@ static const char __pyx_k_fmean_new[] = "fmean_new";
 static const char __pyx_k_exp_dt_Tau[] = "exp_dt_Tau";
 static const char __pyx_k_evolvestate[] = "evolvestate";
 static const char __pyx_k_flux_err_sq[] = "flux_err_sq";
-static const char __pyx_k_lnlike_fast[] = "lnlike_fast";
 static const char __pyx_k_weightedmean[] = "weightedmean";
-static const char __pyx_k_lnlike_fast_pyx[] = "lnlike_fast.pyx";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static const char __pyx_k_lnlike_fast_linear[] = "lnlike_fast_linear";
 static const char __pyx_k_AHHHHH_NEGATIVE_TIME[] = "AHHHHH, NEGATIVE TIME!!!";
+static const char __pyx_k_lnlike_fast_linear_pyx[] = "lnlike_fast_linear.pyx";
 static const char __pyx_k_Example_of_wrapping_cos_functio[] = " Example of wrapping cos function from math.h using Cython. ";
 static PyObject *__pyx_kp_s_AHHHHH_NEGATIVE_TIME;
 static PyObject *__pyx_n_s_Tau_ten;
@@ -1204,9 +1202,7 @@ static PyObject *__pyx_n_s_V_ten;
 static PyObject *__pyx_n_s_arg;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_cos_func;
-static PyObject *__pyx_n_s_dMu_ten;
 static PyObject *__pyx_n_s_denom;
-static PyObject *__pyx_n_s_dflux;
 static PyObject *__pyx_n_s_end;
 static PyObject *__pyx_n_s_evolvestate;
 static PyObject *__pyx_n_s_exp_dt_Tau;
@@ -1217,12 +1213,11 @@ static PyObject *__pyx_n_s_fluxes;
 static PyObject *__pyx_n_s_fmean;
 static PyObject *__pyx_n_s_fmean_new;
 static PyObject *__pyx_n_s_lnlike;
-static PyObject *__pyx_n_s_lnlike_fast;
-static PyObject *__pyx_kp_s_lnlike_fast_pyx;
+static PyObject *__pyx_n_s_lnlike_fast_linear;
+static PyObject *__pyx_kp_s_lnlike_fast_linear_pyx;
 static PyObject *__pyx_n_s_lnp;
 static PyObject *__pyx_n_s_logTau;
 static PyObject *__pyx_n_s_logV;
-static PyObject *__pyx_n_s_logdMu;
 static PyObject *__pyx_n_s_lognorm;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_mu;
@@ -1238,13 +1233,14 @@ static PyObject *__pyx_n_s_sum_func;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_theta;
 static PyObject *__pyx_n_s_time;
+static PyObject *__pyx_n_s_var_err;
 static PyObject *__pyx_n_s_weightedmean;
-static PyObject *__pyx_pf_11lnlike_fast_cos_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_arg); /* proto */
-static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fluxes); /* proto */
-static PyObject *__pyx_pf_11lnlike_fast_4lnlike(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_theta, PyObject *__pyx_v_time, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq); /* proto */
-static PyObject *__pyx_pf_11lnlike_fast_6lognorm(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq); /* proto */
-static PyObject *__pyx_pf_11lnlike_fast_8evolvestate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_exp_dt_Tau, PyObject *__pyx_v_mu, PyObject *__pyx_v_V_sq_old); /* proto */
-static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq); /* proto */
+static PyObject *__pyx_pf_18lnlike_fast_linear_cos_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_arg); /* proto */
+static PyObject *__pyx_pf_18lnlike_fast_linear_2sum_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fluxes); /* proto */
+static PyObject *__pyx_pf_18lnlike_fast_linear_4lnlike(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_theta, PyObject *__pyx_v_time, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq); /* proto */
+static PyObject *__pyx_pf_18lnlike_fast_linear_6lognorm(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq); /* proto */
+static PyObject *__pyx_pf_18lnlike_fast_linear_8evolvestate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_exp_dt_Tau, PyObject *__pyx_v_mu, PyObject *__pyx_v_V_sq_old); /* proto */
+static PyObject *__pyx_pf_18lnlike_fast_linear_10weightedmean(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq); /* proto */
 static PyObject *__pyx_float_6_28318530718;
 static PyObject *__pyx_float_neg_0_5;
 static PyObject *__pyx_int_0;
@@ -1265,7 +1261,7 @@ static PyObject *__pyx_codeobj__10;
 static PyObject *__pyx_codeobj__12;
 /* Late includes */
 
-/* "lnlike_fast.pyx":8
+/* "lnlike_fast_linear.pyx":8
  *     double exp(double arg)
  * 
  * def cos_func(arg):             # <<<<<<<<<<<<<<
@@ -1274,27 +1270,27 @@ static PyObject *__pyx_codeobj__12;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_11lnlike_fast_1cos_func(PyObject *__pyx_self, PyObject *__pyx_v_arg); /*proto*/
-static PyMethodDef __pyx_mdef_11lnlike_fast_1cos_func = {"cos_func", (PyCFunction)__pyx_pw_11lnlike_fast_1cos_func, METH_O, 0};
-static PyObject *__pyx_pw_11lnlike_fast_1cos_func(PyObject *__pyx_self, PyObject *__pyx_v_arg) {
+static PyObject *__pyx_pw_18lnlike_fast_linear_1cos_func(PyObject *__pyx_self, PyObject *__pyx_v_arg); /*proto*/
+static PyMethodDef __pyx_mdef_18lnlike_fast_linear_1cos_func = {"cos_func", (PyCFunction)__pyx_pw_18lnlike_fast_linear_1cos_func, METH_O, 0};
+static PyObject *__pyx_pw_18lnlike_fast_linear_1cos_func(PyObject *__pyx_self, PyObject *__pyx_v_arg) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("cos_func (wrapper)", 0);
-  __pyx_r = __pyx_pf_11lnlike_fast_cos_func(__pyx_self, ((PyObject *)__pyx_v_arg));
+  __pyx_r = __pyx_pf_18lnlike_fast_linear_cos_func(__pyx_self, ((PyObject *)__pyx_v_arg));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11lnlike_fast_cos_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_arg) {
+static PyObject *__pyx_pf_18lnlike_fast_linear_cos_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_arg) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   double __pyx_t_1;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("cos_func", 0);
 
-  /* "lnlike_fast.pyx":9
+  /* "lnlike_fast_linear.pyx":9
  * 
  * def cos_func(arg):
  *     return cos(arg)             # <<<<<<<<<<<<<<
@@ -1309,7 +1305,7 @@ static PyObject *__pyx_pf_11lnlike_fast_cos_func(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "lnlike_fast.pyx":8
+  /* "lnlike_fast_linear.pyx":8
  *     double exp(double arg)
  * 
  * def cos_func(arg):             # <<<<<<<<<<<<<<
@@ -1320,7 +1316,7 @@ static PyObject *__pyx_pf_11lnlike_fast_cos_func(CYTHON_UNUSED PyObject *__pyx_s
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("lnlike_fast.cos_func", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.cos_func", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1328,7 +1324,7 @@ static PyObject *__pyx_pf_11lnlike_fast_cos_func(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "lnlike_fast.pyx":11
+/* "lnlike_fast_linear.pyx":11
  *     return cos(arg)
  * 
  * def sum_func(fluxes):             # <<<<<<<<<<<<<<
@@ -1337,20 +1333,20 @@ static PyObject *__pyx_pf_11lnlike_fast_cos_func(CYTHON_UNUSED PyObject *__pyx_s
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_11lnlike_fast_3sum_func(PyObject *__pyx_self, PyObject *__pyx_v_fluxes); /*proto*/
-static PyMethodDef __pyx_mdef_11lnlike_fast_3sum_func = {"sum_func", (PyCFunction)__pyx_pw_11lnlike_fast_3sum_func, METH_O, 0};
-static PyObject *__pyx_pw_11lnlike_fast_3sum_func(PyObject *__pyx_self, PyObject *__pyx_v_fluxes) {
+static PyObject *__pyx_pw_18lnlike_fast_linear_3sum_func(PyObject *__pyx_self, PyObject *__pyx_v_fluxes); /*proto*/
+static PyMethodDef __pyx_mdef_18lnlike_fast_linear_3sum_func = {"sum_func", (PyCFunction)__pyx_pw_18lnlike_fast_linear_3sum_func, METH_O, 0};
+static PyObject *__pyx_pw_18lnlike_fast_linear_3sum_func(PyObject *__pyx_self, PyObject *__pyx_v_fluxes) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("sum_func (wrapper)", 0);
-  __pyx_r = __pyx_pf_11lnlike_fast_2sum_func(__pyx_self, ((PyObject *)__pyx_v_fluxes));
+  __pyx_r = __pyx_pf_18lnlike_fast_linear_2sum_func(__pyx_self, ((PyObject *)__pyx_v_fluxes));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fluxes) {
+static PyObject *__pyx_pf_18lnlike_fast_linear_2sum_func(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fluxes) {
   PyObject *__pyx_v_output = NULL;
   PyObject *__pyx_v_num = NULL;
   PyObject *__pyx_r = NULL;
@@ -1362,7 +1358,7 @@ static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("sum_func", 0);
 
-  /* "lnlike_fast.pyx":12
+  /* "lnlike_fast_linear.pyx":12
  * 
  * def sum_func(fluxes):
  *     output=0             # <<<<<<<<<<<<<<
@@ -1372,7 +1368,7 @@ static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_output = __pyx_int_0;
 
-  /* "lnlike_fast.pyx":13
+  /* "lnlike_fast_linear.pyx":13
  * def sum_func(fluxes):
  *     output=0
  *     for num in range(fluxes.shape[0]):             # <<<<<<<<<<<<<<
@@ -1430,7 +1426,7 @@ static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_XDECREF_SET(__pyx_v_num, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "lnlike_fast.pyx":14
+    /* "lnlike_fast_linear.pyx":14
  *     output=0
  *     for num in range(fluxes.shape[0]):
  *         output+=fluxes[num]             # <<<<<<<<<<<<<<
@@ -1445,7 +1441,7 @@ static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_
     __Pyx_DECREF_SET(__pyx_v_output, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "lnlike_fast.pyx":13
+    /* "lnlike_fast_linear.pyx":13
  * def sum_func(fluxes):
  *     output=0
  *     for num in range(fluxes.shape[0]):             # <<<<<<<<<<<<<<
@@ -1455,7 +1451,7 @@ static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":15
+  /* "lnlike_fast_linear.pyx":15
  *     for num in range(fluxes.shape[0]):
  *         output+=fluxes[num]
  *     return output             # <<<<<<<<<<<<<<
@@ -1467,7 +1463,7 @@ static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_
   __pyx_r = __pyx_v_output;
   goto __pyx_L0;
 
-  /* "lnlike_fast.pyx":11
+  /* "lnlike_fast_linear.pyx":11
  *     return cos(arg)
  * 
  * def sum_func(fluxes):             # <<<<<<<<<<<<<<
@@ -1480,7 +1476,7 @@ static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("lnlike_fast.sum_func", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.sum_func", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_output);
@@ -1490,18 +1486,18 @@ static PyObject *__pyx_pf_11lnlike_fast_2sum_func(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "lnlike_fast.pyx":17
+/* "lnlike_fast_linear.pyx":17
  *     return output
  * 
  * def lnlike(theta, time, flux, flux_err_sq):             # <<<<<<<<<<<<<<
- *         logV, logTau, logdMu = theta
+ *         logV, logTau = theta
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_11lnlike_fast_5lnlike(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_11lnlike_fast_5lnlike = {"lnlike", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_11lnlike_fast_5lnlike, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_11lnlike_fast_5lnlike(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_18lnlike_fast_linear_5lnlike(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_18lnlike_fast_linear_5lnlike = {"lnlike", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_18lnlike_fast_linear_5lnlike, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_18lnlike_fast_linear_5lnlike(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_theta = 0;
   PyObject *__pyx_v_time = 0;
   PyObject *__pyx_v_flux = 0;
@@ -1571,24 +1567,22 @@ static PyObject *__pyx_pw_11lnlike_fast_5lnlike(PyObject *__pyx_self, PyObject *
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("lnlike", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 17, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("lnlike_fast.lnlike", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.lnlike", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11lnlike_fast_4lnlike(__pyx_self, __pyx_v_theta, __pyx_v_time, __pyx_v_flux, __pyx_v_flux_err_sq);
+  __pyx_r = __pyx_pf_18lnlike_fast_linear_4lnlike(__pyx_self, __pyx_v_theta, __pyx_v_time, __pyx_v_flux, __pyx_v_flux_err_sq);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11lnlike_fast_4lnlike(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_theta, PyObject *__pyx_v_time, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq) {
+static PyObject *__pyx_pf_18lnlike_fast_linear_4lnlike(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_theta, PyObject *__pyx_v_time, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq) {
   PyObject *__pyx_v_logV = NULL;
   PyObject *__pyx_v_logTau = NULL;
-  PyObject *__pyx_v_logdMu = NULL;
   PyObject *__pyx_v_V_ten = NULL;
   PyObject *__pyx_v_Tau_ten = NULL;
-  PyObject *__pyx_v_dMu_ten = NULL;
   PyObject *__pyx_v_state = NULL;
   PyObject *__pyx_v_lnp = NULL;
   PyObject *__pyx_v_n = NULL;
@@ -1598,8 +1592,8 @@ static PyObject *__pyx_pf_11lnlike_fast_4lnlike(CYTHON_UNUSED PyObject *__pyx_se
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *(*__pyx_t_5)(PyObject *);
+  PyObject *(*__pyx_t_4)(PyObject *);
+  PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
   int __pyx_t_7;
   PyObject *__pyx_t_8 = NULL;
@@ -1609,20 +1603,19 @@ static PyObject *__pyx_pf_11lnlike_fast_4lnlike(CYTHON_UNUSED PyObject *__pyx_se
   double __pyx_t_12;
   PyObject *__pyx_t_13 = NULL;
   __Pyx_RefNannySetupContext("lnlike", 0);
-  __Pyx_INCREF(__pyx_v_flux);
 
-  /* "lnlike_fast.pyx":18
+  /* "lnlike_fast_linear.pyx":18
  * 
  * def lnlike(theta, time, flux, flux_err_sq):
- *         logV, logTau, logdMu = theta             # <<<<<<<<<<<<<<
+ *         logV, logTau = theta             # <<<<<<<<<<<<<<
  * 
  *         V_ten = 10**logV
  */
   if ((likely(PyTuple_CheckExact(__pyx_v_theta))) || (PyList_CheckExact(__pyx_v_theta))) {
     PyObject* sequence = __pyx_v_theta;
     Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
-    if (unlikely(size != 3)) {
-      if (size > 3) __Pyx_RaiseTooManyValuesError(3);
+    if (unlikely(size != 2)) {
+      if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
       __PYX_ERR(0, 18, __pyx_L1_error)
     }
@@ -1630,41 +1623,34 @@ static PyObject *__pyx_pf_11lnlike_fast_4lnlike(CYTHON_UNUSED PyObject *__pyx_se
     if (likely(PyTuple_CheckExact(sequence))) {
       __pyx_t_1 = PyTuple_GET_ITEM(sequence, 0); 
       __pyx_t_2 = PyTuple_GET_ITEM(sequence, 1); 
-      __pyx_t_3 = PyTuple_GET_ITEM(sequence, 2); 
     } else {
       __pyx_t_1 = PyList_GET_ITEM(sequence, 0); 
       __pyx_t_2 = PyList_GET_ITEM(sequence, 1); 
-      __pyx_t_3 = PyList_GET_ITEM(sequence, 2); 
     }
     __Pyx_INCREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_t_2);
-    __Pyx_INCREF(__pyx_t_3);
     #else
     __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
     #endif
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_4 = PyObject_GetIter(__pyx_v_theta); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 18, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = Py_TYPE(__pyx_t_4)->tp_iternext;
-    index = 0; __pyx_t_1 = __pyx_t_5(__pyx_t_4); if (unlikely(!__pyx_t_1)) goto __pyx_L3_unpacking_failed;
-    __Pyx_GOTREF(__pyx_t_1);
-    index = 1; __pyx_t_2 = __pyx_t_5(__pyx_t_4); if (unlikely(!__pyx_t_2)) goto __pyx_L3_unpacking_failed;
-    __Pyx_GOTREF(__pyx_t_2);
-    index = 2; __pyx_t_3 = __pyx_t_5(__pyx_t_4); if (unlikely(!__pyx_t_3)) goto __pyx_L3_unpacking_failed;
+    __pyx_t_3 = PyObject_GetIter(__pyx_v_theta); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_5(__pyx_t_4), 3) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
-    __pyx_t_5 = NULL;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = Py_TYPE(__pyx_t_3)->tp_iternext;
+    index = 0; __pyx_t_1 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_1)) goto __pyx_L3_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_1);
+    index = 1; __pyx_t_2 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_2)) goto __pyx_L3_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_2);
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
+    __pyx_t_4 = NULL;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     goto __pyx_L4_unpacking_done;
     __pyx_L3_unpacking_failed:;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_5 = NULL;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_4 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
     __PYX_ERR(0, 18, __pyx_L1_error)
     __pyx_L4_unpacking_done:;
@@ -1673,122 +1659,98 @@ static PyObject *__pyx_pf_11lnlike_fast_4lnlike(CYTHON_UNUSED PyObject *__pyx_se
   __pyx_t_1 = 0;
   __pyx_v_logTau = __pyx_t_2;
   __pyx_t_2 = 0;
-  __pyx_v_logdMu = __pyx_t_3;
-  __pyx_t_3 = 0;
 
-  /* "lnlike_fast.pyx":20
- *         logV, logTau, logdMu = theta
+  /* "lnlike_fast_linear.pyx":20
+ *         logV, logTau = theta
  * 
  *         V_ten = 10**logV             # <<<<<<<<<<<<<<
  *         Tau_ten = 10**logTau
- *         dMu_ten = logdMu
+ * 
  */
-  __pyx_t_3 = PyNumber_Power(__pyx_int_10, __pyx_v_logV, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_v_V_ten = __pyx_t_3;
-  __pyx_t_3 = 0;
+  __pyx_t_2 = PyNumber_Power(__pyx_int_10, __pyx_v_logV, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_v_V_ten = __pyx_t_2;
+  __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":21
+  /* "lnlike_fast_linear.pyx":21
  * 
  *         V_ten = 10**logV
  *         Tau_ten = 10**logTau             # <<<<<<<<<<<<<<
- *         dMu_ten = logdMu
- *         flux = flux - dMu_ten
+ * 
+ *         # due to normalization, mu is by definition 0
  */
-  __pyx_t_3 = PyNumber_Power(__pyx_int_10, __pyx_v_logTau, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_v_Tau_ten = __pyx_t_3;
-  __pyx_t_3 = 0;
+  __pyx_t_2 = PyNumber_Power(__pyx_int_10, __pyx_v_logTau, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_v_Tau_ten = __pyx_t_2;
+  __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":22
- *         V_ten = 10**logV
- *         Tau_ten = 10**logTau
- *         dMu_ten = logdMu             # <<<<<<<<<<<<<<
- *         flux = flux - dMu_ten
- *         # For multiband, this line will be  flux = (flux-dMu_griz)*scale_griz
- */
-  __Pyx_INCREF(__pyx_v_logdMu);
-  __pyx_v_dMu_ten = __pyx_v_logdMu;
-
-  /* "lnlike_fast.pyx":23
- *         Tau_ten = 10**logTau
- *         dMu_ten = logdMu
- *         flux = flux - dMu_ten             # <<<<<<<<<<<<<<
- *         # For multiband, this line will be  flux = (flux-dMu_griz)*scale_griz
- *         # dMu_griz will containt du_g, dmu_r, etc.
- */
-  __pyx_t_3 = PyNumber_Subtract(__pyx_v_flux, __pyx_v_dMu_ten); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF_SET(__pyx_v_flux, __pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "lnlike_fast.pyx":28
- *         # scale_griz will by one for r band and the others will be set relative to other bands
- *         #due to normalization, mu is by definition 0
- *         state=(0,V_ten**2)             # <<<<<<<<<<<<<<
+  /* "lnlike_fast_linear.pyx":24
+ * 
+ *         # due to normalization, mu is by definition 0
+ *         state = (0, V_ten**2)             # <<<<<<<<<<<<<<
  *         lnp = lognorm(state, flux[0], flux_err_sq[0])
  *         state = weightedmean(state, flux[0], flux_err_sq[0])
  */
-  __pyx_t_3 = PyNumber_Power(__pyx_v_V_ten, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Power(__pyx_v_V_ten, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_int_0);
   __Pyx_GIVEREF(__pyx_int_0);
-  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_int_0);
-  __Pyx_GIVEREF(__pyx_t_3);
-  PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_3);
-  __pyx_t_3 = 0;
-  __pyx_v_state = __pyx_t_2;
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_int_0);
+  __Pyx_GIVEREF(__pyx_t_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_2);
   __pyx_t_2 = 0;
+  __pyx_v_state = __pyx_t_1;
+  __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":29
- *         #due to normalization, mu is by definition 0
- *         state=(0,V_ten**2)
+  /* "lnlike_fast_linear.pyx":25
+ *         # due to normalization, mu is by definition 0
+ *         state = (0, V_ten**2)
  *         lnp = lognorm(state, flux[0], flux_err_sq[0])             # <<<<<<<<<<<<<<
  *         state = weightedmean(state, flux[0], flux_err_sq[0])
- *         for n in range(1,len(flux)):
+ *         for n in range(1, len(flux)):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_lognorm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_lognorm); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_flux, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_flux, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_flux_err_sq, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 29, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_flux_err_sq, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_7 = 0;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
     if (likely(__pyx_t_6)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
       __Pyx_INCREF(__pyx_t_6);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
       __pyx_t_7 = 1;
     }
   }
   #if CYTHON_FAST_PYCALL
-  if (PyFunction_Check(__pyx_t_3)) {
-    PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_v_state, __pyx_t_1, __pyx_t_4};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (PyFunction_Check(__pyx_t_2)) {
+    PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_v_state, __pyx_t_3, __pyx_t_5};
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   } else
   #endif
   #if CYTHON_FAST_PYCCALL
-  if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
-    PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_v_state, __pyx_t_1, __pyx_t_4};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+    PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_v_state, __pyx_t_3, __pyx_t_5};
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   } else
   #endif
   {
-    __pyx_t_8 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 29, __pyx_L1_error)
+    __pyx_t_8 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 25, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     if (__pyx_t_6) {
       __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -1796,456 +1758,459 @@ static PyObject *__pyx_pf_11lnlike_fast_4lnlike(CYTHON_UNUSED PyObject *__pyx_se
     __Pyx_INCREF(__pyx_v_state);
     __Pyx_GIVEREF(__pyx_v_state);
     PyTuple_SET_ITEM(__pyx_t_8, 0+__pyx_t_7, __pyx_v_state);
-    __Pyx_GIVEREF(__pyx_t_1);
-    PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_4);
-    PyTuple_SET_ITEM(__pyx_t_8, 2+__pyx_t_7, __pyx_t_4);
-    __pyx_t_1 = 0;
-    __pyx_t_4 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_GIVEREF(__pyx_t_3);
+    PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_3);
+    __Pyx_GIVEREF(__pyx_t_5);
+    PyTuple_SET_ITEM(__pyx_t_8, 2+__pyx_t_7, __pyx_t_5);
+    __pyx_t_3 = 0;
+    __pyx_t_5 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   }
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_lnp = __pyx_t_2;
-  __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_lnp = __pyx_t_1;
+  __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":30
- *         state=(0,V_ten**2)
+  /* "lnlike_fast_linear.pyx":26
+ *         state = (0, V_ten**2)
  *         lnp = lognorm(state, flux[0], flux_err_sq[0])
  *         state = weightedmean(state, flux[0], flux_err_sq[0])             # <<<<<<<<<<<<<<
- *         for n in range(1,len(flux)):
+ *         for n in range(1, len(flux)):
  *             if time[n]-time[n-1] < 0:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_weightedmean); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_8 = __Pyx_GetItemInt(__pyx_v_flux, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_weightedmean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_8 = __Pyx_GetItemInt(__pyx_v_flux, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_flux_err_sq, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 30, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = NULL;
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_flux_err_sq, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_3 = NULL;
   __pyx_t_7 = 0;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_1)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_1);
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
       __pyx_t_7 = 1;
     }
   }
   #if CYTHON_FAST_PYCALL
-  if (PyFunction_Check(__pyx_t_3)) {
-    PyObject *__pyx_temp[4] = {__pyx_t_1, __pyx_v_state, __pyx_t_8, __pyx_t_4};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
-    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_GOTREF(__pyx_t_2);
+  if (PyFunction_Check(__pyx_t_2)) {
+    PyObject *__pyx_temp[4] = {__pyx_t_3, __pyx_v_state, __pyx_t_8, __pyx_t_5};
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   } else
   #endif
   #if CYTHON_FAST_PYCCALL
-  if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
-    PyObject *__pyx_temp[4] = {__pyx_t_1, __pyx_v_state, __pyx_t_8, __pyx_t_4};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
-    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_GOTREF(__pyx_t_2);
+  if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+    PyObject *__pyx_temp[4] = {__pyx_t_3, __pyx_v_state, __pyx_t_8, __pyx_t_5};
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   } else
   #endif
   {
-    __pyx_t_6 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 30, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 26, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    if (__pyx_t_1) {
-      __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1); __pyx_t_1 = NULL;
+    if (__pyx_t_3) {
+      __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
     }
     __Pyx_INCREF(__pyx_v_state);
     __Pyx_GIVEREF(__pyx_v_state);
     PyTuple_SET_ITEM(__pyx_t_6, 0+__pyx_t_7, __pyx_v_state);
     __Pyx_GIVEREF(__pyx_t_8);
     PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_7, __pyx_t_8);
-    __Pyx_GIVEREF(__pyx_t_4);
-    PyTuple_SET_ITEM(__pyx_t_6, 2+__pyx_t_7, __pyx_t_4);
+    __Pyx_GIVEREF(__pyx_t_5);
+    PyTuple_SET_ITEM(__pyx_t_6, 2+__pyx_t_7, __pyx_t_5);
     __pyx_t_8 = 0;
-    __pyx_t_4 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_5 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF_SET(__pyx_v_state, __pyx_t_2);
-  __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF_SET(__pyx_v_state, __pyx_t_1);
+  __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":31
+  /* "lnlike_fast_linear.pyx":27
  *         lnp = lognorm(state, flux[0], flux_err_sq[0])
  *         state = weightedmean(state, flux[0], flux_err_sq[0])
- *         for n in range(1,len(flux)):             # <<<<<<<<<<<<<<
+ *         for n in range(1, len(flux)):             # <<<<<<<<<<<<<<
  *             if time[n]-time[n-1] < 0:
  *                 print('AHHHHH, NEGATIVE TIME!!!')
  */
-  __pyx_t_9 = PyObject_Length(__pyx_v_flux); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 31, __pyx_L1_error)
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_t_9 = PyObject_Length(__pyx_v_flux); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_int_1);
   __Pyx_GIVEREF(__pyx_int_1);
-  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_int_1);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
-  __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
-    __pyx_t_3 = __pyx_t_2; __Pyx_INCREF(__pyx_t_3); __pyx_t_9 = 0;
+  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_int_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_1);
+  __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
+    __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_9 = 0;
     __pyx_t_10 = NULL;
   } else {
-    __pyx_t_9 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_10 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 31, __pyx_L1_error)
+    __pyx_t_9 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_10 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 27, __pyx_L1_error)
   }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
     if (likely(!__pyx_t_10)) {
-      if (likely(PyList_CheckExact(__pyx_t_3))) {
-        if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_3)) break;
+      if (likely(PyList_CheckExact(__pyx_t_2))) {
+        if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_9); __Pyx_INCREF(__pyx_t_2); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 31, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 27, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
-        if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
+        if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_9); __Pyx_INCREF(__pyx_t_2); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 31, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 27, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_3, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
     } else {
-      __pyx_t_2 = __pyx_t_10(__pyx_t_3);
-      if (unlikely(!__pyx_t_2)) {
+      __pyx_t_1 = __pyx_t_10(__pyx_t_2);
+      if (unlikely(!__pyx_t_1)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 31, __pyx_L1_error)
+          else __PYX_ERR(0, 27, __pyx_L1_error)
         }
         break;
       }
-      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_GOTREF(__pyx_t_1);
     }
-    __Pyx_XDECREF_SET(__pyx_v_n, __pyx_t_2);
-    __pyx_t_2 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_n, __pyx_t_1);
+    __pyx_t_1 = 0;
 
-    /* "lnlike_fast.pyx":32
+    /* "lnlike_fast_linear.pyx":28
  *         state = weightedmean(state, flux[0], flux_err_sq[0])
- *         for n in range(1,len(flux)):
+ *         for n in range(1, len(flux)):
  *             if time[n]-time[n-1] < 0:             # <<<<<<<<<<<<<<
  *                 print('AHHHHH, NEGATIVE TIME!!!')
- *             exp_dt_Tau = exp((time[n-1]-time[n])/Tau_ten )
+ *             exp_dt_Tau = exp(-(time[n] - time[n-1])/Tau_ten)
  */
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_time, __pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = __Pyx_PyInt_SubtractObjC(__pyx_v_n, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_time, __pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_6 = __Pyx_PyInt_SubtractObjC(__pyx_v_n, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_time, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_time, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 28, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PyNumber_Subtract(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L1_error)
+    __pyx_t_6 = PyNumber_Subtract(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyObject_RichCompare(__pyx_t_6, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = PyObject_RichCompare(__pyx_t_6, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 32, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 28, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (__pyx_t_11) {
 
-      /* "lnlike_fast.pyx":33
- *         for n in range(1,len(flux)):
+      /* "lnlike_fast_linear.pyx":29
+ *         for n in range(1, len(flux)):
  *             if time[n]-time[n-1] < 0:
  *                 print('AHHHHH, NEGATIVE TIME!!!')             # <<<<<<<<<<<<<<
- *             exp_dt_Tau = exp((time[n-1]-time[n])/Tau_ten )
- *             state=evolvestate(state, exp_dt_Tau, 0, V_ten**2) ### NEED TO WORK ON THIS
+ *             exp_dt_Tau = exp(-(time[n] - time[n-1])/Tau_ten)
+ *             # TODO: SPEED UP EVOLVESTATE
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_AHHHHH_NEGATIVE_TIME) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_AHHHHH_NEGATIVE_TIME) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
 
-      /* "lnlike_fast.pyx":32
+      /* "lnlike_fast_linear.pyx":28
  *         state = weightedmean(state, flux[0], flux_err_sq[0])
- *         for n in range(1,len(flux)):
+ *         for n in range(1, len(flux)):
  *             if time[n]-time[n-1] < 0:             # <<<<<<<<<<<<<<
  *                 print('AHHHHH, NEGATIVE TIME!!!')
- *             exp_dt_Tau = exp((time[n-1]-time[n])/Tau_ten )
+ *             exp_dt_Tau = exp(-(time[n] - time[n-1])/Tau_ten)
  */
     }
 
-    /* "lnlike_fast.pyx":34
+    /* "lnlike_fast_linear.pyx":30
  *             if time[n]-time[n-1] < 0:
  *                 print('AHHHHH, NEGATIVE TIME!!!')
- *             exp_dt_Tau = exp((time[n-1]-time[n])/Tau_ten )             # <<<<<<<<<<<<<<
- *             state=evolvestate(state, exp_dt_Tau, 0, V_ten**2) ### NEED TO WORK ON THIS
- *             lnp += lognorm(state, flux[n], flux_err_sq[n])
+ *             exp_dt_Tau = exp(-(time[n] - time[n-1])/Tau_ten)             # <<<<<<<<<<<<<<
+ *             # TODO: SPEED UP EVOLVESTATE
+ *             state = evolvestate(state, exp_dt_Tau, 0, V_ten**2)
  */
-    __pyx_t_4 = __Pyx_PyInt_SubtractObjC(__pyx_v_n, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_time, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 34, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_time, __pyx_v_n); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 30, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = __Pyx_PyInt_SubtractObjC(__pyx_v_n, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_time, __pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_2 = PyNumber_Subtract(__pyx_t_6, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_time, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_v_Tau_ten); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_12 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_12 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 34, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_6 = PyNumber_Subtract(__pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 30, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = PyNumber_Negative(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_v_Tau_ten); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 30, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_12 = __pyx_PyFloat_AsDouble(__pyx_t_6); if (unlikely((__pyx_t_12 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_v_exp_dt_Tau = exp(__pyx_t_12);
 
-    /* "lnlike_fast.pyx":35
- *                 print('AHHHHH, NEGATIVE TIME!!!')
- *             exp_dt_Tau = exp((time[n-1]-time[n])/Tau_ten )
- *             state=evolvestate(state, exp_dt_Tau, 0, V_ten**2) ### NEED TO WORK ON THIS             # <<<<<<<<<<<<<<
+    /* "lnlike_fast_linear.pyx":32
+ *             exp_dt_Tau = exp(-(time[n] - time[n-1])/Tau_ten)
+ *             # TODO: SPEED UP EVOLVESTATE
+ *             state = evolvestate(state, exp_dt_Tau, 0, V_ten**2)             # <<<<<<<<<<<<<<
  *             lnp += lognorm(state, flux[n], flux_err_sq[n])
  *             state = weightedmean(state, flux[n], flux_err_sq[n])
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_evolvestate); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = PyFloat_FromDouble(__pyx_v_exp_dt_Tau); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 35, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_8 = PyNumber_Power(__pyx_v_V_ten, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 35, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_evolvestate); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_5 = PyFloat_FromDouble(__pyx_v_exp_dt_Tau); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 32, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_8 = PyNumber_Power(__pyx_v_V_ten, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 32, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_1 = NULL;
+    __pyx_t_3 = NULL;
     __pyx_t_7 = 0;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_1)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_1);
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
+      if (likely(__pyx_t_3)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+        __Pyx_INCREF(__pyx_t_3);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
+        __Pyx_DECREF_SET(__pyx_t_1, function);
         __pyx_t_7 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_2)) {
-      PyObject *__pyx_temp[5] = {__pyx_t_1, __pyx_v_state, __pyx_t_6, __pyx_int_0, __pyx_t_8};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 35, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    if (PyFunction_Check(__pyx_t_1)) {
+      PyObject *__pyx_temp[5] = {__pyx_t_3, __pyx_v_state, __pyx_t_5, __pyx_int_0, __pyx_t_8};
+      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
-      PyObject *__pyx_temp[5] = {__pyx_t_1, __pyx_v_state, __pyx_t_6, __pyx_int_0, __pyx_t_8};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 35, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
+      PyObject *__pyx_temp[5] = {__pyx_t_3, __pyx_v_state, __pyx_t_5, __pyx_int_0, __pyx_t_8};
+      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 4+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     {
-      __pyx_t_13 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 35, __pyx_L1_error)
+      __pyx_t_13 = PyTuple_New(4+__pyx_t_7); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 32, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      if (__pyx_t_1) {
-        __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_1); __pyx_t_1 = NULL;
+      if (__pyx_t_3) {
+        __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_3); __pyx_t_3 = NULL;
       }
       __Pyx_INCREF(__pyx_v_state);
       __Pyx_GIVEREF(__pyx_v_state);
       PyTuple_SET_ITEM(__pyx_t_13, 0+__pyx_t_7, __pyx_v_state);
-      __Pyx_GIVEREF(__pyx_t_6);
-      PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_7, __pyx_t_6);
+      __Pyx_GIVEREF(__pyx_t_5);
+      PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_7, __pyx_t_5);
       __Pyx_INCREF(__pyx_int_0);
       __Pyx_GIVEREF(__pyx_int_0);
       PyTuple_SET_ITEM(__pyx_t_13, 2+__pyx_t_7, __pyx_int_0);
       __Pyx_GIVEREF(__pyx_t_8);
       PyTuple_SET_ITEM(__pyx_t_13, 3+__pyx_t_7, __pyx_t_8);
-      __pyx_t_6 = 0;
+      __pyx_t_5 = 0;
       __pyx_t_8 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_13, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 35, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_13, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 32, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
     }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF_SET(__pyx_v_state, __pyx_t_4);
-    __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF_SET(__pyx_v_state, __pyx_t_6);
+    __pyx_t_6 = 0;
 
-    /* "lnlike_fast.pyx":36
- *             exp_dt_Tau = exp((time[n-1]-time[n])/Tau_ten )
- *             state=evolvestate(state, exp_dt_Tau, 0, V_ten**2) ### NEED TO WORK ON THIS
+    /* "lnlike_fast_linear.pyx":33
+ *             # TODO: SPEED UP EVOLVESTATE
+ *             state = evolvestate(state, exp_dt_Tau, 0, V_ten**2)
  *             lnp += lognorm(state, flux[n], flux_err_sq[n])             # <<<<<<<<<<<<<<
  *             state = weightedmean(state, flux[n], flux_err_sq[n])
  *         return lnp
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_lognorm); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_flux, __pyx_v_n); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 36, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_lognorm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_flux, __pyx_v_n); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 33, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
-    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_flux_err_sq, __pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 36, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_flux_err_sq, __pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 33, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_6 = NULL;
+    __pyx_t_5 = NULL;
     __pyx_t_7 = 0;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_6);
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
+      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+      if (likely(__pyx_t_5)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+        __Pyx_INCREF(__pyx_t_5);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
+        __Pyx_DECREF_SET(__pyx_t_1, function);
         __pyx_t_7 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_2)) {
-      PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_v_state, __pyx_t_13, __pyx_t_8};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_GOTREF(__pyx_t_4);
+    if (PyFunction_Check(__pyx_t_1)) {
+      PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_v_state, __pyx_t_13, __pyx_t_8};
+      __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 33, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
-      PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_v_state, __pyx_t_13, __pyx_t_8};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L1_error)
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_GOTREF(__pyx_t_4);
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
+      PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_v_state, __pyx_t_13, __pyx_t_8};
+      __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 33, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     {
-      __pyx_t_1 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      if (__pyx_t_6) {
-        __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_6); __pyx_t_6 = NULL;
+      __pyx_t_3 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      if (__pyx_t_5) {
+        __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_5); __pyx_t_5 = NULL;
       }
       __Pyx_INCREF(__pyx_v_state);
       __Pyx_GIVEREF(__pyx_v_state);
-      PyTuple_SET_ITEM(__pyx_t_1, 0+__pyx_t_7, __pyx_v_state);
+      PyTuple_SET_ITEM(__pyx_t_3, 0+__pyx_t_7, __pyx_v_state);
       __Pyx_GIVEREF(__pyx_t_13);
-      PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_7, __pyx_t_13);
+      PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_7, __pyx_t_13);
       __Pyx_GIVEREF(__pyx_t_8);
-      PyTuple_SET_ITEM(__pyx_t_1, 2+__pyx_t_7, __pyx_t_8);
+      PyTuple_SET_ITEM(__pyx_t_3, 2+__pyx_t_7, __pyx_t_8);
       __pyx_t_13 = 0;
       __pyx_t_8 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 33, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_lnp, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF_SET(__pyx_v_lnp, __pyx_t_2);
-    __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_lnp, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_DECREF_SET(__pyx_v_lnp, __pyx_t_1);
+    __pyx_t_1 = 0;
 
-    /* "lnlike_fast.pyx":37
- *             state=evolvestate(state, exp_dt_Tau, 0, V_ten**2) ### NEED TO WORK ON THIS
+    /* "lnlike_fast_linear.pyx":34
+ *             state = evolvestate(state, exp_dt_Tau, 0, V_ten**2)
  *             lnp += lognorm(state, flux[n], flux_err_sq[n])
  *             state = weightedmean(state, flux[n], flux_err_sq[n])             # <<<<<<<<<<<<<<
  *         return lnp
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_weightedmean); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 37, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_flux, __pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_flux_err_sq, __pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 37, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_weightedmean); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 34, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_flux, __pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_flux_err_sq, __pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 34, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __pyx_t_13 = NULL;
     __pyx_t_7 = 0;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_4);
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
+      __pyx_t_13 = PyMethod_GET_SELF(__pyx_t_6);
       if (likely(__pyx_t_13)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
         __Pyx_INCREF(__pyx_t_13);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __Pyx_DECREF_SET(__pyx_t_6, function);
         __pyx_t_7 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_4)) {
-      PyObject *__pyx_temp[4] = {__pyx_t_13, __pyx_v_state, __pyx_t_1, __pyx_t_8};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
+    if (PyFunction_Check(__pyx_t_6)) {
+      PyObject *__pyx_temp[4] = {__pyx_t_13, __pyx_v_state, __pyx_t_3, __pyx_t_8};
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
-      PyObject *__pyx_temp[4] = {__pyx_t_13, __pyx_v_state, __pyx_t_1, __pyx_t_8};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
+      PyObject *__pyx_temp[4] = {__pyx_t_13, __pyx_v_state, __pyx_t_3, __pyx_t_8};
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 37, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_5 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 34, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
       if (__pyx_t_13) {
-        __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_13); __pyx_t_13 = NULL;
+        __Pyx_GIVEREF(__pyx_t_13); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_13); __pyx_t_13 = NULL;
       }
       __Pyx_INCREF(__pyx_v_state);
       __Pyx_GIVEREF(__pyx_v_state);
-      PyTuple_SET_ITEM(__pyx_t_6, 0+__pyx_t_7, __pyx_v_state);
-      __Pyx_GIVEREF(__pyx_t_1);
-      PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_7, __pyx_t_1);
+      PyTuple_SET_ITEM(__pyx_t_5, 0+__pyx_t_7, __pyx_v_state);
+      __Pyx_GIVEREF(__pyx_t_3);
+      PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_7, __pyx_t_3);
       __Pyx_GIVEREF(__pyx_t_8);
-      PyTuple_SET_ITEM(__pyx_t_6, 2+__pyx_t_7, __pyx_t_8);
-      __pyx_t_1 = 0;
+      PyTuple_SET_ITEM(__pyx_t_5, 2+__pyx_t_7, __pyx_t_8);
+      __pyx_t_3 = 0;
       __pyx_t_8 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF_SET(__pyx_v_state, __pyx_t_2);
-    __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_DECREF_SET(__pyx_v_state, __pyx_t_1);
+    __pyx_t_1 = 0;
 
-    /* "lnlike_fast.pyx":31
+    /* "lnlike_fast_linear.pyx":27
  *         lnp = lognorm(state, flux[0], flux_err_sq[0])
  *         state = weightedmean(state, flux[0], flux_err_sq[0])
- *         for n in range(1,len(flux)):             # <<<<<<<<<<<<<<
+ *         for n in range(1, len(flux)):             # <<<<<<<<<<<<<<
  *             if time[n]-time[n-1] < 0:
  *                 print('AHHHHH, NEGATIVE TIME!!!')
  */
   }
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":38
+  /* "lnlike_fast_linear.pyx":35
  *             lnp += lognorm(state, flux[n], flux_err_sq[n])
  *             state = weightedmean(state, flux[n], flux_err_sq[n])
  *         return lnp             # <<<<<<<<<<<<<<
  * 
- * def lognorm(state, flux, flux_err_sq):
+ * 
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_lnp);
   __pyx_r = __pyx_v_lnp;
   goto __pyx_L0;
 
-  /* "lnlike_fast.pyx":17
+  /* "lnlike_fast_linear.pyx":17
  *     return output
  * 
  * def lnlike(theta, time, flux, flux_err_sq):             # <<<<<<<<<<<<<<
- *         logV, logTau, logdMu = theta
+ *         logV, logTau = theta
  * 
  */
 
@@ -2254,30 +2219,27 @@ static PyObject *__pyx_pf_11lnlike_fast_4lnlike(CYTHON_UNUSED PyObject *__pyx_se
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_13);
-  __Pyx_AddTraceback("lnlike_fast.lnlike", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.lnlike", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_logV);
   __Pyx_XDECREF(__pyx_v_logTau);
-  __Pyx_XDECREF(__pyx_v_logdMu);
   __Pyx_XDECREF(__pyx_v_V_ten);
   __Pyx_XDECREF(__pyx_v_Tau_ten);
-  __Pyx_XDECREF(__pyx_v_dMu_ten);
   __Pyx_XDECREF(__pyx_v_state);
   __Pyx_XDECREF(__pyx_v_lnp);
   __Pyx_XDECREF(__pyx_v_n);
-  __Pyx_XDECREF(__pyx_v_flux);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "lnlike_fast.pyx":40
- *         return lnp
+/* "lnlike_fast_linear.pyx":38
+ * 
  * 
  * def lognorm(state, flux, flux_err_sq):             # <<<<<<<<<<<<<<
  *         # This finds the normal distribution for any measurement (x),
@@ -2285,9 +2247,9 @@ static PyObject *__pyx_pf_11lnlike_fast_4lnlike(CYTHON_UNUSED PyObject *__pyx_se
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_11lnlike_fast_7lognorm(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_11lnlike_fast_7lognorm = {"lognorm", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_11lnlike_fast_7lognorm, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_11lnlike_fast_7lognorm(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_18lnlike_fast_linear_7lognorm(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_18lnlike_fast_linear_7lognorm = {"lognorm", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_18lnlike_fast_linear_7lognorm, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_18lnlike_fast_linear_7lognorm(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_state = 0;
   PyObject *__pyx_v_flux = 0;
   PyObject *__pyx_v_flux_err_sq = 0;
@@ -2319,17 +2281,17 @@ static PyObject *__pyx_pw_11lnlike_fast_7lognorm(PyObject *__pyx_self, PyObject 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_flux)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("lognorm", 1, 3, 3, 1); __PYX_ERR(0, 40, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("lognorm", 1, 3, 3, 1); __PYX_ERR(0, 38, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_flux_err_sq)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("lognorm", 1, 3, 3, 2); __PYX_ERR(0, 40, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("lognorm", 1, 3, 3, 2); __PYX_ERR(0, 38, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lognorm") < 0)) __PYX_ERR(0, 40, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "lognorm") < 0)) __PYX_ERR(0, 38, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -2344,23 +2306,24 @@ static PyObject *__pyx_pw_11lnlike_fast_7lognorm(PyObject *__pyx_self, PyObject 
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lognorm", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 40, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lognorm", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 38, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("lnlike_fast.lognorm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.lognorm", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11lnlike_fast_6lognorm(__pyx_self, __pyx_v_state, __pyx_v_flux, __pyx_v_flux_err_sq);
+  __pyx_r = __pyx_pf_18lnlike_fast_linear_6lognorm(__pyx_self, __pyx_v_state, __pyx_v_flux, __pyx_v_flux_err_sq);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11lnlike_fast_6lognorm(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq) {
+static PyObject *__pyx_pf_18lnlike_fast_linear_6lognorm(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq) {
   PyObject *__pyx_v_fmean = NULL;
   PyObject *__pyx_v_V_sq = NULL;
-  PyObject *__pyx_v_dflux = NULL;
+  PyObject *__pyx_v_var_err = NULL;
+  PyObject *__pyx_v_lognorm = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2370,12 +2333,12 @@ static PyObject *__pyx_pf_11lnlike_fast_6lognorm(CYTHON_UNUSED PyObject *__pyx_s
   double __pyx_t_5;
   __Pyx_RefNannySetupContext("lognorm", 0);
 
-  /* "lnlike_fast.pyx":43
+  /* "lnlike_fast_linear.pyx":41
  *         # This finds the normal distribution for any measurement (x),
  *         # mean(mu), and variance squared (var2).
  *         fmean, V_sq = state             # <<<<<<<<<<<<<<
- *         dflux = flux-fmean
- *         return -0.5*((dflux*dflux)/(V_sq + flux_err_sq) + log(6.28318530718*(V_sq + flux_err_sq)))
+ *         var_err = (V_sq + flux_err_sq)
+ *         lognorm = -0.5*(((flux-fmean)*(flux-fmean))/var_err + log(6.28318530718*var_err))
  */
   if ((likely(PyTuple_CheckExact(__pyx_v_state))) || (PyList_CheckExact(__pyx_v_state))) {
     PyObject* sequence = __pyx_v_state;
@@ -2383,7 +2346,7 @@ static PyObject *__pyx_pf_11lnlike_fast_6lognorm(CYTHON_UNUSED PyObject *__pyx_s
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 43, __pyx_L1_error)
+      __PYX_ERR(0, 41, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -2396,21 +2359,21 @@ static PyObject *__pyx_pf_11lnlike_fast_6lognorm(CYTHON_UNUSED PyObject *__pyx_s
     __Pyx_INCREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_t_2);
     #else
-    __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
+    __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     #endif
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_3 = PyObject_GetIter(__pyx_v_state); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L1_error)
+    __pyx_t_3 = PyObject_GetIter(__pyx_v_state); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = Py_TYPE(__pyx_t_3)->tp_iternext;
     index = 0; __pyx_t_1 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_1)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_1);
     index = 1; __pyx_t_2 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_2)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_2);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
     __pyx_t_4 = NULL;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     goto __pyx_L4_unpacking_done;
@@ -2418,7 +2381,7 @@ static PyObject *__pyx_pf_11lnlike_fast_6lognorm(CYTHON_UNUSED PyObject *__pyx_s
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 43, __pyx_L1_error)
+    __PYX_ERR(0, 41, __pyx_L1_error)
     __pyx_L4_unpacking_done:;
   }
   __pyx_v_fmean = __pyx_t_1;
@@ -2426,56 +2389,66 @@ static PyObject *__pyx_pf_11lnlike_fast_6lognorm(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_v_V_sq = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":44
+  /* "lnlike_fast_linear.pyx":42
  *         # mean(mu), and variance squared (var2).
  *         fmean, V_sq = state
- *         dflux = flux-fmean             # <<<<<<<<<<<<<<
- *         return -0.5*((dflux*dflux)/(V_sq + flux_err_sq) + log(6.28318530718*(V_sq + flux_err_sq)))
- * 
+ *         var_err = (V_sq + flux_err_sq)             # <<<<<<<<<<<<<<
+ *         lognorm = -0.5*(((flux-fmean)*(flux-fmean))/var_err + log(6.28318530718*var_err))
+ *         return lognorm
  */
-  __pyx_t_2 = PyNumber_Subtract(__pyx_v_flux, __pyx_v_fmean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Add(__pyx_v_V_sq, __pyx_v_flux_err_sq); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_v_dflux = __pyx_t_2;
+  __pyx_v_var_err = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":45
+  /* "lnlike_fast_linear.pyx":43
  *         fmean, V_sq = state
- *         dflux = flux-fmean
- *         return -0.5*((dflux*dflux)/(V_sq + flux_err_sq) + log(6.28318530718*(V_sq + flux_err_sq)))             # <<<<<<<<<<<<<<
+ *         var_err = (V_sq + flux_err_sq)
+ *         lognorm = -0.5*(((flux-fmean)*(flux-fmean))/var_err + log(6.28318530718*var_err))             # <<<<<<<<<<<<<<
+ *         return lognorm
  * 
- * def evolvestate(state, exp_dt_Tau, mu, V_sq_old):
  */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_dflux, __pyx_v_dflux); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Subtract(__pyx_v_flux, __pyx_v_fmean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyNumber_Add(__pyx_v_V_sq, __pyx_v_flux_err_sq); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Subtract(__pyx_v_flux, __pyx_v_fmean); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_Add(__pyx_v_V_sq, __pyx_v_flux_err_sq); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Multiply(__pyx_float_6_28318530718, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(log(__pyx_t_5)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyNumber_Add(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_t_3, __pyx_v_var_err); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyNumber_Multiply(__pyx_float_neg_0_5, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Multiply(__pyx_float_6_28318530718, __pyx_v_var_err); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyFloat_FromDouble(log(__pyx_t_5)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_r = __pyx_t_2;
-  __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyNumber_Multiply(__pyx_float_neg_0_5, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_lognorm = __pyx_t_3;
+  __pyx_t_3 = 0;
+
+  /* "lnlike_fast_linear.pyx":44
+ *         var_err = (V_sq + flux_err_sq)
+ *         lognorm = -0.5*(((flux-fmean)*(flux-fmean))/var_err + log(6.28318530718*var_err))
+ *         return lognorm             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_lognorm);
+  __pyx_r = __pyx_v_lognorm;
   goto __pyx_L0;
 
-  /* "lnlike_fast.pyx":40
- *         return lnp
+  /* "lnlike_fast_linear.pyx":38
+ * 
  * 
  * def lognorm(state, flux, flux_err_sq):             # <<<<<<<<<<<<<<
  *         # This finds the normal distribution for any measurement (x),
@@ -2487,29 +2460,30 @@ static PyObject *__pyx_pf_11lnlike_fast_6lognorm(CYTHON_UNUSED PyObject *__pyx_s
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("lnlike_fast.lognorm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.lognorm", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_fmean);
   __Pyx_XDECREF(__pyx_v_V_sq);
-  __Pyx_XDECREF(__pyx_v_dflux);
+  __Pyx_XDECREF(__pyx_v_var_err);
+  __Pyx_XDECREF(__pyx_v_lognorm);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "lnlike_fast.pyx":47
- *         return -0.5*((dflux*dflux)/(V_sq + flux_err_sq) + log(6.28318530718*(V_sq + flux_err_sq)))
+/* "lnlike_fast_linear.pyx":47
+ * 
  * 
  * def evolvestate(state, exp_dt_Tau, mu, V_sq_old):             # <<<<<<<<<<<<<<
  *         fmean, V_sq = state
- *         fmean_new = exp_dt_Tau*(fmean - mu)+ mu
+ *         fmean_new = exp_dt_Tau*(fmean - mu) + mu
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_11lnlike_fast_9evolvestate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_11lnlike_fast_9evolvestate = {"evolvestate", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_11lnlike_fast_9evolvestate, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_11lnlike_fast_9evolvestate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_18lnlike_fast_linear_9evolvestate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_18lnlike_fast_linear_9evolvestate = {"evolvestate", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_18lnlike_fast_linear_9evolvestate, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_18lnlike_fast_linear_9evolvestate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_state = 0;
   PyObject *__pyx_v_exp_dt_Tau = 0;
   PyObject *__pyx_v_mu = 0;
@@ -2579,18 +2553,18 @@ static PyObject *__pyx_pw_11lnlike_fast_9evolvestate(PyObject *__pyx_self, PyObj
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("evolvestate", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 47, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("lnlike_fast.evolvestate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.evolvestate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11lnlike_fast_8evolvestate(__pyx_self, __pyx_v_state, __pyx_v_exp_dt_Tau, __pyx_v_mu, __pyx_v_V_sq_old);
+  __pyx_r = __pyx_pf_18lnlike_fast_linear_8evolvestate(__pyx_self, __pyx_v_state, __pyx_v_exp_dt_Tau, __pyx_v_mu, __pyx_v_V_sq_old);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11lnlike_fast_8evolvestate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_exp_dt_Tau, PyObject *__pyx_v_mu, PyObject *__pyx_v_V_sq_old) {
+static PyObject *__pyx_pf_18lnlike_fast_linear_8evolvestate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_exp_dt_Tau, PyObject *__pyx_v_mu, PyObject *__pyx_v_V_sq_old) {
   PyObject *__pyx_v_fmean = NULL;
   PyObject *__pyx_v_V_sq = NULL;
   PyObject *__pyx_v_fmean_new = NULL;
@@ -2604,12 +2578,12 @@ static PyObject *__pyx_pf_11lnlike_fast_8evolvestate(CYTHON_UNUSED PyObject *__p
   __Pyx_RefNannySetupContext("evolvestate", 0);
   __Pyx_INCREF(__pyx_v_state);
 
-  /* "lnlike_fast.pyx":48
+  /* "lnlike_fast_linear.pyx":48
  * 
  * def evolvestate(state, exp_dt_Tau, mu, V_sq_old):
  *         fmean, V_sq = state             # <<<<<<<<<<<<<<
- *         fmean_new = exp_dt_Tau*(fmean - mu)+ mu
- *         V_sq_new = V_sq_old*(1 - exp_dt_Tau*exp_dt_Tau) + (exp_dt_Tau*exp_dt_Tau)*V_sq
+ *         fmean_new = exp_dt_Tau*(fmean - mu) + mu
+ * 
  */
   if ((likely(PyTuple_CheckExact(__pyx_v_state))) || (PyList_CheckExact(__pyx_v_state))) {
     PyObject* sequence = __pyx_v_state;
@@ -2660,12 +2634,12 @@ static PyObject *__pyx_pf_11lnlike_fast_8evolvestate(CYTHON_UNUSED PyObject *__p
   __pyx_v_V_sq = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":49
+  /* "lnlike_fast_linear.pyx":49
  * def evolvestate(state, exp_dt_Tau, mu, V_sq_old):
  *         fmean, V_sq = state
- *         fmean_new = exp_dt_Tau*(fmean - mu)+ mu             # <<<<<<<<<<<<<<
+ *         fmean_new = exp_dt_Tau*(fmean - mu) + mu             # <<<<<<<<<<<<<<
+ * 
  *         V_sq_new = V_sq_old*(1 - exp_dt_Tau*exp_dt_Tau) + (exp_dt_Tau*exp_dt_Tau)*V_sq
- *         state = (fmean_new, V_sq_new)
  */
   __pyx_t_2 = PyNumber_Subtract(__pyx_v_fmean, __pyx_v_mu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -2678,41 +2652,41 @@ static PyObject *__pyx_pf_11lnlike_fast_8evolvestate(CYTHON_UNUSED PyObject *__p
   __pyx_v_fmean_new = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":50
- *         fmean, V_sq = state
- *         fmean_new = exp_dt_Tau*(fmean - mu)+ mu
+  /* "lnlike_fast_linear.pyx":51
+ *         fmean_new = exp_dt_Tau*(fmean - mu) + mu
+ * 
  *         V_sq_new = V_sq_old*(1 - exp_dt_Tau*exp_dt_Tau) + (exp_dt_Tau*exp_dt_Tau)*V_sq             # <<<<<<<<<<<<<<
  *         state = (fmean_new, V_sq_new)
  *         return state
  */
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_exp_dt_Tau, __pyx_v_exp_dt_Tau); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_v_exp_dt_Tau, __pyx_v_exp_dt_Tau); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_t_2, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_t_2, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_V_sq_old, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_v_V_sq_old, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_Multiply(__pyx_v_exp_dt_Tau, __pyx_v_exp_dt_Tau); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_exp_dt_Tau, __pyx_v_exp_dt_Tau); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyNumber_Multiply(__pyx_t_1, __pyx_v_V_sq); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Multiply(__pyx_t_1, __pyx_v_V_sq); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_V_sq_new = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":51
- *         fmean_new = exp_dt_Tau*(fmean - mu)+ mu
+  /* "lnlike_fast_linear.pyx":52
+ * 
  *         V_sq_new = V_sq_old*(1 - exp_dt_Tau*exp_dt_Tau) + (exp_dt_Tau*exp_dt_Tau)*V_sq
  *         state = (fmean_new, V_sq_new)             # <<<<<<<<<<<<<<
  *         return state
  * 
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_fmean_new);
   __Pyx_GIVEREF(__pyx_v_fmean_new);
@@ -2723,24 +2697,24 @@ static PyObject *__pyx_pf_11lnlike_fast_8evolvestate(CYTHON_UNUSED PyObject *__p
   __Pyx_DECREF_SET(__pyx_v_state, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":52
+  /* "lnlike_fast_linear.pyx":53
  *         V_sq_new = V_sq_old*(1 - exp_dt_Tau*exp_dt_Tau) + (exp_dt_Tau*exp_dt_Tau)*V_sq
  *         state = (fmean_new, V_sq_new)
  *         return state             # <<<<<<<<<<<<<<
  * 
- * def weightedmean(state, flux, flux_err_sq):
+ * 
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_state);
   __pyx_r = __pyx_v_state;
   goto __pyx_L0;
 
-  /* "lnlike_fast.pyx":47
- *         return -0.5*((dflux*dflux)/(V_sq + flux_err_sq) + log(6.28318530718*(V_sq + flux_err_sq)))
+  /* "lnlike_fast_linear.pyx":47
+ * 
  * 
  * def evolvestate(state, exp_dt_Tau, mu, V_sq_old):             # <<<<<<<<<<<<<<
  *         fmean, V_sq = state
- *         fmean_new = exp_dt_Tau*(fmean - mu)+ mu
+ *         fmean_new = exp_dt_Tau*(fmean - mu) + mu
  */
 
   /* function exit code */
@@ -2748,7 +2722,7 @@ static PyObject *__pyx_pf_11lnlike_fast_8evolvestate(CYTHON_UNUSED PyObject *__p
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("lnlike_fast.evolvestate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.evolvestate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_fmean);
@@ -2761,8 +2735,8 @@ static PyObject *__pyx_pf_11lnlike_fast_8evolvestate(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "lnlike_fast.pyx":54
- *         return state
+/* "lnlike_fast_linear.pyx":56
+ * 
  * 
  * def weightedmean(state, flux, flux_err_sq):             # <<<<<<<<<<<<<<
  *         fmean, V_sq = state
@@ -2770,9 +2744,9 @@ static PyObject *__pyx_pf_11lnlike_fast_8evolvestate(CYTHON_UNUSED PyObject *__p
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_11lnlike_fast_11weightedmean(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_11lnlike_fast_11weightedmean = {"weightedmean", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_11lnlike_fast_11weightedmean, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_11lnlike_fast_11weightedmean(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_18lnlike_fast_linear_11weightedmean(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_18lnlike_fast_linear_11weightedmean = {"weightedmean", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_18lnlike_fast_linear_11weightedmean, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_18lnlike_fast_linear_11weightedmean(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_state = 0;
   PyObject *__pyx_v_flux = 0;
   PyObject *__pyx_v_flux_err_sq = 0;
@@ -2804,17 +2778,17 @@ static PyObject *__pyx_pw_11lnlike_fast_11weightedmean(PyObject *__pyx_self, PyO
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_flux)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("weightedmean", 1, 3, 3, 1); __PYX_ERR(0, 54, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("weightedmean", 1, 3, 3, 1); __PYX_ERR(0, 56, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_flux_err_sq)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("weightedmean", 1, 3, 3, 2); __PYX_ERR(0, 54, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("weightedmean", 1, 3, 3, 2); __PYX_ERR(0, 56, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "weightedmean") < 0)) __PYX_ERR(0, 54, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "weightedmean") < 0)) __PYX_ERR(0, 56, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -2829,20 +2803,20 @@ static PyObject *__pyx_pw_11lnlike_fast_11weightedmean(PyObject *__pyx_self, PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("weightedmean", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 54, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("weightedmean", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 56, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("lnlike_fast.weightedmean", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.weightedmean", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11lnlike_fast_10weightedmean(__pyx_self, __pyx_v_state, __pyx_v_flux, __pyx_v_flux_err_sq);
+  __pyx_r = __pyx_pf_18lnlike_fast_linear_10weightedmean(__pyx_self, __pyx_v_state, __pyx_v_flux, __pyx_v_flux_err_sq);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq) {
+static PyObject *__pyx_pf_18lnlike_fast_linear_10weightedmean(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_state, PyObject *__pyx_v_flux, PyObject *__pyx_v_flux_err_sq) {
   PyObject *__pyx_v_fmean = NULL;
   PyObject *__pyx_v_V_sq = NULL;
   PyObject *__pyx_v_denom = NULL;
@@ -2857,7 +2831,7 @@ static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *_
   __Pyx_RefNannySetupContext("weightedmean", 0);
   __Pyx_INCREF(__pyx_v_state);
 
-  /* "lnlike_fast.pyx":55
+  /* "lnlike_fast_linear.pyx":57
  * 
  * def weightedmean(state, flux, flux_err_sq):
  *         fmean, V_sq = state             # <<<<<<<<<<<<<<
@@ -2870,7 +2844,7 @@ static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *_
     if (unlikely(size != 2)) {
       if (size > 2) __Pyx_RaiseTooManyValuesError(2);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 55, __pyx_L1_error)
+      __PYX_ERR(0, 57, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -2883,21 +2857,21 @@ static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *_
     __Pyx_INCREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_t_2);
     #else
-    __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
+    __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     #endif
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_3 = PyObject_GetIter(__pyx_v_state); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
+    __pyx_t_3 = PyObject_GetIter(__pyx_v_state); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = Py_TYPE(__pyx_t_3)->tp_iternext;
     index = 0; __pyx_t_1 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_1)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_1);
     index = 1; __pyx_t_2 = __pyx_t_4(__pyx_t_3); if (unlikely(!__pyx_t_2)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_2);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_4(__pyx_t_3), 2) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
     __pyx_t_4 = NULL;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     goto __pyx_L4_unpacking_done;
@@ -2905,7 +2879,7 @@ static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *_
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 55, __pyx_L1_error)
+    __PYX_ERR(0, 57, __pyx_L1_error)
     __pyx_L4_unpacking_done:;
   }
   __pyx_v_fmean = __pyx_t_1;
@@ -2913,64 +2887,64 @@ static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *_
   __pyx_v_V_sq = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":56
+  /* "lnlike_fast_linear.pyx":58
  * def weightedmean(state, flux, flux_err_sq):
  *         fmean, V_sq = state
  *         denom = 1/(V_sq + flux_err_sq)             # <<<<<<<<<<<<<<
  *         fmean_new = ((flux)*V_sq + fmean*flux_err_sq)*denom
  *         V_sq_new = flux_err_sq*V_sq*denom
  */
-  __pyx_t_2 = PyNumber_Add(__pyx_v_V_sq, __pyx_v_flux_err_sq); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Add(__pyx_v_V_sq, __pyx_v_flux_err_sq); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_int_1, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_int_1, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_denom = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":57
+  /* "lnlike_fast_linear.pyx":59
  *         fmean, V_sq = state
  *         denom = 1/(V_sq + flux_err_sq)
  *         fmean_new = ((flux)*V_sq + fmean*flux_err_sq)*denom             # <<<<<<<<<<<<<<
  *         V_sq_new = flux_err_sq*V_sq*denom
  *         state = (fmean_new, V_sq_new)
  */
-  __pyx_t_1 = PyNumber_Multiply(__pyx_v_flux, __pyx_v_V_sq); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_flux, __pyx_v_V_sq); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_fmean, __pyx_v_flux_err_sq); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_v_fmean, __pyx_v_flux_err_sq); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyNumber_Add(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Add(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyNumber_Multiply(__pyx_t_3, __pyx_v_denom); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_t_3, __pyx_v_denom); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_fmean_new = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "lnlike_fast.pyx":58
+  /* "lnlike_fast_linear.pyx":60
  *         denom = 1/(V_sq + flux_err_sq)
  *         fmean_new = ((flux)*V_sq + fmean*flux_err_sq)*denom
  *         V_sq_new = flux_err_sq*V_sq*denom             # <<<<<<<<<<<<<<
  *         state = (fmean_new, V_sq_new)
  *         return state
  */
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_flux_err_sq, __pyx_v_V_sq); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_v_flux_err_sq, __pyx_v_V_sq); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_v_denom); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_v_denom); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_V_sq_new = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "lnlike_fast.pyx":59
+  /* "lnlike_fast_linear.pyx":61
  *         fmean_new = ((flux)*V_sq + fmean*flux_err_sq)*denom
  *         V_sq_new = flux_err_sq*V_sq*denom
  *         state = (fmean_new, V_sq_new)             # <<<<<<<<<<<<<<
  *         return state
  */
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_v_fmean_new);
   __Pyx_GIVEREF(__pyx_v_fmean_new);
@@ -2981,7 +2955,7 @@ static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *_
   __Pyx_DECREF_SET(__pyx_v_state, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "lnlike_fast.pyx":60
+  /* "lnlike_fast_linear.pyx":62
  *         V_sq_new = flux_err_sq*V_sq*denom
  *         state = (fmean_new, V_sq_new)
  *         return state             # <<<<<<<<<<<<<<
@@ -2991,8 +2965,8 @@ static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *_
   __pyx_r = __pyx_v_state;
   goto __pyx_L0;
 
-  /* "lnlike_fast.pyx":54
- *         return state
+  /* "lnlike_fast_linear.pyx":56
+ * 
  * 
  * def weightedmean(state, flux, flux_err_sq):             # <<<<<<<<<<<<<<
  *         fmean, V_sq = state
@@ -3004,7 +2978,7 @@ static PyObject *__pyx_pf_11lnlike_fast_10weightedmean(CYTHON_UNUSED PyObject *_
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("lnlike_fast.weightedmean", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("lnlike_fast_linear.weightedmean", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_fmean);
@@ -3025,17 +2999,17 @@ static PyMethodDef __pyx_methods[] = {
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec_lnlike_fast(PyObject* module); /*proto*/
+static int __pyx_pymod_exec_lnlike_fast_linear(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec_lnlike_fast},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_lnlike_fast_linear},
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-    "lnlike_fast",
+    "lnlike_fast_linear",
     __pyx_k_Example_of_wrapping_cos_functio, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -3073,9 +3047,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_arg, __pyx_k_arg, sizeof(__pyx_k_arg), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_cos_func, __pyx_k_cos_func, sizeof(__pyx_k_cos_func), 0, 0, 1, 1},
-  {&__pyx_n_s_dMu_ten, __pyx_k_dMu_ten, sizeof(__pyx_k_dMu_ten), 0, 0, 1, 1},
   {&__pyx_n_s_denom, __pyx_k_denom, sizeof(__pyx_k_denom), 0, 0, 1, 1},
-  {&__pyx_n_s_dflux, __pyx_k_dflux, sizeof(__pyx_k_dflux), 0, 0, 1, 1},
   {&__pyx_n_s_end, __pyx_k_end, sizeof(__pyx_k_end), 0, 0, 1, 1},
   {&__pyx_n_s_evolvestate, __pyx_k_evolvestate, sizeof(__pyx_k_evolvestate), 0, 0, 1, 1},
   {&__pyx_n_s_exp_dt_Tau, __pyx_k_exp_dt_Tau, sizeof(__pyx_k_exp_dt_Tau), 0, 0, 1, 1},
@@ -3086,12 +3058,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_fmean, __pyx_k_fmean, sizeof(__pyx_k_fmean), 0, 0, 1, 1},
   {&__pyx_n_s_fmean_new, __pyx_k_fmean_new, sizeof(__pyx_k_fmean_new), 0, 0, 1, 1},
   {&__pyx_n_s_lnlike, __pyx_k_lnlike, sizeof(__pyx_k_lnlike), 0, 0, 1, 1},
-  {&__pyx_n_s_lnlike_fast, __pyx_k_lnlike_fast, sizeof(__pyx_k_lnlike_fast), 0, 0, 1, 1},
-  {&__pyx_kp_s_lnlike_fast_pyx, __pyx_k_lnlike_fast_pyx, sizeof(__pyx_k_lnlike_fast_pyx), 0, 0, 1, 0},
+  {&__pyx_n_s_lnlike_fast_linear, __pyx_k_lnlike_fast_linear, sizeof(__pyx_k_lnlike_fast_linear), 0, 0, 1, 1},
+  {&__pyx_kp_s_lnlike_fast_linear_pyx, __pyx_k_lnlike_fast_linear_pyx, sizeof(__pyx_k_lnlike_fast_linear_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_lnp, __pyx_k_lnp, sizeof(__pyx_k_lnp), 0, 0, 1, 1},
   {&__pyx_n_s_logTau, __pyx_k_logTau, sizeof(__pyx_k_logTau), 0, 0, 1, 1},
   {&__pyx_n_s_logV, __pyx_k_logV, sizeof(__pyx_k_logV), 0, 0, 1, 1},
-  {&__pyx_n_s_logdMu, __pyx_k_logdMu, sizeof(__pyx_k_logdMu), 0, 0, 1, 1},
   {&__pyx_n_s_lognorm, __pyx_k_lognorm, sizeof(__pyx_k_lognorm), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_mu, __pyx_k_mu, sizeof(__pyx_k_mu), 0, 0, 1, 1},
@@ -3107,6 +3078,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_theta, __pyx_k_theta, sizeof(__pyx_k_theta), 0, 0, 1, 1},
   {&__pyx_n_s_time, __pyx_k_time, sizeof(__pyx_k_time), 0, 0, 1, 1},
+  {&__pyx_n_s_var_err, __pyx_k_var_err, sizeof(__pyx_k_var_err), 0, 0, 1, 1},
   {&__pyx_n_s_weightedmean, __pyx_k_weightedmean, sizeof(__pyx_k_weightedmean), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
@@ -3121,7 +3093,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "lnlike_fast.pyx":8
+  /* "lnlike_fast_linear.pyx":8
  *     double exp(double arg)
  * 
  * def cos_func(arg):             # <<<<<<<<<<<<<<
@@ -3131,9 +3103,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple_ = PyTuple_Pack(1, __pyx_n_s_arg); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
-  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_pyx, __pyx_n_s_cos_func, 8, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_linear_pyx, __pyx_n_s_cos_func, 8, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 8, __pyx_L1_error)
 
-  /* "lnlike_fast.pyx":11
+  /* "lnlike_fast_linear.pyx":11
  *     return cos(arg)
  * 
  * def sum_func(fluxes):             # <<<<<<<<<<<<<<
@@ -3143,55 +3115,55 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__3 = PyTuple_Pack(3, __pyx_n_s_fluxes, __pyx_n_s_output, __pyx_n_s_num); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_pyx, __pyx_n_s_sum_func, 11, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_linear_pyx, __pyx_n_s_sum_func, 11, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 11, __pyx_L1_error)
 
-  /* "lnlike_fast.pyx":17
+  /* "lnlike_fast_linear.pyx":17
  *     return output
  * 
  * def lnlike(theta, time, flux, flux_err_sq):             # <<<<<<<<<<<<<<
- *         logV, logTau, logdMu = theta
+ *         logV, logTau = theta
  * 
  */
-  __pyx_tuple__5 = PyTuple_Pack(14, __pyx_n_s_theta, __pyx_n_s_time, __pyx_n_s_flux, __pyx_n_s_flux_err_sq, __pyx_n_s_logV, __pyx_n_s_logTau, __pyx_n_s_logdMu, __pyx_n_s_V_ten, __pyx_n_s_Tau_ten, __pyx_n_s_dMu_ten, __pyx_n_s_state, __pyx_n_s_lnp, __pyx_n_s_n, __pyx_n_s_exp_dt_Tau); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(12, __pyx_n_s_theta, __pyx_n_s_time, __pyx_n_s_flux, __pyx_n_s_flux_err_sq, __pyx_n_s_logV, __pyx_n_s_logTau, __pyx_n_s_V_ten, __pyx_n_s_Tau_ten, __pyx_n_s_state, __pyx_n_s_lnp, __pyx_n_s_n, __pyx_n_s_exp_dt_Tau); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(4, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_pyx, __pyx_n_s_lnlike, 17, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(4, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_linear_pyx, __pyx_n_s_lnlike, 17, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 17, __pyx_L1_error)
 
-  /* "lnlike_fast.pyx":40
- *         return lnp
+  /* "lnlike_fast_linear.pyx":38
+ * 
  * 
  * def lognorm(state, flux, flux_err_sq):             # <<<<<<<<<<<<<<
  *         # This finds the normal distribution for any measurement (x),
  *         # mean(mu), and variance squared (var2).
  */
-  __pyx_tuple__7 = PyTuple_Pack(6, __pyx_n_s_state, __pyx_n_s_flux, __pyx_n_s_flux_err_sq, __pyx_n_s_fmean, __pyx_n_s_V_sq, __pyx_n_s_dflux); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(7, __pyx_n_s_state, __pyx_n_s_flux, __pyx_n_s_flux_err_sq, __pyx_n_s_fmean, __pyx_n_s_V_sq, __pyx_n_s_var_err, __pyx_n_s_lognorm); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
-  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_pyx, __pyx_n_s_lognorm, 40, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(3, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_linear_pyx, __pyx_n_s_lognorm, 38, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 38, __pyx_L1_error)
 
-  /* "lnlike_fast.pyx":47
- *         return -0.5*((dflux*dflux)/(V_sq + flux_err_sq) + log(6.28318530718*(V_sq + flux_err_sq)))
+  /* "lnlike_fast_linear.pyx":47
+ * 
  * 
  * def evolvestate(state, exp_dt_Tau, mu, V_sq_old):             # <<<<<<<<<<<<<<
  *         fmean, V_sq = state
- *         fmean_new = exp_dt_Tau*(fmean - mu)+ mu
+ *         fmean_new = exp_dt_Tau*(fmean - mu) + mu
  */
   __pyx_tuple__9 = PyTuple_Pack(8, __pyx_n_s_state, __pyx_n_s_exp_dt_Tau, __pyx_n_s_mu, __pyx_n_s_V_sq_old, __pyx_n_s_fmean, __pyx_n_s_V_sq, __pyx_n_s_fmean_new, __pyx_n_s_V_sq_new); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
-  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(4, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_pyx, __pyx_n_s_evolvestate, 47, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(4, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_linear_pyx, __pyx_n_s_evolvestate, 47, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 47, __pyx_L1_error)
 
-  /* "lnlike_fast.pyx":54
- *         return state
+  /* "lnlike_fast_linear.pyx":56
+ * 
  * 
  * def weightedmean(state, flux, flux_err_sq):             # <<<<<<<<<<<<<<
  *         fmean, V_sq = state
  *         denom = 1/(V_sq + flux_err_sq)
  */
-  __pyx_tuple__11 = PyTuple_Pack(8, __pyx_n_s_state, __pyx_n_s_flux, __pyx_n_s_flux_err_sq, __pyx_n_s_fmean, __pyx_n_s_V_sq, __pyx_n_s_denom, __pyx_n_s_fmean_new, __pyx_n_s_V_sq_new); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(8, __pyx_n_s_state, __pyx_n_s_flux, __pyx_n_s_flux_err_sq, __pyx_n_s_fmean, __pyx_n_s_V_sq, __pyx_n_s_denom, __pyx_n_s_fmean_new, __pyx_n_s_V_sq_new); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
-  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_pyx, __pyx_n_s_weightedmean, 54, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_lnlike_fast_linear_pyx, __pyx_n_s_weightedmean, 56, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -3293,11 +3265,11 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
-__Pyx_PyMODINIT_FUNC initlnlike_fast(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC initlnlike_fast(void)
+__Pyx_PyMODINIT_FUNC initlnlike_fast_linear(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC initlnlike_fast_linear(void)
 #else
-__Pyx_PyMODINIT_FUNC PyInit_lnlike_fast(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_lnlike_fast(void)
+__Pyx_PyMODINIT_FUNC PyInit_lnlike_fast_linear(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_lnlike_fast_linear(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -3364,7 +3336,7 @@ bad:
 }
 
 
-static CYTHON_SMALL_CODE int __pyx_pymod_exec_lnlike_fast(PyObject *__pyx_pyinit_module)
+static CYTHON_SMALL_CODE int __pyx_pymod_exec_lnlike_fast_linear(PyObject *__pyx_pyinit_module)
 #endif
 #endif
 {
@@ -3373,7 +3345,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_lnlike_fast(PyObject *__pyx_pyinit
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
     if (__pyx_m == __pyx_pyinit_module) return 0;
-    PyErr_SetString(PyExc_RuntimeError, "Module 'lnlike_fast' has already been imported. Re-initialisation is not supported.");
+    PyErr_SetString(PyExc_RuntimeError, "Module 'lnlike_fast_linear' has already been imported. Re-initialisation is not supported.");
     return -1;
   }
   #elif PY_MAJOR_VERSION >= 3
@@ -3388,7 +3360,7 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
-  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_lnlike_fast(void)", 0);
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_lnlike_fast_linear(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #ifdef __Pxy_PyFrame_Initialize_Offsets
   __Pxy_PyFrame_Initialize_Offsets();
@@ -3427,7 +3399,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("lnlike_fast", __pyx_methods, __pyx_k_Example_of_wrapping_cos_functio, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("lnlike_fast_linear", __pyx_methods, __pyx_k_Example_of_wrapping_cos_functio, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -3445,14 +3417,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_lnlike_fast) {
+  if (__pyx_module_is_main_lnlike_fast_linear) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "lnlike_fast")) {
-      if (unlikely(PyDict_SetItemString(modules, "lnlike_fast", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "lnlike_fast_linear")) {
+      if (unlikely(PyDict_SetItemString(modules, "lnlike_fast_linear", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -3473,79 +3445,79 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "lnlike_fast.pyx":8
+  /* "lnlike_fast_linear.pyx":8
  *     double exp(double arg)
  * 
  * def cos_func(arg):             # <<<<<<<<<<<<<<
  *     return cos(arg)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11lnlike_fast_1cos_func, NULL, __pyx_n_s_lnlike_fast); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18lnlike_fast_linear_1cos_func, NULL, __pyx_n_s_lnlike_fast_linear); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_cos_func, __pyx_t_1) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":11
+  /* "lnlike_fast_linear.pyx":11
  *     return cos(arg)
  * 
  * def sum_func(fluxes):             # <<<<<<<<<<<<<<
  *     output=0
  *     for num in range(fluxes.shape[0]):
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11lnlike_fast_3sum_func, NULL, __pyx_n_s_lnlike_fast); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18lnlike_fast_linear_3sum_func, NULL, __pyx_n_s_lnlike_fast_linear); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_sum_func, __pyx_t_1) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":17
+  /* "lnlike_fast_linear.pyx":17
  *     return output
  * 
  * def lnlike(theta, time, flux, flux_err_sq):             # <<<<<<<<<<<<<<
- *         logV, logTau, logdMu = theta
+ *         logV, logTau = theta
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11lnlike_fast_5lnlike, NULL, __pyx_n_s_lnlike_fast); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18lnlike_fast_linear_5lnlike, NULL, __pyx_n_s_lnlike_fast_linear); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_lnlike, __pyx_t_1) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":40
- *         return lnp
+  /* "lnlike_fast_linear.pyx":38
+ * 
  * 
  * def lognorm(state, flux, flux_err_sq):             # <<<<<<<<<<<<<<
  *         # This finds the normal distribution for any measurement (x),
  *         # mean(mu), and variance squared (var2).
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11lnlike_fast_7lognorm, NULL, __pyx_n_s_lnlike_fast); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18lnlike_fast_linear_7lognorm, NULL, __pyx_n_s_lnlike_fast_linear); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_lognorm, __pyx_t_1) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_lognorm, __pyx_t_1) < 0) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":47
- *         return -0.5*((dflux*dflux)/(V_sq + flux_err_sq) + log(6.28318530718*(V_sq + flux_err_sq)))
+  /* "lnlike_fast_linear.pyx":47
+ * 
  * 
  * def evolvestate(state, exp_dt_Tau, mu, V_sq_old):             # <<<<<<<<<<<<<<
  *         fmean, V_sq = state
- *         fmean_new = exp_dt_Tau*(fmean - mu)+ mu
+ *         fmean_new = exp_dt_Tau*(fmean - mu) + mu
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11lnlike_fast_9evolvestate, NULL, __pyx_n_s_lnlike_fast); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18lnlike_fast_linear_9evolvestate, NULL, __pyx_n_s_lnlike_fast_linear); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_evolvestate, __pyx_t_1) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":54
- *         return state
+  /* "lnlike_fast_linear.pyx":56
+ * 
  * 
  * def weightedmean(state, flux, flux_err_sq):             # <<<<<<<<<<<<<<
  *         fmean, V_sq = state
  *         denom = 1/(V_sq + flux_err_sq)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11lnlike_fast_11weightedmean, NULL, __pyx_n_s_lnlike_fast); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_18lnlike_fast_linear_11weightedmean, NULL, __pyx_n_s_lnlike_fast_linear); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_weightedmean, __pyx_t_1) < 0) __PYX_ERR(0, 54, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_weightedmean, __pyx_t_1) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "lnlike_fast.pyx":1
+  /* "lnlike_fast_linear.pyx":1
  * """ Example of wrapping cos function from math.h using Cython. """             # <<<<<<<<<<<<<<
  * 
  * cdef extern from "math.h":
@@ -3562,11 +3534,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init lnlike_fast", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init lnlike_fast_linear", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init lnlike_fast");
+    PyErr_SetString(PyExc_ImportError, "init lnlike_fast_linear");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
