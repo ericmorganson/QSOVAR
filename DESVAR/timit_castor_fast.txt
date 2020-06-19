@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/usr/lib/python2.7/timeit.py", line 343, in <module>
+    sys.exit(main())
+  File "/usr/lib/python2.7/timeit.py", line 307, in main
+    t = Timer(stmt, setup, timer)
+  File "/usr/lib/python2.7/timeit.py", line 129, in __init__
+    compile(setup + '\n' + stmt, dummy_src_name, "exec")
+  File "<timeit-src>", line 3
+    ../C1_lc.fits
+    ^
+SyntaxError: invalid syntax
