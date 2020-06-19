@@ -28,39 +28,12 @@ if len(sys.argv) < 7:
     print("FIGURE_PATH is the folder where you want to put your files")
     sys.exit()
 # Initial MCMC guesses
-file_path = str(sys.argv[6])  #"fig_ssh/" #"figure/"
+file_path = str(sys.argv[6])
 V = 0.3
 Tau = 365.0
 dMu = 0.0
 scale = 1   # aka, scaling is the same as r band
 print(sys.argv[2], sys.argv[3], sys.argv[4])
-
-
-#def lognorm(state, flux, flux_err_sq):
-    # This finds the normal distribution for any measurement (x),
-    # mean(mu), and variance squared (var2).
-    #fmean, V_sq = state
-    #var_err = (V_sq + flux_err_sq)
-    #lognorm = -0.5*(((flux-fmean)**2)/var_err + np.log(2*np.pi*var_err))
-    #return lognorm
-
-
-#def evolvestate(state, exp_dt_Tau, mu, V_sq_old):
-    #fmean, V_sq = state
-    #fmean_new = exp_dt_Tau*(fmean - mu) + mu
-
-    #V_sq_new = V_sq_old*(1 - exp_dt_Tau**2) + (exp_dt_Tau**2)*V_sq
-    #state = (fmean_new, V_sq_new)
-    #return state
-
-
-#def weightedmean(state, flux, flux_err_sq):
-    #fmean, V_sq = state
-    #denom = 1/(V_sq + flux_err_sq)
-    #fmean_new = ((flux)*V_sq + fmean*flux_err_sq)*denom
-    #V_sq_new = flux_err_sq*V_sq*denom
-    #state = (fmean_new, V_sq_new)
-    #return state
 
 
 def read_a_b_chi2():
@@ -110,12 +83,17 @@ def get_vals(args, ROW):
             print('Error')
             exit()
 
-        lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW]
-        lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
         lc_time = FITS[1].data['LC_MJD_'+color][ROW]
-        time = np.append(time, lc_time[lc_time != 0.])  # remove the zeros
-
         limit = len(lc_time[lc_time != 0])
+        lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW]
+        if limit < 3:
+            lc_median[color] = 0.0
+            print("Not enough " + color + " observations!")
+            continue
+
+        time = np.append(time, lc_time[lc_time != 0.])  # remove the zeros
+        lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
+
         array_org = np.append(array_org, color_dict[color]*np.ones(limit))
         lc_flux = lc_flux[:limit]
         lc_flux_err = lc_flux_err[:limit]
@@ -148,27 +126,6 @@ def get_vals(args, ROW):
                                                                err_norm,
                                                                array_org))))
     return flux_norm, err_norm, time, lc_median, array_org, FITS
-
-
-#def lnlike_old(theta, time, flux, flux_err_sq):
-    #logV, logTau = theta
-
-    #V_ten = 10**logV
-    #Tau_ten = 10**logTau
-
-    # due to normalization, mu is by definition 0
-    #state = (0, V_ten**2)
-    #lnp = lognorm(state, flux[0], flux_err_sq[0])
-    #state = weightedmean(state, flux[0], flux_err_sq[0])
-    #for n in range(1, len(flux)):
-    #    if time[n]-time[n-1] < 0:
-    #        print('AHHHHH, NEGATIVE TIME!!!')
-    #    exp_dt_Tau = np.exp(-(time[n] - time[n-1])/Tau_ten)
-        # TODO: SPEED UP EVOLVESTATE
-    #    state = evolvestate(state, exp_dt_Tau, 0, V_ten**2)
-    #    lnp += lognorm(state, flux[n], flux_err_sq[n])
-    #    state = weightedmean(state, flux[n], flux_err_sq[n])
-    #return lnp
 
 
 def lnprior_step2(theta):
@@ -487,7 +444,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     unique, count = np.unique(color_sort, return_counts=True)
     color_sort_dict = {1: "g", 2: "r", 3: "i", 4: "z"}
     color_counts = dict(zip([color_sort_dict[u] for u in unique], count))
-    print(color_counts)
+    print("Counts: " + str(color_counts))
 
     # ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
     # dim = [i for i in mu if 22.5-2.5*np.log10(mu[i])>21]
@@ -505,7 +462,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     #    plt.close("all")
     #    continue
 
-    print(mu)
+    print("Mu: " + str(mu))
 
     color_sort_ones = [(color_sort == 1).astype(int)]
     for num in range(2, 5):

@@ -1,0 +1,28 @@
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+WARNING:root:Too few points to create valid contours
+('55', '56', 'normal')
+Running object 55
+Not enough i observations!
+0.0
+Counts: {'r': 24, 'z': 5, 'g': 72}
+Mu: {'i': 0.0, 'r': 6.7667513, 'z': 29.302479, 'g': 1.7317202}
+Variable??
+0.8995228750719259
+Non-Variable source in g
+Variable??
+4.396331141400196
+Non-Variable source in r
+Variable??
+0
+Non-Variable source in i
+Variable??
+39.4194666756107
+Variable Source!
+Slope:       [1, 1, 1, -0.14101901086720692]
+Slope Error: [0.3081847864392046, 0, 0.0, 1.6663282490044267]
+intercepts:  [0.004166583249694104, 0, 0, -0.025457817560828308]
+Int Error:   [0.010366795694256244, 0, 0.0, 0.03913761701841958]
+StDev:       [0.108211316, 0.21694061, 1.098176, 0.8734137]
+('ROW:', 55, 'Tau:', '3.023064118076735e-06', 'V:', '-0.4361508283032086')
+101
