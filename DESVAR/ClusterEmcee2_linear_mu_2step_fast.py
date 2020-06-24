@@ -147,7 +147,7 @@ def lnprob_step2(theta, x, y, yerr):
 
 
 def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
-                      scale_dict, color_sort_ones, ROW):
+                      scale_dict, color_sort_ones, ROW, fig):
     err_top = []
     err_bot = []
     Logpr = []
@@ -155,7 +155,7 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
     Tau = 10 ** Tau
     times = []
 
-    fig = plt.figure(figsize=(10, 10))
+    #fig = plt.figure(figsize=(10, 10))
     ax4 = fig.add_subplot(111)
     color_dict = {"g": 0, "r": 1, "i": 2, "z": 3}
     plot_dict = {"g": "og", "r": "or", "i": "ok", "z": "ob"}
@@ -353,7 +353,7 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict,
     # PRINT MAX THETA VALUES TO THE SCREEN
     print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
 
-    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW)
+    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
     fig.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
 
     plt.close("all")
