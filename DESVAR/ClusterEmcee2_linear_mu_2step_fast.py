@@ -112,7 +112,7 @@ def get_vals(args, ROW):
         ax5.legend()
         ax5.set_title("Pre-correction light curve: Row "+ str(ROW))
         ax5.set_ylabel("Median-corrected Flux")
-        ax5.set_xlabel("time [days]")
+        ax5.set_xlabel("time [MJD]")
         normed_flux = (lc_flux - lc_median[color])/lc_median[color]
 
         flux_norm = np.append(flux_norm, normed_flux)
