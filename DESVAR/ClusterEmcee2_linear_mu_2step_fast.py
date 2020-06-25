@@ -316,7 +316,7 @@ def boundaries(mjds, mags):
 
 
 def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict,
-                        color_sort_ones, ROW, mu):
+                        color_sort_ones, ROW, mu, var_count):
     diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
     fig = plt.figure(figsize=(10, 10))
 
@@ -348,13 +348,19 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict,
     max_theta = samples[np.argmax(logprobs_samp)]
     fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
                          truths=[max_theta[0], max_theta[1]])
-    fig1.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + ".pdf")
+    if var_count > 2:
+        fig1.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
+    else:
+        fig1.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + ".pdf")
 
     # PRINT MAX THETA VALUES TO THE SCREEN
     print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
 
     sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
-    fig.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
+    if var_count > 2:
+        fig.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
+    else:
+        fig.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
 
     plt.close("all")
 
@@ -489,7 +495,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     for col in 'GRIZ':
         std_col.append(FITS[1].data['STD_PSF_'+col][ROW])
     intercept = [p_g[1], 0, p_i[1], p_z[1]]
-
+    var_count = 0
     for i in range(len(slope)):
         if np.count_nonzero(color_sort_ones[i]) > 1:
             var_crit = np.sum((std_col[i] - err*color_sort_ones[i])/np.sqrt(np.count_nonzero(color_sort_ones[i])))
@@ -498,18 +504,23 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
         print("Variable??")
         print(var_crit)
         if var_crit > 6:
-            print("Variable Source!")
+            #print("Variable Source!")
+            var_count += 1
         else:  # if nonvariable
             print("Non-Variable source in " + str(color_sort_dict[i+1]))
             if slope_err[i]*2 > slope[i]:
                 slope[i] = 1
 
+    print("Variable:    " + str(var_count) + "/4")
     print("Slope:       " + str(slope))
     print("Slope Error: " + str(slope_err))
     print("intercepts:  " + str(intercept))
     print("Int Error:   " + str(int_err))
     print("StDev:       " + str(std_col))
-
+    
+    if var_count <= 2:
+        print("Not extremely variable, going to next row")
+        continue
     fig_lin.savefig(file_path + str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
 
     try:
@@ -523,7 +534,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
             flux_mod += ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color] + dMu_dict['r']
             err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
 
-        perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu)
+        perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
 
     except np.linalg.linalg.LinAlgError as err:
         continue
