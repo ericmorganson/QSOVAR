@@ -33,6 +33,7 @@ V = 0.3
 Tau = 365.0
 dMu = 0.0
 scale = 1   # aka, scaling is the same as r band
+var_strict = 2
 print(sys.argv[2], sys.argv[3], sys.argv[4])
 
 
@@ -492,19 +493,26 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
     int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
     std_col = []
+    mean_err = []
+    color_dict = {0:"g", 1:"r", 2:"i", 3:"z"}
     for col in 'GRIZ':
         std_col.append(FITS[1].data['STD_PSF_'+col][ROW])
+        mean_err.append(FITS[1].data['MEANERR_PSF_'+col][ROW])
     intercept = [p_g[1], 0, p_i[1], p_z[1]]
     var_count = 0
     for i in range(len(slope)):
         if np.count_nonzero(color_sort_ones[i]) > 1:
-            var_crit = np.sum((std_col[i] - err*color_sort_ones[i])/np.sqrt(np.count_nonzero(color_sort_ones[i])))
+            #var_crit = np.sum((std_col[i] - err*color_sort_ones[i])/np.sqrt(np.count_nonzero(color_sort_ones[i])))
+            var_crit = mean_err[i]*np.sqrt(np.count_nonzero(color_sort_ones[i]))
+            chi2 = np.sum(((flux*color_sort_ones[i]*mu[color_dict[i]])**2)/std_col[i]**2)/(np.count_nonzero(color_sort_ones[i])-1)                
         else:
             var_crit = 0
+            chi2 = 0
         print("Variable??")
         print(var_crit)
-        if var_crit > 6:
-            #print("Variable Source!")
+        print(chi2)
+        if std_col[i] > var_strict*var_crit and chi2 > var_strict:            
+            print("Variable Source!")
             var_count += 1
         else:  # if nonvariable
             print("Non-Variable source in " + str(color_sort_dict[i+1]))
@@ -518,8 +526,8 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     print("Int Error:   " + str(int_err))
     print("StDev:       " + str(std_col))
     
-    if var_count <= 2:
-        print("Not extremely variable, going to next row")
+    if var_count < 1:
+        print("Not variable, going to next row")
         continue
     fig_lin.savefig(file_path + str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
 
@@ -532,7 +540,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
         err_mod = np.zeros_like(flux)
         for color in 'griz':
             flux_mod += ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color] + dMu_dict['r']
-            err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
+            err_mod += np.sqrt(err**2 + dMu_dict_err[color]**1 + (flux-dMu_dict[color])**2/scale_dict[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
 
         perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
 
