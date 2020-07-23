@@ -86,7 +86,7 @@ def get_vals(args, ROW):
 
         lc_time = FITS[1].data['LC_MJD_'+color][ROW]
         limit = len(lc_time[lc_time != 0])
-        lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW]
+        lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW] #change back to median
         if limit < 3:
             lc_median[color] = 0.0
             print("Not enough " + color + " observations!")
@@ -102,10 +102,17 @@ def get_vals(args, ROW):
 
         mean_err = FITS[1].data['MEANERR_PSF_'+color][ROW]
         a, b = get_a_b_chi2(sys.argv[1], color, a_b_list)
-        #print(a, b)
+        print(a, b)
+        #print("OG ERR "+color)
+        #print(lc_flux_err)
 
-        flux_err_corr = np.sqrt(np.abs((a**2)*lc_flux*np.sqrt(np.abs(lc_flux_err**2 - mean_err**2)) + (b**2)*(lc_flux_err**2 - mean_err**2)))
+        #Old err corr from zoom call
+        #flux_err_corr = np.sqrt(np.abs((a**2)*lc_flux*np.sqrt(np.abs(lc_flux_err**2 - mean_err**2)) + (b**2)*(lc_flux_err**2 - mean_err**2)))
 
+        #New err corr from 16 Jul 2020 email; doesn't really change much
+        flux_err_corr = np.sqrt(a**2*lc_flux/lc_flux_err + b**2)*lc_flux_err
+        #print("AB CORR ERR "+color)
+        #print(flux_err_corr)
 
         ax5.scatter(lc_time[lc_time != 0],
                     (lc_flux[0:limit] - lc_median[color])/lc_median[color],
@@ -117,7 +124,9 @@ def get_vals(args, ROW):
         normed_flux = (lc_flux - lc_median[color])/lc_median[color]
 
         flux_norm = np.append(flux_norm, normed_flux)
-        normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color]
+        normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color] #
+        #print("NORMED AB CORR ERR "+color)
+        #print(normed_err)
         err_norm = np.append(err_norm, normed_err)
     # TODO: label plot with more descriptive headers
     if not os.path.exists(file_path):
@@ -316,7 +325,7 @@ def boundaries(mjds, mags):
     return [[mjdmin, mjdmax], [magmax, magmin]]
 
 
-def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict,
+def perform_emcee_step2(time, flux, err_2, dMu_dict, scale_dict,
                         color_sort_ones, ROW, mu, var_count):
     diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
     fig = plt.figure(figsize=(10, 10))
@@ -330,7 +339,7 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict,
     elif sys.argv[4].lower() == 'optimal':
         # not sure how this will work for the multi-band situation??
         result = op.minimize(nll, [np.log10(V), np.log10(Tau)],
-                             args=(time, flux, err**2))
+                             args=(time, flux, err_2))
         pos = [result['x'] + 1e-1*np.random.rand(ndim) for i in range(nwalkers)]
     else:
         print("What the hell do you want to do?")
@@ -338,7 +347,7 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict,
         exit()
 
     # run sampler
-    sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob_step2, args=(time, flux, err**2))
+    sampler = emcee.EnsembleSampler(nwalkers, ndim, lnprob_step2, args=(time, flux, err_2))
     # run mcmc
     sampler.run_mcmc(pos, 200)
 
@@ -357,7 +366,7 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict,
     # PRINT MAX THETA VALUES TO THE SCREEN
     print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
 
-    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err**2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
+    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
     if var_count > 2:
         fig.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
     else:
@@ -366,9 +375,10 @@ def perform_emcee_step2(time, flux, sigma_sq, dMu_dict, scale_dict,
     plt.close("all")
 
     # WRITE THE FOUND MAX THETA VALUES TO FILE
-    filename = 'scratch_new/' + str(ROW) + sys.argv[4] + "_all_band_step2_linear_" + 'object_dMu_' + str(sys.argv[5]) + '.txt'
+    fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
+    filename = 'scratch_new/' + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
     with open(filename, 'w+') as fout:
-        fout.write('Object: ' + str(ROW) + ' ' + 'Tau: ' + str(max_theta[1]) + ' ' + 'V: ' + str(max_theta[0]) + '\n')
+        fout.write('Fits-Object, Tau, V \n' + fit_str + "\t" + str(ROW) + '\t' + str(max_theta[1]) + '\t' + str(max_theta[0]))
 
 
 def lin_color_sort(time, color_sort_dict, color_sort):
@@ -490,8 +500,8 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     p_z, res_z = plot_lin(z_flux, axs[2], "z-r")
 
     slope = [p_g[0]+1, 1, p_i[0]+1, p_z[0]+1]
-    slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
-    int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
+    slope_err = [np.sqrt(res_g[0][0]), 0.02, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
+    int_err = [np.sqrt(res_g[1][1]), 0.005, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
     std_col = []
     mean_err = []
     color_dict = {0:"g", 1:"r", 2:"i", 3:"z"}
@@ -500,32 +510,39 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
         mean_err.append(FITS[1].data['MEANERR_PSF_'+col][ROW])
     intercept = [p_g[1], 0, p_i[1], p_z[1]]
     var_count = 0
+    var_bands = ""
     for i in range(len(slope)):
         if np.count_nonzero(color_sort_ones[i]) > 1:
             #var_crit = np.sum((std_col[i] - err*color_sort_ones[i])/np.sqrt(np.count_nonzero(color_sort_ones[i])))
             var_crit = mean_err[i]*np.sqrt(np.count_nonzero(color_sort_ones[i]))
-            chi2 = np.sum(((flux*color_sort_ones[i]*mu[color_dict[i]])**2)/std_col[i]**2)/(np.count_nonzero(color_sort_ones[i])-1)                
+            fl = flux*mu[color_dict[i]]
+            errors = err*mu[color_dict[i]]
+            fl = fl[color_sort_ones[i] != 0. ]
+            errors = errors[color_sort_ones[i] != 0.]
+            chi2 = np.sum((fl**2)/errors**2)/(np.count_nonzero(color_sort_ones[i])-1)
         else:
             var_crit = 0
             chi2 = 0
         print("Variable??")
         print(var_crit)
         print(chi2)
-        if std_col[i] > var_strict*var_crit and chi2 > var_strict:            
+        if std_col[i] > var_strict*var_crit and chi2 > var_strict:
             print("Variable Source!")
             var_count += 1
+            var_bands += color_dict[i]
         else:  # if nonvariable
             print("Non-Variable source in " + str(color_sort_dict[i+1]))
             if slope_err[i]*2 > slope[i]:
                 slope[i] = 1
 
     print("Variable:    " + str(var_count) + "/4")
+    print("Var Bands:   " + var_bands)
     print("Slope:       " + str(slope))
     print("Slope Error: " + str(slope_err))
     print("intercepts:  " + str(intercept))
     print("Int Error:   " + str(int_err))
     print("StDev:       " + str(std_col))
-    
+
     if var_count < 1:
         print("Not variable, going to next row")
         continue
@@ -536,13 +553,21 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
         dMu_dict = {"g": intercept[0], "r": intercept[1], "i": intercept[2], "z": intercept[3]}
         dMu_dict_err = {"g": int_err[0], "r": int_err[1], "i": int_err[2], "z": int_err[3]}
         scale_dict = {"g": slope[0], "r": slope[1], "i": slope[2], "z": slope[3]}
+        scale_err = {"g": slope_err[0], "r": slope_err[1], "i": slope_err[2], "z": slope_err[3]}
+        #all band variability
         flux_mod = np.zeros_like(flux)
         err_mod = np.zeros_like(flux)
         for color in 'griz':
             flux_mod += ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color] + dMu_dict['r']
-            err_mod += np.sqrt(err**2 + dMu_dict_err[color]**1 + (flux-dMu_dict[color])**2/scale_dict[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
 
-        perform_emcee_step2(time, flux_mod, err_mod, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
+            #Old err_mod from zoom call
+            #err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
+
+            #New err_mod from 16 Jul 2020 email; missing scale_err
+            err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2 * scale_err[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
+        #print(err_mod)
+
+        perform_emcee_step2(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
 
     except np.linalg.linalg.LinAlgError as err:
         continue
