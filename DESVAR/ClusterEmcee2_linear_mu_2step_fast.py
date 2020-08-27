@@ -33,7 +33,7 @@ V = 0.3
 Tau = 365.0
 dMu = 0.0
 scale = 1   # aka, scaling is the same as r band
-var_strict = 2
+var_strict = 3
 print(sys.argv[2], sys.argv[3], sys.argv[4])
 
 
@@ -500,8 +500,8 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     p_z, res_z = plot_lin(z_flux, axs[2], "z-r")
 
     slope = [p_g[0]+1, 1, p_i[0]+1, p_z[0]+1]
-    slope_err = [np.sqrt(res_g[0][0]), 0.02, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
-    int_err = [np.sqrt(res_g[1][1]), 0.005, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
+    slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
+    int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
     std_col = []
     mean_err = []
     color_dict = {0:"g", 1:"r", 2:"i", 3:"z"}

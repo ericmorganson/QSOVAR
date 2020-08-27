@@ -33,7 +33,7 @@ V = 0.3
 Tau = 365.0
 dMu = 0.0
 scale = 1   # aka, scaling is the same as r band
-var_strict = 2
+var_strict = 3
 print(sys.argv[2], sys.argv[3], sys.argv[4])
 
 
@@ -152,8 +152,8 @@ def lnprob_step2(theta, x, y, yerr):
     return lp + lnlike_fast_linear.lnlike(theta, x, y, yerr)
 
 
-def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
-                      scale_dict, color_sort_ones, ROW, fig):
+def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu,
+                      scale, ROW, fig, color):
     err_top = []
     err_bot = []
     Logpr = []
@@ -167,21 +167,13 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
     plot_dict = {"g": "og", "r": "or", "i": "ok", "z": "ob"}
 
     color_array = np.zeros_like(delta_f)
-    mag_arr = np.array([])
-    for color in 'griz':
-        color_array += color_dict[color]*color_sort_ones[color_dict[color]]
-        if mu['r'] != 0:
-            mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
-        elif mu['g'] != 0:
-            mag = 22.5-2.5*np.log10(delta_f*mu['g'] + mu['g'])
-        else:
-            mag = 22.5-2.5*np.log10(delta_f*mu['i'] + mu['i'])
-        t = time*color_sort_ones[color_dict[color]]
-        e = np.sqrt(sigma_sq)*color_sort_ones[color_dict[color]]
-        [mag, e, t] = goodrow(mag, e, t)
-        mag_arr = np.append(mag_arr, mag)
-        ax4.errorbar(t-57000, mag, yerr=e, fmt=plot_dict[color],
-                     label=color.upper()+', dmu='+str(round(dMu_dict[color], 5))+', scale='+str(round(scale_dict[color], 5)))
+
+    mag_arr = 22.5-2.5*np.log10(delta_f*mu[color] + mu[color])
+    t = time
+    e = np.sqrt(sigma_sq)
+    [mag_arr, e, t] = goodrow(mag_arr, e, t)
+    ax4.errorbar(t-57000, mag_arr, yerr=e, fmt=plot_dict[color],
+                 label=color.upper()+', dmu='+str(round(dMu, 5))+', scale='+str(round(scale, 5)))
     print(len(mag_arr))
     [xlim, ylim] = boundaries(time-57000, np.array(mag_arr))
     ax4.set_ylim(ylim)
@@ -198,12 +190,9 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
         df_new = []
         sig_new = []
         i = 0
-        color_iter = itertools.cycle([0, 1, 2, 3])
+
         while i < len(t_df_sig)-1:
-            col = next(color_iter)
             if int(t_df_sig[i][0]) in [int(t) for t in t_new]:
-                i = i+1
-            elif col != t_df_sig[i][3]:
                 i = i+1
             else:
                 t_new.append(t_df_sig[i][0])
@@ -238,14 +227,7 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
         tp_0 = t0 / t
         tp_1 = t1 / t
 
-        if mu['r'] != 0:
-            mu_r = mu['r']
-        elif mu['g'] != 0:
-            mu_r = mu['g']
-        elif mu['i'] != 0:
-            mu_r = mu['i']
-        else:
-            print("PANIC!!")
+        mu_r = mu[color]
 
         Fg1 = (tp_0 * delta_f[time_ind0]) + (tp_1 * delta_f[time_ind1])
         Fg1 = (Fg1 - mu_r)/mu_r
@@ -299,7 +281,7 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
     ax4.plot(times, Logpr, color='b')
     ax4.plot(times, err_bot, color='g')
     # TODO: TRUNCATE VARI AND TAU VALUES USING SIGFIGS
-    title_text = 'Object ' + str(ROW) + " Sausage Plot \n"
+    title_text = 'Object ' + str(ROW) + " "+ color + "-Band Sausage Plot \n"
     subtitle_text = "V=" + str(Vari) + " Tau=" + str(Tau)
     ax4.set_title(title_text + subtitle_text)
 
@@ -321,7 +303,7 @@ def boundaries(mjds, mags):
     return [[mjdmin, mjdmax], [magmax, magmin]]
 
 
-def perform_emcee_single(time, flux, err_2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count):
+def perform_emcee_single(time, flux, err_2, dMu, scale, ROW, mu, color):
     diff_time = [x - time[i - 1] for i, x in enumerate(time)][1:]
     fig = plt.figure(figsize=(10, 10))
 
@@ -354,21 +336,21 @@ def perform_emcee_single(time, flux, err_2, dMu_dict, scale_dict, color_sort_one
     fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
                          truths=[max_theta[0], max_theta[1]])
 
-    fig1.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
+    fig1.savefig(file_path + str(ROW) + sys.argv[4] + "_"+ color +"_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
 
 
     # PRINT MAX THETA VALUES TO THE SCREEN
     print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
 
-    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
-    fig.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
+    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu, scale, ROW, fig, color)
+    fig.savefig(file_path + str(ROW) + sys.argv[4] + "_" + color + "_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
 
 
     plt.close("all")
 
     # WRITE THE FOUND MAX THETA VALUES TO FILE
     fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
-    filename = 'scratch_new/' + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
+    filename = 'scratch_new/' + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_"+color+"_band_linear_"+ str(sys.argv[5]) + '.txt'
     with open(filename, 'w+') as fout:
         fout.write('Fits-Object, Tau, V \n' + fit_str + "\t" + str(ROW) + '\t' + str(max_theta[1]) + '\t' + str(max_theta[0]))
 
@@ -602,13 +584,19 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
         dMu_dict = {"g": intercept[0], "r": intercept[1], "i": intercept[2], "z": intercept[3]}
         dMu_dict_err = {"g": int_err[0], "r": int_err[1], "i": int_err[2], "z": int_err[3]}
         scale_dict = {"g": slope[0], "r": slope[1], "i": slope[2], "z": slope[3]}
+        scale_err = {"g": slope_err[0], "r": slope_err[1], "i": slope_err[2], "z": slope_err[3]}
         #all band variability
         #flux_mod = np.zeros_like(flux)
         #err_mod = np.zeros_like(flux)
         for color in var_bands:
-            flux_mod = ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color] + dMu_dict['r']
-            err_mod = np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
-            perform_emcee_single(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
+            #flux_mod = ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color] + dMu_dict['r']
+            #New err_mod from 16 Jul 2020 email; missing scale_err
+            #err_mod = np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2 * scale_err[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
+
+            flux_mod = flux[color_sort_ones[color_dict[color]] != 0 ]
+            time_mod = time[color_sort_ones[color_dict[color]] != 0 ]
+            err_mod = err[color_sort_ones[color_dict[color]] != 0 ]
+            perform_emcee_single(time_mod, flux_mod, err_mod**2, dMu_dict[color], scale_dict[color], ROW, mu, color)
         #print(err_mod)
 
 
