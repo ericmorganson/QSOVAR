@@ -28,7 +28,9 @@ if len(sys.argv) < 7:
     print("FIGURE_PATH is the folder where you want to put your files")
     sys.exit()
 # Initial MCMC guesses
-file_path = str(sys.argv[6])
+fig_path = str(sys.argv[6])
+file_path = "scratch_new/"
+plotting = True
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -129,10 +131,10 @@ def get_vals(args, ROW):
         #print(normed_err)
         err_norm = np.append(err_norm, normed_err)
     # TODO: label plot with more descriptive headers
-    if not os.path.exists(file_path):
-        os.makedirs(file_path)
+    if not os.path.exists(fig_path):
+        os.makedirs(fig_path)
     fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
-    fig.savefig(file_path+str(ROW)+sys.argv[4]+fit_str+"_all_band_scatter_before.pdf")
+    fig.savefig(fig_path+str(ROW)+sys.argv[4]+fit_str+"_all_band_scatter_before.pdf")
     time, flux_norm, err_norm, array_org = map(list,
                                                zip(*sorted(zip(time,
                                                                flux_norm,
@@ -359,22 +361,22 @@ def perform_emcee_single(time, flux, err_2, dMu, scale, ROW, mu, color):
     fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
                          truths=[max_theta[0], max_theta[1]])
 
-    fig1.savefig(file_path + str(ROW) + sys.argv[4] + "_"+ color +"_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
+    fig1.savefig(fig_path + str(ROW) + sys.argv[4] + "_"+ color +"_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
 
 
     # PRINT MAX THETA VALUES TO THE SCREEN
     print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
 
     sausageplot_single(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu, scale, ROW, fig, color)
-    fig.savefig(file_path + str(ROW) + sys.argv[4] + "_" + color + "_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
+    fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_" + color + "_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
 
     plt.close("all")
 
     # WRITE THE FOUND MAX THETA VALUES TO FILE
     fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
-    filename = 'scratch_new/' + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
+    filename = file_path + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
     with open(filename, 'a+') as fout:
-        fout.write('\n' +color + '\t' + fit_str + "\t" + str(ROW) + '\t' + str(max_theta[1]) + '\t' + str(max_theta[0]) )
+        fout.write('\n' +color + '\t' + fit_str + "\t" + str(ROW) + '\t' + str(max_theta[1]) + '\t' + str(max_theta[0]) +'\t' + str(len(flux)) + '\t'+ str(22.5-2.5*np.log10(mu[color])))
 
 def sausageplot_single(Vari, time, delta_f, Tau, dt, sigma_sq, dMu,
                       scale, ROW, fig, color):
@@ -545,26 +547,28 @@ def perform_emcee_step2(time, flux, err_2, dMu_dict, scale_dict,
     fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
                          truths=[max_theta[0], max_theta[1]])
     if var_count > 2:
-        fig1.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
+        fig1.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
     else:
-        fig1.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + ".pdf")
+        fig1.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + ".pdf")
 
     # PRINT MAX THETA VALUES TO THE SCREEN
     print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
 
     sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
     if var_count > 2:
-        fig.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
+        fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
     else:
-        fig.savefig(file_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
+        fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
 
     plt.close("all")
 
     # WRITE THE FOUND MAX THETA VALUES TO FILE
     fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
-    filename = 'scratch_new/' + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
+    filename = file_path + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
+    mu_list = [22.5-2.5*np.log10(mu[i]) for i in mu]
+    avg_mu = sum(mu_list)/len(mu_list)
     with open(filename, 'w+') as fout:
-        fout.write('Band, Fits-Object, Tau, V \n' + "All \t" +fit_str + "\t" + str(ROW) + '\t' + str(max_theta[1]) + '\t' + str(max_theta[0]))
+        fout.write('Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright \n' + "All \t" +fit_str + "\t" + str(ROW) + '\t' + str(max_theta[1]) + '\t' + str(max_theta[0]) + '\t' + str(len(flux)) + '\t'+ str(avg_mu))
 
 
 def lin_color_sort(time, color_sort_dict, color_sort):
@@ -745,7 +749,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
             print(np.abs(FITS[1].data['SPREAD_MODEL_'+i][ROW]))
         continue
 
-    fig_lin.savefig(file_path + str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
+    fig_lin.savefig(fig_path + str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
 
     try:
         color_dict = {"g": 0, "r": 1, "i": 2, "z": 3}
