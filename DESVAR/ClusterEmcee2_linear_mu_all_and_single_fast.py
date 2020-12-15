@@ -25,11 +25,15 @@ if len(sys.argv) < 7:
     print("MCMC_TYPE is how you set up the MCMC search ")
     print("array: 'optimal' or 'normal'")
     print("NAME is the additional identifying name for all output files.")
-    print("FIGURE_PATH is the folder where you want to put your files")
+    print("FIGURE_PATH is the folder where you want to put your plots")
     sys.exit()
 # Initial MCMC guesses
 fig_path = str(sys.argv[6])
-file_path = "scratch_new/"
+
+file_path = "scratch_all/" #"scratch_new/"
+if not os.path.exists(file_path):
+    os.makedirs(file_path)
+
 plotting = True
 V = 0.3
 Tau = 365.0
@@ -73,7 +77,9 @@ def get_vals(args, ROW):
     err_norm = np.array([])
     array_org = np.array([])
     fig = plt.figure(figsize=(10, 10))
-    ax5 = fig.add_subplot(111)
+    if plotting:
+        ax5 = fig.add_subplot(111)
+
     color_plt = iter(cm.rainbow(np.linspace(0, 1, 5)))
     a_b_list = read_a_b_chi2()
     #print(a_b_list)
@@ -81,25 +87,25 @@ def get_vals(args, ROW):
         FITS = pyfit.open(args[1])
         # Obtain flux, err, and time arrays
         try:
-            lc_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
+            lcur_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
         except IndexError:
             print('Error')
             exit()
 
-        lc_time = FITS[1].data['LC_MJD_'+color][ROW]
-        limit = len(lc_time[lc_time != 0])
-        lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW] #change back to median
+        lcur_time = FITS[1].data['LC_MJD_'+color][ROW]
+        lcur_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
+        lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW]
+
+        limit = len(lcur_time[(lcur_time != 0)*(lcur_flux_err <2)])
         if limit < 3:
             lc_median[color] = 0.0
             print("Not enough " + color + " observations!")
             continue
 
-        time = np.append(time, lc_time[lc_time != 0.])  # remove the zeros
-        lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
+        lc_time = lcur_time[(lcur_time != 0)*(lcur_flux_err <2)]
+        lc_flux = lcur_flux[(lcur_time != 0)*(lcur_flux_err <2)] #:limit
+        lc_flux_err = lcur_flux_err[(lcur_time != 0)*(lcur_flux_err <2)]
 
-        array_org = np.append(array_org, color_dict[color]*np.ones(limit))
-        lc_flux = lc_flux[:limit]
-        lc_flux_err = lc_flux_err[:limit]
         col = next(color_plt)
 
         mean_err = FITS[1].data['MEANERR_PSF_'+color][ROW]
@@ -115,26 +121,36 @@ def get_vals(args, ROW):
         flux_err_corr = np.sqrt(a**2*lc_flux/lc_flux_err + b**2)*lc_flux_err
         #print("AB CORR ERR "+color)
         #print(flux_err_corr)
+        normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color] #
 
-        ax5.scatter(lc_time[lc_time != 0],
-                    (lc_flux[0:limit] - lc_median[color])/lc_median[color],
+        if plotting:
+            ax5.scatter(lc_time,
+                    (lc_flux - lc_median[color])/lc_median[color],
                     label=color, c=np.array([col]))
-        ax5.legend()
-        ax5.set_title("Pre-correction light curve: Row "+ str(ROW))
-        ax5.set_ylabel("Median-corrected Flux")
-        ax5.set_xlabel("time [MJD]")
+            ax5.errorbar(lc_time,
+                    (lc_flux - lc_median[color])/lc_median[color],
+                    yerr=normed_err, ecolor=np.array(col),
+                    linestyle="None")
+            ax5.legend()
+            ax5.set_title("Pre-correction light curve: Row "+ str(ROW))
+            ax5.set_ylabel("Median-corrected Flux")
+            ax5.set_xlabel("time [MJD]")
+
         normed_flux = (lc_flux - lc_median[color])/lc_median[color]
 
+
+        time = np.append(time, lc_time[lc_time != 0.])  # remove the zeros
+        array_org = np.append(array_org, color_dict[color]*np.ones(limit))
         flux_norm = np.append(flux_norm, normed_flux)
-        normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color] #
-        #print("NORMED AB CORR ERR "+color)
-        #print(normed_err)
         err_norm = np.append(err_norm, normed_err)
     # TODO: label plot with more descriptive headers
     if not os.path.exists(fig_path):
         os.makedirs(fig_path)
     fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
-    fig.savefig(fig_path+str(ROW)+sys.argv[4]+fit_str+"_all_band_scatter_before.pdf")
+
+    if plotting:
+        fig.savefig(fig_path+str(ROW)+sys.argv[4]+fit_str+"_all_band_scatter_before.pdf")
+
     time, flux_norm, err_norm, array_org = map(list,
                                                zip(*sorted(zip(time,
                                                                flux_norm,
@@ -190,6 +206,7 @@ def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
         ax4.errorbar(t-57000, mag, yerr=e, fmt=plot_dict[color],
                      label=color.upper()+', dmu='+str(round(dMu_dict[color], 5))+', scale='+str(round(scale_dict[color], 5)))
     print(len(mag_arr))
+
     [xlim, ylim] = boundaries(time-57000, np.array(mag_arr))
     ax4.set_ylim(ylim)
     ax4.set_xlabel('MJD-57000')
@@ -358,17 +375,19 @@ def perform_emcee_single(time, flux, err_2, dMu, scale, ROW, mu, color):
 
     # make corner plot
     max_theta = samples[np.argmax(logprobs_samp)]
-    fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
+    if plotting:
+        fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
                          truths=[max_theta[0], max_theta[1]])
 
-    fig1.savefig(fig_path + str(ROW) + sys.argv[4] + "_"+ color +"_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
+        fig1.savefig(fig_path + str(ROW) + sys.argv[4] + "_"+ color +"_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
 
 
     # PRINT MAX THETA VALUES TO THE SCREEN
     print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
 
-    sausageplot_single(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu, scale, ROW, fig, color)
-    fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_" + color + "_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
+    if plotting:
+        sausageplot_single(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu, scale, ROW, fig, color)
+        fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_" + color + "_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
 
     plt.close("all")
 
@@ -544,21 +563,22 @@ def perform_emcee_step2(time, flux, err_2, dMu_dict, scale_dict,
 
     # make corner plot
     max_theta = samples[np.argmax(logprobs_samp)]
-    fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
-                         truths=[max_theta[0], max_theta[1]])
-    if var_count > 2:
-        fig1.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
-    else:
-        fig1.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + ".pdf")
+    if plotting:
+        fig1 = corner.corner(samples, labels=[r"log$_{10}V$", r"log$_{10}\tau$"],
+                             truths=[max_theta[0], max_theta[1]])
+        if var_count > 2:
+            fig1.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + "VAR.pdf")
+        else:
+            fig1.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "triangle_linear_" + str(sys.argv[5]) + ".pdf")
 
     # PRINT MAX THETA VALUES TO THE SCREEN
     print('ROW:', ROW, 'Tau:', str(max_theta[1]), 'V:', str(max_theta[0]))
-
-    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
-    if var_count > 2:
-        fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
-    else:
-        fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
+    if plotting:
+        sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu_dict, scale_dict, color_sort_ones, ROW, fig)
+        if var_count > 2:
+            fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
+        else:
+            fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
 
     plt.close("all")
 
@@ -636,6 +656,9 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     print("Running object "+str(ROW))
     fig = plt.figure(figsize=(10, 10))
     flux, err, time, mu, color_sort, FITS, fig = get_vals(sys.argv, ROW)
+
+    # TODO: Add in criteria to kick out flux measure/entire row if err is too large
+
     print(min(np.array(time[1:]) - np.array(time[:-1])))
 
     # DOESN'T MAKE SENSE TO LOOK AT ROWS WITH NO FLUX MEASUREMENTS
@@ -749,7 +772,8 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
             print(np.abs(FITS[1].data['SPREAD_MODEL_'+i][ROW]))
         continue
 
-    fig_lin.savefig(fig_path + str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
+    if plotting:
+        fig_lin.savefig(fig_path + str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
 
     try:
         color_dict = {"g": 0, "r": 1, "i": 2, "z": 3}
