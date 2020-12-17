@@ -76,6 +76,92 @@ def get_vals(args, ROW):
     flux_norm = np.array([])
     err_norm = np.array([])
     array_org = np.array([])
+    fig = plt.figure(figsize=(12, 6))
+    ax5 = fig.add_subplot(111)
+    color_plt = iter(cm.rainbow(np.linspace(0, 1, 5)))
+    a_b_list = read_a_b_chi2()
+    #print(a_b_list)
+    for color in "griz":
+        FITS = pyfit.open(args[1])
+        # Obtain flux, err, and time arrays
+        try:
+            lc_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
+        except IndexError:
+            print('Error')
+            exit()
+
+        lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
+        lc_time = FITS[1].data['LC_MJD_'+color][ROW]
+        limit = len(lc_time[(lc_time != 0)*(lc_flux_err <2)])
+        lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW] #change back to median
+        if limit < 3:
+            lc_median[color] = 0.0
+            #print("Not enough " + color + " observations!")
+            continue
+
+        lcur_time = lc_time[(lc_time != 0)*(lc_flux_err <2)]
+        lcur_flux = lc_flux[(lc_time != 0)*(lc_flux_err <2)] #:limit
+        lcur_flux_err = lc_flux_err[(lc_time != 0)*(lc_flux_err <2)]  # :limit
+
+        col = next(color_plt)
+
+        mean_err = FITS[1].data['MEANERR_PSF_'+color][ROW]
+
+        if (lc_flux_err>2).any():
+            mean_err = np.mean(lcur_flux_err)
+
+
+        a, b = get_a_b_chi2(sys.argv[1], color, a_b_list)
+        #print(a, b)
+        #print("OG ERR "+color)
+        #print(lc_flux_err)
+
+        flux_err_corr = np.sqrt(np.abs((a**2)*lcur_flux*np.sqrt(np.abs(lcur_flux_err**2 - mean_err**2)) + (b**2)*(lcur_flux_err**2 - mean_err**2)))
+        normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color]
+        #print("AB CORR ERR "+color)
+        #print(flux_err_corr)
+        if plotting:
+            ax5.scatter(lcur_time,
+                        (lcur_flux - lc_median[color])/lc_median[color],
+                        label=color, c=np.array([col]))
+            ax5.errorbar(lcur_time,
+                        (lcur_flux - lc_median[color])/lc_median[color],
+                        yerr=normed_err, ecolor=np.array(col),
+                        linestyle="None")
+
+            ax5.legend()
+            ax5.set_title("Pre-correction light curve: Row "+ str(ROW))
+            ax5.set_ylabel("Median-corrected Flux")
+            ax5.set_xlabel("time [MJD]")
+        normed_flux = (lcur_flux - lc_median[color])/lc_median[color]
+
+        time = np.append(time, lcur_time)  # remove the zeros
+        flux_norm = np.append(flux_norm, normed_flux)
+        err_norm = np.append(err_norm, normed_err)
+        array_org = np.append(array_org, color_dict[color]*np.ones(limit))
+
+    if not os.path.exists(fig_path):
+        os.makedirs(fig_path)
+    fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
+
+    if plotting:
+        fig.savefig(fig_path+str(ROW)+sys.argv[4]+fit_str+"_all_band_scatter_before.pdf")
+
+    time, flux_norm, err_norm, array_org = map(list,
+                                               zip(*sorted(zip(time,
+                                                               flux_norm,
+                                                               err_norm,
+                                                               array_org))))
+    return flux_norm, err_norm, time, lc_median, array_org, FITS, fig
+
+
+def get_vals_old(args, ROW):
+    color_dict = {"g": 1, "r": 2, "i": 3, "z": 4}
+    lc_median = {}
+    time = np.array([])
+    flux_norm = np.array([])
+    err_norm = np.array([])
+    array_org = np.array([])
     fig = plt.figure(figsize=(10, 10))
     if plotting:
         ax5 = fig.add_subplot(111)
@@ -119,6 +205,7 @@ def get_vals(args, ROW):
 
         #New err corr from 16 Jul 2020 email; doesn't really change much
         flux_err_corr = np.sqrt(a**2*lc_flux/lc_flux_err + b**2)*lc_flux_err
+        print(flux_err_corr)
         #print("AB CORR ERR "+color)
         #print(flux_err_corr)
         normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color] #
