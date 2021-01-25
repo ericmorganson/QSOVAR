@@ -1,0 +1,5682 @@
+('8', '200', 'normal')
+Running object 8
+0.0
+Counts: {'i': 40, 'r': 9, 'z': 128, 'g': 10}
+Mu: {'i': 1.0230258, 'r': 0.86269015, 'z': 0.78171146, 'g': 0.8640906}
+/usr/lib/python2.7/dist-packages/scipy/optimize/minpack.py:779: OptimizeWarning: Covariance of the parameters could not be estimated
+  category=OptimizeWarning)
+Variable??
+0.038705742770801105
+1.8469692391139516
+Non-Variable source in g
+Variable??
+0.03551693167537451
+3.3728865909623567
+Non-Variable source in r
+Variable??
+0.04606198552882929
+2.819490963362754
+Non-Variable source in i
+Variable??
+0.08498065904237925
+1.4409634042579753
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 3.850356485351027]
+Slope Error: [8.022582531505684, 0, inf, 1.2159373990060736]
+intercepts:  [-0.12451902917212716, 0, 0.24115531208448993, -0.08261699895814988]
+Int Error:   [0.21809448685563668, 0, inf, 0.028904118491074337]
+StDev:       [0.07560272, 0.056776796, 0.12627319, 0.14090157]
+Not variable, going to next row
+Running object 9
+0.0
+Counts: {'i': 50, 'r': 15, 'z': 34, 'g': 7}
+Mu: {'i': 0.27401227, 'r': 0.22421758, 'z': 0.37266394, 'g': 0.18202046}
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+Variable??
+0.04493407237847457
+3.2477719996349528
+Variable Source!
+Variable??
+0.028416440366789593
+0.522873817765135
+Non-Variable source in r
+Variable??
+0.04313593297104598
+1.2118337455206472
+Non-Variable source in i
+Variable??
+0.08412698074723367
+1.2027883823356469
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 7.602741001466455, 0.0]
+intercepts:  [0, 0, 3.9406543819617914, 0]
+Int Error:   [0.0, 0, 0.6805235471172096, 0.0]
+StDev:       [0.16184938, 0.02350346, 0.055293635, 0.12104855]
+Spread:      1/4
+('R', 0.01582028)
+('ROW:', 9, 'Tau:', '3.999391752430214', 'V:', '-2.9629694061338054')
+ClusterEmcee2_linear_mu_all_and_single_fast.py:285: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:420: RuntimeWarning: invalid value encountered in greater
+  mag_crit = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags)
+56
+('ROW:', 9, 'Tau:', '3.998646824188067', 'V:', '-2.7789812834302072')
+7
+Running object 10
+0.00390625
+Counts: {'i': 27, 'r': 3, 'z': 71}
+Mu: {'i': 0.31243986, 'r': 0.15246415, 'z': 0.491737, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.0262910780377326
+0.7489931617943738
+Non-Variable source in r
+Variable??
+0.03962507852417595
+0.8130744199129878
+Non-Variable source in i
+Variable??
+0.08399955536417747
+1.045060192406133
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.0, 0.017087309, 0.042180188, 0.10951712]
+Not variable, going to next row
+Running object 11
+0.0
+Counts: {'i': 37, 'r': 8, 'z': 144, 'g': 7}
+Mu: {'i': 1.3631665, 'r': 1.2358965, 'z': 1.4408249, 'g': 0.87066156}
+ClusterEmcee2_linear_mu_all_and_single_fast.py:812: RuntimeWarning: invalid value encountered in sqrt
+  slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
+ClusterEmcee2_linear_mu_all_and_single_fast.py:813: RuntimeWarning: invalid value encountered in sqrt
+  int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
+Variable??
+0.040520393353646406
+5.600585518299352
+Non-Variable source in g
+Variable??
+0.03441564662265425
+12.181830662937939
+Variable Source!
+Variable??
+0.04627412067927125
+6.1526915095631445
+Non-Variable source in i
+Variable??
+0.09141072817146778
+3.6652309071562095
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1, -248607.76050956006]
+Slope Error: [0.14794828961505796, 0, 0.9728397057807365, nan]
+intercepts:  [0.20677712947872448, 0, 0.06475139671584253, -211.6501756620119]
+Int Error:   [0.012476986375028488, 0, 0.06580498211591157, nan]
+StDev:       [0.10758542, 0.15514572, 0.13163464, 0.22508872]
+Spread:      4/4
+('G', 0.0139868865)
+('R', 0.01679667)
+('I', 0.015281887)
+('Z', 0.0119336555)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.0139868865
+0.01679667
+0.015281887
+0.0119336555
+Running object 12
+0.0
+Counts: {'i': 55, 'r': 18, 'z': 137, 'g': 24}
+Mu: {'i': 77.00304, 'r': 29.176271, 'z': 114.33846, 'g': 7.4535513}
+Variable??
+0.05489658221728141
+1.8829016096096505
+Non-Variable source in g
+Variable??
+0.07362019729722244
+7.411534098981725
+Variable Source!
+Variable??
+0.15738459591079243
+2.5743010030017563
+Non-Variable source in i
+Variable??
+0.20316478969644344
+937.9613025566017
+Variable Source!
+Variable:    2/4
+Var Bands:   rz
+Slope:       [1, 1, 1, 0.21112148949890142]
+Slope Error: [1.8802535837858052, 0, 0.16650925950753104, 0.11745507254924065]
+intercepts:  [0.0020243168919429535, 0, 0.0021806519368392945, -0.0016757142453699117]
+Int Error:   [0.01765863881030387, 0, 0.0019001586460089977, 0.0019751486075985794]
+StDev:       [0.19795498, 0.29132944, 0.5635571, 1.045848]
+Spread:      0/4
+('ROW:', 12, 'Tau:', '0.8383649338364438', 'V:', '-2.201440443512987')
+234
+('ROW:', 12, 'Tau:', '1.4049051096572411', 'V:', '-2.034455281270295')
+18
+WARNING:root:Too few points to create valid contours
+('ROW:', 12, 'Tau:', '0.00018178287882822993', 'V:', '-1.2576517649398538')
+137
+Running object 13
+0.0
+Counts: {'i': 39, 'r': 22, 'z': 103, 'g': 17}
+Mu: {'i': 1.87531, 'r': 1.4332701, 'z': 1.7429758, 'g': 1.1194289}
+Variable??
+0.04252035404114585
+1.91348812135043
+Non-Variable source in g
+Variable??
+0.0341927818760149
+3.2834240024807557
+Variable Source!
+Variable??
+0.051445181784448554
+3.3067900218486423
+Variable Source!
+Variable??
+0.09264111087069411
+1.8775158167247157
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [1, 1, 1.901768992369208, 1]
+Slope Error: [0.0, 0, 6.212394231666497, 0.2804533188943457]
+intercepts:  [0, 0, 0.002926883130332736, -0.01221719140318904]
+Int Error:   [0.0, 0, 0.010643566820664765, 0.018160945312911982]
+StDev:       [0.094485834, 0.11031551, 0.16723402, 0.18580699]
+Spread:      4/4
+('G', 0.008992456)
+('R', 0.008878936)
+('I', 0.011069631)
+('Z', 0.0059354487)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.008992456
+0.008878936
+0.011069631
+0.0059354487
+Running object 14
+0.0
+Counts: {'i': 29, 'r': 4, 'z': 103, 'g': 6}
+Mu: {'i': 0.39031047, 'r': 0.28985992, 'z': 0.6433631, 'g': 0.2378324}
+Variable??
+0.03873280158388019
+0.9994684007787175
+Non-Variable source in g
+Variable??
+0.028258997946977615
+6.00265972220599
+Non-Variable source in r
+Variable??
+0.043304492459782205
+1.8546236338737168
+Non-Variable source in i
+Variable??
+0.08845874325842379
+1.2440317422481773
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 2.0]
+Slope Error: [0.0, 0, 0.0, nan]
+intercepts:  [0, 0, 0, -0.8582795457955004]
+Int Error:   [0.0, 0, 0.0, nan]
+StDev:       [0.04009616, 0.06808967, 0.072260424, 0.11522962]
+Not variable, going to next row
+Running object 15
+0.0
+Counts: {'i': 82, 'r': 27, 'z': 216, 'g': 30}
+Mu: {'i': 4.19802, 'r': 1.9840624, 'z': 5.78169, 'g': 0.51060283}
+Variable??
+0.03464632857447952
+0.9280753158353272
+Non-Variable source in g
+Variable??
+0.03205381908600714
+1.4954443593971745
+Non-Variable source in r
+Variable??
+0.04916562129515226
+4.556277739119923
+Non-Variable source in i
+Variable??
+0.09602968530749616
+1.7031258168990027
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [1.1478673527807808, 0, 0.2895052130164968, 0.3339580634370164]
+intercepts:  [0.04879139332006039, 0, -0.011501385583087222, 0.0011476666226528825]
+Int Error:   [0.03214593744515583, 0, 0.006482284813834348, 0.005970170483128448]
+StDev:       [0.059945762, 0.06707528, 0.13432981, 0.36333108]
+Not variable, going to next row
+Running object 16
+0.0
+Counts: {'i': 85, 'r': 33, 'z': 221, 'g': 32}
+Mu: {'i': 5.2258663, 'r': 2.7836573, 'z': 6.960736, 'g': 0.74911934}
+Variable??
+0.03588817848428393
+1.3464157754138812
+Non-Variable source in g
+Variable??
+0.03354855480908647
+0.8293512374388651
+Non-Variable source in r
+Variable??
+0.05168418522791223
+5.948582244372234
+Non-Variable source in i
+Variable??
+0.09810787766589948
+0.9907301739030457
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [5.206261737479965, 0, 1.2258908268037865, 0.5925976424995727]
+intercepts:  [-0.029747988639793433, 0, -0.0005740799352574627, -0.011178413849298848]
+Int Error:   [0.041004460791925275, 0, 0.009854450289591256, 0.006863912916756148]
+StDev:       [0.07588337, 0.07124483, 0.15307026, 0.30430892]
+Not variable, going to next row
+Running object 17
+0.00390625
+Counts: {'i': 43, 'r': 24, 'z': 20, 'g': 14}
+Mu: {'i': 0.22295195, 'r': 0.20180535, 'z': 0.36922878, 'g': 0.23141414}
+Variable??
+0.03408581225159718
+2.1373616623844516
+Non-Variable source in g
+Variable??
+0.02709376882548247
+1.2136546133976176
+Non-Variable source in r
+Variable??
+0.0433768074743503
+1.0617029683680925
+Non-Variable source in i
+Variable??
+0.07992722214402329
+1.1320247006281772
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 425.4017957260552]
+Slope Error: [0.0, 0, 0.48638210281340427, nan]
+intercepts:  [0, 0, -0.744999582422879, -71.39601609470522]
+Int Error:   [0.0, 0, 0.0787823049293946, nan]
+StDev:       [0.05189859, 0.03514186, 0.064082704, 0.09847131]
+Not variable, going to next row
+Running object 18
+0.0
+Counts: {'i': 62, 'r': 18, 'z': 172, 'g': 17}
+Mu: {'i': 0.7725129, 'r': 0.59457755, 'z': 0.83834267, 'g': 0.33807194}
+Variable??
+0.04013943296862032
+1.0081659599794213
+Non-Variable source in g
+Variable??
+0.030370592300109064
+0.8052379353564706
+Non-Variable source in r
+Variable??
+0.045674514022339616
+1.2292223894947554
+Non-Variable source in i
+Variable??
+0.09045147658548493
+1.1043763902601174
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [352589509.1709569, 0, 0.09195783591230068, 0.6597292158345011]
+intercepts:  [71.20756774560651, 0, 0.16015535780965404, -0.05268414817612684]
+Int Error:   [4605485.18087246, 0, 0.0035512785418960165, 0.03581409439131244]
+StDev:       [0.048348702, 0.032155056, 0.13016646, 0.18465929]
+Not variable, going to next row
+Running object 19
+0.0
+Counts: {'i': 47, 'r': 16, 'z': 26, 'g': 14}
+Mu: {'i': 0.31489825, 'r': 0.31542343, 'z': 0.39955306, 'g': 0.34184882}
+Variable??
+0.04125079136702828
+0.6559264549297266
+Non-Variable source in g
+Variable??
+0.029583953320980072
+1.0627134192515775
+Non-Variable source in r
+Variable??
+0.04457646326846652
+0.7534595478030822
+Non-Variable source in i
+Variable??
+0.09223202369162595
+0.9062759411854968
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.0, 1, 1, 1]
+Slope Error: [nan, 0, 1.5847282861709564, 0.0]
+intercepts:  [0.35409228068945986, 0, -0.33342650803950247, 0]
+Int Error:   [nan, 0, 0.15652071953342622, 0.0]
+StDev:       [0.037899267, 0.043074228, 0.04454748, 0.18326333]
+Not variable, going to next row
+Running object 20
+0.00390625
+Counts: {'i': 38, 'r': 14, 'z': 72}
+Mu: {'i': 0.29395932, 'r': 0.22613253, 'z': 0.4989992, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.027433685416179052
+0.48057283675779117
+Non-Variable source in r
+Variable??
+0.04247734695538978
+1.2387513656434292
+Non-Variable source in i
+Variable??
+0.08019407833548946
+0.9261674336737644
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 1.2092546460295301]
+intercepts:  [0, 0, 0, 0.08450449333990129]
+Int Error:   [0.0, 0, 0.0, 0.0765513218086372]
+StDev:       [0.026107125, 0.021547023, 0.05555468, 0.09476405]
+Not variable, going to next row
+Running object 21
+0.0
+Counts: {'i': 65, 'r': 19, 'z': 194, 'g': 15}
+Mu: {'i': 0.68692124, 'r': 0.40007713, 'z': 1.103091, 'g': 0.26725852}
+Variable??
+0.038952023600595194
+1.110877450754501
+Non-Variable source in g
+Variable??
+0.03153465646774227
+1.8807377149233728
+Non-Variable source in r
+Variable??
+0.04570872799389212
+1.4489754176279677
+Non-Variable source in i
+Variable??
+0.09162854322978703
+1.888130978417624
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 11.734138496938732, 1]
+Slope Error: [inf, 0, 0.13110243059073723, 0.45577303920971407]
+intercepts:  [0.18316740294297537, 0, 0.27539164839057756, -0.020504584160467267]
+Int Error:   [inf, 0, 0.003915268522359299, 0.030297368688587265]
+StDev:       [0.038925678, 0.042752117, 0.08104367, 0.16307065]
+Not variable, going to next row
+Running object 22
+0.0
+Counts: {'i': 39, 'r': 21, 'z': 96, 'g': 6}
+Mu: {'i': 0.23164499, 'r': 0.15159766, 'z': 0.43340558, 'g': 0.11525284}
+Variable??
+0.021930497132005393
+0.4611638279783771
+Non-Variable source in g
+Variable??
+0.024258191592297192
+0.633930942864254
+Non-Variable source in r
+Variable??
+0.04170366681904338
+0.651719967097292
+Non-Variable source in i
+Variable??
+0.08227648099841169
+0.9121760666766868
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.4499059767773519, 0.7717277028620039]
+intercepts:  [0, 0, -0.06307928841378341, -0.06405395296981393]
+Int Error:   [0.0, 0, 0.05771647637777345, 0.049011414626914974]
+StDev:       [0.015004108, 0.03358045, 0.032895137, 0.09367234]
+Not variable, going to next row
+Running object 23
+0.0
+Counts: {'i': 77, 'r': 25, 'z': 214, 'g': 20}
+Mu: {'i': 1.702801, 'r': 0.9539692, 'z': 2.184945, 'g': 0.3734836}
+Variable??
+0.037958462887951024
+1.3553021048495215
+Non-Variable source in g
+Variable??
+0.03362903604283929
+6.24911398949854
+Variable Source!
+Variable??
+0.04800304511251817
+5.7227159171886965
+Non-Variable source in i
+Variable??
+0.09380939754133594
+3.5437129570041317
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1.5786343348617844, 1]
+Slope Error: [7.919523187350016, 0, 0.260615887850763, 0.31296329973716674]
+intercepts:  [0.5124098949783652, 0, 0.03243737029341375, -0.06842537585227021]
+Int Error:   [0.32202978829104556, 0, 0.016319973823797084, 0.01891091480528424]
+StDev:       [0.04863551, 0.12883668, 0.13798629, 0.2341575]
+Spread:      4/4
+('G', 0.010405735)
+('R', 0.013944572)
+('I', 0.013769059)
+('Z', 0.012542616)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.010405735
+0.013944572
+0.013769059
+0.012542616
+Running object 24
+0.0
+Counts: {'i': 66, 'r': 22, 'z': 204, 'g': 16}
+Mu: {'i': 2.4753041, 'r': 1.1252877, 'z': 3.436386, 'g': 0.31581566}
+Variable??
+0.04052615165710449
+0.8868414092827914
+Non-Variable source in g
+Variable??
+0.03354818825501512
+0.9708535124355447
+Non-Variable source in r
+Variable??
+0.049739248710292415
+0.8735341989757708
+Non-Variable source in i
+Variable??
+0.09856051041319906
+1.047286795285693
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 2.5043650237311614, 0.5664309210746038]
+intercepts:  [0, 0, 0.015332219112383952, -0.02506382058306899]
+Int Error:   [0.0, 0, 0.02842175644556593, 0.008509013947768103]
+StDev:       [0.041754015, 0.0881618, 0.17701054, 0.23371576]
+Not variable, going to next row
+Running object 25
+0.0
+Counts: {'i': 90, 'r': 46, 'z': 194, 'g': 37}
+Mu: {'i': 0.3375582, 'r': 0.30557492, 'z': 0.507496, 'g': 0.2873838}
+Variable??
+0.02922345372473558
+0.7820190103850313
+Non-Variable source in g
+Variable??
+0.027058497049717963
+0.8009780804234207
+Non-Variable source in r
+Variable??
+0.043517028408694376
+0.9212312718605096
+Non-Variable source in i
+Variable??
+0.08189918347762129
+0.7701009683904578
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1.0717653149689232]
+Slope Error: [0.4591487748293175, 0, 0.34108247421862203, 0.2465916721685989]
+intercepts:  [0.07382655472175159, 0, -0.017584359140492018, 0.034482166717373475]
+Int Error:   [0.036901043250839115, 0, 0.037129868308285734, 0.020229902037811873]
+StDev:       [0.05003976, 0.037801392, 0.051962927, 0.088197365]
+Not variable, going to next row
+Running object 26
+0.0
+Counts: {'i': 72, 'r': 25, 'z': 203, 'g': 16}
+Mu: {'i': 0.70667934, 'r': 0.4963832, 'z': 0.9686446, 'g': 0.19636285}
+Variable??
+0.037161678075790405
+1.5652392873299568
+Non-Variable source in g
+Variable??
+0.0322682224214077
+1.6738147360195272
+Non-Variable source in r
+Variable??
+0.04648422678926569
+0.9367651526983328
+Non-Variable source in i
+Variable??
+0.09179372219760891
+0.8370897882218593
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.5957761812718809]
+intercepts:  [0, 0, 0, -0.0018272336067412522]
+Int Error:   [0.0, 0, 0.0, 0.022338356363946446]
+StDev:       [0.08702908, 0.11815709, 0.06026092, 0.19515684]
+Not variable, going to next row
+Running object 27
+0.0
+Counts: {'i': 115, 'r': 53, 'z': 298, 'g': 48}
+Mu: {'i': 1.2362558, 'r': 0.67954147, 'z': 1.5236142, 'g': 0.41816527}
+Variable??
+0.030292299919949868
+2.7483633267252032
+Non-Variable source in g
+Variable??
+0.02837061442252303
+5.793295095690842
+Variable Source!
+Variable??
+0.04580132417213417
+5.997204940602672
+Variable Source!
+Variable??
+0.08782553824668411
+2.8269036094699125
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [0.7332481521320768, 1, 0.45039217979855506, 1]
+Slope Error: [0.3346690080907514, 0, 0.38751486979014715, 0.13235409998695935]
+intercepts:  [-0.008259264477349815, 0, 0.046725156243328084, -0.025378302437040427]
+Int Error:   [0.044232210750724574, 0, 0.02673696037086035, 0.012075426015229445]
+StDev:       [0.05352983, 0.09579078, 0.14025572, 0.20054126]
+Spread:      4/4
+('G', 0.0076762186)
+('R', 0.014238706)
+('I', 0.017396374)
+('Z', 0.014266902)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.0076762186
+0.014238706
+0.017396374
+0.014266902
+Running object 28
+0.0
+Counts: {'i': 70, 'r': 27, 'z': 189, 'g': 23}
+Mu: {'i': 0.4804435, 'r': 0.36479154, 'z': 0.77975464, 'g': 0.30817157}
+Variable??
+0.033513374011637224
+1.0093013215632427
+Non-Variable source in g
+Variable??
+0.028627879575956184
+1.3201093734852865
+Non-Variable source in r
+Variable??
+0.044591790469626205
+1.4005663342576489
+Non-Variable source in i
+Variable??
+0.08916730372393221
+1.1393369079393887
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [2.366743261210595, 0, 1.1112126633002708, 0.43601101873324294]
+intercepts:  [0.004926693838124943, 0, 0.06112248293580708, -0.04993777993780468]
+Int Error:   [0.1287832928252023, 0, 0.03964304453179357, 0.02802001169663376]
+StDev:       [0.035651263, 0.04882873, 0.07367221, 0.12136252]
+Not variable, going to next row
+Running object 29
+0.00390625
+Counts: {'i': 96, 'r': 32, 'z': 267, 'g': 8}
+Mu: {'i': 1.4533821, 'r': 0.60199106, 'z': 1.9525727, 'g': 0.1809587}
+Variable??
+0.03413697956283432
+1.0337732228186118
+Non-Variable source in g
+Variable??
+0.02997116134841526
+0.7215205785730833
+Non-Variable source in r
+Variable??
+0.048644683977274866
+0.9503482462304715
+Non-Variable source in i
+Variable??
+0.09305203438147032
+0.9920742616332003
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.3579513454834361, 0.16780471079509293]
+intercepts:  [0, 0, 0.01910679513927486, -0.014070071655714363]
+Int Error:   [0.0, 0, 0.018617610355377984, 0.00781568753985486]
+StDev:       [0.031645518, 0.03142996, 0.0721831, 0.14633904]
+Not variable, going to next row
+Running object 30
+0.0
+Counts: {'i': 116, 'r': 52, 'z': 287, 'g': 30}
+Mu: {'i': 0.63334215, 'r': 0.3903774, 'z': 0.75935614, 'g': 0.17917964}
+Variable??
+0.02768669724685028
+1.0689804978590591
+Non-Variable source in g
+Variable??
+0.027501161822618757
+1.3148708910814453
+Non-Variable source in r
+Variable??
+0.04496317095729144
+1.011898993744942
+Non-Variable source in i
+Variable??
+0.08533086509767564
+0.9531249242275887
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.7952810148410095, 0, 0.20307374637645073, 0.2203087528032512]
+intercepts:  [-0.06609528094973845, 0, -0.024567445318517067, -0.004639868616759246]
+Int Error:   [0.08385115829385409, 0, 0.015792033096632633, 0.018052408248257917]
+StDev:       [0.06895213, 0.03513394, 0.050323863, 0.11861627]
+Not variable, going to next row
+Running object 31
+0.00390625
+Counts: {'i': 85, 'r': 18, 'z': 210}
+Mu: {'i': 0.47486702, 'r': 0.17557289, 'z': 0.91627777, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.02759510181202173
+0.6186769271781563
+Non-Variable source in r
+Variable??
+0.045434797689902086
+1.5526684355231173
+Non-Variable source in i
+Variable??
+0.09093166905787571
+1.0173454668345177
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.7105716814103396, 0.19762671064400586]
+intercepts:  [0, 0, 0.05600874343233932, 0.01578033350663975]
+Int Error:   [0.0, 0, 0.08035480263310675, 0.01596434237505365]
+StDev:       [0.0, 0.019604838, 0.09063856, 0.12425577]
+Not variable, going to next row
+Running object 32
+0.0
+Counts: {'i': 51, 'r': 54, 'z': 11, 'g': 35}
+Mu: {'i': 0.25884265, 'r': 0.21008778, 'z': 0.3913413, 'g': 0.19512303}
+Variable??
+0.03182425010188715
+1.1583879336088019
+Non-Variable source in g
+Variable??
+0.02931618412360222
+1.3389614521789235
+Non-Variable source in r
+Variable??
+0.043647931497018407
+1.5432353195193023
+Non-Variable source in i
+Variable??
+0.07933213776616545
+1.1773180675021773
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, -188.2004100160417]
+Slope Error: [0.21262123781557973, 0, 0.29984403792930536, nan]
+intercepts:  [0.08741817938393648, 0, -0.08749991160613058, -75.34994074225757]
+Int Error:   [0.12118039184437868, 0, 0.04562731991820766, nan]
+StDev:       [0.04422889, 0.056104235, 0.054195363, 0.07107557]
+Not variable, going to next row
+Running object 33
+0.0
+Counts: {'i': 80, 'r': 29, 'z': 184, 'g': 21}
+Mu: {'i': 0.505785, 'r': 0.3189488, 'z': 0.59352577, 'g': 0.20361628}
+Variable??
+0.0323304745487439
+2.311623702505023
+Non-Variable source in g
+Variable??
+0.028052421028108992
+2.4233107232391506
+Non-Variable source in r
+Variable??
+0.04534081917465363
+1.5831649026716335
+Non-Variable source in i
+Variable??
+0.08736589324314202
+1.371204777137857
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.861005872976488, 1, 1, 1]
+Slope Error: [0.32411126989583844, 0, 0.195582264803909, 0.4919088643154915]
+intercepts:  [0.08392935821418435, 0, 0.03347373933022468, -0.1396337471950282]
+Int Error:   [0.11854968854330773, 0, 0.0390162815789259, 0.03830943974569842]
+StDev:       [0.051721126, 0.06893058, 0.069617085, 0.14532076]
+Not variable, going to next row
+Running object 34
+0.0
+Counts: {'i': 74, 'r': 25, 'z': 144, 'g': 19}
+Mu: {'i': 0.40018725, 'r': 0.2477698, 'z': 0.5795183, 'g': 0.20525572}
+Variable??
+0.030843336935431436
+1.8781885119358452
+Non-Variable source in g
+Variable??
+0.02798461588099599
+1.1037265698237475
+Non-Variable source in r
+Variable??
+0.04402063073174243
+0.929247626763469
+Non-Variable source in i
+Variable??
+0.08526219427585602
+0.9703573813225979
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.4893825189412898, 1]
+Slope Error: [1.7945975761732658, 0, 0.2317188030688956, 0.24074021250627894]
+intercepts:  [0.6605070143376417, 0, 0.030111000369508572, -0.0035924859494893546]
+Int Error:   [0.23007827874039083, 0, 0.022391422701327646, 0.02564252684071774]
+StDev:       [0.052465852, 0.03478975, 0.04871734, 0.0952644]
+Not variable, going to next row
+Running object 35
+0.0
+Counts: {'i': 85, 'r': 32, 'z': 147, 'g': 18}
+Mu: {'i': 0.40795383, 'r': 0.20940305, 'z': 0.55205166, 'g': 0.17189848}
+Variable??
+0.028499145785679837
+0.6676148955183474
+Non-Variable source in g
+Variable??
+0.027815534439545268
+1.1013152123627072
+Non-Variable source in r
+Variable??
+0.044653262010171474
+0.9063240435714358
+Non-Variable source in i
+Variable??
+0.08635010957326643
+0.9236298736080595
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [1.4508983025793567, 0, 0.1696709829249695, 0.14118551928066536]
+intercepts:  [0.3870031703617479, 0, -0.0041634427150234465, -0.03671585911711417]
+Int Error:   [0.24356464180255316, 0, 0.021544104919180608, 0.03113199851220109]
+StDev:       [0.037319954, 0.035173077, 0.053730346, 0.10611234]
+Not variable, going to next row
+Running object 36
+0.0
+Counts: {'i': 113, 'r': 49, 'z': 316, 'g': 40}
+Mu: {'i': 1.3514701, 'r': 0.679539, 'z': 1.7081357, 'g': 0.2742989}
+Variable??
+0.03335931027069988
+1.2009447405463873
+Non-Variable source in g
+Variable??
+0.030987408943474293
+2.2711619257648694
+Non-Variable source in r
+Variable??
+0.048091086443165815
+2.603595694039694
+Non-Variable source in i
+Variable??
+0.09255008966896479
+1.9927643219146745
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.6107690512663729, 1]
+Slope Error: [0.6690845468794151, 0, 0.1885592056886173, 0.10589189650721484]
+intercepts:  [-0.019336516484212973, 0, 0.00468583700808581, -0.030918534177394815]
+Int Error:   [0.04806701711371988, 0, 0.01497494627898684, 0.009024212623242394]
+StDev:       [0.042907476, 0.0716018, 0.09527266, 0.19170442]
+Not variable, going to next row
+Running object 37
+0.0
+Counts: {'i': 120, 'r': 64, 'z': 324, 'g': 31}
+Mu: {'i': 0.5362651, 'r': 0.3352189, 'z': 1.014301, 'g': 0.16325562}
+Variable??
+0.0277366742998561
+1.9817777415267452
+Non-Variable source in g
+Variable??
+0.028665488585829735
+2.239881227401412
+Non-Variable source in r
+Variable??
+0.04459129119145463
+2.1994024438555844
+Non-Variable source in i
+Variable??
+0.08759891800582409
+2.8317440650547114
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.3693040981955216, 1, 0.2531636412864584, 0.21140130913457633]
+Slope Error: [0.9861263437766168, 0, 0.10089818654465438, 0.05965425642529402]
+intercepts:  [0.20122429317479706, 0, 0.02207680775724563, -0.0025915776749751984]
+Int Error:   [0.17979278773057722, 0, 0.026699663480996425, 0.015689569380800506]
+StDev:       [0.068645656, 0.074005716, 0.078299545, 0.19037706]
+Not variable, going to next row
+Running object 38
+0.0
+Counts: {'i': 113, 'r': 57, 'z': 321, 'g': 57}
+Mu: {'i': 1.0428545, 'r': 0.7775605, 'z': 1.1372254, 'g': 0.4865482}
+Variable??
+0.03654157886372845
+1.809056301033703
+Non-Variable source in g
+Variable??
+0.031557416195628
+4.9906566233843295
+Non-Variable source in r
+Variable??
+0.04759027034919497
+2.65365114750663
+Non-Variable source in i
+Variable??
+0.0919255544806391
+2.0099745278762415
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.2907477665960889, 0, 0.31224633331094853, 0.20320415755296606]
+intercepts:  [0.0350245342758404, 0, 0.030346266929978438, -0.009546588342871304]
+Int Error:   [0.02838493504819581, 0, 0.02797338681986818, 0.017701370526399935]
+StDev:       [0.083401464, 0.09177667, 0.10041515, 0.16063568]
+Not variable, going to next row
+Running object 39
+0.0
+Counts: {'i': 70, 'r': 19, 'z': 219, 'g': 41}
+Mu: {'i': 7.093519, 'r': 4.06875, 'z': 10.702468, 'g': 0.7591936}
+Variable??
+0.041238750852087995
+3.71483792459197
+Non-Variable source in g
+Variable??
+0.037318771656251144
+67.30078280574054
+Variable Source!
+Variable??
+0.055525019685077504
+79.18647494596793
+Variable Source!
+Variable??
+0.10501521436850784
+116.82563110911464
+Variable Source!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [1.0593065328886688, 1, 1.184557391718484, 0.977085814123041]
+Slope Error: [0.4543624884358898, 0, 0.3269075252975988, 0.4068444198372407]
+intercepts:  [0.06797550944199837, 0, 0.03001201995032332, -0.10331596623115896]
+Int Error:   [0.033946424084026885, 0, 0.028289292885207814, 0.009341134173363928]
+StDev:       [0.09664193, 0.36595216, 0.7181509, 1.2692416]
+Spread:      4/4
+('G', 0.015738025)
+('R', 0.01632408)
+('I', 0.015053436)
+('Z', 0.015048174)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.015738025
+0.01632408
+0.015053436
+0.015048174
+Running object 40
+0.00390625
+Counts: {'i': 66, 'r': 35, 'z': 40, 'g': 6}
+Mu: {'i': 0.24897411, 'r': 0.1628352, 'z': 0.39004746, 'g': 0.13744386}
+Variable??
+0.028164747505246734
+0.886417709525697
+Non-Variable source in g
+Variable??
+0.02578482744409058
+0.99411318006848
+Non-Variable source in r
+Variable??
+0.043413845050682943
+0.9742977795100266
+Non-Variable source in i
+Variable??
+0.08051565688582042
+1.1048230936997911
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.5153244743377517]
+Slope Error: [1.2999872557130496, 0, 0.24958487620081096, 0.25079561971241426]
+intercepts:  [0.07248074252876102, 0, -0.11361341191523279, 0.04151095083721593]
+Int Error:   [0.2013604224584958, 0, 0.03493515991482654, 0.04656921706915039]
+StDev:       [0.024674643, 0.026640303, 0.06836471, 0.10559737]
+Not variable, going to next row
+Running object 41
+0.0
+Counts: {'i': 108, 'r': 46, 'z': 295, 'g': 42}
+Mu: {'i': 1.7870108, 'r': 0.9383695, 'z': 2.544665, 'g': 0.28086764}
+Variable??
+0.030037781342369802
+1.5584985746327633
+Non-Variable source in g
+Variable??
+0.02859130266437574
+6.83721476424005
+Non-Variable source in r
+Variable??
+0.04684283721040434
+5.353851445829923
+Non-Variable source in i
+Variable??
+0.09197228265708285
+3.052441951293252
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.2191052343856263, 1, 0.7184548505606594, 0.2959967531797423]
+Slope Error: [0.48313137552598345, 0, 0.22539059804115766, 0.10617948296165788]
+intercepts:  [0.031308909402500085, 0, 0.03697244673963793, -0.015181973325384046]
+Int Error:   [0.04362643542719398, 0, 0.016063404782621988, 0.009240629766421635]
+StDev:       [0.04915241, 0.07591017, 0.13515778, 0.22956026]
+Not variable, going to next row
+Running object 42
+0.0
+Counts: {'i': 96, 'r': 55, 'z': 118, 'g': 37}
+Mu: {'i': 0.30000216, 'r': 0.23957105, 'z': 0.46987498, 'g': 0.20567034}
+Variable??
+0.03272623105608378
+1.5489649644366903
+Non-Variable source in g
+Variable??
+0.029009333103149817
+1.2145287478718554
+Non-Variable source in r
+Variable??
+0.046330281226780116
+0.9475021191839343
+Non-Variable source in i
+Variable??
+0.08719965023619844
+1.0631491894994116
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.4853499116423891, 0, 0.23872387176747334, 0.18793702194782813]
+intercepts:  [0.0782530314018175, 0, 0.02284619659771181, -0.025161599780906263]
+Int Error:   [0.09410689672799456, 0, 0.03487792230656369, 0.03476671482334717]
+StDev:       [0.07457583, 0.04262513, 0.05114287, 0.10820201]
+Not variable, going to next row
+Running object 43
+0.0
+Counts: {'i': 66, 'r': 31, 'z': 93, 'g': 22}
+Mu: {'i': 0.3017133, 'r': 0.22289371, 'z': 0.4766562, 'g': 0.20257638}
+Variable??
+0.031528609806525915
+1.503564446627024
+Non-Variable source in g
+Variable??
+0.028718329837059128
+1.0582975035033335
+Non-Variable source in r
+Variable??
+0.04670579478994342
+0.9305746127728121
+Non-Variable source in i
+Variable??
+0.08356721036530053
+0.8930956398285115
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [3.0260651757303885, 1, 1, 1]
+Slope Error: [0.11676447685133226, 0, 0.7237132716414356, 0.38116807621814836]
+intercepts:  [0.07411453161131105, 0, 0.01873954067380878, 0.005985008349264631]
+Int Error:   [0.04429268597293939, 0, 0.047883571209764796, 0.05798686631835376]
+StDev:       [0.091362625, 0.043614425, 0.050874807, 0.095695615]
+Not variable, going to next row
+Running object 44
+0.00390625
+Counts: {'i': 131, 'r': 65, 'z': 351}
+Mu: {'i': 0.7536921, 'r': 0.30248374, 'z': 1.0990554, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.02922940586655367
+1.359085683125789
+Non-Variable source in r
+Variable??
+0.047642908474359626
+1.3849681066769708
+Non-Variable source in i
+Variable??
+0.09165376288820429
+1.3596021371980966
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.19527298828430212, 0.1009773818455025]
+intercepts:  [0, 0, 0.02287312762042637, -0.00541910465894084]
+Int Error:   [0.0, 0, 0.02085389954257362, 0.010477508339770195]
+StDev:       [0.0, 0.051770326, 0.08447717, 0.14126422]
+Not variable, going to next row
+Running object 45
+0.0
+Counts: {'i': 189, 'r': 104, 'z': 429, 'g': 71}
+Mu: {'i': 0.7249548, 'r': 0.6047715, 'z': 0.8424902, 'g': 0.30133027}
+Variable??
+0.029229547356776513
+1.7291897309402688
+Non-Variable source in g
+Variable??
+0.028972016068111953
+3.8450264412468944
+Non-Variable source in r
+Variable??
+0.045726290335765696
+3.0638853565185484
+Non-Variable source in i
+Variable??
+0.08527660250308829
+1.7416410756441445
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.6124172183133858, 1]
+Slope Error: [0.23245190849864314, 0, 0.17365280681086703, 0.10799140102523248]
+intercepts:  [0.042596624962442986, 0, 0.041129550300701756, 0.005403557756927468]
+Int Error:   [0.03541309187828996, 0, 0.01949915639744185, 0.01270425538472929]
+StDev:       [0.061976243, 0.07006414, 0.11200188, 0.13131125]
+Not variable, going to next row
+Running object 46
+0.0
+Counts: {'i': 181, 'r': 98, 'z': 412, 'g': 76}
+Mu: {'i': 0.5528806, 'r': 0.37259603, 'z': 0.70918584, 'g': 0.27394152}
+Variable??
+0.03432505097706961
+1.5402162862545914
+Non-Variable source in g
+Variable??
+0.029592821272406363
+1.6214732958753095
+Non-Variable source in r
+Variable??
+0.046298191503079074
+1.6090618948439932
+Non-Variable source in i
+Variable??
+0.08767340447072618
+1.360197375122738
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.31854141781784795, 0, 0.15040661456006363, 0.10376060976849873]
+intercepts:  [0.03298026604544641, 0, 0.008551395952069996, 0.0006290411933119744]
+Int Error:   [0.041551793224834245, 0, 0.016082656423122666, 0.016261306821859906]
+StDev:       [0.0749924, 0.060540758, 0.081211954, 0.14160672]
+Not variable, going to next row
+Running object 47
+0.0
+Counts: {'i': 147, 'r': 89, 'z': 270, 'g': 58}
+Mu: {'i': 0.31677774, 'r': 0.25734454, 'z': 0.4932409, 'g': 0.20552668}
+Variable??
+0.03194717199165133
+0.8951457332053966
+Non-Variable source in g
+Variable??
+0.028640141811059124
+1.3025308911007707
+Non-Variable source in r
+Variable??
+0.04464945541036499
+0.8959124956065521
+Non-Variable source in i
+Variable??
+0.08578505453017644
+1.0921606902989505
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.590901471618216, 0, 0.2100748922342872, 0.20007836812692595]
+intercepts:  [0.027354682351928505, 0, 0.011387022238089073, -0.02702152992995277]
+Int Error:   [0.07019363748031306, 0, 0.021541630764970836, 0.02013707339405132]
+StDev:       [0.043620527, 0.050001506, 0.048358105, 0.10485772]
+Not variable, going to next row
+Running object 48
+0.0
+Counts: {'i': 98, 'r': 37, 'z': 308, 'g': 40}
+Mu: {'i': 5.429719, 'r': 4.0459533, 'z': 7.42163, 'g': 1.6022764}
+Variable??
+0.044814697150230294
+45.14597726765212
+Variable Source!
+Variable??
+0.0361942846837482
+277.88320114212115
+Variable Source!
+Variable??
+0.053694587143230964
+198.42504576700276
+Variable Source!
+Variable??
+0.1016104728086547
+153.7901412933846
+Variable Source!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [0.913152365042435, 1, 1.8804372596431023, 0.32920580917253517]
+Slope Error: [0.42304952437173643, 0, 0.5023955141746027, 0.26891508847592843]
+intercepts:  [0.03814456557895723, 0, 0.2426648966454158, -0.08316816098648783]
+Int Error:   [0.043198484609456175, 0, 0.06359529711133442, 0.026354831615370704]
+StDev:       [0.3101212, 0.7533465, 1.0270323, 1.2924788]
+Spread:      4/4
+('G', 0.029194716)
+('R', 0.029267602)
+('I', 0.02698696)
+('Z', 0.02553117)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.029194716
+0.029267602
+0.02698696
+0.02553117
+Running object 49
+0.0
+Counts: {'i': 142, 'r': 75, 'z': 356, 'g': 75}
+Mu: {'i': 1.1743357, 'r': 1.0267378, 'z': 1.217901, 'g': 0.69108516}
+Variable??
+0.03274929339145514
+8.322510759292143
+Variable Source!
+Variable??
+0.029722163733733795
+21.855368235761844
+Variable Source!
+Variable??
+0.04678950027579379
+9.964224995098723
+Variable Source!
+Variable??
+0.08980821293827529
+3.9288589860257104
+Non-Variable source in z
+Variable:    3/4
+Var Bands:   gri
+Slope:       [0.7521443573627308, 1, 1.28659528797734, 1]
+Slope Error: [0.16806692482411095, 0, 0.16534855091872694, 0.14150382005004672]
+intercepts:  [0.016662978366604398, 0, 0.04919771491403169, 0.03829416141570374]
+Int Error:   [0.02225989395060976, 0, 0.017905967078803132, 0.01772774895332347]
+StDev:       [0.11280993, 0.15225914, 0.18323234, 0.22327933]
+Spread:      4/4
+('G', 0.018054886)
+('R', 0.01918378)
+('I', 0.020732544)
+('Z', 0.023575973)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.018054886
+0.01918378
+0.020732544
+0.023575973
+Running object 50
+0.00390625
+Counts: {'i': 11, 'z': 106}
+Mu: {'i': 0.18756126, 'r': 0.0, 'z': 0.463329, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0
+0
+Non-Variable source in r
+Variable??
+0.036101724154174494
+0.5803182500166597
+Non-Variable source in i
+Variable??
+0.0769614257149362
+1.334323689580725
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.0, 0.0, 0.026238186, 0.09472435]
+Not variable, going to next row
+Running object 51
+0.0
+Counts: {'i': 158, 'r': 91, 'z': 101, 'g': 33}
+Mu: {'i': 0.29978514, 'r': 0.24721172, 'z': 0.4233565, 'g': 0.16059951}
+Variable??
+0.03105013387128994
+1.1207873390042107
+Non-Variable source in g
+Variable??
+0.028575196505358877
+1.8299121331743224
+Non-Variable source in r
+Variable??
+0.04645233620345856
+1.3796869045842937
+Non-Variable source in i
+Variable??
+0.08728493180856792
+1.0730709594794094
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.36678170868702953, 1]
+Slope Error: [1.614956693320448, 0, 0.10077204869269576, 0.18485998834019315]
+intercepts:  [0.09429894606818412, 0, -0.015997416307190315, -0.042267697306747065]
+Int Error:   [0.1982648391853075, 0, 0.02386197373767757, 0.0458653418716272]
+StDev:       [0.06493293, 0.055117935, 0.069862664, 0.10451406]
+Not variable, going to next row
+Running object 52
+0.0
+Counts: {'i': 68, 'r': 69, 'z': 80, 'g': 36}
+Mu: {'i': 0.24059194, 'r': 0.19223794, 'z': 0.41576254, 'g': 0.1712119}
+Variable??
+0.031333752907812595
+1.0280250112809253
+Non-Variable source in g
+Variable??
+0.028200897173063396
+1.2696675924602556
+Non-Variable source in r
+Variable??
+0.043477037028253174
+1.663780584777389
+Non-Variable source in i
+Variable??
+0.08412807564574942
+1.7125726554058611
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.6627171667407248, 1]
+Slope Error: [0.5288562599651118, 0, 0.15181277509026056, 0.2337135598676151]
+intercepts:  [-0.01993284864456224, 0, -0.019658247207102297, 0.02287707037161668]
+Int Error:   [0.05066187556480235, 0, 0.03598066930328438, 0.058277434927318655]
+StDev:       [0.037277073, 0.042710215, 0.061780356, 0.34580097]
+Not variable, going to next row
+Running object 53
+0.0
+Counts: {'i': 83, 'r': 61, 'z': 187, 'g': 57}
+Mu: {'i': 1.598439, 'r': 0.9908552, 'z': 1.8678361, 'g': 0.48503962}
+Variable??
+0.033566439799704834
+3.477897813374273
+Non-Variable source in g
+Variable??
+0.031627540479350805
+14.252483970147912
+Variable Source!
+Variable??
+0.05065121462249965
+7.7608515722137765
+Variable Source!
+Variable??
+0.09234179113145109
+3.9665485820734476
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [0.8293223700570345, 1, 0.8169421845133309, 1]
+Slope Error: [0.2840169744953462, 0, 0.2655326670472343, 0.11938573543036726]
+intercepts:  [0.045323680748890594, 0, 0.07272024732031315, 0.017130116831669758]
+Int Error:   [0.029804454573312694, 0, 0.01567841441473269, 0.013806716225114821]
+StDev:       [0.09185753, 0.113118745, 0.16815834, 0.27304918]
+Spread:      4/4
+('G', 0.014129293)
+('R', 0.015671534)
+('I', 0.01783736)
+('Z', 0.014467864)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.014129293
+0.015671534
+0.01783736
+0.014467864
+Running object 54
+0.00390625
+Counts: {'i': 65, 'r': 53, 'z': 30, 'g': 5}
+Mu: {'i': 0.23155834, 'r': 0.146326, 'z': 0.4047941, 'g': 0.14665246}
+Variable??
+0.030466966910546744
+3.127777157621077
+Non-Variable source in g
+Variable??
+0.02568847608488042
+0.7641894961229577
+Non-Variable source in r
+Variable??
+0.04369612535440354
+0.893147043881962
+Non-Variable source in i
+Variable??
+0.0909687198809903
+1.5047847875523215
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.5948571815866402, 0, 0.40084656138039, 0.1488744211091654]
+intercepts:  [-0.15130427177875175, 0, -0.04479038036445293, -0.1581317541668752]
+Int Error:   [0.1822989713004293, 0, 0.04538652081338769, 0.060203952696712006]
+StDev:       [0.04573108, 0.032337304, 0.06961007, 0.19374008]
+Not variable, going to next row
+Running object 55
+0.0
+Counts: {'i': 40, 'r': 57, 'z': 6, 'g': 34}
+Mu: {'i': 0.1952306, 'r': 0.1425737, 'z': 0.33387035, 'g': 0.1309847}
+Variable??
+0.027480490397802655
+1.4513560000021584
+Non-Variable source in g
+Variable??
+0.024805506539429013
+1.2080167009312688
+Non-Variable source in r
+Variable??
+0.03966610178106103
+0.667350724477175
+Non-Variable source in i
+Variable??
+0.08190330252931682
+0.24311311210475237
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.256562521156261, 1, 1, 1]
+Slope Error: [0.5287061716794885, 0, 0.2423525790910631, 0.0]
+intercepts:  [0.08058211078058553, 0, -0.07171348672339826, 0]
+Int Error:   [0.09652247507872741, 0, 0.037348180864944666, 0.0]
+StDev:       [0.06817678, 0.04609675, 0.038021725, 0.037657782]
+Not variable, going to next row
+Running object 56
+0.0
+Counts: {'i': 138, 'r': 92, 'z': 287, 'g': 51}
+Mu: {'i': 0.27458405, 'r': 0.2181056, 'z': 0.48195153, 'g': 0.15477145}
+Variable??
+0.028570171223222033
+1.449350055760033
+Non-Variable source in g
+Variable??
+0.027255044255468014
+1.4585156040209328
+Non-Variable source in r
+Variable??
+0.04351511581969564
+1.1624737561021117
+Non-Variable source in i
+Variable??
+0.08383876910622098
+0.9198155007697243
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.1427236411261257, 1, 0.3654734269754081, 0.1977553919202284]
+Slope Error: [0.4030245462432557, 0, 0.14888705296230226, 0.08899793626883994]
+intercepts:  [0.24150885482031328, 0, 0.03514693910178002, -0.006508443998835212]
+Int Error:   [0.05964879776729609, 0, 0.026165951962335347, 0.018536223464839297]
+StDev:       [0.064668454, 0.03941044, 0.054445617, 0.11352559]
+Not variable, going to next row
+Running object 57
+0.0
+Counts: {'i': 178, 'r': 100, 'z': 215, 'g': 65}
+Mu: {'i': 0.42785347, 'r': 0.3647554, 'z': 0.48542407, 'g': 0.2609506}
+Variable??
+0.028683114760014103
+1.3961388423843972
+Non-Variable source in g
+Variable??
+0.028169904835522175
+1.2578276630547502
+Non-Variable source in r
+Variable??
+0.04488885668684854
+1.2045505650802353
+Non-Variable source in i
+Variable??
+0.07923472823529042
+0.858748047930738
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.6918839303729399, 0, 0.17638653654758013, 0.20674287843140396]
+intercepts:  [0.1064604350252355, 0, 0.021795145404884475, 0.03367651649887693]
+Int Error:   [0.07538604847003008, 0, 0.01596893588877424, 0.020871348648737464]
+StDev:       [0.068722956, 0.055375237, 0.054411512, 0.09001523]
+Not variable, going to next row
+Running object 58
+0.0
+Counts: {'i': 143, 'r': 88, 'z': 247, 'g': 46}
+Mu: {'i': 0.3971899, 'r': 0.33809906, 'z': 0.53105026, 'g': 0.18366936}
+Variable??
+0.0283254712038143
+0.8714986831664926
+Non-Variable source in g
+Variable??
+0.02889775031719812
+0.9381699490818235
+Non-Variable source in r
+Variable??
+0.045889744862869584
+0.9063569856182122
+Non-Variable source in i
+Variable??
+0.0839021345695551
+0.7977747714692678
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.712893682682573, 1, 1, 1]
+Slope Error: [1.230328282932573, 0, 0.1252802887927957, 0.13628520671570923]
+intercepts:  [0.3384448345058581, 0, 0.0008820875189720079, 0.004986196283959465]
+Int Error:   [0.14757754114274577, 0, 0.015226269320045437, 0.01718962958773314]
+StDev:       [0.06324725, 0.03901043, 0.050115906, 0.11033097]
+Not variable, going to next row
+Running object 59
+0.00390625
+Counts: {'i': 122, 'r': 54, 'z': 69, 'g': 11}
+Mu: {'i': 0.32608867, 'r': 0.22207212, 'z': 0.44774944, 'g': 0.15517066}
+Variable??
+0.02214416422489396
+2.668231624726274
+Non-Variable source in g
+Variable??
+0.023654016293295468
+1.5967158670315695
+Non-Variable source in r
+Variable??
+0.03990870795626734
+1.511523746036029
+Non-Variable source in i
+Variable??
+0.07031367920114205
+1.0962211619088993
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3475868806333444, 1.1217799542244442]
+Slope Error: [0.730284501828576, 0, 0.11964365791311134, 0.4384727698106393]
+intercepts:  [0.0032172644355044078, 0, -0.011500431059468186, 0.09137469553050784]
+Int Error:   [0.12333062966174131, 0, 0.025588447377264626, 0.03741030378756553]
+StDev:       [0.038468827, 0.038270663, 0.05551602, 0.09343871]
+Not variable, going to next row
+Running object 60
+0.0
+Counts: {'i': 172, 'r': 92, 'z': 384, 'g': 54}
+Mu: {'i': 0.5412005, 'r': 0.42088163, 'z': 0.64874136, 'g': 0.18966027}
+Variable??
+0.02846320085493095
+1.406689961593507
+Non-Variable source in g
+Variable??
+0.029095275211988746
+2.5708881461349216
+Non-Variable source in r
+Variable??
+0.046163784344503155
+1.97449248182144
+Non-Variable source in i
+Variable??
+0.08694987154439329
+1.2172978860932933
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3860288829483296, 1]
+Slope Error: [0.528086270946441, 0, 0.14304779819187494, 0.10417777084082797]
+intercepts:  [0.12591493202104986, 0, 0.016492076775236675, 0.00825202627103494]
+Int Error:   [0.09431168424727122, 0, 0.017638588059027203, 0.014371731716048]
+StDev:       [0.07323321, 0.05770747, 0.07514195, 0.11861211]
+Not variable, going to next row
+Running object 61
+0.0
+Counts: {'i': 176, 'r': 94, 'z': 427, 'g': 60}
+Mu: {'i': 0.91010386, 'r': 0.49910128, 'z': 1.1533786, 'g': 0.2571376}
+Variable??
+0.029209330408076942
+1.104149222828613
+Non-Variable source in g
+Variable??
+0.029323447087104628
+2.130289817325493
+Non-Variable source in r
+Variable??
+0.04746691318727208
+2.1929271937718346
+Non-Variable source in i
+Variable??
+0.08940162446048128
+1.5263403561738518
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3327438758390837, 0.1417121846656405]
+Slope Error: [0.4097948008491312, 0, 0.1277494140321129, 0.06173017067887808]
+intercepts:  [0.04188667892827358, 0, 0.026338982266101096, -0.006831854716755909]
+Int Error:   [0.049405987987290866, 0, 0.013332348854533622, 0.009168306300641544]
+StDev:       [0.04588526, 0.074229114, 0.0988225, 0.15851384]
+Not variable, going to next row
+Running object 62
+0.0
+Counts: {'i': 296, 'r': 156, 'z': 490, 'g': 96}
+Mu: {'i': 0.4997294, 'r': 0.34236404, 'z': 0.5525379, 'g': 0.20608735}
+Variable??
+0.03343627663374739
+1.2221617131515738
+Non-Variable source in g
+Variable??
+0.029941621528148533
+2.000420598258066
+Non-Variable source in r
+Variable??
+0.047950595400646445
+1.588854317494299
+Non-Variable source in i
+Variable??
+0.08612334557629843
+1.074863323509527
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.24978522154423455, 0.19229338374532468]
+Slope Error: [0.2647869382011355, 0, 0.08150885451120568, 0.0593370273992206]
+intercepts:  [0.019274012410902208, 0, 0.0019362572229372089, -0.004806131266029912]
+Int Error:   [0.03842800634464855, 0, 0.010839900753146345, 0.01079601583127494]
+StDev:       [0.052356973, 0.0728726, 0.074223645, 0.106320165]
+Not variable, going to next row
+Running object 63
+0.0
+Counts: {'i': 157, 'r': 80, 'z': 358, 'g': 62}
+Mu: {'i': 0.70359945, 'r': 0.48860645, 'z': 0.7258123, 'g': 0.2794323}
+Variable??
+0.029601354440886716
+1.2995170529469031
+Non-Variable source in g
+Variable??
+0.02951306293970764
+1.3655815063799304
+Non-Variable source in r
+Variable??
+0.04684140585447729
+1.2466921153467734
+Non-Variable source in i
+Variable??
+0.08917546260016375
+1.0024746975930525
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.37941089853219, 1]
+Slope Error: [0.732799010241078, 0, 0.17222985633365445, 0.12617808608511327]
+intercepts:  [0.04920200502315933, 0, -0.018263301391544084, 0.0038795911233566738]
+Int Error:   [0.05237144966510879, 0, 0.01904793070970358, 0.0148316931488112]
+StDev:       [0.05537569, 0.051495645, 0.06975259, 0.106825255]
+Not variable, going to next row
+Running object 64
+0.0
+Counts: {'i': 204, 'r': 115, 'z': 336, 'g': 64}
+Mu: {'i': 1.3150392, 'r': 0.6217748, 'z': 1.9251951, 'g': 0.1856318}
+Variable??
+0.02766658551990986
+1.4029087935372369
+Non-Variable source in g
+Variable??
+0.02942226097915982
+3.943574241608796
+Non-Variable source in r
+Variable??
+0.04826555275845645
+7.214308209450367
+Variable Source!
+Variable??
+0.09830997354969613
+4.290389975574129
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   i
+Slope:       [1, 1, 0.5291261341273985, 1]
+Slope Error: [0.24529034805059238, 0, 0.13156306699749742, 0.10099259940738473]
+intercepts:  [-0.07807286895405205, 0, 0.011691664103419375, 0.025701308126815148]
+Int Error:   [0.03279728264148905, 0, 0.01416323873869093, 0.016032736668244438]
+StDev:       [0.103951134, 0.074880436, 0.16863157, 0.28020912]
+Spread:      4/4
+('G', 0.012978411)
+('R', 0.013260003)
+('I', 0.015545769)
+('Z', 0.0128033)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.012978411
+0.013260003
+0.015545769
+0.0128033
+Running object 65
+0.00390625
+Counts: {'i': 117, 'r': 38, 'z': 105}
+Mu: {'i': 0.3000639, 'r': 0.16569582, 'z': 0.44981635, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.025124353522446012
+1.257164960377081
+Non-Variable source in r
+Variable??
+0.04433784445533065
+1.057715184636436
+Non-Variable source in i
+Variable??
+0.08137934985005855
+0.7678357908092489
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.3796734157418036]
+Slope Error: [0.0, 0, 0.14145678858548202, 0.18449144136292273]
+intercepts:  [0, 0, -0.03968015560905947, -0.06368991332391889]
+Int Error:   [0.0, 0, 0.025421357840916297, 0.029511636512327098]
+StDev:       [0.0, 0.04945216, 0.052892555, 0.080799066]
+Not variable, going to next row
+Running object 66
+0.0
+Counts: {'i': 179, 'r': 125, 'z': 43, 'g': 47}
+Mu: {'i': 0.258354, 'r': 0.20990995, 'z': 0.38301072, 'g': 0.15707345}
+Variable??
+0.032154085354966354
+1.7372486952661195
+Non-Variable source in g
+Variable??
+0.02821105233594398
+1.4285990650433127
+Non-Variable source in r
+Variable??
+0.04492889947461423
+1.1832025345061339
+Non-Variable source in i
+Variable??
+0.0818382437439879
+0.896680129955958
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.7667805366996391, 0, 0.17090904248068098, 0.1995330209997953]
+intercepts:  [-0.02885711722074813, 0, 0.0276162215090775, -0.030919100139077393]
+Int Error:   [0.09572093695522316, 0, 0.027924452207429753, 0.047078977918788005]
+StDev:       [0.07157192, 0.071512654, 0.064126946, 0.07971128]
+Not variable, going to next row
+Running object 67
+0.00390625
+Counts: {'i': 178, 'r': 82, 'z': 416, 'g': 6}
+Mu: {'i': 0.63768065, 'r': 0.3236438, 'z': 0.86045027, 'g': 0.13678673}
+Variable??
+0.031234000343875207
+1.2128446060516422
+Non-Variable source in g
+Variable??
+0.02975591221019141
+0.9114608456880317
+Non-Variable source in r
+Variable??
+0.04847510465659169
+0.8621311015042598
+Non-Variable source in i
+Variable??
+0.09213385583690616
+0.9395489906355164
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.10530421205138656, 0.05283845776424302]
+intercepts:  [0, 0, 0.01922372481449841, 0.01635018843462363]
+Int Error:   [0.0, 0, 0.018169329525401838, 0.012595419967456008]
+StDev:       [0.038650382, 0.045932237, 0.08657703, 0.16428664]
+Not variable, going to next row
+Running object 68
+0.0
+Counts: {'i': 33, 'r': 43, 'z': 8, 'g': 32}
+Mu: {'i': 0.22113866, 'r': 0.14759164, 'z': 0.39977455, 'g': 0.14710283}
+Variable??
+0.0271845645072008
+1.1792082042566134
+Non-Variable source in g
+Variable??
+0.023122748607892832
+1.1973956295964916
+Non-Variable source in r
+Variable??
+0.04298893198304123
+0.8264041488245899
+Non-Variable source in i
+Variable??
+0.077574783409439
+1.9066039730528295
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.12591665071154853, 0, 0.4960084858805663, 0.29616010126434017]
+intercepts:  [-0.09575156238565063, 0, -0.04641912777791246, 0.03489937496217632]
+Int Error:   [0.07770753874892465, 0, 0.04609425353749115, 0.05768211392184181]
+StDev:       [0.033408012, 0.050233822, 0.055672262, 0.093224354]
+Not variable, going to next row
+Running object 69
+0.0
+Counts: {'i': 291, 'r': 155, 'z': 611, 'g': 9}
+Mu: {'i': 0.9684481, 'r': 0.53261197, 'z': 1.0653684, 'g': 0.15703936}
+Variable??
+0.03152035363018513
+1.3746907387930853
+Non-Variable source in g
+Variable??
+0.031357428404122485
+1.3217844882637975
+Non-Variable source in r
+Variable??
+0.04965746027268795
+2.107261987897484
+Non-Variable source in i
+Variable??
+0.0903694895932434
+1.3360623271968006
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.582084124750104, 1, 0.32411086194127137, 1]
+Slope Error: [1.275815367250356, 0, 0.06893714569348193, 0.053459382541271375]
+intercepts:  [-0.10413875038921572, 0, 0.010997908913269525, 0.007535987525179033]
+Int Error:   [0.048143435850515316, 0, 0.008188377718440866, 0.00642017955137686]
+StDev:       [0.06268355, 0.06193645, 0.105832435, 0.13897744]
+Not variable, going to next row
+Running object 70
+0.00390625
+Counts: {'i': 141, 'r': 51, 'z': 414}
+Mu: {'i': 0.24511082, 'r': 0.13653164, 'z': 0.4813434, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.024233904431455417
+1.1020365867240107
+Non-Variable source in r
+Variable??
+0.04237228259404874
+1.365463462964938
+Non-Variable source in i
+Variable??
+0.08389876817976875
+0.9484973000407214
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.29746630509296634, 0.06860917033147239]
+intercepts:  [0, 0, -0.055497115780758444, -0.010110380344347898]
+Int Error:   [0.0, 0, 0.05000285073205312, 0.01801850523489663]
+StDev:       [0.0, 0.03919163, 0.07083182, 0.09704622]
+Not variable, going to next row
+Running object 71
+0.00390625
+Counts: {'i': 39, 'r': 9, 'z': 154, 'g': 4}
+Mu: {'i': 0.30825695, 'r': 0.21819766, 'z': 0.52581483, 'g': 0.1663189}
+Variable??
+0.0312202125787735
+0.3630590515214789
+Non-Variable source in g
+Variable??
+0.02281386824324727
+3.5503211849958127
+Non-Variable source in r
+Variable??
+0.04234339794386714
+0.8509463535202614
+Non-Variable source in i
+Variable??
+0.0818373442871401
+0.9257221730053766
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.7284605411233994, 0.0]
+intercepts:  [0, 0, -0.019630285879676652, 0]
+Int Error:   [0.0, 0, 0.09582820661571434, 0.0]
+StDev:       [0.015283022, 0.029385993, 0.05100219, 0.08824137]
+Not variable, going to next row
+Running object 72
+0.0
+Counts: {'i': 117, 'r': 69, 'z': 81, 'g': 26}
+Mu: {'i': 0.26245537, 'r': 0.14988135, 'z': 0.41463548, 'g': 0.12737358}
+Variable??
+0.024651127455119253
+0.9106438533508391
+Non-Variable source in g
+Variable??
+0.02505395856149889
+1.3238281912130807
+Non-Variable source in r
+Variable??
+0.04199400505225163
+2.125070059665419
+Non-Variable source in i
+Variable??
+0.07586847804486752
+1.5962283274606692
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.5884073333512818, 1, 1.1061090622424823, 0.6275634114370237]
+Slope Error: [0.2743541162842772, 0, 0.16974636328734882, 0.14248975096362948]
+intercepts:  [-0.056764958639408156, 0, 0.10507852324299738, -0.08244477038816056]
+Int Error:   [0.041321138624636294, 0, 0.03507303334241543, 0.031626399604293524]
+StDev:       [0.033045255, 0.042842902, 0.07459344, 0.10860274]
+Not variable, going to next row
+Running object 73
+0.00390625
+Counts: {'i': 129, 'r': 34, 'z': 342}
+Mu: {'i': 0.3216698, 'r': 0.1615661, 'z': 0.62482226, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.02481633466447807
+1.3784908981453503
+Non-Variable source in r
+Variable??
+0.04632866227529527
+0.8497404532227804
+Non-Variable source in i
+Variable??
+0.09012730959263458
+0.7951381686415331
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.2861699745517803, 1]
+Slope Error: [0.0, 0, 0.11957365218591234, 0.0894860353839757]
+intercepts:  [0, 0, -0.026723126677443032, -0.012688116169844443]
+Int Error:   [0.0, 0, 0.028090661065415846, 0.0260624171606132]
+StDev:       [0.01695342, 0.033836983, 0.052041054, 0.10273288]
+Not variable, going to next row
+Running object 74
+0.0
+Counts: {'i': 244, 'r': 97, 'z': 338, 'g': 19}
+Mu: {'i': 0.32435778, 'r': 0.16274242, 'z': 0.4700181, 'g': 0.13100407}
+Variable??
+0.02556700131214782
+0.8726364180493218
+Non-Variable source in g
+Variable??
+0.025529690434379214
+1.3021131887443156
+Non-Variable source in r
+Variable??
+0.04474952540467058
+0.8917038119752999
+Non-Variable source in i
+Variable??
+0.08195690912858357
+0.7360131489458436
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.2675356694689095]
+Slope Error: [0.37827407845622973, 0, 0.04236346789560789, 0.05177124530235261]
+intercepts:  [-0.06338052092489607, 0, 0.012534812249408667, -0.0032742710540933917]
+Int Error:   [0.07169976852984582, 0, 0.014067365165732065, 0.014638635812312534]
+StDev:       [0.0224218, 0.05369952, 0.060319982, 0.086998545]
+Not variable, going to next row
+Running object 75
+0.0
+Counts: {'i': 122, 'r': 117, 'z': 30, 'g': 92}
+Mu: {'i': 0.26413172, 'r': 0.23502728, 'z': 0.43797165, 'g': 0.23691505}
+Variable??
+0.03305524411096409
+1.3095249738350891
+Non-Variable source in g
+Variable??
+0.028468103324009345
+1.641931764089151
+Non-Variable source in r
+Variable??
+0.04536342452174387
+1.083612205412828
+Non-Variable source in i
+Variable??
+0.08994408959485709
+1.2591001732073466
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.6094400350259228, 1]
+Slope Error: [0.10777948149935114, 0, 0.1169142842063897, 0.6975955277936413]
+intercepts:  [-0.011476074809058323, 0, 0.05092601050127821, 0.08509382794958475]
+Int Error:   [0.027751423472944226, 0, 0.023983532151729083, 0.12899166515299246]
+StDev:       [0.06454375, 0.05599114, 0.05824293, 0.15705165]
+Not variable, going to next row
+Running object 76
+0.00390625
+Counts: {'i': 46, 'r': 58, 'z': 7, 'g': 6}
+Mu: {'i': 0.23820497, 'r': 0.16203085, 'z': 0.3852136, 'g': 0.15321788}
+Variable??
+0.033253061390273606
+3.7256439633473564
+Variable Source!
+Variable??
+0.027271340727847766
+1.8372190803496915
+Non-Variable source in r
+Variable??
+0.04658737877570191
+1.7725589319722224
+Non-Variable source in i
+Variable??
+0.08397086001374737
+2.0171418452556296
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1.0120248736755912, 1, 0.8932275178366667, 0.7751716367343713]
+Slope Error: [0.39984118167715155, 0, 0.2977435548372397, 0.3100692357288867]
+intercepts:  [-0.19224091841640156, 0, 0.03504429318200475, -0.12945627408812704]
+Int Error:   [0.09910793134444772, 0, 0.06231774594151124, 0.06797667685823583]
+StDev:       [0.12552573, 0.08854027, 0.077645324, 0.10142571]
+Spread:      1/4
+('R', 0.02237305)
+('ROW:', 76, 'Tau:', '0.4341888826312048', 'V:', '-0.843671583161828')
+117
+('ROW:', 76, 'Tau:', '2.531380790587445', 'V:', '-0.09264793269334755')
+6
+ClusterEmcee2_linear_mu_all_and_single_fast.py:608: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
+Running object 77
+0.0
+Counts: {'i': 73, 'r': 65, 'z': 45, 'g': 8}
+Mu: {'i': 0.22798032, 'r': 0.16367884, 'z': 0.4082725, 'g': 0.15200934}
+Variable??
+0.03039490312916576
+0.500184366561189
+Non-Variable source in g
+Variable??
+0.025381804374061186
+0.8900642622684398
+Non-Variable source in r
+Variable??
+0.042413903381151676
+1.4860775004338675
+Non-Variable source in i
+Variable??
+0.07989666353042696
+1.345206632282697
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.26736530418506255, 0, 0.22793951932427484, 0.3761841591006109]
+intercepts:  [-0.05819767263451814, 0, -0.009333304142038035, -0.07279029391409075]
+Int Error:   [0.0508222959339799, 0, 0.03662971849920769, 0.06084917979971811]
+StDev:       [0.017858509, 0.027661672, 0.06840601, 0.11837649]
+Not variable, going to next row
+Running object 78
+0.0
+Counts: {'i': 19, 'r': 77, 'z': 4, 'g': 46}
+Mu: {'i': 0.23067023, 'r': 0.1534008, 'z': 0.2851051, 'g': 0.16617683}
+Variable??
+0.030811559110992977
+1.2124194850991163
+Non-Variable source in g
+Variable??
+0.026165042764360078
+1.3053912489016875
+Non-Variable source in r
+Variable??
+0.04728689335799576
+1.732603749842945
+Non-Variable source in i
+Variable??
+0.07328985631465912
+0.5246729567711712
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.718297712730087, 0, 0.3770006029877863, 0.0]
+intercepts:  [-0.15936028672861435, 0, -0.1375930237552978, 0]
+Int Error:   [0.07901328388947486, 0, 0.06560615446208097, 0.0]
+StDev:       [0.03512974, 0.035011757, 0.07250702, 0.052140895]
+Not variable, going to next row
+Running object 79
+0.00390625
+Counts: {'i': 157, 'r': 48, 'z': 108, 'g': 8}
+Mu: {'i': 0.27410755, 'r': 0.14830178, 'z': 0.44371882, 'g': 0.14170781}
+Variable??
+0.03219252943842815
+1.6816150840803765
+Non-Variable source in g
+Variable??
+0.026123412629796783
+1.3912843496229967
+Non-Variable source in r
+Variable??
+0.04538948265775004
+1.1264200139964844
+Non-Variable source in i
+Variable??
+0.08432653779497713
+1.5277791871922903
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.30468736918837713, 0.2862576385026505]
+Slope Error: [0.0, 0, 0.13964628779924654, 0.1408832725994547]
+intercepts:  [0, 0, -0.023556860881004837, 0.021204469265136416]
+Int Error:   [0.0, 0, 0.028819333417611115, 0.03531286600497763]
+StDev:       [0.11745319, 0.043306936, 0.060333844, 0.12844014]
+Not variable, going to next row
+Running object 80
+0.0
+Counts: {'i': 104, 'r': 147, 'z': 123, 'g': 188}
+Mu: {'i': 207.06021, 'r': 68.36932, 'z': 324.84198, 'g': 18.602074}
+Variable??
+0.08305713532716873
+2.73797764405769
+Non-Variable source in g
+Variable??
+0.13504820468862122
+4.061773928947123
+Variable Source!
+Variable??
+0.36664079134966393
+9.390686799584875
+Variable Source!
+Variable??
+0.48721509461658796
+25.552547048909517
+Variable Source!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [0.8446592035380167, 1, -0.07605519495585322, 0.2780154113863329]
+Slope Error: [0.16462114561321473, 0, 0.15974306546179, 0.1741496028362844]
+intercepts:  [-0.0016928643597994588, 0, -0.0003768210905041244, 0.0017130120214226441]
+Int Error:   [0.0010265420776106639, 0, 0.0008169587590784906, 0.0009849193999862723]
+StDev:       [0.22856236, 0.44359544, 1.2228756, 2.7775965]
+Spread:      1/4
+('I', 0.0046409327)
+WARNING:root:Too few points to create valid contours
+('ROW:', 80, 'Tau:', '0.0011935133332495046', 'V:', '-2.1346429572281407')
+562
+ClusterEmcee2_linear_mu_all_and_single_fast.py:374: RuntimeWarning: divide by zero encountered in log
+  logP = -.5*np.log((deter))-.5*((np.dot(delf1, (np.dot((delf1), np.linalg.inv(S))))))
+ClusterEmcee2_linear_mu_all_and_single_fast.py:375: RuntimeWarning: divide by zero encountered in log
+  logP1 = -.5*np.log((deter))-.5*((np.dot(delf2, (np.dot((delf2), np.linalg.inv(S))))))
+ClusterEmcee2_linear_mu_all_and_single_fast.py:376: RuntimeWarning: divide by zero encountered in log
+  logP2 = -.5*np.log((deter))-.5*((np.dot(delf3, (np.dot((delf3), np.linalg.inv(S))))))
+/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/_methods.py:29: RuntimeWarning: invalid value encountered in reduce
+  return umr_minimum(a, axis, None, out, keepdims)
+('ROW:', 80, 'Tau:', '0.8972613529636805', 'V:', '-2.259863571607875')
+147
+ClusterEmcee2_linear_mu_all_and_single_fast.py:577: RuntimeWarning: divide by zero encountered in log
+  logP = -.5*np.log((deter))-.5*((np.dot(delf1, (np.dot((delf1), np.linalg.inv(S))))))
+ClusterEmcee2_linear_mu_all_and_single_fast.py:578: RuntimeWarning: divide by zero encountered in log
+  logP1 = -.5*np.log((deter))-.5*((np.dot(delf2, (np.dot((delf2), np.linalg.inv(S))))))
+ClusterEmcee2_linear_mu_all_and_single_fast.py:579: RuntimeWarning: divide by zero encountered in log
+  logP2 = -.5*np.log((deter))-.5*((np.dot(delf3, (np.dot((delf3), np.linalg.inv(S))))))
+('ROW:', 80, 'Tau:', '0.0004889152978089922', 'V:', '-2.366775809761681')
+104
+WARNING:root:Too few points to create valid contours
+('ROW:', 80, 'Tau:', '6.048169939304288e-05', 'V:', '-1.1840658727949427')
+123
+Running object 81
+0.0
+Counts: {'i': 337, 'r': 187, 'z': 665, 'g': 111}
+Mu: {'i': 0.9246795, 'r': 0.4997401, 'z': 1.2067595, 'g': 0.19616449}
+Variable??
+0.028725998806484705
+1.4216553442319049
+Non-Variable source in g
+Variable??
+0.0291993436475684
+2.739434559423931
+Non-Variable source in r
+Variable??
+0.047847465323921735
+3.455363996526587
+Non-Variable source in i
+Variable??
+0.08545383221098946
+2.196984401248965
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.9623082642751231, 1, 0.24849430037325204, 1]
+Slope Error: [0.2007443944151691, 0, 0.049204050311332376, 0.030914090957266487]
+intercepts:  [0.05613495537661184, 0, 0.00037549625394595054, 0.002510974529874921]
+Int Error:   [0.039491663598384644, 0, 0.007286144879478025, 0.005963514485747739]
+StDev:       [0.06651104, 0.06978388, 0.10443862, 0.15996522]
+Not variable, going to next row
+Running object 82
+0.00390625
+Counts: {'i': 285, 'r': 152, 'z': 621}
+Mu: {'i': 1.5673, 'r': 0.4690524, 'z': 2.6325448, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.031101934417413827
+2.8527639344576095
+Non-Variable source in r
+Variable??
+0.05058775830696159
+6.260966065301924
+Variable Source!
+Variable??
+0.09454226831150672
+4.584927120675752
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   i
+Slope:       [1, 1, 0.5314465644025475, 0.07359717669793486]
+Slope Error: [0.0, 0, 0.06513621235763398, 0.029710595851180403]
+intercepts:  [0, 0, 0.01763662181014669, -5.474068992761261e-06]
+Int Error:   [0.0, 0, 0.006781027240158846, 0.005320525304324759]
+StDev:       [0.0, 0.066919394, 0.17136075, 0.26428252]
+Spread:      3/4
+('R', 0.01555093)
+('I', 0.013197116)
+('Z', 0.013932789)
+Too spread in bands: ['R', 'I', 'Z']
+0.01555093
+0.013197116
+0.013932789
+Running object 83
+0.0
+Counts: {'i': 389, 'r': 209, 'z': 783, 'g': 194}
+Mu: {'i': 1.9241018, 'r': 1.4756902, 'z': 1.8926934, 'g': 0.85095406}
+Variable??
+0.03969635154423903
+2.2232931734424346
+Non-Variable source in g
+Variable??
+0.032834301219534776
+5.465061188371222
+Non-Variable source in r
+Variable??
+0.05106474549075177
+4.613860882932883
+Non-Variable source in i
+Variable??
+0.09022639432017909
+2.3054371711704347
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.6759569386983777, 1, 0.5147207338660578, 0.2837418244217951]
+Slope Error: [0.16711143315587407, 0, 0.06667359377912982, 0.06143432233356293]
+intercepts:  [0.005498974652099808, 0, -0.0009869525694830017, 0.008536608690873753]
+Int Error:   [0.009735333106106739, 0, 0.0038049492060354758, 0.004149187889312572]
+StDev:       [0.08876669, 0.0938281, 0.1326542, 0.18599631]
+Not variable, going to next row
+Running object 84
+0.0
+Counts: {'i': 226, 'r': 120, 'z': 504, 'g': 111}
+Mu: {'i': 1.8098415, 'r': 1.507403, 'z': 1.9384598, 'g': 0.8997166}
+Variable??
+0.03503770069090871
+13.054986248701262
+Variable Source!
+Variable??
+0.031181869663307975
+30.531940404820592
+Variable Source!
+Variable??
+0.048824230678765825
+15.861979818478423
+Variable Source!
+Variable??
+0.09229760384853578
+5.078539815596176
+Variable Source!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [0.8753681128136566, 1, 0.7742346428487887, 0.19577727998022176]
+Slope Error: [0.15453003056575795, 0, 0.08593993579354699, 0.09446161207322207]
+intercepts:  [-0.02320852053949496, 0, 0.011915673082101397, -0.011210891219069818]
+Int Error:   [0.018243056169028053, 0, 0.010373481535727893, 0.00957079035254421]
+StDev:       [0.13442314, 0.19953339, 0.23091455, 0.28470877]
+Spread:      4/4
+('G', 0.01650117)
+('R', 0.016683402)
+('I', 0.01899311)
+('Z', 0.015472232)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.01650117
+0.016683402
+0.01899311
+0.015472232
+Running object 85
+0.0
+Counts: {'i': 307, 'r': 152, 'z': 657, 'g': 55}
+Mu: {'i': 1.657856, 'r': 0.62727034, 'z': 2.4055116, 'g': 0.19062369}
+Variable??
+0.03357324287584588
+1.698763045928699
+Non-Variable source in g
+Variable??
+0.03168857293887779
+3.0628981643306092
+Non-Variable source in r
+Variable??
+0.05106707436338621
+3.857426169299909
+Non-Variable source in i
+Variable??
+0.09348950123393356
+2.828731950177589
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.154359403066625, 1, 0.3222878551426769, 1]
+Slope Error: [0.622271279055924, 0, 0.05067674752338107, 0.037539765656115054]
+intercepts:  [-0.001653825508592277, 0, 0.0004646710389039077, -0.0031877469145811244]
+Int Error:   [0.08117420818086815, 0, 0.005193588276695402, 0.004183110096003137]
+StDev:       [0.10324152, 0.07082842, 0.13647623, 0.23604915]
+Not variable, going to next row
+Running object 86
+0.0
+Counts: {'i': 208, 'r': 113, 'z': 478, 'g': 93}
+Mu: {'i': 1.0433002, 'r': 0.5815403, 'z': 1.3248343, 'g': 0.36773515}
+Variable??
+0.03596777038401877
+1.167004842127094
+Non-Variable source in g
+Variable??
+0.030692001543594628
+1.444588607268744
+Non-Variable source in r
+Variable??
+0.05018988425967916
+1.0811985385519192
+Non-Variable source in i
+Variable??
+0.09394642953642636
+1.0674236007837976
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.4032272236384498, 0, 0.07067391888135748, 0.08346985272459831]
+intercepts:  [0.03867127261333281, 0, 0.004103899387223109, 0.005757286114421611]
+Int Error:   [0.025721041436179013, 0, 0.007068071962045824, 0.007245890108357641]
+StDev:       [0.06696625, 0.05653808, 0.0733235, 0.13341899]
+Not variable, going to next row
+Running object 87
+0.0
+Counts: {'i': 428, 'r': 244, 'z': 899, 'g': 217}
+Mu: {'i': 2.9586766, 'r': 2.2244966, 'z': 3.8732681, 'g': 1.0146716}
+Variable??
+0.040582892276945774
+3.1732652522061113
+Non-Variable source in g
+Variable??
+0.03449599880538906
+17.917627934816093
+Variable Source!
+Variable??
+0.051849603048488874
+20.700669738029934
+Variable Source!
+Variable??
+0.09235326496880493
+12.900576325289018
+Variable Source!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [0.7337419497938478, 1, 0.7730537626532084, 0.408851479582681]
+Slope Error: [0.10371240050391639, 0, 0.056590998308577875, 0.04560283254254895]
+intercepts:  [0.010388883248147907, 0, 0.0021097107162802997, 0.0078040946191384256]
+Int Error:   [0.008861798301914874, 0, 0.004216698219487146, 0.0039130899490228774]
+StDev:       [0.10956649, 0.17713486, 0.26609564, 0.39615607]
+Spread:      4/4
+('G', 0.0096116075)
+('R', 0.014581187)
+('I', 0.016692586)
+('Z', 0.01373852)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.0096116075
+0.014581187
+0.016692586
+0.01373852
+Running object 88
+0.0
+Counts: {'i': 104, 'r': 70, 'z': 136, 'g': 45}
+Mu: {'i': 0.2477154, 'r': 0.18389386, 'z': 0.45631456, 'g': 0.18359846}
+Variable??
+0.03096602984593624
+1.092226771467129
+Non-Variable source in g
+Variable??
+0.027037783370415153
+1.507273204084719
+Non-Variable source in r
+Variable??
+0.04260603615638248
+1.0042523312391323
+Non-Variable source in i
+Variable??
+0.08521126095692799
+1.1516089924301423
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.721223975409216, 1, 0.5732764439159344, 0.23230380514869964]
+Slope Error: [0.2186498621612472, 0, 0.17141262165656954, 0.08631775438212036]
+intercepts:  [-0.05078967622946706, 0, 0.017701756143182368, -0.08852396506526738]
+Int Error:   [0.03409713962100447, 0, 0.029781696696311522, 0.023552858641856234]
+StDev:       [0.03387392, 0.049647875, 0.051446903, 0.11076796]
+Not variable, going to next row
+Running object 89
+0.0
+Counts: {'i': 288, 'r': 143, 'z': 548, 'g': 112}
+Mu: {'i': 0.6958333, 'r': 0.6103179, 'z': 0.69586813, 'g': 0.32135296}
+Variable??
+0.03442481928195211
+2.162460927545253
+Non-Variable source in g
+Variable??
+0.031203922718861382
+8.368706887229951
+Variable Source!
+Variable??
+0.04944228359566755
+4.387798227453521
+Non-Variable source in i
+Variable??
+0.08930099438410734
+1.7038686434338117
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [0.6981319634771996, 1, 0.8343999670741578, 0.3236345893703134]
+Slope Error: [0.20395446679909524, 0, 0.08935816851175661, 0.08740520561868745]
+intercepts:  [0.0433815486328436, 0, 0.029293025397429506, 0.03676297619236547]
+Int Error:   [0.030141050337853723, 0, 0.012932178203857236, 0.012973924972154688]
+StDev:       [0.06458507, 0.098559745, 0.12390292, 0.14731896]
+Spread:      4/4
+('G', 0.022909733)
+('R', 0.025327973)
+('I', 0.021232398)
+('Z', 0.025811618)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.022909733
+0.025327973
+0.021232398
+0.025811618
+Running object 90
+0.0
+Counts: {'i': 279, 'r': 164, 'z': 316, 'g': 53}
+Mu: {'i': 0.37167594, 'r': 0.3162722, 'z': 0.45994654, 'g': 0.16602376}
+Variable??
+0.03289510580612642
+1.5995696055281319
+Non-Variable source in g
+Variable??
+0.029848118832491704
+1.7619865906387295
+Non-Variable source in r
+Variable??
+0.04739054732402017
+1.2288569051523626
+Non-Variable source in i
+Variable??
+0.08608334197309926
+0.9694633543921287
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [3.7959146887430055, 1, 0.44071106879692534, 0.22767738201236543]
+Slope Error: [0.841265323221163, 0, 0.08982653551915654, 0.10201985440963934]
+intercepts:  [0.17225976867908765, 0, 0.021778344645263847, 0.03770631435332286]
+Int Error:   [0.12127387437357598, 0, 0.014047716152731936, 0.01658794126736782]
+StDev:       [0.117738284, 0.067309156, 0.07038627, 0.10377]
+Not variable, going to next row
+Running object 91
+0.0
+Counts: {'i': 338, 'r': 166, 'z': 646, 'g': 87}
+Mu: {'i': 0.67709637, 'r': 0.3367427, 'z': 0.8811796, 'g': 0.20309225}
+Variable??
+0.032540046374324866
+1.1765991523565322
+Non-Variable source in g
+Variable??
+0.03013531144289868
+2.011534705228845
+Non-Variable source in r
+Variable??
+0.049402410372070465
+2.561863581233633
+Non-Variable source in i
+Variable??
+0.08949687000828951
+1.7662809751727686
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.2895699100930116, 1]
+Slope Error: [0.23301895342557596, 0, 0.06400941317168549, 0.04136069158746766]
+intercepts:  [0.043321836067502506, 0, 0.0012749935892852893, -0.012821667933730994]
+Int Error:   [0.040812206949047226, 0, 0.00986299473242755, 0.008643026443707614]
+StDev:       [0.059714757, 0.06357042, 0.09281868, 0.15068243]
+Not variable, going to next row
+Running object 92
+0.0
+Counts: {'i': 98, 'r': 129, 'z': 22, 'g': 50}
+Mu: {'i': 0.22497234, 'r': 0.16369829, 'z': 0.3859929, 'g': 0.16646932}
+Variable??
+0.03363058386088691
+0.9057645776163437
+Non-Variable source in g
+Variable??
+0.027625347926791204
+0.8785536241860215
+Non-Variable source in r
+Variable??
+0.044477402621785955
+0.9186876151805258
+Non-Variable source in i
+Variable??
+0.08658913712579294
+1.0513752528502553
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.5577127688665156, 1]
+Slope Error: [0.20711598415390356, 0, 0.13535902031905234, 0.5475590533398377]
+intercepts:  [-0.020557262128885593, 0, -0.012621226559093479, -0.0779024406949763]
+Int Error:   [0.04031858711670993, 0, 0.022681956321298092, 0.09498521047212918]
+StDev:       [0.07054896, 0.036515318, 0.055970512, 0.10008407]
+Not variable, going to next row
+Running object 93
+0.0
+Counts: {'i': 227, 'r': 118, 'z': 167, 'g': 64}
+Mu: {'i': 0.27026758, 'r': 0.16406173, 'z': 0.4089925, 'g': 0.17024818}
+Variable??
+0.033730003982782364
+1.8324531678751421
+Non-Variable source in g
+Variable??
+0.02722591905330228
+1.529473641529003
+Non-Variable source in r
+Variable??
+0.04653219554215029
+1.2479057560036937
+Non-Variable source in i
+Variable??
+0.08433476899047149
+1.045868654052012
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.28543111918875874, 0.28524324070748297]
+Slope Error: [0.6416517515349739, 0, 0.06832411478727336, 0.09633592908976558]
+intercepts:  [0.050737986767743104, 0, -0.016612649020700032, -0.004991459930929976]
+Int Error:   [0.08166142431448169, 0, 0.01972574558425715, 0.023601209495445537]
+StDev:       [0.1099409, 0.079368874, 0.0826333, 0.1608108]
+Not variable, going to next row
+Running object 94
+0.00390625
+Counts: {'i': 305, 'r': 162, 'z': 425, 'g': 3}
+Mu: {'i': 0.4115025, 'r': 0.26084787, 'z': 0.550138, 'g': 0.1561557}
+Variable??
+0.027317772985303718
+11.098976022118947
+Variable Source!
+Variable??
+0.027558573335980694
+1.0103902860150504
+Non-Variable source in r
+Variable??
+0.04688435991982754
+0.7687626197012422
+Non-Variable source in i
+Variable??
+0.08489574645651388
+0.7596707409376389
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1, 1, 0.10901597146038955, 0.1322799470053604]
+Slope Error: [0.0, 0, 0.0531628538852022, 0.04340597983989708]
+intercepts:  [0, 0, 0.00325974365598114, -0.007476648823523391]
+Int Error:   [0.0, 0, 0.008884612640965713, 0.00974280992091615]
+StDev:       [0.118491575, 0.04435814, 0.050592285, 0.09238444]
+Spread:      0/4
+('ROW:', 94, 'Tau:', '3.9985867398157127', 'V:', '-2.2246427614583806')
+773
+('ROW:', 94, 'Tau:', '2.0285406467478024', 'V:', '-0.5252031844659144')
+3
+Running object 95
+0.00390625
+Counts: {'i': 149, 'r': 85, 'z': 116, 'g': 3}
+Mu: {'i': 0.27024645, 'r': 0.17875771, 'z': 0.42995584, 'g': 0.17957623}
+Variable??
+0.04292914847900705
+4.441817699605677
+Non-Variable source in g
+Variable??
+0.02769884358244856
+1.1144727735620117
+Non-Variable source in r
+Variable??
+0.045787835062576075
+0.8991249819956987
+Non-Variable source in i
+Variable??
+0.0876198839686599
+0.9105032142882331
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.21262535131751847, 1]
+Slope Error: [0.0, 0, 0.08979928057667905, 0.26868032591200247]
+intercepts:  [0, 0, 0.01664658300584687, 0.02432626093751944]
+Int Error:   [0.0, 0, 0.01932602777971457, 0.04292560097021735]
+StDev:       [0.12797214, 0.059591647, 0.05991085, 0.1091065]
+Not variable, going to next row
+Running object 96
+0.0
+Counts: {'i': 290, 'r': 157, 'z': 586, 'g': 150}
+Mu: {'i': 1.4505785, 'r': 0.9519562, 'z': 1.623025, 'g': 0.52735233}
+Variable??
+0.03443922969936506
+2.176035991226259
+Non-Variable source in g
+Variable??
+0.03154652965479971
+6.6981880547195765
+Variable Source!
+Variable??
+0.050743620117996886
+5.377793859832186
+Non-Variable source in i
+Variable??
+0.09192942503418884
+2.253725605480332
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [0.6676962431309015, 1, 0.447599544186142, 1]
+Slope Error: [0.21726565372385573, 0, 0.07487145822602068, 0.06322806893527204]
+intercepts:  [0.0425149286099995, 0, 0.0207198621748389, 0.011542314800278564]
+Int Error:   [0.020029421799610102, 0, 0.007511768763671805, 0.006345888855190562]
+StDev:       [0.07864693, 0.10178156, 0.14312623, 0.17286153]
+Spread:      4/4
+('G', 0.01413666)
+('R', 0.013412745)
+('I', 0.016063511)
+('Z', 0.012881964)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.01413666
+0.013412745
+0.016063511
+0.012881964
+Running object 97
+0.0
+Counts: {'i': 236, 'r': 132, 'z': 377, 'g': 89}
+Mu: {'i': 0.33558443, 'r': 0.2396616, 'z': 0.5112474, 'g': 0.20854923}
+Variable??
+0.03352061573331973
+1.1347792672092452
+Non-Variable source in g
+Variable??
+0.02928055970184204
+1.654895075675047
+Non-Variable source in r
+Variable??
+0.04814563434770828
+1.083653065418934
+Non-Variable source in i
+Variable??
+0.08929026761854046
+0.868759051134776
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.2406211357502801, 0.2778044780160014]
+Slope Error: [0.2974928232691658, 0, 0.07424453306283926, 0.059148628717829034]
+intercepts:  [0.03995872767813191, 0, -0.006614431286760203, -0.010663509374380542]
+Int Error:   [0.05996237719953358, 0, 0.016739979983582412, 0.01493179251088478]
+StDev:       [0.06454942, 0.05819577, 0.06676527, 0.108701296]
+Not variable, going to next row
+Running object 98
+0.0
+Counts: {'i': 144, 'r': 106, 'z': 41, 'g': 11}
+Mu: {'i': 0.24071208, 'r': 0.1623844, 'z': 0.3674404, 'g': 0.11473656}
+Variable??
+0.02425982246944948
+1.9896165970010589
+Non-Variable source in g
+Variable??
+0.024993986695593738
+1.201504203067709
+Non-Variable source in r
+Variable??
+0.04335393849760294
+0.9502288618600974
+Non-Variable source in i
+Variable??
+0.07553390985456541
+1.4603007313016962
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.2354072414877617, 1]
+Slope Error: [0.26579053601378355, 0, 0.11337693683911312, 0.3099395497621632]
+intercepts:  [-0.11162124357544455, 0, -0.01769213857677787, -0.040769244062241805]
+Int Error:   [0.06711297440230345, 0, 0.02112359692710996, 0.05302332927028618]
+StDev:       [0.10370622, 0.047390204, 0.052423254, 0.094058245]
+Not variable, going to next row
+Running object 99
+0.0
+Counts: {'i': 328, 'r': 186, 'z': 633, 'g': 117}
+Mu: {'i': 0.7438418, 'r': 0.38503483, 'z': 1.0452428, 'g': 0.22431022}
+Variable??
+0.02915293998026106
+1.2896810927979447
+Non-Variable source in g
+Variable??
+0.0291176030965872
+2.0196104406233504
+Non-Variable source in r
+Variable??
+0.048506266168593465
+2.227974964324294
+Non-Variable source in i
+Variable??
+0.08830687825813364
+1.4540352263945961
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.22849156920862113, 0.15948137679361984]
+Slope Error: [0.2692386408258774, 0, 0.07266520478722716, 0.03742527973467612]
+intercepts:  [0.04028489930363634, 0, 0.009932759922048562, -0.009543618824818767]
+Int Error:   [0.04117484601856244, 0, 0.008226263117946197, 0.00584251637329908]
+StDev:       [0.05974198, 0.05539312, 0.08981892, 0.16944829]
+Not variable, going to next row
+Running object 100
+0.00390625
+Counts: {'i': 82, 'r': 16, 'z': 281}
+Mu: {'i': 0.23231748, 'r': 0.120326236, 'z': 0.45999843, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.022276513278484344
+1.4403794059754889
+Non-Variable source in r
+Variable??
+0.039509281427024576
+1.4222639273096296
+Non-Variable source in i
+Variable??
+0.07618623181578477
+1.5612075367741536
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.39820321287770527, 0.24077911399629645]
+intercepts:  [0, 0, -0.07238919842536418, 0.0097245107152375]
+Int Error:   [0.0, 0, 0.04107372453966681, 0.046062938832236174]
+StDev:       [0.0, 0.039701123, 0.05967533, 0.123053215]
+Not variable, going to next row
+Running object 101
+0.0
+Counts: {'i': 149, 'r': 142, 'z': 31, 'g': 77}
+Mu: {'i': 0.2596112, 'r': 0.20268019, 'z': 0.4006354, 'g': 0.16318874}
+Variable??
+0.028609429349578087
+1.2602128290712353
+Non-Variable source in g
+Variable??
+0.02728498104727768
+1.0348690684096278
+Non-Variable source in r
+Variable??
+0.044286175714275136
+0.7554387220197466
+Non-Variable source in i
+Variable??
+0.07818180726680123
+1.2844987171663103
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.6588139440689442, 1, 0.21270259242110068, 1]
+Slope Error: [0.4167350528331491, 0, 0.09181398311608933, 0.2336622165615047]
+intercepts:  [0.13681725217343577, 0, 0.004395463429432221, -0.028449062250177404]
+Int Error:   [0.07310228911639198, 0, 0.017307004710754383, 0.040114414766500385]
+StDev:       [0.086326204, 0.04512025, 0.051446658, 0.095303476]
+Not variable, going to next row
+Running object 102
+0.0
+Counts: {'i': 350, 'r': 211, 'z': 453, 'g': 113}
+Mu: {'i': 0.3711665, 'r': 0.3110389, 'z': 0.43566436, 'g': 0.17707998}
+Variable??
+0.028621436323486186
+1.469338140368395
+Non-Variable source in g
+Variable??
+0.027669884560784824
+2.5271648525131014
+Non-Variable source in r
+Variable??
+0.04604168429629633
+1.8099696857114713
+Non-Variable source in i
+Variable??
+0.08050564469506229
+1.1380267938359772
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3924254802313183, 0.2004698045786666]
+Slope Error: [0.3615605380763873, 0, 0.07681737173990014, 0.05587616928716966]
+intercepts:  [0.112068156646142, 0, 0.02030580708175722, 0.03733272646404806]
+Int Error:   [0.05791911393129311, 0, 0.012352472168546614, 0.013705274922010614]
+StDev:       [0.061738815, 0.06505304, 0.07271481, 0.103895634]
+Not variable, going to next row
+Running object 103
+0.0
+Counts: {'i': 297, 'r': 179, 'z': 364, 'g': 88}
+Mu: {'i': 0.38390163, 'r': 0.341345, 'z': 0.4904889, 'g': 0.17162555}
+Variable??
+0.028450758482178033
+1.2038262639460042
+Non-Variable source in g
+Variable??
+0.028599228901794182
+2.0602802174248906
+Non-Variable source in r
+Variable??
+0.046689212852980576
+1.260988267764387
+Non-Variable source in i
+Variable??
+0.08507586424130867
+1.1336599961198774
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.33295202876549634, 0.5225328436365728]
+Slope Error: [0.33791634697527956, 0, 0.10791872640371894, 0.08437883159303383]
+intercepts:  [-0.0003639725966875229, 0, 0.030525582956997727, 0.039557112471495515]
+Int Error:   [0.03829115047870726, 0, 0.012601158243355488, 0.01554715975483762]
+StDev:       [0.034864176, 0.052229814, 0.06663482, 0.12038934]
+Not variable, going to next row
+Running object 104
+0.0
+Counts: {'i': 244, 'r': 153, 'z': 508, 'g': 63}
+Mu: {'i': 0.25721836, 'r': 0.16580111, 'z': 0.45240164, 'g': 0.13837488}
+Variable??
+0.02703149153848634
+1.4896169112571676
+Non-Variable source in g
+Variable??
+0.02574547906964678
+1.208952458006676
+Non-Variable source in r
+Variable??
+0.04478036294192665
+1.142916370014295
+Non-Variable source in i
+Variable??
+0.08217793252410986
+1.1110535214253383
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3895956724168277, 0.17644157810724392]
+Slope Error: [0.3634090821841674, 0, 0.07157904760773888, 0.03632286969422806]
+intercepts:  [0.005933256093467731, 0, 0.0034234583635996962, -0.022978033909963832]
+Int Error:   [0.05237669317621645, 0, 0.02075821363267751, 0.01444440838915005]
+StDev:       [0.07555454, 0.042927366, 0.06744547, 0.11132046]
+Not variable, going to next row
+Running object 105
+0.0
+Counts: {'i': 38, 'r': 67, 'z': 15, 'g': 40}
+Mu: {'i': 0.22042036, 'r': 0.14494093, 'z': 0.42795563, 'g': 0.15473244}
+Variable??
+0.02905372932459511
+1.2036285962283522
+Non-Variable source in g
+Variable??
+0.02634194267582278
+1.103833394214452
+Non-Variable source in r
+Variable??
+0.046901285626511
+1.8037106399001501
+Non-Variable source in i
+Variable??
+0.08838205555173227
+1.209136186241073
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.5664178327182634, 1]
+Slope Error: [0.5252250129098804, 0, 0.18128398867894227, 0.39392332735085334]
+intercepts:  [0.022125104516766747, 0, -0.09574081499549147, -0.07467341247242931]
+Int Error:   [0.07563241343138595, 0, 0.04139362878242346, 0.10478416298894412]
+StDev:       [0.03150539, 0.03827113, 0.22332454, 0.10982171]
+Not variable, going to next row
+Running object 106
+0.0
+Counts: {'i': 269, 'r': 159, 'z': 321, 'g': 119}
+Mu: {'i': 0.33670187, 'r': 0.24227221, 'z': 0.4941686, 'g': 0.21339342}
+Variable??
+0.030013608194742813
+0.9932317443849398
+Non-Variable source in g
+Variable??
+0.027945255331590004
+1.1408664303372575
+Non-Variable source in r
+Variable??
+0.04686791645695514
+0.7901996476555532
+Non-Variable source in i
+Variable??
+0.08868785840716434
+0.8459079084102907
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.9715235652060197, 1, 0.2023896824818976, 0.218842099477069]
+Slope Error: [0.24217870334322225, 0, 0.07531772734899975, 0.08109322370218451]
+intercepts:  [0.08803412300596714, 0, 0.01342323579413962, 0.012025254881159353]
+Int Error:   [0.04020728586321627, 0, 0.013668980613646211, 0.016759858400985865]
+StDev:       [0.05575862, 0.052750252, 0.0542048, 0.10838293]
+Not variable, going to next row
+Running object 107
+0.00390625
+Counts: {'i': 74, 'r': 60, 'z': 16, 'g': 5}
+Mu: {'i': 0.21906199, 'r': 0.13869718, 'z': 0.38527405, 'g': 0.14782785}
+Variable??
+0.030036507791955925
+2.2293209604073363
+Non-Variable source in g
+Variable??
+0.026556274232510092
+1.589257521265136
+Non-Variable source in r
+Variable??
+0.045403202169275174
+1.2015147463463693
+Non-Variable source in i
+Variable??
+0.08694902807474136
+0.6896627740265477
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.47711413277042913, 1]
+Slope Error: [2.18796379575432, 0, 0.20445554339937555, 0.3149641303143914]
+intercepts:  [-0.11971723155415614, 0, -0.04192764571500174, -0.02975735830641172]
+Int Error:   [0.22546254998424775, 0, 0.03893255125319539, 0.06379648897385647]
+StDev:       [0.029534895, 0.05744859, 0.061615217, 0.07463715]
+Not variable, going to next row
+Running object 108
+0.0
+Counts: {'i': 397, 'r': 227, 'z': 768, 'g': 155}
+Mu: {'i': 0.7377839, 'r': 0.5982449, 'z': 0.9663727, 'g': 0.29334426}
+Variable??
+0.03540738114514302
+0.8148095031318338
+Non-Variable source in g
+Variable??
+0.03157953485454129
+1.1209171121382155
+Non-Variable source in r
+Variable??
+0.050445329897492425
+0.9813020480206508
+Non-Variable source in i
+Variable??
+0.09067183306128074
+0.9265813701540498
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.26656945882256033, 0.16002555582635902]
+Slope Error: [0.32674724605253885, 0, 0.075131689173986, 0.04453099058116612]
+intercepts:  [0.08119663970917246, 0, 0.0031968313716804965, 0.005550994543242371]
+Int Error:   [0.025687115051967763, 0, 0.006409354894738617, 0.005249299009677462]
+StDev:       [0.06009953, 0.05821491, 0.08125503, 0.11828187]
+Not variable, going to next row
+Running object 109
+0.0
+Counts: {'i': 415, 'r': 253, 'z': 893, 'g': 220}
+Mu: {'i': 4.1199417, 'r': 1.943718, 'z': 5.686294, 'g': 0.49478006}
+Variable??
+0.0331464533751748
+1.0888455084541964
+Non-Variable source in g
+Variable??
+0.03306817121462947
+2.5828795037739627
+Non-Variable source in r
+Variable??
+0.05289725648287846
+5.2768244451133866
+Variable Source!
+Variable??
+0.09056269694513122
+1.48354336993757
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   i
+Slope:       [1, 1, -0.058976028754173626, 1]
+Slope Error: [0.2195685064465087, 0, 0.07757956857888036, 0.027240749414413724]
+intercepts:  [0.018541557457847135, 0, 0.004540638442172049, 0.002066949272592304]
+Int Error:   [0.012207120586087137, 0, 0.0020863574559566557, 0.0013233313228854441]
+StDev:       [0.06361529, 0.083697274, 0.18669616, 0.19851656]
+Spread:      0/4
+WARNING:root:Too few points to create valid contours
+('ROW:', 109, 'Tau:', '0.0003561578242947021', 'V:', '-2.1056463769776492')
+1767
+('ROW:', 109, 'Tau:', '0.00043691386971426993', 'V:', '-1.5744127770707843')
+415
+Running object 110
+0.0
+Counts: {'i': 450, 'r': 150, 'z': 910}
+Mu: {'i': 0.8864487, 'r': 0.17737645, 'z': 1.8055649, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.027902307346964896
+1.2284828161938741
+Non-Variable source in r
+Variable??
+0.05021452910567603
+0.9392369565995556
+Non-Variable source in i
+Variable??
+0.09140774252631165
+0.9236222016862898
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.050862668512939635, 1]
+Slope Error: [0.0, 0, 0.015767031711747453, 0.008200090531112408]
+intercepts:  [0, 0, -0.001401517852473555, 0.0032882523227629745]
+Int Error:   [0.0, 0, 0.005500263076106046, 0.0033030256510851253]
+StDev:       [0.0, 0.053949673, 0.07366581, 0.1273285]
+Not variable, going to next row
+Running object 111
+0.0
+Counts: {'i': 326, 'r': 194, 'z': 131, 'g': 25}
+Mu: {'i': 0.27386963, 'r': 0.17581804, 'z': 0.3888437, 'g': 0.14062935}
+Variable??
+0.032741790637373924
+1.1258657888220855
+Non-Variable source in g
+Variable??
+0.027712969011073427
+1.1847870179163422
+Non-Variable source in r
+Variable??
+0.04605189698760374
+1.0264565572380164
+Non-Variable source in i
+Variable??
+0.08023313123123045
+1.1104880877059666
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.2895075197644066, 0.4202604495585395]
+Slope Error: [0.3199925791588781, 0, 0.06072003583865379, 0.14137060406330865]
+intercepts:  [0.012992998147974721, 0, -0.0017985670835216627, 0.011234224005388559]
+Int Error:   [0.09959388957385183, 0, 0.013677252491897418, 0.027636198875367658]
+StDev:       [0.043097414, 0.050315287, 0.06068999, 0.10924133]
+Not variable, going to next row
+Running object 112
+0.0
+Counts: {'i': 400, 'r': 228, 'z': 662, 'g': 157}
+Mu: {'i': 0.5867989, 'r': 0.39826936, 'z': 0.63930345, 'g': 0.23387687}
+Variable??
+0.027528747844079694
+1.2428526142445209
+Non-Variable source in g
+Variable??
+0.02835393113378411
+2.767119132874745
+Non-Variable source in r
+Variable??
+0.04606862552464008
+2.972784647441493
+Non-Variable source in i
+Variable??
+0.08100486318378834
+1.4373364285744283
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.48694478823609844, 1, 0.47336219550100767, 0.23425774323472826]
+Slope Error: [0.162640599913828, 0, 0.06355419809280248, 0.04819681748539886]
+intercepts:  [0.029627147622256822, 0, 0.009865791294763504, 0.016527303874728477]
+Int Error:   [0.028279962499552936, 0, 0.008476219352733242, 0.008262046618478885]
+StDev:       [0.054975305, 0.062700346, 0.094375774, 0.11817488]
+Not variable, going to next row
+Running object 113
+0.0
+Counts: {'i': 14, 'r': 68, 'z': 4, 'g': 25}
+Mu: {'i': 0.22265992, 'r': 0.14529335, 'z': 0.3320492, 'g': 0.13262023}
+Variable??
+0.026937169022858143
+1.1324875635975504
+Non-Variable source in g
+Variable??
+0.023907227148099525
+1.4700828933791652
+Non-Variable source in r
+Variable??
+0.045600377928829046
+3.4414423672488974
+Variable Source!
+Variable??
+0.07874783128499985
+0.8324080740284274
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   i
+Slope:       [0.5760998286900212, 1, 1.274759819429721, 1]
+Slope Error: [0.2838843258254059, 0, 1.659410009208192, 1.874712158773619]
+intercepts:  [0.033556824771965865, 0, 0.2868170574889588, -0.13942684274831008]
+Int Error:   [0.10864092274671068, 0, 0.3194336810776518, 0.312377423478839]
+StDev:       [0.06303106, 0.038695153, 1.7378532, 0.055652183]
+Spread:      0/4
+('ROW:', 113, 'Tau:', '0.014468340312773886', 'V:', '-0.9767177835550425')
+111
+('ROW:', 113, 'Tau:', '3.99186438377322', 'V:', '-1.3431374072430293')
+14
+Running object 114
+0.0
+Counts: {'i': 128, 'r': 165, 'z': 57, 'g': 27}
+Mu: {'i': 0.25212333, 'r': 0.22250852, 'z': 0.4128821, 'g': 0.16133954}
+Variable??
+0.032379063199975536
+0.9008219512524172
+Non-Variable source in g
+Variable??
+0.028971358158456192
+1.3456825872521345
+Non-Variable source in r
+Variable??
+0.045484157148176094
+1.2688118130105883
+Non-Variable source in i
+Variable??
+0.08426705960915112
+1.5017089218607098
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.97309321233366, 1, 0.31952504681046023, 1]
+Slope Error: [0.35253216447718844, 0, 0.1252390809801009, 0.3346624156569398]
+intercepts:  [0.1072335512214404, 0, 0.02730944090162757, 0.020417835418816033]
+Int Error:   [0.0675533221008887, 0, 0.02487919328034778, 0.057205492121143064]
+StDev:       [0.04180918, 0.0493107, 0.059572145, 0.11831729]
+Not variable, going to next row
+Running object 115
+0.0
+Counts: {'i': 187, 'r': 155, 'z': 178, 'g': 75}
+Mu: {'i': 0.2803692, 'r': 0.19941695, 'z': 0.44015884, 'g': 0.16445288}
+Variable??
+0.0266135242331897
+1.543929158229562
+Non-Variable source in g
+Variable??
+0.025371552261832176
+1.0799928711970868
+Non-Variable source in r
+Variable??
+0.04105191781389332
+0.8964152647490387
+Non-Variable source in i
+Variable??
+0.0736160296458208
+0.9429449393032074
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.7057454775746457, 1, 0.27521274732462175, 1]
+Slope Error: [0.3016573774098965, 0, 0.08889191550401172, 0.1026768073695792]
+intercepts:  [0.04619864208437674, 0, 0.01661742240338293, -0.009433430643895013]
+Int Error:   [0.05094469516295141, 0, 0.01357513053598173, 0.017742343410219314]
+StDev:       [0.07612456, 0.0396979, 0.045730278, 0.08274765]
+Not variable, going to next row
+Running object 116
+0.0
+Counts: {'i': 341, 'r': 149, 'z': 470, 'g': 25}
+Mu: {'i': 0.32695368, 'r': 0.17224719, 'z': 0.47594106, 'g': 0.12150596}
+Variable??
+0.027357235085219145
+1.6155803829514888
+Non-Variable source in g
+Variable??
+0.02693375831960622
+1.2437078255907257
+Non-Variable source in r
+Variable??
+0.046943429858019026
+1.2052542490786604
+Non-Variable source in i
+Variable??
+0.08457236419374493
+0.9482558616358355
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.14705066278722057, 0.10411123343567108]
+Slope Error: [0.22501896801504634, 0, 0.04306809579334917, 0.051599871299940744]
+intercepts:  [-0.010995573935934644, 0, -0.011006231029875524, 0.016019108790470526]
+Int Error:   [0.04923904719829256, 0, 0.012321995196180189, 0.014974252992234404]
+StDev:       [0.10861007, 0.050078206, 0.0682742, 0.10569033]
+Not variable, going to next row
+Running object 117
+0.0
+Counts: {'i': 365, 'r': 230, 'z': 149, 'g': 93}
+Mu: {'i': 0.3343637, 'r': 0.2686847, 'z': 0.4176194, 'g': 0.18376748}
+Variable??
+0.031085951042802727
+1.749226047107717
+Non-Variable source in g
+Variable??
+0.028159055535879562
+1.654011360051513
+Non-Variable source in r
+Variable??
+0.04562193796791058
+1.689765500387248
+Non-Variable source in i
+Variable??
+0.07648094272310213
+1.4671431453689838
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.8077049724091827, 1, 0.5329633941506119, 0.48340570934981897]
+Slope Error: [0.35864460261807546, 0, 0.06987687573870108, 0.09041520556578574]
+intercepts:  [0.04779178920734084, 0, -0.018333021671570363, -0.008584320064454198]
+Int Error:   [0.0548124399098386, 0, 0.010445419667090413, 0.020925743368096588]
+StDev:       [0.10878828, 0.05662106, 0.12629259, 0.10792908]
+Not variable, going to next row
+Running object 118
+0.00390625
+Counts: {'i': 76, 'r': 67, 'z': 48, 'g': 17}
+Mu: {'i': 0.22268987, 'r': 0.14181305, 'z': 0.42111844, 'g': 0.15216322}
+Variable??
+0.030898427880723375
+0.9702890500598312
+Non-Variable source in g
+Variable??
+0.025933678183767364
+1.1712938548417846
+Non-Variable source in r
+Variable??
+0.04523944762324667
+1.0139539693026562
+Non-Variable source in i
+Variable??
+0.08474456892000841
+1.1404462020643065
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.34909795201371596, 0.6141047032193017]
+Slope Error: [0.4536585427243201, 0, 0.11277713380616244, 0.28185947202624045]
+intercepts:  [-0.029913204698247372, 0, -0.08084851727168546, -0.06031784481366964]
+Int Error:   [0.0674268787325772, 0, 0.028563108229315223, 0.039886922523481916]
+StDev:       [0.03173653, 0.058003798, 0.06787126, 0.08657767]
+Not variable, going to next row
+Running object 119
+0.0
+Counts: {'i': 330, 'r': 197, 'z': 484, 'g': 132}
+Mu: {'i': 0.40104094, 'r': 0.30863684, 'z': 0.5591248, 'g': 0.27971375}
+Variable??
+0.03321626109538105
+1.5471373265017179
+Non-Variable source in g
+Variable??
+0.02960911430275177
+1.554357933403598
+Non-Variable source in r
+Variable??
+0.04854212592336941
+1.2899429607265538
+Non-Variable source in i
+Variable??
+0.08477912843227386
+1.1896013842607085
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.9685228283536067, 1, 0.41032427378252834, 0.20573858662803457]
+Slope Error: [0.24712406856157945, 0, 0.0857097209936417, 0.059474262133189425]
+intercepts:  [0.03074203750571214, 0, 0.010623461535816614, 0.007956167161714767]
+Int Error:   [0.02765864519009234, 0, 0.013057215712251068, 0.011109137806948026]
+StDev:       [0.059847865, 0.058396555, 0.07950195, 0.11080963]
+Not variable, going to next row
+Running object 120
+0.0
+Counts: {'i': 422, 'r': 241, 'z': 911, 'g': 215}
+Mu: {'i': 2.167252, 'r': 1.4296718, 'z': 2.7836237, 'g': 0.45527515}
+Variable??
+0.033281054293805144
+0.9473337343324434
+Non-Variable source in g
+Variable??
+0.03219940760694813
+3.4203736337688477
+Variable Source!
+Variable??
+0.051655400907964215
+3.369242267739982
+Non-Variable source in i
+Variable??
+0.08968525807348555
+2.0222973568697467
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 0.388064507761676, 0.27032030927809414]
+Slope Error: [0.39571401072778345, 0, 0.06440300076825224, 0.041516483339090034]
+intercepts:  [0.046822991276865955, 0, 0.004012658329891172, 0.008259324682393931]
+Int Error:   [0.026078947869450704, 0, 0.0031184988187105862, 0.0024747929884908633]
+StDev:       [0.1137755, 0.098750584, 0.123630695, 0.18770319]
+Spread:      4/4
+('G', 0.007379309)
+('R', 0.00568222)
+('I', 0.008100266)
+('Z', 0.005805703)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.007379309
+0.00568222
+0.008100266
+0.005805703
+Running object 121
+0.0
+Counts: {'i': 401, 'r': 220, 'z': 827, 'g': 121}
+Mu: {'i': 0.6170839, 'r': 0.29286954, 'z': 0.85344565, 'g': 0.17880179}
+Variable??
+0.028795366175472736
+1.42092210460724
+Non-Variable source in g
+Variable??
+0.028886005704350494
+1.9832806713842825
+Non-Variable source in r
+Variable??
+0.04861711122792237
+1.8978291390287898
+Non-Variable source in i
+Variable??
+0.08745387662349882
+1.5065946338278835
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.2876078904457413, 1]
+Slope Error: [0.36355062470139266, 0, 0.050379795025640835, 0.02092941593020087]
+intercepts:  [0.05893733176822369, 0, 0.010700081543597029, -0.0001017675917758254]
+Int Error:   [0.04315017443677392, 0, 0.009580649962390704, 0.006350094937528455]
+StDev:       [0.06725977, 0.06539719, 0.09932851, 0.14256619]
+Not variable, going to next row
+Running object 122
+0.0
+Counts: {'i': 455, 'r': 227, 'z': 916, 'g': 23}
+Mu: {'i': 0.71506757, 'r': 0.2953514, 'z': 1.0271115, 'g': 0.15926045}
+Variable??
+0.03247756031054037
+1.070597611080119
+Non-Variable source in g
+Variable??
+0.029532082792354798
+2.059741936820711
+Non-Variable source in r
+Variable??
+0.049809513773526146
+3.133623251943168
+Non-Variable source in i
+Variable??
+0.08959764383012299
+2.10897408293593
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.7949838818220931, 1, 0.21866401110611666, 0.10473143300901955]
+Slope Error: [0.2963099475866684, 0, 0.03830406011315627, 0.019863251736773987]
+intercepts:  [-0.029413994978656266, 0, 0.0038194348090218044, -0.009057613134908696]
+Int Error:   [0.07780398307497932, 0, 0.008054037765817586, 0.0057208656328378025]
+StDev:       [0.04392216, 0.061219007, 0.1030513, 0.15921412]
+Not variable, going to next row
+Running object 123
+0.00390625
+Counts: {'i': 438, 'z': 1105}
+Mu: {'i': 0.3277877, 'r': 0.0, 'z': 0.9450837, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0
+0
+Non-Variable source in r
+Variable??
+0.04860532734493454
+0.7196310939929524
+Non-Variable source in i
+Variable??
+0.08777821772079132
+0.9587893565839277
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.0, 0.0, 0.058586765, 0.11208113]
+Not variable, going to next row
+Running object 124
+0.0
+Counts: {'i': 119, 'r': 109, 'z': 57, 'g': 14}
+Mu: {'i': 0.2099388, 'r': 0.1386782, 'z': 0.3586033, 'g': 0.11793411}
+Variable??
+0.02505682367443835
+1.3538201905332579
+Non-Variable source in g
+Variable??
+0.025055443613529092
+1.1336644957782556
+Non-Variable source in r
+Variable??
+0.0410892812711667
+0.9147191288981349
+Non-Variable source in i
+Variable??
+0.0785253518597999
+0.8000358060646012
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.37258174251824294, 0.37614053824428195]
+Slope Error: [0.6818084385110741, 0, 0.1227689093978391, 0.1132914487899425]
+intercepts:  [-0.04140252933465627, 0, 0.0706228222960259, 0.029376903563719026]
+Int Error:   [0.0834434563938252, 0, 0.037013028481623834, 0.044298738540947964]
+StDev:       [0.048928495, 0.057794906, 0.06330809, 0.10187457]
+Not variable, going to next row
+Running object 125
+0.00390625
+Counts: {'i': 62, 'r': 124, 'z': 7}
+Mu: {'i': 0.20728876, 'r': 0.14757091, 'z': 0.33870974, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.025270992790637128
+1.7417333905951464
+Non-Variable source in r
+Variable??
+0.03998251446887802
+1.0939475669413716
+Non-Variable source in i
+Variable??
+0.08364065787970705
+0.5250321295273249
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3022413106042031, 1]
+Slope Error: [0.0, 0, 0.09092758195288585, 0.3776412309400221]
+intercepts:  [0, 0, 0.026291849892302484, -0.0010155546989241149]
+Int Error:   [0.0, 0, 0.03360100942855927, 0.19183254741962863]
+StDev:       [0.20667301, 0.060460318, 0.05598532, 0.08665383]
+Not variable, going to next row
+Running object 126
+0.00390625
+Counts: {'i': 443, 'r': 136, 'z': 813}
+Mu: {'i': 0.43174857, 'r': 0.18661866, 'z': 0.60855174, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.02634403668692065
+1.2062860042324186
+Non-Variable source in r
+Variable??
+0.04849491502953229
+1.3336598121858616
+Non-Variable source in i
+Variable??
+0.08725789554604961
+1.30468397796387
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.12603500392911315, 0.2532804922309475]
+Slope Error: [0.0, 0, 0.053571153317132844, 0.05375112587957602]
+intercepts:  [0, 0, -0.005520169181760348, -0.01943262502435333]
+Int Error:   [0.0, 0, 0.01030962614984587, 0.01041990018145283]
+StDev:       [0.0, 0.03718821, 0.07044685, 0.12730671]
+Not variable, going to next row
+Running object 127
+0.0
+Counts: {'i': 419, 'r': 247, 'z': 839, 'g': 168}
+Mu: {'i': 0.60519546, 'r': 0.39875862, 'z': 0.7518579, 'g': 0.22868603}
+Variable??
+0.030673336352232534
+1.0008030136187114
+Non-Variable source in g
+Variable??
+0.030273353879069577
+1.2162910179017175
+Non-Variable source in r
+Variable??
+0.04959527224625224
+1.1440818612375008
+Non-Variable source in i
+Variable??
+0.08992436264199374
+1.0174637488748217
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.2280796749992827, 0, 0.0841383877731842, 0.04516988491330565]
+intercepts:  [0.04299458824317525, 0, 0.017932020911955466, 0.005810091617809654]
+Int Error:   [0.024866862149135003, 0, 0.011120764883678736, 0.006103818060312827]
+StDev:       [0.05117013, 0.06847932, 0.109877124, 0.115744375]
+Not variable, going to next row
+Running object 128
+0.0
+Counts: {'i': 598, 'r': 325, 'z': 1182, 'g': 35}
+Mu: {'i': 2.3223486, 'r': 0.5957222, 'z': 3.7510161, 'g': 0.15309949}
+Variable??
+0.031115868879741933
+0.7543904539295602
+Non-Variable source in g
+Variable??
+0.03125454157752215
+1.3241055531774772
+Non-Variable source in r
+Variable??
+0.05290826671503955
+1.9156792889281207
+Non-Variable source in i
+Variable??
+0.09230763369023438
+1.6997320055741494
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.1963225941316362, 1, 1, 0.07302247325057432]
+Slope Error: [0.5692108567408871, 0, 0.023231557738438994, 0.015117090310839907]
+intercepts:  [-0.035189001635786754, 0, 0.0005664206938126304, -0.0025098441094806886]
+Int Error:   [0.03443757440085655, 0, 0.002226439134089295, 0.0014593686685364644]
+StDev:       [0.03890598, 0.053699926, 0.121709056, 0.25273746]
+Not variable, going to next row
+Running object 129
+0.00390625
+Counts: {'i': 285, 'r': 116, 'z': 220, 'g': 12}
+Mu: {'i': 0.29255503, 'r': 0.160235, 'z': 0.44254518, 'g': 0.15551421}
+Variable??
+0.0345580892342084
+2.858491370705049
+Non-Variable source in g
+Variable??
+0.02669994320158153
+1.5819565441085475
+Non-Variable source in r
+Variable??
+0.04795048393120643
+0.8585685230620214
+Non-Variable source in i
+Variable??
+0.08728711410606431
+0.8879014863280441
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.11117148799477983, 1]
+Slope Error: [0.30700182681188115, 0, 0.04320294890147577, 0.08008270898226223]
+intercepts:  [-0.06658456379129449, 0, -0.02381855810903688, 0.01495708299417331]
+Int Error:   [0.07438866122738816, 0, 0.013485817847091412, 0.028606777903246037]
+StDev:       [0.13352397, 0.06459957, 0.054470256, 0.12458383]
+Not variable, going to next row
+Running object 130
+0.00390625
+Counts: {'i': 454, 'r': 156, 'z': 942}
+Mu: {'i': 0.6568536, 'r': 0.18804647, 'z': 1.0839639, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.02646957104145641
+0.9495635353873295
+Non-Variable source in r
+Variable??
+0.04897255908100286
+1.1034225268156663
+Non-Variable source in i
+Variable??
+0.08787887117827504
+0.9564776363894429
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.03812711150579706, 0.02157218262366071]
+intercepts:  [0, 0, 0.00034626162623796475, 0.005701920374931113]
+Int Error:   [0.0, 0, 0.0069305057511870995, 0.004268045778425407]
+StDev:       [0.0, 0.040501058, 0.07674667, 0.10910436]
+Not variable, going to next row
+Running object 131
+0.0
+Counts: {'i': 520, 'r': 289, 'z': 1062, 'g': 244}
+Mu: {'i': 1.1379244, 'r': 0.7012046, 'z': 1.3026961, 'g': 0.3909727}
+Variable??
+0.03552786884552277
+2.0770604695090276
+Non-Variable source in g
+Variable??
+0.03149604087229818
+5.80064076545726
+Variable Source!
+Variable??
+0.05051567766799531
+5.893747075983861
+Non-Variable source in i
+Variable??
+0.08901313379883588
+3.0261654165290124
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [0.32392106991559944, 1, 0.4926269085262349, 0.21102781392906111]
+Slope Error: [0.145253720821236, 0, 0.04249933794496527, 0.03403295857663717]
+intercepts:  [0.029079749239735775, 0, 0.0016327430279202654, -0.002709345684821951]
+Int Error:   [0.019666836972433748, 0, 0.0055475688764764376, 0.004731624690929859]
+StDev:       [0.08170727, 0.09609276, 0.14176276, 0.18293841]
+Spread:      4/4
+('G', 0.020735165)
+('R', 0.017586075)
+('I', 0.019635584)
+('Z', 0.023253957)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.020735165
+0.017586075
+0.019635584
+0.023253957
+Running object 132
+0.00390625
+Counts: {'i': 115, 'r': 52, 'z': 414}
+Mu: {'i': 0.2174785, 'r': 0.12520269, 'z': 0.42586023, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.024954231376779594
+1.142297795939412
+Non-Variable source in r
+Variable??
+0.04252291083490175
+1.360124711667253
+Non-Variable source in i
+Variable??
+0.08181656596629946
+1.2277740316440815
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.45447926547357187, 0.35594802175917617]
+Slope Error: [0.0, 0, 0.124883603569347, 0.09563976691511218]
+intercepts:  [0, 0, -0.09598778439166411, -0.02729923023812252]
+Int Error:   [0.0, 0, 0.031369841457459274, 0.023090911821938943]
+StDev:       [0.15040332, 0.033007555, 0.07480239, 0.11553094]
+Not variable, going to next row
+Running object 133
+0.00390625
+Counts: {'i': 152, 'r': 125, 'z': 69}
+Mu: {'i': 0.2510407, 'r': 0.1491361, 'z': 0.38727304, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.024234598164217764
+1.259850340645943
+Non-Variable source in r
+Variable??
+0.04191486680565419
+1.184063761565382
+Non-Variable source in i
+Variable??
+0.07572609604422646
+0.8444305700884427
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.2670245627549356, 0.3132224243739141]
+Slope Error: [0.0, 0, 0.05694573033803794, 0.13443003626752495]
+intercepts:  [0, 0, -0.04577202717640664, -0.02607635536180468]
+Int Error:   [0.0, 0, 0.017301794741488654, 0.027570883632841624]
+StDev:       [0.0, 0.05630005, 0.058411658, 0.08199365]
+Not variable, going to next row
+Running object 134
+0.0
+Counts: {'i': 418, 'r': 235, 'z': 685, 'g': 190}
+Mu: {'i': 0.38293883, 'r': 0.28075144, 'z': 0.5540385, 'g': 0.2732314}
+Variable??
+0.03489902846209197
+1.1816442586118872
+Non-Variable source in g
+Variable??
+0.03008455061346564
+1.0913898187436624
+Non-Variable source in r
+Variable??
+0.04953357390782823
+0.9344046664650689
+Non-Variable source in i
+Variable??
+0.08872804404116899
+0.8845904022211856
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.7157320978146249, 1, 1, 0.2192615089250871]
+Slope Error: [0.20609344259512086, 0, 0.059190832591325945, 0.041200047687788684]
+intercepts:  [0.06468571874717506, 0, -0.0013402440799239468, 0.014699253901820475]
+Int Error:   [0.02477145585370796, 0, 0.008435763377928679, 0.008445381407009936]
+StDev:       [0.07946642, 0.08444159, 0.06526108, 0.12448007]
+Not variable, going to next row
+Running object 135
+0.0
+Counts: {'i': 572, 'r': 322, 'z': 1072, 'g': 290}
+Mu: {'i': 0.6126517, 'r': 0.4599539, 'z': 0.7019139, 'g': 0.40378818}
+Variable??
+0.037107807098020154
+1.2508627377952057
+Non-Variable source in g
+Variable??
+0.030884673662509767
+1.1758699813372109
+Non-Variable source in r
+Variable??
+0.049655085989618306
+1.257399693489425
+Non-Variable source in i
+Variable??
+0.08748522107186105
+1.1439705945422363
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.6496624871975252, 1, 0.142435295990597, 0.1328149450316325]
+Slope Error: [0.14671960808850787, 0, 0.04743031651908939, 0.045927809078292504]
+intercepts:  [0.04007830472364482, 0, 0.012504352792204734, 0.0034292093534103777]
+Int Error:   [0.015618293820530817, 0, 0.005868998269383608, 0.005740851150871057]
+StDev:       [0.08630906, 0.053155027, 0.07444198, 0.115185484]
+Not variable, going to next row
+Running object 136
+0.0
+Counts: {'i': 461, 'r': 241, 'z': 772, 'g': 87}
+Mu: {'i': 0.49196512, 'r': 0.317086, 'z': 0.60683835, 'g': 0.15087366}
+Variable??
+0.02777695087441435
+0.9410023960006562
+Non-Variable source in g
+Variable??
+0.029029760856410805
+1.0006294685836805
+Non-Variable source in r
+Variable??
+0.049075496613051356
+0.9522436550274136
+Non-Variable source in i
+Variable??
+0.08749527200352637
+0.8979975263498052
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.22863643050815186, 1]
+Slope Error: [0.3831503647554072, 0, 0.058042263524535655, 0.04136740492633747]
+intercepts:  [0.004359969865322499, 0, 0.018900115397417656, 0.005662009713836214]
+Int Error:   [0.04157536955518911, 0, 0.01034932873647412, 0.006777219667292652]
+StDev:       [0.041744165, 0.070058, 0.090933755, 0.10269308]
+Not variable, going to next row
+Running object 137
+0.0
+Counts: {'i': 63, 'r': 86, 'z': 14}
+Mu: {'i': 0.22957887, 'r': 0.14248195, 'z': 0.35389736, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.025114836429843246
+1.6246166006648086
+Non-Variable source in r
+Variable??
+0.040465304634236074
+1.556217691765066
+Non-Variable source in i
+Variable??
+0.06951825507261111
+1.6049897467587237
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.18819488276290663, 0.37616896957459667]
+Slope Error: [0.0, 0, 0.075171880035951, 0.06591545783864704]
+intercepts:  [0, 0, -0.09866882926812345, -0.13763359873808345]
+Int Error:   [0.0, 0, 0.028624242172548747, 0.046856238923112824]
+StDev:       [0.0, 0.05303112, 0.0514099, 0.09464097]
+Not variable, going to next row
+Running object 138
+0.0
+Counts: {'i': 544, 'r': 304, 'z': 1058, 'g': 286}
+Mu: {'i': 1.0062578, 'r': 0.63994634, 'z': 1.3287113, 'g': 0.52290654}
+Variable??
+0.034482972027774506
+1.0569820374137522
+Non-Variable source in g
+Variable??
+0.030076566774343897
+1.5096830736591038
+Non-Variable source in r
+Variable??
+0.04931858566638087
+1.530664156744135
+Non-Variable source in i
+Variable??
+0.08481292907328507
+1.001530184738375
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.6417396733506118, 1, 1, 1]
+Slope Error: [0.2594140975136414, 0, 0.06256969207041044, 0.038538736694174416]
+intercepts:  [0.04120082848807072, 0, 0.008546838543857516, 0.00048056530192830405]
+Int Error:   [0.017231173571951364, 0, 0.004991432985464589, 0.0029821513915787522]
+StDev:       [0.10484147, 0.06025135, 0.09827007, 0.14256625]
+Not variable, going to next row
+Running object 139
+0.0
+Counts: {'i': 168, 'r': 214, 'z': 72, 'g': 114}
+Mu: {'i': 0.24622694, 'r': 0.18612748, 'z': 0.37793672, 'g': 0.17646974}
+Variable??
+0.03162354652808429
+0.8622033395025951
+Non-Variable source in g
+Variable??
+0.02844602917608992
+1.141235612353688
+Non-Variable source in r
+Variable??
+0.04567058767299853
+1.224085006975701
+Non-Variable source in i
+Variable??
+0.08256308420165798
+0.9939332789088551
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3595929443902717, 1]
+Slope Error: [0.17045327717740885, 0, 0.0595470339084501, 0.22139587432768576]
+intercepts:  [0.06355170248898456, 0, -0.013400714124692126, -0.002952999883776286]
+Int Error:   [0.05987814175254016, 0, 0.018413086095787044, 0.03433893260984111]
+StDev:       [0.06562213, 0.058206744, 0.062517025, 0.11982937]
+Not variable, going to next row
+Running object 140
+0.0
+Counts: {'i': 506, 'r': 273, 'z': 982, 'g': 265}
+Mu: {'i': 2.8455234, 'r': 2.1449542, 'z': 3.1771598, 'g': 1.2053189}
+Variable??
+0.03716564530487519
+2.3386866309357304
+Non-Variable source in g
+Variable??
+0.03301894214944066
+8.333976445750368
+Variable Source!
+Variable??
+0.052808955336184675
+6.733488789638791
+Variable Source!
+Variable??
+0.08906687437235206
+3.07622851987666
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [0.23168092713505772, 1, 0.7557463626988319, 0.35401758912201264]
+Slope Error: [0.10862814872545212, 0, 0.07501223558502126, 0.0449977506159776]
+intercepts:  [0.006984911788909587, 0, 0.006682767786581056, 0.005970530630628489]
+Int Error:   [0.006433601482405471, 0, 0.003922714788532438, 0.0024807496777723044]
+StDev:       [0.09692755, 0.1194296, 0.23597445, 0.22567488]
+Spread:      4/4
+('G', 0.0063119526)
+('R', 0.0070249042)
+('I', 0.008324829)
+('Z', 0.008910089)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.0063119526
+0.0070249042
+0.008324829
+0.008910089
+Running object 141
+0.00390625
+Counts: {'i': 466, 'r': 82, 'z': 920}
+Mu: {'i': 0.47982967, 'r': 0.152736, 'z': 0.79149556, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.02393267964479966
+1.417262924409152
+Non-Variable source in r
+Variable??
+0.048499692795036596
+0.9821133099029522
+Non-Variable source in i
+Variable??
+0.08683696129023306
+0.8856490421797943
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.1555669162124529, 1]
+Slope Error: [0.0, 0, 0.02894691022192047, 0.016803464419119372]
+intercepts:  [0, 0, -0.009602904444802681, -0.017576282416219113]
+Int Error:   [0.0, 0, 0.010405495832495098, 0.00739879906345703]
+StDev:       [0.0, 0.059586074, 0.06985868, 0.098491825]
+Not variable, going to next row
+Running object 142
+0.0
+Counts: {'i': 433, 'r': 198, 'z': 328, 'g': 181}
+Mu: {'i': 0.32780713, 'r': 0.29036915, 'z': 0.4090519, 'g': 0.22651215}
+Variable??
+0.03416859674990249
+1.2930561243181846
+Non-Variable source in g
+Variable??
+0.03270852427213785
+1.5708865350359102
+Non-Variable source in r
+Variable??
+0.04782311350556136
+1.2090047609221306
+Non-Variable source in i
+Variable??
+0.08202830483844864
+0.9032727248392323
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.32530725446697595, 0.4571151291114972]
+Slope Error: [0.23879528250736157, 0, 0.07083094773165391, 0.10204227981516237]
+intercepts:  [0.05256671408899105, 0, 0.021729678607391514, 0.03331874062441753]
+Int Error:   [0.033421018455716475, 0, 0.011175273916935536, 0.01648897271851803]
+StDev:       [0.075022325, 0.05526587, 0.07136599, 0.09345065]
+Not variable, going to next row
+Running object 143
+0.00390625
+Counts: {'i': 389, 'r': 259, 'z': 245, 'g': 13}
+Mu: {'i': 0.31174067, 'r': 0.22379348, 'z': 0.41080114, 'g': 0.14211355}
+Variable??
+0.031488994019628506
+0.8594864182703242
+Non-Variable source in g
+Variable??
+0.028709696238132604
+1.0064610797554925
+Non-Variable source in r
+Variable??
+0.04683511077985001
+0.8559471417492405
+Non-Variable source in i
+Variable??
+0.08181615430039162
+1.010439453063025
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.22205400561709587, 0.24319161644844733]
+Slope Error: [1.8947279687224543, 0, 0.050099142635590226, 0.07353533300111492]
+intercepts:  [0.01277580332515904, 0, -0.00484754475599769, 0.0010817216729093193]
+Int Error:   [0.17897335047903631, 0, 0.009440679398212764, 0.01647364718667617]
+StDev:       [0.054797996, 0.044609863, 0.054734707, 0.09798476]
+Not variable, going to next row
+Running object 144
+0.0
+Counts: {'i': 487, 'r': 258, 'z': 958, 'g': 292}
+Mu: {'i': 13.940957, 'r': 7.5360885, 'z': 18.371727, 'g': 2.1631563}
+Variable??
+0.041090485808001335
+1.089208094106683
+Non-Variable source in g
+Variable??
+0.04221007529703456
+4.792127806975111
+Variable Source!
+Variable??
+0.06702989581854814
+100.49524762136033
+Variable Source!
+Variable??
+0.10130504601566775
+20.5813140843029
+Variable Source!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [1, 1, -0.08481236426282734, 0.00637970821134437]
+Slope Error: [0.33377798926902014, 0, 0.03207159884048846, 0.0119526749767079]
+intercepts:  [0.002966572116802716, 0, 0.0017809305515972262, 0.00012379979290699783]
+Int Error:   [0.0037357138455031795, 0, 0.0011524805532176666, 0.0005783642785186279]
+StDev:       [0.10624234, 0.21267235, 0.36261797, 0.45206454]
+Spread:      0/4
+WARNING:root:Too few points to create valid contours
+('ROW:', 144, 'Tau:', '0.0006190773169677671', 'V:', '-1.9544316432935411')
+1768
+WARNING:root:Too few points to create valid contours
+('ROW:', 144, 'Tau:', '0.0005629758851992406', 'V:', '-1.912107618942514')
+258
+WARNING:root:Too few points to create valid contours
+('ROW:', 144, 'Tau:', '4.0003738141584574e-05', 'V:', '-1.0039507015786175')
+487
+WARNING:root:Too few points to create valid contours
+('ROW:', 144, 'Tau:', '9.009020324488547e-06', 'V:', '-0.995902578981128')
+958
+Running object 145
+0.00390625
+Counts: {'i': 170, 'r': 175, 'z': 28, 'g': 16}
+Mu: {'i': 0.24926558, 'r': 0.18439204, 'z': 0.4071365, 'g': 0.13613027}
+Variable??
+0.029238369315862656
+0.7833831886711015
+Non-Variable source in g
+Variable??
+0.026576432400125204
+1.6020839839795633
+Non-Variable source in r
+Variable??
+0.042220403583639717
+1.1356443800071674
+Non-Variable source in i
+Variable??
+0.07608135310018457
+1.6485128265835916
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.36598291426830754, 1]
+Slope Error: [0.2956113939227513, 0, 0.06506777165563592, 0.3138105386059244]
+intercepts:  [0.010468784317582136, 0, 0.014953393118856462, -0.0434522465981273]
+Int Error:   [0.04868977722205756, 0, 0.017928557685918965, 0.06568829030134846]
+StDev:       [0.024551498, 0.061318886, 0.05610893, 0.09036077]
+Not variable, going to next row
+Running object 146
+0.0
+Counts: {'i': 522, 'r': 287, 'z': 1005, 'g': 220}
+Mu: {'i': 4.5459585, 'r': 1.11789, 'z': 7.9377503, 'g': 0.24513853}
+Variable??
+0.031040982909482314
+0.9953963242712497
+Non-Variable source in g
+Variable??
+0.031147236588431552
+13.51431574723951
+Variable Source!
+Variable??
+0.05433421159997763
+5.608199065888145
+Variable Source!
+Variable??
+0.0924382686664295
+9.104847212645996
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [1, 1, 0.21261850262810555, 1]
+Slope Error: [0.6298681411928512, 0, 0.07441970492172738, 0.024426317948976546]
+intercepts:  [0.0437647938488932, 0, 0.007144494757822417, 0.00015856707301220574]
+Int Error:   [0.021090759025348134, 0, 0.003268959565239788, 0.001063461280908247]
+StDev:       [0.05193225, 0.6816298, 0.28163686, 0.27254227]
+Spread:      0/4
+WARNING:root:Too few points to create valid contours
+('ROW:', 146, 'Tau:', '1.1745638524927882e-05', 'V:', '-1.0903740812034577')
+2034
+('ROW:', 146, 'Tau:', '6.204321192831985e-06', 'V:', '-1.4998213441681114')
+287
+('ROW:', 146, 'Tau:', '0.00015726271752602994', 'V:', '-1.568283076778384')
+522
+Running object 147
+0.0
+Counts: {'i': 428, 'r': 248, 'z': 453, 'g': 61}
+Mu: {'i': 0.34258574, 'r': 0.25143272, 'z': 0.45961574, 'g': 0.14382456}
+Variable??
+0.02927867592588319
+1.0551938818794206
+Non-Variable source in g
+Variable??
+0.027668139706788258
+1.0259595066521443
+Non-Variable source in r
+Variable??
+0.04714449179115274
+0.8443067836102789
+Non-Variable source in i
+Variable??
+0.08376336394774693
+0.8102105476724205
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.14377882075536608]
+Slope Error: [0.4485420128621012, 0, 0.03359381451621888, 0.056880611252369734]
+intercepts:  [0.10342744327518838, 0, -0.012471772755382471, 0.005895049511457245]
+Int Error:   [0.07024446512589179, 0, 0.008277749587225089, 0.010694360254040733]
+StDev:       [0.048751757, 0.04615622, 0.05330833, 0.08693148]
+Not variable, going to next row
+Running object 148
+0.00390625
+Counts: {'i': 119, 'r': 48, 'z': 50}
+Mu: {'i': 0.2550202, 'r': 0.13688943, 'z': 0.4121999, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.022617324731649822
+2.4362837541775564
+Non-Variable source in r
+Variable??
+0.03902136484713675
+1.6393904435551352
+Non-Variable source in i
+Variable??
+0.07217888834780525
+1.3872643743328787
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.13517755979302692, 1]
+Slope Error: [0.0, 0, 0.05925554049135018, 0.21214335229866424]
+intercepts:  [0, 0, -0.07423243173041216, -0.01337297389387504]
+Int Error:   [0.0, 0, 0.025911803155137685, 0.057624242479485534]
+StDev:       [0.0, 0.09040562, 0.05537891, 0.086109236]
+Not variable, going to next row
+Running object 149
+0.00390625
+Counts: {'i': 417, 'r': 123, 'z': 649}
+Mu: {'i': 0.31834537, 'r': 0.15178196, 'z': 0.46796724, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.025586129681342235
+1.4164641890334035
+Non-Variable source in r
+Variable??
+0.04684458700375401
+1.0856946530496938
+Non-Variable source in i
+Variable??
+0.08430250543376848
+0.8374326125161884
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.19486361972520516, 0.09290560350170929]
+Slope Error: [0.0, 0, 0.04139760084161993, 0.020751757296992263]
+intercepts:  [0, 0, -0.020517689397906436, -0.018269753196381577]
+Int Error:   [0.0, 0, 0.0167732050158629, 0.010574269327692645]
+StDev:       [0.0, 0.055082057, 0.2412557, 0.09698299]
+Not variable, going to next row
+Running object 150
+0.0
+Counts: {'i': 607, 'r': 306, 'z': 1221, 'g': 314}
+Mu: {'i': 1.6231041, 'r': 1.0653855, 'z': 1.78791, 'g': 0.5444173}
+Variable??
+0.0383048076635249
+3.420645188376742
+Non-Variable source in g
+Variable??
+0.033861854679205515
+10.62003943274817
+Variable Source!
+Variable??
+0.05202420770153454
+10.383158397046628
+Variable Source!
+Variable??
+0.08947591693097211
+4.466348819143617
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [0.6837557500145344, 1, 0.6645056592028116, 0.37611376663732754]
+Slope Error: [0.08948083069440566, 0, 0.042839611086443644, 0.034843419433717625]
+intercepts:  [0.01034366214267013, 0, 0.011210747466666504, 0.009596060496422143]
+Int Error:   [0.010980766406396926, 0, 0.004724960918817523, 0.0040858134102771835]
+StDev:       [0.09721879, 0.131243, 0.19805653, 0.23586492]
+Spread:      4/4
+('G', 0.017058978)
+('R', 0.018271623)
+('I', 0.015954796)
+('Z', 0.019082813)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.017058978
+0.018271623
+0.015954796
+0.019082813
+Running object 151
+0.0
+Counts: {'i': 510, 'r': 288, 'z': 888, 'g': 222}
+Mu: {'i': 0.53243405, 'r': 0.44642335, 'z': 0.58617824, 'g': 0.26760066}
+Variable??
+0.03051450225960163
+1.360851254717086
+Non-Variable source in g
+Variable??
+0.02905850690531528
+2.536369199291469
+Non-Variable source in r
+Variable??
+0.04768526469681957
+1.939500352951258
+Non-Variable source in i
+Variable??
+0.0820219346836026
+1.2299904913369941
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3418003973117216, 0.26607200648616147]
+Slope Error: [0.11140650001505048, 0, 0.05494631346662561, 0.047281352597518304]
+intercepts:  [0.006978095388635919, 0, 0.015105210756951037, 0.008795292261327277]
+Int Error:   [0.013656747821440364, 0, 0.007581905861698233, 0.0071290510286019316]
+StDev:       [0.0583966, 0.07115187, 0.0842714, 0.1115806]
+Not variable, going to next row
+Running object 152
+0.00390625
+Counts: {'i': 484, 'r': 254, 'z': 663, 'g': 4}
+Mu: {'i': 0.42568958, 'r': 0.29972333, 'z': 0.54475695, 'g': 0.45724648}
+Variable??
+0.06841668486595154
+24.404864983395573
+Non-Variable source in g
+Variable??
+0.028991672157836143
+1.490056266908132
+Non-Variable source in r
+Variable??
+0.049083925783634186
+1.343457979282465
+Non-Variable source in i
+Variable??
+0.0837620813639001
+1.1945623730927941
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.269469414245854, 0.27681897292269575]
+Slope Error: [0.0, 0, 0.06909342162402482, 0.05843071654483802]
+intercepts:  [0, 0, 0.014560856390701815, -0.0026781837989384716]
+Int Error:   [0.0, 0, 0.009494461689133291, 0.008548616161142488]
+StDev:       [0.14382981, 0.054653257, 0.077139735, 0.1050131]
+Not variable, going to next row
+Running object 153
+0.0
+Counts: {'i': 461, 'r': 268, 'z': 587, 'g': 117}
+Mu: {'i': 0.38902602, 'r': 0.35027695, 'z': 0.47257334, 'g': 0.17402756}
+Variable??
+0.027126679448022842
+1.3740948448789945
+Non-Variable source in g
+Variable??
+0.028289800845693727
+2.465212110397699
+Non-Variable source in r
+Variable??
+0.046076874906899386
+1.6048251173063135
+Non-Variable source in i
+Variable??
+0.07747483490829905
+1.365189438365645
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.3226627323198294, 1, 0.3528912796680981, 0.4107791704529813]
+Slope Error: [0.35186403621418005, 0, 0.056534472296121116, 0.07003155247494243]
+intercepts:  [0.09605189176820905, 0, 0.022604520122685323, 0.04971101634286057]
+Int Error:   [0.046347493218237945, 0, 0.009121280943932848, 0.011126552010882768]
+StDev:       [0.06410094, 0.06130367, 0.08438304, 0.11311502]
+Not variable, going to next row
+Running object 154
+0.0
+Counts: {'i': 529, 'r': 282, 'z': 983, 'g': 201}
+Mu: {'i': 0.5819908, 'r': 0.32651573, 'z': 0.7266194, 'g': 0.21481568}
+Variable??
+0.03089700825801374
+1.4992076147765057
+Non-Variable source in g
+Variable??
+0.029090577187084677
+1.153673073956251
+Non-Variable source in r
+Variable??
+0.04868028569035232
+1.340095892640073
+Non-Variable source in i
+Variable??
+0.08529664984976884
+1.0639054057614958
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.35696990275778, 1, 0.13054613010930938, 0.07511786844719492]
+Slope Error: [0.35215337986572814, 0, 0.03453944126269808, 0.030876400685956727]
+intercepts:  [0.05525824791169731, 0, -0.0047808126194426315, 0.004214306660533462]
+Int Error:   [0.04272859899098898, 0, 0.005953338601020379, 0.0053703065753510325]
+StDev:       [0.0880663, 0.05765089, 0.07254633, 0.10521837]
+Not variable, going to next row
+Running object 155
+0.0
+Counts: {'i': 440, 'r': 234, 'z': 890, 'g': 232}
+Mu: {'i': 2.1739223, 'r': 1.3443625, 'z': 3.0315046, 'g': 0.39657992}
+Variable??
+0.03363060934229599
+2.6905291490538534
+Non-Variable source in g
+Variable??
+0.03180217508965915
+18.51253294688752
+Variable Source!
+Variable??
+0.051104197308534764
+18.391834815946673
+Variable Source!
+Variable??
+0.08917371164337791
+10.973392615806778
+Variable Source!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [0.49281397211939615, 1, 0.3674270032963438, 0.3482687177788657]
+Slope Error: [0.17558592017389882, 0, 0.05085924261394615, 0.029993040447001355]
+intercepts:  [0.05494727448905743, 0, 0.009505829480752515, 0.007163127887752974]
+Int Error:   [0.022965135123093824, 0, 0.007367906634459766, 0.004414092811047791]
+StDev:       [0.106492154, 0.16487345, 0.30241498, 0.3707378]
+Spread:      4/4
+('G', 0.01583684)
+('R', 0.015257421)
+('I', 0.017852025)
+('Z', 0.016097987)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.01583684
+0.015257421
+0.017852025
+0.016097987
+Running object 156
+0.0
+Counts: {'i': 219, 'r': 124, 'z': 423, 'g': 103}
+Mu: {'i': 0.9496439, 'r': 0.64847505, 'z': 1.1929344, 'g': 0.21019597}
+Variable??
+0.029312296711033078
+1.0318309575963043
+Non-Variable source in g
+Variable??
+0.03187228819124887
+1.7867380540610898
+Non-Variable source in r
+Variable??
+0.05124462680178476
+1.9416732777568753
+Non-Variable source in i
+Variable??
+0.08417313585261423
+1.309526561598679
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.8102732861325357, 0, 0.09708073841098099, 0.05872675436367925]
+intercepts:  [0.0836397515363323, 0, 0.0017154565685564283, -0.0002460501576155849]
+Int Error:   [0.04361269701615746, 0, 0.00839840167193256, 0.006463027964520282]
+StDev:       [0.050518937, 0.09215949, 0.08957009, 0.11996569]
+Not variable, going to next row
+Running object 157
+0.0
+Counts: {'i': 343, 'r': 155, 'z': 349, 'g': 74}
+Mu: {'i': 0.3053172, 'r': 0.16509527, 'z': 0.44678333, 'g': 0.15527204}
+Variable??
+0.027990380972933316
+1.0736354186913302
+Non-Variable source in g
+Variable??
+0.026034486201006093
+1.7669626283413677
+Non-Variable source in r
+Variable??
+0.04654342585449309
+0.9091810844369349
+Non-Variable source in i
+Variable??
+0.08311710411911495
+0.8705831431943248
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.16176269657917453, 0.2461629427269103]
+Slope Error: [0.08174337484191503, 0, 0.03194012150012424, 0.04913078252472116]
+intercepts:  [-0.026132297848059677, 0, -0.019719142986615923, 0.006507372924650756]
+Int Error:   [0.02863165822160097, 0, 0.011389441543875953, 0.014224349125716683]
+StDev:       [0.1196351, 0.08044507, 0.057954602, 0.096699946]
+Not variable, going to next row
+Running object 158
+0.00390625
+Counts: {'i': 39, 'r': 126, 'z': 2, 'g': 13}
+Mu: {'i': 0.19487104, 'r': 0.14675188, 'z': 0.24802333, 'g': 0.12918024}
+Variable??
+0.03242342235123808
+1.8118896991573654
+Non-Variable source in g
+Variable??
+0.026992698769018428
+1.3099742354713613
+Non-Variable source in r
+Variable??
+0.040896420162711486
+1.4226205929170905
+Non-Variable source in i
+Variable??
+0.06006766215594586
+0.14913993159380623
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.523681816082332, 1, 0.43893491504489646, 1]
+Slope Error: [0.31490563796886906, 0, 0.10514593864047612, 0.0]
+intercepts:  [0.14912049368076252, 0, -0.0061281934926729065, 0]
+Int Error:   [0.11848581148378562, 0, 0.049788975874365406, 0.0]
+StDev:       [0.10033096, 0.062283732, 0.061890543, 0.011598147]
+Not variable, going to next row
+Running object 159
+0.0
+Counts: {'i': 360, 'r': 293, 'z': 172, 'g': 245}
+Mu: {'i': 0.29969513, 'r': 0.2799238, 'z': 0.40608698, 'g': 0.26297495}
+Variable??
+0.03471457671542572
+1.0919064021307325
+Non-Variable source in g
+Variable??
+0.029354208513136273
+1.2097231196629428
+Non-Variable source in r
+Variable??
+0.04626055304470314
+1.0024440653520852
+Non-Variable source in i
+Variable??
+0.08125428985466336
+1.275696255202488
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.29561616232335375, 1]
+Slope Error: [0.150946154429031, 0, 0.07095871105249478, 0.15207975575498117]
+intercepts:  [0.044382394376780786, 0, 0.01900880337738542, 0.005269491769661516]
+Int Error:   [0.01947236593700621, 0, 0.011091987775139306, 0.02264787741082327]
+StDev:       [0.064671025, 0.044769347, 0.05605079, 0.114599034]
+Not variable, going to next row
+Running object 160
+0.0
+Counts: {'i': 277, 'r': 232, 'z': 115, 'g': 59}
+Mu: {'i': 0.29979444, 'r': 0.23116231, 'z': 0.43336582, 'g': 0.14961386}
+Variable??
+0.027331466578888897
+0.6275445253444604
+Non-Variable source in g
+Variable??
+0.027635552999592253
+0.9229999441526575
+Non-Variable source in r
+Variable??
+0.04457273102916237
+0.9147639234699836
+Non-Variable source in i
+Variable??
+0.07473060095218467
+0.9512516823233514
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.20480999182167947, 1]
+Slope Error: [0.13285330141279045, 0, 0.07244900008246684, 0.13639634160242192]
+intercepts:  [-0.027658963558102156, 0, 0.025027819483569025, -0.002087140984860625]
+Int Error:   [0.023165414008855398, 0, 0.013238718624414812, 0.025971881268303437]
+StDev:       [0.02190919, 0.041579675, 0.058996916, 0.09375907]
+Not variable, going to next row
+Running object 161
+0.0
+Counts: {'i': 638, 'r': 369, 'z': 1296, 'g': 355}
+Mu: {'i': 2.2220821, 'r': 1.5333399, 'z': 2.433453, 'g': 0.9429953}
+Variable??
+0.04012748309069577
+6.977475674663434
+Variable Source!
+Variable??
+0.033212032846385846
+25.710056498112145
+Variable Source!
+Variable??
+0.05234737866657492
+22.499703924834915
+Variable Source!
+Variable??
+0.09010215662419796
+9.732751091476533
+Variable Source!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [0.7081950845093226, 1, 0.6863796415272398, 0.520119976337958]
+Slope Error: [0.0530259903094861, 0, 0.03321332262528156, 0.028822479817331693]
+intercepts:  [-0.015855706250933244, 0, 0.0031636595167754446, 0.0059659100362638995]
+Int Error:   [0.006638392438826778, 0, 0.0041504358460149075, 0.003797890614718066]
+StDev:       [0.16699158, 0.19027573, 0.28164604, 0.33594403]
+Spread:      4/4
+('G', 0.014281382)
+('R', 0.019647248)
+('I', 0.021577418)
+('Z', 0.0137473075)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.014281382
+0.019647248
+0.021577418
+0.0137473075
+Running object 162
+0.0
+Counts: {'i': 584, 'r': 320, 'z': 1131, 'g': 271}
+Mu: {'i': 0.7248377, 'r': 0.49570435, 'z': 1.1107061, 'g': 0.36316314}
+Variable??
+0.036453906119616755
+1.0365350460576475
+Non-Variable source in g
+Variable??
+0.03119889506144267
+1.187753196250512
+Non-Variable source in r
+Variable??
+0.0512754416706937
+1.104808016122684
+Non-Variable source in i
+Variable??
+0.08997152398052356
+1.0788444413530862
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.38696806663828176, 1, 0.11928899177658114, 1]
+Slope Error: [0.16406897032435477, 0, 0.045257153460217, 0.029565847512664868]
+intercepts:  [0.016123413561086153, 0, 0.0053295981510193486, 0.0004406086429229461]
+Int Error:   [0.01445649144426111, 0, 0.0047698206040531314, 0.003516209132922015]
+StDev:       [0.06866305, 0.05311885, 0.077905215, 0.115440145]
+Not variable, going to next row
+Running object 163
+0.0
+Counts: {'i': 86, 'r': 48, 'z': 204, 'g': 61}
+Mu: {'i': 0.71771574, 'r': 0.38608935, 'z': 0.9216632, 'g': 0.27074534}
+Variable??
+0.030748152404896804
+1.2405677099167165
+Non-Variable source in g
+Variable??
+0.030210089992587535
+1.6550715451363176
+Non-Variable source in r
+Variable??
+0.05349072083196961
+1.966831247421391
+Non-Variable source in i
+Variable??
+0.08411355839651957
+1.6855367608532978
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [1.2960589254369816, 0, 0.3385322031789611, 0.16600570997472994]
+intercepts:  [0.06533809091071971, 0, 0.046846227779539173, -0.030005934391390675]
+Int Error:   [0.060979114446511495, 0, 0.03626554701520545, 0.013435366715681966]
+StDev:       [0.054137293, 0.065830566, 0.09628691, 0.123797074]
+Not variable, going to next row
+Running object 164
+0.0
+Counts: {'i': 528, 'r': 294, 'z': 1099, 'g': 283}
+Mu: {'i': 1.2756062, 'r': 0.8746593, 'z': 1.539247, 'g': 0.41642168}
+Variable??
+0.03302991639118555
+1.1250072880654378
+Non-Variable source in g
+Variable??
+0.030646078407078493
+2.1863895062787644
+Non-Variable source in r
+Variable??
+0.049876724405390954
+2.1402606262808903
+Non-Variable source in i
+Variable??
+0.0852869597228429
+1.3976177113032169
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.11423505916890142]
+Slope Error: [0.23217374552695277, 0, 0.043416444347738024, 0.032659802833847555]
+intercepts:  [0.03771283193560149, 0, 0.010626354626062415, 0.007231386678589025]
+Int Error:   [0.0157013777089673, 0, 0.0037947287175969908, 0.002985980862111023]
+StDev:       [0.08307856, 0.06926391, 0.09560755, 0.14373179]
+Not variable, going to next row
+Running object 165
+0.0
+Counts: {'i': 416, 'r': 275, 'z': 202, 'g': 78}
+Mu: {'i': 0.32211506, 'r': 0.26031038, 'z': 0.41874254, 'g': 0.16150242}
+Variable??
+0.03149909436288094
+0.7551286714606142
+Non-Variable source in g
+Variable??
+0.029586354333129932
+1.350898708443475
+Non-Variable source in r
+Variable??
+0.04920631900654998
+1.0528318870696796
+Non-Variable source in i
+Variable??
+0.08535875179251237
+1.2066137851760235
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.30613605471725647, 0.185951163050059]
+Slope Error: [0.2871780146003352, 0, 0.056415915539222365, 0.08471717917014471]
+intercepts:  [0.07986980058001891, 0, 0.020756798224240924, -0.004283131640997251]
+Int Error:   [0.04260414827952234, 0, 0.010500259785485282, 0.0202461276991719]
+StDev:       [0.041607823, 0.054527193, 0.07525917, 0.10917004]
+Not variable, going to next row
+Running object 166
+0.00390625
+Counts: {'i': 97, 'r': 26, 'z': 53}
+Mu: {'i': 0.22901517, 'r': 0.14622921, 'z': 0.42635632, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.026807697901926764
+2.8654742261103583
+Non-Variable source in r
+Variable??
+0.04195468801111341
+1.1085659175264908
+Non-Variable source in i
+Variable??
+0.08374342813666022
+1.0188316322138435
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.42319057887815115, 0.22271778516921037]
+Slope Error: [0.0, 0, 0.11291818390038076, 0.06913465950174277]
+intercepts:  [0, 0, -0.012796972852511024, -0.12848141323009793]
+Int Error:   [0.0, 0, 0.034344334630403144, 0.05094954368702698]
+StDev:       [0.0, 0.07011977, 0.05757738, 0.08006083]
+Not variable, going to next row
+Running object 167
+0.0
+Counts: {'i': 511, 'r': 279, 'z': 1093, 'g': 298}
+Mu: {'i': 2.3468313, 'r': 1.5875804, 'z': 2.857898, 'g': 0.5337809}
+Variable??
+0.034392055219241935
+1.0806207637525915
+Non-Variable source in g
+Variable??
+0.03202188005641794
+1.6493121587690744
+Non-Variable source in r
+Variable??
+0.051731172748378663
+2.3913509186213324
+Non-Variable source in i
+Variable??
+0.08725958071212317
+1.1952880382326796
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.08290107010972902]
+Slope Error: [0.26090101761777595, 0, 0.05307294073867937, 0.036930696397697804]
+intercepts:  [0.022102388885814773, 0, 0.003784922360330123, 0.004284514563422048]
+Int Error:   [0.0110210806417834, 0, 0.0020952419450481884, 0.0017053508058808844]
+StDev:       [0.08251953, 0.077381454, 0.16720067, 0.14132935]
+Not variable, going to next row
+Running object 168
+0.00390625
+Counts: {'i': 55, 'r': 29, 'z': 12, 'g': 12}
+Mu: {'i': 0.22950155, 'r': 0.122098505, 'z': 0.35293812, 'g': 0.15008831}
+Variable??
+0.032928627950449325
+3.5520324581165195
+Variable Source!
+Variable??
+0.02415983126879962
+1.3596264026084655
+Non-Variable source in r
+Variable??
+0.042705462099382877
+1.4520441080679996
+Non-Variable source in i
+Variable??
+0.07707049384040211
+1.351433780191029
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [23.681469340726682, 1, 1, 1]
+Slope Error: [26.220695910631072, 0, 0.23507555835898003, 0.0]
+intercepts:  [3.2740237740932945, 0, -0.01886274862023618, 0]
+Int Error:   [3.8057729515046157, 0, 0.04462554324464314, 0.0]
+StDev:       [0.1935846, 0.04802524, 0.062245037, 0.16307805]
+Spread:      0/4
+('ROW:', 168, 'Tau:', '1.7808258210510342', 'V:', '-1.0662575031936907')
+108
+('ROW:', 168, 'Tau:', '3.980267481190629', 'V:', '-1.1338998792458477')
+12
+Running object 169
+0.0
+Counts: {'i': 484, 'r': 281, 'z': 1046, 'g': 179}
+Mu: {'i': 0.7411872, 'r': 0.44203, 'z': 0.8674277, 'g': 0.1990269}
+Variable??
+0.028547708896207967
+1.3114683406501977
+Non-Variable source in g
+Variable??
+0.029395260708768193
+2.937687787731062
+Non-Variable source in r
+Variable??
+0.04860773868858814
+2.947352412910889
+Non-Variable source in i
+Variable??
+0.0829772433276072
+1.7689914033397447
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.25639093486495135, 0.15498896227741854]
+Slope Error: [0.2369733861125601, 0, 0.052404871439149854, 0.028589910349919846]
+intercepts:  [0.04343524475703416, 0, 0.0025400797269194975, 0.007043597007598046]
+Int Error:   [0.024666116396316433, 0, 0.007741075016526722, 0.0052793155725803995]
+StDev:       [0.06482337, 0.080047615, 0.11957176, 0.15301509]
+Not variable, going to next row
+Running object 170
+0.0
+Counts: {'i': 15, 'r': 46, 'z': 24, 'g': 170}
+Mu: {'i': 517.4399, 'r': 173.6805, 'z': 805.05536, 'g': 45.784096}
+Variable??
+0.1347042191888757
+4.286343397343659
+Variable Source!
+Variable??
+0.32259701653333084
+48.19539987539574
+Variable Source!
+Variable??
+1.0152620301601203
+22.077232255517348
+Variable Source!
+Variable??
+1.3195913329329134
+72.14705382934733
+Variable Source!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [-0.006497819026411111, 1, 0.07158205791396954, -0.03989522372650356]
+Slope Error: [0.17311362939825484, 0, 0.2083692826698969, 0.26144746752287046]
+intercepts:  [-0.002773291297197118, 0, 0.0007854227644473475, -0.0002912071823179461]
+Int Error:   [0.0022007123743028414, 0, 0.002368191008602782, 0.004660862628028717]
+StDev:       [0.61326617, 1.7491353, 5.9332223, 8.682497]
+Spread:      1/4
+('Z', 0.0059720813)
+('ROW:', 170, 'Tau:', '1.1881616681136644', 'V:', '-2.036834541143837')
+193
+('ROW:', 170, 'Tau:', '0.9501081310239363', 'V:', '-2.0277783041256745')
+170
+('ROW:', 170, 'Tau:', '1.1851186024488372', 'V:', '-2.0370980767621494')
+46
+('ROW:', 170, 'Tau:', '0.0020838511502763724', 'V:', '-1.952379155298339')
+15
+WARNING:root:Too few points to create valid contours
+('ROW:', 170, 'Tau:', '0.00022215328833707915', 'V:', '-0.8749810981873734')
+24
+Running object 171
+0.00390625
+Counts: {'i': 400, 'r': 62, 'z': 721}
+Mu: {'i': 0.30413592, 'r': 0.1298061, 'z': 0.514804, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.024718106902556925
+1.0957465612094606
+Non-Variable source in r
+Variable??
+0.046790968626737595
+0.8820879655770871
+Non-Variable source in i
+Variable??
+0.0843466393392617
+0.9755844219723201
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.20315875788447446, 0.12518297373445764]
+Slope Error: [0.0, 0, 0.0472235376723552, 0.04665446764566348]
+intercepts:  [0, 0, -0.003111171582590888, -0.01869597529959921]
+Int Error:   [0.0, 0, 0.013276713173340626, 0.012911039519374272]
+StDev:       [0.0, 0.03207064, 0.078201644, 0.099119626]
+Not variable, going to next row
+Running object 172
+0.0
+Counts: {'i': 179, 'r': 132, 'z': 65, 'g': 44}
+Mu: {'i': 0.25793368, 'r': 0.1797596, 'z': 0.38564718, 'g': 0.17268987}
+Variable??
+0.031554165276347336
+2.481970740772851
+Non-Variable source in g
+Variable??
+0.027779659235046238
+1.4108450846961864
+Non-Variable source in r
+Variable??
+0.0425404975565356
+1.1813621602145379
+Non-Variable source in i
+Variable??
+0.07051246127002572
+1.0618638566801966
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.8437574531789225, 1, 0.8185970073650704, 0.42733132327125256]
+Slope Error: [0.348135349431871, 0, 0.09621115240801095, 0.1363666062366427]
+intercepts:  [0.1607985776262314, 0, 0.050844393980769786, -0.019294660425291044]
+Int Error:   [0.068011622872549, 0, 0.016693211806082072, 0.029386248523597034]
+StDev:       [0.1575709, 0.04710314, 0.06369861, 0.08468775]
+Not variable, going to next row
+Running object 173
+0.0
+Counts: {'i': 257, 'r': 271, 'z': 98, 'g': 169}
+Mu: {'i': 0.2603074, 'r': 0.22751184, 'z': 0.40509954, 'g': 0.20319225}
+Variable??
+0.03282501990906894
+0.9654316447849747
+Non-Variable source in g
+Variable??
+0.02884216674764314
+1.2609202076159742
+Non-Variable source in r
+Variable??
+0.04572364074172284
+1.0020935490564624
+Non-Variable source in i
+Variable??
+0.08322031030353573
+0.9496883734924533
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.7491871072659759, 1, 0.4774872645323017, 0.23210965695559116]
+Slope Error: [0.14316240873760852, 0, 0.07565560464094263, 0.09009817016047406]
+intercepts:  [0.039345513552949796, 0, 0.028157394541238098, -0.01476976403921837]
+Int Error:   [0.03721282406930204, 0, 0.014650678624434685, 0.022517007256436638]
+StDev:       [0.068140514, 0.05373638, 0.058404118, 0.081300296]
+Not variable, going to next row
+Running object 174
+0.0
+Counts: {'i': 138, 'r': 82, 'z': 71, 'g': 79}
+Mu: {'i': 0.2472736, 'r': 0.20153326, 'z': 0.42302316, 'g': 0.18957153}
+Variable??
+0.03267551957706808
+1.3938636336483832
+Non-Variable source in g
+Variable??
+0.028719179731450037
+1.730170363300695
+Non-Variable source in r
+Variable??
+0.0442637976951655
+1.8081332928506024
+Non-Variable source in i
+Variable??
+0.08681201565571069
+1.6234015183936963
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1.049053196404544, 0.2739913914241989]
+Slope Error: [0.1355067489576149, 0, 0.2650383100587976, 0.11467330166230562]
+intercepts:  [-0.07365004277425435, 0, 0.07430883159849055, -0.09638941871143003]
+Int Error:   [0.04891761681688458, 0, 0.07413729334102023, 0.031050061910864492]
+StDev:       [0.07078884, 0.057725616, 0.11409917, 0.10902984]
+Not variable, going to next row
+Running object 175
+0.0
+Counts: {'i': 622, 'r': 337, 'z': 1254, 'g': 362}
+Mu: {'i': 8.738989, 'r': 6.6494823, 'z': 9.474034, 'g': 3.617611}
+Variable??
+0.04841624925563478
+98.1061959425001
+Variable Source!
+Variable??
+0.040188821143160226
+488.03605397663176
+Variable Source!
+Variable??
+0.05979219893783347
+407.03189160742124
+Variable Source!
+Variable??
+0.09705189902018897
+5831.585969912066
+Variable Source!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [0.6883592286180373, 1, 0.6921660101189746, 0.4785082977789805]
+Slope Error: [0.04328418801558207, 0, 0.036705467530211026, 0.031757766380109784]
+intercepts:  [-0.022755950172548278, 0, -0.0015471571815031115, 0.007959860306565036]
+Int Error:   [0.007555118824951128, 0, 0.006230418784986586, 0.00547883993644217]
+StDev:       [0.5924132, 1.1056064, 1.5584522, 1.7534858]
+Spread:      4/4
+('G', 0.024634456)
+('R', 0.028019922)
+('I', 0.02619621)
+('Z', 0.027363574)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.024634456
+0.028019922
+0.02619621
+0.027363574
+Running object 176
+0.0
+Counts: {'i': 50, 'r': 121, 'z': 6, 'g': 50}
+Mu: {'i': 0.19819185, 'r': 0.1477031, 'z': 0.38047355, 'g': 0.14148843}
+Variable??
+0.032086543943857924
+1.3987895691693815
+Non-Variable source in g
+Variable??
+0.02612926345318556
+0.8241547433861824
+Non-Variable source in r
+Variable??
+0.03995596312906664
+0.9403018509093682
+Non-Variable source in i
+Variable??
+0.08113026391459069
+0.8533874447829615
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.5974140457275876, 1]
+Slope Error: [0.19050251606168295, 0, 0.20083462722160117, 0.313095987605715]
+intercepts:  [0.011451021088401347, 0, -0.008177962159988228, 0.014913331866588869]
+Int Error:   [0.03019977703204675, 0, 0.03840588431454872, 0.07628025789727726]
+StDev:       [0.16115238, 0.039927624, 0.049491446, 0.07612468]
+Not variable, going to next row
+Running object 177
+0.0
+Counts: {'i': 48, 'r': 112, 'z': 20, 'g': 37}
+Mu: {'i': 0.21359247, 'r': 0.14966238, 'z': 0.40781692, 'g': 0.14772321}
+Variable??
+0.030959055412476604
+1.45609172233087
+Non-Variable source in g
+Variable??
+0.025863492166282274
+0.8990559392615499
+Non-Variable source in r
+Variable??
+0.040930691023751735
+1.9983099082969462
+Non-Variable source in i
+Variable??
+0.08741684387090033
+2.307426376385824
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.8364752353152571, 1]
+Slope Error: [0.7842552497151056, 0, 0.2864525140159114, 0.5038687943733116]
+intercepts:  [0.0214834093038202, 0, 0.007713170652207335, -0.13289193817208828]
+Int Error:   [0.11357828325724398, 0, 0.04576973796013765, 0.07073412995173056]
+StDev:       [0.074196324, 0.036876768, 0.0643189, 0.19955646]
+Not variable, going to next row
+Running object 178
+0.00390625
+Counts: {'i': 27, 'r': 18, 'z': 54, 'g': 3}
+Mu: {'i': 0.21250992, 'r': 0.12186049, 'z': 0.38057697, 'g': 0.12732598}
+Variable??
+0.029099088090231377
+1.7686023014909706
+Non-Variable source in g
+Variable??
+0.025782262466080424
+2.5693125429552546
+Non-Variable source in r
+Variable??
+0.04256551585841891
+1.3490067961172134
+Non-Variable source in i
+Variable??
+0.07806432575414343
+1.3429801115141973
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.43524649815096683, 0.33982880153905815]
+intercepts:  [0, 0, -0.10793874557913363, -0.12572553497096428]
+Int Error:   [0.0, 0, 0.05716415014350306, 0.04637229197054377]
+StDev:       [0.029685041, 0.10551572, 0.06587697, 0.11537352]
+Not variable, going to next row
+Running object 179
+0.0
+Counts: {'i': 384, 'r': 74, 'z': 791}
+Mu: {'i': 0.36981243, 'r': 0.13331735, 'z': 0.6303583, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.0230493740121426
+1.2823492554198923
+Non-Variable source in r
+Variable??
+0.04677521004560339
+1.0723826432302694
+Non-Variable source in i
+Variable??
+0.08294604926457054
+1.0588518735212709
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.04946670300033401, 0.036346623734183355]
+intercepts:  [0, 0, 0.004120682461536851, -0.021665599689922876]
+Int Error:   [0.0, 0, 0.012891235290354526, 0.010123528329856194]
+StDev:       [0.0, 0.03391296, 0.10294361, 0.10964145]
+Not variable, going to next row
+Running object 180
+0.0
+Counts: {'i': 376, 'r': 255, 'z': 262, 'g': 23}
+Mu: {'i': 0.32608643, 'r': 0.23889357, 'z': 0.4530697, 'g': 0.15935364}
+Variable??
+0.0318144285459769
+0.669613429475963
+Non-Variable source in g
+Variable??
+0.028965934630715458
+1.2403320451236386
+Non-Variable source in r
+Variable??
+0.04821146090175892
+0.8406887040395821
+Non-Variable source in i
+Variable??
+0.0851955157190937
+0.9663614707958432
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.31617398280982, 0.2104544238806102]
+Slope Error: [0.20323949239311379, 0, 0.0522211388975382, 0.056279575218683715]
+intercepts:  [0.03629488664794711, 0, -3.3393776794898855e-06, -0.0315114666723703]
+Int Error:   [0.0638757655293399, 0, 0.011452504193785105, 0.01602557728749834]
+StDev:       [0.035310283, 0.0648412, 0.061355613, 0.10163858]
+Not variable, going to next row
+Running object 181
+0.00390625
+Counts: {'i': 59, 'r': 40, 'z': 54}
+Mu: {'i': 0.21218435, 'r': 0.1288507, 'z': 0.37399787, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.028743245041880246
+1.2365610130143923
+Non-Variable source in r
+Variable??
+0.04366972599740691
+1.2153928908731122
+Non-Variable source in i
+Variable??
+0.08076986965508118
+1.5118000201728783
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.4891447174867609, 1]
+Slope Error: [0.0, 0, 0.22368652294008354, 0.8437645954075769]
+intercepts:  [0, 0, 0.0945041731134888, 0.04584124098881248]
+Int Error:   [0.0, 0, 0.0831381268880579, 0.1737979032136436]
+StDev:       [0.41771823, 0.052696362, 0.07625434, 0.19657119]
+Not variable, going to next row
+Running object 182
+0.00390625
+Counts: {'i': 103, 'r': 75, 'z': 254, 'g': 9}
+Mu: {'i': 0.22450368, 'r': 0.1365484, 'z': 0.4031209, 'g': 0.14314966}
+Variable??
+0.031247293576598167
+0.8866776820373299
+Non-Variable source in g
+Variable??
+0.02579955900631945
+1.6559372599104614
+Non-Variable source in r
+Variable??
+0.04371243821358064
+1.3097228408330523
+Non-Variable source in i
+Variable??
+0.08293541898813034
+0.8788425169774742
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.2235966525240648, 0.10981942233061004]
+Slope Error: [0.13635277637846105, 0, 0.07743562635728121, 0.03930528403131404]
+intercepts:  [-0.0899047793982628, 0, -0.05414206952730579, -0.07153008845417252]
+Int Error:   [0.0883972752170376, 0, 0.028476911165497512, 0.01916268575326208]
+StDev:       [0.026218887, 0.061536342, 0.061922368, 0.094236106]
+Not variable, going to next row
+Running object 183
+0.0
+Counts: {'i': 296, 'r': 230, 'z': 122, 'g': 36}
+Mu: {'i': 0.29119632, 'r': 0.21535933, 'z': 0.39470497, 'g': 0.14442107}
+Variable??
+0.031761146150529385
+1.5442895272575978
+Non-Variable source in g
+Variable??
+0.02719420099894112
+1.7420218898236768
+Non-Variable source in r
+Variable??
+0.04417965178355304
+1.463929314829869
+Non-Variable source in i
+Variable??
+0.07539897555047995
+1.2549436879610036
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.817470281975037, 1, 0.4177662818467559, 0.2960038078577145]
+Slope Error: [0.29568976776245626, 0, 0.06577007516109239, 0.13007670038398225]
+intercepts:  [0.07767963399377109, 0, 0.0169574623310962, 0.023634850939569185]
+Int Error:   [0.05191319365627897, 0, 0.014626231300622053, 0.026747070320585944]
+StDev:       [0.10568196, 0.041922797, 0.06916031, 0.100745074]
+Not variable, going to next row
+Running object 184
+0.0
+Counts: {'i': 23, 'r': 82, 'z': 4, 'g': 18}
+Mu: {'i': 0.20045774, 'r': 0.14022022, 'z': 0.3877629, 'g': 0.15031555}
+Variable??
+0.031642009278812375
+1.2613511341785535
+Non-Variable source in g
+Variable??
+0.026424824945298298
+1.2714231454478833
+Non-Variable source in r
+Variable??
+0.03941843979291109
+1.8366798060258531
+Non-Variable source in i
+Variable??
+0.0795174315571785
+5.769655252435521
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.26271415231474243, 0, 0.24455881481900202, 0.0]
+intercepts:  [0.016947287755108897, 0, -0.08591803742406252, 0]
+Int Error:   [0.05741375985570986, 0, 0.04507670509767339, 0.0]
+StDev:       [0.034833472, 0.051670734, 0.057907585, 0.15460937]
+Not variable, going to next row
+Running object 185
+0.0
+Counts: {'i': 606, 'r': 343, 'z': 1172, 'g': 152}
+Mu: {'i': 0.8139508, 'r': 0.5220004, 'z': 1.0266293, 'g': 0.19964778}
+Variable??
+0.03361262821973832
+0.7426514975269214
+Non-Variable source in g
+Variable??
+0.03184676386582848
+1.0224007676848332
+Non-Variable source in r
+Variable??
+0.0524224066211257
+0.9899484835118917
+Non-Variable source in i
+Variable??
+0.0913169570006852
+0.8488241284930066
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.09133124380211055, 0.05648266105296762]
+Slope Error: [0.416773874988892, 0, 0.04123681579404764, 0.025698170429239105]
+intercepts:  [0.06165246220571741, 0, 0.009808302064355234, 0.0030558806613639744]
+Int Error:   [0.03140388426103362, 0, 0.005019911012804388, 0.0034113735510036677]
+StDev:       [0.05811438, 0.061461534, 0.096596465, 0.109682284]
+Not variable, going to next row
+Running object 186
+0.0
+Counts: {'i': 506, 'r': 275, 'z': 1045, 'g': 261}
+Mu: {'i': 2.4019408, 'r': 1.7670252, 'z': 3.3070402, 'g': 0.71154416}
+Variable??
+0.037955669072738174
+1.4540699314031564
+Non-Variable source in g
+Variable??
+0.03271547079117447
+4.943101072803619
+Non-Variable source in r
+Variable??
+0.05287818847151478
+3.798478453523097
+Non-Variable source in i
+Variable??
+0.0905302963497557
+2.388386841524383
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.20120461407151546, 0.2929913229730706]
+Slope Error: [0.2492786083841008, 0, 0.055944185756861955, 0.036758356576906785]
+intercepts:  [0.011282501227582897, 0, 0.003458221242183039, 0.0015828013943334086]
+Int Error:   [0.011606408801596153, 0, 0.002837146353274049, 0.0018928374615156118]
+StDev:       [0.10678728, 0.08887486, 0.13290489, 0.23793726]
+Not variable, going to next row
+Running object 187
+0.00390625
+Counts: {'i': 59, 'r': 64, 'z': 12}
+Mu: {'i': 0.21146542, 'r': 0.12628165, 'z': 0.31961963, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.024586152285337448
+1.4417051185151841
+Non-Variable source in r
+Variable??
+0.04163298181670858
+1.3884598614278678
+Non-Variable source in i
+Variable??
+0.07219378881877135
+0.9314212992196521
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.5559179013230184, 1]
+Slope Error: [0.0, 0, 0.17746914542022327, 0.8448717764029328]
+intercepts:  [0, 0, 0.026670240126568916, 0.16564153308257776]
+Int Error:   [0.0, 0, 0.036053670641562355, 0.24211939877154415]
+StDev:       [0.0, 0.050055128, 0.92279005, 0.059421692]
+Not variable, going to next row
+Running object 188
+0.0
+Counts: {'i': 648, 'r': 368, 'z': 1336, 'g': 382}
+Mu: {'i': 61.25571, 'r': 22.733437, 'z': 91.76436, 'g': 6.391509}
+Variable??
+0.05795866504949687
+1.5174176002524387
+Non-Variable source in g
+Variable??
+0.06642247981625621
+305.027179789598
+Non-Variable source in r
+Variable??
+0.1353426948738538
+8.474171285284191
+Variable Source!
+Variable??
+0.17439454096315857
+27.616506176025776
+Variable Source!
+Variable:    2/4
+Var Bands:   iz
+Slope:       [0.6568390542261537, 1, 0.16397683713366196, 0.1321529735248098]
+Slope Error: [0.1257389762148816, 0, 0.02521161062173085, 0.01719008729426079]
+intercepts:  [0.0017782639245980036, 0, 0.0007318329778459787, 0.0003066967527806537]
+Int Error:   [0.0012678655311985513, 0, 0.00025981954401909225, 0.00017200514576391792]
+StDev:       [0.1617704, 0.19353908, 0.44575015, 0.58131677]
+Spread:      2/4
+('R', 0.0032898071)
+('I', 0.0042803157)
+Too spread in bands: ['R', 'I']
+0.0032898071
+0.0042803157
+Running object 189
+0.0
+Counts: {'i': 632, 'r': 359, 'z': 1288, 'g': 271}
+Mu: {'i': 1.5025254, 'r': 0.80619204, 'z': 1.8680205, 'g': 0.3358433}
+Variable??
+0.03513942125041921
+1.6094746381342981
+Non-Variable source in g
+Variable??
+0.03187592832946285
+6.381611771686529
+Variable Source!
+Variable??
+0.05225891627515641
+7.9289448476963855
+Variable Source!
+Variable??
+0.09075938730060337
+4.398268491712239
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [0.4759372469884813, 1, 0.40866770698127697, 0.199113201262882]
+Slope Error: [0.13681129301457198, 0, 0.03636552135464907, 0.028761901423052454]
+intercepts:  [0.028895951751296667, 0, 0.004602256219161771, 0.008304444568907587]
+Int Error:   [0.014146151189152087, 0, 0.004659327943911726, 0.003992844325092114]
+StDev:       [0.07818964, 0.09978555, 0.17411847, 0.23924403]
+Spread:      4/4
+('G', 0.014814332)
+('R', 0.016363954)
+('I', 0.01365729)
+('Z', 0.018418118)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.014814332
+0.016363954
+0.01365729
+0.018418118
+Running object 190
+0.0
+Counts: {'i': 128, 'r': 92, 'z': 48, 'g': 41}
+Mu: {'i': 0.2475566, 'r': 0.14704193, 'z': 0.40676183, 'g': 0.15716171}
+Variable??
+0.03540352961219111
+1.1747096357537132
+Non-Variable source in g
+Variable??
+0.0260634268152521
+1.0809040362054803
+Non-Variable source in r
+Variable??
+0.044562589963705074
+1.0620752787949053
+Non-Variable source in i
+Variable??
+0.08641122179165828
+0.8518654476186656
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.620522664988072, 1, 0.39697810568131586, 1]
+Slope Error: [0.13428467224271237, 0, 0.10114892583432644, 0.1218669956450016]
+intercepts:  [0.00019426936280408924, 0, -0.01940106627574888, -0.03401852176467379]
+Int Error:   [0.03801150461644194, 0, 0.020880754523420975, 0.039854453977905546]
+StDev:       [0.119231, 0.04003712, 0.060484663, 0.10788158]
+Not variable, going to next row
+Running object 191
+0.0
+Counts: {'i': 431, 'r': 240, 'z': 577, 'g': 135}
+Mu: {'i': 0.35070518, 'r': 0.2307032, 'z': 0.43235713, 'g': 0.1612144}
+Variable??
+0.027876784046096954
+1.0683203173770308
+Non-Variable source in g
+Variable??
+0.027923015826106463
+1.634403809823004
+Non-Variable source in r
+Variable??
+0.04784631688290792
+1.228786010620244
+Non-Variable source in i
+Variable??
+0.08003283946134757
+1.0765568675372998
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.8566655571959683, 1, 0.28343217537530285, 0.3623707900070585]
+Slope Error: [0.28352247319235363, 0, 0.047102705887885656, 0.06331230819859189]
+intercepts:  [0.06543334242475973, 0, -0.0011276483895246159, 0.02866861165958956]
+Int Error:   [0.050080850323693187, 0, 0.009380301750981078, 0.011540640821798374]
+StDev:       [0.064713225, 0.07333089, 0.06695846, 0.10798515]
+Not variable, going to next row
+Running object 192
+0.0
+Counts: {'i': 21, 'r': 72, 'z': 3, 'g': 26}
+Mu: {'i': 0.2198823, 'r': 0.13734645, 'z': 0.41375676, 'g': 0.16213945}
+Variable??
+0.03394678797753746
+1.6581893275110868
+Non-Variable source in g
+Variable??
+0.027163870404581947
+1.6357156342066919
+Non-Variable source in r
+Variable??
+0.04687567415628084
+2.1029516372361394
+Non-Variable source in i
+Variable??
+0.08603041451647814
+8.099239355828498
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.813235607423852, 1]
+Slope Error: [0.21445784671203735, 0, 0.30188113246793424, 0.0]
+intercepts:  [0.007097716667421872, 0, -0.03680168176606635, 0]
+Int Error:   [0.05879097576985404, 0, 0.0702098689299966, 0.0]
+StDev:       [0.2978614, 0.061337247, 0.06654607, 0.11479623]
+Not variable, going to next row
+Running object 193
+0.0
+Counts: {'i': 367, 'r': 249, 'z': 202, 'g': 172}
+Mu: {'i': 0.3393248, 'r': 0.2701987, 'z': 0.39894497, 'g': 0.21339312}
+Variable??
+0.028888080244116345
+0.9237417117458017
+Non-Variable source in g
+Variable??
+0.027588034466680143
+1.1089050141627155
+Non-Variable source in r
+Variable??
+0.04520691294339988
+1.0196195051252746
+Non-Variable source in i
+Variable??
+0.07254269717188967
+1.1244015050427398
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.25051364248593444, 1, 0.20437977790034734, 0.5738027654980804]
+Slope Error: [0.11089319073174989, 0, 0.0524144539970145, 0.12093899305488265]
+intercepts:  [0.022434084816825517, 0, 0.002698310731952258, 0.029246797817019332]
+Int Error:   [0.019744758004414692, 0, 0.009594470768664596, 0.017739421629059927]
+StDev:       [0.04759917, 0.04659057, 0.05637553, 0.09499601]
+Not variable, going to next row
+Running object 194
+0.0
+Counts: {'i': 286, 'r': 278, 'z': 138, 'g': 181}
+Mu: {'i': 0.2748884, 'r': 0.22773275, 'z': 0.4167229, 'g': 0.20746575}
+Variable??
+0.033201322367747074
+0.9620914123671096
+Non-Variable source in g
+Variable??
+0.029508829361824786
+1.0101923798557217
+Non-Variable source in r
+Variable??
+0.046691806920709435
+0.9041874356558421
+Non-Variable source in i
+Variable??
+0.08300011113162324
+0.9926881246305553
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.27052648043491945, 1]
+Slope Error: [0.10179095002637535, 0, 0.06708239379509029, 0.13189278263613805]
+intercepts:  [0.021721526875148004, 0, 0.015832547512606543, 0.0005821111782051691]
+Int Error:   [0.024641561760588473, 0, 0.011984799888152743, 0.022753875130294397]
+StDev:       [0.049670182, 0.05087574, 0.06170947, 0.10255165]
+Not variable, going to next row
+Running object 195
+0.0
+Counts: {'i': 121, 'r': 206, 'z': 20, 'g': 28}
+Mu: {'i': 0.22497444, 'r': 0.17303494, 'z': 0.3877898, 'g': 0.14726022}
+Variable??
+0.03322712443620626
+2.0637223956599238
+Non-Variable source in g
+Variable??
+0.02778036883557676
+1.1394052769293999
+Non-Variable source in r
+Variable??
+0.04437394347041845
+1.465659448967726
+Non-Variable source in i
+Variable??
+0.08673113473800609
+1.091521551875033
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [4.056208405513952, 1, 0.3587946357194489, 1]
+Slope Error: [0.9415613702366833, 0, 0.11421588449711256, 0.21275511892220156]
+intercepts:  [0.24280097441464324, 0, 0.011597590356749232, 0.006212746773423395]
+Int Error:   [0.20783902349649697, 0, 0.02947341728530656, 0.0728192283698148]
+StDev:       [0.160978, 0.04994708, 0.070260905, 0.10291519]
+Not variable, going to next row
+Running object 196
+0.0
+Counts: {'i': 472, 'r': 273, 'z': 1068, 'g': 250}
+Mu: {'i': 0.5628638, 'r': 0.3830356, 'z': 0.7948797, 'g': 0.31940264}
+Variable??
+0.03213389294522456
+1.3452962506612542
+Non-Variable source in g
+Variable??
+0.029069701243921213
+1.2969165137520349
+Non-Variable source in r
+Variable??
+0.04829022481961413
+1.2777955379836132
+Non-Variable source in i
+Variable??
+0.08443317356483561
+1.2756854423237793
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.3080111356113591, 0, 0.046735303694064055, 0.036137246153251285]
+intercepts:  [0.0677250536281456, 0, 0.006413460836100837, 0.00930233152285953]
+Int Error:   [0.03235194938968859, 0, 0.006046936549844287, 0.0052960638385161655]
+StDev:       [0.122597374, 0.048309848, 0.06781805, 0.11788441]
+Not variable, going to next row
+Running object 197
+0.0
+Counts: {'i': 42, 'r': 43, 'z': 18, 'g': 33}
+Mu: {'i': 0.21058454, 'r': 0.12018423, 'z': 0.40009585, 'g': 0.12567858}
+Variable??
+0.028054135057026197
+1.0667887469693007
+Non-Variable source in g
+Variable??
+0.022781278274808192
+1.1579309691656243
+Non-Variable source in r
+Variable??
+0.04475181233017945
+1.1281469471519248
+Non-Variable source in i
+Variable??
+0.09175491673517917
+0.8671949845780421
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.4372759618023112, 1, 1, 1]
+Slope Error: [0.2435772601975443, 0, 0.19729516095747773, 0.8704073000264846]
+intercepts:  [0.19405981862924082, 0, -0.08787973000398686, -0.06750957218903597]
+Int Error:   [0.05182354239075947, 0, 0.04416981900592618, 0.24023919416026493]
+StDev:       [0.033245496, 0.03590064, 0.10027082, 0.07442091]
+Not variable, going to next row
+Running object 198
+0.0
+Counts: {'i': 296, 'r': 240, 'z': 113, 'g': 205}
+Mu: {'i': 0.28538817, 'r': 0.24885444, 'z': 0.42818865, 'g': 0.2258225}
+Variable??
+0.030894976184377372
+0.9757458937153419
+Non-Variable source in g
+Variable??
+0.028053352852750527
+0.9871326744326082
+Non-Variable source in r
+Variable??
+0.046767427180859696
+0.8740892784651092
+Non-Variable source in i
+Variable??
+0.08566404490346725
+0.9573976843936671
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.8972034950946592, 1, 1, 1]
+Slope Error: [0.2275097747814311, 0, 0.07795221222114922, 0.16705391174465323]
+intercepts:  [0.07004179298320679, 0, 0.021385865169017748, -0.017007702202752738]
+Int Error:   [0.040760844436701985, 0, 0.013826571653603917, 0.02418984400897524]
+StDev:       [0.09007909, 0.04387873, 0.057720497, 0.09152988]
+Not variable, going to next row
+Running object 199
+0.0
+Counts: {'i': 589, 'r': 289, 'z': 1185, 'g': 59}
+Mu: {'i': 0.48169732, 'r': 0.23365967, 'z': 0.75631803, 'g': 0.15618597}
+Variable??
+0.033279962826157805
+1.1733649683892582
+Non-Variable source in g
+Variable??
+0.029526658006943762
+1.4394669336416661
+Non-Variable source in r
+Variable??
+0.05021015178521977
+2.765925816510801
+Non-Variable source in i
+Variable??
+0.08790236139109416
+1.5421000095703339
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.16510005462985444, 0.11864261491553352]
+Slope Error: [0.2216960546041785, 0, 0.041418667416043206, 0.0169619925879975]
+intercepts:  [0.0418700811186663, 0, 0.010243353725984552, 0.0006135656967384273]
+Int Error:   [0.06865788030480716, 0, 0.012798929895338188, 0.006063612711634067]
+StDev:       [0.14560983, 0.06341791, 0.12108891, 0.13162632]
+Not variable, going to next row

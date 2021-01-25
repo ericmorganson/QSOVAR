@@ -81,8 +81,8 @@ def find_a_b(fits, LC_file, color):
 
 
 if __name__ == "__main__":
-    files = ['../../C1_lc.fits', '../../C2_lc.fits', '../../E1_lc.fits', '../../E2_lc.fits', 
-             '../../S1_lc.fits', '../../S2_lc.fits', '../../X1_lc.fits', '../../X2_lc.fits']
+    files = ['../C1_lc.fits', '../C2_lc.fits', '../C3_lc.fits', '../E1_lc.fits', '../E2_lc.fits', 
+             '../S1_lc.fits', '../S2_lc.fits', '../X1_lc.fits', '../X2_lc.fits', '../X3_lc.fits']
     
             #['/home/sam/Documents/Morganson_research/C1_lc.fits', '/home/sam/Documents/Morganson_research/C2_lc.fits'] #,
             # '/home/sam/Documents/Morganson_research/E1_lc.fits', '/home/sam/Documents/Morganson_research/E2_lc.fits',
@@ -92,6 +92,6 @@ if __name__ == "__main__":
     for file in files:
         with pyfit.open(file) as fits:
             fits = pyfit.open(file)[1].data
-            LC_file = file.split('/')[2][0:2]  # [5][0:2]
+            LC_file = file.split('/')[1][0:2]  # [5][0:2]
             for color in 'GRIZ':
                 find_a_b(fits, LC_file, color)

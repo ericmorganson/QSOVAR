@@ -1,0 +1,279 @@
+('2501', '2510', 'normal')
+Running object 2501
+0.0
+Counts: {'i': 34, 'r': 67, 'z': 5, 'g': 68}
+Mu: {'i': 0.32776403, 'r': 0.2790235, 'z': 0.4771577, 'g': 0.24394438}
+Variable??
+0.03649784379222033
+0.65281813169637
+Non-Variable source in g
+Variable??
+0.0463681143511607
+0.9586630667164256
+Non-Variable source in r
+Variable??
+0.059571543456428226
+0.9339671440383039
+Non-Variable source in i
+Variable??
+0.1189082344696238
+1.0811100295052785
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.26519395577847305, 1, 1, 1]
+Slope Error: [0.11841157439165527, 0, 0.27496830335815714, 2.1435631393298795]
+intercepts:  [0.015736541175330854, 0, -0.03987262919990675, 0.4349834201657816]
+Int Error:   [0.018743430248816258, 0, 0.03692467377937969, 0.22998175578067315]
+StDev:       [0.04836345, 0.058989726, 0.06473217, 0.1713065]
+Not variable, going to next row
+Running object 2502
+0.0
+Counts: {'i': 12, 'r': 17, 'z': 16, 'g': 52}
+Mu: {'i': 0.23843962, 'r': 0.20165259, 'z': 0.4437134, 'g': 0.19268396}
+Variable??
+0.030431494148060897
+1.2707517731819544
+Non-Variable source in g
+Variable??
+0.03696126327370086
+0.9442228406860819
+Non-Variable source in r
+Variable??
+0.052089406250264716
+1.9203290655072074
+Non-Variable source in i
+Variable??
+0.08234260976314545
+4.010870059354527
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.7022509392297602]
+Slope Error: [0.351660049459737, 0, 1.0214094773832119, 0.23379029436796614]
+intercepts:  [-0.05863853417598981, 0, -0.027835489191622598, -0.19111597607652214]
+Int Error:   [0.04369300309610622, 0, 0.11070435495506932, 0.08219654709177034]
+StDev:       [0.06587096, 0.05191225, 0.09290782, 0.14661779]
+Not variable, going to next row
+Running object 2503
+0.0
+Counts: {'i': 43, 'r': 19, 'z': 41, 'g': 19}
+Mu: {'i': 0.3415989, 'r': 0.20923191, 'z': 0.521799, 'g': 0.14003244}
+Variable??
+0.02777617915980254
+0.8256374039880311
+Non-Variable source in g
+Variable??
+0.03953018631098947
+1.0436757955944944
+Non-Variable source in r
+Variable??
+0.05450815252544618
+0.650240188888044
+Non-Variable source in i
+Variable??
+0.08777013342025144
+1.1628704224525026
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.538565571696316, 0.6289095834619955]
+Slope Error: [0.2995037361663843, 0, 0.24217338600190366, 0.1312441280243537]
+intercepts:  [-0.04153835484324131, 0, 0.09834456884124043, -0.03432552903793651]
+Int Error:   [0.058138198427827414, 0, 0.046487264420120036, 0.029915418078598887]
+StDev:       [0.03957065, 0.047096822, 0.05270338, 0.10474032]
+Not variable, going to next row
+Running object 2504
+0.0
+Counts: {'i': 133, 'r': 137, 'z': 267, 'g': 126}
+Mu: {'i': 79.97626, 'r': 24.588814, 'z': 130.08665, 'g': 6.398562}
+Variable??
+0.06420072268738157
+1.4859628468293744
+Non-Variable source in g
+Variable??
+0.10508731284999451
+3.8820829625063045
+Variable Source!
+Variable??
+0.1888752664899797
+17.798019064896497
+Non-Variable source in i
+Variable??
+0.25282911906674405
+31.53683691249618
+Variable Source!
+Variable:    2/4
+Var Bands:   rz
+Slope:       [0.6981045149280392, 1, 0.39903527853965426, 0.2679064948196809]
+Slope Error: [0.12831061674175834, 0, 0.03050962008053898, 0.02282483785599616]
+intercepts:  [-0.0009030621940133391, 0, 0.0014601919063928729, 6.285571143662564e-05]
+Int Error:   [0.0019514626064502261, 0, 0.0003839260373488055, 0.0002827833909582867]
+StDev:       [0.15184695, 0.39142075, 0.53651154, 0.9668269]
+Spread:      0/4
+('ROW:', 2504, 'Tau:', '0.011656115689380811', 'V:', '-1.170585010988543')
+663
+('ROW:', 2504, 'Tau:', '1.9239323938604955', 'V:', '-1.9712624210489877')
+137
+ClusterEmcee2_linear_mu_all_and_single_fast.py:576: RuntimeWarning: divide by zero encountered in log
+  logP = -.5*np.log((deter))-.5*((np.dot(delf1, (np.dot((delf1), np.linalg.inv(S))))))
+ClusterEmcee2_linear_mu_all_and_single_fast.py:577: RuntimeWarning: divide by zero encountered in log
+  logP1 = -.5*np.log((deter))-.5*((np.dot(delf2, (np.dot((delf2), np.linalg.inv(S))))))
+ClusterEmcee2_linear_mu_all_and_single_fast.py:578: RuntimeWarning: divide by zero encountered in log
+  logP2 = -.5*np.log((deter))-.5*((np.dot(delf3, (np.dot((delf3), np.linalg.inv(S))))))
+/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/_methods.py:29: RuntimeWarning: invalid value encountered in reduce
+  return umr_minimum(a, axis, None, out, keepdims)
+WARNING:root:Too few points to create valid contours
+('ROW:', 2504, 'Tau:', '1.2529096721399906', 'V:', '-2.250217104519876')
+267
+Running object 2505
+0.0
+Counts: {'i': 132, 'r': 122, 'z': 262, 'g': 75}
+Mu: {'i': 0.9340817, 'r': 0.6357826, 'z': 1.1480767, 'g': 0.23059365}
+Variable??
+0.03235140260172097
+1.1697711152477046
+Non-Variable source in g
+Variable??
+0.04905344156621294
+1.817684946881626
+Non-Variable source in r
+Variable??
+0.06580596285388372
+2.3634905369937576
+Non-Variable source in i
+Variable??
+0.10975585566512243
+1.836656561339952
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.21523932528963452, 0.4339013591126415]
+Slope Error: [0.438088596077596, 0, 0.09412802092268281, 0.07161067843487916]
+intercepts:  [0.06016223172218804, 0, -0.0004542790804364927, 0.005265357210340493]
+Int Error:   [0.04474389481340695, 0, 0.011412783549697198, 0.009036210379180438]
+StDev:       [0.083775386, 0.0880923, 0.12153869, 0.18855728]
+Not variable, going to next row
+Running object 2506
+0.0
+Counts: {'i': 133, 'r': 134, 'z': 272, 'g': 96}
+Mu: {'i': 3.7857742, 'r': 1.3147252, 'z': 5.8387747, 'g': 0.36507553}
+Variable??
+0.03569537923710471
+0.7467467731512765
+Non-Variable source in g
+Variable??
+0.05345606403556918
+0.7634961107230857
+Non-Variable source in r
+Variable??
+0.07198200820552819
+0.8382680898195741
+Non-Variable source in i
+Variable??
+0.11903352005772104
+14.746197473906296
+Variable Source!
+Variable:    1/4
+Var Bands:   z
+Slope:       [1, 1, 1, -0.04319749445664822]
+Slope Error: [0.404256828096115, 0, 0.03672287308009169, 0.027642618665235288]
+intercepts:  [0.01030794023594983, 0, -0.0009527904624128176, -0.001838591317225191]
+Int Error:   [0.014746945041502658, 0, 0.002094444418786419, 0.0014902741357607208]
+StDev:       [0.05301995, 0.08215259, 0.09693239, 0.4268581]
+Spread:      0/4
+('ROW:', 2506, 'Tau:', '3.9843508108518497', 'V:', '-2.988160235124226')
+ClusterEmcee2_linear_mu_all_and_single_fast.py:284: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:419: RuntimeWarning: invalid value encountered in greater
+  mag_crit = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags)
+625
+WARNING:root:Too few points to create valid contours
+('ROW:', 2506, 'Tau:', '0.00023084299703016176', 'V:', '-1.8569223826115864')
+272
+Running object 2507
+0.0
+Counts: {'i': 11, 'z': 124}
+Mu: {'i': 0.25720683, 'r': 0.0, 'z': 0.64792013, 'g': 0.0}
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0
+0
+Non-Variable source in r
+Variable??
+0.050443737492370196
+1.1416412475290223
+Non-Variable source in i
+Variable??
+0.10328834039815668
+0.8057224167220142
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.0, 0.0, 0.064136654, 0.11564895]
+Not variable, going to next row
+Running object 2508
+0.0
+Counts: {'i': 75, 'r': 6, 'z': 151}
+Mu: {'i': 0.39491552, 'r': 0.15699522, 'z': 0.67001027, 'g': 0.0}
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.03146518146721003
+1.9997794796157375
+Non-Variable source in r
+Variable??
+0.0609603936064416
+0.894311508644677
+Non-Variable source in i
+Variable??
+0.1038639901583282
+0.9752296555763096
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.4287026898467548, 0.2878989577224454]
+intercepts:  [0, 0, -0.09992565767759637, -0.06452871351866642]
+Int Error:   [0.0, 0, 0.06211444864184199, 0.036003996999325084]
+StDev:       [0.0, 0.16053887, 0.07271342, 0.11430252]
+Not variable, going to next row
+Running object 2509
+0.0
+Counts: {'i': 105, 'r': 84, 'z': 210, 'g': 58}
+Mu: {'i': 0.5323292, 'r': 0.3691098, 'z': 0.7507533, 'g': 0.26267666}
+Variable??
+0.0356427810721191
+1.7938037526110637
+Non-Variable source in g
+Variable??
+0.04854896399878394
+2.375161854215453
+Non-Variable source in r
+Variable??
+0.06647253064264715
+1.7099732863782873
+Non-Variable source in i
+Variable??
+0.11165340240970001
+1.9618189695572081
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.599909823891144, 1, 0.22836260087562477, 0.24636248177811626]
+Slope Error: [0.21553725823940734, 0, 0.06952148269291404, 0.06878111792110661]
+intercepts:  [0.0414030337961071, 0, -0.00462255013051438, 0.01739474842981059]
+Int Error:   [0.03731943671955273, 0, 0.017374805646384696, 0.017649608147004708]
+StDev:       [0.0838354, 0.12882872, 0.103106186, 0.19354032]
+Not variable, going to next row

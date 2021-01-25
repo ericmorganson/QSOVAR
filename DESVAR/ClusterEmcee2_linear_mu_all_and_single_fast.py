@@ -30,11 +30,12 @@ if len(sys.argv) < 7:
 # Initial MCMC guesses
 fig_path = str(sys.argv[6])
 
-file_path = "scratch_all/" #"scratch_new/"
+file_path = "scratch_castor/" #"scratch_new/"
 if not os.path.exists(file_path):
     os.makedirs(file_path)
 
 plotting = True
+next_row_bool = True #skips already completed rows
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -257,9 +258,13 @@ def lnprob_step2(theta, x, y, yerr):
     lp = lnprior_step2(theta)
     if not np.isfinite(lp):
         return -np.inf
-    logprobs.append(lp + lnlike_fast_linear.lnlike(theta, x, y, yerr))
+    try:
+        lp_app = lp + lnlike_fast_linear.lnlike(theta, x, y, yerr)
+    except ValueError: #Nan value case
+        lp_app = -np.inf #ignore the Nan value case
+    logprobs.append(lp_app)
     logvals.append(theta)
-    return lp + lnlike_fast_linear.lnlike(theta, x, y, yerr)
+    return lp_app
 
 
 def sausageplot_step2(Vari, time, delta_f, Tau, dt, sigma_sq, dMu_dict,
@@ -742,6 +747,14 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
 
     print("Running object "+str(ROW))
     fig = plt.figure(figsize=(10, 10))
+    
+    fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
+    filename_all = file_path + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
+    
+    if next_row_bool:
+        if os.path.exists(filename_all):
+            print("Already analyzed "+ str(ROW) + " in " + fit_str)
+            continue
     flux, err, time, mu, color_sort, FITS, fig = get_vals(sys.argv, ROW)
 
     # TODO: Add in criteria to kick out flux measure/entire row if err is too large
@@ -750,7 +763,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
 
     # DOESN'T MAKE SENSE TO LOOK AT ROWS WITH NO FLUX MEASUREMENTS
     if len(flux) == 0:
-        print("Flux length is zero")
+        print("Flux length is zero; going to next row")
         continue
 
     # ONLY LET POSITIVE FLUXES AND ERRORS THROUGH
@@ -857,6 +870,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
         print("Too spread in bands: "+ str(spread))
         for i in spread:
             print(np.abs(FITS[1].data['SPREAD_MODEL_'+i][ROW]))
+        print("Continuing to next row")
         continue
 
     if plotting:
