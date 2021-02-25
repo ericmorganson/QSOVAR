@@ -103,7 +103,18 @@ def get_vals(args, ROW):
         lcur_time = lc_time[(lc_time != 0)*(lc_flux_err <2)]
         lcur_flux = lc_flux[(lc_time != 0)*(lc_flux_err <2)] #:limit
         lcur_flux_err = lc_flux_err[(lc_time != 0)*(lc_flux_err <2)]  # :limit
+        #print(lcur_time)
+        if np.count_nonzero(np.isnan(lcur_time))>0 or np.count_nonzero(np.isnan(lcur_flux))>0 or np.count_nonzero(np.isnan(lcur_flux_err))>0:
+            print("Oh no! Nan values!")
+            exit()
 
+        if (lcur_time<0).any() or (lcur_flux<0).any() or (lcur_flux_err<0).any():
+            print("NEGATIVE VALUES, PANIC!")
+            exit()
+        #for i in range(1,len(lcur_time)):
+        #    if lcur_time[i] - lcur_time[i-1]<0.004:
+        #        print("Time too close in "+ color)
+        #        print(lcur_time[i], lcur_time[i-1])
         col = next(color_plt)
 
         mean_err = FITS[1].data['MEANERR_PSF_'+color][ROW]
@@ -192,7 +203,7 @@ def get_vals_old(args, ROW):
         lc_time = lcur_time[(lcur_time != 0)*(lcur_flux_err <2)]
         lc_flux = lcur_flux[(lcur_time != 0)*(lcur_flux_err <2)] #:limit
         lc_flux_err = lcur_flux_err[(lcur_time != 0)*(lcur_flux_err <2)]
-
+        
         col = next(color_plt)
 
         mean_err = FITS[1].data['MEANERR_PSF_'+color][ROW]
@@ -481,7 +492,7 @@ def perform_emcee_single(time, flux, err_2, dMu, scale, ROW, mu, color):
         sausageplot_single(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu, scale, ROW, fig, color)
         fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_" + color + "_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + "VAR.pdf")
 
-    plt.close("all")
+    # plt.close("all")
 
     # WRITE THE FOUND MAX THETA VALUES TO FILE
     fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
@@ -672,7 +683,7 @@ def perform_emcee_step2(time, flux, err_2, dMu_dict, scale_dict,
         else:
             fig.savefig(fig_path + str(ROW) + sys.argv[4] + "_all_band_" + "sausage_step2_linear_" + str(sys.argv[5]) + ".pdf")
 
-    plt.close("all")
+    #plt.close("all")
 
     # WRITE THE FOUND MAX THETA VALUES TO FILE
     fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
@@ -751,10 +762,9 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
     fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
     filename_all = file_path + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
     
-    if next_row_bool:
-        if os.path.exists(filename_all):
-            print("Already analyzed "+ str(ROW) + " in " + fit_str)
-            continue
+    if next_row_bool and os.path.exists(filename_all):
+        print("Already analyzed "+ str(ROW) + " in " + fit_str)
+        continue
     flux, err, time, mu, color_sort, FITS, fig = get_vals(sys.argv, ROW)
 
     # TODO: Add in criteria to kick out flux measure/entire row if err is too large
@@ -858,7 +868,7 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
 
     if var_count < 1:
         print("Not variable, going to next row")
-        plt.close("all")
+        #plt.close("all")
         continue
 
     spread = [i for i in "GRIZ" if FITS[1].data['SPREAD_MODEL_'+i][ROW]**2 >= .003**2 + 4*FITS[1].data['SPREADERR_MODEL_'+i][ROW]**2]
@@ -901,6 +911,9 @@ for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
             time_mod_sing = time[color_sort_ones[color_dict[color]] != 0 ]
             err_mod_sing = err[color_sort_ones[color_dict[color]] != 0 ]
             perform_emcee_single(time_mod_sing, flux_mod_sing, err_mod_sing**2, dMu_dict[color], scale_dict[color], ROW, mu, color)
+        print("Close extra plots")  
+        plt.close('all')
 
     except np.linalg.linalg.LinAlgError as err:
+        print("Linear Algebra Error")
         continue
