@@ -37,7 +37,8 @@ if not os.path.exists(file_path):
     os.makedirs(file_path)
 
 plotting = True
-next_row_bool =  False #skips already completed rows
+next_row_bool = False #skips already completed rows
+run_cluster = True
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -152,7 +153,8 @@ def get_vals(args, ROW):
         flux_err_corr = np.sqrt(np.abs((a**2)*lcur_flux*np.sqrt(np.abs(lcur_flux_err**2 - mean_err**2)) + (b**2)*(lcur_flux_err**2 - mean_err**2)))
         normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color]
 
-        lcur_time, lcur_flux, normed_err = cluster(lcur_time, lcur_flux, normed_err, 0.004)
+        if run_cluster:
+            lcur_time, lcur_flux, normed_err = cluster(lcur_time, lcur_flux, normed_err, 0.004)
 
         if plotting:
             ax5.scatter(lcur_time,
