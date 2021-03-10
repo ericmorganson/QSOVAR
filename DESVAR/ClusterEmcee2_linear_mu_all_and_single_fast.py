@@ -15,6 +15,8 @@ from matplotlib import cm
 import itertools
 import pandas as pd
 import os
+from timeit import default_timer as timer
+
 
 
 if len(sys.argv) < 7:
@@ -35,7 +37,7 @@ if not os.path.exists(file_path):
     os.makedirs(file_path)
 
 plotting = True
-next_row_bool = True #skips already completed rows
+next_row_bool =  False #skips already completed rows
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -68,6 +70,27 @@ def get_a_b_chi2(fit, color, a_b_vals):
             a, b = item[2], item[3]
             #print(item)
     return a, b
+
+def cluster(time, flux, noise, time_gap):
+
+    group_time = [[time[0]]]
+    group_flux = [[flux[0]]]
+    group_noise = [[noise[0]]]
+    for (t,f,n) in zip(time[1:], flux[1:], noise[1:]):
+        val = abs(t - group_time[-1][-1])
+        if val <= time_gap:
+            group_time[-1].append(t)
+            group_flux[-1].append(f)
+            group_noise[-1].append(n)
+        else:
+            group_time.append([t])
+            group_flux.append([f])
+            group_noise.append([n])
+
+    new_time = [sum(arr)/len(arr) for arr in group_time]
+    new_flux = [sum(arr)/len(arr) for arr in group_flux]
+    new_noise = [sum(arr)/len(arr) for arr in group_noise]
+    return new_time, new_flux, new_noise
 
 
 def get_vals(args, ROW):
@@ -124,14 +147,13 @@ def get_vals(args, ROW):
 
 
         a, b = get_a_b_chi2(sys.argv[1], color, a_b_list)
-        #print(a, b)
-        #print("OG ERR "+color)
-        #print(lc_flux_err)
+
 
         flux_err_corr = np.sqrt(np.abs((a**2)*lcur_flux*np.sqrt(np.abs(lcur_flux_err**2 - mean_err**2)) + (b**2)*(lcur_flux_err**2 - mean_err**2)))
         normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color]
-        #print("AB CORR ERR "+color)
-        #print(flux_err_corr)
+
+        lcur_time, lcur_flux, normed_err = cluster(lcur_time, lcur_flux, normed_err, 0.004)
+
         if plotting:
             ax5.scatter(lcur_time,
                         (lcur_flux - lc_median[color])/lc_median[color],
@@ -150,7 +172,7 @@ def get_vals(args, ROW):
         time = np.append(time, lcur_time)  # remove the zeros
         flux_norm = np.append(flux_norm, normed_flux)
         err_norm = np.append(err_norm, normed_err)
-        array_org = np.append(array_org, color_dict[color]*np.ones(limit))
+        array_org = np.append(array_org, color_dict[color]*np.ones(len(lcur_time))) #limit
 
     if not os.path.exists(fig_path):
         os.makedirs(fig_path)
@@ -203,7 +225,7 @@ def get_vals_old(args, ROW):
         lc_time = lcur_time[(lcur_time != 0)*(lcur_flux_err <2)]
         lc_flux = lcur_flux[(lcur_time != 0)*(lcur_flux_err <2)] #:limit
         lc_flux_err = lcur_flux_err[(lcur_time != 0)*(lcur_flux_err <2)]
-        
+
         col = next(color_plt)
 
         mean_err = FITS[1].data['MEANERR_PSF_'+color][ROW]
@@ -212,14 +234,10 @@ def get_vals_old(args, ROW):
         #print("OG ERR "+color)
         #print(lc_flux_err)
 
-        #Old err corr from zoom call
-        #flux_err_corr = np.sqrt(np.abs((a**2)*lc_flux*np.sqrt(np.abs(lc_flux_err**2 - mean_err**2)) + (b**2)*(lc_flux_err**2 - mean_err**2)))
-
         #New err corr from 16 Jul 2020 email; doesn't really change much
         flux_err_corr = np.sqrt(a**2*lc_flux/lc_flux_err + b**2)*lc_flux_err
         print(flux_err_corr)
-        #print("AB CORR ERR "+color)
-        #print(flux_err_corr)
+
         normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color] #
 
         if plotting:
@@ -751,169 +769,175 @@ def plot_lin(flux, ax, y_label):
 
     return p, res
 
+if __name__ == "__main__":
+    for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
+        logprobs = []
+        logvals = []
 
-for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
-    logprobs = []
-    logvals = []
+        print("Running object "+str(ROW))
+        fig = plt.figure(figsize=(10, 10))
 
-    print("Running object "+str(ROW))
-    fig = plt.figure(figsize=(10, 10))
-    
-    fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
-    filename_all = file_path + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
-    
-    if next_row_bool and os.path.exists(filename_all):
-        print("Already analyzed "+ str(ROW) + " in " + fit_str)
-        continue
-    flux, err, time, mu, color_sort, FITS, fig = get_vals(sys.argv, ROW)
+        fit_str = str(sys.argv[1].split("/")[-1].split("_")[0])
+        filename_all = file_path + str(ROW) +"_"+fit_str+"_"+ sys.argv[4] + "_all_band_linear_"+ str(sys.argv[5]) + '.txt'
 
-    # TODO: Add in criteria to kick out flux measure/entire row if err is too large
+        if next_row_bool and os.path.exists(filename_all):
+            print("Already analyzed "+ str(ROW) + " in " + fit_str)
+            continue
+        flux, err, time, mu, color_sort, FITS, fig = get_vals(sys.argv, ROW)
 
-    print(min(np.array(time[1:]) - np.array(time[:-1])))
+        # TODO: Add in criteria to kick out flux measure/entire row if err is too large
 
-    # DOESN'T MAKE SENSE TO LOOK AT ROWS WITH NO FLUX MEASUREMENTS
-    if len(flux) == 0:
-        print("Flux length is zero; going to next row")
-        continue
+        print(min(np.array(time[1:]) - np.array(time[:-1])))
 
-    # ONLY LET POSITIVE FLUXES AND ERRORS THROUGH
-    # NOTE: FLUXES HERE ARE NORMALIZED, SO IF FLUX = 0, THEN norm(FLUX) = -1
-    zip_tfe = zip(time, flux, err, color_sort)
-    filter_tfe = [(t, f, e, col) for t, f, e, col in zip_tfe if f > -1 and e > 0]
-    time, flux, err, color_sort = zip(*filter_tfe)
-    time = np.array(time)
-    flux = np.array(flux)
-    err = np.array(err)
-    color_sort = np.array(color_sort)
-    unique, count = np.unique(color_sort, return_counts=True)
-    color_sort_dict = {1: "g", 2: "r", 3: "i", 4: "z"}
-    color_counts = dict(zip([color_sort_dict[u] for u in unique], count))
-    print("Counts: " + str(color_counts))
+        # DOESN'T MAKE SENSE TO LOOK AT ROWS WITH NO FLUX MEASUREMENTS
+        if len(flux) == 0:
+            print("Flux length is zero; going to next row")
+            continue
 
-    # ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
-    # dim = [i for i in mu if 22.5-2.5*np.log10(mu[i])>21]
-    # dim_val = [22.5-2.5*np.log10(mu[i]) for i in mu if 22.5-2.5*np.log10(mu[i])>21]
-    # bright = [i for i in mu if 22.5-2.5*np.log10(mu[i])<16]
-    # bright_val = [22.5-2.5*np.log10(mu[i]) for i in mu if 22.5-2.5*np.log10(mu[i])<16]
-    # if dim:
-    #    print("Row is too dim in band: "+ str(dim))
-    #    print(dim_val)
-    #    plt.close("all")
-    #    continue
-    # if bright:
-    #    print("Row is HELLA bright in band: "+str(bright))
-    #    print(bright_val)
-    #    plt.close("all")
-    #    continue
+        # ONLY LET POSITIVE FLUXES AND ERRORS THROUGH
+        # NOTE: FLUXES HERE ARE NORMALIZED, SO IF FLUX = 0, THEN norm(FLUX) = -1
+        zip_tfe = zip(time, flux, err, color_sort)
+        filter_tfe = [(t, f, e, col) for t, f, e, col in zip_tfe if f > -1 and e > 0]
+        time, flux, err, color_sort = zip(*filter_tfe)
+        time = np.array(time)
+        flux = np.array(flux)
+        err = np.array(err)
+        color_sort = np.array(color_sort)
+        unique, count = np.unique(color_sort, return_counts=True)
+        color_sort_dict = {1: "g", 2: "r", 3: "i", 4: "z"}
+        color_counts = dict(zip([color_sort_dict[u] for u in unique], count))
+        print("Counts: " + str(color_counts))
 
-    print("Mu: " + str(mu))
+        # ONLY LOOK AT BRIGHT OBJECTS (WITHOUT OVERSATURATION)
+        # dim = [i for i in mu if 22.5-2.5*np.log10(mu[i])>21]
+        # dim_val = [22.5-2.5*np.log10(mu[i]) for i in mu if 22.5-2.5*np.log10(mu[i])>21]
+        # bright = [i for i in mu if 22.5-2.5*np.log10(mu[i])<16]
+        # bright_val = [22.5-2.5*np.log10(mu[i]) for i in mu if 22.5-2.5*np.log10(mu[i])<16]
+        # if dim:
+        #    print("Row is too dim in band: "+ str(dim))
+        #    print(dim_val)
+        #    plt.close("all")
+        #    continue
+        # if bright:
+        #    print("Row is HELLA bright in band: "+str(bright))
+        #    print(bright_val)
+        #    plt.close("all")
+        #    continue
 
-    color_sort_ones = [(color_sort == 1).astype(int)]
-    for num in range(2, 5):
-        color_sort_ones = np.concatenate((color_sort_ones, [(color_sort == num).astype(int)]), axis=0)
-    np.set_printoptions(threshold=np.inf)
+        print("Mu: " + str(mu))
 
-    g_flux, i_flux, z_flux = lin_color_sort(time, color_sort_dict, color_sort)
+        color_sort_ones = [(color_sort == 1).astype(int)]
+        for num in range(2, 5):
+            color_sort_ones = np.concatenate((color_sort_ones, [(color_sort == num).astype(int)]), axis=0)
+        np.set_printoptions(threshold=np.inf)
 
-    fig_lin, axs = plt.subplots(3)
-    fig_lin.suptitle('r vs color')
+        g_flux, i_flux, z_flux = lin_color_sort(time, color_sort_dict, color_sort)
 
-    p_g, res_g = plot_lin(g_flux, axs[0], "g-r")
-    p_i, res_i = plot_lin(i_flux, axs[1], "i-r")
-    p_z, res_z = plot_lin(z_flux, axs[2], "z-r")
+        fig_lin, axs = plt.subplots(3)
+        fig_lin.suptitle('r vs color')
 
-    slope = [p_g[0]+1, 1, p_i[0]+1, p_z[0]+1]
-    slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
-    int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
-    std_col = []
-    mean_err = []
-    color_dict = {0:"g", 1:"r", 2:"i", 3:"z"}
-    for col in 'GRIZ':
-        std_col.append(FITS[1].data['STD_PSF_'+col][ROW])
-        mean_err.append(FITS[1].data['MEANERR_PSF_'+col][ROW])
-    intercept = [p_g[1], 0, p_i[1], p_z[1]]
-    var_count = 0
-    var_bands = ""
-    for i in range(len(slope)):
-        if np.count_nonzero(color_sort_ones[i]) > 1:
-            #var_crit = np.sum((std_col[i] - err*color_sort_ones[i])/np.sqrt(np.count_nonzero(color_sort_ones[i])))
-            var_crit = mean_err[i]*np.sqrt(np.count_nonzero(color_sort_ones[i]))
-            fl = flux*mu[color_dict[i]]
-            errors = err*mu[color_dict[i]]
-            fl = fl[color_sort_ones[i] != 0. ]
-            errors = errors[color_sort_ones[i] != 0.]
-            chi2 = np.sum((fl**2)/errors**2)/(np.count_nonzero(color_sort_ones[i])-1)
-        else:
-            var_crit = 0
-            chi2 = 0
-        print("Variable??")
-        print(var_crit)
-        print(chi2)
-        if std_col[i] > var_strict*var_crit and chi2 > var_strict:
-            print("Variable Source!")
-            var_count += 1
-            var_bands += color_dict[i]
-        else:  # if nonvariable
-            print("Non-Variable source in " + str(color_sort_dict[i+1]))
-            if slope_err[i]*2 > slope[i]:
-                slope[i] = 1
+        p_g, res_g = plot_lin(g_flux, axs[0], "g-r")
+        p_i, res_i = plot_lin(i_flux, axs[1], "i-r")
+        p_z, res_z = plot_lin(z_flux, axs[2], "z-r")
 
-    print("Variable:    " + str(var_count) + "/4")
-    print("Var Bands:   " + var_bands)
-    print("Slope:       " + str(slope))
-    print("Slope Error: " + str(slope_err))
-    print("intercepts:  " + str(intercept))
-    print("Int Error:   " + str(int_err))
-    print("StDev:       " + str(std_col))
+        slope = [p_g[0]+1, 1, p_i[0]+1, p_z[0]+1]
+        slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
+        int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
+        std_col = []
+        mean_err = []
+        color_dict = {0:"g", 1:"r", 2:"i", 3:"z"}
+        for col in 'GRIZ':
+            std_col.append(FITS[1].data['STD_PSF_'+col][ROW])
+            mean_err.append(FITS[1].data['MEANERR_PSF_'+col][ROW])
+        intercept = [p_g[1], 0, p_i[1], p_z[1]]
+        var_count = 0
+        var_bands = ""
+        for i in range(len(slope)):
+            if np.count_nonzero(color_sort_ones[i]) > 1:
+                #var_crit = np.sum((std_col[i] - err*color_sort_ones[i])/np.sqrt(np.count_nonzero(color_sort_ones[i])))
+                var_crit = mean_err[i]*np.sqrt(np.count_nonzero(color_sort_ones[i]))
+                fl = flux*mu[color_dict[i]]
+                errors = err*mu[color_dict[i]]
+                fl = fl[color_sort_ones[i] != 0. ]
+                errors = errors[color_sort_ones[i] != 0.]
+                chi2 = np.sum((fl**2)/errors**2)/(np.count_nonzero(color_sort_ones[i])-1)
+            else:
+                var_crit = 0
+                chi2 = 0
+            print("Variable??")
+            print(var_crit)
+            print(chi2)
+            if std_col[i] > var_strict*var_crit and chi2 > var_strict:
+                print("Variable Source!")
+                var_count += 1
+                var_bands += color_dict[i]
+            else:  # if nonvariable
+                print("Non-Variable source in " + str(color_sort_dict[i+1]))
+                if slope_err[i]*2 > slope[i]:
+                    slope[i] = 1
 
-    if var_count < 1:
-        print("Not variable, going to next row")
-        #plt.close("all")
-        continue
+        print("Variable:    " + str(var_count) + "/4")
+        print("Var Bands:   " + var_bands)
+        print("Slope:       " + str(slope))
+        print("Slope Error: " + str(slope_err))
+        print("intercepts:  " + str(intercept))
+        print("Int Error:   " + str(int_err))
+        print("StDev:       " + str(std_col))
 
-    spread = [i for i in "GRIZ" if FITS[1].data['SPREAD_MODEL_'+i][ROW]**2 >= .003**2 + 4*FITS[1].data['SPREADERR_MODEL_'+i][ROW]**2]
-    print("Spread:      "+ str(len(spread)) + "/4")
-    for i in spread:
-        print(i, np.abs(FITS[1].data['SPREAD_MODEL_'+i][ROW]))
+        if var_count < 1:
+            print("Not variable, closing plots & going to next row")
+            plt.close("all")
+            continue
 
-    if len(spread)>1:
-        print("Too spread in bands: "+ str(spread))
+        spread = [i for i in "GRIZ" if FITS[1].data['SPREAD_MODEL_'+i][ROW]**2 >= .003**2 + 4*FITS[1].data['SPREADERR_MODEL_'+i][ROW]**2]
+        print("Spread:      "+ str(len(spread)) + "/4")
         for i in spread:
-            print(np.abs(FITS[1].data['SPREAD_MODEL_'+i][ROW]))
-        print("Continuing to next row")
-        continue
+            print(i, np.abs(FITS[1].data['SPREAD_MODEL_'+i][ROW]))
 
-    if plotting:
-        fig_lin.savefig(fig_path + str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
+        if len(spread)>1:
+            print("Too spread in bands: "+ str(spread))
+            for i in spread:
+                print(np.abs(FITS[1].data['SPREAD_MODEL_'+i][ROW]))
+            print("Continuing to next row")
+            continue
 
-    try:
-        color_dict = {"g": 0, "r": 1, "i": 2, "z": 3}
-        dMu_dict = {"g": intercept[0], "r": intercept[1], "i": intercept[2], "z": intercept[3]}
-        dMu_dict_err = {"g": int_err[0], "r": int_err[1], "i": int_err[2], "z": int_err[3]}
-        scale_dict = {"g": slope[0], "r": slope[1], "i": slope[2], "z": slope[3]}
-        scale_err = {"g": slope_err[0], "r": slope_err[1], "i": slope_err[2], "z": slope_err[3]}
-        #all band variability
-        flux_mod = np.zeros_like(flux)
-        err_mod = np.zeros_like(flux)
-        for color in 'griz':
-            flux_mod += ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color] + dMu_dict['r']
+        if plotting:
+            fig_lin.savefig(fig_path + str(ROW)+sys.argv[4] + "_" + sys.argv[5]+"_linear_scatter.pdf")
 
-            #Old err_mod from zoom call
-            #err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
+        try:
+            tic = timer()
+            color_dict = {"g": 0, "r": 1, "i": 2, "z": 3}
+            dMu_dict = {"g": intercept[0], "r": intercept[1], "i": intercept[2], "z": intercept[3]}
+            dMu_dict_err = {"g": int_err[0], "r": int_err[1], "i": int_err[2], "z": int_err[3]}
+            scale_dict = {"g": slope[0], "r": slope[1], "i": slope[2], "z": slope[3]}
+            scale_err = {"g": slope_err[0], "r": slope_err[1], "i": slope_err[2], "z": slope_err[3]}
+            #all band variability
+            flux_mod = np.zeros_like(flux)
+            err_mod = np.zeros_like(flux)
+            for color in 'griz':
+                flux_mod += ((flux-dMu_dict[color])*color_sort_ones[color_dict[color]])/scale_dict[color] + dMu_dict['r']
 
-            #New err_mod from 16 Jul 2020 email; missing scale_err
-            err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2 * scale_err[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
-        #print(err_mod)
+                #Old err_mod from zoom call
+                #err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
 
-        perform_emcee_step2(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
-        for color in var_bands:
-            flux_mod_sing = flux[color_sort_ones[color_dict[color]] != 0 ]
-            time_mod_sing = time[color_sort_ones[color_dict[color]] != 0 ]
-            err_mod_sing = err[color_sort_ones[color_dict[color]] != 0 ]
-            perform_emcee_single(time_mod_sing, flux_mod_sing, err_mod_sing**2, dMu_dict[color], scale_dict[color], ROW, mu, color)
-        print("Close extra plots")  
-        plt.close('all')
+                #New err_mod from 16 Jul 2020 email; missing scale_err
+                err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2 * scale_err[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
+            #print(err_mod)
 
-    except np.linalg.linalg.LinAlgError as err:
-        print("Linear Algebra Error")
-        continue
+            perform_emcee_step2(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
+            for color in var_bands:
+                flux_mod_sing = flux[color_sort_ones[color_dict[color]] != 0 ]
+                time_mod_sing = time[color_sort_ones[color_dict[color]] != 0 ]
+                err_mod_sing = err[color_sort_ones[color_dict[color]] != 0 ]
+                perform_emcee_single(time_mod_sing, flux_mod_sing, err_mod_sing**2, dMu_dict[color], scale_dict[color], ROW, mu, color)
+            print("Close extra plots")
+            plt.close('all')
+            toc = timer()
+            print(f"Row {ROW} ran in {toc - tic:0.4f} seconds")
+
+        except np.linalg.linalg.LinAlgError as err:
+            print("Linear Algebra Error")
+            continue
+
+    print("Successfully finished!")
+    exit()

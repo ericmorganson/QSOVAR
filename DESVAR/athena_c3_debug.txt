@@ -1,0 +1,172 @@
+3 8 normal
+Running object 3
+0.0078125
+Counts: {'g': 2, 'i': 15, 'z': 38}
+Mu: {'g': 0.29367644, 'r': 0.0, 'i': 0.586483, 'z': 0.79433155}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0.024634400949420328
+1.287554652163599
+Non-Variable source in g
+Variable??
+0
+0
+Non-Variable source in r
+Variable??
+0.035611814692062885
+1.6002570959689493
+Non-Variable source in i
+Variable??
+0.051816670337720666
+0.7970748856935551
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.03043207, 0.020039752, 0.062231813, 0.121521376]
+Not variable, closing plots & going to next row
+Running object 4
+0.0078125
+Counts: {'i': 13, 'z': 27}
+Mu: {'g': 0.0, 'r': 0.0, 'i': 0.71352047, 'z': 0.9004128}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0
+0
+Non-Variable source in r
+Variable??
+0.03650184817670348
+0.9037793946802362
+Non-Variable source in i
+Variable??
+0.04785661608214957
+0.5132469029378963
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.020845115, 0.0040044338, 0.055419818, 0.105134346]
+Not variable, closing plots & going to next row
+Running object 5
+0.0078125
+Counts: {'i': 12, 'z': 29}
+Mu: {'g': 0.0, 'r': 0.0, 'i': 0.6695671, 'z': 1.3840232}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0
+0
+Non-Variable source in r
+Variable??
+0.035390441358830786
+0.6107744070841215
+Non-Variable source in i
+Variable??
+0.04957579596025532
+0.7333140781388762
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.0, 0.0, 0.044105697, 0.116512224]
+Not variable, closing plots & going to next row
+Running object 6
+0.0078125
+Counts: {'g': 3, 'r': 1, 'i': 11, 'z': 28}
+Mu: {'g': 9.8809185, 'r': 31.93841, 'i': 56.262726, 'z': 73.664474}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0.043098891557189364
+0.2777012074989859
+Non-Variable source in g
+Variable??
+0
+0
+Non-Variable source in r
+Variable??
+0.10660514799836342
+1.2504491086261054
+Non-Variable source in i
+Variable??
+0.08390512907135841
+810.6020136849772
+Variable Source!
+Variable:    1/4
+Var Bands:   z
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.16548023, 0.0827439, 0.4537899, 0.56554204]
+Spread:      0/4
+ROW: 6 Tau: 0.00043567100829559717 V: -0.9339853178111046
+43
+ROW: 6 Tau: 8.284563592628885e-05 V: -0.8522290709460516
+28
+Close extra plots
+Row 6 ran in 28.4034 seconds
+Running object 7
+0.0078125
+Counts: {'g': 5, 'r': 5, 'i': 24, 'z': 54}
+Mu: {'g': 0.79677874, 'r': 1.3966695, 'i': 1.0716296, 'z': 1.095951}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0.032136126532591694
+3.2432399278403166
+Non-Variable source in g
+Variable??
+0.028600813145586115
+64.87256278117
+Variable Source!
+Variable??
+0.03771412318765508
+6.01740934732771
+Variable Source!
+Variable??
+0.05863067782976998
+1.9675530452745893
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.09100647, 0.1201169, 0.17895323, 0.15418978]
+Spread:      1/4
+I 0.0046012043
+ROW: 7 Tau: 1.4954092200838325 V: -0.9491707417288112
+88
+ROW: 7 Tau: 3.4442337766065627 V: -0.7747828878965085
+5
+ROW: 7 Tau: 2.5304351764356108 V: -0.8948792844041011
+24
+Close extra plots
+Row 7 ran in 49.2660 seconds
+Successfully finished!

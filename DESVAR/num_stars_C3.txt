@@ -1,0 +1,64 @@
+Running object 0
+QApplication: invalid style override passed, ignoring it.
+star_finder.py:160: RuntimeWarning: divide by zero encountered in log10
+  dim = [i for i in mu if 22.5-2.5*np.log10(mu[i])>23]
+star_finder.py:161: RuntimeWarning: divide by zero encountered in log10
+  dim_val = [22.5-2.5*np.log10(mu[i]) for i in mu if 22.5-2.5*np.log10(mu[i])>23]
+star_finder.py:162: RuntimeWarning: divide by zero encountered in log10
+  bright = [i for i in mu if 22.5-2.5*np.log10(mu[i])<16]
+star_finder.py:163: RuntimeWarning: divide by zero encountered in log10
+  bright_val = [22.5-2.5*np.log10(mu[i]) for i in mu if 22.5-2.5*np.log10(mu[i])<16]
+Running object 1000
+Running object 2000
+star_finder.py:60: RuntimeWarning: invalid value encountered in true_divide
+  normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color]
+star_finder.py:64: RuntimeWarning: invalid value encountered in true_divide
+  (lcur_flux - lc_median[color])/lc_median[color],
+star_finder.py:67: RuntimeWarning: invalid value encountered in true_divide
+  (lcur_flux - lc_median[color])/lc_median[color],
+star_finder.py:75: RuntimeWarning: invalid value encountered in true_divide
+  normed_flux = (lcur_flux - lc_median[color])/lc_median[color]
+Running object 3000
+Running object 4000
+Running object 5000
+Running object 6000
+Running object 7000
+Running object 8000
+Running object 9000
+Running object 10000
+Running object 11000
+Running object 12000
+Running object 13000
+Running object 14000
+Running object 15000
+Running object 16000
+Running object 17000
+Running object 18000
+Running object 19000
+Running object 20000
+Running object 21000
+Running object 22000
+Running object 23000
+Running object 24000
+Running object 25000
+Running object 26000
+Running object 27000
+Running object 28000
+Running object 29000
+Running object 30000
+Running object 31000
+Running object 32000
+Running object 33000
+Running object 34000
+Running object 35000
+Running object 36000
+Running object 37000
+Running object 38000
+Running object 39000
+Running object 40000
+Running object 41000
+Running object 42000
+Running object 43000
+Running object 44000
+Running object 45000
+Possible stars in fifth of C3:     890

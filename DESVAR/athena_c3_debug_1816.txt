@@ -1,0 +1,53 @@
+1816 1817 normal
+Running object 1816
+0.005859375
+Counts: {'g': 4, 'r': 21, 'i': 29, 'z': 31}
+Mu: {'g': 0.45819426, 'r': 0.36974606, 'i': 0.58225614, 'z': 0.78418463}
+No handles with labels found to put in legend.
+Variable??
+0.018620502203702927
+60.855449153485154
+Variable Source!
+Variable??
+0.02033209038426722
+187.26720508784956
+Variable Source!
+Variable??
+0.032643966617774
+64.18834435958489
+Variable Source!
+Variable??
+0.047211667110051196
+10.202287458509172
+Variable Source!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [1, 1, 0.5609127573422882, 0.27101444847840495]
+Slope Error: [0.0, 0, 0.038253375810293505, 0.02687854004948381]
+intercepts:  [0, 0, -0.22595197728805605, -0.2868234498127341]
+Int Error:   [0.0, 0, 0.07105492113921232, 0.050944140032401296]
+StDev:       [0.24296984, 0.5164956, 0.45195633, 0.30205125]
+Spread:      0/4
+ROW: 1816 Tau: 0.0004059013311469503 V: 0.13916614986740533
+ClusterEmcee2_linear_mu_all_and_single_fast.py:318: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:453: RuntimeWarning: invalid value encountered in greater
+  mag_crit = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags)
+84
+ClusterEmcee2_linear_mu_all_and_single_fast.py:438: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
+ROW: 1816 Tau: 1.4511809870030525 V: -0.23022538189479702
+4
+ROW: 1816 Tau: 1.4459846335581352 V: 0.0325984680110029
+21
+ClusterEmcee2_linear_mu_all_and_single_fast.py:641: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
+ROW: 1816 Tau: 1.682689343080315 V: -0.13038771597982868
+29
+ClusterEmcee2_linear_mu_all_and_single_fast.py:641: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
+ROW: 1816 Tau: 1.6682988242238155 V: -0.3794894930629464
+31
+Close extra plots
+Row 1816 ran in 69.3684 seconds
+Successfully finished!
