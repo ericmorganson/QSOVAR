@@ -1,0 +1,150 @@
+('537', '538', 'normal')
+Running object 537
+0.0078125
+Counts: {'i': 40, 'r': 2, 'z': 243}
+Mu: {'i': 0.25527045, 'r': 0.6896238, 'z': 0.50050485, 'g': 0.0}
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+/usr/lib/python2.7/dist-packages/scipy/optimize/minpack.py:779: OptimizeWarning: Covariance of the parameters could not be estimated
+  category=OptimizeWarning)
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.051773478470365744
+15952.431655069719
+Variable Source!
+Variable??
+0.04244471876293685
+1.7591689629615945
+Non-Variable source in i
+Variable??
+0.06037080547450735
+1.2341672783507491
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, inf]
+intercepts:  [0, 0, 0, -1.2886995133749726]
+Int Error:   [0.0, 0, 0.0, inf]
+StDev:       [0.0, 0.502392, 0.07252045, 0.103688]
+Spread:      0/4
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:926: RuntimeWarning: invalid value encountered in multiply
+  err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2 * scale_err[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:293: RuntimeWarning: invalid value encountered in double_scalars
+  lp_app = lp + lnlike_fast_linear.lnlike(theta, x, y, yerr)
+NaN value of lnprob for parameters: 
+[-0.64360895  2.99412816]
+[-0.72408264  2.35314783]
+[-0.53041341  2.1929194 ]
+[-0.47669044  2.58773858]
+[-0.63075961  2.88301821]
+[-0.73205685  2.38809748]
+[-0.13599002  2.87175627]
+[-0.57831749  3.04084378]
+[-0.9350331   3.04425466]
+[-0.38155316  2.77939217]
+[-0.1822217   2.29489852]
+[-0.68297753  2.76853341]
+[-0.57470053  3.02877034]
+[-0.46798787  3.03827307]
+[-0.81462016  2.13501385]
+[-0.36645879  2.4811646 ]
+[-0.44450356  2.37022573]
+[-0.24608584  2.92750138]
+[-0.4545365   2.26370786]
+[-0.3159732   2.59699547]
+[-0.94427138  2.99547839]
+[-0.47141918  2.44241318]
+[-1.00906231  2.10810768]
+[-0.3570936  2.5658666]
+[-0.22544007  2.26412806]
+[-0.35891978  2.4633617 ]
+[-0.28387813  2.31938757]
+[-0.28279839  2.51905646]
+[-0.60516869  2.28061118]
+[-0.3952523   2.51493266]
+[-0.64075055  2.22343581]
+[-0.25747825  2.51477386]
+[-0.57600272  2.19356929]
+[-0.02703254  2.21910945]
+[-0.20491749  3.05621097]
+[-0.3215337  2.4879191]
+[-0.74548952  2.08457174]
+[-0.36980382  2.87401153]
+[-0.60100306  2.69792615]
+[-0.2233192   2.72862017]
+[-0.180831    2.48595099]
+[-0.49606381  2.59555129]
+[-0.0874683   2.95093749]
+[-0.34317059  2.63086109]
+[-0.64524745  2.14465175]
+[-0.19955837  2.56962202]
+[-0.7446088   3.05561151]
+[-0.94088823  2.81341036]
+[-0.82775364  2.16370679]
+[-0.22675459  2.31749152]
+[-0.66380773  2.18003504]
+[-0.52956571  2.5170803 ]
+[-0.80136831  2.85232691]
+[-0.36179993  2.40086875]
+[-0.484016    2.81900466]
+[-0.46161487  2.9402155 ]
+[-0.77671797  2.46148437]
+[-0.15099471  2.54918071]
+[-0.07491877  2.46762451]
+[-0.58833654  3.01167372]
+[-0.85164354  2.31592599]
+[-0.73537618  2.59692519]
+[-0.69474443  2.68739045]
+[-0.30450864  3.00616524]
+[-0.30202769  2.78112206]
+[-0.58242034  2.14941924]
+[-0.10373152  2.8859345 ]
+[-0.87635997  2.48543243]
+[-0.02356375  2.4606717 ]
+[-0.9842111   3.04562735]
+[-0.86117248  2.20297961]
+[-0.34260596  2.28747206]
+[-0.57755741  2.16109701]
+[-0.70896194  2.71439042]
+[-0.03679639  2.89082055]
+[-0.68701976  3.00233589]
+[-0.35940259  3.04016758]
+[-0.26957116  2.89998698]
+[-0.09577193  2.87855574]
+[-0.44657962  2.45994292]
+[-1.00031599  2.3925514 ]
+[-0.52807026  2.53956172]
+[-0.72372962  2.83516295]
+[-0.55077669  2.90359328]
+[-0.24574723  2.75780069]
+[-0.75861178  2.45194574]
+[-0.69563287  2.56351821]
+[-0.03108281  2.22415006]
+[-0.89901124  2.13808711]
+[-0.50998787  2.94610571]
+[-0.05053042  2.96151378]
+[-0.308716   2.5955862]
+[-0.22984566  2.75160512]
+[-0.83123366  2.9035326 ]
+[-0.82879556  2.86782257]
+[-0.63498107  2.44621096]
+[-0.19746009  2.55427449]
+[-0.611966    2.57551447]
+[-0.93913641  2.16951674]
+[-0.45750156  2.25389664]
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_all_and_single_fast_deep.py", line 929, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
+  File "ClusterEmcee2_linear_mu_all_and_single_fast_deep.py", line 682, in perform_emcee_step2
+    sampler.run_mcmc(pos, 200)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/emcee/sampler.py", line 172, in run_mcmc
+    **kwargs):
+  File "/home/thrush2/.local/lib/python2.7/site-packages/emcee/ensemble.py", line 198, in sample
+    lnprob, blobs = self._get_lnprob(p)
+  File "/home/thrush2/.local/lib/python2.7/site-packages/emcee/ensemble.py", line 408, in _get_lnprob
+    raise ValueError("lnprob returned NaN.")
+ValueError: lnprob returned NaN.

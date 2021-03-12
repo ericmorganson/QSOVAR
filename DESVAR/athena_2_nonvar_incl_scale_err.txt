@@ -1,5 +1,0 @@
-0 20 normal
-Traceback (most recent call last):
-  File "ClusterEmcee2_linear_mu_all_single_fast.py", line 154, in <module>
-    sausageplot_step2(max_theta[0], time, flux, max_theta[1], 5, err_2, dMu, scale, ROW, fig, color)
-NameError: name 'sausageplot_step2' is not defined

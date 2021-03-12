@@ -37,8 +37,8 @@ if not os.path.exists(file_path):
     os.makedirs(file_path)
 
 plotting = True
-next_row_bool = False #skips already completed rows
-run_cluster = True
+next_row_bool = True #skips already completed rows if True
+run_cluster = False
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -935,7 +935,8 @@ if __name__ == "__main__":
             print("Close extra plots")
             plt.close('all')
             toc = timer()
-            print(f"Row {ROW} ran in {toc - tic:0.4f} seconds")
+            elapsed_time = round(toc-tic, 4) 
+            print("Row "+ str(ROW) + " ran in "+ str(elapsed_time) + " seconds")
 
         except np.linalg.linalg.LinAlgError as err:
             print("Linear Algebra Error")
