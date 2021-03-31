@@ -1,0 +1,249 @@
+('994', '2400', 'normal')
+Running object 994
+0.00390625
+Counts: {'i': 88, 'r': 68, 'z': 77, 'g': 8}
+Mu: {'i': 0.25951803, 'r': 0.15260679, 'z': 0.41408405, 'g': 0.16101629}
+/usr/local/lib/python2.7/dist-packages/matplotlib/axes/_axes.py:545: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+  warnings.warn("No labelled objects found. "
+Variable??
+0.03908794614980675
+6.4847890722442205
+Variable Source!
+Variable??
+0.0255596115086883
+1.7353857322232575
+Non-Variable source in r
+Variable??
+0.03999224610027786
+1.3426456352075142
+Non-Variable source in i
+Variable??
+0.08035740035193521
+1.5530614808044274
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.15008947368124656, 0.1345619219002881]
+intercepts:  [0, 0, -0.008382229171521205, -0.040677207433264494]
+Int Error:   [0.0, 0, 0.039092251369936715, 0.04700358184174812]
+StDev:       [0.21789958, 0.04996564, 0.05543015, 0.11122153]
+Spread:      0/4
+('ROW:', 994, 'Tau:', '0.8613288813500225', 'V:', '-0.9117456092332675')
+241
+('ROW:', 994, 'Tau:', '0.899374113374311', 'V:', '0.07873030171791412')
+8
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:643: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
+Close extra plots
+Row 994 ran in 101.2455 seconds
+Running object 995
+0.00390625
+Counts: {'i': 103, 'r': 71, 'z': 34, 'g': 5}
+Mu: {'i': 0.255274, 'r': 0.1552637, 'z': 0.3900056, 'g': 0.15551127}
+Variable??
+0.03494451393510849
+3.1369971069315405
+Non-Variable source in g
+Variable??
+0.02535896059104503
+2.2225065213090183
+Non-Variable source in r
+Variable??
+0.04183398813668087
+1.8324563153748732
+Non-Variable source in i
+Variable??
+0.08309919399919487
+0.6427463082707362
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.19496409541105297, 1]
+Slope Error: [1.1732109289582053, 0, 0.06450497569604449, 0.2823164588786302]
+intercepts:  [-0.14247708517120872, 0, -0.020522821265442026, 0.02931127125491173]
+Int Error:   [0.18025714926605765, 0, 0.036154924387551246, 0.052755435610557004]
+StDev:       [0.072920784, 0.060795475, 0.06899777, 0.08906803]
+Not variable, closing plots & going to next row
+Running object 996
+0.00390625
+Counts: {'i': 187, 'r': 161, 'z': 213, 'g': 97}
+Mu: {'i': 1.7539344, 'r': 1.058188, 'z': 2.2397132, 'g': 0.32472268}
+Variable??
+0.025314589283494483
+0.680807946522202
+Non-Variable source in g
+Variable??
+0.02628952661253529
+0.6332700573582045
+Non-Variable source in r
+Variable??
+0.03356756469820021
+0.47274354134854624
+Non-Variable source in i
+Variable??
+0.04024734279621063
+0.3305587787941291
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.7609523989427913, 0, 0.056357402093410384, 0.0683133428120616]
+intercepts:  [0.06419018828402565, 0, -0.0006053610393118551, -0.0016595002687808953]
+Int Error:   [0.026419615120836064, 0, 0.002615379998243928, 0.003162192714038513]
+StDev:       [0.05921052, 0.06765002, 0.080811255, 0.12703978]
+Not variable, closing plots & going to next row
+Running object 997
+0.00390625
+Counts: {'i': 74, 'r': 117, 'z': 17, 'g': 63}
+Mu: {'i': 0.25052455, 'r': 0.20701145, 'z': 0.42162237, 'g': 0.18074717}
+Variable??
+0.02390207182698036
+0.9768282209271666
+Non-Variable source in g
+Variable??
+0.022944710132055793
+1.4570483480564387
+Non-Variable source in r
+Variable??
+0.03781896994192272
+1.608849533638067
+Non-Variable source in i
+Variable??
+0.07995249396242246
+2.2281362109184233
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.7350523253934458, 1]
+Slope Error: [0.2548211101739976, 0, 0.2539639973393687, 1.154297613171423]
+intercepts:  [0.06052708183058264, 0, -0.005852818377505377, -0.03507504728694563]
+Int Error:   [0.030304059110580085, 0, 0.028526359331448422, 0.07573173849569671]
+StDev:       [0.07041603, 0.07005674, 0.059310015, 0.09949292]
+Not variable, closing plots & going to next row
+Running object 998
+0.00390625
+Counts: {'i': 190, 'r': 159, 'z': 219, 'g': 107}
+Mu: {'i': 0.643252, 'r': 0.46569344, 'z': 0.9848309, 'g': 0.34840074}
+Variable??
+0.022511007414457402
+1.4034736671723789
+Non-Variable source in g
+Variable??
+0.024339721265767052
+2.526417632579731
+Non-Variable source in r
+Variable??
+0.03243151089913849
+1.9217909937207083
+Non-Variable source in i
+Variable??
+0.03961996035555648
+1.5237868696929084
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.7652296098038154, 1, 0.2098776021059423, 0.25757841681109817]
+Slope Error: [0.21298504902419513, 0, 0.06691138550596483, 0.05890055412031341]
+intercepts:  [0.06417512774504253, 0, 0.0030318986613037113, 0.03342728725072264]
+Int Error:   [0.02693745519236871, 0, 0.011788355416613357, 0.011242326640111091]
+StDev:       [0.06849668, 0.08065052, 0.0994764, 0.16413714]
+Not variable, closing plots & going to next row
+Running object 999
+0.00390625
+Counts: {'i': 188, 'r': 137, 'z': 234, 'g': 31}
+Mu: {'i': 0.6119717, 'r': 0.38864148, 'z': 0.80173326, 'g': 0.18726626}
+Variable??
+0.029494403022083105
+0.6310522212658084
+Non-Variable source in g
+Variable??
+0.025507792998394514
+0.6643401716927949
+Non-Variable source in r
+Variable??
+0.0351177267973629
+0.5043726396710888
+Non-Variable source in i
+Variable??
+0.04537580903045402
+0.5206524872721546
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.14512525914175622, 1]
+Slope Error: [0.6253842764838536, 0, 0.044585264369454085, 0.0731581203022283]
+intercepts:  [0.04151970180787945, 0, 0.0003336627303093975, 0.033007947861995075]
+Int Error:   [0.0330972787811453, 0, 0.006161312154925725, 0.009559643804584841]
+StDev:       [0.03543023, 0.051501036, 0.06834488, 0.12494526]
+Not variable, closing plots & going to next row
+Running object 1000
+0.005859375
+Counts: {'i': 36, 'r': 52, 'z': 16, 'g': 25}
+Mu: {'i': 0.25153872, 'r': 0.18874192, 'z': 0.4123673, 'g': 0.1966359}
+Variable??
+0.037676142528653145
+2.336069283964268
+Non-Variable source in g
+Variable??
+0.02762141773718445
+1.7319421131813688
+Non-Variable source in r
+Variable??
+0.04172674007713795
+1.3185535639093036
+Non-Variable source in i
+Variable??
+0.08629739284515381
+0.895308657478493
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.5529424294383167]
+Slope Error: [0.26081791123171544, 0, 0.237804943319369, 0.10845948549864701]
+intercepts:  [-0.12576160458707397, 0, -0.03869444069386174, -0.13074495901263306]
+Int Error:   [0.05198627811796829, 0, 0.04387289927803588, 0.05569657942886276]
+StDev:       [0.21394652, 0.09622403, 0.07025213, 0.100768894]
+Not variable, closing plots & going to next row
+Running object 1001
+0.005859375
+Counts: {'i': 183, 'r': 133, 'z': 252, 'g': 3}
+Mu: {'i': 0.45354837, 'r': 0.2744062, 'z': 0.64082664, 'g': 0.26562974}
+Variable??
+0.053947114451103714
+20.232321554102903
+Variable Source!
+Variable??
+0.025337122858722146
+1.0992157729165746
+Non-Variable source in r
+Variable??
+0.03589320946574969
+0.828716429462957
+Non-Variable source in i
+Variable??
+0.05179744994303719
+0.588127658088032
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1, 1, 0.18126438445386805, 1]
+Slope Error: [0.0, 0, 0.050403723060959006, 0.05264529226233613]
+intercepts:  [0, 0, -0.011910914937331239, 0.026226829618085003]
+Int Error:   [0.0, 0, 0.012073863067274093, 0.011937751197602164]
+StDev:       [0.25469387, 0.058937214, 0.06835791, 0.0961793]
+Spread:      0/4
+('ROW:', 1001, 'Tau:', '3.9910561121733723', 'V:', '-1.5681730955938247')
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:320: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:455: RuntimeWarning: invalid value encountered in greater
+  mag_crit = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags)
+563
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:409: RuntimeWarning: divide by zero encountered in log
+  logP = -.5*np.log((deter))-.5*((np.dot(delf1, (np.dot((delf1), np.linalg.inv(S))))))
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:410: RuntimeWarning: divide by zero encountered in log
+  logP1 = -.5*np.log((deter))-.5*((np.dot(delf2, (np.dot((delf2), np.linalg.inv(S))))))
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:411: RuntimeWarning: divide by zero encountered in log
+  logP2 = -.5*np.log((deter))-.5*((np.dot(delf3, (np.dot((delf3), np.linalg.inv(S))))))
+/home/thrush2/.local/lib/python2.7/site-packages/numpy/core/_methods.py:29: RuntimeWarning: invalid value encountered in reduce
+  return umr_minimum(a, axis, None, out, keepdims)

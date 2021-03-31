@@ -16,8 +16,8 @@ def get_vals(args, ROW):
     flux_norm = np.array([])
     err_norm = np.array([])
     array_org = np.array([])
-    fig = plt.figure(figsize=(12, 6))
-    ax5 = fig.add_subplot(111)
+    #fig = plt.figure(figsize=(12, 6))
+    #ax5 = fig.add_subplot(111)
     color_plt = iter(cm.rainbow(np.linspace(0, 1, 5)))
     #a_b_list = read_a_b_chi2()
     #print(a_b_list)
@@ -60,18 +60,18 @@ def get_vals(args, ROW):
         normed_err = flux_err_corr/lc_median[color] #lc_flux_err/lc_median[color]
         #print("AB CORR ERR "+color)
         #print(flux_err_corr)
-        ax5.scatter(lcur_time,
-                    (lcur_flux - lc_median[color])/lc_median[color],
-                    label=color, c=np.array([col]))
-        ax5.errorbar(lcur_time,
-                    (lcur_flux - lc_median[color])/lc_median[color],
-                    yerr=normed_err, ecolor=np.array(col),
-                    linestyle="None")
+        #ax5.scatter(lcur_time,
+        #            (lcur_flux - lc_median[color])/lc_median[color],
+        #            label=color, c=np.array([col]))
+        #ax5.errorbar(lcur_time,
+        #            (lcur_flux - lc_median[color])/lc_median[color],
+        #            yerr=normed_err, ecolor=np.array(col),
+        #            linestyle="None")
 
-        ax5.legend()
-        ax5.set_title("Pre-correction light curve: Row "+ str(ROW))
-        ax5.set_ylabel("Median-corrected Flux")
-        ax5.set_xlabel("time [MJD]")
+        #ax5.legend()
+        #ax5.set_title("Pre-correction light curve: Row "+ str(ROW))
+        #ax5.set_ylabel("Median-corrected Flux")
+        #ax5.set_xlabel("time [MJD]")
         normed_flux = (lcur_flux - lc_median[color])/lc_median[color]
 
         time = np.append(time, lcur_time)  # remove the zeros
@@ -113,10 +113,10 @@ def get_a_b_chi2(fit, color, a_b_vals):
 
 if __name__ == "__main__":
   #VARIABILITY CHI2 & STD SCATTER PLOTS
-  with fits.open('../../C3_lc.fits') as hdul:
+  with fits.open('../X3_lc.fits') as hdul:
       max_rows = hdul[1].data.shape[0]
 
-  Fits_file = r'../../C3_lc.fits'
+  Fits_file = r'../X3_lc.fits'
   var_strict = 3
   var_chi = []
   var_std = []
@@ -125,17 +125,17 @@ if __name__ == "__main__":
   goodrownum = 0
   a_b_list = read_a_b_chi2()
 
-  for ROW in range(0, int(max_rows/5)):
-      if ROW%1000 == 0:
-          print("Running object "+str(ROW))
+  for ROW in range(0, int(max_rows)):
+      #if ROW%1000 == 0:
+      #    print("Running object "+str(ROW))
       #fig = plt.figure(figsize=(10, 10))
       flux, err, time, mu, color_sort, FITS = get_vals(Fits_file, ROW)
-      plt.close("all")
+      #plt.close("all")
       #print(min(np.array(time[1:]) - np.array(time[:-1])))
 
       # DOESN'T MAKE SENSE TO LOOK AT ROWS WITH NO FLUX MEASUREMENTS
       if len(flux) == 0:
-          print("Flux length is zero")
+          #print("Flux length is zero")
           continue
       if len(flux) < 750:
           #print("Too sparse :"+ str(len(flux)))
@@ -176,6 +176,6 @@ if __name__ == "__main__":
           #print("Too spread out in band: "+str(spread)+str(ROW))
           continue
       goodrownum +=1
-      #print(str(ROW)+ " is good")
-  print("Possible stars in fifth of C3:     " + str(goodrownum))
+      print(str(ROW))
+  print("Possible stars in all of X3:     " + str(goodrownum))
   exit()

@@ -1,0 +1,36 @@
+('2598', '4800', 'normal')
+Running object 2598
+0.001953125
+Counts: {'i': 117, 'r': 76, 'z': 102, 'g': 34}
+Mu: {'i': 0.22398819, 'r': 0.13353807, 'z': 0.3550771, 'g': 0.12692678}
+Variable??
+0.022287003241053233
+3.138245514833379
+Variable Source!
+Variable??
+0.021151335062741996
+1.4249639493818396
+Non-Variable source in r
+Variable??
+0.032934062963538395
+1.6049250411163947
+Non-Variable source in i
+Variable??
+0.06796444348968211
+1.9974465953352953
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [0.7109255739996989, 1, 0.15734330017413645, 1]
+Slope Error: [0.3984206404951959, 0, 0.07685164169692994, 0.14140946577966781]
+intercepts:  [-0.014886184857759277, 0, -0.04988306217868632, -0.04017102031162323]
+Int Error:   [0.07652700291874963, 0, 0.0255922630029705, 0.03270439358054048]
+StDev:       [0.10490555, 0.060864177, 0.05280992, 0.112594455]
+Spread:      1/4
+('G', 0.017607292)
+('ROW:', 2598, 'Tau:', '0.8107071097674764', 'V:', '-0.879405381069239')
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:320: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:455: RuntimeWarning: invalid value encountered in greater
+  mag_crit = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags)
+319

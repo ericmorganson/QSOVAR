@@ -1,0 +1,130 @@
+('4800', '7200', 'normal')
+Running object 4800
+0.00390625
+Counts: {'i': 18, 'r': 66, 'z': 7, 'g': 44}
+Mu: {'i': 0.21271865, 'r': 0.16471869, 'z': 0.36907086, 'g': 0.16534284}
+Variable??
+0.026272609735573223
+0.9124755499135575
+Non-Variable source in g
+Variable??
+0.02286540976551536
+1.627053208014343
+Non-Variable source in r
+Variable??
+0.03922561883046758
+1.3203728090003293
+Non-Variable source in i
+Variable??
+0.07167593109994574
+1.5802471302590326
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.09334359324745849, 0, 0.25210688132210396, 0.6645680031234265]
+intercepts:  [-0.021138883513072804, 0, 0.06326390178716446, -0.10814858313806748]
+Int Error:   [0.03297151057468892, 0, 0.10182258619287214, 0.06437543184529307]
+StDev:       [0.05993514, 0.049950432, 0.09276829, 0.08048006]
+Not variable, closing plots & going to next row
+Running object 4801
+0.00390625
+Counts: {'i': 63, 'r': 96, 'z': 51, 'g': 46}
+Mu: {'i': 0.247454, 'r': 0.16399762, 'z': 0.36428785, 'g': 0.15723635}
+Variable??
+0.02702473515933657
+0.9885720760031249
+Non-Variable source in g
+Variable??
+0.02415400971863523
+1.6290218481149497
+Non-Variable source in r
+Variable??
+0.04154975799756924
+1.649868034057496
+Non-Variable source in i
+Variable??
+0.08073426526556825
+2.5228279998618715
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.5362403579788663, 1]
+Slope Error: [0.14015863362776873, 0, 0.1054278686193295, 0.15303423042065473]
+intercepts:  [0.005919735129787214, 0, -0.06871131728077653, -0.04318185313164053]
+Int Error:   [0.03953167329156928, 0, 0.034460439980430975, 0.04259526180760255]
+StDev:       [0.03302911, 0.053558577, 0.06451898, 0.13377194]
+Not variable, closing plots & going to next row
+Running object 4802
+0.00390625
+Counts: {'i': 193, 'r': 157, 'z': 213, 'g': 101}
+Mu: {'i': 0.8286747, 'r': 0.42161408, 'z': 1.0825636, 'g': 0.28247976}
+Variable??
+0.022217680750084717
+1.816882896782181
+Non-Variable source in g
+Variable??
+0.023620836713373394
+4.694598417839298
+Variable Source!
+Variable??
+0.03141054073831364
+7.271512057487366
+Variable Source!
+Variable??
+0.037413062126084896
+4.2489247631444105
+Variable Source!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [0.7908296911315438, 1, 0.38648054575740054, 0.35819629766422734]
+Slope Error: [0.17401390350908766, 0, 0.06468155006392205, 0.06818286607152685]
+intercepts:  [0.04882355938734384, 0, -0.014906619647050645, 0.016548254363294088]
+Int Error:   [0.03355327405812537, 0, 0.01372897487431543, 0.015331741987017394]
+StDev:       [0.10030775, 0.09186382, 0.16496517, 0.23244648]
+Spread:      4/4
+('G', 0.023262387)
+('R', 0.020182129)
+('I', 0.018568814)
+('Z', 0.026751487)
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.023262387
+0.020182129
+0.018568814
+0.026751487
+Continuing to next row
+Running object 4803
+0.00390625
+Counts: {'i': 70, 'r': 65, 'z': 124, 'g': 120}
+Mu: {'i': 326.58963, 'r': 279.97797, 'z': 349.98123, 'g': 166.72244}
+Variable??
+0.22653920343746653
+1351.9297504420879
+Variable Source!
+Variable??
+0.37710779763126917
+3912.829894698968
+Variable Source!
+Variable??
+0.4211104869328967
+1.7289287820377113
+Non-Variable source in i
+Variable??
+0.25829556201730275
+434.29915504814755
+Variable Source!
+Variable:    3/4
+Var Bands:   grz
+Slope:       [-0.021871087379103926, 1, 1, -0.008172898756538372]
+Slope Error: [0.09640560046651256, 0, 0.0051564052576343064, 0.046487522461173686]
+intercepts:  [-0.009319137240046516, 0, 0.0007631328035811396, -0.0062543979915315965]
+Int Error:   [0.009661631264717975, 0, 0.0006653107863438898, 0.004361700130061172]
+StDev:       [0.9183254, 5.110936, 0.93139565, 0.9254704]
+Spread:      0/4
+WARNING:root:Too few points to create valid contours
+('ROW:', 4803, 'Tau:', '4.612406516998511e-05', 'V:', '-0.3279274790349923')
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:320: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast_deep.py:455: RuntimeWarning: invalid value encountered in greater
+  mag_crit = (mags > 0) & (mags != 22.5) & (mags != np.inf) & ~np.isnan(mags)
+364
