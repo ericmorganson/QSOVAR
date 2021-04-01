@@ -1,0 +1,51 @@
+Running cluster for deep fits
+7 8 normal
+Running object 7
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 5, 'r': 5, 'i': 19, 'z': 31}
+Mu: {'g': 0.79677874, 'r': 1.3966695, 'i': 1.0716296, 'z': 1.095951}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0.032136126532591694
+3.2432399278403166
+Non-Variable source in g
+Variable??
+0.028600813145586115
+64.87256278117
+Variable Source in r!!
+Variable??
+0.033556387040111824
+6.085848498024496
+Variable Source in i!!
+Variable??
+0.04442310206999129
+1.749562733706906
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.09100647, 0.1201169, 0.17895323, 0.15418978]
+Spread:      1/4
+Spread values: 
+I 0.0046012043
+ROW: 7all Tau: 1.413577058148486 V: -0.9408264659037511
+Number of mags :60
+ROW: 7r Tau: 3.447777127429256 V: -0.7698294016551694
+Good Row mags:5
+ROW: 7i Tau: 2.562238073977106 V: -0.8880628229235756
+Good Row mags:19
+Close extra plots
+Row 7 ran in 34.7249 seconds
+Successfully finished!

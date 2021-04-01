@@ -1,0 +1,49 @@
+Running cluster for deep fits
+537 538 normal
+Running object 537
+Min gap is: 380.92578
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+0.01171875
+Counts: {'r': 2, 'i': 36, 'z': 157}
+Mu: {'g': 0.0, 'r': 0.6896238, 'i': 0.25527045, 'z': 0.50050485}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.051773478470365744
+15952.431655069719
+Variable Source!
+Variable??
+0.04026659578084946
+1.7074220177587744
+Non-Variable source in i
+Variable??
+0.04852590679348577
+1.0295857164426745
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.0, 0.502392, 0.07252045, 0.103688]
+Spread:      0/4
+ROW: 537 Tau: 0.06390868646207595 V: -0.7669755626821287
+195
+ClusterEmcee2_linear_mu_all_and_single_fast.py:723: RuntimeWarning: divide by zero encountered in log10
+  mu_list = [22.5-2.5*np.log10(mu[i]) for i in mu]
+ROW: 537 Tau: 2.3193746563527564 V: -0.156181101127311
+2
+ClusterEmcee2_linear_mu_all_and_single_fast.py:655: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
+Close extra plots
+Row 537 ran in 78.5327 seconds
+Successfully finished!

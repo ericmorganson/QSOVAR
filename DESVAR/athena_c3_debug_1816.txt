@@ -1,0 +1,5 @@
+Running cluster for deep fits
+1816 1817 normal
+Running object 1816
+Already analyzed 1816 in C3
+Successfully finished!
