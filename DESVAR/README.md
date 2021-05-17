@@ -5,6 +5,7 @@ Requiremenats:
 astropy
 numpy
 emcee
+corner
 
 Weep all ye who enter here.
 
@@ -23,3 +24,6 @@ python -u ClusterEmcee2_linear_mu_all_and_single_fast.py ../X1_lc.fits 0 500 nor
 The skeleton for running this is:
 
 python -u ClusterEmcee2_linear_mu_all_and_single_fast.py fits_file start_row end_row+1 file_name_you_want_to_give figure_dir/ > output_for_debugging.txt 2>&1 &
+
+Or for running on Campus Cluster (modify campus_cluster_newloop_all_andsing_linear_c2.sh as needed): 
+sbatch --time=1:00:00 --nodes=2 --ntasks=32 --partition=caps ./campus_cluster_newloop_allandsing_linear_c2.sh
