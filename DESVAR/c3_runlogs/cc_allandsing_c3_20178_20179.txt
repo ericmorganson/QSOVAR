@@ -1,0 +1,56 @@
+Running cluster for deep fits
+20178 20179 normal
+Running object 20178
+Min gap is: 0.0078125
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 3, 'i': 59, 'z': 167}
+Mu: {'g': 0.0, 'r': 0.27837452, 'i': 0.20367718, 'z': 0.41154414}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+/usr/local/python/3.7.0/lib/python3.7/site-packages/scipy/optimize/minpack.py:794: OptimizeWarning: Covariance of the parameters could not be estimated
+  category=OptimizeWarning)
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.03320133830128278
+207.50953170591066
+Variable Source in r!!
+Variable??
+0.03255401301860546
+2.6709652491826184
+Non-Variable source in i
+Variable??
+0.04792397189101356
+2.4341731439008942
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, inf]
+intercepts:  [0, 0, 0, -71.64515670575729]
+Int Error:   [0.0, 0, 0.0, inf]
+StDev:       [0.0, 0.10839849, 0.09036038, 0.09639662]
+Spread:      0/4
+Spread values: 
+ClusterEmcee2_linear_mu_all_and_single_fast.py:855: RuntimeWarning: invalid value encountered in multiply
+  err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2 * scale_err[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
+ClusterEmcee2_linear_mu_all_and_single_fast.py:220: RuntimeWarning: invalid value encountered in double_scalars
+  lp_app = lp + lnlike_fast_linear.lnlike(theta, x, y, yerr)
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 858, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 609, in perform_emcee_step2
+    sampler.run_mcmc(pos, 200)
+  File "/home/thrush2/scratch/mypython3/emcee/ensemble.py", line 384, in run_mcmc
+    for results in self.sample(initial_state, iterations=nsteps, **kwargs):
+  File "/home/thrush2/scratch/mypython3/emcee/ensemble.py", line 285, in sample
+    state.log_prob, state.blobs = self.compute_log_prob(state.coords)
+  File "/home/thrush2/scratch/mypython3/emcee/ensemble.py", line 456, in compute_log_prob
+    raise ValueError("Probability function returned NaN")
+ValueError: Probability function returned NaN
+srun: error: ccc0240: task 0: Exited with exit code 1

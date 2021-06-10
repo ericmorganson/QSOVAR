@@ -1,0 +1,1692 @@
+Running cluster for deep fits
+216288 218400 normal
+Running object 216288
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 104, 'i': 124, 'z': 119}
+Mu: {'g': 0.0, 'r': 0.17035797, 'i': 0.26887968, 'z': 0.38077617}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.01717268347170074
+1.3866656395249133
+Non-Variable source in r
+Variable??
+0.0250979383563126
+0.9442279702458738
+Non-Variable source in i
+Variable??
+0.05566549147492385
+1.7592080158934031
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.18332630327342447, 1]
+Slope Error: [0.0, 0, 0.054497806382131364, 0.0930696127632922]
+intercepts:  [0, 0, 0.012862459841818441, 0.023754267398251247]
+Int Error:   [0.0, 0, 0.019930255513991846, 0.03111467815557774]
+StDev:       [0.13752453, 0.048141606, 0.053498063, 0.09250575]
+Not variable, closing plots & going to next row
+Running object 216289
+Min gap is: 0.0
+New time_gap is :0.004
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 111, 'r': 141, 'i': 150, 'z': 171}
+Mu: {'g': 0.26169378, 'r': 0.31010422, 'i': 0.39424857, 'z': 0.5501388}
+Variable??
+0.021606477185108167
+1.3150175946061848
+Non-Variable source in g
+Variable??
+0.02177547809104343
+1.133074326888695
+Non-Variable source in r
+Variable??
+0.024538636146286767
+0.4890721078919679
+Non-Variable source in i
+Variable??
+0.03447396711908057
+0.6973286888907064
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.20676809652066575, 0.22252211464818816]
+Slope Error: [0.3708776348191903, 0, 0.08459647789626215, 0.07312712571784788]
+intercepts:  [0.11897290225300405, 0, 0.042882093283818645, 0.04502905382457234]
+Int Error:   [0.0538613276650071, 0, 0.01744417937587511, 0.016551985412261824]
+StDev:       [0.08580567, 0.0573396, 0.06741924, 0.10056357]
+Not variable, closing plots & going to next row
+Running object 216290
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 37, 'r': 73, 'i': 125, 'z': 149}
+Mu: {'g': 0.1488531, 'r': 0.15421924, 'i': 0.27795252, 'z': 0.4232547}
+Variable??
+0.024718481588452787
+1.9765885193601394
+Non-Variable source in g
+Variable??
+0.01792639132367435
+1.9270999786980678
+Non-Variable source in r
+Variable??
+0.02682469785532887
+0.9029514597118021
+Non-Variable source in i
+Variable??
+0.050838897922702964
+1.6827329620273477
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3092085254943825, 1]
+Slope Error: [0.37501595365351403, 0, 0.09669790273946538, 0.16191814583188002]
+intercepts:  [0.0994771520182971, 0, 0.019990412284315463, 0.060918812025195446]
+Int Error:   [0.08062266361581415, 0, 0.03244341407906009, 0.05865449562464573]
+StDev:       [0.041167483, 0.04455841, 0.08199292, 0.11852609]
+Not variable, closing plots & going to next row
+Running object 216291
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 6, 'r': 59, 'i': 80, 'z': 174}
+Mu: {'g': 0.1482915, 'r': 0.13094886, 'i': 0.22259523, 'z': 0.42482698}
+No handles with labels found to put in legend.
+Variable??
+0.03702873305909564
+2.073221519413092
+Non-Variable source in g
+Variable??
+0.020233322079284296
+1.6591313925857514
+Non-Variable source in r
+Variable??
+0.030633787702474467
+1.9500030506112702
+Non-Variable source in i
+Variable??
+0.05053369515318164
+2.111568788990481
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.30180775642869984]
+Slope Error: [0.0, 0, 0.1445116274117903, 0.10063170432429934]
+intercepts:  [0, 0, -0.03211911224074515, 0.0018407604880497086]
+Int Error:   [0.0, 0, 0.04453296238810075, 0.035831755079822884]
+StDev:       [0.12731218, 0.035940584, 0.08429746, 0.099401385]
+Not variable, closing plots & going to next row
+Running object 216292
+Min gap is: 0.0
+New time_gap is :0.004
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 134, 'r': 139, 'i': 147, 'z': 231}
+Mu: {'g': 0.89811957, 'r': 1.4967916, 'i': 1.7615162, 'z': 1.8225911}
+Variable??
+0.021457511996315504
+1.7120130762528998
+Non-Variable source in g
+Variable??
+0.01827035228345223
+5.871785211432425
+Variable Source in r!!
+Variable??
+0.02246882796909285
+3.411578949877728
+Variable Source in i!!
+Variable??
+0.03471793029375338
+1.291830501332071
+Non-Variable source in z
+Variable:    2/4
+Var Bands:   ri
+Slope:       [0.430154430713395, 1, 0.46991077310647134, 0.35545547634210517]
+Slope Error: [0.19522543198393075, 0, 0.07664912891457919, 0.09780961414793264]
+intercepts:  [0.009264701191744757, 0, -0.0007183921500606427, 0.009426616869415372]
+Int Error:   [0.01054000496323482, 0, 0.004774881243807722, 0.005340278372251989]
+StDev:       [0.08885269, 0.0895855, 0.12696983, 0.17187937]
+Spread:      4/4
+Spread values: 
+G 0.006559757
+R 0.0081215445
+I 0.00886041
+Z 0.0061164335
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.006559757
+0.0081215445
+0.00886041
+0.0061164335
+Continuing to next row
+Running object 216293
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 136, 'r': 141, 'i': 147, 'z': 238}
+Mu: {'g': 1.1783946, 'r': 1.3877897, 'i': 1.684987, 'z': 2.1166728}
+Variable??
+0.024440951550286194
+0.7315740481784658
+Non-Variable source in g
+Variable??
+0.01974462527932745
+3.4546529761631213
+Variable Source in r!!
+Variable??
+0.02408243955664403
+2.2978529369625313
+Non-Variable source in i
+Variable??
+0.03679242546428488
+1.594515201941905
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [0.3551057993326172, 1, 0.6134271251362763, 1]
+Slope Error: [0.1284074616482233, 0, 0.0757129416804859, 0.05483615755958811]
+intercepts:  [0.009019823753131373, 0, -0.006218185312520437, 0.004610898226575344]
+Int Error:   [0.007159495888017886, 0, 0.004081416880835444, 0.004873738491549385]
+StDev:       [0.10002639, 0.08064571, 0.10176372, 0.16876292]
+Spread:      4/4
+Spread values: 
+G 0.0038080066
+R 0.005318619
+I 0.008055414
+Z 0.007830394
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.0038080066
+0.005318619
+0.008055414
+0.007830394
+Continuing to next row
+Running object 216294
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 87, 'r': 128, 'i': 148, 'z': 143}
+Mu: {'g': 0.21278968, 'r': 0.36915597, 'i': 0.66608715, 'z': 1.1187655}
+Variable??
+0.02104781132118041
+0.8582496983577397
+Non-Variable source in g
+Variable??
+0.017980900563049185
+1.3980290928343386
+Non-Variable source in r
+Variable??
+0.023729136451660904
+1.4596230046010183
+Non-Variable source in i
+Variable??
+0.02836612927004906
+1.1107215994179689
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.5048811840036584, 0.2986091725824026]
+Slope Error: [0.3434486814874882, 0, 0.106238425811781, 0.07126739385502534]
+intercepts:  [0.09307454653870534, 0, 0.022626920727138455, 0.004513627354402674]
+Int Error:   [0.037419603375882154, 0, 0.012852124414232401, 0.008756704840644001]
+StDev:       [0.048414476, 0.05162016, 0.094526194, 0.15005994]
+Not variable, closing plots & going to next row
+Running object 216295
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 60, 'r': 115, 'i': 115, 'z': 38}
+Mu: {'g': 0.18261187, 'r': 0.23686928, 'i': 0.27555603, 'z': 0.36458245}
+Variable??
+0.02230341036372999
+1.0767734578843842
+Non-Variable source in g
+Variable??
+0.017602491406452987
+1.2908667002769418
+Non-Variable source in r
+Variable??
+0.027222351074906243
+1.3755357066768
+Non-Variable source in i
+Variable??
+0.062297361963058774
+1.4659668260129934
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.6964313204515007, 1]
+Slope Error: [0.18213498145121582, 0, 0.11648702275433036, 0.3941982742795329]
+intercepts:  [0.02020205610720227, 0, 0.05944817177481154, 0.10260109914584548]
+Int Error:   [0.038415071981985585, 0, 0.02197351772421394, 0.06511207396010592]
+StDev:       [0.037510216, 0.04873309, 0.06483134, 0.12367558]
+Not variable, closing plots & going to next row
+Running object 216296
+Min gap is: 0.0
+New time_gap is :0.004
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 79, 'r': 177, 'i': 153, 'z': 157}
+Mu: {'g': 0.17932472, 'r': 0.25278077, 'i': 0.4759767, 'z': 0.59830064}
+Variable??
+0.023416752499818384
+1.1908601472084244
+Non-Variable source in g
+Variable??
+0.021780186642839875
+2.64958350015002
+Non-Variable source in r
+Variable??
+0.024422153682833504
+1.870301886441345
+Non-Variable source in i
+Variable??
+0.03096767591442423
+1.3839625514285931
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.3617254352260364, 1, 0.17394622777804325, 0.28001657550058545]
+Slope Error: [0.15910588687375016, 0, 0.06999063175339643, 0.08761027431754416]
+intercepts:  [0.060875202360585856, 0, 0.019241173149034507, 0.021965458727146947]
+Int Error:   [0.02811602113242665, 0, 0.018057555535452123, 0.02165828862091876]
+StDev:       [0.075213395, 0.05832836, 0.08812716, 0.12835094]
+Not variable, closing plots & going to next row
+Running object 216297
+Min gap is: 0.0
+New time_gap is :0.004
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 21, 'r': 49, 'i': 51, 'z': 11}
+Mu: {'g': 0.14736064, 'r': 0.13583545, 'i': 0.22155467, 'z': 0.36197925}
+Variable??
+0.02520982963085595
+1.8083987990132797
+Non-Variable source in g
+Variable??
+0.017348565394058824
+1.5498339671924228
+Non-Variable source in r
+Variable??
+0.03025070262950155
+1.913722698103076
+Non-Variable source in i
+Variable??
+0.06700449781730466
+1.891265759077569
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.300271371489427, 0, 0.16828806906901017, 0.37613200071452596]
+intercepts:  [-0.030145440973495197, 0, 0.008998171785688514, -0.1338758327891686]
+Int Error:   [0.053493587026401695, 0, 0.04494612425324898, 0.15099737070751462]
+StDev:       [0.107800804, 0.038487084, 0.06684659, 0.13248885]
+Not variable, closing plots & going to next row
+Running object 216298
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 79, 'r': 134, 'i': 140, 'z': 340}
+Mu: {'g': 0.16628131, 'r': 0.27745473, 'i': 0.43386573, 'z': 0.49712566}
+Variable??
+0.02118314361693193
+2.182475935099134
+Non-Variable source in g
+Variable??
+0.017227749840456337
+1.731020667588382
+Non-Variable source in r
+Variable??
+0.0217850835211191
+2.037789264855929
+Non-Variable source in i
+Variable??
+0.04840499475905039
+1.381689503047188
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.46758158024304675, 0.4919548419774875]
+Slope Error: [0.56645997524694, 0, 0.07783594091902118, 0.08216145315733563]
+intercepts:  [0.09872270786462956, 0, 0.007685430918370928, 0.05367981601009153]
+Int Error:   [0.07452919326713078, 0, 0.015694969203255957, 0.015542722912610878]
+StDev:       [0.09448344, 0.057929114, 0.084085755, 0.11637567]
+Not variable, closing plots & going to next row
+Running object 216299
+Min gap is: 0.0
+New time_gap is :0.004
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 73, 'r': 128, 'i': 137, 'z': 149}
+Mu: {'g': 0.18712808, 'r': 0.30092996, 'i': 0.4616118, 'z': 0.73741245}
+Variable??
+0.022191785422397546
+0.7349316346785831
+Non-Variable source in g
+Variable??
+0.018155638762797317
+0.9804090899562794
+Non-Variable source in r
+Variable??
+0.02299329636439666
+0.49829684286806
+Non-Variable source in i
+Variable??
+0.02939532065866987
+0.652611193231832
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.31666674103931447, 0.23004896353444892]
+Slope Error: [0.6493404296536821, 0, 0.05023492669944169, 0.05874189657617482]
+intercepts:  [0.11951377598310975, 0, 0.0062540012299353576, 0.023244962528690793]
+Int Error:   [0.055549158957233925, 0, 0.00973565214525312, 0.011583912309084373]
+StDev:       [0.049369667, 0.053291272, 0.06432525, 0.123538494]
+Not variable, closing plots & going to next row
+Running object 216300
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 21, 'r': 119, 'i': 139, 'z': 102}
+Mu: {'g': 0.13100848, 'r': 0.21828364, 'i': 0.27507472, 'z': 0.37513027}
+Variable??
+0.03161064511939466
+3.798802110529663
+Variable Source in g!!
+Variable??
+0.017547594568437356
+1.0463206883562002
+Non-Variable source in r
+Variable??
+0.02667068931968908
+0.977529909377561
+Non-Variable source in i
+Variable??
+0.06054981255425618
+1.562028054802573
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [0.7051422075296792, 1, 0.2522394852649289, 1]
+Slope Error: [4.438856131776921, 0, 0.08140268253165663, 0.27679897102789575]
+intercepts:  [1.6352181491782076, 0, 0.030777293517273263, 0.0731140962901389]
+Int Error:   [1.4774196281030914, 0, 0.017975145811410097, 0.04611394110029829]
+StDev:       [0.5262069, 0.05428914, 0.053829625, 0.11912403]
+Spread:      0/4
+Spread values: 
+ROW: 216300all Tau: 3.3249852121628107 V: -1.261063577843358
+ROW: 216300g Tau: 0.45398607256672674 V: -0.5651144184563908
+Close extra plots
+Row 216300 ran in 52.355 seconds
+Running object 216301
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 69, 'r': 123, 'i': 141, 'z': 156}
+Mu: {'g': 0.17413034, 'r': 0.2826743, 'i': 0.49424842, 'z': 0.58593583}
+Variable??
+0.021302749560693654
+1.6502488992306619
+Non-Variable source in g
+Variable??
+0.017592512337973758
+0.6609887426774237
+Non-Variable source in r
+Variable??
+0.022670600183841316
+0.5836317523031764
+Non-Variable source in i
+Variable??
+0.031003994653037117
+0.8616905123986356
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.5514911139260413, 0, 0.0722052047374348, 0.09426211808032157]
+intercepts:  [0.20308805901464352, 0, 0.02225330531600389, 0.038733423816322145]
+Int Error:   [0.06894302236212871, 0, 0.012871206304870507, 0.01871859658497231]
+StDev:       [0.08086602, 0.04431555, 0.0642043, 0.10579619]
+Not variable, closing plots & going to next row
+Running object 216302
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 87, 'r': 119, 'i': 128, 'z': 174}
+Mu: {'g': 0.21896312, 'r': 0.2321988, 'i': 0.29940754, 'z': 0.42018658}
+Variable??
+0.02077126274198992
+0.5402721454798863
+Non-Variable source in g
+Variable??
+0.01785493558576547
+0.793684431561634
+Non-Variable source in r
+Variable??
+0.02561670964512964
+0.830210480410282
+Non-Variable source in i
+Variable??
+0.04633129235629789
+1.5788310262750211
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.399584142246765, 0.33033029355304366]
+Slope Error: [0.1222361444480432, 0, 0.09807625823006146, 0.12199492847461636]
+intercepts:  [0.014912119084007181, 0, 0.0228451105415445, 0.0788207167183329]
+Int Error:   [0.019118033414195924, 0, 0.014504989745852579, 0.028233850478781415]
+StDev:       [0.033978906, 0.04586902, 0.06123739, 0.101508476]
+Not variable, closing plots & going to next row
+Running object 216303
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 109, 'r': 140, 'i': 147, 'z': 248}
+Mu: {'g': 0.29782853, 'r': 0.96907073, 'i': 1.7638323, 'z': 2.3783312}
+Variable??
+0.021274251808981758
+0.8796224190321849
+Non-Variable source in g
+Variable??
+0.0190269227624291
+9.433220234414865
+Variable Source in r!!
+Variable??
+0.024305052325623428
+8.345658796333705
+Variable Source in i!!
+Variable??
+0.03842958329475624
+4.684122811222855
+Variable Source in z!!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [1, 1, 0.6182036435248883, 0.35471488169817467]
+Slope Error: [0.2719771373140276, 0, 0.06898377828576889, 0.09349039151667231]
+intercepts:  [0.06368582302403497, 0, 0.006953830205918443, 0.02656888084763498]
+Int Error:   [0.027021414136303892, 0, 0.0066579197610684634, 0.00998217604676159]
+StDev:       [0.057873845, 0.10291028, 0.21900618, 0.2947016]
+Spread:      4/4
+Spread values: 
+G 0.007695638
+R 0.015051655
+I 0.012197887
+Z 0.011173067
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.007695638
+0.015051655
+0.012197887
+0.011173067
+Continuing to next row
+Running object 216304
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 17, 'r': 52, 'i': 47, 'z': 49}
+Mu: {'g': 0.1421961, 'r': 0.141247, 'i': 0.21238823, 'z': 0.39744648}
+Variable??
+0.028917121824262246
+1.142884607772482
+Non-Variable source in g
+Variable??
+0.018049810867125395
+1.91692924949006
+Non-Variable source in r
+Variable??
+0.033422076660797564
+1.192233119590749
+Non-Variable source in i
+Variable??
+0.06947162561118603
+1.4896992970251557
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.7919774746094816, 1]
+Slope Error: [0.6645566336959662, 0, 0.2742317415124231, 0.08409017951992737]
+intercepts:  [0.059703864115977945, 0, 0.11259288699212266, -0.08733544380608387]
+Int Error:   [0.13784879040886505, 0, 0.0482543247957614, 0.049811203613197366]
+StDev:       [0.028576473, 0.075117975, 0.08023608, 0.09333289]
+Not variable, closing plots & going to next row
+Running object 216305
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 123, 'r': 118, 'i': 134, 'z': 178}
+Mu: {'g': 0.37944502, 'r': 0.35125256, 'i': 0.3584385, 'z': 0.50031364}
+Variable??
+0.02264741208313394
+0.8781639434118931
+Non-Variable source in g
+Variable??
+0.021359621365030213
+1.2059453067976607
+Non-Variable source in r
+Variable??
+0.02496548625199625
+0.8861338943260406
+Non-Variable source in i
+Variable??
+0.03999876564217175
+1.3173623885911308
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.4971307226131859, 1, 0.6258453307905172, 0.2651139098951607]
+Slope Error: [0.1526972726378256, 0, 0.0704610375744022, 0.11107297682028773]
+intercepts:  [0.041556981067929634, 0, 0.012198332482557084, 0.07156968839852995]
+Int Error:   [0.024682727095455628, 0, 0.014284385870057923, 0.022613438069384168]
+StDev:       [0.074965164, 0.059678555, 0.061062332, 0.10014934]
+Not variable, closing plots & going to next row
+Running object 216306
+Min gap is: 0.0
+New time_gap is :0.004
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 9.0546875
+Counts: {'g': 45, 'r': 74, 'i': 35, 'z': 5}
+Mu: {'g': 0.14825022, 'r': 0.13771781, 'i': 0.21659723, 'z': 0.32842767}
+No handles with labels found to put in legend.
+Variable??
+0.025075999205909093
+2.5220485936496924
+Non-Variable source in g
+Variable??
+0.019306170351313708
+2.0298188883379233
+Non-Variable source in r
+Variable??
+0.040724173524560564
+1.6722545546761924
+Non-Variable source in i
+Variable??
+0.06823037862862866
+3.6590563576880113
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.2411996905711714, 0, 0.21480004293659308, 0.0]
+intercepts:  [0.022320254675421647, 0, 0.019251808642827318, 0]
+Int Error:   [0.06071232754314017, 0, 0.0632410852139916, 0.0]
+StDev:       [0.12663643, 0.05929465, 0.076649226, 0.0656246]
+Not variable, closing plots & going to next row
+Running object 216307
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 39, 'r': 54, 'i': 26, 'z': 28}
+Mu: {'g': 0.14711383, 'r': 0.13093236, 'i': 0.1976414, 'z': 0.36843318}
+Variable??
+0.025653582775380167
+2.054009938844556
+Non-Variable source in g
+Variable??
+0.02005363418269528
+1.294972048207632
+Non-Variable source in r
+Variable??
+0.03588935943435053
+1.43029168253698
+Non-Variable source in i
+Variable??
+0.07400738860403214
+1.8478871998078856
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.6299230201058739, 1]
+Slope Error: [0.21529567077401227, 0, 0.23059692360460243, 0.22094108910448443]
+intercepts:  [-0.009008972596221989, 0, -0.017034376370451628, -0.10631494970587367]
+Int Error:   [0.04633523678233704, 0, 0.04653541727745363, 0.06614433433663633]
+StDev:       [0.12527773, 0.035096966, 0.062244058, 0.094914645]
+Not variable, closing plots & going to next row
+Running object 216308
+Min gap is: 0.0
+New time_gap is :0.004
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 16, 'r': 92, 'i': 115, 'z': 59}
+Mu: {'g': 0.13053438, 'r': 0.16111366, 'i': 0.24683893, 'z': 0.3539647}
+Variable??
+0.02718089520931244
+2.4721441171145613
+Non-Variable source in g
+Variable??
+0.018525303760518967
+1.0627784807976117
+Non-Variable source in r
+Variable??
+0.027512148202465565
+1.5719464181040135
+Non-Variable source in i
+Variable??
+0.06985407670700972
+3.4288726458711523
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [3.4954673026773277, 1, 0.6154614980977796, 1]
+Slope Error: [1.5029146862119553, 0, 0.14244066108901948, 0.18115557239815042]
+intercepts:  [0.2948453784363834, 0, 0.04937017121588076, 0.052755255090127906]
+Int Error:   [0.18972094506101314, 0, 0.02656644849153563, 0.05693096100328828]
+StDev:       [0.059033934, 0.041170187, 0.05971266, 0.10682094]
+Not variable, closing plots & going to next row
+Running object 216309
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 19, 'r': 55, 'i': 28}
+Mu: {'g': 0.13121389, 'r': 0.12293568, 'i': 0.20230006, 'z': 0.0}
+No handles with labels found to put in legend.
+Variable??
+0.03154658745870185
+3.850266755911071
+Variable Source in g!!
+Variable??
+0.017599900561626563
+1.262083892616577
+Non-Variable source in r
+Variable??
+0.039667465629212625
+1.7032240902724833
+Non-Variable source in i
+Variable??
+0
+0
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1.27146455095939, 1, 0.852837848976389, 1]
+Slope Error: [0.6243463479624015, 0, 0.11901305258260922, 0.0]
+intercepts:  [-0.017829175883763426, 0, -0.1377176768686525, 0]
+Int Error:   [0.06987303699517591, 0, 0.022948289999234022, 0.0]
+StDev:       [0.71457374, 0.03709876, 0.05864345, 0.0]
+Spread:      0/4
+Spread values: 
+ROW: 216309all Tau: 1.00269753469165 V: -1.017776803890119
+ClusterEmcee2_linear_mu_all_and_single_fast.py:638: RuntimeWarning: divide by zero encountered in log10
+  mu_list = [22.5-2.5*np.log10(mu[i]) for i in mu]
+ROW: 216309g Tau: 0.4566668005795855 V: -0.6691072193714568
+Close extra plots
+Row 216309 ran in 14.1911 seconds
+Running object 216310
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 4, 'r': 133, 'i': 141, 'z': 138}
+Mu: {'g': 0.118865766, 'r': 0.33252418, 'i': 0.800813, 'z': 1.1380198}
+Variable??
+0.020000312477350235
+0.6059229057170368
+Non-Variable source in g
+Variable??
+0.0168836283506296
+1.0658151661845119
+Non-Variable source in r
+Variable??
+0.021603464702376108
+1.1245919201144825
+Non-Variable source in i
+Variable??
+0.0268637402315006
+0.725602927979502
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.6002256190924151, 1, 1, 0.1740750922604315]
+Slope Error: [0.30917318827517387, 0, 0.04176804448719629, 0.03060545666501134]
+intercepts:  [0.004267129008122318, 0, 0.0020140515290670846, 0.004237326706238775]
+Int Error:   [0.020133593493188506, 0, 0.008374890402945052, 0.007241285660154777]
+StDev:       [0.014681767, 0.055793885, 0.08753327, 0.13626438]
+Not variable, closing plots & going to next row
+Running object 216311
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 91, 'r': 119, 'i': 124, 'z': 94}
+Mu: {'g': 0.20159225, 'r': 0.22956601, 'i': 0.27410424, 'z': 0.3893969}
+Variable??
+0.021926034168654813
+1.0127148016702165
+Non-Variable source in g
+Variable??
+0.018922689473834256
+0.9212284992808636
+Non-Variable source in r
+Variable??
+0.02823241522040519
+1.570438271218556
+Non-Variable source in i
+Variable??
+0.0638576151995984
+2.406662869614152
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.2482058872856705, 0.9234908280897891]
+Slope Error: [0.37119907637857474, 0, 0.10780950898828578, 0.3319903718416019]
+intercepts:  [0.10087292169589579, 0, 0.06838060644163793, 0.038760853831287245]
+Int Error:   [0.051472605640086384, 0, 0.03225931371367742, 0.036617765345532516]
+StDev:       [0.051976964, 0.050127093, 0.06634377, 0.10269932]
+Not variable, closing plots & going to next row
+Running object 216312
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 132, 'r': 137, 'i': 147, 'z': 249}
+Mu: {'g': 0.6253507, 'r': 1.0075469, 'i': 1.856996, 'z': 2.2751923}
+Variable??
+0.02244575943434943
+3.358894285118917
+Variable Source in g!!
+Variable??
+0.019078942389450276
+14.53461124220723
+Variable Source in r!!
+Variable??
+0.02384989857264161
+15.20247837574776
+Variable Source in i!!
+Variable??
+0.0372148476039263
+6.679229605578617
+Variable Source in z!!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [0.5990806949618126, 1, 0.6703246966826992, 0.4178394337287912]
+Slope Error: [0.11397619720397058, 0, 0.07648837041606042, 0.08361258500247595]
+intercepts:  [-0.01212128053885908, 0, -0.00048408614797823546, 0.024795500306104327]
+Int Error:   [0.013636233021404105, 0, 0.008454898795465744, 0.009866172731274887]
+StDev:       [0.113874316, 0.13207297, 0.23727639, 0.2992137]
+Spread:      4/4
+Spread values: 
+G 0.015504893
+R 0.018479893
+I 0.017980553
+Z 0.020068519
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.015504893
+0.018479893
+0.017980553
+0.020068519
+Continuing to next row
+Running object 216313
+Min gap is: 115.78906
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 4, 'r': 56, 'i': 67, 'z': 118}
+Mu: {'g': 0.13258645, 'r': 0.117710076, 'i': 0.21022925, 'z': 0.36278433}
+No handles with labels found to put in legend.
+Variable??
+0.02904021181166172
+5.52284794805044
+Variable Source in g!!
+Variable??
+0.020958824760591868
+2.374277878477702
+Non-Variable source in r
+Variable??
+0.03390360818064111
+1.9607260101512174
+Non-Variable source in i
+Variable??
+0.05662121891228348
+1.9240172951548764
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1, 1, 0.3532346770824699, 0.17999467985110762]
+Slope Error: [0.0, 0, 0.11269991242567062, 0.06802826767273779]
+intercepts:  [0, 0, -0.0063885151317757405, -0.01863028398383748]
+Int Error:   [0.0, 0, 0.05867872500802913, 0.031918345959855314]
+StDev:       [0.08746484, 0.06411076, 0.06078185, 0.10274461]
+Spread:      1/4
+Spread values: 
+R 0.02401849
+ROW: 216313all Tau: 0.4851313653241932 V: -0.6304686471773634
+ROW: 216313g Tau: 2.2438155207363075 V: -0.46797647654556773
+Close extra plots
+Row 216313 ran in 32.433 seconds
+Running object 216314
+Min gap is: 0.0
+New time_gap is :0.004
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 81, 'r': 138, 'i': 148, 'z': 231}
+Mu: {'g': 0.17962629, 'r': 0.6871253, 'i': 1.4077816, 'z': 1.8884637}
+Variable??
+0.022856856929138303
+1.5911355166243752
+Non-Variable source in g
+Variable??
+0.018697885858135532
+1.499119457552862
+Non-Variable source in r
+Variable??
+0.024254290336336082
+2.2257316594675527
+Non-Variable source in i
+Variable??
+0.03685631473878548
+1.082364365042244
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.21223262622886863]
+Slope Error: [0.9312924137112043, 0, 0.10473717260347136, 0.06970119501761847]
+intercepts:  [0.1424991200710256, 0, -0.00968104100318068, 0.011849937672255903]
+Int Error:   [0.062122010670650284, 0, 0.0071814611901694575, 0.005307814143726773]
+StDev:       [0.07363778, 0.06455719, 0.12899098, 0.16643803]
+Not variable, closing plots & going to next row
+Running object 216315
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 5, 'r': 51, 'i': 87, 'z': 166}
+Mu: {'g': 0.15278327, 'r': 0.13059711, 'i': 0.23444968, 'z': 0.43243897}
+No handles with labels found to put in legend.
+Variable??
+0.02649117132963079
+8.829511984328224
+Variable Source in g!!
+Variable??
+0.020075639306493757
+2.3341983264577344
+Non-Variable source in r
+Variable??
+0.030586387524211084
+1.617064879392838
+Non-Variable source in i
+Variable??
+0.04502059953267286
+1.361716397111145
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1, 1, 0.29517717474169547, 0.21107471992380733]
+Slope Error: [0.0, 0, 0.09891784240505784, 0.06286719652591975]
+intercepts:  [0, 0, -0.031227814945480867, -0.008270043122017743]
+Int Error:   [0.0, 0, 0.03730400240262429, 0.025195409198767716]
+StDev:       [0.37098125, 0.051198564, 0.060543492, 0.099386886]
+Spread:      0/4
+Spread values: 
+ROW: 216315all Tau: 0.6469590998978433 V: -0.6336411430812408
+ROW: 216315g Tau: 1.7015441872308192 V: -0.4325810436376433
+Close extra plots
+Row 216315 ran in 38.6093 seconds
+Running object 216316
+Min gap is: 47.960938
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 3, 'r': 31, 'i': 51, 'z': 16}
+Mu: {'g': 0.13519706, 'r': 0.13138711, 'i': 0.20666301, 'z': 0.3605752}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0.02882282569756345
+0.04512535411417686
+Non-Variable source in g
+Variable??
+0.02199599978084381
+4.519239780232545
+Variable Source in r!!
+Variable??
+0.03242019698083944
+2.0776091254217453
+Non-Variable source in i
+Variable??
+0.06318901479244232
+1.1324386766306158
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 0.4224484792702574, 1]
+Slope Error: [0.0, 0, 0.06946263621495968, 0.0]
+intercepts:  [0, 0, 0.023070722013917355, 0]
+Int Error:   [0.0, 0, 0.05606668078570174, 0.0]
+StDev:       [0.005485283, 0.10514867, 0.06645736, 0.09423799]
+Spread:      0/4
+Spread values: 
+ROW: 216316all Tau: 0.2711967707922848 V: -0.6040442432339165
+ROW: 216316r Tau: 0.37778618231627337 V: -0.4822288628433463
+Close extra plots
+Row 216316 ran in 17.8014 seconds
+Running object 216317
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 4.1289062
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 16, 'i': 64, 'z': 172}
+Mu: {'g': 0.0, 'r': 0.12937918, 'i': 0.19779302, 'z': 0.40219772}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.02498059719800949
+3.137645857923969
+Non-Variable source in r
+Variable??
+0.034646883606910706
+3.0541603094863796
+Non-Variable source in i
+Variable??
+0.05041798055369311
+2.980778203883409
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.38102455516127404, 0.15776607677737922]
+intercepts:  [0, 0, -0.053960944090013646, 0.04248238890226921]
+Int Error:   [0.0, 0, 0.13211143804151365, 0.07823938653943582]
+StDev:       [0.0, 0.05767201, 0.09060629, 0.10791031]
+Not variable, closing plots & going to next row
+Running object 216318
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 35, 'r': 134, 'i': 143, 'z': 141}
+Mu: {'g': 0.15572044, 'r': 0.4484921, 'i': 0.88628775, 'z': 1.1890746}
+Variable??
+0.02563397521428912
+0.932240327259611
+Non-Variable source in g
+Variable??
+0.018255365864266765
+0.500986486949453
+Non-Variable source in r
+Variable??
+0.02335935530856897
+0.44695785536637417
+Non-Variable source in i
+Variable??
+0.028782731388468437
+0.2480310393087761
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.9842347662005344, 0, 0.10385930168614406, 0.042996500915357276]
+intercepts:  [0.024862654369661875, 0, 0.01751296386805363, 0.003447677564521039]
+Int Error:   [0.03872404652351795, 0, 0.007925342111029961, 0.004267198915662304]
+StDev:       [0.034331247, 0.04744185, 0.07626394, 0.123740435]
+Not variable, closing plots & going to next row
+Running object 216319
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 12, 'r': 62, 'i': 101, 'z': 96}
+Mu: {'g': 0.15417227, 'r': 0.124937505, 'i': 0.22165, 'z': 0.36937493}
+Variable??
+0.03551604362286306
+2.5969248965572564
+Non-Variable source in g
+Variable??
+0.018254331369836684
+4.746424492246549
+Non-Variable source in r
+Variable??
+0.029462945133227662
+1.8267789129467988
+Non-Variable source in i
+Variable??
+0.060549128241739025
+3.735207296635063
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.017033277318733, 1, 1, 1]
+Slope Error: [0.4270398986416427, 0, 0.1088228182064992, 0.13325267915704134]
+intercepts:  [-0.01503012368603951, 0, -0.006005121244304412, -0.07427304703112596]
+Int Error:   [0.18186966051978395, 0, 0.03750114393190739, 0.04937582712944557]
+StDev:       [0.35225663, 0.044868786, 0.059276737, 0.097405665]
+Not variable, closing plots & going to next row
+Running object 216320
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 121, 'r': 138, 'i': 144, 'z': 229}
+Mu: {'g': 0.39353424, 'r': 0.7238298, 'i': 0.9473081, 'z': 0.986298}
+Variable??
+0.021968481130898
+0.9991908026151498
+Non-Variable source in g
+Variable??
+0.01872197014011886
+3.271137608901225
+Variable Source in r!!
+Variable??
+0.023564966395497322
+2.1391639665631508
+Non-Variable source in i
+Variable??
+0.036680769468015746
+0.7628795879455347
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 0.47694414650034145, 0.19820577630987035]
+Slope Error: [0.2776516524279791, 0, 0.07336974650295325, 0.06685641705538085]
+intercepts:  [0.06411016731500793, 0, 0.0073659777016502614, 0.008678998677994671]
+Int Error:   [0.022033249056220675, 0, 0.006677834429107731, 0.0066335449736111135]
+StDev:       [0.07920535, 0.074351214, 0.120514564, 0.12897897]
+Spread:      4/4
+Spread values: 
+G 0.0078465035
+R 0.012389201
+I 0.011701937
+Z 0.0073524257
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.0078465035
+0.012389201
+0.011701937
+0.0073524257
+Continuing to next row
+Running object 216321
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 132, 'r': 140, 'i': 147, 'z': 242}
+Mu: {'g': 0.7565611, 'r': 1.4971279, 'i': 2.3357277, 'z': 2.6371584}
+Variable??
+0.020933555668697056
+2.1558393051634877
+Non-Variable source in g
+Variable??
+0.018310195603065883
+12.275565781294082
+Variable Source in r!!
+Variable??
+0.022839335008519698
+16.071256222418416
+Variable Source in i!!
+Variable??
+0.035875927251529674
+5.244167334891505
+Variable Source in z!!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [1, 1, 0.8645987914980464, 0.4810143524600412]
+Slope Error: [0.2081726131878498, 0, 0.08431159665907322, 0.11418033955810367]
+intercepts:  [0.007107018190987818, 0, -0.008394426484339237, 0.015776379426227227]
+Int Error:   [0.016538412312269456, 0, 0.0059331789902933516, 0.008575674038437987]
+StDev:       [0.09083084, 0.12355275, 0.23535296, 0.28279948]
+Spread:      4/4
+Spread values: 
+G 0.007420636
+R 0.012213468
+I 0.012507029
+Z 0.013586106
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.007420636
+0.012213468
+0.012507029
+0.013586106
+Continuing to next row
+Running object 216322
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 65, 'r': 117, 'i': 133, 'z': 90}
+Mu: {'g': 0.16243778, 'r': 0.2295595, 'i': 0.27351505, 'z': 0.38308656}
+Variable??
+0.023298153837700473
+1.4225817950614161
+Non-Variable source in g
+Variable??
+0.01769417572141544
+2.008111512397684
+Non-Variable source in r
+Variable??
+0.026528710131698264
+1.1678764976122005
+Non-Variable source in i
+Variable??
+0.06406528077511037
+1.32610516749266
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.33643669511698304]
+Slope Error: [0.3891426410183145, 0, 0.09338216369602922, 0.11964633879178217]
+intercepts:  [0.16314150805443994, 0, 0.06769771969196692, 0.021448167431900478]
+Int Error:   [0.096991191514761, 0, 0.024157147394232182, 0.03434768419551933]
+StDev:       [0.07597444, 0.061360117, 0.06163593, 0.10856991]
+Not variable, closing plots & going to next row
+Running object 216323
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 6, 'r': 70, 'i': 54, 'z': 8}
+Mu: {'g': 0.14102834, 'r': 0.16744363, 'i': 0.22896715, 'z': 0.33553094}
+Variable??
+0.03158337381171686
+0.6160216119746751
+Non-Variable source in g
+Variable??
+0.017240248434228278
+1.1485446411954632
+Non-Variable source in r
+Variable??
+0.027798107141910545
+1.1453088000919385
+Non-Variable source in i
+Variable??
+0.05941556611578531
+1.0501180613640817
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.945767342780097, 1, 0.42718516846931376, 1]
+Slope Error: [0.29724057826866707, 0, 0.14132587606974897, 0.393768683145757]
+intercepts:  [0.04416008103420194, 0, 0.015182364799858128, -0.02255519056114327]
+Int Error:   [0.058561444392684826, 0, 0.03837940945890331, 0.09625055280738931]
+StDev:       [0.024306493, 0.033077992, 0.04472835, 0.08149287]
+Not variable, closing plots & going to next row
+Running object 216324
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0078125
+Counts: {'g': 20, 'r': 55, 'i': 11}
+Mu: {'g': 0.14343455, 'r': 0.127523, 'i': 0.20883793, 'z': 0.0}
+No handles with labels found to put in legend.
+Variable??
+0.026097922331507407
+1.3870256820559481
+Non-Variable source in g
+Variable??
+0.01949585793964821
+1.8906042298864068
+Non-Variable source in r
+Variable??
+0.04389556912984096
+1.2795848722681082
+Non-Variable source in i
+Variable??
+0
+0
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [1.0762358431755474, 0, 3.313351166043523, 0.0]
+intercepts:  [0.246107277816641, 0, -1.0304786231777452, 0]
+Int Error:   [0.2596787291120843, 0, 0.573540805393048, 0.0]
+StDev:       [0.08201012, 0.037710227, 0.04566784, 0.0]
+Not variable, closing plots & going to next row
+Running object 216325
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 130, 'r': 140, 'i': 148, 'z': 245}
+Mu: {'g': 0.78864676, 'r': 1.5169522, 'i': 2.1925669, 'z': 2.3532188}
+Variable??
+0.020834124927175592
+1.897507863067335
+Non-Variable source in g
+Variable??
+0.018331667210485302
+39.00859960839692
+Variable Source in r!!
+Variable??
+0.0227118911206211
+13.20838634937592
+Variable Source in i!!
+Variable??
+0.03595510044814274
+4.616904250789457
+Variable Source in z!!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [0.23324472226953064, 1, 0.302232132168086, 0.3675615496374872]
+Slope Error: [0.07782924306615922, 0, 0.07604582309566785, 0.08726587689768679]
+intercepts:  [0.012591428697842234, 0, 0.005051985617223242, 0.027620156873051534]
+Int Error:   [0.008648120268835546, 0, 0.008125258109410546, 0.010004942717571776]
+StDev:       [0.082686536, 0.12550548, 0.22243229, 0.26377505]
+Spread:      4/4
+Spread values: 
+G 0.01008644
+R 0.01271961
+I 0.014747624
+Z 0.0150686065
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.01008644
+0.01271961
+0.014747624
+0.0150686065
+Continuing to next row
+Running object 216326
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 59, 'r': 111, 'i': 131, 'z': 159}
+Mu: {'g': 0.15334451, 'r': 0.1957849, 'i': 0.2639001, 'z': 0.39871302}
+Variable??
+0.0232652498767293
+1.115384429355587
+Non-Variable source in g
+Variable??
+0.018679806053394688
+1.1929173530441475
+Non-Variable source in r
+Variable??
+0.02822961845126503
+1.4333084225275412
+Non-Variable source in i
+Variable??
+0.05134831257840721
+1.4200518910381885
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.5674517544423228, 0.241993625009983]
+Slope Error: [0.236077713275683, 0, 0.08570489600759272, 0.08259589707175416]
+intercepts:  [0.13256916511828687, 0, 0.028259405113615688, 0.06837402931677938]
+Int Error:   [0.07324654760354715, 0, 0.025542009202148774, 0.02419636395375547]
+StDev:       [0.048566453, 0.05135329, 0.06250005, 0.10766712]
+Not variable, closing plots & going to next row
+Running object 216327
+Min gap is: 23.085938
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 8, 'r': 28, 'i': 70, 'z': 47}
+Mu: {'g': 0.13864562, 'r': 0.1220433, 'i': 0.22086312, 'z': 0.38707966}
+Variable??
+0.03154742714094238
+2.156992897964827
+Non-Variable source in g
+Variable??
+0.020304269869994597
+1.488600746785811
+Non-Variable source in r
+Variable??
+0.03211757953846688
+1.5457898662620424
+Non-Variable source in i
+Variable??
+0.0798812080010648
+2.207526239672862
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.38052557609935767, 1, 0.35372805064912516, 0.25619778584043773]
+Slope Error: [0.018315278860175893, 0, 0.1649000379029042, 0.055128632578015944]
+intercepts:  [-0.2152192058360352, 0, -0.06790052634294019, -0.2882509570283607]
+Int Error:   [0.004537457108560726, 0, 0.0534499501856371, 0.028065843186863976]
+StDev:       [0.1212462, 0.118769825, 0.0818027, 0.10635139]
+Not variable, closing plots & going to next row
+Running object 216328
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 31, 'r': 111, 'i': 136, 'z': 105}
+Mu: {'g': 0.13285673, 'r': 0.20900556, 'i': 0.29126614, 'z': 0.3751948}
+Variable??
+0.01983420644217873
+2.3519029365115864
+Non-Variable source in g
+Variable??
+0.01679171421597299
+1.4989100611646033
+Non-Variable source in r
+Variable??
+0.0244539765976553
+1.2236780340111537
+Non-Variable source in i
+Variable??
+0.058857048591944815
+1.9975682924412783
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.5332822703725792, 1, 0.39948794858702796, 0.5668728541012709]
+Slope Error: [0.4423269462818686, 0, 0.10409214691951238, 0.21713110062331906]
+intercepts:  [0.20674334485525225, 0, 0.023965492454178783, 0.042806927455347976]
+Int Error:   [0.07121819585761993, 0, 0.019584373819830418, 0.036539560971729064]
+StDev:       [0.06549336, 0.050999273, 0.06622158, 0.097381905]
+Not variable, closing plots & going to next row
+Running object 216329
+Min gap is: 0.0
+New time_gap is :0.004
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 51, 'r': 119, 'i': 141, 'z': 173}
+Mu: {'g': 0.15830112, 'r': 0.20286465, 'i': 0.3553967, 'z': 0.48510432}
+Variable??
+0.02347208529812866
+1.3326679316123395
+Non-Variable source in g
+Variable??
+0.0191980203524801
+1.4274895972242314
+Non-Variable source in r
+Variable??
+0.024653199117161267
+0.45430625507246547
+Non-Variable source in i
+Variable??
+0.03998889365366396
+1.182845577848367
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.947630237369375, 1, 1, 1]
+Slope Error: [0.9636138874141245, 0, 0.03232647290726314, 0.058960729967595826]
+intercepts:  [0.4082705320365225, 0, 0.032692484667300424, 0.011762701045062773]
+Int Error:   [0.15039653986217638, 0, 0.01452487057763064, 0.02086084263677]
+StDev:       [0.07392852, 0.059929796, 0.059770077, 0.08669422]
+Not variable, closing plots & going to next row
+Running object 216330
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 85, 'r': 126, 'i': 144, 'z': 171}
+Mu: {'g': 0.1918901, 'r': 0.24907595, 'i': 0.40403196, 'z': 0.5237113}
+Variable??
+0.018601327102699763
+1.1837556808309178
+Non-Variable source in g
+Variable??
+0.01668560125966279
+1.2096163829134592
+Non-Variable source in r
+Variable??
+0.022242863662540913
+1.0873592230874227
+Non-Variable source in i
+Variable??
+0.03270051604368018
+1.0208623954797829
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.0146672957859297, 1, 0.5067838888651575, 0.36089560985821467]
+Slope Error: [0.4893161994215641, 0, 0.127283798766444, 0.10107483983862937]
+intercepts:  [0.15630488940210874, 0, 0.02996365630749398, 0.09230886671785764]
+Int Error:   [0.07218585731764328, 0, 0.019885781348780027, 0.019199217399305784]
+StDev:       [0.065919094, 0.04613585, 0.07096922, 0.10728579]
+Not variable, closing plots & going to next row
+Running object 216331
+Min gap is: 19.9375
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 7, 'i': 23, 'z': 64}
+Mu: {'g': 0.0, 'r': 0.11174012, 'i': 0.20165008, 'z': 0.38457435}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+ClusterEmcee2_linear_mu_all_and_single_fast.py:774: RuntimeWarning: invalid value encountered in sqrt
+  slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
+ClusterEmcee2_linear_mu_all_and_single_fast.py:775: RuntimeWarning: invalid value encountered in sqrt
+  int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.02377759675008758
+4.093296374502047
+Variable Source in r!!
+Variable??
+0.02954816594785419
+1.0251443045839577
+Non-Variable source in i
+Variable??
+0.06208034232258797
+1.35249467564317
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1, 591.2921930826906]
+Slope Error: [0.0, 0, 0.0, nan]
+intercepts:  [0, 0, 0, 71.77636488859143]
+Int Error:   [0.0, 0, 0.0, nan]
+StDev:       [0.0, 0.135017, 0.047711197, 0.10745647]
+Spread:      0/4
+Spread values: 
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 858, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 609, in perform_emcee_step2
+    sampler.run_mcmc(pos, 200)
+  File "/home/thrush2/scratch/mypython3/emcee/ensemble.py", line 384, in run_mcmc
+    for results in self.sample(initial_state, iterations=nsteps, **kwargs):
+  File "/home/thrush2/scratch/mypython3/emcee/ensemble.py", line 285, in sample
+    state.log_prob, state.blobs = self.compute_log_prob(state.coords)
+  File "/home/thrush2/scratch/mypython3/emcee/ensemble.py", line 456, in compute_log_prob
+    raise ValueError("Probability function returned NaN")
+ValueError: Probability function returned NaN
+srun: error: ccc0242: task 0: Exited with exit code 1

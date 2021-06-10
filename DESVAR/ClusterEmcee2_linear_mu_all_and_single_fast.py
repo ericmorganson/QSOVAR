@@ -32,7 +32,7 @@ if len(sys.argv) < 7:
 # Initial MCMC guesses
 FIGPATH = str(sys.argv[6])
 
-FILEPATH = "scratch_castor/" #"scratch_new/"
+FILEPATH = "scratch_cc/" #"scratch_new/"
 if not os.path.exists(FILEPATH):
     os.makedirs(FILEPATH)
 
@@ -699,6 +699,7 @@ def plot_lin(flux, ax, y_label):
     return p, res
 
 if __name__ == "__main__":
+    start_tick = timer()
     for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
         logprobs = []
         logvals = []
@@ -871,4 +872,7 @@ if __name__ == "__main__":
             continue
 
     print("Successfully finished!")
+    end_tick = timer()
+    full_time = round(end_tick-start_tick, 4)
+    print("Rows "+ str(sys.argv[2]) + " to " + str(sys.argv[3]) +" ran in "+ str(full_time) + " seconds")
     exit()

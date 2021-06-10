@@ -1,4 +1,0 @@
-  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 938
-    print(f"Row {ROW} ran in {toc - tic:0.4f} seconds")
-                                                     ^
-SyntaxError: invalid syntax

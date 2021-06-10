@@ -1,0 +1,90 @@
+Running cluster for deep fits
+21750 22500 normal
+Running object 21750
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 4.0273438
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 6, 'i': 7, 'z': 31}
+Mu: {'g': 0.0, 'r': 0.31894705, 'i': 1.1067398, 'z': 1.815517}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.02846207619123973
+0.9095978981405508
+Non-Variable source in r
+Variable??
+0.05585940953533908
+2.2049194694432317
+Non-Variable source in i
+Variable??
+0.05123919684398189
+1.1481061739946647
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1.3746424432449127]
+Slope Error: [0.0, 0, 0.0, 0.035914469415988484]
+intercepts:  [0, 0, 0, -0.06990123951532604]
+Int Error:   [0.0, 0, 0.0, 0.0024687603832351792]
+StDev:       [0.0, 0.031540614, 0.07277796, 0.12218781]
+Not variable, closing plots & going to next row
+Running object 21751
+Min gap is: 643.1758
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 3, 'i': 13, 'z': 67}
+Mu: {'g': 0.0, 'r': 0.10792926, 'i': 0.16085449, 'z': 0.35098043}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+ClusterEmcee2_linear_mu_all_and_single_fast.py:774: RuntimeWarning: invalid value encountered in sqrt
+  slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
+ClusterEmcee2_linear_mu_all_and_single_fast.py:775: RuntimeWarning: invalid value encountered in sqrt
+  int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.029168344840513425
+4.85840278749896
+Variable Source in r!!
+Variable??
+0.030523333569027648
+0.8487272179371547
+Non-Variable source in i
+Variable??
+0.06914569848758277
+2.21216099267675
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1, 2403.0841277737345]
+Slope Error: [0.0, 0, 0.0, nan]
+intercepts:  [0, 0, 0, 184.89921150474032]
+Int Error:   [0.0, 0, 0.0, nan]
+StDev:       [0.15033942, 0.13932417, 0.037763655, 0.110800445]
+Spread:      0/4
+Spread values: 
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 858, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 609, in perform_emcee_step2
+    sampler.run_mcmc(pos, 200)
+  File "/home/thrush2/scratch/mypython3/emcee/ensemble.py", line 384, in run_mcmc
+    for results in self.sample(initial_state, iterations=nsteps, **kwargs):
+  File "/home/thrush2/scratch/mypython3/emcee/ensemble.py", line 285, in sample
+    state.log_prob, state.blobs = self.compute_log_prob(state.coords)
+  File "/home/thrush2/scratch/mypython3/emcee/ensemble.py", line 456, in compute_log_prob
+    raise ValueError("Probability function returned NaN")
+ValueError: Probability function returned NaN
+srun: error: ccc0242: task 0: Exited with exit code 1
