@@ -36,7 +36,7 @@ FILEPATH = "scratch_cc/" #"scratch_new/"
 if not os.path.exists(FILEPATH):
     os.makedirs(FILEPATH)
 
-PLOTTING = True
+PLOTTING = True #False
 SKIPCOMPROW = False #skips already completed rows if True
 FITNAME = ((str(sys.argv[1]).split("/")[-1]).split(".")[-2]).split("_")[-2]
 if FITNAME == "X3" or FITNAME == "C3":
@@ -773,6 +773,13 @@ if __name__ == "__main__":
         slope = [p_g[0]+1, 1, p_i[0]+1, p_z[0]+1]
         slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
         int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
+        
+        for i in range(len(slope_err)):
+            if slope_err[i] == 'nan':
+                slope_err[i] = -np.inf
+            if int_err[i] == 'nan':
+                int_err[i] = -np.inf
+
         std_col = []
         mean_err = []
         color_dict = {0:"g", 1:"r", 2:"i", 3:"z"}
@@ -799,8 +806,11 @@ if __name__ == "__main__":
             print(chi2)
             if std_col[i] > var_strict*var_crit and chi2 > var_strict:
                 print("Variable Source in "+ str(color_sort_dict[i+1])+"!!")
-                var_count += 1
-                var_bands += color_dict[i]
+                if len(fl) < 5:
+                   print("Not enough observations in "+ str(color_sort_dict[i+1]))
+                else:
+                    var_count += 1
+                    var_bands += color_dict[i]
             else:  # if nonvariable
                 print("Non-Variable source in " + str(color_sort_dict[i+1]))
                 if slope_err[i]*2 > slope[i]:
