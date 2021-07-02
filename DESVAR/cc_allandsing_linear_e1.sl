@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=cluster_emcee_c3      # Job name
+#SBATCH --job-name=cluster_emcee_e2      # Job name
 #SBATCH --mail-type=END,FAIL         # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=thrush2@illinois.edu    # Where to send mail	
 #SBATCH --nodes=3                    # Run all processes on two  node	
@@ -10,13 +10,13 @@
 #SBATCH --output=serial_%j.log     # Standard output and error log
 #SBATCH --partition=caps
 
-first_row=180000
-last_row=229034
+first_row=60000 #60000
+last_row=126068 #114407
 delta=$((( last_row - first_row ) / (120)))
 fig_fold="figure_cc/"
-name="cc_all_and_sing_c3_serial"
+name="cc_all_and_sing_e2_serial"
 run_type="normal"
-fits="/home/thrush2/caps_dir/C3_lc.fits"
+fits="/home/thrush2/caps_dir/E2_lc.fits"
 
 date
 
@@ -32,7 +32,7 @@ for m in {1..120}; do
         echo "new last row is $next_row"
     fi
     echo "starting aprun for run $start_row and $next_row with step $delta"
-    srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits $start_row $next_row $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_"$start_row"_"$next_row".txt 2>&1 &
+    srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits $start_row $next_row $run_type $name $fig_fold > e2_runlogs/cc_allandsing_e2_"$start_row"_"$next_row".txt 2>&1 &
 done
 wait
 
