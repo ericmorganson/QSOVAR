@@ -1,0 +1,2922 @@
+Running cluster for deep fits
+155920 156000 normal
+Running object 155920
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 84, 'r': 119, 'i': 113, 'z': 160}
+Mu: {'g': 0.2079066, 'r': 0.2366134, 'i': 0.2613153, 'z': 0.5842643}
+Variable??
+0.017805182356426665
+0.4487706230516628
+Non-Variable source in g
+Variable??
+0.015994980927989264
+0.7976995904051873
+Non-Variable source in r
+Variable??
+0.023612948680650454
+0.9001919979675399
+Non-Variable source in i
+Variable??
+0.03194185987124511
+0.7453819092543282
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.41871594080477026, 1]
+Slope Error: [0.114107491802765, 0, 0.14082448410990686, 0.09454258484984204]
+intercepts:  [0.019157980491338523, 0, 0.07138501748728746, 0.07466502189960368]
+Int Error:   [0.018526256153536064, 0, 0.018596806566952718, 0.023170523348789947]
+StDev:       [0.03190874, 0.044329643, 0.047161195, 0.097778566]
+Not variable, closing plots & going to next row
+Running object 155921
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 73, 'i': 69, 'z': 51}
+Mu: {'g': 0.0, 'r': 0.13891542, 'i': 0.22188915, 'z': 0.36559597}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.018405266984382423
+1.8472678686343176
+Non-Variable source in r
+Variable??
+0.02821712567401116
+1.5702981251996
+Non-Variable source in i
+Variable??
+0.07098217559119101
+2.3913043637848452
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.303389260221373, 1]
+Slope Error: [0.0, 0, 0.13276222999375834, 0.12444203179398301]
+intercepts:  [0, 0, -0.04347710745496363, -0.06607552835828434]
+Int Error:   [0.0, 0, 0.03572808218093923, 0.03883668429900868]
+StDev:       [0.120383605, 0.040567342, 0.06370493, 0.091208175]
+Not variable, closing plots & going to next row
+Running object 155922
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 39, 'r': 76, 'i': 68, 'z': 53}
+Mu: {'g': 0.13132125, 'r': 0.13587148, 'i': 0.19248658, 'z': 0.35117555}
+Variable??
+0.023993920116956544
+1.175291556638351
+Non-Variable source in g
+Variable??
+0.01771737543149954
+1.7965874608670287
+Non-Variable source in r
+Variable??
+0.028625149963998144
+1.6073953874066782
+Non-Variable source in i
+Variable??
+0.06844925004464972
+3.2498688200453287
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.643233141641641, 1, 0.4480773285500773, 0.15380054829411982]
+Slope Error: [0.23110246049017946, 0, 0.10278846487293, 0.06053816797314025]
+intercepts:  [-0.016044267269478052, 0, 0.06133613943015202, -0.06401563830605794]
+Int Error:   [0.045960008575669405, 0, 0.04577999846002038, 0.04464934630110946]
+StDev:       [0.07980191, 0.05533101, 0.058432017, 0.0905207]
+Not variable, closing plots & going to next row
+Running object 155923
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 90, 'r': 120, 'i': 132, 'z': 161}
+Mu: {'g': 0.17577066, 'r': 0.19074808, 'i': 0.24307975, 'z': 0.38930035}
+Variable??
+0.019248769442927645
+1.1312624616787128
+Non-Variable source in g
+Variable??
+0.017109811017522167
+1.9614510288608085
+Non-Variable source in r
+Variable??
+0.02587137723087822
+1.4680044315198837
+Non-Variable source in i
+Variable??
+0.0510954562185212
+2.7266473598041694
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.2890287563036438, 1, 0.21222459776500835, 0.15817665178455054]
+Slope Error: [0.13730545113797904, 0, 0.0799154415439657, 0.06842323298629183]
+intercepts:  [0.09136704899947024, 0, 0.023658680344470495, -0.004716995679979672]
+Int Error:   [0.045198469317295424, 0, 0.025855026850631166, 0.030837022533731048]
+StDev:       [0.04669654, 0.05729455, 0.0781202, 0.09800116]
+Not variable, closing plots & going to next row
+Running object 155924
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 17, 'r': 49, 'i': 31, 'z': 30}
+Mu: {'g': 0.13363516, 'r': 0.121540666, 'i': 0.1776545, 'z': 0.37342432}
+Variable??
+0.026212303619116466
+1.5372748303688755
+Non-Variable source in g
+Variable??
+0.017712481785565615
+1.8458340113748062
+Non-Variable source in r
+Variable??
+0.03493321555959007
+1.4023412455607551
+Non-Variable source in i
+Variable??
+0.07967842819631162
+1.3451122882716087
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.46673745408173595, 1]
+Slope Error: [0.29338179991833707, 0, 0.2024924348241053, 0.12272014278995824]
+intercepts:  [-0.041152710000472964, 0, 0.0036381966331446858, -0.05455157858778751]
+Int Error:   [0.07055774336223274, 0, 0.04199682771156814, 0.06605797747340167]
+StDev:       [0.1187094, 0.048354127, 0.059962735, 0.09667428]
+Not variable, closing plots & going to next row
+Running object 155925
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 53, 'i': 138, 'z': 161}
+Mu: {'g': 0.0, 'r': 0.12124026, 'i': 0.31247535, 'z': 0.57835376}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.018004735347421662
+1.810384547495937
+Non-Variable source in r
+Variable??
+0.02319136245975086
+0.8007507161297968
+Non-Variable source in i
+Variable??
+0.03066449874194384
+0.6047419561790471
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.10375411977926174]
+Slope Error: [0.0, 0, 0.05399488489947267, 0.0440690529000089]
+intercepts:  [0, 0, -0.0033635319731357693, 0.008485712613778729]
+Int Error:   [0.0, 0, 0.023670713646915635, 0.025017840436148277]
+StDev:       [0.0, 0.051765613, 0.063274056, 0.10561853]
+Not variable, closing plots & going to next row
+Running object 155926
+Min gap is: 27.808594
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 5, 'i': 54, 'z': 159}
+Mu: {'g': 0.0, 'r': 0.16208605, 'i': 0.18856448, 'z': 0.41310203}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.025542648540305447
+28.698113109548704
+Variable Source in r!!
+Variable??
+0.03431745519834478
+1.2629736460296745
+Non-Variable source in i
+Variable??
+0.050740802113308114
+1.8697270393299472
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1.526793089608411, 0.14681604601530718]
+Slope Error: [0.0, 0, 0.16833548006346993, 0.044941223497400845]
+intercepts:  [0, 0, 0.7142021835001997, -0.03822314031253618]
+Int Error:   [0.0, 0, 0.09098724552764968, 0.05852525845595393]
+StDev:       [0.0, 0.15096992, 0.06242351, 0.09116386]
+Spread:      0/4
+Spread values: 
+ROW: 155926all Tau: 3.999481966006558 V: -0.44879602585354944
+ClusterEmcee2_linear_mu_all_and_single_fast.py:638: RuntimeWarning: divide by zero encountered in log10
+  mu_list = [22.5-2.5*np.log10(mu[i]) for i in mu]
+ROW: 155926r Tau: 1.7198006216601727 V: -0.25033769130606826
+Close extra plots
+Row 155926 ran in 30.7964 seconds
+Running object 155927
+Min gap is: 3.9492188
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 11, 'r': 130, 'i': 138, 'z': 155}
+Mu: {'g': 0.1334431, 'r': 0.27164966, 'i': 0.49623618, 'z': 0.6622963}
+Variable??
+0.029193498100591436
+1.7299007814326106
+Non-Variable source in g
+Variable??
+0.017392957705994853
+1.0695494793683584
+Non-Variable source in r
+Variable??
+0.021751993265966715
+0.31364921012698255
+Non-Variable source in i
+Variable??
+0.030115623351742598
+0.39045705238843953
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [9.269851209988586, 1, 1, 0.07509221044398562]
+Slope Error: [3.8563905001725067, 0, 0.10368729573618339, 0.029610924758491957]
+intercepts:  [0.08697076066865349, 0, 0.02232148992512817, 0.0058195350609190665]
+Int Error:   [0.27144548868843615, 0, 0.01943668231867429, 0.008128027132779504]
+StDev:       [0.10300153, 0.051656332, 0.06766509, 0.09279962]
+Not variable, closing plots & going to next row
+Running object 155928
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 8, 'i': 22, 'z': 52}
+Mu: {'g': 0.0, 'r': 0.35174915, 'i': 0.7985035, 'z': 1.1436284}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.025442277010033206
+0.8850411765747881
+Non-Variable source in r
+Variable??
+0.04575391587875607
+2.7350330063214447
+Non-Variable source in i
+Variable??
+0.048594702355078324
+0.9677357985327871
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.9288759893913148, 0.34037561508635517]
+intercepts:  [0, 0, 0.09050105330951398, 0.011344073128017492]
+Int Error:   [0.0, 0, 0.06021229476258222, 0.026369400795629855]
+StDev:       [0.0, 0.04587011, 0.2085109, 0.1309782]
+Not variable, closing plots & going to next row
+Running object 155929
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 137, 'r': 142, 'i': 149, 'z': 246}
+Mu: {'g': 2.3771443, 'r': 9.182953, 'i': 34.85536, 'z': 63.100616}
+Variable??
+0.02429497518850844
+4.326094805932993
+Variable Source in g!!
+Variable??
+0.026220903057437423
+80.04111456421714
+Variable Source in r!!
+Variable??
+0.0435319554623051
+304.16812463682066
+Variable Source in i!!
+Variable??
+0.06020512271535702
+78.27866404939735
+Variable Source in z!!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [-0.022159997935592868, 1, -0.013015646179457718, -0.002894602847868244]
+Slope Error: [0.08095193051629809, 0, 0.09806910772780143, 0.00798004980381503]
+intercepts:  [0.0015209786385064303, 0, -0.005545900607218268, -0.0001123202609758662]
+Int Error:   [0.004031541665511263, 0, 0.004423417156768763, 0.00045031390420281514]
+StDev:       [0.115220174, 0.14476787, 0.3549209, 0.53003716]
+Spread:      0/4
+Spread values: 
+ROW: 155929all Tau: 2.8280129973756035e-05 V: -1.2869255975402503
+ROW: 155929g Tau: 1.6529242401648603e-05 V: -1.467355131266958
+ROW: 155929r Tau: 8.526438466131478e-05 V: -1.2885215946967146
+ROW: 155929i Tau: 0.5546197566301453 V: -1.3480764050430185
+ROW: 155929z Tau: 7.199220321857554e-05 V: -1.9780566923180334
+Close extra plots
+Row 155929 ran in 130.831 seconds
+Running object 155930
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 82, 'r': 117, 'i': 114, 'z': 157}
+Mu: {'g': 0.21359982, 'r': 0.24962837, 'i': 0.29882762, 'z': 0.50789475}
+Variable??
+0.01894871584133067
+1.1280217087622229
+Non-Variable source in g
+Variable??
+0.01673235506525244
+1.2759811522852622
+Non-Variable source in r
+Variable??
+0.02351174422417292
+0.8678023793552457
+Non-Variable source in i
+Variable??
+0.03706207221633146
+0.749077702165611
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.44008564825190066, 1]
+Slope Error: [0.1886742364039662, 0, 0.10849388310636303, 0.057123168116609835]
+intercepts:  [0.12487869041860022, 0, 0.038658953872181726, 0.07118594289939678]
+Int Error:   [0.048216127149226067, 0, 0.015554249876738542, 0.016261890774997113]
+StDev:       [0.0530476, 0.050035376, 0.050289713, 0.08613125]
+Not variable, closing plots & going to next row
+Running object 155931
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 14.050781
+Counts: {'g': 22, 'r': 50, 'i': 40, 'z': 8}
+Mu: {'g': 0.13625148, 'r': 0.14375381, 'i': 0.19680288, 'z': 0.29688695}
+Variable??
+0.017879599139871978
+1.188293836409029
+Non-Variable source in g
+Variable??
+0.014993512513534028
+1.2171753083054306
+Non-Variable source in r
+Variable??
+0.026687829901594053
+1.3963648931355903
+Non-Variable source in i
+Variable??
+0.062127689475681015
+1.8250925047318505
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1.3587990289403118, 1]
+Slope Error: [0.33713778937238786, 0, 0.31683394595136516, 2.030219600506075]
+intercepts:  [0.051754131040037565, 0, 0.0813402337948298, 0.1741467414315564]
+Int Error:   [0.0813675381295385, 0, 0.0403560271104443, 0.38074620111590224]
+StDev:       [0.02950088, 0.0328226, 0.053711116, 0.096801676]
+Not variable, closing plots & going to next row
+Running object 155932
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'r': 88, 'i': 148, 'z': 237}
+Mu: {'g': 0.0, 'r': 0.14750141, 'i': 1.2724752, 'z': 3.2847934}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.01753656933257298
+1.3201920144791632
+Non-Variable source in r
+Variable??
+0.022002777234359575
+0.5171354034021629
+Non-Variable source in i
+Variable??
+0.03687419207477035
+0.4607705782675929
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.021042812106409188, 0.009994950834991327]
+intercepts:  [0, 0, 0.011887114930225502, 0.0015401111919316449]
+Int Error:   [0.0, 0, 0.007034530760630316, 0.004458066071100141]
+StDev:       [0.0, 0.04933165, 0.11014424, 0.21457118]
+Not variable, closing plots & going to next row
+Running object 155933
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 53, 'r': 117, 'i': 146, 'z': 184}
+Mu: {'g': 0.1336962, 'r': 0.1970125, 'i': 0.35784343, 'z': 0.4611482}
+Variable??
+0.019258606950528542
+0.8788995830864782
+Non-Variable source in g
+Variable??
+0.016684879793095835
+0.9787932820832372
+Non-Variable source in r
+Variable??
+0.022826760945723848
+0.93613713464396
+Non-Variable source in i
+Variable??
+0.03885908941302198
+1.19886179017755
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.16446005971027233, 0.30545652108038746]
+Slope Error: [0.2327596684437211, 0, 0.05104802138710123, 0.07506698297469927]
+intercepts:  [0.1094862778678325, 0, 0.005187048620986179, 0.047395363638440956]
+Int Error:   [0.048709617847830754, 0, 0.014890730610086765, 0.023942609249414968]
+StDev:       [0.030978277, 0.04902789, 0.058967937, 0.09658235]
+Not variable, closing plots & going to next row
+Running object 155934
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 9, 'i': 138, 'z': 146}
+Mu: {'g': 0.0, 'r': 0.12115217, 'i': 0.3358582, 'z': 0.6547576}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.022247797809541225
+3.2526060995548574
+Variable Source in r!!
+Variable??
+0.02284246790409893
+0.4888365879811351
+Non-Variable source in i
+Variable??
+0.029623966341377227
+0.5157321224313124
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.14156864006483558, 0.0695589664494567]
+intercepts:  [0, 0, 0.0034423258151151407, 0.07306840418679482]
+Int Error:   [0.0, 0, 0.02989848471294647, 0.05737019121414723]
+StDev:       [0.0, 0.09284246, 0.05446048, 0.0966774]
+Spread:      0/4
+Spread values: 
+ROW: 155934all Tau: 3.9959274894590564 V: -1.4863829350178839
+ClusterEmcee2_linear_mu_all_and_single_fast.py:638: RuntimeWarning: divide by zero encountered in log10
+  mu_list = [22.5-2.5*np.log10(mu[i]) for i in mu]
+ROW: 155934r Tau: 2.215176384741063 V: -0.6776517406424152
+Close extra plots
+Row 155934 ran in 28.2197 seconds
+Running object 155935
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 27, 'r': 95, 'i': 134, 'z': 112}
+Mu: {'g': 0.11840774, 'r': 0.14931825, 'i': 0.2423427, 'z': 0.36745828}
+Variable??
+0.023811076142655162
+2.685167020482167
+Non-Variable source in g
+Variable??
+0.016781965394598
+1.4664362632044763
+Non-Variable source in r
+Variable??
+0.025588106611737767
+1.210842925453376
+Non-Variable source in i
+Variable??
+0.06228836189884619
+1.5752261776473215
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.833561809260066, 1, 1, 1]
+Slope Error: [0.863700889411574, 0, 0.09643884179387732, 0.18965587925285013]
+intercepts:  [0.05556006678868074, 0, 0.022196050991583616, 0.05620643761596031]
+Int Error:   [0.08235321759889894, 0, 0.0291187777747446, 0.03730173617128447]
+StDev:       [0.10882289, 0.039232392, 0.06201674, 0.111005254]
+Not variable, closing plots & going to next row
+Running object 155936
+Min gap is: 6.9296875
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 11, 'r': 88, 'i': 75, 'z': 41}
+Mu: {'g': 0.14098257, 'r': 0.16977808, 'i': 0.23648621, 'z': 0.3723919}
+Variable??
+0.02982702999733933
+3.3364070291235235
+Variable Source in g!!
+Variable??
+0.01734041235853773
+1.0366346692201829
+Non-Variable source in r
+Variable??
+0.02733530090836155
+1.587480745545672
+Non-Variable source in i
+Variable??
+0.06364892306296312
+1.207644914209593
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [5.840688547722947, 1, 1, 1]
+Slope Error: [3.386645978298598, 0, 0.33532960800155315, 0.11888517741799261]
+intercepts:  [0.017940532431995143, 0, 0.08309285581787518, 0.007813844552596434]
+Int Error:   [0.2716338653878969, 0, 0.06519097731965794, 0.05591579509111736]
+StDev:       [0.09271529, 0.04351553, 0.077021584, 0.1124863]
+Spread:      0/4
+Spread values: 
+ROW: 155936all Tau: 3.9985584136819603 V: -1.925553678558682
+ROW: 155936g Tau: 1.088465319105492 V: -0.5668094565833861
+Close extra plots
+Row 155936 ran in 19.0908 seconds
+Running object 155937
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 14, 'r': 72, 'i': 113, 'z': 194}
+Mu: {'g': 0.13794857, 'r': 0.13510557, 'i': 0.23550794, 'z': 0.41211596}
+Variable??
+0.02673696172645762
+2.459956111277
+Non-Variable source in g
+Variable??
+0.01714857406194392
+1.808664087656182
+Non-Variable source in r
+Variable??
+0.028060959783426587
+1.5599364679794843
+Non-Variable source in i
+Variable??
+0.04575616433631586
+2.424274290865559
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.35199024897782927, 0.3810808396344604]
+Slope Error: [0.357489517146482, 0, 0.088159211132669, 0.06491868982543604]
+intercepts:  [-0.16243754355031692, 0, -0.053666893018923245, 0.0030750080541939694]
+Int Error:   [0.07864949945818044, 0, 0.029548883645393237, 0.035257567529282594]
+StDev:       [0.15050834, 0.057323452, 0.06263626, 0.11307479]
+Not variable, closing plots & going to next row
+Running object 155938
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 24, 'r': 94, 'i': 113, 'z': 33}
+Mu: {'g': 0.12462785, 'r': 0.16165605, 'i': 0.22094503, 'z': 0.3229046}
+Variable??
+0.023360368998847494
+1.7713333589017108
+Non-Variable source in g
+Variable??
+0.015947765803879296
+0.8926029672328702
+Non-Variable source in r
+Variable??
+0.02636974886961815
+1.5770574696158903
+Non-Variable source in i
+Variable??
+0.07290257807162794
+2.7002458694002778
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.7872637409780225, 2.4277651357511227]
+Slope Error: [13.733111589853328, 0, 0.14291466849854487, 1.0317330297163707]
+intercepts:  [1.5851416420375963, 0, 0.02602773770068978, 0.033776675812477674]
+Int Error:   [1.3323241551107528, 0, 0.02541522976235494, 0.08444020185173802]
+StDev:       [0.4862416, 0.04057531, 0.058587577, 0.12027075]
+Not variable, closing plots & going to next row
+Running object 155939
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 411.9297
+Counts: {'g': 31, 'r': 50, 'i': 18, 'z': 3}
+Mu: {'g': 0.12713346, 'r': 0.1261706, 'i': 0.1750741, 'z': 0.42868665}
+No handles with labels found to put in legend.
+Variable??
+0.023026906101369364
+1.6442919900375792
+Non-Variable source in g
+Variable??
+0.018911615260008334
+3.0531581952900844
+Variable Source in r!!
+Variable??
+0.03551549365923733
+2.596657607623501
+Non-Variable source in i
+Variable??
+0.08622031486748676
+6.202662028748523
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.13821988463470145, 0, 0.3654325341821105, 0.0]
+intercepts:  [-0.0461922211049458, 0, -0.0009796094074836503, 0]
+Int Error:   [0.0385821624555114, 0, 0.10476718424035558, 0.0]
+StDev:       [0.027104136, 0.06968778, 0.22788316, 0.11466421]
+Spread:      0/4
+Spread values: 
+ROW: 155939all Tau: 0.7894486861514411 V: -0.7210962749586413
+ROW: 155939r Tau: 0.531363217356821 V: -0.6718693135393
+Close extra plots
+Row 155939 ran in 15.1104 seconds
+Running object 155940
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 50, 'r': 114, 'i': 101, 'z': 45}
+Mu: {'g': 0.13136669, 'r': 0.1826336, 'i': 0.22521521, 'z': 0.33190626}
+Variable??
+0.024144586081094908
+3.287370122084676
+Variable Source in g!!
+Variable??
+0.016810000673922645
+1.0637641178942754
+Non-Variable source in r
+Variable??
+0.026018551592367357
+1.1657801539608128
+Non-Variable source in i
+Variable??
+0.06318491495180843
+1.8759412692106592
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1.552229624029814, 1, 0.5800791864749755, 1]
+Slope Error: [0.82791492058343, 0, 0.1095924714087045, 0.4525931075041326]
+intercepts:  [0.18511085699528118, 0, 0.02476765906717715, 0.1853476961501147]
+Int Error:   [0.15629163005256103, 0, 0.024673571221533776, 0.07119913441970807]
+StDev:       [0.08200412, 0.08003322, 0.053456057, 0.14171772]
+Spread:      0/4
+Spread values: 
+ROW: 155940all Tau: 3.9969841109738695 V: -1.4296741855451247
+ROW: 155940g Tau: 0.23795511973484465 V: -0.6390678115893608
+Close extra plots
+Row 155940 ran in 32.5863 seconds
+Running object 155941
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 129, 'r': 140, 'i': 149, 'z': 244}
+Mu: {'g': 0.60209435, 'r': 1.4970562, 'i': 2.0442328, 'z': 2.4193294}
+Variable??
+0.020765835520659158
+7.126975861708494
+Variable Source in g!!
+Variable??
+0.01846805627131679
+50.66553667522729
+Variable Source in r!!
+Variable??
+0.0225891790472865
+28.187247678909973
+Variable Source in i!!
+Variable??
+0.03633759514516808
+11.068246896981893
+Variable Source in z!!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [0.3943911705969987, 1, 0.5356389169568412, 0.21871745125290387]
+Slope Error: [0.19221190838518015, 0, 0.06298166161862734, 0.07634581751040868]
+intercepts:  [0.030491345016940063, 0, 0.005435361356398882, 0.0371161324829676]
+Int Error:   [0.028622572597061108, 0, 0.009725615935641644, 0.012927078562043065]
+StDev:       [0.11841626, 0.21165985, 0.29938203, 0.3844036]
+Spread:      4/4
+Spread values: 
+G 0.015140643
+R 0.016844202
+I 0.019328358
+Z 0.01970276
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.015140643
+0.016844202
+0.019328358
+0.01970276
+Continuing to next row
+Running object 155942
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 65, 'r': 195, 'i': 142, 'z': 145}
+Mu: {'g': 0.14541182, 'r': 0.31148794, 'i': 0.6703975, 'z': 0.9510744}
+Variable??
+0.02077935018476587
+2.7018203593289156
+Non-Variable source in g
+Variable??
+0.019926361471341938
+2.6856483326647256
+Non-Variable source in r
+Variable??
+0.020864015983131246
+1.9975273242566212
+Non-Variable source in i
+Variable??
+0.027898117068676814
+0.9494475055164145
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.23269079535455772, 0.18888992811795036]
+Slope Error: [0.6383408643374828, 0, 0.05285170313877343, 0.051582857256868106]
+intercepts:  [0.18309927827052097, 0, 0.004238441858326204, 0.016481406504669116]
+Int Error:   [0.08236882218531776, 0, 0.010325457735257011, 0.012287442306679067]
+StDev:       [0.06632227, 0.058312938, 0.095963955, 0.1357715]
+Not variable, closing plots & going to next row
+Running object 155943
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 92.82031
+Counts: {'g': 16, 'r': 47, 'i': 16, 'z': 4}
+Mu: {'g': 0.12726974, 'r': 0.11644306, 'i': 0.18397695, 'z': 0.30511847}
+No handles with labels found to put in legend.
+Variable??
+0.02583736926317215
+1.402837091056857
+Non-Variable source in g
+Variable??
+0.01800703507880369
+2.774616989244767
+Non-Variable source in r
+Variable??
+0.03248108923435211
+1.9397813627993312
+Non-Variable source in i
+Variable??
+0.06411052495241165
+1.5773543905186942
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.308359515066639, 0, 0.38423053287378045, 0.0]
+intercepts:  [-0.06161501331597775, 0, -0.2363180794715863, 0]
+Int Error:   [0.0857337588753772, 0, 0.08487748530271086, 0.0]
+StDev:       [0.058386855, 0.06326497, 0.07061416, 0.051702578]
+Not variable, closing plots & going to next row
+Running object 155944
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 132, 'r': 142, 'i': 150, 'z': 237}
+Mu: {'g': 0.7847533, 'r': 1.0863972, 'i': 1.2343134, 'z': 1.28995}
+Variable??
+0.021306155252837085
+3.165892809449947
+Variable Source in g!!
+Variable??
+0.018311388269948117
+6.5991595384370765
+Variable Source in r!!
+Variable??
+0.02259087917713281
+3.095489519815461
+Variable Source in i!!
+Variable??
+0.035230914134019096
+4.753078014893609
+Variable Source in z!!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [0.48615269752442436, 1, 0.3188053212287745, 0.5520687177921824]
+Slope Error: [0.3118081890399832, 0, 0.08815329097338087, 0.217081255094307]
+intercepts:  [0.03488299112505644, 0, 0.010739454828647688, 0.036271584835687376]
+Int Error:   [0.027608242087791543, 0, 0.007209936028566618, 0.019959249041711865]
+StDev:       [0.13183261, 0.094911344, 0.14383985, 0.21286039]
+Spread:      4/4
+Spread values: 
+G 0.0076535214
+R 0.009500908
+I 0.010223675
+Z 0.012995801
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.0076535214
+0.009500908
+0.010223675
+0.012995801
+Continuing to next row
+Running object 155945
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 19, 'r': 58, 'i': 55, 'z': 77}
+Mu: {'g': 0.1445189, 'r': 0.13794734, 'i': 0.20676643, 'z': 0.3964328}
+Variable??
+0.0306862692351194
+1.0038150444232272
+Non-Variable source in g
+Variable??
+0.022872598046597394
+2.3193886327802473
+Non-Variable source in r
+Variable??
+0.03399497999886709
+2.560131005769379
+Non-Variable source in i
+Variable??
+0.07779377549636904
+2.3927295548066327
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.9250688070696589, 1, 0.30311582814690985, 0.5398318973909686]
+Slope Error: [0.35919507822269153, 0, 0.0803589381987025, 0.15551078094033055]
+intercepts:  [0.07446711221009035, 0, -0.07953690619158693, -0.10762557738066891]
+Int Error:   [0.08867627411924216, 0, 0.04124815763338421, 0.044517407500345746]
+StDev:       [0.0372532, 0.05459394, 0.06808907, 0.13355644]
+Not variable, closing plots & going to next row
+Running object 155946
+Min gap is: 137.78906
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 3, 'r': 74, 'i': 139, 'z': 175}
+Mu: {'g': 0.43561384, 'r': 0.13914424, 'i': 0.3461998, 'z': 0.5416258}
+No handles with labels found to put in legend.
+Variable??
+0.05682620405464428
+135.29799068863338
+Variable Source in g!!
+Not enough observations in g
+Variable??
+0.016924942462294246
+1.6114648530918698
+Non-Variable source in r
+Variable??
+0.023269464658147634
+0.8803304083118235
+Non-Variable source in i
+Variable??
+0.03372760768201247
+0.9245537403280095
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.22698414800743438, 0.21773945257872263]
+Slope Error: [0.0, 0, 0.05744929551625305, 0.09053859456305066]
+intercepts:  [0, 0, 0.015345077072426716, 0.037301892786684165]
+Int Error:   [0.0, 0, 0.024267189247185718, 0.029416152176716153]
+StDev:       [0.26344132, 0.04396956, 0.061408687, 0.107406236]
+Not variable, closing plots & going to next row
+Running object 155947
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 123, 'r': 138, 'i': 146, 'z': 230}
+Mu: {'g': 0.5207272, 'r': 0.9765453, 'i': 1.1558774, 'z': 1.5917294}
+Variable??
+0.019892423080244796
+6.298894471358239
+Variable Source in g!!
+Variable??
+0.017325005201144605
+18.47332909738762
+Variable Source in r!!
+Variable??
+0.02145071800073827
+8.14808168480985
+Variable Source in i!!
+Variable??
+0.03512903701377496
+3.1445554120210866
+Variable Source in z!!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [0.8378332813003082, 1, 0.5243101510013624, 0.49830439508796287]
+Slope Error: [0.07609210420493794, 0, 0.043181765834945186, 0.03244753608164821]
+intercepts:  [0.005131023856771333, 0, 0.004877049584773974, -0.0018159937623345446]
+Int Error:   [0.015610444349699045, 0, 0.007901976745460913, 0.0063788346420309]
+StDev:       [0.11102037, 0.19132727, 0.16131616, 0.19214794]
+Spread:      0/4
+Spread values: 
+ROW: 155947all Tau: 2.8115262378699173 V: -0.7741760126592248
+ROW: 155947g Tau: 2.5679044718091717 V: -0.7368790098511148
+ROW: 155947r Tau: 2.795059003298011 V: -0.8199313195880413
+ROW: 155947i Tau: 2.9747857256493586 V: -0.8609662219473465
+ROW: 155947z Tau: 3.0709293339269754 V: -0.9700061722021021
+Close extra plots
+Row 155947 ran in 124.4062 seconds
+Running object 155948
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0078125
+Counts: {'g': 6, 'r': 68, 'i': 69, 'z': 13}
+Mu: {'g': 0.11828361, 'r': 0.1321046, 'i': 0.20053247, 'z': 0.34664467}
+Variable??
+0.02670318430372235
+0.354744682359579
+Non-Variable source in g
+Variable??
+0.01669041066165256
+1.4377135317775582
+Non-Variable source in r
+Variable??
+0.031655169669576905
+2.9745702720240565
+Non-Variable source in i
+Variable??
+0.08922563410879032
+0.6879418182417073
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [1.0251488632145798, 0, 0.2179536714278661, 0.4573842107159205]
+intercepts:  [0.09182830436118217, 0, -0.0018256835414633965, -0.005353818006648581]
+Int Error:   [0.16025902276000265, 0, 0.04818528859693411, 0.07529231099166211]
+StDev:       [0.029735258, 0.032156028, 0.06174677, 0.073955275]
+Not variable, closing plots & going to next row
+Running object 155949
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 103, 'r': 134, 'i': 143, 'z': 158}
+Mu: {'g': 0.24602222, 'r': 0.43752104, 'i': 0.5343646, 'z': 0.6079707}
+Variable??
+0.01870919518387969
+0.49378161179991714
+Non-Variable source in g
+Variable??
+0.016436716616341815
+0.5611150175254078
+Non-Variable source in r
+Variable??
+0.021282732529709615
+0.3171235722848219
+Non-Variable source in i
+Variable??
+0.03161430435480798
+0.633444763252923
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.9156863163390997, 0, 0.08167557657719393, 0.10994168446812809]
+intercepts:  [0.11031052073544712, 0, 0.006881225707822791, 0.03613993658135939]
+Int Error:   [0.041145349915008934, 0, 0.008782150937871045, 0.013331536364609627]
+StDev:       [0.052401528, 0.046413288, 0.05946399, 0.09425702]
+Not variable, closing plots & going to next row
+Running object 155950
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 90, 'r': 132, 'i': 141, 'z': 140}
+Mu: {'g': 0.19868466, 'r': 0.30032122, 'i': 0.3171303, 'z': 0.38044968}
+Variable??
+0.02108932845235076
+1.5786911173656497
+Non-Variable source in g
+Variable??
+0.018423863532289194
+3.115671536875602
+Variable Source in r!!
+Variable??
+0.025228543710271497
+1.8143295271018793
+Non-Variable source in i
+Variable??
+0.06100671561239534
+2.516485258255378
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 0.7300111886135545, 0.5761889890691694]
+Slope Error: [0.4337345227207341, 0, 0.1197579247023123, 0.23799187103994665]
+intercepts:  [0.07399552980390389, 0, 0.042537679080998037, 0.15683825201996637]
+Int Error:   [0.0838548963150067, 0, 0.02157884858507966, 0.057062596635239306]
+StDev:       [0.080881186, 0.06553395, 0.07644725, 0.18208714]
+Spread:      3/4
+Spread values: 
+G 0.013555412
+R 0.017453207
+I 0.017507391
+Too spread in bands: ['G', 'R', 'I']
+0.013555412
+0.017453207
+0.017507391
+Continuing to next row
+Running object 155951
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 85, 'i': 134, 'z': 170}
+Mu: {'g': 0.0, 'r': 0.12902169, 'i': 0.28226584, 'z': 0.4695835}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.019844416655592566
+1.9512089624962081
+Non-Variable source in r
+Variable??
+0.022634388725387547
+0.761330863690982
+Non-Variable source in i
+Variable??
+0.03595677604022636
+1.4371179128345843
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.1106998453128809, 1]
+Slope Error: [0.0, 0, 0.04275896693057501, 0.03950891101090847]
+intercepts:  [0, 0, 0.0028200945546559275, 0.05400852035026721]
+Int Error:   [0.0, 0, 0.020531829504377992, 0.027564989461165843]
+StDev:       [0.0, 0.07254363, 0.055245835, 0.099490315]
+Not variable, closing plots & going to next row
+Running object 155952
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 43, 'r': 74, 'i': 58, 'z': 58}
+Mu: {'g': 0.13483578, 'r': 0.12956838, 'i': 0.19764441, 'z': 0.35338038}
+Variable??
+0.020805286384407932
+2.127162215197275
+Non-Variable source in g
+Variable??
+0.016828074935595565
+1.2464584988848921
+Non-Variable source in r
+Variable??
+0.03130564771599902
+1.856106482421928
+Non-Variable source in i
+Variable??
+0.06764802133774847
+1.2222241727303522
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.3578354565828383, 1, 0.42385026789604185, 0.5200326252483224]
+Slope Error: [0.12035161053384352, 0, 0.14695767480435815, 0.19533468965991838]
+intercepts:  [-0.07726090483233716, 0, -0.038998900652355006, -0.05009958003254682]
+Int Error:   [0.05969695926353209, 0, 0.03610064790976143, 0.03823070169391531]
+StDev:       [0.06121932, 0.04148418, 0.05751734, 0.090354465]
+Not variable, closing plots & going to next row
+Running object 155953
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 102, 'r': 123, 'i': 132, 'z': 173}
+Mu: {'g': 0.2320876, 'r': 0.24028522, 'i': 0.2674176, 'z': 0.4002266}
+Variable??
+0.019486413029412085
+1.1554912669090498
+Non-Variable source in g
+Variable??
+0.016824832208315096
+1.09139244031251
+Non-Variable source in r
+Variable??
+0.02394987260069008
+1.1618001893068088
+Non-Variable source in i
+Variable??
+0.05014144091959955
+2.0769459734412283
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.33855531437431385, 0.3609791925360002]
+Slope Error: [0.12373701338165993, 0, 0.09039787742721941, 0.12248247401530075]
+intercepts:  [0.034585067957925965, 0, 0.05068988941926822, 0.04642828994454358]
+Int Error:   [0.026133805073236493, 0, 0.020472822169098875, 0.026949484545117305]
+StDev:       [0.05843423, 0.04888231, 0.06001456, 0.11417625]
+Not variable, closing plots & going to next row
+Running object 155954
+Min gap is: 13.972656
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 12, 'r': 33, 'i': 33, 'z': 43}
+Mu: {'g': 0.1522131, 'r': 0.12032321, 'i': 0.19587326, 'z': 0.3745234}
+Variable??
+0.039018627872116074
+5.158436007145303
+Variable Source in g!!
+Variable??
+0.023497478494424358
+2.6200511538833546
+Non-Variable source in r
+Variable??
+0.038133427487257864
+1.8925236463443733
+Non-Variable source in i
+Variable??
+0.0731903714850085
+1.3371726006890807
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [-1.2277895783248653, 1, 1.3351681270336209, 1]
+Slope Error: [1.328973158601805, 0, 0.4803353677041371, 0.24563283148818635]
+intercepts:  [-0.15430064353810277, 0, 0.10973217885702187, -0.04162107661785732]
+Int Error:   [0.05655234369696413, 0, 0.08996907284619199, 0.061567170069841436]
+StDev:       [0.2589509, 0.102826096, 0.12906812, 0.18502156]
+Spread:      0/4
+Spread values: 
+ROW: 155954all Tau: 3.989798417755324 V: -1.3034135948351202
+ROW: 155954g Tau: 2.5120651710364137 V: 0.24050036930083513
+Close extra plots
+Row 155954 ran in 18.5802 seconds
+Running object 155955
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 114, 'r': 133, 'i': 141, 'z': 158}
+Mu: {'g': 0.26119113, 'r': 0.29038447, 'i': 0.43281615, 'z': 0.5714994}
+Variable??
+0.01964900643695624
+1.0316824606033812
+Non-Variable source in g
+Variable??
+0.016794363756867898
+1.2672842866183218
+Non-Variable source in r
+Variable??
+0.02147420618250046
+0.6136868046732412
+Non-Variable source in i
+Variable??
+0.03197386790375227
+1.191012740217568
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.9708435268492805, 1, 0.2484461344629656, 1]
+Slope Error: [0.16328505798293722, 0, 0.03610420255354447, 0.049521819223548084]
+intercepts:  [0.05062544626436638, 0, 0.003833262800875592, 0.045585409248807156]
+Int Error:   [0.028465867875438557, 0, 0.0086929375842518, 0.017813871922029885]
+StDev:       [0.06834156, 0.06164864, 0.057938397, 0.1005227]
+Not variable, closing plots & going to next row
+Running object 155956
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 41, 'r': 98, 'i': 135, 'z': 178}
+Mu: {'g': 0.13004822, 'r': 0.14833322, 'i': 0.2747242, 'z': 0.4435369}
+Variable??
+0.024930233002244357
+4.667226983175621
+Variable Source in g!!
+Variable??
+0.016560139519370055
+1.3343089459238338
+Non-Variable source in r
+Variable??
+0.02262844947179817
+1.1859616639540405
+Non-Variable source in i
+Variable??
+0.04174236201084086
+1.711035102601763
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [0.858405008064075, 1, 0.18571439710584714, 1]
+Slope Error: [0.26916665607974294, 0, 0.06471649420956431, 0.10968425622818033]
+intercepts:  [0.004782526975121826, 0, 0.0129485329968144, -0.0020686789452517562]
+Int Error:   [0.08414071532517962, 0, 0.018979835833974296, 0.03024251360315008]
+StDev:       [0.08781303, 0.03726259, 0.056710817, 0.11040999]
+Spread:      0/4
+Spread values: 
+ROW: 155956all Tau: 0.5381821918072853 V: -0.9136965063067102
+ROW: 155956g Tau: 0.24672626791485308 V: -0.5658190988842908
+Close extra plots
+Row 155956 ran in 46.1899 seconds
+Running object 155957
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 100, 'r': 122, 'i': 130, 'z': 128}
+Mu: {'g': 0.22945198, 'r': 0.23264447, 'i': 0.25696474, 'z': 0.383906}
+Variable??
+0.020109820179641247
+0.7367265001206813
+Non-Variable source in g
+Variable??
+0.017107230409701614
+0.6996025828588214
+Non-Variable source in r
+Variable??
+0.02671931859279447
+1.1066507045124934
+Non-Variable source in i
+Variable??
+0.055408881230453226
+1.791253442354182
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.7152245099218602, 1, 1, 1]
+Slope Error: [0.23255912965576495, 0, 0.1402184681614266, 0.20131000144938413]
+intercepts:  [0.0821196639150743, 0, 0.0317583624053989, 0.021606458572745568]
+Int Error:   [0.030122490551591385, 0, 0.018332409992276318, 0.02937086927180237]
+StDev:       [0.063542195, 0.04244127, 0.04728253, 0.09080244]
+Not variable, closing plots & going to next row
+Running object 155958
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 59, 'i': 45, 'z': 14}
+Mu: {'g': 0.0, 'r': 0.13394521, 'i': 0.21003816, 'z': 0.32106993}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.01738034577386556
+1.208237481665617
+Non-Variable source in r
+Variable??
+0.031491285432443894
+2.5019181674843156
+Non-Variable source in i
+Variable??
+0.06244963112011505
+1.5471190478809191
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 1.1351926104822134, 0.4356621258362554]
+intercepts:  [0, 0, 0.07869780841331053, -0.04959224449576598]
+Int Error:   [0.0, 0, 0.18169733062145949, 0.07700651673572699]
+StDev:       [0.0, 0.034549817, 0.11605656, 0.10370957]
+Not variable, closing plots & going to next row
+Running object 155959
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 71, 'r': 136, 'i': 145, 'z': 142}
+Mu: {'g': 0.15312287, 'r': 0.33207402, 'i': 0.66726816, 'z': 0.85873973}
+Variable??
+0.019219373923604708
+1.5552418999527673
+Non-Variable source in g
+Variable??
+0.017333554918495624
+2.0071321413389747
+Non-Variable source in r
+Variable??
+0.02164636934289531
+2.266394677807112
+Non-Variable source in i
+Variable??
+0.027238885548665593
+1.1529620961237663
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.25323030987191086, 0.2730090765336607]
+Slope Error: [0.9397228086972484, 0, 0.06187696794984123, 0.06465439509049026]
+intercepts:  [0.30544819042875915, 0, 0.009072655679378984, 0.019894152017653783]
+Int Error:   [0.17590732309651722, 0, 0.011841770571539248, 0.013178409222827711]
+StDev:       [0.12682338, 0.06262792, 0.09210496, 0.14761579]
+Not variable, closing plots & going to next row
+Running object 155960
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 75, 'r': 100, 'i': 63, 'z': 21}
+Mu: {'g': 0.1645068, 'r': 0.17227578, 'i': 0.21384531, 'z': 0.34675026}
+Variable??
+0.01978269130292172
+1.7644669879109838
+Non-Variable source in g
+Variable??
+0.017134526278823614
+1.0107542025796061
+Non-Variable source in r
+Variable??
+0.026746834866251297
+1.3164043448416594
+Non-Variable source in i
+Variable??
+0.062026281968589884
+2.0848176577435464
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.8857943375914017, 1, 1, 1.088678543027235]
+Slope Error: [0.2502837172055006, 0, 0.2160445845345522, 0.4005421012657449]
+intercepts:  [0.03207232047359765, 0, 0.06494159036123204, 0.013858814106666117]
+Int Error:   [0.0516705189966083, 0, 0.0357156139731274, 0.06487761891142146]
+StDev:       [0.051275246, 0.051662948, 0.04816118, 0.08943695]
+Not variable, closing plots & going to next row
+Running object 155961
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.02734375
+Counts: {'g': 15, 'r': 31, 'i': 30, 'z': 3}
+Mu: {'g': 0.12625808, 'r': 0.09511062, 'i': 0.19272077, 'z': 0.31605992}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0.02953705312178027
+1.4863634546859743
+Non-Variable source in g
+Variable??
+0.017530298562997263
+2.657291328633975
+Non-Variable source in r
+Variable??
+0.034678636162210764
+3.107910672892227
+Non-Variable source in i
+Variable??
+0.09945775208040832
+1.0847372364953023
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.6299710369966676, 1]
+Slope Error: [0.0, 0, 0.2639530449149602, 0.0]
+intercepts:  [0, 0, -0.14996953590139986, 0]
+Int Error:   [0.0, 0, 0.06410149928922104, 0.0]
+StDev:       [0.02176635, 0.07326502, 0.049828403, 0.07564765]
+Not variable, closing plots & going to next row
+Running object 155962
+Min gap is: 6.8867188
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 3, 'r': 102, 'i': 132, 'z': 180}
+Mu: {'g': 0.13565779, 'r': 0.1913915, 'i': 0.33885762, 'z': 0.46776485}
+Variable??
+0.031463686533492
+6.964141619803796
+Variable Source in g!!
+Not enough observations in g
+Variable??
+0.015709329321135265
+1.1394672734642006
+Non-Variable source in r
+Variable??
+0.021319035476241272
+0.6919436725624812
+Non-Variable source in i
+Variable??
+0.04156124304643542
+1.594534512659524
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [11.730241675716577, 1, 0.15614107028351143, 1]
+Slope Error: [1.2601778585631755, 0, 0.05962366393799933, 0.09638690274313083]
+intercepts:  [-0.17399476660805135, 0, 0.016267352636692975, 0.05073214772450074]
+Int Error:   [0.1402822053941083, 0, 0.014772039729393727, 0.02597228932501091]
+StDev:       [0.14113389, 0.042538535, 0.050484173, 0.09606887]
+Not variable, closing plots & going to next row
+Running object 155963
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 31, 'r': 136, 'i': 148, 'z': 238}
+Mu: {'g': 0.14713739, 'r': 0.50848997, 'i': 1.085541, 'z': 1.5823209}
+Variable??
+0.024290695824210107
+1.6458524539734976
+Non-Variable source in g
+Variable??
+0.017861321855060872
+2.6863234831243124
+Non-Variable source in r
+Variable??
+0.02295397133396107
+2.360766130242189
+Non-Variable source in i
+Variable??
+0.03539561126434899
+1.595148882148052
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [4.60563392381041, 1, 0.22228097728250984, 0.18004545948917405]
+Slope Error: [0.8706591353027445, 0, 0.05222538884358111, 0.049964669301664606]
+intercepts:  [0.18868927801964552, 0, 0.011087108559149628, 0.008958711655325753]
+Int Error:   [0.10028051032254279, 0, 0.007508196452727886, 0.00868886125210064]
+StDev:       [0.087391905, 0.06894891, 0.108639926, 0.17605367]
+Not variable, closing plots & going to next row
+Running object 155964
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.01953125
+Counts: {'g': 52, 'r': 97, 'i': 82, 'z': 26}
+Mu: {'g': 0.13889061, 'r': 0.16249433, 'i': 0.2202965, 'z': 0.36279866}
+Variable??
+0.022161285452413634
+1.5793324325603664
+Non-Variable source in g
+Variable??
+0.017489513573201124
+1.6360070647594043
+Non-Variable source in r
+Variable??
+0.03466921184618874
+1.8729851031552531
+Non-Variable source in i
+Variable??
+0.0830877583071912
+1.1392092225768704
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.8137331619917805, 1, 0.24094333140858049, 1]
+Slope Error: [0.5041425731381576, 0, 0.058021022159167567, 0.547565201625381]
+intercepts:  [0.10189599141123318, 0, 0.0638835292737103, 0.08217863985176876]
+Int Error:   [0.12242313598526502, 0, 0.03532048384879506, 0.1125349151616747]
+StDev:       [0.09235611, 0.088038236, 0.5265872, 0.1395088]
+Not variable, closing plots & going to next row
+Running object 155965
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 56, 'r': 137, 'i': 148, 'z': 242}
+Mu: {'g': 0.1433419, 'r': 0.6412612, 'i': 1.7290746, 'z': 2.567821}
+Variable??
+0.02173258449193946
+1.193119210086351
+Non-Variable source in g
+Variable??
+0.01755175765540659
+1.0568616703706957
+Non-Variable source in r
+Variable??
+0.022542245193312098
+2.34360186225157
+Non-Variable source in i
+Variable??
+0.0363217767006854
+1.4051643543024477
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.9328651439775633, 0, 0.08432355098804714, 0.08411578677637424]
+intercepts:  [0.09568567618057272, 0, 0.003027295752625836, 0.008579006372921194]
+Int Error:   [0.05011268412839145, 0, 0.005874911338230833, 0.006474369351808854]
+StDev:       [0.03548957, 0.051994715, 0.10589165, 0.21060115]
+Not variable, closing plots & going to next row
+Running object 155966
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.015625
+Counts: {'g': 71, 'r': 92, 'i': 72, 'z': 23}
+Mu: {'g': 0.16463418, 'r': 0.17101297, 'i': 0.22384453, 'z': 0.3493954}
+Variable??
+0.020791538685096794
+1.5456706264700857
+Non-Variable source in g
+Variable??
+0.01671795157803115
+1.1124253509950643
+Non-Variable source in r
+Variable??
+0.02903849176208416
+1.3682204936906814
+Non-Variable source in i
+Variable??
+0.07290557331584825
+1.1226815543098165
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.7454875579630666, 1, 0.26087050144275237, 0.8905866878265551]
+Slope Error: [0.31634447256357445, 0, 0.12497042002298638, 0.11170222683254728]
+intercepts:  [0.040708994508806384, 0, 0.04118775203979687, -0.010263794051515562]
+Int Error:   [0.04790769973876621, 0, 0.02998433192806178, 0.05225933353954708]
+StDev:       [0.050629154, 0.038570303, 0.064960994, 0.13270858]
+Not variable, closing plots & going to next row
+Running object 155967
+Min gap is: 49.910156
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 3, 'r': 104, 'i': 115, 'z': 66}
+Mu: {'g': 0.11057191, 'r': 0.16411234, 'i': 0.23488232, 'z': 0.3476841}
+Variable??
+0.022120106624940947
+2.3178617734984677
+Non-Variable source in g
+Variable??
+0.017441275034153512
+1.1329637679365263
+Non-Variable source in r
+Variable??
+0.026682104371466876
+1.5137997609591118
+Non-Variable source in i
+Variable??
+0.06855682126280394
+2.8726775016676527
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.44101695769344595, 0.3979019813699096]
+Slope Error: [3.340640748140489, 0, 0.11860952732235146, 0.1399441262101714]
+intercepts:  [0.018149815240347256, 0, 0.060861374181817474, 0.09662735304424451]
+Int Error:   [0.462965323839239, 0, 0.031579571344751006, 0.04553976121706453]
+StDev:       [0.02660759, 0.049707375, 0.058782037, 0.13727279]
+Not variable, closing plots & going to next row
+Running object 155968
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 74, 'r': 132, 'i': 144, 'z': 151}
+Mu: {'g': 0.16364275, 'r': 0.26978508, 'i': 0.40663132, 'z': 0.71317106}
+Variable??
+0.020317801491369487
+0.9072877358567313
+Non-Variable source in g
+Variable??
+0.017929698981899608
+0.7974815418388819
+Non-Variable source in r
+Variable??
+0.02334856102243066
+0.5009088220483923
+Non-Variable source in i
+Variable??
+0.029296000761655106
+0.4779482606217981
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.14723239691100476]
+Slope Error: [0.5673784540174998, 0, 0.1281802982013928, 0.04612388856454536]
+intercepts:  [0.12396918223626274, 0, 0.0458412616635403, 0.012069973014203317]
+Int Error:   [0.05200257475660975, 0, 0.025300960494266327, 0.010912148017044605]
+StDev:       [0.04213078, 0.047132805, 0.07360734, 0.10821471]
+Not variable, closing plots & going to next row
+Running object 155969
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 127, 'i': 146, 'z': 139}
+Mu: {'g': 0.0, 'r': 0.24914539, 'i': 0.71177113, 'z': 1.3371198}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.016780323939640827
+1.022007543493851
+Non-Variable source in r
+Variable??
+0.021690915029279167
+0.7948893885289742
+Non-Variable source in i
+Variable??
+0.026783095668007958
+0.4992778205959366
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 0.10552580843262804]
+Slope Error: [0.0, 0, 0.05358798398651108, 0.028624769387838343]
+intercepts:  [0, 0, 0.01840636421217925, 0.011790025121206374]
+Int Error:   [0.0, 0, 0.012389922369802025, 0.007517215113512081]
+StDev:       [0.0099096075, 0.052291922, 0.07660282, 0.12701313]
+Not variable, closing plots & going to next row
+Running object 155970
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 122, 'r': 137, 'i': 146, 'z': 180}
+Mu: {'g': 0.3538861, 'r': 0.46464676, 'i': 0.48282015, 'z': 0.518709}
+Variable??
+0.019475042094753297
+1.094219187180058
+Non-Variable source in g
+Variable??
+0.016711765309750996
+0.8060216303581648
+Non-Variable source in r
+Variable??
+0.021794647151186897
+0.5955730275713628
+Non-Variable source in i
+Variable??
+0.035202648212723266
+1.0889813360333593
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.21111325320912344, 1]
+Slope Error: [0.34147724573767346, 0, 0.0961814938557239, 0.16960762538244648]
+intercepts:  [0.04754161535754192, 0, 0.0281909336040382, 0.0678479471057355]
+Int Error:   [0.025774899993113633, 0, 0.012028792408744765, 0.01907320571198372]
+StDev:       [0.069666125, 0.05273418, 0.06431519, 0.09596715]
+Not variable, closing plots & going to next row
+Running object 155971
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.01171875
+Counts: {'g': 59, 'r': 75, 'i': 30, 'z': 6}
+Mu: {'g': 0.14894105, 'r': 0.14634149, 'i': 0.18143265, 'z': 0.27226794}
+Variable??
+0.019345650284154733
+1.5923187455696657
+Non-Variable source in g
+Variable??
+0.0166089431336475
+1.1819568122588044
+Non-Variable source in r
+Variable??
+0.02890097233331167
+1.8564528139749037
+Non-Variable source in i
+Variable??
+0.059080791964151315
+1.9716972988023254
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1.4305814606333747, 0.7431077717845261]
+Slope Error: [0.16891728894110075, 0, 0.3875836393453994, 0.2915924593359053]
+intercepts:  [0.060193217546609334, 0, 0.08046057626208003, -0.0701276823168144]
+Int Error:   [0.067301082389874, 0, 0.044792004201895885, 0.0970619950526154]
+StDev:       [0.054946683, 0.039554004, 0.05203908, 0.074191526]
+Not variable, closing plots & going to next row
+Running object 155972
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 106, 'r': 133, 'i': 139, 'z': 156}
+Mu: {'g': 0.2440785, 'r': 0.42055905, 'i': 0.45210174, 'z': 0.54812187}
+Variable??
+0.020148200605015897
+1.1267273955609656
+Non-Variable source in g
+Variable??
+0.017191230585615044
+1.3010376916642024
+Non-Variable source in r
+Variable??
+0.021918116576280483
+0.8526531167227795
+Non-Variable source in i
+Variable??
+0.03068559765779786
+0.9084019500103211
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.6549688413198944, 2.858079873686995]
+Slope Error: [0.507712631399497, 0, 0.10313314050646445, 0.6707351024678193]
+intercepts:  [0.1538496825337687, 0, 0.01420808160022613, 0.03946664841714531]
+Int Error:   [0.0459394507747405, 0, 0.012012713337952141, 0.0828858122209476]
+StDev:       [0.07274714, 0.053806767, 0.07128931, 0.19406147]
+Not variable, closing plots & going to next row
+Running object 155973
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'r': 110, 'i': 145, 'z': 137}
+Mu: {'g': 0.0, 'r': 0.21438597, 'i': 1.9130306, 'z': 4.6908503}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.01701474183265942
+1.3239452998801875
+Non-Variable source in r
+Variable??
+0.02351652172280053
+1.4323407301561586
+Non-Variable source in i
+Variable??
+0.028254109860414277
+0.3416384392750303
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.010801072348296543, 0.013040991170743931]
+intercepts:  [0, 0, -0.0007446371281927076, -0.004036497976095479]
+Int Error:   [0.0, 0, 0.002143220742849036, 0.002533161842107788]
+StDev:       [0.0, 0.03832859, 0.22089797, 0.16575293]
+Not variable, closing plots & going to next row
+Running object 155974
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 42, 'r': 81, 'i': 124, 'z': 152}
+Mu: {'g': 0.13191599, 'r': 0.160037, 'i': 0.30387524, 'z': 0.44831786}
+Variable??
+0.020996652205295736
+2.3743413821668065
+Non-Variable source in g
+Variable??
+0.017082635080441833
+1.0848895754531287
+Non-Variable source in r
+Variable??
+0.024481201670544742
+0.7741003316534217
+Non-Variable source in i
+Variable??
+0.04346945056299971
+1.6797734512279916
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [2.018463618995158, 1, 1, 1]
+Slope Error: [0.33343522995132185, 0, 0.06113568460880942, 0.06010077688566225]
+intercepts:  [-0.01727549249124949, 0, 0.01158206246091893, 0.07448588188201676]
+Int Error:   [0.08031066566090865, 0, 0.016824051815494803, 0.025140215016592034]
+StDev:       [0.095258266, 0.048947256, 0.05252877, 0.09034426]
+Not variable, closing plots & going to next row
+Running object 155975
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 99, 'r': 127, 'i': 141, 'z': 172}
+Mu: {'g': 0.2192014, 'r': 0.24110651, 'i': 0.38627064, 'z': 0.4841336}
+Variable??
+0.019193505933402855
+1.3754658326227938
+Non-Variable source in g
+Variable??
+0.017316306723739166
+0.8733104849020129
+Non-Variable source in r
+Variable??
+0.023157620563864313
+0.6860968440216778
+Non-Variable source in i
+Variable??
+0.037721406521200096
+1.387564040398471
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.574462957087086, 0, 0.07360518647002486, 0.11840138869579389]
+intercepts:  [0.1731760738569823, 0, 0.022132529786116684, 0.06472616258388542]
+Int Error:   [0.07115157495320695, 0, 0.013719547955360793, 0.02925728946872017]
+StDev:       [0.097918354, 0.04568353, 0.05854233, 0.1119437]
+Not variable, closing plots & going to next row
+Running object 155976
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 140, 'r': 140, 'i': 148, 'z': 257}
+Mu: {'g': 1.0384185, 'r': 4.6218524, 'i': 8.156892, 'z': 11.014787}
+Variable??
+0.023942726616952598
+32.02459395852446
+Variable Source in g!!
+Variable??
+0.021944126036891554
+637.7711947855859
+Variable Source in r!!
+Variable??
+0.026154106619155616
+915.9793601243703
+Variable Source in i!!
+Variable??
+0.04071549441300137
+469.0496639159414
+Variable Source in z!!
+Variable:    4/4
+Var Bands:   griz
+Slope:       [0.7210916950026867, 1, 0.41401866628107165, 0.3466181401190982]
+Slope Error: [0.1115823667024886, 0, 0.05859217962908051, 0.054178388204791754]
+intercepts:  [-0.0051296401201403885, 0, 0.006285153204479088, 0.014547939324117798]
+Int Error:   [0.019136725216713318, 0, 0.010218402056237854, 0.009057959653877968]
+StDev:       [0.22513247, 0.68378145, 1.1459259, 1.4721893]
+Spread:      4/4
+Spread values: 
+G 0.017479617
+R 0.015095792
+I 0.015394717
+Z 0.01618507
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.017479617
+0.015095792
+0.015394717
+0.01618507
+Continuing to next row
+Running object 155977
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 69, 'r': 114, 'i': 99, 'z': 153}
+Mu: {'g': 0.14635733, 'r': 0.16871595, 'i': 0.22011663, 'z': 0.40372232}
+Variable??
+0.019937244307367784
+1.2964452078782271
+Non-Variable source in g
+Variable??
+0.016772534906375074
+1.0525555759005858
+Non-Variable source in r
+Variable??
+0.025846685459602302
+1.6467226461742008
+Non-Variable source in i
+Variable??
+0.052770061801573336
+2.4975526371365393
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.8030399291986778, 1, 0.26132439531026186, 1]
+Slope Error: [0.24715902336619847, 0, 0.11040789384551648, 0.1102656580759286]
+intercepts:  [0.08671617089995154, 0, 0.07702795434622932, 0.016193237684032136]
+Int Error:   [0.06338922460165149, 0, 0.03223662984947552, 0.032652532560675136]
+StDev:       [0.07127508, 0.039614413, 0.05672869, 0.09574353]
+Not variable, closing plots & going to next row
+Running object 155978
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 89, 'r': 132, 'i': 136, 'z': 88}
+Mu: {'g': 0.1847808, 'r': 0.23266831, 'i': 0.26342973, 'z': 0.34921244}
+Variable??
+0.01951230129012274
+1.1916233055837944
+Non-Variable source in g
+Variable??
+0.01769437208401524
+1.447271554888899
+Non-Variable source in r
+Variable??
+0.024448176826719212
+1.8367528397993573
+Non-Variable source in i
+Variable??
+0.05985002540353709
+1.6645924511478407
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.28095803873997793, 0.33457731821831804]
+Slope Error: [0.16621777810962243, 0, 0.08265471904277256, 0.12780133436156083]
+intercepts:  [0.06487640788338489, 0, 0.05120519997320372, 0.06557310428704938]
+Int Error:   [0.03661618665590314, 0, 0.026551543002092302, 0.03963202244572603]
+StDev:       [0.049628776, 0.0625624, 0.06334475, 0.11187092]
+Not variable, closing plots & going to next row
+Running object 155979
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 27, 'r': 49, 'i': 18, 'z': 13}
+Mu: {'g': 0.13781375, 'r': 0.13439552, 'i': 0.18783133, 'z': 0.336369}
+Variable??
+0.02538740601046383
+1.9452408690015703
+Non-Variable source in g
+Variable??
+0.020021224860101938
+3.0477399135342016
+Variable Source in r!!
+Variable??
+0.029676761660299613
+4.926211076672222
+Non-Variable source in i
+Variable??
+0.07020322866293623
+4.359368411090414
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [11.120160352744211, 1, 1, 1]
+Slope Error: [3.590320128932631, 0, 1.058545863106621, 1.5491844009876476]
+intercepts:  [1.3299692024793617, 0, 0.14492867548601052, -0.35887488287868574]
+Int Error:   [1.0732060506409307, 0, 0.2959092656921742, 0.46851939486272837]
+StDev:       [0.4135301, 0.07894144, 0.072190575, 0.079625614]
+Spread:      0/4
+Spread values: 
+ROW: 155979all Tau: 3.9965125368532153 V: -1.0581481040172065
+ROW: 155979r Tau: 0.9744171096584966 V: -0.6708468000485978
+Close extra plots
+Row 155979 ran in 16.5295 seconds
+Running object 155980
+Min gap is: 60.89453
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 4, 'r': 104, 'i': 149, 'z': 152}
+Mu: {'g': 0.14520055, 'r': 0.17641953, 'i': 0.39165926, 'z': 0.71211576}
+Variable??
+0.03273943439126015
+1.142771684769179
+Non-Variable source in g
+Variable??
+0.01787775205364521
+1.705859666466212
+Non-Variable source in r
+Variable??
+0.023980141571796065
+1.2813019932822283
+Non-Variable source in i
+Variable??
+0.029482769499523522
+1.0116667132069324
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [4.513206159595857, 0, 0.05682382712694446, 0.04683868126473093]
+intercepts:  [0.4232486445391275, 0, 0.02418935856408988, 0.017534152332137107]
+Int Error:   [0.32122607387125035, 0, 0.02058388088129564, 0.018674411340788837]
+StDev:       [0.03636889, 0.050159343, 0.080193385, 0.14383495]
+Not variable, closing plots & going to next row
+Running object 155981
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 60, 'r': 97, 'i': 115, 'z': 175}
+Mu: {'g': 0.14982276, 'r': 0.17745039, 'i': 0.26320308, 'z': 0.43602118}
+Variable??
+0.01934083057692235
+1.4317812299937505
+Non-Variable source in g
+Variable??
+0.016366285783756603
+1.2874458525231345
+Non-Variable source in r
+Variable??
+0.023349609685838418
+1.383186759938504
+Non-Variable source in i
+Variable??
+0.0423177007091452
+1.5660273561426972
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.27884680205746526, 0.32813704592809234]
+Slope Error: [0.5878170541765682, 0, 0.06061800701889712, 0.08902439729775098]
+intercepts:  [0.14596436277404023, 0, 0.007829581779815076, 0.02425690244483447]
+Int Error:   [0.08053595019072621, 0, 0.026207325073206455, 0.023984228194630742]
+StDev:       [0.050771736, 0.05370749, 0.056419015, 0.09738544]
+Not variable, closing plots & going to next row
+Running object 155982
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 19, 'r': 91, 'i': 103, 'z': 64}
+Mu: {'g': 0.121409096, 'r': 0.14469908, 'i': 0.22668567, 'z': 0.34493434}
+Variable??
+0.024707884712697404
+2.5227517610827217
+Non-Variable source in g
+Variable??
+0.01790432136150033
+1.4938251642811795
+Non-Variable source in r
+Variable??
+0.02608337687143164
+1.2139637352733057
+Non-Variable source in i
+Variable??
+0.06453920900821686
+1.8403873833148443
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.3850165854571829, 0, 0.08907978400065722, 0.18571769363374538]
+intercepts:  [-0.07417661063390099, 0, 0.04729408987827432, -0.017900292883302527]
+Int Error:   [0.058046545640393556, 0, 0.030393507872516237, 0.04093033555873019]
+StDev:       [0.15533593, 0.056868944, 0.055830363, 0.091371104]
+Not variable, closing plots & going to next row
+Running object 155983
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 83, 'r': 172, 'i': 151, 'z': 150}
+Mu: {'g': 0.18203256, 'r': 0.24780032, 'i': 0.4636888, 'z': 0.642238}
+Variable??
+0.023101140668959644
+1.5420914310718332
+Non-Variable source in g
+Variable??
+0.021384208031136307
+2.5518880608015304
+Non-Variable source in r
+Variable??
+0.02400629561736373
+1.992725057133814
+Non-Variable source in i
+Variable??
+0.03040990530540228
+0.8460835099116493
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.4128485930397925, 1, 1, 0.20301514042782887]
+Slope Error: [0.10889588415050105, 0, 0.1433165004906122, 0.053013770288168345]
+intercepts:  [0.014801031204679127, 0, 0.05048409625238539, 0.015352609482244262]
+Int Error:   [0.025209333741976054, 0, 0.03373660455169672, 0.014262457138234394]
+StDev:       [0.064887196, 0.05152131, 0.12557931, 0.1318588]
+Not variable, closing plots & going to next row
+Running object 155984
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 119, 'r': 137, 'i': 146, 'z': 232}
+Mu: {'g': 0.31931835, 'r': 0.68530434, 'i': 0.8650444, 'z': 0.952243}
+Variable??
+0.019564779380149635
+1.0153542336873136
+Non-Variable source in g
+Variable??
+0.017498467481435458
+1.7227946594989105
+Non-Variable source in r
+Variable??
+0.022484508524084533
+0.9294241145254782
+Non-Variable source in i
+Variable??
+0.03528361528589256
+0.826389938954692
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.3762677763079285, 1]
+Slope Error: [0.43635903493867456, 0, 0.1069364927572132, 0.16419579435650195]
+intercepts:  [0.07382263696722724, 0, 0.012945787946431841, 0.02500457914121533]
+Int Error:   [0.027325795805152958, 0, 0.006652613986304332, 0.01058208214580588]
+StDev:       [0.06695663, 0.06386209, 0.08124932, 0.120379254]
+Not variable, closing plots & going to next row
+Running object 155985
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 27, 'r': 87, 'i': 113, 'z': 122}
+Mu: {'g': 0.13264345, 'r': 0.15778556, 'i': 0.25756934, 'z': 0.3951561}
+Variable??
+0.024113292475875167
+1.3158748154790156
+Non-Variable source in g
+Variable??
+0.018268589528871997
+1.6047524740152397
+Non-Variable source in r
+Variable??
+0.02966833669474931
+1.4163740062475316
+Non-Variable source in i
+Variable??
+0.057612892597918956
+1.5587694548938085
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [11.244947352326838, 1, 0.25590693006292486, 0.45739026502173985]
+Slope Error: [3.7057937125806926, 0, 0.08873885417492837, 0.19219068355774324]
+intercepts:  [1.1728552957457898, 0, -0.001994461016217919, 0.017889050335026746]
+Int Error:   [0.5670028294190926, 0, 0.025441335388921557, 0.05436195621416452]
+StDev:       [0.19486114, 0.073097, 0.06716113, 0.122275576]
+Not variable, closing plots & going to next row
+Running object 155986
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 10, 'r': 78, 'i': 107, 'z': 59}
+Mu: {'g': 0.12023722, 'r': 0.14467305, 'i': 0.24207714, 'z': 0.34485382}
+Variable??
+0.024132217407589217
+0.8011806046814203
+Non-Variable source in g
+Variable??
+0.017578835724336342
+1.549604617506728
+Non-Variable source in r
+Variable??
+0.027416809810742748
+1.2502585310232412
+Non-Variable source in i
+Variable??
+0.059570333826683246
+2.0408455204026392
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [3.5622397296296526, 1, 0.179190162708177, 0.9396761589936768]
+Slope Error: [0.84982705359709, 0, 0.06318663268159116, 0.3211933766456999]
+intercepts:  [0.2592623851536511, 0, 0.019619555737852235, 0.03948237521592268]
+Int Error:   [0.08033644182306458, 0, 0.030382185034644266, 0.06304616859177942]
+StDev:       [0.023490654, 0.06635726, 0.06912928, 0.105465]
+Not variable, closing plots & going to next row
+Running object 155987
+Min gap is: 17.066406
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 11, 'r': 131, 'i': 153, 'z': 255}
+Mu: {'g': 0.13106309, 'r': 0.32388082, 'i': 1.1350601, 'z': 1.8740511}
+Variable??
+0.031140954696846062
+1.9227317050482147
+Non-Variable source in g
+Variable??
+0.017641257719489715
+0.6853227072112908
+Non-Variable source in r
+Variable??
+0.024814605288315708
+0.509519218834605
+Non-Variable source in i
+Variable??
+0.037059129158177655
+0.48985192741483746
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [2.6039861782771556, 0, 0.050697443236408714, 0.06308433823374283]
+intercepts:  [0.17570659989805357, 0, 0.017341008126321982, 0.013818964934394384]
+Int Error:   [0.25295870805201587, 0, 0.007153663824041621, 0.010715381900109665]
+StDev:       [0.10640311, 0.04454909, 0.1151112, 0.1701077]
+Not variable, closing plots & going to next row
+Running object 155988
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 43, 'r': 107, 'i': 129, 'z': 182}
+Mu: {'g': 0.14349695, 'r': 0.18466209, 'i': 0.2769262, 'z': 0.4744449}
+Variable??
+0.021104236099682074
+3.1792903547227227
+Variable Source in g!!
+Variable??
+0.016858398871427482
+2.2110860184706356
+Non-Variable source in r
+Variable??
+0.0270441617735141
+3.3910152846820565
+Non-Variable source in i
+Variable??
+0.041040505658102654
+1.8281630152074246
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [0.37072200669051614, 1, 0.3439197322793608, 0.32937615510279894]
+Slope Error: [0.15390319304002625, 0, 0.06566160291980482, 0.07538181063775333]
+intercepts:  [-0.08526346196529366, 0, -0.014776595001913195, 0.013451155094347626]
+Int Error:   [0.05733122284048548, 0, 0.02662334347580387, 0.021560813372171923]
+StDev:       [0.07166226, 0.0661712, 0.067849174, 0.09848052]
+Spread:      0/4
+Spread values: 
+ROW: 155988all Tau: 2.565484877991683 V: -0.6755717000707306
+ROW: 155988g Tau: 0.7931069599290972 V: -0.6844052136541565
+Close extra plots
+Row 155988 ran in 50.0185 seconds
+Running object 155989
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0
+New time_gap is :0.004
+Counts: {'g': 106, 'r': 136, 'i': 146, 'z': 234}
+Mu: {'g': 0.26166517, 'r': 0.54232025, 'i': 1.1455842, 'z': 1.6478038}
+Variable??
+0.01846015027265262
+1.0399156568393764
+Non-Variable source in g
+Variable??
+0.016511865039954565
+2.7864230634991887
+Non-Variable source in r
+Variable??
+0.021313718566464548
+3.4104309262218986
+Variable Source in i!!
+Variable??
+0.03496375034635722
+1.941862508015834
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   i
+Slope:       [1, 1, 0.2759637886216584, 0.33553077693335376]
+Slope Error: [0.2946904953962376, 0, 0.07132354563210509, 0.09586450239111165]
+intercepts:  [0.06682051860858296, 0, 0.00139033077618822, 0.017475337301130822]
+Int Error:   [0.027359637895607414, 0, 0.007658578014737674, 0.010878317340538735]
+StDev:       [0.05198525, 0.06523216, 0.11520104, 0.19704568]
+Spread:      4/4
+Spread values: 
+G 0.009381263
+R 0.010214132
+I 0.011583151
+Z 0.0144754555
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.009381263
+0.010214132
+0.011583151
+0.0144754555
+Continuing to next row
+Running object 155990
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 88, 'r': 137, 'i': 147, 'z': 139}
+Mu: {'g': 0.2208594, 'r': 0.83135164, 'i': 3.3978276, 'z': 6.0895214}
+Variable??
+0.019158894388982075
+0.7740786333128236
+Non-Variable source in g
+Variable??
+0.01773892118365208
+0.37438300261072816
+Non-Variable source in r
+Variable??
+0.023563270412113424
+0.3270277166920808
+Non-Variable source in i
+Variable??
+0.028712389819154638
+0.5720307715153474
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [1.633602474235907, 0, 0.04613710381840571, 0.042645817499153076]
+intercepts:  [0.1375234471094113, 0, 0.00044511033010933844, -0.0014594860621730543]
+Int Error:   [0.04934562180466625, 0, 0.0016332949384718002, 0.001841865954319173]
+StDev:       [0.052612167, 0.04981891, 0.14307547, 0.19664486]
+Not variable, closing plots & going to next row
+Running object 155991
+Min gap is: 66.046875
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 3, 'r': 68, 'i': 27, 'z': 15}
+Mu: {'g': 0.16247164, 'r': 0.13656238, 'i': 0.18488911, 'z': 0.3763255}
+No handles with labels found to put in legend.
+Variable??
+0.03147067770029971
+7.4505852237178525
+Variable Source in g!!
+Not enough observations in g
+Variable??
+0.016001521344120084
+1.6712078355335263
+Non-Variable source in r
+Variable??
+0.028907905326298867
+1.2881750285931486
+Non-Variable source in i
+Variable??
+0.07993961978739775
+3.889385212325332
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.4053545023517615, 1]
+Slope Error: [0.0, 0, 0.19807453343310835, 0.32115254231155904]
+intercepts:  [0, 0, -0.029849315521861444, -0.0012312415659335707]
+Int Error:   [0.0, 0, 0.03883629793358363, 0.17288437801295942]
+StDev:       [0.21661553, 0.048639264, 0.045058247, 0.16144407]
+Not variable, closing plots & going to next row
+Running object 155992
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 7, 'r': 91, 'i': 69, 'z': 18}
+Mu: {'g': 0.11726864, 'r': 0.15796281, 'i': 0.21074602, 'z': 0.33115682}
+Variable??
+0.02072874894160966
+5.853304145317366
+Variable Source in g!!
+Variable??
+0.017323687797246017
+1.1156428770460185
+Non-Variable source in r
+Variable??
+0.028974763230056398
+2.279889661589234
+Non-Variable source in i
+Variable??
+0.06773064410151469
+1.032209660330463
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [13.709892921413546, 1, 0.5250116308604564, 0.7502213462485622]
+Slope Error: [4.048297035056496, 0, 0.21832372143098328, 0.3030503314471395]
+intercepts:  [1.158459662807437, 0, 0.02320682990294242, -0.007457859847242823]
+Int Error:   [1.0226509471973253, 0, 0.0337259602977787, 0.05576565479294268]
+StDev:       [0.35137805, 0.05161901, 0.0500439, 0.07696358]
+Spread:      1/4
+Spread values: 
+I 0.021173982
+ROW: 155992all Tau: 0.3895334366335591 V: -1.1575726481959767
+ROW: 155992g Tau: 3.999406880828348 V: -2.885615772331723
+Close extra plots
+Row 155992 ran in 15.6091 seconds
+Running object 155993
+Min gap is: 61.92578
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 6, 'r': 64, 'i': 110, 'z': 189}
+Mu: {'g': 0.108111605, 'r': 0.12568521, 'i': 0.22680248, 'z': 0.4317301}
+Variable??
+0.028647825920232666
+3.1692537471628155
+Variable Source in g!!
+Variable??
+0.016634950414299965
+1.2742854975221676
+Non-Variable source in r
+Variable??
+0.02681321848177676
+1.3793902556288211
+Non-Variable source in i
+Variable??
+0.04006247492901114
+1.3332891677496022
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [0.5210908534727539, 1, 1, 0.4500316881971185]
+Slope Error: [0.35079398264498773, 0, 0.11887052337351425, 0.15286495831362926]
+intercepts:  [-0.0031272540291189532, 0, 0.00028196582547068694, -0.03717445756253368]
+Int Error:   [0.08531441863424885, 0, 0.034758634478335985, 0.033386518785904706]
+StDev:       [0.1096538, 0.034304094, 0.06084205, 0.107106954]
+Spread:      0/4
+Spread values: 
+ROW: 155993all Tau: 0.5568254981898166 V: -0.8935477385663584
+ROW: 155993g Tau: 3.9986963264549744 V: -2.902107438342048
+Close extra plots
+Row 155993 ran in 36.3993 seconds
+Running object 155994
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'i': 31, 'z': 163}
+Mu: {'g': 0.0, 'r': 0.0, 'i': 0.19372636, 'z': 0.37968963}
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0
+0
+Non-Variable source in r
+Variable??
+0.034463196739553864
+2.7438542101432897
+Non-Variable source in i
+Variable??
+0.05398440793734395
+2.5583736841609777
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 1, 1]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
+StDev:       [0.6610125, 0.0, 0.07251744, 0.12384899]
+Not variable, closing plots & going to next row
+Running object 155995
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.0078125
+Counts: {'g': 7, 'r': 66, 'i': 75, 'z': 31}
+Mu: {'g': 0.11652313, 'r': 0.13448507, 'i': 0.20445098, 'z': 0.37399113}
+Variable??
+0.025175818279839866
+4.0787770966568155
+Non-Variable source in g
+Variable??
+0.018323460802187115
+2.4125558713083475
+Non-Variable source in r
+Variable??
+0.027384004370254008
+1.050795305274638
+Non-Variable source in i
+Variable??
+0.0794503545800503
+1.6494685024310536
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.24846619096603717, 1]
+Slope Error: [1.3304044159744197, 0, 0.07186731184047443, 0.17936133022076117]
+intercepts:  [0.13155312744715808, 0, 0.027999042966326295, -0.0607228441333274]
+Int Error:   [0.21328344006810568, 0, 0.028561532199050554, 0.06854265581498109]
+StDev:       [0.052781034, 0.049156006, 0.05074599, 0.103800364]
+Not variable, closing plots & going to next row
+Running object 155996
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 113, 'r': 141, 'i': 144, 'z': 142}
+Mu: {'g': 0.30044374, 'r': 1.5812829, 'i': 4.2063737, 'z': 6.167449}
+Variable??
+0.018655127247807792
+1.0499017818076906
+Non-Variable source in g
+Variable??
+0.017850714118553237
+14.106380510045277
+Variable Source in r!!
+Variable??
+0.022987735457718372
+32.385160378113184
+Variable Source in i!!
+Variable??
+0.02864323343984108
+37.01720031386155
+Variable Source in z!!
+Variable:    3/4
+Var Bands:   riz
+Slope:       [1, 1, 0.6558392532543573, 0.39048139361006795]
+Slope Error: [0.2908345686951219, 0, 0.0725626775175365, 0.07024417449112984]
+intercepts:  [0.06748281244533508, 0, 0.0005410590069866439, 0.004727718461254067]
+Int Error:   [0.026397065603125092, 0, 0.006031953766495678, 0.00637210895001914]
+StDev:       [0.05964037, 0.13949084, 0.3667065, 0.5309622]
+Spread:      4/4
+Spread values: 
+G 0.010618366
+R 0.010485155
+I 0.010781809
+Z 0.012313304
+Too spread in bands: ['G', 'R', 'I', 'Z']
+0.010618366
+0.010485155
+0.010781809
+0.012313304
+Continuing to next row
+Running object 155997
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 79, 'r': 122, 'i': 125, 'z': 71}
+Mu: {'g': 0.15426795, 'r': 0.21105376, 'i': 0.2428656, 'z': 0.34721607}
+Variable??
+0.020401974024468646
+1.4116603004848787
+Non-Variable source in g
+Variable??
+0.01704815335141455
+1.4237218017975921
+Non-Variable source in r
+Variable??
+0.025461953725105495
+1.0733640063460286
+Non-Variable source in i
+Variable??
+0.06429112947706565
+2.8696818737048186
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.6727901245275483, 1, 0.34668415178706935, 1]
+Slope Error: [0.5279317561706877, 0, 0.09922293603595048, 0.2268851719688793]
+intercepts:  [0.1377860790228981, 0, 0.05842357605802595, 0.01712924651654335]
+Int Error:   [0.055497687408366574, 0, 0.02158628136121264, 0.045412966199919344]
+StDev:       [0.049578615, 0.058896597, 0.048808083, 0.11295363]
+Not variable, closing plots & going to next row
+Running object 155998
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 112, 'r': 135, 'i': 143, 'z': 141}
+Mu: {'g': 0.28318176, 'r': 0.48646322, 'i': 0.6739341, 'z': 0.8420075}
+Variable??
+0.018943182774463063
+1.3137450187786017
+Non-Variable source in g
+Variable??
+0.016508173012124306
+2.2469139338526998
+Non-Variable source in r
+Variable??
+0.020832490143533992
+2.382852705311259
+Non-Variable source in i
+Variable??
+0.027269231980342184
+1.5971321704845596
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1.2976805487104786, 1, 0.3302602414724012, 0.2377348849162847]
+Slope Error: [0.3364543240491744, 0, 0.09207421826718964, 0.09841854799281029]
+intercepts:  [0.0634641940797539, 0, 0.015798377595702684, 0.02284430238410009]
+Int Error:   [0.03846381245319412, 0, 0.012437891313449795, 0.015267080345817698]
+StDev:       [0.066401914, 0.07109444, 0.09478507, 0.15777849]
+Not variable, closing plots & going to next row
+Running object 155999
+Min gap is: 0.0
+New time_gap is :0.004
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Counts: {'g': 69, 'r': 109, 'i': 118, 'z': 60}
+Mu: {'g': 0.17304164, 'r': 0.20845683, 'i': 0.25044066, 'z': 0.38439116}
+Variable??
+0.021072736524200213
+1.0532799769620733
+Non-Variable source in g
+Variable??
+0.017255919823511837
+0.7768328922646004
+Non-Variable source in r
+Variable??
+0.025967888209794447
+1.174107190608381
+Non-Variable source in i
+Variable??
+0.0699066354906906
+3.738228044521856
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [1, 1, 0.41848485946555025, 0.4005251174767287]
+Slope Error: [0.11581896668053934, 0, 0.1089856560314336, 0.1982355544759244]
+intercepts:  [0.01574878926980691, 0, 0.027655769709765743, -0.06099190781494598]
+Int Error:   [0.022848294142162696, 0, 0.022753672344363516, 0.03829161490195006]
+StDev:       [0.03829205, 0.041550394, 0.051630937, 0.11415246]
+Not variable, closing plots & going to next row
+Successfully finished!
+Rows 155920 to 156000 ran in 609.5512 seconds
