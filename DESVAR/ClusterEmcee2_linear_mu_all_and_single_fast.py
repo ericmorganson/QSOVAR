@@ -127,9 +127,9 @@ def get_vals(args, ROW):
         lc_time = FITS[1].data['LC_MJD_'+color][ROW]
         limit = len(lc_time[(lc_time != 0)*(lc_flux_err < 2)])
         lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW] #change back to median
-        if limit < 3:
+        if limit < 5:
             lc_median[color] = 0.0
-            #print("Not enough " + color + " observations!")
+            print("Not enough " + color + " observations!")
             continue
 
         lcur_time = lc_time[(lc_time != 0)*(lc_flux_err < 2)]
@@ -169,7 +169,12 @@ def get_vals(args, ROW):
                 time_gap = min_gap+0.004
                 print("New time_gap is :"+ str(time_gap))
             lcur_time, lcur_flux, normed_err = cluster(lcur_time, lcur_flux, normed_err, time_gap)
-
+            limit = len(lcur_time)
+            print("Number of observations now: ", limit)
+            if limit < 5:
+                lc_median[color] = 0.0
+                print("Not enough " + color + " observations!")
+                continue
         if PLOTTING:
             ax5.scatter(lcur_time,
                         (lcur_flux - lc_median[color])/lc_median[color],

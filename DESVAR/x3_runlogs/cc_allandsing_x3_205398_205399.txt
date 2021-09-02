@@ -1,19 +1,23 @@
 Running cluster for deep fits
 205398 205399 normal
 Running object 205398
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  6
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  39
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  104
 Counts: {'r': 6, 'i': 37, 'z': 97}
 Mu: {'g': 0.0, 'r': 0.18702827, 'i': 0.26304722, 'z': 0.4183355}
 No handles with labels found to put in legend.
 No handles with labels found to put in legend.
-ClusterEmcee2_linear_mu_all_and_single_fast.py:774: RuntimeWarning: invalid value encountered in sqrt
+ClusterEmcee2_linear_mu_all_and_single_fast.py:779: RuntimeWarning: invalid value encountered in sqrt
   slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
-ClusterEmcee2_linear_mu_all_and_single_fast.py:775: RuntimeWarning: invalid value encountered in sqrt
+ClusterEmcee2_linear_mu_all_and_single_fast.py:780: RuntimeWarning: invalid value encountered in sqrt
   int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
 Variable??
 0
@@ -41,9 +45,9 @@ StDev:       [0.123115435, 0.136047, 0.06627441, 0.20284341]
 Spread:      0/4
 Spread values: 
 Traceback (most recent call last):
-  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 868, in <module>
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 873, in <module>
     perform_emcee_step2(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
-  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 609, in perform_emcee_step2
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 614, in perform_emcee_step2
     sampler.run_mcmc(pos, 200)
   File "/home/thrush2/caps_dir/mypython3/emcee/ensemble.py", line 384, in run_mcmc
     for results in self.sample(initial_state, iterations=nsteps, **kwargs):
@@ -52,4 +56,4 @@ Traceback (most recent call last):
   File "/home/thrush2/caps_dir/mypython3/emcee/ensemble.py", line 456, in compute_log_prob
     raise ValueError("Probability function returned NaN")
 ValueError: Probability function returned NaN
-srun: error: ccc0241: task 0: Exited with exit code 1
+srun: error: ccc0249: task 0: Exited with exit code 1

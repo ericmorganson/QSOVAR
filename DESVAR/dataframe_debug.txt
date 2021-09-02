@@ -1,0 +1,126 @@
+10000
+   band fits  object    ...             V  Num_Obs  Mu_Bright
+0  All    X3   94686    ...     -0.748421      191  24.180018
+
+[1 rows x 10 columns]
+10000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    g   X3   94686    ...     -1.228726       10  24.512668
+
+[1 rows x 10 columns]
+20000
+   band fits  object    ...             V  Num_Obs  Mu_Bright
+0  All    C3   39013    ...     -1.348936      263  24.178226
+
+[1 rows x 10 columns]
+20000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    g   C3   39013    ...     -0.490904       11  24.615954
+
+[1 rows x 10 columns]
+30000
+   band fits  object    ...             V  Num_Obs  Mu_Bright
+0  All    C3  207500    ...     -2.774329       74  24.435066
+
+[1 rows x 10 columns]
+30000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    g   C3  207500    ...     -0.631686       23  24.796157
+
+[1 rows x 10 columns]
+30000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    i   C3  207500    ...      0.006054       11  24.377932
+
+[1 rows x 10 columns]
+40000
+   band fits  object    ...             V  Num_Obs  Mu_Bright
+0  All    X3  174185    ...     -2.950845      428  20.610558
+
+[1 rows x 10 columns]
+40000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    i   X3  174185    ...     -1.604505      112  19.666313
+
+[1 rows x 10 columns]
+40000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    z   X3  174185    ...     -2.417435      126  19.118415
+
+[1 rows x 10 columns]
+50000
+   band fits  object    ...             V  Num_Obs  Mu_Bright
+0  All    S2   79663    ...     -0.184911      563  22.407857
+
+[1 rows x 10 columns]
+50000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    g   S2   79663    ...     -0.157054      108  22.707148
+
+[1 rows x 10 columns]
+50000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    r   S2   79663    ...     -0.166856      111  22.489618
+
+[1 rows x 10 columns]
+50000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    i   S2   79663    ...     -0.238417      116  22.222174
+
+[1 rows x 10 columns]
+50000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    z   S2   79663    ...     -0.321947      228  22.212487
+
+[1 rows x 10 columns]
+60000
+   band fits  object    ...             V  Num_Obs  Mu_Bright
+0  All    C3  136766    ...     -0.838185      140  23.860914
+
+[1 rows x 10 columns]
+60000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    g   C3  136766    ...     -0.206517        2  23.502826
+
+[1 rows x 10 columns]
+70000
+   band fits  object    ...             V  Num_Obs  Mu_Bright
+0  All    C3  145833    ...     -1.158628      554  20.813122
+
+[1 rows x 10 columns]
+70000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    r   C3  145833    ...     -1.354624      137  20.785648
+
+[1 rows x 10 columns]
+70000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    i   C3  145833    ...     -1.708435      146  20.662685
+
+[1 rows x 10 columns]
+80000
+   band fits  object    ...            V  Num_Obs  Mu_Bright
+0  All    C2    3028    ...     -0.86497      259   23.54982
+
+[1 rows x 10 columns]
+80000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    g   C2    3028    ...     -0.146289        2  23.660679
+
+[1 rows x 10 columns]
+90000
+   band fits  object    ...            V  Num_Obs  Mu_Bright
+0  All    C1   36361    ...     -2.00858      708   18.32689
+
+[1 rows x 10 columns]
+90000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    g   C1   36361    ...     -1.970243      134  19.915111
+
+[1 rows x 10 columns]
+90000
+  band fits  object    ...             V  Num_Obs  Mu_Bright
+0    z   C1   36361    ...     -2.399261      287  17.274989
+
+[1 rows x 10 columns]
+(224663, 10)
