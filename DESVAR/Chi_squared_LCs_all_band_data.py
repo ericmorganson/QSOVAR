@@ -51,12 +51,12 @@ def find_a_b(fits, LC_file, color):
 
     #print(groups.chi2r)
     dy = np.array((groups.chi2r.quantile(.85) - groups.chi2r.quantile(.15))/(2*np.sqrt(groups.size())))
-    dy = np.nan_to_num(dy) 
+    dy = np.nan_to_num(dy)
     #print(dy)
 
-    j = x[:-1] # sigma
-    k = y[:-1] # chi
-    dk =dy[:-1]
+    j = x[:-2] # sigma
+    k = y[:-2] # chi
+    dk =dy[:-2]
     plt.figure()
     plt.errorbar(j, k, yerr=dk, label="clipped")
 
@@ -66,14 +66,14 @@ def find_a_b(fits, LC_file, color):
     params, params_covariance = optimize.curve_fit(test_func, j, k, p0=[0.05, 1.08],
                                                    sigma=dk)
 
-    print(LC_file, color, params[0], params[1])
+    print(LC_file, color, params[0], params[1], params_covariance[0], params_covariance[1])
 
     # calculate new x's and y's
-    x_new = np.linspace(j[0], j[-1], 50)
+    x_new = np.linspace(j[0], j[-2], 50)
     plt.plot(x_new, test_func(x_new, params[0], params[1]), label='a='+str(round(params[0], 4))+'\n'+'b='+str(round(params[1], 4)))
     plt.legend(loc='best')
     #plt.ylim(-5, 10)
-    plt.title("Median binned $\sigma_{i}$ vs Median binned $\chi^2_{reduced}$")
+    plt.title("Field "+str(LC_file)+", filter "+str(color)) #Median binned $\sigma_{i}$ vs Median binned $\chi^2_{reduced}$")
     plt.xlabel("median binned $\sigma_i$")
     plt.ylabel("median $\chi^2_{reduced}$ in bin")
     plt.savefig("chi2_"+LC_file+"_"+color+".pdf")
@@ -81,9 +81,9 @@ def find_a_b(fits, LC_file, color):
 
 
 if __name__ == "__main__":
-    files = ['../C1_lc.fits', '../C2_lc.fits', '../C3_lc.fits', '../E1_lc.fits', '../E2_lc.fits', 
-             '../S1_lc.fits', '../S2_lc.fits', '../X1_lc.fits', '../X2_lc.fits', '../X3_lc.fits']
-    
+    files = ['../../C1_lc.fits'] #'../../C2_lc.fits', '../../C3_lc.fits', '../../E1_lc.fits', '../../E2_lc.fits',
+             #'../../S1_lc.fits', '../../S2_lc.fits', '../../X1_lc.fits', '../../X2_lc.fits', '../../X3_lc.fits']
+
             #['/home/sam/Documents/Morganson_research/C1_lc.fits', '/home/sam/Documents/Morganson_research/C2_lc.fits'] #,
             # '/home/sam/Documents/Morganson_research/E1_lc.fits', '/home/sam/Documents/Morganson_research/E2_lc.fits',
             # '/home/sam/Documents/Morganson_research/S1_lc.fits', '/home/sam/Documents/Morganson_research/S2_lc.fits',
@@ -92,6 +92,6 @@ if __name__ == "__main__":
     for file in files:
         with pyfit.open(file) as fits:
             fits = pyfit.open(file)[1].data
-            LC_file = file.split('/')[1][0:2]  # [5][0:2]
-            for color in 'GRIZ':
+            LC_file = file.split('/')[2][0:2]  # [5][0:2]
+            for color in 'I':
                 find_a_b(fits, LC_file, color)
