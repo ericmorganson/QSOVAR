@@ -1,0 +1,58 @@
+Running cluster for deep fits
+95009 95010 normal
+Running object 95009
+Min gap is: 0.0
+New time_gap is :0.004
+Number of observations now:  23
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  60
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  90
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  58
+Counts: {'g': 23, 'r': 57, 'i': 85, 'z': 50}
+Mu: {'g': 0.1467302, 'r': 0.13443393, 'i': 0.23009977, 'z': 0.3698439}
+Variable??
+0.028206198323702667
+3.0389471164769315
+Variable Source in g!!
+Variable??
+0.019984555132168395
+0.6735390058318738
+Non-Variable source in r
+Variable??
+0.03053488935517253
+1.5464408224701005
+Non-Variable source in i
+Variable??
+0.06660459226186996
+2.3959409643922758
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [-1.161846866746627, 1, 0.32395655597604844, 1]
+Slope Error: [0.897469620375762, 0, 0.11604848781480705, 0.42090107384184106]
+intercepts:  [0.02723716166537448, 0, 0.013328045183175246, 0.03826389670747887]
+Int Error:   [0.0953699824278314, 0, 0.03540762929294371, 0.05075508807826108]
+StDev:       [0.1724515, 0.032164484, 0.050054803, 0.11300007]
+Spread:      0/4
+Spread values: 
+ROW: 95009all Tau: 3.9962874845302236 V: -2.8865498147893702
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+Number of mags :206
+ROW: 95009g Tau: 0.5675708149812655 V: -0.713117195072975
+Good Row mags:23
+Close extra plots
+Row 95009 ran in 14.8633 seconds
+Successfully finished!
+Rows 95009 to 95010 ran in 17.3653 seconds

@@ -1,0 +1,58 @@
+Running cluster for deep fits
+13078 13079 normal
+Running object 13078
+Min gap is: 10.03125
+Number of observations now:  7
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  43
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  104
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  109
+Counts: {'g': 5, 'r': 42, 'i': 99, 'z': 100}
+Mu: {'g': 0.13729891, 'r': 0.14716531, 'i': 0.27060395, 'z': 0.41865468}
+No handles with labels found to put in legend.
+Variable??
+0.03557038449616976
+3.29279133358393
+Variable Source in g!!
+Variable??
+0.02327928453896142
+1.5305863724517812
+Non-Variable source in r
+Variable??
+0.03737131308053324
+1.474491482019466
+Non-Variable source in i
+Variable??
+0.06516901776194572
+1.875225932597772
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   g
+Slope:       [1, 1, 0.10134601836321455, 1]
+Slope Error: [0.0, 0, 0.04982411056909139, 0.055712435832185866]
+intercepts:  [0, 0, -0.0603499050792768, -0.06016345901432549]
+Int Error:   [0.0, 0, 0.04545303378878107, 0.04807895497976802]
+StDev:       [0.16125984, 0.1358412, 0.06466475, 0.0915308]
+Spread:      0/4
+Spread values: 
+ROW: 13078all Tau: 0.008959447276782828 V: -0.8864728320142848
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+Number of mags :229
+ROW: 13078g Tau: 3.9993384694514837 V: -2.881191399507337
+Good Row mags:5
+Close extra plots
+Row 13078 ran in 15.3694 seconds
+Successfully finished!
+Rows 13078 to 13079 ran in 17.8409 seconds

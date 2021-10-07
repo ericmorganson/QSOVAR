@@ -65,8 +65,16 @@ def find_a_b(fits, LC_file, color):
 
     params, params_covariance = optimize.curve_fit(test_func, j, k, p0=[0.05, 1.08],
                                                    sigma=dk)
+    perr = np.sqrt(np.diag(params_covariance))
+    
+    #printing out to a file
+    if color=="G":
+        print("\multirow{"+LC_file+"} & "+ color +" & "+ str(round(params[0], 4))+ " \pm "+ str(round(perr[0], 4))+ " & "+ str(round(params[1], 4))+ " \pm " + str(round(perr[1], 4))+ " \\\ \cline{2-4}")
+    elif color == "R" or color =="I":
+        print("\t\t\t\t\t &" + color +" & "+ str(round(params[0], 4))+ " \pm "+ str(round(perr[0], 4))+ " & "+ str(round(params[1], 4))+ " \pm " + str(round(perr[1], 4))+ " \\\ \cline{2-4}")
+    elif color =="Z":
+        print("\t\t\t\t\t &" + color +" & "+ str(round(params[0], 4))+ " \pm "+ str(round(perr[0], 4))+ " & "+ str(round(params[1], 4))+ " \pm " + str(round(perr[1], 4))+ " \\\ \hline")
 
-    print(LC_file, color, params[0], params[1], params_covariance[0], params_covariance[1])
 
     # calculate new x's and y's
     x_new = np.linspace(j[0], j[-2], 50)
@@ -81,17 +89,20 @@ def find_a_b(fits, LC_file, color):
 
 
 if __name__ == "__main__":
-    files = ['../../C1_lc.fits'] #'../../C2_lc.fits', '../../C3_lc.fits', '../../E1_lc.fits', '../../E2_lc.fits',
+    #files = ['../../C1_lc.fits'] #'../../C2_lc.fits', '../../C3_lc.fits', '../../E1_lc.fits', '../../E2_lc.fits',
              #'../../S1_lc.fits', '../../S2_lc.fits', '../../X1_lc.fits', '../../X2_lc.fits', '../../X3_lc.fits']
-
+    folder = "/home/thrush2/caps_dir/"
+    files= ['C1_lc.fits', 'C2_lc.fits', 'C3_lc.fits', 'E1_lc.fits', 'E2_lc.fits',
+            'S1_lc.fits', 'S2_lc.fits', 'X1_lc.fits', 'X2_lc.fits', 'X3_lc.fits']
             #['/home/sam/Documents/Morganson_research/C1_lc.fits', '/home/sam/Documents/Morganson_research/C2_lc.fits'] #,
             # '/home/sam/Documents/Morganson_research/E1_lc.fits', '/home/sam/Documents/Morganson_research/E2_lc.fits',
             # '/home/sam/Documents/Morganson_research/S1_lc.fits', '/home/sam/Documents/Morganson_research/S2_lc.fits',
             # '/home/sam/Documents/Morganson_research/X1_lc.fits', '/home/sam/Documents/Morganson_research/X2_lc.fits']
 
-    for file in files:
+    for fi in files:
+        file = folder+fi
         with pyfit.open(file) as fits:
             fits = pyfit.open(file)[1].data
-            LC_file = file.split('/')[2][0:2]  # [5][0:2]
-            for color in 'I':
+            LC_file = file.split('/')[4][0:2]  # [5][0:2]
+            for color in 'GRIZ':
                 find_a_b(fits, LC_file, color)

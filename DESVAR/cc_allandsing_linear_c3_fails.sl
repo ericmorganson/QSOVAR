@@ -22,31 +22,42 @@ date
 module load python/3
 export PYTHONPATH=/home/thrush2/caps_dir/mypython3:${PYTHONPATH}
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 124224 124225 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_124224_124225.txt 2>&1 &
+srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 95009 95010 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_95009.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 130764 130765 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_130764_130765.txt 2>&1 &
+srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 95075 95076 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_95075.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 155919 155920 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_155919_155920.txt 2>&1 &
+srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 95145 95146 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_95145.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 216331 216332 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_216331_216332.txt 2>&1 &
+srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 13074 13075 $run_type $name $fig_fold > x3_runlogs/cc_allandsing_x3_13074.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 95245 95246 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_95245_95246.txt 2>&1 &
+srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 13078 13079 $run_type $name $fig_fold > x3_runlogs/cc_allandsing_x3_13078.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 147234 147235 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_147234_147235.txt 2>&1 &
+srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 13115 13116 $run_type $name $fig_fold > x3_runlogs/cc_allandsing_x3_13115.txt 2>&1 &
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 124224 124225 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_124224_124225.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 158061 158062 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_158061_158062.txt 2>&1 &
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 130764 130765 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_130764_130765.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 200570 200571 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_200570_200571.txt 2>&1 &
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 155919 155920 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_155919_155920.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 205398 205399 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_205398_205399.txt 2>&1 &
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 216331 216332 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_216331_216332.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 26288 26289 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_26288_26289.txt 2>&1 &
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 95245 95246 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_95245_95246.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 37884 37885 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_37884_37885.txt 2>&1 &
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 147234 147235 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_147234_147235.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 62436 62437 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_62436_62437.txt 2>&1 &
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 158061 158062 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_158061_158062.txt 2>&1 &
 
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 70593 70594 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_70593_70594.txt 2>&1 &
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 200570 200571 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_200570_200571.txt 2>&1 &
+
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 205398 205399 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_205398_205399.txt 2>&1 &
+
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 26288 26289 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_26288_26289.txt 2>&1 &
+
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 37884 37885 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_37884_37885.txt 2>&1 &
+
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 62436 62437 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_62436_62437.txt 2>&1 &
+
+#srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fitsX 70593 70594 $run_type $nameX $fig_fold > x3_runlogs/cc_allandsing_x3_70593_70594.txt 2>&1 &
 
 wait
 

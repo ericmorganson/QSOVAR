@@ -1,126 +1,2296 @@
-10000
-   band fits  object    ...             V  Num_Obs  Mu_Bright
-0  All    X3   94686    ...     -0.748421      191  24.180018
-
-[1 rows x 10 columns]
-10000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    g   X3   94686    ...     -1.228726       10  24.512668
-
-[1 rows x 10 columns]
-20000
-   band fits  object    ...             V  Num_Obs  Mu_Bright
-0  All    C3   39013    ...     -1.348936      263  24.178226
-
-[1 rows x 10 columns]
-20000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    g   C3   39013    ...     -0.490904       11  24.615954
-
-[1 rows x 10 columns]
-30000
-   band fits  object    ...             V  Num_Obs  Mu_Bright
-0  All    C3  207500    ...     -2.774329       74  24.435066
-
-[1 rows x 10 columns]
-30000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    g   C3  207500    ...     -0.631686       23  24.796157
-
-[1 rows x 10 columns]
-30000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    i   C3  207500    ...      0.006054       11  24.377932
-
-[1 rows x 10 columns]
-40000
-   band fits  object    ...             V  Num_Obs  Mu_Bright
-0  All    X3  174185    ...     -2.950845      428  20.610558
-
-[1 rows x 10 columns]
-40000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    i   X3  174185    ...     -1.604505      112  19.666313
-
-[1 rows x 10 columns]
-40000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    z   X3  174185    ...     -2.417435      126  19.118415
-
-[1 rows x 10 columns]
-50000
-   band fits  object    ...             V  Num_Obs  Mu_Bright
-0  All    S2   79663    ...     -0.184911      563  22.407857
-
-[1 rows x 10 columns]
-50000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    g   S2   79663    ...     -0.157054      108  22.707148
-
-[1 rows x 10 columns]
-50000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    r   S2   79663    ...     -0.166856      111  22.489618
-
-[1 rows x 10 columns]
-50000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    i   S2   79663    ...     -0.238417      116  22.222174
-
-[1 rows x 10 columns]
-50000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    z   S2   79663    ...     -0.321947      228  22.212487
-
-[1 rows x 10 columns]
-60000
-   band fits  object    ...             V  Num_Obs  Mu_Bright
-0  All    C3  136766    ...     -0.838185      140  23.860914
-
-[1 rows x 10 columns]
-60000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    g   C3  136766    ...     -0.206517        2  23.502826
-
-[1 rows x 10 columns]
-70000
-   band fits  object    ...             V  Num_Obs  Mu_Bright
-0  All    C3  145833    ...     -1.158628      554  20.813122
-
-[1 rows x 10 columns]
-70000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    r   C3  145833    ...     -1.354624      137  20.785648
-
-[1 rows x 10 columns]
-70000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    i   C3  145833    ...     -1.708435      146  20.662685
-
-[1 rows x 10 columns]
-80000
-   band fits  object    ...            V  Num_Obs  Mu_Bright
-0  All    C2    3028    ...     -0.86497      259   23.54982
-
-[1 rows x 10 columns]
-80000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    g   C2    3028    ...     -0.146289        2  23.660679
-
-[1 rows x 10 columns]
-90000
-   band fits  object    ...            V  Num_Obs  Mu_Bright
-0  All    C1   36361    ...     -2.00858      708   18.32689
-
-[1 rows x 10 columns]
-90000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    g   C1   36361    ...     -1.970243      134  19.915111
-
-[1 rows x 10 columns]
-90000
-  band fits  object    ...             V  Num_Obs  Mu_Bright
-0    z   C1   36361    ...     -2.399261      287  17.274989
-
-[1 rows x 10 columns]
-(224663, 10)
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30358  0.280737 -1.492060      476  19.262980
+1     g   X3   30358  0.579466 -1.458713      118  20.355472
+2     r   X3   30358 -0.487772 -1.434222      111  19.249100
+3     i   X3   30358  0.807764 -1.706831      124  18.831583
+4     z   X3   30358 -1.235140 -1.888827      123  18.615764
+band                r
+fits               X3
+object          30358
+Tau         -0.487772
+V            -1.43422
+Num_Obs           111
+Mu_Bright     19.2491
+Name: 2, dtype: object
+30358_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30358	0.2807374852606803	-1.4920597357633376	476	19.262979701161385
+g	X3	30358	0.5794661447852012	-1.4587127759502292	118	20.355471670627594
+r	X3	30358	-0.4877715358031265	-1.4342220201090192	111	19.249100387096405
+i	X3	30358	0.8077635006152358	-1.7068308579021283	124	18.831582963466644
+z	X3	30358	-1.2351399233129383	-1.8888271024586007	123	18.615763783454895
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30358  0.280737 -1.492060      476  19.262980
+1     g   X3   30358  0.579466 -1.458713      118  20.355472
+2     r   X3   30358 -0.487772 -1.434222      111  19.249100
+3     i   X3   30358  0.807764 -1.706831      124  18.831583
+4     z   X3   30358 -1.235140 -1.888827      123  18.615764
+band               z
+fits              X3
+object         30358
+Tau         -1.23514
+V           -1.88883
+Num_Obs          123
+Mu_Bright    18.6158
+Name: 4, dtype: object
+30358_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30358	0.2807374852606803	-1.4920597357633376	476	19.262979701161385
+g	X3	30358	0.5794661447852012	-1.4587127759502292	118	20.355471670627594
+r	X3	30358	-0.4877715358031265	-1.4342220201090192	111	19.249100387096405
+i	X3	30358	0.8077635006152358	-1.7068308579021283	124	18.831582963466644
+z	X3	30358	-1.2351399233129383	-1.8888271024586007	123	18.615763783454895
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62228  7.697843 -1.669487      124  23.964623
+1     g   X3   62228  1.435708 -0.061445        6  23.754538
+band            All 
+fits              X3
+object         62228
+Tau          7.69784
+V           -1.66949
+Num_Obs          124
+Mu_Bright    23.9646
+Name: 0, dtype: object
+62228_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62228	7.6978434778686315	-1.6694873821761542	124	23.96462321281433
+g	X3	62228	1.4357083779596151	-0.06144509121232705	6	23.7545382976532
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13042  3.994119 -2.771441      129  24.154362
+1     g   X3   13042 -0.528865 -0.375291       13  24.434142
+band                g
+fits               X3
+object          13042
+Tau         -0.528865
+V           -0.375291
+Num_Obs            13
+Mu_Bright     24.4341
+Name: 1, dtype: object
+13042_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13042	3.994119210013837	-2.7714413019006345	129	24.15436163544655
+g	X3	13042	-0.5288649202288987	-0.3752914214330722	13	24.434142112731934
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155512 -1.334794 -0.686707      100  24.234075
+1     g   C3  155512  1.963192 -0.376818        5  24.408019
+band             All 
+fits               C3
+object         155512
+Tau          -1.33479
+V           -0.686707
+Num_Obs           100
+Mu_Bright     24.2341
+Name: 0, dtype: object
+155512_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155512	-1.3347939390187142	-0.686706657991869	100	24.234074763953686
+g	C3	155512	1.9631922675706885	-0.37681762622019177	5	24.408019483089447
+Oh no!  Out of bounds!
+optimal
+   band fits  object        Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13076  10.757072 -1.315074      145  24.174005
+1     g   X3   13076   0.583032 -0.642262       34  24.459310
+band            All 
+fits              X3
+object         13076
+Tau          10.7571
+V           -1.31507
+Num_Obs          145
+Mu_Bright     24.174
+Name: 0, dtype: object
+13076_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13076	10.757071807670334	-1.3150735727817504	145	24.174004588276148
+g	X3	13076	0.5830318300848503	-0.642261659420135	34	24.459310322999954
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62194 -1.708050 -0.816011      135  23.786312
+1     g   X3   62194  2.191224 -0.250132        8  23.427896
+band             All 
+fits               X3
+object          62194
+Tau          -1.70805
+V           -0.816011
+Num_Obs           135
+Mu_Bright     23.7863
+Name: 0, dtype: object
+62194_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62194	-1.7080502966730544	-0.816011340417089	135	23.78631182014942
+g	X3	62194	2.191223660626653	-0.2501316135340458	8	23.427896350622177
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  124212  0.000910 -1.221229      562  19.181903
+1     r   C3  124212  0.223092 -1.146377      140  19.585757
+2     i   C3  124212 -0.353692 -1.317659      146  18.373006
+3     z   C3  124212  0.201821 -1.835019      141  17.828566
+band                i
+fits               C3
+object         124212
+Tau         -0.353692
+V            -1.31766
+Num_Obs           146
+Mu_Bright      18.373
+Name: 2, dtype: object
+124212_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	124212	0.0009100621173691176	-1.2212291705782947	562	19.181903079152107
+r	C3	124212	0.22309236463841414	-1.1463773056460458	140	19.58575665950775
+i	C3	124212	-0.35369201982519644	-1.317659318348249	146	18.373005986213684
+z	C3	124212	0.2018210544484988	-1.8350189026894896	141	17.828566431999207
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  124171  0.000194 -1.386922      562  20.429553
+1     r   C3  124171  0.211675 -1.339980      138  21.089878
+2     i   C3  124171  0.000785 -1.441281      148  19.317715
+3     z   C3  124171 -0.324434 -1.690234      141  18.571922
+band                z
+fits               C3
+object         124171
+Tau         -0.324434
+V            -1.69023
+Num_Obs           141
+Mu_Bright     18.5719
+Name: 3, dtype: object
+124171_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	124171	0.0001937142666459217	-1.3869219345708705	562	20.42955273296684
+r	C3	124171	0.21167538684459253	-1.3399802390849467	138	21.08987808227539
+i	C3	124171	0.000785354992826455	-1.4412809665176962	148	19.31771457195282
+z	C3	124171	-0.3244340246638351	-1.690233708040816	141	18.571922481060028
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37791  9.586561 -1.494554      197  24.134005
+1     g   X3   37791  3.957998 -0.917062        7  24.527488
+band            All 
+fits              X3
+object         37791
+Tau          9.58656
+V           -1.49455
+Num_Obs          197
+Mu_Bright     24.134
+Name: 0, dtype: object
+37791_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37791	9.5865606451663	-1.4945541237694249	197	24.134004712104797
+g	X3	37791	3.957998263316246	-0.9170619585809674	7	24.527488499879837
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130621  9.874983 -1.379377      285  24.127542
+1     z   C3  130621  1.631351 -0.089137       20  23.508766
+band            All 
+fits              C3
+object        130621
+Tau          9.87498
+V           -1.37938
+Num_Obs          285
+Mu_Bright    24.1275
+Name: 0, dtype: object
+130621_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130621	9.874982780975206	-1.3793768040998	285	24.127542041242123
+z	C3	130621	1.6313508111496762	-0.08913701988176848	20	23.508765548467636
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155605 -2.986547 -4.057358      140  24.306138
+1     g   C3  155605  1.466466 -3.425930       36  24.692740
+band            All 
+fits              C3
+object        155605
+Tau         -2.98655
+V           -4.05736
+Num_Obs          140
+Mu_Bright    24.3061
+Name: 0, dtype: object
+155605_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155605	-2.986546633098835	-4.057357960820637	140	24.30613799020648
+g	C3	155605	1.4664657128709175	-3.425929558440318	36	24.69273954629898
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155605 -2.986547 -4.057358      140  24.306138
+1     g   C3  155605  1.466466 -3.425930       36  24.692740
+band               g
+fits              C3
+object        155605
+Tau          1.46647
+V           -3.42593
+Num_Obs           36
+Mu_Bright    24.6927
+Name: 1, dtype: object
+155605_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155605	-2.986546633098835	-4.057357960820637	140	24.30613799020648
+g	C3	155605	1.4664657128709175	-3.425929558440318	36	24.69273954629898
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37831  1.786872 -0.982959      147  24.166208
+1     g   X3   37831 -0.589758 -0.811450        7  24.491316
+band                g
+fits               X3
+object          37831
+Tau         -0.589758
+V            -0.81145
+Num_Obs             7
+Mu_Bright     24.4913
+Name: 1, dtype: object
+37831_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37831	1.7868717770308307	-0.9829585329913941	147	24.166208133101463
+g	X3	37831	-0.5897582664135168	-0.8114499755009026	7	24.491316378116608
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37625 -9.719460  0.074235       81  24.135148
+1     z   X3   37625  0.581559  0.449332       10  23.513737
+band             All 
+fits               X3
+object          37625
+Tau          -9.71946
+V            0.074235
+Num_Obs            81
+Mu_Bright     24.1351
+Name: 0, dtype: object
+37625_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37625	-9.719460217181705	0.0742350178965652	81	24.135148413479328
+z	X3	37625	0.5815591133691191	0.4493315957882882	10	23.513736724853516
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   26056  0.798719 -0.825884      219  24.107184
+1     g   X3   26056 -3.675956 -0.343553        9  24.235824
+band                g
+fits               X3
+object          26056
+Tau          -3.67596
+V           -0.343553
+Num_Obs             9
+Mu_Bright     24.2358
+Name: 1, dtype: object
+26056_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	26056	0.7987192046973856	-0.8258843165887513	219	24.107184410095215
+g	X3	26056	-3.67595585283134	-0.3435530312025566	9	24.2358236014843
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30197  1.143148 -0.741101      340  23.901372
+1     g   X3   30197 -0.427928 -0.176966        6  23.772779
+band                g
+fits               X3
+object          30197
+Tau         -0.427928
+V           -0.176966
+Num_Obs             6
+Mu_Bright     23.7728
+Name: 1, dtype: object
+30197_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30197	1.143147814666281	-0.7411010813012553	340	23.90137204900384
+g	X3	30197	-0.42792753910740283	-0.17696591201876827	6	23.772778809070587
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13443 -0.144070 -0.747997      245        inf
+1     r   X3   13443  1.674199 -3.609434        6  24.769450
+band             All 
+fits               X3
+object          13443
+Tau          -0.14407
+V           -0.747997
+Num_Obs           245
+Mu_Bright         inf
+Name: 0, dtype: object
+13443_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13443	-0.1440697070144254	-0.7479971795929287	245	inf
+r	X3	13443	1.6741985591248434	-3.609434041670253	6	24.769450277090073
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13443 -0.144070 -0.747997      245        inf
+1     r   X3   13443  1.674199 -3.609434        6  24.769450
+band               r
+fits              X3
+object         13443
+Tau           1.6742
+V           -3.60943
+Num_Obs            6
+Mu_Bright    24.7695
+Name: 1, dtype: object
+13443_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13443	-0.1440697070144254	-0.7479971795929287	245	inf
+r	X3	13443	1.6741985591248434	-3.609434041670253	6	24.769450277090073
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37779  0.881712 -0.902106      198  24.114602
+1     g   X3   37779 -1.375711 -0.563926       19  24.522708
+band                g
+fits               X3
+object          37779
+Tau          -1.37571
+V           -0.563926
+Num_Obs            19
+Mu_Bright     24.5227
+Name: 1, dtype: object
+37779_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37779	0.8817122460361164	-0.9021063305888133	198	24.114602226763964
+g	X3	37779	-1.3757114100687835	-0.5639255697104625	19	24.522707760334015
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155578 -0.318844 -1.316229      708  19.994870
+1     r   C3  155578 -0.511661 -1.193956      142  20.470615
+2     i   C3  155578 -0.507407 -1.634570      147  19.020582
+3     z   C3  155578 -1.651367 -2.259101      282  18.428811
+band             All 
+fits               C3
+object         155578
+Tau         -0.318844
+V            -1.31623
+Num_Obs           708
+Mu_Bright     19.9949
+Name: 0, dtype: object
+155578_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155578	-0.31884384032556645	-1.3162289206535447	708	19.99486967921257
+r	C3	155578	-0.5116607243639109	-1.1939557603754831	142	20.470615178346634
+i	C3	155578	-0.5074072386108344	-1.6345696967179424	147	19.020581543445587
+z	C3	155578	-1.6513672649765758	-2.2591009250283216	282	18.42881143093109
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155578 -0.318844 -1.316229      708  19.994870
+1     r   C3  155578 -0.511661 -1.193956      142  20.470615
+2     i   C3  155578 -0.507407 -1.634570      147  19.020582
+3     z   C3  155578 -1.651367 -2.259101      282  18.428811
+band                r
+fits               C3
+object         155578
+Tau         -0.511661
+V            -1.19396
+Num_Obs           142
+Mu_Bright     20.4706
+Name: 1, dtype: object
+155578_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155578	-0.31884384032556645	-1.3162289206535447	708	19.99486967921257
+r	C3	155578	-0.5116607243639109	-1.1939557603754831	142	20.470615178346634
+i	C3	155578	-0.5074072386108344	-1.6345696967179424	147	19.020581543445587
+z	C3	155578	-1.6513672649765758	-2.2591009250283216	282	18.42881143093109
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155578 -0.318844 -1.316229      708  19.994870
+1     r   C3  155578 -0.511661 -1.193956      142  20.470615
+2     i   C3  155578 -0.507407 -1.634570      147  19.020582
+3     z   C3  155578 -1.651367 -2.259101      282  18.428811
+band                i
+fits               C3
+object         155578
+Tau         -0.507407
+V            -1.63457
+Num_Obs           147
+Mu_Bright     19.0206
+Name: 2, dtype: object
+155578_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155578	-0.31884384032556645	-1.3162289206535447	708	19.99486967921257
+r	C3	155578	-0.5116607243639109	-1.1939557603754831	142	20.470615178346634
+i	C3	155578	-0.5074072386108344	-1.6345696967179424	147	19.020581543445587
+z	C3	155578	-1.6513672649765758	-2.2591009250283216	282	18.42881143093109
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155578 -0.318844 -1.316229      708  19.994870
+1     r   C3  155578 -0.511661 -1.193956      142  20.470615
+2     i   C3  155578 -0.507407 -1.634570      147  19.020582
+3     z   C3  155578 -1.651367 -2.259101      282  18.428811
+band               z
+fits              C3
+object        155578
+Tau         -1.65137
+V            -2.2591
+Num_Obs          282
+Mu_Bright    18.4288
+Name: 3, dtype: object
+155578_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155578	-0.31884384032556645	-1.3162289206535447	708	19.99486967921257
+r	C3	155578	-0.5116607243639109	-1.1939557603754831	142	20.470615178346634
+i	C3	155578	-0.5074072386108344	-1.6345696967179424	147	19.020581543445587
+z	C3	155578	-1.6513672649765758	-2.2591009250283216	282	18.42881143093109
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37706 -3.250742 -4.431792      269  23.654314
+1     i   X3   37706  1.311499 -0.250496       87  23.383820
+band            All 
+fits              X3
+object         37706
+Tau         -3.25074
+V           -4.43179
+Num_Obs          269
+Mu_Bright    23.6543
+Name: 0, dtype: object
+37706_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37706	-3.2507418809579836	-4.431791859489726	269	23.65431415848434
+i	X3	37706	1.3114985567724713	-0.25049599313351495	87	23.383819982409477
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30125  8.300908 -1.153239      147  24.255004
+1     g   X3   30125  3.999830 -2.773630        8  24.535852
+band            All 
+fits              X3
+object         30125
+Tau          8.30091
+V           -1.15324
+Num_Obs          147
+Mu_Bright     24.255
+Name: 0, dtype: object
+30125_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30125	8.300907943645015	-1.1532388370334392	147	24.2550041154027
+g	X3	30125	3.9998296626646352	-2.7736296292951526	8	24.535852372646332
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13266  8.585394 -1.371521      185        inf
+1     r   X3   13266  1.938451 -3.535338        9  24.484568
+band            All 
+fits              X3
+object         13266
+Tau          8.58539
+V           -1.37152
+Num_Obs          185
+Mu_Bright        inf
+Name: 0, dtype: object
+13266_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13266	8.585394273461318	-1.3715212087642104	185	inf
+r	X3	13266	1.9384510357027551	-3.535338409377721	9	24.484568238258362
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13266  8.585394 -1.371521      185        inf
+1     r   X3   13266  1.938451 -3.535338        9  24.484568
+band               r
+fits              X3
+object         13266
+Tau          1.93845
+V           -3.53534
+Num_Obs            9
+Mu_Bright    24.4846
+Name: 1, dtype: object
+13266_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13266	8.585394273461318	-1.3715212087642104	185	inf
+r	X3	13266	1.9384510357027551	-3.535338409377721	9	24.484568238258362
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13148 -2.606516 -3.923963       96  24.073623
+1     g   X3   13148  3.174825 -0.767408        9  24.255181
+band            All 
+fits              X3
+object         13148
+Tau         -2.60652
+V           -3.92396
+Num_Obs           96
+Mu_Bright    24.0736
+Name: 0, dtype: object
+13148_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13148	-2.6065162827669517	-3.923963262045726	96	24.073623046278954
+g	X3	13148	3.174825034862584	-0.7674084513934919	9	24.25518125295639
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25412  0.891911 -0.901402      126  24.157699
+1     g   X3   25412 -4.295097 -0.045788        5  24.459510
+band                 g
+fits                X3
+object           25412
+Tau            -4.2951
+V           -0.0457884
+Num_Obs              5
+Mu_Bright      24.4595
+Name: 1, dtype: object
+25412_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25412	0.8919114826321766	-0.9014020959094957	126	24.157698545604944
+g	X3	25412	-4.2950968368657785	-0.04578843636777451	5	24.45950984954834
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155824 -3.031207 -1.753426      561  20.266259
+1     r   C3  155824  0.522455 -1.516228      140  20.509622
+band            All 
+fits              C3
+object        155824
+Tau         -3.03121
+V           -1.75343
+Num_Obs          561
+Mu_Bright    20.2663
+Name: 0, dtype: object
+155824_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155824	-3.0312066087533442	-1.7534264378501758	561	20.266259163618088
+r	C3	155824	0.5224545163014608	-1.516228411904691	140	20.50962194800377
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   26287 -5.050278 -1.354493      485  19.817859
+1     r   X3   26287  0.174058 -1.259291      110  19.954908
+2     i   X3   26287  0.237165 -1.578483      125  19.150192
+3     z   X3   26287  0.000380 -1.917285      128  18.787713
+band            All 
+fits              X3
+object         26287
+Tau         -5.05028
+V           -1.35449
+Num_Obs          485
+Mu_Bright    19.8179
+Name: 0, dtype: object
+26287_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	26287	-5.05027762378995	-1.3544932671758387	485	19.817859455943108
+r	X3	26287	0.17405802289858358	-1.259291479539459	110	19.95490849018097
+i	X3	26287	0.2371650184638451	-1.5784828504629829	125	19.150191843509674
+z	X3	26287	0.00037967221090620673	-1.9172845683195694	128	18.78771334886551
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3  147036  8.901612 -1.719010      131  24.019123
+1     g   X3  147036  3.356578 -0.123163       10  24.499796
+band            All 
+fits              X3
+object        147036
+Tau          8.90161
+V           -1.71901
+Num_Obs          131
+Mu_Bright    24.0191
+Name: 0, dtype: object
+147036_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	147036	8.901612137928323	-1.7190095146365965	131	24.01912335306406
+g	X3	147036	3.356577676662009	-0.12316252083679347	10	24.499796479940414
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25321 -4.924497 -6.720924      480  20.472003
+1     i   X3   25321  0.482256 -1.770065      125  19.887493
+2     z   X3   25321  0.710999 -2.140083      129  19.582158
+band            All 
+fits              X3
+object         25321
+Tau          -4.9245
+V           -6.72092
+Num_Obs          480
+Mu_Bright     20.472
+Name: 0, dtype: object
+25321_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25321	-4.924496675422994	-6.720924469231751	480	20.472003053873777
+i	X3	25321	0.48225591687676356	-1.7700649455367354	125	19.887492656707764
+z	X3	25321	0.7109992619907768	-2.1400832919758557	129	19.58215832710266
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25125 -0.257161 -0.528803      289  24.109853
+1     r   X3   25125  0.464238 -0.380035       76  24.400396
+band             All 
+fits               X3
+object          25125
+Tau         -0.257161
+V           -0.528803
+Num_Obs           289
+Mu_Bright     24.1099
+Name: 0, dtype: object
+25125_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25125	-0.25716130673319415	-0.5288026995457282	289	24.109852872788906
+r	X3	25125	0.46423788265003735	-0.38003455698507194	76	24.400395900011063
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   70587 -3.907109 -0.681714      227  24.202725
+1     g   X3   70587  0.893662 -0.645080       20  24.584534
+band             All 
+fits               X3
+object          70587
+Tau          -3.90711
+V           -0.681714
+Num_Obs           227
+Mu_Bright     24.2027
+Name: 0, dtype: object
+70587_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	70587	-3.907108714308741	-0.6817140031605358	227	24.202725384384394
+g	X3	70587	0.89366229675712	-0.6450797855492422	20	24.58453357219696
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95028  0.297179 -1.361382      756  18.184269
+1     g   C3   95028 -0.361995 -1.299646      147  18.907340
+2     r   C3   95028  0.295253 -1.360989      144  18.156344
+3     i   C3   95028  0.667751 -2.530598      160  17.907993
+4     z   C3   95028 -1.794083 -1.822496      305  17.765396
+band                g
+fits               C3
+object          95028
+Tau         -0.361995
+V            -1.29965
+Num_Obs           147
+Mu_Bright     18.9073
+Name: 1, dtype: object
+95028_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95028	0.2971792841046317	-1.3613817656773934	756	18.184268549084663
+g	C3	95028	-0.361994651848573	-1.299645849000413	147	18.907340168952942
+r	C3	95028	0.2952527541852305	-1.3609886254708172	144	18.156344294548035
+i	C3	95028	0.6677507836483259	-2.5305980287113203	160	17.907993495464325
+z	C3	95028	-1.7940827213120654	-1.8224958014221826	305	17.765396237373352
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95028  0.297179 -1.361382      756  18.184269
+1     g   C3   95028 -0.361995 -1.299646      147  18.907340
+2     r   C3   95028  0.295253 -1.360989      144  18.156344
+3     i   C3   95028  0.667751 -2.530598      160  17.907993
+4     z   C3   95028 -1.794083 -1.822496      305  17.765396
+band               z
+fits              C3
+object         95028
+Tau         -1.79408
+V            -1.8225
+Num_Obs          305
+Mu_Bright    17.7654
+Name: 4, dtype: object
+95028_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95028	0.2971792841046317	-1.3613817656773934	756	18.184268549084663
+g	C3	95028	-0.361994651848573	-1.299645849000413	147	18.907340168952942
+r	C3	95028	0.2952527541852305	-1.3609886254708172	144	18.156344294548035
+i	C3	95028	0.6677507836483259	-2.5305980287113203	160	17.907993495464325
+z	C3	95028	-1.7940827213120654	-1.8224958014221826	305	17.765396237373352
+Oh no!  Out of bounds!
+optimal
+   band fits  object        Tau         V  Num_Obs  Mu_Bright
+0  All    X3   70548 -10.760871 -1.833328      477  20.937321
+1     r   X3   70548  -0.788391 -1.349417      108  21.329594
+band            All 
+fits              X3
+object         70548
+Tau         -10.7609
+V           -1.83333
+Num_Obs          477
+Mu_Bright    20.9373
+Name: 0, dtype: object
+70548_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	70548	-10.76087137023588	-1.8333276249360124	477	20.937321255914867
+r	X3	70548	-0.7883914168491507	-1.3494173370612232	108	21.329593807458878
+Oh no!  Out of bounds!
+optimal
+   band fits  object        Tau         V  Num_Obs  Mu_Bright
+0  All    X3   70548 -10.760871 -1.833328      477  20.937321
+1     r   X3   70548  -0.788391 -1.349417      108  21.329594
+band                r
+fits               X3
+object          70548
+Tau         -0.788391
+V            -1.34942
+Num_Obs           108
+Mu_Bright     21.3296
+Name: 1, dtype: object
+70548_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	70548	-10.76087137023588	-1.8333276249360124	477	20.937321255914867
+r	X3	70548	-0.7883914168491507	-1.3494173370612232	108	21.329593807458878
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25039  8.748224 -1.519187      357  24.000318
+1     g   X3   25039  0.385117 -0.702697       41  24.468383
+band            All 
+fits              X3
+object         25039
+Tau          8.74822
+V           -1.51919
+Num_Obs          357
+Mu_Bright    24.0003
+Name: 0, dtype: object
+25039_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25039	8.748223756441682	-1.5191870299986134	357	24.000317752361298
+g	X3	25039	0.3851173652628752	-0.7026968125838737	41	24.468383491039276
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95004  0.613094 -0.705907       98  24.341475
+1     g   C3   95004  1.572444 -0.478819       20  24.677054
+2     i   C3   95004 -2.805069 -0.428690       20  24.419353
+band               i
+fits              C3
+object         95004
+Tau         -2.80507
+V           -0.42869
+Num_Obs           20
+Mu_Bright    24.4194
+Name: 2, dtype: object
+95004_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95004	0.613093866653329	-0.7059067809006927	98	24.34147499501705
+g	C3	95004	1.572443745165767	-0.47881872385702745	20	24.677054435014725
+i	C3	95004	-2.8050691255901143	-0.42868979573833765	20	24.41935285925865
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   70510  1.140666 -0.898051      172  24.100888
+1     g   X3   70510 -2.874733 -0.680375       12  24.331184
+band                g
+fits               X3
+object          70510
+Tau          -2.87473
+V           -0.680375
+Num_Obs            12
+Mu_Bright     24.3312
+Name: 1, dtype: object
+70510_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	70510	1.1406658961221465	-0.8980513046933986	172	24.100888054817915
+g	X3	70510	-2.874732599998418	-0.6803748946523255	12	24.33118388056755
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130713  8.451289 -1.283429      339  24.254397
+1     g   C3  130713  1.344898 -0.614759       22  24.716037
+band            All 
+fits              C3
+object        130713
+Tau          8.45129
+V           -1.28343
+Num_Obs          339
+Mu_Bright    24.2544
+Name: 0, dtype: object
+130713_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130713	8.451288515849049	-1.2834288013363697	339	24.254396967589855
+g	C3	130713	1.3448977762263505	-0.6147594694157456	22	24.716037213802338
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13348  3.998824 -2.896675      178  24.009543
+1     g   X3   13348  1.688373 -3.410326        5  24.208441
+band               g
+fits              X3
+object         13348
+Tau          1.68837
+V           -3.41033
+Num_Obs            5
+Mu_Bright    24.2084
+Name: 1, dtype: object
+13348_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13348	3.998824358550171	-2.8966747336069627	178	24.00954306125641
+g	X3	13348	1.6883728570848506	-3.410326419081119	5	24.208441078662872
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25462 -1.534407 -0.719651      204  24.174000
+1     g   X3   25462  2.594673 -0.676293       14  24.459451
+band             All 
+fits               X3
+object          25462
+Tau          -1.53441
+V           -0.719651
+Num_Obs           204
+Mu_Bright      24.174
+Name: 0, dtype: object
+25462_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25462	-1.534407404984687	-0.719650939917347	204	24.174000434577465
+g	X3	25462	2.5946728772467162	-0.6762925764328739	14	24.4594506919384
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30385  0.127814 -0.820196      408  23.597467
+1     r   X3   30385 -1.197658 -0.508342       99  23.909004
+band                r
+fits               X3
+object          30385
+Tau          -1.19766
+V           -0.508342
+Num_Obs            99
+Mu_Bright      23.909
+Name: 1, dtype: object
+30385_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30385	0.12781385735513082	-0.8201955330908574	408	23.597466982901096
+r	X3	30385	-1.1976577643968551	-0.5083418079255326	99	23.909003734588623
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25219  1.375671 -0.697844      194  24.197764
+1     g   X3   25219  1.868463 -3.175639        5  24.557570
+band               g
+fits              X3
+object         25219
+Tau          1.86846
+V           -3.17564
+Num_Obs            5
+Mu_Bright    24.5576
+Name: 1, dtype: object
+25219_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25219	1.3756713568887329	-0.697843924071369	194	24.19776439666748
+g	X3	25219	1.8684634294602893	-3.1756392125767734	5	24.55756977200508
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   26229 -3.622139 -0.871203      136   24.21475
+1     r   X3   26229  1.092600 -0.533814       20   24.72873
+band             All 
+fits               X3
+object          26229
+Tau          -3.62214
+V           -0.871203
+Num_Obs           136
+Mu_Bright     24.2147
+Name: 0, dtype: object
+26229_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	26229	-3.6221389335050067	-0.8712033293729242	136	24.21474978327751
+r	X3	26229	1.0925997483280279	-0.5338137314170133	20	24.72872957587242
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13005 -0.737886 -0.826836      360  24.025764
+1     g   X3   13005  0.823745 -0.602662       43  24.453795
+band             All 
+fits               X3
+object          13005
+Tau         -0.737886
+V           -0.826836
+Num_Obs           360
+Mu_Bright     24.0258
+Name: 0, dtype: object
+13005_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13005	-0.737885529250086	-0.8268362448486049	360	24.02576431632042
+g	X3	13005	0.8237447018025778	-0.6026616283307233	43	24.45379450917244
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155855  8.352681 -1.689519      257   24.16220
+1     g   C3  155855  1.366417  0.351929        5   24.38986
+band            All 
+fits              C3
+object        155855
+Tau          8.35268
+V           -1.68952
+Num_Obs          257
+Mu_Bright    24.1622
+Name: 0, dtype: object
+155855_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155855	8.352680821010406	-1.6895188021646554	257	24.162199664860964
+g	C3	155855	1.3664165948844984	0.3519291937549836	5	24.38985973596573
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30021  0.929350 -0.927355      215  24.212309
+1     g   X3   30021 -0.132771  0.000469        7  24.750023
+band                   g
+fits                  X3
+object             30021
+Tau            -0.132771
+V            0.000468601
+Num_Obs                7
+Mu_Bright          24.75
+Name: 1, dtype: object
+30021_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30021	0.9293497264963546	-0.9273548125030204	215	24.212309271097183
+g	X3	30021	-0.13277073390177885	0.00046860133292606077	7	24.750022888183594
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3  147045  1.071363 -2.157994      282  19.701318
+1     z   X3  147045 -1.251940 -2.317456      104  18.262288
+band               z
+fits              X3
+object        147045
+Tau         -1.25194
+V           -2.31746
+Num_Obs          104
+Mu_Bright    18.2623
+Name: 1, dtype: object
+147045_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	147045	1.0713626581790383	-2.1579938278789843	282	19.7013184055686
+z	X3	147045	-1.251939746357354	-2.3174555281442673	104	18.26228767633438
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37698  8.009284 -1.526377      127  24.051742
+1     g   X3   37698  1.554337 -3.704652        8  24.414039
+band            All 
+fits              X3
+object         37698
+Tau          8.00928
+V           -1.52638
+Num_Obs          127
+Mu_Bright    24.0517
+Name: 0, dtype: object
+37698_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37698	8.009283692839889	-1.526377064337081	127	24.05174247920513
+g	X3	37698	1.5543372115642118	-3.7046517762377276	8	24.414038807153702
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37698  8.009284 -1.526377      127  24.051742
+1     g   X3   37698  1.554337 -3.704652        8  24.414039
+band               g
+fits              X3
+object         37698
+Tau          1.55434
+V           -3.70465
+Num_Obs            8
+Mu_Bright     24.414
+Name: 1, dtype: object
+37698_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37698	8.009283692839889	-1.526377064337081	127	24.05174247920513
+g	X3	37698	1.5543372115642118	-3.7046517762377276	8	24.414038807153702
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155895 -0.513163 -0.730843      155        inf
+1     r   C3  155895  1.129157 -0.485336       10  24.778087
+band             All 
+fits               C3
+object         155895
+Tau         -0.513163
+V           -0.730843
+Num_Obs           155
+Mu_Bright         inf
+Name: 0, dtype: object
+155895_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155895	-0.5131631360133182	-0.7308433818694959	155	inf
+r	C3	155895	1.129156904733214	-0.48533555816188223	10	24.77808654308319
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30132 -0.531085 -0.669263      159  24.252297
+1     r   X3   30132  1.609348 -0.371651       22  24.723164
+band             All 
+fits               X3
+object          30132
+Tau         -0.531085
+V           -0.669263
+Num_Obs           159
+Mu_Bright     24.2523
+Name: 0, dtype: object
+30132_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30132	-0.5310851721425451	-0.6692626753339286	159	24.252296779304743
+r	X3	30132	1.6093483968555864	-0.3716507035208353	22	24.723164439201355
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   26077  2.083265 -2.866649      163  15.708837
+1     r   X3   26077  1.663909 -2.678570        8  15.667649
+2     i   X3   26077 -3.214088 -2.806431        9  15.577224
+3     z   X3   26077 -1.744522 -0.960841       32  15.559058
+band               i
+fits              X3
+object         26077
+Tau         -3.21409
+V           -2.80643
+Num_Obs            9
+Mu_Bright    15.5772
+Name: 2, dtype: object
+26077_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	26077	2.083265071485608	-2.866649051781985	163	15.708836615085602
+r	X3	26077	1.6639092164276597	-2.6785696807831436	8	15.667648911476135
+i	X3	26077	-3.2140883483104017	-2.8064311410362914	9	15.577224493026733
+z	X3	26077	-1.74452245077816	-0.9608408287849667	32	15.559057593345642
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   26077  2.083265 -2.866649      163  15.708837
+1     r   X3   26077  1.663909 -2.678570        8  15.667649
+2     i   X3   26077 -3.214088 -2.806431        9  15.577224
+3     z   X3   26077 -1.744522 -0.960841       32  15.559058
+band                z
+fits               X3
+object          26077
+Tau          -1.74452
+V           -0.960841
+Num_Obs            32
+Mu_Bright     15.5591
+Name: 3, dtype: object
+26077_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	26077	2.083265071485608	-2.866649051781985	163	15.708836615085602
+r	X3	26077	1.6639092164276597	-2.6785696807831436	8	15.667648911476135
+i	X3	26077	-3.2140883483104017	-2.8064311410362914	9	15.577224493026733
+z	X3	26077	-1.74452245077816	-0.9608408287849667	32	15.559057593345642
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95079  9.646673 -1.053781      166        inf
+1     i   C3   95079  0.649210  0.156410       72  24.077931
+band            All 
+fits              C3
+object         95079
+Tau          9.64667
+V           -1.05378
+Num_Obs          166
+Mu_Bright        inf
+Name: 0, dtype: object
+95079_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95079	9.646672966441326	-1.0537805010507877	166	inf
+i	C3	95079	0.6492104463062829	0.1564103405382577	72	24.0779310464859
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130738 -0.865594 -0.690646      329  24.301929
+1     g   C3  130738  1.479174 -3.250621       10  24.915339
+band             All 
+fits               C3
+object         130738
+Tau         -0.865594
+V           -0.690646
+Num_Obs           329
+Mu_Bright     24.3019
+Name: 0, dtype: object
+130738_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130738	-0.8655943020920427	-0.6906459158613123	329	24.301928728818893
+g	C3	130738	1.4791742371580665	-3.2506210689056143	10	24.915338903665543
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130738 -0.865594 -0.690646      329  24.301929
+1     g   C3  130738  1.479174 -3.250621       10  24.915339
+band               g
+fits              C3
+object        130738
+Tau          1.47917
+V           -3.25062
+Num_Obs           10
+Mu_Bright    24.9153
+Name: 1, dtype: object
+130738_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130738	-0.8655943020920427	-0.6906459158613123	329	24.301928728818893
+g	C3	130738	1.4791742371580665	-3.2506210689056143	10	24.915338903665543
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155762  9.323147 -1.533216       88  24.338043
+1     g   C3  155762 -0.427430 -0.457956       18  24.784686
+band            All 
+fits              C3
+object        155762
+Tau          9.32315
+V           -1.53322
+Num_Obs           88
+Mu_Bright     24.338
+Name: 0, dtype: object
+155762_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155762	9.323146825639975	-1.5332163475780092	88	24.338043238967657
+g	C3	155762	-0.4274299326872335	-0.45795627918188836	18	24.784686118364334
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155762  9.323147 -1.533216       88  24.338043
+1     g   C3  155762 -0.427430 -0.457956       18  24.784686
+band                g
+fits               C3
+object         155762
+Tau          -0.42743
+V           -0.457956
+Num_Obs            18
+Mu_Bright     24.7847
+Name: 1, dtype: object
+155762_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155762	9.323146825639975	-1.5332163475780092	88	24.338043238967657
+g	C3	155762	-0.4274299326872335	-0.45795627918188836	18	24.784686118364334
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30309  0.152225 -1.262787      479  20.700506
+1     r   X3   30309  0.365080 -1.168858      109  20.669847
+2     i   X3   30309  0.667855 -1.675999      125  20.379099
+3     z   X3   30309 -2.785544 -1.723749      128  20.220411
+band               z
+fits              X3
+object         30309
+Tau         -2.78554
+V           -1.72375
+Num_Obs          128
+Mu_Bright    20.2204
+Name: 3, dtype: object
+30309_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30309	0.15222455798694431	-1.2627865710310626	479	20.700505785644054
+r	X3	30309	0.3650800791077317	-1.1688584889867928	109	20.66984698176384
+i	X3	30309	0.6678545877257714	-1.6759989584263584	125	20.379098504781723
+z	X3	30309	-2.7855440742371473	-1.7237488598626722	128	20.220411270856857
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25159  1.919247 -2.422208      381  20.608177
+1     z   X3   25159 -2.290292 -1.272106      105  19.595814
+band               z
+fits              X3
+object         25159
+Tau         -2.29029
+V           -1.27211
+Num_Obs          105
+Mu_Bright    19.5958
+Name: 1, dtype: object
+25159_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25159	1.9192468356143473	-2.4222081176132293	381	20.60817671008408
+z	X3	25159	-2.290292458106219	-1.2721055146531959	105	19.59581434726715
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95039 -2.381201 -1.276191      569  17.935409
+1     g   C3   95039  0.002530 -1.215156      137  18.326894
+2     r   C3   95039 -4.175320 -1.199054      139  17.895579
+3     i   C3   95039  0.011611 -1.371455      150  17.779369
+4     z   C3   95039  0.433966 -2.073886      143  17.739795
+band            All 
+fits              C3
+object         95039
+Tau          -2.3812
+V           -1.27619
+Num_Obs          569
+Mu_Bright    17.9354
+Name: 0, dtype: object
+95039_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95039	-2.381201287520546	-1.276190757219835	569	17.935409247875214
+g	C3	95039	0.0025299988908575877	-1.2151555805089689	137	18.3268940448761
+r	C3	95039	-4.175320252564929	-1.199053819898528	139	17.895578742027283
+i	C3	95039	0.011611217759897857	-1.3714553172412607	150	17.779369354248047
+z	C3	95039	0.43396627713204494	-2.073886434357673	143	17.739794850349426
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95039 -2.381201 -1.276191      569  17.935409
+1     g   C3   95039  0.002530 -1.215156      137  18.326894
+2     r   C3   95039 -4.175320 -1.199054      139  17.895579
+3     i   C3   95039  0.011611 -1.371455      150  17.779369
+4     z   C3   95039  0.433966 -2.073886      143  17.739795
+band               r
+fits              C3
+object         95039
+Tau         -4.17532
+V           -1.19905
+Num_Obs          139
+Mu_Bright    17.8956
+Name: 2, dtype: object
+95039_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95039	-2.381201287520546	-1.276190757219835	569	17.935409247875214
+g	C3	95039	0.0025299988908575877	-1.2151555805089689	137	18.3268940448761
+r	C3	95039	-4.175320252564929	-1.199053819898528	139	17.895578742027283
+i	C3	95039	0.011611217759897857	-1.3714553172412607	150	17.779369354248047
+z	C3	95039	0.43396627713204494	-2.073886434357673	143	17.739794850349426
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30472 -0.986564 -0.777639      153        inf
+1     r   X3   30472 -1.646596 -0.750268       65  24.362730
+band             All 
+fits               X3
+object          30472
+Tau         -0.986564
+V           -0.777639
+Num_Obs           153
+Mu_Bright         inf
+Name: 0, dtype: object
+30472_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30472	-0.9865642388272388	-0.7776389548099145	153	inf
+r	X3	30472	-1.6465956069923713	-0.750268366567976	65	24.36272993683815
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30472 -0.986564 -0.777639      153        inf
+1     r   X3   30472 -1.646596 -0.750268       65  24.362730
+band                r
+fits               X3
+object          30472
+Tau           -1.6466
+V           -0.750268
+Num_Obs            65
+Mu_Bright     24.3627
+Name: 1, dtype: object
+30472_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30472	-0.9865642388272388	-0.7776389548099145	153	inf
+r	X3	30472	-1.6465956069923713	-0.750268366567976	65	24.36272993683815
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30305 -0.818461 -0.684675      143        inf
+1     r   X3   30305 -1.678731 -0.568258       24  24.693745
+band             All 
+fits               X3
+object          30305
+Tau         -0.818461
+V           -0.684675
+Num_Obs           143
+Mu_Bright         inf
+Name: 0, dtype: object
+30305_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30305	-0.8184609638938818	-0.6846752348980125	143	inf
+r	X3	30305	-1.6787308243498718	-0.5682575287431422	24	24.693745374679565
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30305 -0.818461 -0.684675      143        inf
+1     r   X3   30305 -1.678731 -0.568258       24  24.693745
+band                r
+fits               X3
+object          30305
+Tau          -1.67873
+V           -0.568258
+Num_Obs            24
+Mu_Bright     24.6937
+Name: 1, dtype: object
+30305_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30305	-0.8184609638938818	-0.6846752348980125	143	inf
+r	X3	30305	-1.6787308243498718	-0.5682575287431422	24	24.693745374679565
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37596  3.998251 -2.762546      178  23.832114
+1     g   X3   37596 -1.296719  0.236301        5  24.172463
+band                g
+fits               X3
+object          37596
+Tau          -1.29672
+V            0.236301
+Num_Obs             5
+Mu_Bright     24.1725
+Name: 1, dtype: object
+37596_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37596	3.998250954927194	-2.762546110070544	178	23.832114413380623
+g	X3	37596	-1.2967188776758454	0.2363011578862047	5	24.172463417053223
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130563 -7.913926 -0.839169       71        inf
+1     g   C3  130563 -0.614666 -0.512180       11  24.488016
+band             All 
+fits               C3
+object         130563
+Tau          -7.91393
+V           -0.839169
+Num_Obs            71
+Mu_Bright         inf
+Name: 0, dtype: object
+130563_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130563	-7.913925557969262	-0.839168793571579	71	inf
+g	C3	130563	-0.6146655872539623	-0.512179975743529	11	24.488016068935394
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130563 -7.913926 -0.839169       71        inf
+1     g   C3  130563 -0.614666 -0.512180       11  24.488016
+band                g
+fits               C3
+object         130563
+Tau         -0.614666
+V            -0.51218
+Num_Obs            11
+Mu_Bright      24.488
+Name: 1, dtype: object
+130563_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130563	-7.913925557969262	-0.839168793571579	71	inf
+g	C3	130563	-0.6146655872539623	-0.512179975743529	11	24.488016068935394
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25253 -4.483709 -6.433393      468  21.751794
+1     i   X3   25253  0.942896 -1.650576      124  20.843155
+band            All 
+fits              X3
+object         25253
+Tau         -4.48371
+V           -6.43339
+Num_Obs          468
+Mu_Bright    21.7518
+Name: 0, dtype: object
+25253_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25253	-4.483708565782002	-6.433392753893479	468	21.75179378595203
+i	X3	25253	0.9428957801735649	-1.6505760818854545	124	20.84315523505211
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  124094  0.929932 -0.671965       86  24.348333
+1     g   C3  124094  3.156574 -0.819623       23  24.535283
+2     r   C3  124094 -1.392828 -0.553211       36  24.858861
+band                r
+fits               C3
+object         124094
+Tau          -1.39283
+V           -0.553211
+Num_Obs            36
+Mu_Bright     24.8589
+Name: 2, dtype: object
+124094_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	124094	0.9299317999190618	-0.6719651147376222	86	24.34833273291588
+g	C3	124094	3.1565735637769925	-0.8196226259466535	23	24.53528344631195
+r	C3	124094	-1.3928275649970527	-0.5532107244030492	36	24.858860671520233
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62169  0.306830 -1.059631      479  19.046642
+1     g   X3   62169 -4.008024 -1.224204      118  20.083832
+2     r   X3   62169  0.312303 -1.059642      110  19.025317
+3     i   X3   62169  0.002764 -1.254430      125  18.644802
+4     z   X3   62169  0.431981 -1.701532      126  18.432618
+band               g
+fits              X3
+object         62169
+Tau         -4.00802
+V            -1.2242
+Num_Obs          118
+Mu_Bright    20.0838
+Name: 1, dtype: object
+62169_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62169	0.30683010318762366	-1.059630838297631	479	19.046642184257507
+g	X3	62169	-4.00802353656871	-1.2242040841819073	118	20.083832144737244
+r	X3	62169	0.31230253451160206	-1.0596424441421224	110	19.025316536426544
+i	X3	62169	0.002764178387917926	-1.2544297160623263	125	18.644801676273346
+z	X3	62169	0.4319808945832098	-1.70153182904197	126	18.432618379592896
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95150 -1.019534 -0.612859      111        inf
+1     r   C3   95150  0.130693 -0.645930       76  24.592905
+band             All 
+fits               C3
+object          95150
+Tau          -1.01953
+V           -0.612859
+Num_Obs           111
+Mu_Bright         inf
+Name: 0, dtype: object
+95150_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95150	-1.0195337510770874	-0.6128594083038883	111	inf
+r	C3	95150	0.13069320754046146	-0.6459296662660717	76	24.592905342578888
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62334  0.232154 -1.045922      438  16.959442
+1     g   X3   62334 -1.493745 -0.847200      120  16.888435
+2     r   X3   62334  0.174410 -1.018045       74  16.899708
+3     i   X3   62334 -2.401103 -1.186371      111  17.001394
+4     z   X3   62334 -2.568621 -1.265818      133  17.048231
+band               g
+fits              X3
+object         62334
+Tau         -1.49374
+V            -0.8472
+Num_Obs          120
+Mu_Bright    16.8884
+Name: 1, dtype: object
+62334_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62334	0.23215425692020414	-1.045921818970274	438	16.959442049264908
+g	X3	62334	-1.49374477206019	-0.8471996255828411	120	16.888434886932373
+r	X3	62334	0.17441047632597068	-1.0180454419358416	74	16.899707913398743
+i	X3	62334	-2.4011034481176923	-1.1863714458352856	111	17.001394033432007
+z	X3	62334	-2.5686212384915215	-1.2658182694799136	133	17.04823136329651
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62334  0.232154 -1.045922      438  16.959442
+1     g   X3   62334 -1.493745 -0.847200      120  16.888435
+2     r   X3   62334  0.174410 -1.018045       74  16.899708
+3     i   X3   62334 -2.401103 -1.186371      111  17.001394
+4     z   X3   62334 -2.568621 -1.265818      133  17.048231
+band               i
+fits              X3
+object         62334
+Tau          -2.4011
+V           -1.18637
+Num_Obs          111
+Mu_Bright    17.0014
+Name: 3, dtype: object
+62334_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62334	0.23215425692020414	-1.045921818970274	438	16.959442049264908
+g	X3	62334	-1.49374477206019	-0.8471996255828411	120	16.888434886932373
+r	X3	62334	0.17441047632597068	-1.0180454419358416	74	16.899707913398743
+i	X3	62334	-2.4011034481176923	-1.1863714458352856	111	17.001394033432007
+z	X3	62334	-2.5686212384915215	-1.2658182694799136	133	17.04823136329651
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62334  0.232154 -1.045922      438  16.959442
+1     g   X3   62334 -1.493745 -0.847200      120  16.888435
+2     r   X3   62334  0.174410 -1.018045       74  16.899708
+3     i   X3   62334 -2.401103 -1.186371      111  17.001394
+4     z   X3   62334 -2.568621 -1.265818      133  17.048231
+band               z
+fits              X3
+object         62334
+Tau         -2.56862
+V           -1.26582
+Num_Obs          133
+Mu_Bright    17.0482
+Name: 4, dtype: object
+62334_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62334	0.23215425692020414	-1.045921818970274	438	16.959442049264908
+g	X3	62334	-1.49374477206019	-0.8471996255828411	120	16.888434886932373
+r	X3	62334	0.17441047632597068	-1.0180454419358416	74	16.899707913398743
+i	X3	62334	-2.4011034481176923	-1.1863714458352856	111	17.001394033432007
+z	X3	62334	-2.5686212384915215	-1.2658182694799136	133	17.04823136329651
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155679  7.927854 -1.697346      355   24.25573
+1     g   C3  155679  2.783700 -0.483782       10   24.80666
+band            All 
+fits              C3
+object        155679
+Tau          7.92785
+V           -1.69735
+Num_Obs          355
+Mu_Bright    24.2557
+Name: 0, dtype: object
+155679_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155679	7.92785365386919	-1.6973463858514395	355	24.25573017448187
+g	C3	155679	2.783700297854965	-0.48378203134788333	10	24.806659817695618
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13277 -0.578994 -1.298459      478  21.997423
+1     r   X3   13277  0.662859 -1.094904      114  21.960420
+band             All 
+fits               X3
+object          13277
+Tau         -0.578994
+V            -1.29846
+Num_Obs           478
+Mu_Bright     21.9974
+Name: 0, dtype: object
+13277_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13277	-0.5789936600870103	-1.2984588235578904	478	21.99742300901562
+r	X3	13277	0.6628591652573769	-1.0949044060871498	114	21.96041990071535
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30390 -0.992673 -0.808519      249        inf
+1     r   X3   30390  2.666851 -3.572594        5  24.830320
+band             All 
+fits               X3
+object          30390
+Tau         -0.992673
+V           -0.808519
+Num_Obs           249
+Mu_Bright         inf
+Name: 0, dtype: object
+30390_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30390	-0.9926730932639714	-0.8085192513329839	249	inf
+r	X3	30390	2.6668506197697743	-3.5725938474604915	5	24.830320477485657
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30390 -0.992673 -0.808519      249        inf
+1     r   X3   30390  2.666851 -3.572594        5  24.830320
+band               r
+fits              X3
+object         30390
+Tau          2.66685
+V           -3.57259
+Num_Obs            5
+Mu_Bright    24.8303
+Name: 1, dtype: object
+30390_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30390	-0.9926730932639714	-0.8085192513329839	249	inf
+r	X3	30390	2.6668506197697743	-3.5725938474604915	5	24.830320477485657
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62000  0.222334 -1.390949      386  23.789548
+1     g   X3   62000  2.291151 -3.546588        8  24.512948
+band               g
+fits              X3
+object         62000
+Tau          2.29115
+V           -3.54659
+Num_Obs            8
+Mu_Bright    24.5129
+Name: 1, dtype: object
+62000_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62000	0.22233355126778037	-1.3909488396648055	386	23.78954768180847
+g	X3	62000	2.291151433782797	-3.5465879245848613	8	24.512948095798492
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62098 -0.247719 -0.872152       80  24.133412
+1     g   X3   62098 -0.722012 -0.482421       28  24.488231
+band             All 
+fits               X3
+object          62098
+Tau         -0.247719
+V           -0.872152
+Num_Obs            80
+Mu_Bright     24.1334
+Name: 0, dtype: object
+62098_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62098	-0.24771937504900662	-0.872151820440174	80	24.133411962538958
+g	X3	62098	-0.7220115484789398	-0.48242111323332565	28	24.48823094367981
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62098 -0.247719 -0.872152       80  24.133412
+1     g   X3   62098 -0.722012 -0.482421       28  24.488231
+band                g
+fits               X3
+object          62098
+Tau         -0.722012
+V           -0.482421
+Num_Obs            28
+Mu_Bright     24.4882
+Name: 1, dtype: object
+62098_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62098	-0.24771937504900662	-0.872151820440174	80	24.133411962538958
+g	X3	62098	-0.7220115484789398	-0.48242111323332565	28	24.48823094367981
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13458 -0.366832 -0.778055      160  24.041837
+1     g   X3   13458  3.991396 -0.991422        6  24.114035
+band             All 
+fits               X3
+object          13458
+Tau         -0.366832
+V           -0.778055
+Num_Obs           160
+Mu_Bright     24.0418
+Name: 0, dtype: object
+13458_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13458	-0.36683197238605636	-0.7780546883644323	160	24.041837248951197
+g	X3	13458	3.991395715641258	-0.9914223063191672	6	24.114035218954086
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   70532 -0.211339 -0.916866      131  24.210668
+1     z   X3   70532 -1.601743 -0.614743       45  23.478280
+band             All 
+fits               X3
+object          70532
+Tau         -0.211339
+V           -0.916866
+Num_Obs           131
+Mu_Bright     24.2107
+Name: 0, dtype: object
+70532_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	70532	-0.21133880624102622	-0.916865969176749	131	24.21066790819168
+z	X3	70532	-1.6017434356708316	-0.6147433711595632	45	23.478280156850815
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   70532 -0.211339 -0.916866      131  24.210668
+1     z   X3   70532 -1.601743 -0.614743       45  23.478280
+band                z
+fits               X3
+object          70532
+Tau          -1.60174
+V           -0.614743
+Num_Obs            45
+Mu_Bright     23.4783
+Name: 1, dtype: object
+70532_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	70532	-0.21133880624102622	-0.916865969176749	131	24.21066790819168
+z	X3	70532	-1.6017434356708316	-0.6147433711595632	45	23.478280156850815
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13331  0.785334 -0.625287      231        inf
+1     r   X3   13331 -0.748320  0.052300        6  24.661752
+band                 r
+fits                X3
+object           13331
+Tau           -0.74832
+V            0.0522999
+Num_Obs              6
+Mu_Bright      24.6618
+Name: 1, dtype: object
+13331_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13331	0.7853338093391519	-0.6252873002877222	231	inf
+r	X3	13331	-0.7483199637681431	0.052299935807476335	6	24.66175228357315
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25181  8.039050 -1.631195      258  24.064862
+1     g   X3   25181  3.996378 -2.794073       14  24.508689
+band            All 
+fits              X3
+object         25181
+Tau          8.03905
+V            -1.6312
+Num_Obs          258
+Mu_Bright    24.0649
+Name: 0, dtype: object
+25181_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25181	8.039050192121794	-1.6311951955639654	258	24.06486200168729
+g	X3	25181	3.9963777526220463	-2.794073061402436	14	24.50868934392929
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155556 -3.298637 -0.658947       97  24.404603
+1     r   C3  155556  0.612682 -0.635594       40  24.864194
+band             All 
+fits               C3
+object         155556
+Tau          -3.29864
+V           -0.658947
+Num_Obs            97
+Mu_Bright     24.4046
+Name: 0, dtype: object
+155556_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155556	-3.298636628556047	-0.6589465594494635	97	24.404603019356728
+r	C3	155556	0.6126817348828484	-0.6355943354485614	40	24.864194244146347
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   70561 -2.569147 -1.285497      483  17.554532
+1     r   X3   70561  0.059645 -1.251735      108  17.512645
+2     i   X3   70561  0.782247 -1.271870      125  17.408766
+3     z   X3   70561 -2.253329 -1.427459      131  17.370704
+band            All 
+fits              X3
+object         70561
+Tau         -2.56915
+V            -1.2855
+Num_Obs          483
+Mu_Bright    17.5545
+Name: 0, dtype: object
+70561_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	70561	-2.5691467947556066	-1.2854972376108098	483	17.554531916975975
+r	X3	70561	0.05964466233304788	-1.2517353001174985	108	17.51264452934265
+i	X3	70561	0.7822465917913002	-1.271870038058399	125	17.4087655544281
+z	X3	70561	-2.253328536776821	-1.427459071668462	131	17.370704412460327
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   70561 -2.569147 -1.285497      483  17.554532
+1     r   X3   70561  0.059645 -1.251735      108  17.512645
+2     i   X3   70561  0.782247 -1.271870      125  17.408766
+3     z   X3   70561 -2.253329 -1.427459      131  17.370704
+band               z
+fits              X3
+object         70561
+Tau         -2.25333
+V           -1.42746
+Num_Obs          131
+Mu_Bright    17.3707
+Name: 3, dtype: object
+70561_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	70561	-2.5691467947556066	-1.2854972376108098	483	17.554531916975975
+r	X3	70561	0.05964466233304788	-1.2517353001174985	108	17.51264452934265
+i	X3	70561	0.7822465917913002	-1.271870038058399	125	17.4087655544281
+z	X3	70561	-2.253328536776821	-1.427459071668462	131	17.370704412460327
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130629  0.453703 -1.440781      716  18.282682
+1     g   C3  130629  1.010373 -1.313663      142  18.502992
+2     r   C3  130629  0.616086 -1.377401      146  18.246757
+3     i   C3  130629 -0.294533 -1.567767      154  18.191102
+4     z   C3  130629 -1.581495 -1.455354      274  18.189876
+band                i
+fits               C3
+object         130629
+Tau         -0.294533
+V            -1.56777
+Num_Obs           154
+Mu_Bright     18.1911
+Name: 3, dtype: object
+130629_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130629	0.45370294722342613	-1.440781209911436	716	18.28268177807331
+g	C3	130629	1.010372597016257	-1.3136629360772296	142	18.502991795539856
+r	C3	130629	0.6160864031965549	-1.377401419185994	146	18.24675738811493
+i	C3	130629	-0.2945332919701584	-1.56776682944391	154	18.191101551055908
+z	C3	130629	-1.5814950478414478	-1.4553544672970793	274	18.18987637758255
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130629  0.453703 -1.440781      716  18.282682
+1     g   C3  130629  1.010373 -1.313663      142  18.502992
+2     r   C3  130629  0.616086 -1.377401      146  18.246757
+3     i   C3  130629 -0.294533 -1.567767      154  18.191102
+4     z   C3  130629 -1.581495 -1.455354      274  18.189876
+band               z
+fits              C3
+object        130629
+Tau          -1.5815
+V           -1.45535
+Num_Obs          274
+Mu_Bright    18.1899
+Name: 4, dtype: object
+130629_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130629	0.45370294722342613	-1.440781209911436	716	18.28268177807331
+g	C3	130629	1.010372597016257	-1.3136629360772296	142	18.502991795539856
+r	C3	130629	0.6160864031965549	-1.377401419185994	146	18.24675738811493
+i	C3	130629	-0.2945332919701584	-1.56776682944391	154	18.191101551055908
+z	C3	130629	-1.5814950478414478	-1.4553544672970793	274	18.18987637758255
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95002  11.52822 -1.505675      434  23.771964
+1     g   C3   95002 -10.78149  0.227937        5  24.389302
+band            All 
+fits              C3
+object         95002
+Tau          11.5282
+V           -1.50567
+Num_Obs          434
+Mu_Bright     23.772
+Name: 0, dtype: object
+95002_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95002	11.528220283801781	-1.5056748738724424	434	23.77196379005909
+g	C3	95002	-10.781490069336071	0.22793727996724145	5	24.389301985502243
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95002  11.52822 -1.505675      434  23.771964
+1     g   C3   95002 -10.78149  0.227937        5  24.389302
+band                g
+fits               C3
+object          95002
+Tau          -10.7815
+V            0.227937
+Num_Obs             5
+Mu_Bright     24.3893
+Name: 1, dtype: object
+95002_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95002	11.528220283801781	-1.5056748738724424	434	23.77196379005909
+g	C3	95002	-10.781490069336071	0.22793727996724145	5	24.389301985502243
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30139 -0.348144 -1.566941      478   20.62321
+1     z   X3   30139  0.384441 -1.962792      124   18.91600
+band             All 
+fits               X3
+object          30139
+Tau         -0.348144
+V            -1.56694
+Num_Obs           478
+Mu_Bright     20.6232
+Name: 0, dtype: object
+30139_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30139	-0.34814373589673425	-1.5669412168255907	478	20.623210482299328
+z	X3	30139	0.38444128481172957	-1.9627917253191642	124	18.91600012779236
+Oh no!  Out of bounds!
+optimal
+   band fits  object      Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130686  8.30821 -1.824198      465  23.771043
+1     g   C3  130686  1.01066 -0.713145       23  24.718813
+band            All 
+fits              C3
+object        130686
+Tau          8.30821
+V            -1.8242
+Num_Obs          465
+Mu_Bright     23.771
+Name: 0, dtype: object
+130686_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130686	8.308210268527416	-1.82419753433719	465	23.77104263752699
+g	C3	130686	1.0106597587096355	-0.713145137779427	23	24.718813002109528
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  124167 -0.793906 -0.702282      108  24.399181
+1     r   C3  124167 -0.292564 -0.575841       59  24.821073
+band             All 
+fits               C3
+object         124167
+Tau         -0.793906
+V           -0.702282
+Num_Obs           108
+Mu_Bright     24.3992
+Name: 0, dtype: object
+124167_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	124167	-0.7939055081091216	-0.7022819037519663	108	24.399181101471186
+r	C3	124167	-0.2925643102640586	-0.5758407416729041	59	24.821073412895203
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  124167 -0.793906 -0.702282      108  24.399181
+1     r   C3  124167 -0.292564 -0.575841       59  24.821073
+band                r
+fits               C3
+object         124167
+Tau         -0.292564
+V           -0.575841
+Num_Obs            59
+Mu_Bright     24.8211
+Name: 1, dtype: object
+124167_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	124167	-0.7939055081091216	-0.7022819037519663	108	24.399181101471186
+r	C3	124167	-0.2925643102640586	-0.5758407416729041	59	24.821073412895203
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3  158026 -3.809117 -5.611072      477  21.193461
+1     i   X3  158026  0.760724 -2.319435      124  20.278086
+band            All 
+fits              X3
+object        158026
+Tau         -3.80912
+V           -5.61107
+Num_Obs          477
+Mu_Bright    21.1935
+Name: 0, dtype: object
+158026_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	158026	-3.809117008066858	-5.61107160045862	477	21.193460635840893
+i	X3	158026	0.7607242794366281	-2.319435447960029	124	20.278086364269257
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37713  0.419392 -1.302569      268  17.862920
+1     g   X3   37713 -0.463776 -1.012405       91  19.961402
+2     r   X3   37713  0.876934 -1.194714       76  18.428097
+3     i   X3   37713  0.178806 -1.052570       62  16.872473
+4     z   X3   37713 -2.889224 -1.193885       39  16.189707
+band                g
+fits               X3
+object          37713
+Tau         -0.463776
+V             -1.0124
+Num_Obs            91
+Mu_Bright     19.9614
+Name: 1, dtype: object
+37713_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37713	0.4193917381777934	-1.3025688895258096	268	17.862919718027115
+g	X3	37713	-0.4637761221881336	-1.0124048031313089	91	19.961402416229248
+r	X3	37713	0.8769339982762578	-1.1947137761264324	76	18.428096771240234
+i	X3	37713	0.17880590909464225	-1.052570153269182	62	16.872472763061523
+z	X3	37713	-2.889223922020792	-1.1938848372653692	39	16.189706921577454
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37713  0.419392 -1.302569      268  17.862920
+1     g   X3   37713 -0.463776 -1.012405       91  19.961402
+2     r   X3   37713  0.876934 -1.194714       76  18.428097
+3     i   X3   37713  0.178806 -1.052570       62  16.872473
+4     z   X3   37713 -2.889224 -1.193885       39  16.189707
+band               z
+fits              X3
+object         37713
+Tau         -2.88922
+V           -1.19388
+Num_Obs           39
+Mu_Bright    16.1897
+Name: 4, dtype: object
+37713_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37713	0.4193917381777934	-1.3025688895258096	268	17.862919718027115
+g	X3	37713	-0.4637761221881336	-1.0124048031313089	91	19.961402416229248
+r	X3	37713	0.8769339982762578	-1.1947137761264324	76	18.428096771240234
+i	X3	37713	0.17880590909464225	-1.052570153269182	62	16.872472763061523
+z	X3	37713	-2.889223922020792	-1.1938848372653692	39	16.189706921577454
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95089 -1.135397 -0.633730      254        inf
+1     i   C3   95089  0.829354 -0.667041       64  24.274469
+band            All 
+fits              C3
+object         95089
+Tau          -1.1354
+V           -0.63373
+Num_Obs          254
+Mu_Bright        inf
+Name: 0, dtype: object
+95089_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95089	-1.1353972773169612	-0.6337295278580468	254	inf
+i	C3	95089	0.8293540172180569	-0.667040541806642	64	24.274469166994095
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3   95212 -0.637943 -0.891282      194  24.257697
+1     g   C3   95212  3.997293 -2.481280       11  24.660690
+band             All 
+fits               C3
+object          95212
+Tau         -0.637943
+V           -0.891282
+Num_Obs           194
+Mu_Bright     24.2577
+Name: 0, dtype: object
+95212_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	95212	-0.6379431233060922	-0.8912824234038875	194	24.257697016000748
+g	C3	95212	3.9972930997896685	-2.4812799277464688	11	24.66068983078003
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30424 -0.313841 -0.981492      250  23.988196
+1     g   X3   30424  2.240391 -3.522639        5  24.178059
+band             All 
+fits               X3
+object          30424
+Tau         -0.313841
+V           -0.981492
+Num_Obs           250
+Mu_Bright     23.9882
+Name: 0, dtype: object
+30424_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30424	-0.31384107824932483	-0.9814917764804927	250	23.988195713609457
+g	X3	30424	2.240390518862665	-3.5226389829802827	5	24.17805939912796
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30424 -0.313841 -0.981492      250  23.988196
+1     g   X3   30424  2.240391 -3.522639        5  24.178059
+band               g
+fits              X3
+object         30424
+Tau          2.24039
+V           -3.52264
+Num_Obs            5
+Mu_Bright    24.1781
+Name: 1, dtype: object
+30424_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30424	-0.31384107824932483	-0.9814917764804927	250	23.988195713609457
+g	X3	30424	2.240390518862665	-3.5226389829802827	5	24.17805939912796
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30003  9.710243 -1.180987      174        inf
+1     z   X3   30003  0.883528  0.409669       30  23.480658
+band            All 
+fits              X3
+object         30003
+Tau          9.71024
+V           -1.18099
+Num_Obs          174
+Mu_Bright        inf
+Name: 0, dtype: object
+30003_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30003	9.710242948155024	-1.1809866962398288	174	inf
+z	X3	30003	0.8835276366290425	0.4096685392503796	30	23.480657935142517
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   37766  2.696791 -1.161288       79  24.227808
+1     g   X3   37766 -0.648607 -0.214532       18  24.435298
+band                g
+fits               X3
+object          37766
+Tau         -0.648607
+V           -0.214532
+Num_Obs            18
+Mu_Bright     24.4353
+Name: 1, dtype: object
+37766_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	37766	2.6967906878959553	-1.1612882900908672	79	24.22780841588974
+g	X3	37766	-0.6486073562626253	-0.21453162220891095	18	24.435298144817352
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   26271 -0.370359 -0.858848      134  24.056302
+1     g   X3   26271  1.045507 -0.360413        5  23.626744
+band             All 
+fits               X3
+object          26271
+Tau         -0.370359
+V           -0.858848
+Num_Obs           134
+Mu_Bright     24.0563
+Name: 0, dtype: object
+26271_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	26271	-0.37035910843156983	-0.858848053993982	134	24.056302160024643
+g	X3	26271	1.0455066273876954	-0.3604131486312646	5	23.62674355506897
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  155868  0.210344 -1.032225      165  24.307614
+1     i   C3  155868 -1.786514 -0.523880       39  24.246186
+band               i
+fits              C3
+object        155868
+Tau         -1.78651
+V           -0.52388
+Num_Obs           39
+Mu_Bright    24.2462
+Name: 1, dtype: object
+155868_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	155868	0.2103440187841581	-1.0322254197835483	165	24.307614043354988
+i	C3	155868	-1.786513783615185	-0.523880287066539	39	24.246186017990112
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25465 -0.372953 -0.865037       97        inf
+1     z   X3   25465  1.612610 -0.443047        7  23.522478
+band             All 
+fits               X3
+object          25465
+Tau         -0.372953
+V           -0.865037
+Num_Obs            97
+Mu_Bright         inf
+Name: 0, dtype: object
+25465_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25465	-0.37295295047117744	-0.8650372798543048	97	inf
+z	X3	25465	1.6126101820196703	-0.44304737062967486	7	23.52247804403305
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25185  1.000537 -0.862208      401  24.043711
+1     z   X3   25185 -1.591830 -0.698905      155  23.412642
+band                z
+fits               X3
+object          25185
+Tau          -1.59183
+V           -0.698905
+Num_Obs           155
+Mu_Bright     23.4126
+Name: 1, dtype: object
+25185_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25185	1.0005373614819215	-0.862208456323174	401	24.04371067881584
+z	X3	25185	-1.5918296061578483	-0.6989052465475473	155	23.412642180919647
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13381 -3.223874 -0.961867      347  23.998942
+1     g   X3   13381  2.523132  0.304869        6  24.479204
+band             All 
+fits               X3
+object          13381
+Tau          -3.22387
+V           -0.961867
+Num_Obs           347
+Mu_Bright     23.9989
+Name: 0, dtype: object
+13381_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13381	-3.2238737703842135	-0.9618666230672952	347	23.998941630125046
+g	X3	13381	2.523131644229294	0.30486918948226116	6	24.479204416275024
+Oh no!  Out of bounds!
+optimal
+   band fits  object        Tau         V  Num_Obs  Mu_Bright
+0  All    X3   13020   1.837667 -0.508404       81  24.212794
+1     g   X3   13020 -19.788761  0.306058        8  24.620799
+band                g
+fits               X3
+object          13020
+Tau          -19.7888
+V            0.306058
+Num_Obs             8
+Mu_Bright     24.6208
+Name: 1, dtype: object
+13020_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	13020	1.8376672963320302	-0.5084039309250887	81	24.212793856859207
+g	X3	13020	-19.788761173725117	0.3060576169689841	8	24.6207994222641
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130657  0.333037 -1.124931      575  18.264992
+1     g   C3  130657 -0.382947 -2.459411      136  18.975101
+2     r   C3  130657  0.325584 -1.124601      145  18.244256
+3     i   C3  130657 -0.440729 -1.374267      148  17.985643
+4     z   C3  130657  0.000254 -1.959381      146  17.854966
+band                g
+fits               C3
+object         130657
+Tau         -0.382947
+V            -2.45941
+Num_Obs           136
+Mu_Bright     18.9751
+Name: 1, dtype: object
+130657_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130657	0.3330374251100623	-1.1249310131749206	575	18.26499156653881
+g	C3	130657	-0.3829466780222332	-2.459410537484564	136	18.97510051727295
+r	C3	130657	0.3255840640696995	-1.1246007086053802	145	18.244256377220154
+i	C3	130657	-0.4407291310621089	-1.3742666704459803	148	17.98564314842224
+z	C3	130657	0.0002544016973388963	-1.959380922864115	146	17.8549662232399
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    C3  130657  0.333037 -1.124931      575  18.264992
+1     g   C3  130657 -0.382947 -2.459411      136  18.975101
+2     r   C3  130657  0.325584 -1.124601      145  18.244256
+3     i   C3  130657 -0.440729 -1.374267      148  17.985643
+4     z   C3  130657  0.000254 -1.959381      146  17.854966
+band                i
+fits               C3
+object         130657
+Tau         -0.440729
+V            -1.37427
+Num_Obs           148
+Mu_Bright     17.9856
+Name: 3, dtype: object
+130657_C3_optimal_all_band_linear_cc_all_and_sing_c3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	C3	130657	0.3330374251100623	-1.1249310131749206	575	18.26499156653881
+g	C3	130657	-0.3829466780222332	-2.459410537484564	136	18.97510051727295
+r	C3	130657	0.3255840640696995	-1.1246007086053802	145	18.244256377220154
+i	C3	130657	-0.4407291310621089	-1.3742666704459803	148	17.98564314842224
+z	C3	130657	0.0002544016973388963	-1.959380922864115	146	17.8549662232399
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   25359  0.592162 -0.405020      184  24.223708
+1     z   X3   25359 -1.284893 -0.521018       58  23.590032
+band                z
+fits               X3
+object          25359
+Tau          -1.28489
+V           -0.521018
+Num_Obs            58
+Mu_Bright       23.59
+Name: 1, dtype: object
+25359_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	25359	0.5921622832820431	-0.405019502359451	184	24.223707634955645
+z	X3	25359	-1.2848928602900915	-0.5210182006109574	58	23.590032383799553
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   62281  0.189246 -1.242881      365  23.819673
+1     r   X3   62281 -3.084582 -1.166677       77  24.251678
+band               r
+fits              X3
+object         62281
+Tau         -3.08458
+V           -1.16668
+Num_Obs           77
+Mu_Bright    24.2517
+Name: 1, dtype: object
+62281_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	62281	0.18924563518708698	-1.2428813287257072	365	23.819672791287303
+r	X3	62281	-3.08458157312644	-1.1666773777890769	77	24.251677989959717
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   30146  0.943666 -0.677381      128  24.088787
+1     g   X3   30146 -1.362538 -0.059535        5  24.196034
+band                 g
+fits                X3
+object           30146
+Tau           -1.36254
+V           -0.0595351
+Num_Obs              5
+Mu_Bright       24.196
+Name: 1, dtype: object
+30146_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	30146	0.9436661941376018	-0.6773812126209049	128	24.08878717571497
+g	X3	30146	-1.3625380803960256	-0.059535087797894376	5	24.196034371852875
+Oh no!  Out of bounds!
+optimal
+   band fits  object       Tau         V  Num_Obs  Mu_Bright
+0  All    X3   26106 -1.607426 -1.434398      483  19.015981
+1     g   X3   26106  0.281106 -1.348985      118  19.860190
+2     r   X3   26106  0.513219 -1.244005      112  18.976919
+3     z   X3   26106  0.770577 -2.752002      128  18.535783
+band            All 
+fits              X3
+object         26106
+Tau         -1.60743
+V            -1.4344
+Num_Obs          483
+Mu_Bright     19.016
+Name: 0, dtype: object
+26106_X3_optimal_all_band_linear_cc_all_and_sing_x3_serial.txt
+Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
+All 	X3	26106	-1.6074258848163703	-1.4343982879163826	483	19.015980809926987
+g	X3	26106	0.28110625910894815	-1.3489847899944312	118	19.860189855098724
+r	X3	26106	0.513219254267977	-1.2440053120763261	112	18.97691935300827
+z	X3	26106	0.7705768316286109	-2.7520019366740915	128	18.535783290863037
