@@ -54,6 +54,9 @@ def find_a_b(fits, LC_file, color):
     dy = np.nan_to_num(dy)
     #print(dy)
 
+    j = x[x !=0]
+    k = y[x !=0]
+    dk = dy[x!=0]
     j = x[:-3] # sigma
     k = y[:-3] # chi
     dk =dy[:-3]
@@ -89,16 +92,10 @@ def find_a_b(fits, LC_file, color):
 
 
 if __name__ == "__main__":
-    #files = ['../../C1_lc.fits'] #'../../C2_lc.fits', '../../C3_lc.fits', '../../E1_lc.fits', '../../E2_lc.fits',
-             #'../../S1_lc.fits', '../../S2_lc.fits', '../../X1_lc.fits', '../../X2_lc.fits', '../../X3_lc.fits']
     folder = "/home/thrush2/caps_dir/"
-    files= ['C1_lc.fits', 'C2_lc.fits', 'C3_lc.fits', 'E1_lc.fits', 'E2_lc.fits',
-            'S1_lc.fits', 'S2_lc.fits', 'X1_lc.fits', 'X2_lc.fits', 'X3_lc.fits']
-            #['/home/sam/Documents/Morganson_research/C1_lc.fits', '/home/sam/Documents/Morganson_research/C2_lc.fits'] #,
-            # '/home/sam/Documents/Morganson_research/E1_lc.fits', '/home/sam/Documents/Morganson_research/E2_lc.fits',
-            # '/home/sam/Documents/Morganson_research/S1_lc.fits', '/home/sam/Documents/Morganson_research/S2_lc.fits',
-            # '/home/sam/Documents/Morganson_research/X1_lc.fits', '/home/sam/Documents/Morganson_research/X2_lc.fits']
-
+    #files= ['C1_lc.fits', 'C2_lc.fits', 'C3_lc.fits', 'E1_lc.fits', 'E2_lc.fits',
+    #        'S1_lc.fits', 'S2_lc.fits', 'X1_lc.fits', 'X2_lc.fits', 'X3_lc.fits']
+    files = ['C3_lc.fits', 'X3_lc.fits']        
     for fi in files:
         file = folder+fi
         with pyfit.open(file) as fits:

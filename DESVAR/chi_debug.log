@@ -1,26 +1,4 @@
-Thu Oct  7 15:38:23 CDT 2021
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in square
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: divide by zero encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in square
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in square
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: divide by zero encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in square
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in square
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
+Thu Oct  7 16:54:29 CDT 2021
 Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: divide by zero encountered in true_divide
   chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
 Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
@@ -29,7 +7,7 @@ Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in squ
   chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
 /usr/local/python/3.7.0/lib/python3.7/site-packages/scipy/optimize/minpack.py:728: RuntimeWarning: divide by zero encountered in true_divide
   transform = 1.0 / sigma
-Chi_squared_LCs_all_band_data.py:64: RuntimeWarning: divide by zero encountered in true_divide
+Chi_squared_LCs_all_band_data.py:67: RuntimeWarning: divide by zero encountered in true_divide
   return a**2/(sigma**1) + b**2
 /usr/local/python/3.7.0/lib/python3.7/site-packages/scipy/optimize/minpack.py:794: OptimizeWarning: Covariance of the parameters could not be estimated
   category=OptimizeWarning)
@@ -49,62 +27,6 @@ Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in squ
   chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
 Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
   chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: divide by zero encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: divide by zero encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-/home/thrush2/caps_dir/mypython3/numpy/core/fromnumeric.py:3420: RuntimeWarning: Mean of empty slice.
-  out=out, **kwargs)
-/home/thrush2/caps_dir/mypython3/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in true_divide
-  ret = ret.dtype.type(ret / rcount)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: divide by zero encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:60: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
-  plt.figure()
-/home/thrush2/caps_dir/mypython3/numpy/core/fromnumeric.py:3420: RuntimeWarning: Mean of empty slice.
-  out=out, **kwargs)
-/home/thrush2/caps_dir/mypython3/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in true_divide
-  ret = ret.dtype.type(ret / rcount)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in square
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-/home/thrush2/caps_dir/mypython3/numpy/core/fromnumeric.py:3420: RuntimeWarning: Mean of empty slice.
-  out=out, **kwargs)
-/home/thrush2/caps_dir/mypython3/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in true_divide
-  ret = ret.dtype.type(ret / rcount)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-/home/thrush2/caps_dir/mypython3/numpy/core/fromnumeric.py:3420: RuntimeWarning: Mean of empty slice.
-  out=out, **kwargs)
-/home/thrush2/caps_dir/mypython3/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in true_divide
-  ret = ret.dtype.type(ret / rcount)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: divide by zero encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-/home/thrush2/caps_dir/mypython3/numpy/core/fromnumeric.py:3420: RuntimeWarning: Mean of empty slice.
-  out=out, **kwargs)
-/home/thrush2/caps_dir/mypython3/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in true_divide
-  ret = ret.dtype.type(ret / rcount)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in square
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: overflow encountered in square
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
-Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered in true_divide
-  chi = np.sum(((fluxes - mean_flux)**2)/(ind_errs**2))/(len(fluxes)-1)
 /home/thrush2/caps_dir/mypython3/numpy/core/fromnumeric.py:3420: RuntimeWarning: Mean of empty slice.
   out=out, **kwargs)
 /home/thrush2/caps_dir/mypython3/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in true_divide
@@ -127,4 +49,4 @@ Chi_squared_LCs_all_band_data.py:33: RuntimeWarning: invalid value encountered i
   out=out, **kwargs)
 /home/thrush2/caps_dir/mypython3/numpy/core/_methods.py:188: RuntimeWarning: invalid value encountered in true_divide
   ret = ret.dtype.type(ret / rcount)
-Thu Oct  7 15:52:14 CDT 2021
+Thu Oct  7 16:58:29 CDT 2021
