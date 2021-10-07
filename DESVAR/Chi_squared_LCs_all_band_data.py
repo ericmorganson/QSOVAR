@@ -54,9 +54,9 @@ def find_a_b(fits, LC_file, color):
     dy = np.nan_to_num(dy)
     #print(dy)
 
-    j = x[:-2] # sigma
-    k = y[:-2] # chi
-    dk =dy[:-2]
+    j = x[:-3] # sigma
+    k = y[:-3] # chi
+    dk =dy[:-3]
     plt.figure()
     plt.errorbar(j, k, yerr=dk, label="clipped")
 
@@ -77,7 +77,7 @@ def find_a_b(fits, LC_file, color):
 
 
     # calculate new x's and y's
-    x_new = np.linspace(j[0], j[-2], 50)
+    x_new = np.linspace(j[0], j[-1], 50)
     plt.plot(x_new, test_func(x_new, params[0], params[1]), label='a='+str(round(params[0], 4))+'\n'+'b='+str(round(params[1], 4)))
     plt.legend(loc='best')
     #plt.ylim(-5, 10)

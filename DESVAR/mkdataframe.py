@@ -74,4 +74,4 @@ for f in onlyfiles:
 #print(data.shape)
 #print(data)
 
-#data.to_csv("X3_C3_debug_full.csv")#"all_and_sing_df_all_RA_DEC_ID.csv")
+#data.to_csv("all_and_sing_df_all_RA_DEC_ID_no_optimal.csv")
