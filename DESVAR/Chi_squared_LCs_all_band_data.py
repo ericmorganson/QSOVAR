@@ -54,15 +54,16 @@ def find_a_b(fits, LC_file, color):
     dy = np.nan_to_num(dy)
     #print(dy)
 
-    j = x[x !=0]
-    k = y[x !=0]
-    dk = dy[x!=0]
-    j = x[:-3] # sigma
-    k = y[:-3] # chi
-    dk =dy[:-3]
+    j = x[x !=0.]
+    k = y[x !=0.]
+    dk = dy[x!=0.]
+    j = j[:-3] # sigma
+    k = k[:-3] # chi
+    dk =dk[:-3]
     plt.figure()
     plt.errorbar(j, k, yerr=dk, label="clipped")
-
+    print(j)
+    print(k)
     def test_func(sigma, a, b):
         return a**2/(sigma**1) + b**2
 
