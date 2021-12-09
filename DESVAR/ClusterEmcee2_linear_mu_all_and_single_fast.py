@@ -36,7 +36,7 @@ FILEPATH = "scratch_cc/" #"scratch_new/"
 if not os.path.exists(FILEPATH):
     os.makedirs(FILEPATH)
 
-PLOTTING = True #False
+PLOTTING = True
 SKIPCOMPROW = False #skips already completed rows if True
 FITNAME = ((str(sys.argv[1]).split("/")[-1]).split(".")[-2]).split("_")[-2]
 if FITNAME == "X3" or FITNAME == "C3":
@@ -58,12 +58,12 @@ def read_a_b_chi2():
     # a_b_calc.txt is made with the following command:
     # python chi_squared_LCs_all_band_data.py > a_b_calc.txt
     a_b_vals = []
-    with open("a_b_calc.txt", "r") as infile:
+    with open("a_b_calc_new.txt", "r") as infile:
         for line in infile:
             #print(line)
             line = line.split('\n')[0]
 
-            field, col, a, b = line.strip('()').split(',')
+            field, col, a, b = line.strip('()').split(' ')
             field = field.replace("'", "").strip()
             col = col.replace("'", "").strip()
 

@@ -1,0 +1,14 @@
+Running object 158061
+./cc_allandsing_x3_158061_158543.txt
+Running object 37884
+./cc_allandsing_x3_37884_38000.txt
+Running object 147234
+./cc_allandsing_x3_147234_147565.txt
+Running object 205398
+./cc_allandsing_x3_205398_205620.txt
+Running object 70593
+./cc_allandsing_x3_70593_71000.txt
+Running object 62436
+./cc_allandsing_x3_62436_62500.txt
+Running object 26288
+./cc_allandsing_x3_26288_26500.txt

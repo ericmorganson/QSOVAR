@@ -1,0 +1,6 @@
+Running object 216331
+./cc_allandsing_c3_216331_216343.txt
+Running object 155919
+./cc_allandsing_c3_155919_156000.txt
+Running object 95245
+./cc_allandsing_c3_95245_95500.txt

@@ -10,7 +10,7 @@
 #SBATCH --output=serial_%j.log     # Standard output and error log
 #SBATCH --partition=caps
 
-first_row=60000 #60000
+first_row=60000
 last_row=126068 #114407
 delta=$((( last_row - first_row ) / (120)))
 fig_fold="figure_cc/"

@@ -1,0 +1,50 @@
+Running cluster for deep fits
+180044 180045 normal
+Running object 180044
+Not enough g observations!
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  43
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  78
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  165
+Counts: {'r': 39, 'i': 74, 'z': 159}
+Mu: {'g': 0.0, 'r': 0.11642757, 'i': 0.22690745, 'z': 0.40726048}
+No handles with labels found to put in legend.
+Variable??
+0
+0
+Non-Variable source in g
+Variable??
+0.022402358262589187
+3.5696796664853534
+Variable Source in r!!
+Variable??
+0.03370933447759169
+2.3940726505898153
+Non-Variable source in i
+Variable??
+0.051225164042365115
+1.8666238432530646
+Non-Variable source in z
+Variable:    1/4
+Var Bands:   r
+Slope:       [1, 1, 0.389685202355189, 1]
+Slope Error: [0.0, 0, 0.10539634891521997, 0.09662803355232635]
+intercepts:  [0, 0, -0.08162854506791209, -0.03690296564890373]
+Int Error:   [0.0, 0, 0.03355401394069548, 0.04238722221976827]
+StDev:       [0.024677847, 0.07263394, 0.082783416, 0.09962974]
+Spread:      0/4
+Spread values: 
+ROW: 180044all Tau: 0.001187228263068718 V: -0.7143764917067186
+ClusterEmcee2_linear_mu_all_and_single_fast.py:643: RuntimeWarning: divide by zero encountered in log10
+  mu_list = [22.5-2.5*np.log10(mu[i]) for i in mu]
+ROW: 180044r Tau: 0.9669349251950348 V: -0.5380691637479492
+Close extra plots
+Row 180044 ran in 24.1178 seconds
+Successfully finished!
+Rows 180044 to 180045 ran in 27.4237 seconds

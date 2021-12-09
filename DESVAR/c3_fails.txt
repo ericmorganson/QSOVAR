@@ -1,0 +1,3 @@
+./cc_allandsing_c3_216331_216343.txt
+./cc_allandsing_c3_155919_156000.txt
+./cc_allandsing_c3_95245_95500.txt

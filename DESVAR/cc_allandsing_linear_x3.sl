@@ -6,9 +6,11 @@
 #SBATCH --nodes=3                    # Run all processes on two  node	
 #SBATCH --ntasks=120                   # Run 80 single tasks		
 #SBATCH --ntasks-per-node=40            # Number of ntasks per node
-#SBATCH --time=5:00:00              # Time limit hrs:min:sec
+#SBATCH --time=5:30:00              # Time limit hrs:min:sec
 #SBATCH --output=serial_%j.log     # Standard output and error log
 #SBATCH --partition=caps
+
+qstat -f ${SLURM_JOB_ID} > ${SLURM_JOB_NAME}-${SLURM_JOB_ID}.info-summary
 
 first_row=180000
 last_row=209392

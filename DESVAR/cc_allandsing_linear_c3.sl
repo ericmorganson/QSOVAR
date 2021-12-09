@@ -3,15 +3,15 @@
 #SBATCH --job-name=cluster_emcee_c3      # Job name
 #SBATCH --mail-type=END,FAIL         # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=thrush2@illinois.edu    # Where to send mail	
-#SBATCH --nodes=3                    # Run all processes on two  node	
-#SBATCH --ntasks=120                   # Run 80 single tasks		
+#SBATCH --nodes=3                    # Run all processes on 3 node	
+#SBATCH --ntasks=120                   # Run 120 single tasks		
 #SBATCH --ntasks-per-node=40            # Number of ntasks per node
-#SBATCH --time=5:00:00              # Time limit hrs:min:sec
+#SBATCH --time=5:30:00              # Time limit hrs:min:sec, 12:00:00 
 #SBATCH --output=serial_%j.log     # Standard output and error log
 #SBATCH --partition=caps
 
-first_row=180000
-last_row=229034
+first_row=180120
+last_row=180240 #229034
 delta=$((( last_row - first_row ) / (120)))
 fig_fold="figure_cc/"
 name="cc_all_and_sing_c3_serial"

@@ -1,0 +1,7 @@
+./cc_allandsing_x3_158061_158543.txt
+./cc_allandsing_x3_37884_38000.txt
+./cc_allandsing_x3_147234_147565.txt
+./cc_allandsing_x3_205398_205620.txt
+./cc_allandsing_x3_70593_71000.txt
+./cc_allandsing_x3_62436_62500.txt
+./cc_allandsing_x3_26288_26500.txt

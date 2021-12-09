@@ -1,0 +1,59 @@
+Running cluster for deep fits
+155919 156000 normal
+Running object 155919
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  5
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  16
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  42
+Min gap is: 0.0078125
+Number of observations now:  21
+Counts: {'g': 4, 'r': 16, 'i': 37, 'z': 17}
+Mu: {'g': 0.12103845, 'r': 0.105854064, 'i': 0.18623993, 'z': 0.34376952}
+No handles with labels found to put in legend.
+/usr/local/python/3.7.0/lib/python3.7/site-packages/scipy/optimize/minpack.py:794: OptimizeWarning: Covariance of the parameters could not be estimated
+  category=OptimizeWarning)
+Variable??
+0.02370734140276909
+0.2357472660851563
+Non-Variable source in g
+Variable??
+0.019424349069595337
+1.1138419116238987
+Non-Variable source in r
+Variable??
+0.031163842838256354
+2.8497127250717273
+Non-Variable source in i
+Variable??
+0.07106088705762895
+9.683600676409828
+Variable Source in z!!
+Variable:    1/4
+Var Bands:   z
+Slope:       [1, 1, 1, 245.90867070667767]
+Slope Error: [0.0, 0, 0.34191344405843344, inf]
+intercepts:  [0, 0, -0.23438372042430686, 74.56332434761616]
+Int Error:   [0.0, 0, 0.06580134014751969, inf]
+StDev:       [0.013256998, 0.026316887, 0.05214366, 0.356289]
+Spread:      0/4
+Spread values: 
+ClusterEmcee2_linear_mu_all_and_single_fast.py:870: RuntimeWarning: invalid value encountered in multiply
+  err_mod += np.sqrt(err**2 + dMu_dict_err[color]**2 + (flux-dMu_dict[color])**2/scale_dict[color]**2 * scale_err[color]**2)/scale_dict[color]*color_sort_ones[color_dict[color]]
+Traceback (most recent call last):
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 873, in <module>
+    perform_emcee_step2(time, flux_mod, err_mod**2, dMu_dict, scale_dict, color_sort_ones, ROW, mu, var_count)
+  File "ClusterEmcee2_linear_mu_all_and_single_fast.py", line 614, in perform_emcee_step2
+    sampler.run_mcmc(pos, 200)
+  File "/home/thrush2/caps_dir/mypython3/emcee/ensemble.py", line 384, in run_mcmc
+    for results in self.sample(initial_state, iterations=nsteps, **kwargs):
+  File "/home/thrush2/caps_dir/mypython3/emcee/ensemble.py", line 285, in sample
+    state.log_prob, state.blobs = self.compute_log_prob(state.coords)
+  File "/home/thrush2/caps_dir/mypython3/emcee/ensemble.py", line 456, in compute_log_prob
+    raise ValueError("Probability function returned NaN")
+ValueError: Probability function returned NaN
+srun: error: ccc0243: task 0: Exited with exit code 1

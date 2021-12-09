@@ -16,7 +16,7 @@ module load python/3
 export PYTHONPATH=/home/thrush2/caps_dir/mypython3:${PYTHONPATH}
 
 #srun --exclusive --nodes 1 --ntasks 1 
-python3 -u Chi_squared_LCs_all_band_data.py > chi2_C3_X3_log.txt
+python3 -u Chi_squared_LCs_all_band_data.py > a_b_calc_new.txt
 
 wait
 

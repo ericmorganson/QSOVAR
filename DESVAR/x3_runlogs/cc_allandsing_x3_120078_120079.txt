@@ -1,0 +1,44 @@
+Running cluster for deep fits
+120078 120079 normal
+Running object 120078
+Min gap is: 0.0
+New time_gap is :0.004
+Number of observations now:  112
+WARNING: Could not memory map array with mode='readonly', falling back to mode='denywrite', which means that the array will be read-only [astropy.io.fits.file]
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  108
+Min gap is: 0.00390625
+New time_gap is :0.00790625
+Number of observations now:  122
+Min gap is: 0.0
+New time_gap is :0.004
+Number of observations now:  260
+Counts: {'g': 111, 'r': 108, 'i': 121, 'z': 260}
+Mu: {'g': 0.45698917, 'r': 0.48684046, 'i': 0.6160565, 'z': 0.7313262}
+Variable??
+0.023177702223767867
+1.731222238103512
+Non-Variable source in g
+Variable??
+0.019176364456134694
+2.1665472556995677
+Non-Variable source in r
+Variable??
+0.02388701867312193
+1.543716182562183
+Non-Variable source in i
+Variable??
+0.043338004459128526
+1.4517187870528012
+Non-Variable source in z
+Variable:    0/4
+Var Bands:   
+Slope:       [0.8176844893453243, 1, 0.48756800441980575, 0.5680684367596037]
+Slope Error: [0.1209162474835285, 0, 0.09969863266586414, 0.08758574657826834]
+intercepts:  [0.03764390431758105, 0, -0.014828762891141923, 0.023857482784391492]
+Int Error:   [0.01747256829357812, 0, 0.011243255727832748, 0.012021052868617146]
+StDev:       [0.079190694, 0.074250504, 0.09240949, 0.14677441]
+Not variable, closing plots & going to next row
+Successfully finished!
+Rows 120078 to 120079 ran in 2.767 seconds
