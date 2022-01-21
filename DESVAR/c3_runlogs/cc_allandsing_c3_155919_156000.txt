@@ -56,4 +56,4 @@ Traceback (most recent call last):
   File "/home/thrush2/caps_dir/mypython3/emcee/ensemble.py", line 456, in compute_log_prob
     raise ValueError("Probability function returned NaN")
 ValueError: Probability function returned NaN
-srun: error: ccc0243: task 0: Exited with exit code 1
+srun: error: ccc0242: task 0: Exited with exit code 1

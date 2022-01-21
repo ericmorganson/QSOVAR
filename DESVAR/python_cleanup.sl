@@ -9,7 +9,7 @@
 #SBATCH --output=clean_%j.log     # Standard output and error log
 #SBATCH --partition=caps
 
-DIR='x3'
+DIR='e2'
 module load python/3
 export PYTHONPATH=/home/thrush2/caps_dir/mypython3:${PYTHONPATH}
 

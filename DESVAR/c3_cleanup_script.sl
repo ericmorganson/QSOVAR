@@ -17,8 +17,8 @@ date
 
 module load python/3
 export PYTHONPATH=/home/thrush2/caps_dir/mypython3:${PYTHONPATH}
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 216331 216343 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_216331_216343.txt 2>&1 &
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 155919 156000 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_155919_156000.txt 2>&1 &
-srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 95245 95500 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_95245_95500.txt 2>&1 &
+srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 216332 216343 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_216332_216343.txt 2>&1 &
+srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 155920 156000 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_155920_156000.txt 2>&1 &
+srun --exclusive --nodes 1 --ntasks 1 python3 -u ClusterEmcee2_linear_mu_all_and_single_fast.py $fits 95246 95500 $run_type $name $fig_fold > c3_runlogs/cc_allandsing_c3_95246_95500.txt 2>&1 &
 wait
 date

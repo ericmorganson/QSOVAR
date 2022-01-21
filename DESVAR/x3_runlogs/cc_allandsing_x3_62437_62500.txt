@@ -3,29 +3,33 @@ Running cluster for deep fits
 Running object 62437
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  77
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  124
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  110
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  121
 Counts: {'g': 76, 'r': 120, 'i': 108, 'z': 109}
 Mu: {'g': 0.19627598, 'r': 0.21522427, 'i': 0.2693602, 'z': 0.41003275}
 Variable??
 0.02629710163950352
-1.4223153859905056
+1.4225139639841502
 Non-Variable source in g
 Variable??
 0.024988214079536653
-2.053038909846169
+1.8741006575912367
 Non-Variable source in r
 Variable??
 0.035808307947864285
-1.5764109617166007
+1.5784441401109652
 Non-Variable source in i
 Variable??
 0.07294939569696948
-4.160709142070317
+4.557336286230796
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -38,29 +42,33 @@ Not variable, closing plots & going to next row
 Running object 62438
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  99
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  114
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  135
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  150
 Counts: {'g': 99, 'r': 113, 'i': 135, 'z': 150}
 Mu: {'g': 0.29534465, 'r': 0.5439863, 'i': 0.8598439, 'z': 1.0154662}
 Variable??
 0.02236043606301723
-0.835670350481484
+0.835784703105411
 Non-Variable source in g
 Variable??
 0.020798524990092288
-0.9530959026886087
+0.8640397169552286
 Non-Variable source in r
 Variable??
 0.028024945047534125
-2.6481418429175356
+2.6506197251945456
 Non-Variable source in i
 Variable??
 0.033029710139056784
-0.45708038070227586
+0.49973398403861125
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -73,29 +81,33 @@ Not variable, closing plots & going to next row
 Running object 62439
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  27
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  39
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  39
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  64
 Counts: {'g': 24, 'r': 37, 'i': 36, 'z': 57}
 Mu: {'g': 0.16638756, 'r': 0.14373049, 'i': 0.24351992, 'z': 0.40351027}
 Variable??
 0.03683597300246964
-4.55383098415557
+4.5544433037904595
 Variable Source in g!!
 Variable??
 0.023082395786458907
-2.7381042648017986
+2.506009705926876
 Non-Variable source in r
 Variable??
 0.04530636593699455
-14.725658294375872
+14.734072884960096
 Variable Source in i!!
 Variable??
 0.08268683822533479
-1.384638963497967
+1.5166433321189476
 Non-Variable source in z
 Variable:    2/4
 Var Bands:   gi
@@ -106,37 +118,56 @@ Int Error:   [0.07383408836327944, 0, 0.3985360269724105, 0.042166615482353384]
 StDev:       [0.28495017, 0.059767473, 0.16809982, 0.097590886]
 Spread:      0/4
 Spread values: 
-ROW: 62439all Tau: 0.0010218112676831925 V: -0.8223175361225724
-ROW: 62439g Tau: 1.5043139567060373 V: 0.04999081065544675
-ROW: 62439i Tau: 1.268299776428155 V: -0.09256326561269351
+ROW: 62439all Tau: 0.0035184415367579547 V: -0.8281001137527043
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+Number of mags :148
+ROW: 62439g Tau: 1.4919961267258928 V: 0.05133944302807018
+Good Row mags:24
+ClusterEmcee2_linear_mu_all_and_single_fast.py:575: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
+ROW: 62439i Tau: 1.2684895180988687 V: -0.09079268065928159
+Good Row mags:36
+ClusterEmcee2_linear_mu_all_and_single_fast.py:575: RuntimeWarning: invalid value encountered in log10
+  err_b = 22.5-2.5*np.log10((mu_r * (f_0 - nsig*np.sqrt(sig_sq)))+mu_r)
 Close extra plots
-Row 62439 ran in 10.4611 seconds
+Row 62439 ran in 21.2241 seconds
 Running object 62440
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  56
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  95
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  121
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  142
 Counts: {'g': 56, 'r': 94, 'i': 121, 'z': 140}
 Mu: {'g': 0.1669737, 'r': 0.23245358, 'i': 0.37258768, 'z': 0.68271124}
 Variable??
 0.02451468083270789
-1.3987928177598357
+1.3989951428530674
 Non-Variable source in g
 Variable??
 0.017983433251429638
-1.4796782326646027
+1.3507026317998676
 Non-Variable source in r
 Variable??
 0.024612048408016562
-1.0910305914395801
+1.092342469219802
 Non-Variable source in i
 Variable??
 0.03197943026282229
-1.0258580287874515
+1.122541884784204
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -149,29 +180,33 @@ Not variable, closing plots & going to next row
 Running object 62441
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  21
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  77
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  134
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  135
 Counts: {'g': 20, 'r': 77, 'i': 134, 'z': 135}
 Mu: {'g': 0.3250286, 'r': 0.95858383, 'i': 1.8452935, 'z': 2.7830164}
 Variable??
 0.03943271919766846
-3.348198555845987
+3.348638211038071
 Non-Variable source in g
 Variable??
 0.027706538909533476
-27.253463013157585
+24.250610709194873
 Variable Source in r!!
 Variable??
 0.029039427562532288
-25.651106561211467
+25.66000032028966
 Variable Source in i!!
 Variable??
 0.03164329759670997
-18.453902113500277
+20.034774425755877
 Variable Source in z!!
 Variable:    3/4
 Var Bands:   riz
@@ -195,69 +230,72 @@ Continuing to next row
 Running object 62442
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  84
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  91
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  110
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  156
 Counts: {'g': 83, 'r': 91, 'i': 109, 'z': 153}
 Mu: {'g': 0.22452381, 'r': 0.22697276, 'i': 0.31084943, 'z': 0.47892523}
 Variable??
 0.02415687720527713
-1.7753591868641136
+1.7756041434993326
 Non-Variable source in g
 Variable??
 0.019389567144405415
-3.1992753374160006
-Variable Source in r!!
+2.920692368290008
+Non-Variable source in r
 Variable??
 0.02878580933402263
-1.4193218358978212
+1.4210901098771873
 Non-Variable source in i
 Variable??
 0.05569583791168873
-1.656501051624918
+1.8136677800754286
 Non-Variable source in z
-Variable:    1/4
-Var Bands:   r
+Variable:    0/4
+Var Bands:   
 Slope:       [0.4167191861901731, 1, 0.46567387812248295, 0.3421777227856052]
 Slope Error: [0.19287967739262582, 0, 0.0624183844645826, 0.08524492717655498]
 intercepts:  [0.052571276821727686, 0, -0.02358535888175939, 0.020874764034633522]
 Int Error:   [0.04427344678530047, 0, 0.01857996449097735, 0.022847414880532452]
 StDev:       [0.08217266, 0.060534988, 0.06597719, 0.10833962]
-Spread:      0/4
-Spread values: 
-ROW: 62442all Tau: 1.8671947714994988 V: -0.6745734184767271
-ROW: 62442r Tau: 1.823614946653002 V: -0.7063509597800272
-Close extra plots
-Row 62442 ran in 26.3597 seconds
+Not variable, closing plots & going to next row
 Running object 62443
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  28
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  91
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  89
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  31
 Counts: {'g': 28, 'r': 89, 'i': 85, 'z': 29}
 Mu: {'g': 0.16153383, 'r': 0.18882754, 'i': 0.24970159, 'z': 0.38219902}
 Variable??
 0.03139929861515946
-1.0385898657437604
+1.0387441754497009
 Non-Variable source in g
 Variable??
 0.020711071793787613
-1.2227631351941461
+1.1179176050648172
 Non-Variable source in r
 Variable??
 0.03779094933777897
-1.9102427044701997
+1.9127133853248068
 Non-Variable source in i
 Variable??
 0.07740947857969974
-2.3871889821291776
+2.6152206393044986
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -270,29 +308,33 @@ Not variable, closing plots & going to next row
 Running object 62444
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  30
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  62
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  43
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  23
 Counts: {'g': 30, 'r': 62, 'i': 43, 'z': 23}
 Mu: {'g': 0.16520208, 'r': 0.1817088, 'i': 0.2544517, 'z': 0.39691237}
 Variable??
 0.027090484907065296
-1.3212140058455948
+1.3213994674266578
 Non-Variable source in g
 Variable??
 0.01998343449929742
-2.1269363626667883
+1.9420099414099352
 Non-Variable source in r
 Variable??
 0.02896931981588283
-1.45926538070683
+1.4610718039882722
 Non-Variable source in i
 Variable??
 0.06390310704721534
-0.9055228276511045
+0.9913064436315686
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -305,29 +347,33 @@ Not variable, closing plots & going to next row
 Running object 62445
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  118
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  113
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  125
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  121
 Counts: {'g': 118, 'r': 112, 'i': 125, 'z': 121}
 Mu: {'g': 1.0374622, 'r': 4.093885, 'i': 6.360689, 'z': 8.227103}
 Variable??
 0.023507438312340704
-1.2754793884313955
+1.2755244243030677
 Non-Variable source in g
 Variable??
 0.021809544425801415
-25.199173524698452
+20.25982567916229
 Variable Source in r!!
 Variable??
 0.0267088093008537
-116.74439534851946
+116.74832901026613
 Variable Source in i!!
 Variable??
 0.03033157717436552
-19.635294026482352
+20.959174095057733
 Variable Source in z!!
 Variable:    3/4
 Var Bands:   riz
@@ -349,32 +395,34 @@ Too spread in bands: ['G', 'R', 'I', 'Z']
 0.009176376
 Continuing to next row
 Running object 62446
-Min gap is: 26.929688
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  95
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  122
 Min gap is: 0.00390625
 New time_gap is :0.00790625
-Counts: {'g': 3, 'r': 95, 'i': 122, 'z': 127}
-Mu: {'g': 0.14269567, 'r': 0.32003176, 'i': 1.364103, 'z': 2.5609884}
+Number of observations now:  127
+Counts: {'r': 95, 'i': 122, 'z': 127}
+Mu: {'g': 0.0, 'r': 0.32003176, 'i': 1.364103, 'z': 2.5609884}
 No handles with labels found to put in legend.
 Variable??
-0.030704869095093998
-10.291485434925228
-Variable Source in g!!
-Not enough observations in g
+0
+0
+Non-Variable source in g
 Variable??
 0.019615095281760753
-0.6760535452029117
+0.6163150014871543
 Non-Variable source in r
 Variable??
 0.025720811837601054
-0.29159866997224987
+0.29180657986933445
 Non-Variable source in i
 Variable??
 0.029958990086935405
-0.17995803047410114
+0.19575070728052452
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -387,29 +435,33 @@ Not variable, closing plots & going to next row
 Running object 62447
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  42
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  81
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  112
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  136
 Counts: {'g': 39, 'r': 78, 'i': 111, 'z': 132}
 Mu: {'g': 0.15315181, 'r': 0.16964035, 'i': 0.29962522, 'z': 0.44270414}
 Variable??
 0.02400639421376239
-1.0700000307716433
+1.070156099183436
 Non-Variable source in g
 Variable??
 0.020333202228053633
-1.9328227285721142
+1.7673862671592169
 Non-Variable source in r
 Variable??
 0.02723149942261372
-0.9406037954480057
+0.9417612724345432
 Non-Variable source in i
 Variable??
 0.047100304643698916
-1.4915592506213988
+1.6335218398187024
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -422,29 +474,33 @@ Not variable, closing plots & going to next row
 Running object 62448
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  25
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  104
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  123
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  139
 Counts: {'g': 23, 'r': 103, 'i': 123, 'z': 137}
 Mu: {'g': 0.16787799, 'r': 0.28705803, 'i': 0.58306265, 'z': 0.78481907}
 Variable??
 0.031247057815920572
-2.8786077311199496
+2.8790317139457993
 Non-Variable source in g
 Variable??
 0.021321452334264097
-1.4728973522386897
+1.345622188215412
 Non-Variable source in r
 Variable??
 0.02701812638624355
-0.5167331865898331
+0.517343682287184
 Non-Variable source in i
 Variable??
 0.033412716975056087
-0.2310658378300219
+0.25287068583924854
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -455,31 +511,34 @@ Int Error:   [0.14007184173637588, 0, 0.012380790879009574, 0.009478683957976908
 StDev:       [0.11673205, 0.071252905, 0.08355793, 0.10441033]
 Not variable, closing plots & going to next row
 Running object 62449
-Min gap is: 376.10156
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  8
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  95
 Min gap is: 0.00390625
 New time_gap is :0.00790625
-Counts: {'g': 3, 'r': 6, 'i': 94, 'z': 162}
-Mu: {'g': 0.7437332, 'r': 0.10918538, 'i': 0.27103359, 'z': 0.52226216}
+Number of observations now:  163
+Counts: {'r': 6, 'i': 94, 'z': 162}
+Mu: {'g': 0.0, 'r': 0.10918538, 'i': 0.27103359, 'z': 0.52226216}
 No handles with labels found to put in legend.
 Variable??
-0.1119466795512635
-40.4670650359813
+0
+0
 Non-Variable source in g
 Variable??
 0.022597910891626136
-1.3627793724629034
+1.249219036864016
 Non-Variable source in r
 Variable??
 0.03230002870685388
-1.302998911894306
+1.3046524816551268
 Non-Variable source in i
 Variable??
 0.040189488938497886
-0.9613392314265985
+1.0525384212569417
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -490,11 +549,15 @@ Int Error:   [0.0, 0, 0.07574202993657145, 0.06293707878275256]
 StDev:       [0.18242033, 0.058610193, 0.061034855, 0.109661154]
 Not variable, closing plots & going to next row
 Running object 62450
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  50
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  34
 Min gap is: 52.85547
+Number of observations now:  6
 Counts: {'r': 47, 'i': 32, 'z': 6}
 Mu: {'g': 0.0, 'r': 0.14531681, 'i': 0.2616762, 'z': 0.41170034}
 No handles with labels found to put in legend.
@@ -505,15 +568,15 @@ Variable??
 Non-Variable source in g
 Variable??
 0.025716501645491555
-1.419454455220694
+1.2999019796971703
 Non-Variable source in r
 Variable??
 0.05019874050109715
-4.3847185600636065
+4.390389199931085
 Non-Variable source in i
 Variable??
 0.08886001130762584
-2.877581257373172
+3.1518885676013313
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -526,29 +589,33 @@ Not variable, closing plots & going to next row
 Running object 62451
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  36
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  91
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  66
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  24
 Counts: {'g': 33, 'r': 89, 'i': 63, 'z': 19}
 Mu: {'g': 0.16080219, 'r': 0.16941021, 'i': 0.23368864, 'z': 0.37156484}
 Variable??
 0.028072568622857612
-0.6375631226252493
+0.6376564860272824
 Non-Variable source in g
 Variable??
 0.020247505055142064
-1.1713471573708623
+1.070958829255178
 Non-Variable source in r
 Variable??
 0.03433928725045542
-2.194287262463336
+2.1970875996180634
 Non-Variable source in i
 Variable??
 0.07480861236967706
-0.6224525388866438
+0.6816956776559352
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -559,12 +626,16 @@ Int Error:   [0.044530996437227625, 0, 0.03649807650639268, 0.07397519176050923]
 StDev:       [0.036205113, 0.04855842, 0.07054474, 0.08037327]
 Not variable, closing plots & going to next row
 Running object 62452
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  24
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  45
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  100
 Counts: {'r': 24, 'i': 45, 'z': 100}
 Mu: {'g': 0.0, 'r': 0.15482403, 'i': 0.2489027, 'z': 0.45353663}
 No handles with labels found to put in legend.
@@ -574,15 +645,15 @@ Variable??
 Non-Variable source in g
 Variable??
 0.019008207953246033
-3.143204593583968
+2.87251429812689
 Non-Variable source in r
 Variable??
 0.0292116720011745
-1.5895874960316467
+1.5915465083659053
 Non-Variable source in i
 Variable??
 0.053379195742309093
-1.0885768836150849
+1.1916026887341546
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -594,28 +665,32 @@ StDev:       [0.015478369, 0.042188775, 0.057244413, 0.10348237]
 Not variable, closing plots & going to next row
 Running object 62453
 Min gap is: 0.0078125
+Number of observations now:  13
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  52
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  26
 Min gap is: 28.796875
+Number of observations now:  8
 Counts: {'g': 13, 'r': 51, 'i': 26, 'z': 7}
 Mu: {'g': 0.17473997, 'r': 0.16671729, 'i': 0.23981525, 'z': 0.45104256}
 Variable??
 0.04044373379977948
-1.6308978539530903
+1.6311420728144608
 Non-Variable source in g
 Variable??
 0.021418153274279126
-1.5292106239690433
+1.3989398781578029
 Non-Variable source in r
 Variable??
 0.039169638869672015
-2.2180818849935533
+2.2209450063433764
 Non-Variable source in i
 Variable??
 0.09198904936603117
-3.4169406946607244
+3.7415377994872774
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -628,29 +703,33 @@ Not variable, closing plots & going to next row
 Running object 62454
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  89
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  99
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  91
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  124
 Counts: {'g': 87, 'r': 95, 'i': 90, 'z': 108}
 Mu: {'g': 0.20187856, 'r': 0.2078714, 'i': 0.2443697, 'z': 0.39503223}
 Variable??
 0.022320025562502826
-1.2766253536076975
+1.2768061951767422
 Non-Variable source in g
 Variable??
 0.018407155308419385
-1.3932037930099956
+1.2728612208604118
 Non-Variable source in r
 Variable??
 0.030048432625176775
-1.090143593500109
+1.0915421365388223
 Non-Variable source in i
 Variable??
 0.062321890273734616
-1.8038637817144028
+1.9756274435563843
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -663,29 +742,33 @@ Not variable, closing plots & going to next row
 Running object 62455
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  14
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  86
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  82
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  73
 Counts: {'g': 14, 'r': 86, 'i': 81, 'z': 73}
 Mu: {'g': 0.18304032, 'r': 0.2481402, 'i': 0.28970382, 'z': 0.4413361}
 Variable??
 0.03150776890261882
-1.0724538930104186
+1.072604126521991
 Non-Variable source in g
 Variable??
 0.019933985828317
-1.0412715261098537
+0.9501517720652009
 Non-Variable source in r
 Variable??
 0.033727097790688276
-1.0604830839656474
+1.061802806624989
 Non-Variable source in i
 Variable??
 0.06696531194386088
-1.141013848314603
+1.2493061073385536
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -698,29 +781,33 @@ Not variable, closing plots & going to next row
 Running object 62456
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  17
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  44
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  56
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  60
 Counts: {'g': 17, 'r': 43, 'i': 56, 'z': 60}
 Mu: {'g': 0.19785334, 'r': 0.42702377, 'i': 0.58407986, 'z': 0.7571858}
 Variable??
 0.03584590239032544
-2.1167062414543207
+2.1170221547476165
 Non-Variable source in g
 Variable??
 0.024534343039616113
-0.8791301726859798
+0.7937346137287649
 Non-Variable source in r
 Variable??
 0.03811368526406922
-0.8606563311392338
+0.8615806348132403
 Non-Variable source in i
 Variable??
 0.05410357444870566
-0.6961546352240239
+0.7616532718916036
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -733,29 +820,33 @@ Not variable, closing plots & going to next row
 Running object 62457
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  29
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  64
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  86
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  120
 Counts: {'g': 29, 'r': 63, 'i': 86, 'z': 120}
 Mu: {'g': 0.15831363, 'r': 0.25087455, 'i': 0.43273142, 'z': 0.67291296}
 Variable??
 0.027492600359242166
-0.6003650350332262
+0.600450300077774
 Non-Variable source in g
 Variable??
 0.026300803999479348
-1.7473759588457056
+1.5945054755337962
 Non-Variable source in r
 Variable??
 0.03321168035657569
-1.174945895297745
+1.1763182193647626
 Non-Variable source in i
 Variable??
 0.036585839758566
-0.9447631355314375
+1.033717673918847
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -767,29 +858,33 @@ StDev:       [0.024917552, 0.056099385, 0.10484378, 0.12498824]
 Not variable, closing plots & going to next row
 Running object 62458
 Min gap is: 9.089844
+Number of observations now:  7
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  56
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  58
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  19
 Counts: {'g': 5, 'r': 56, 'i': 55, 'z': 17}
 Mu: {'g': 0.15796411, 'r': 0.15776093, 'i': 0.24365363, 'z': 0.4149172}
 Variable??
 0.037041671160051824
-2.7746146865896963
+2.775033527408834
 Non-Variable source in g
 Variable??
 0.018753618847796957
-1.342773982000033
+1.2278431175881301
 Non-Variable source in r
 Variable??
 0.03300600556475604
-1.1821795888556386
+1.183664294647777
 Non-Variable source in i
 Variable??
 0.07483160194169314
-0.8653155082430838
+0.9476273029666543
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -802,29 +897,33 @@ Not variable, closing plots & going to next row
 Running object 62459
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  114
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  109
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  120
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  125
 Counts: {'g': 113, 'r': 108, 'i': 120, 'z': 125}
 Mu: {'g': 0.69875586, 'r': 2.7971885, 'i': 4.393249, 'z': 5.561189}
 Variable??
 0.0255060076766129
-1.1584478410495511
+1.1585466843456547
 Non-Variable source in g
 Variable??
 0.022809610854626284
-31.39387754183683
+26.153455626486636
 Variable Source in r!!
 Variable??
 0.027691344315994224
-18.71237466471651
+18.69806308560082
 Variable Source in i!!
 Variable??
 0.03133267125469975
-7.221082828059032
+7.7715392894603745
 Variable Source in z!!
 Variable:    3/4
 Var Bands:   riz
@@ -848,29 +947,33 @@ Continuing to next row
 Running object 62460
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  100
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  115
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  127
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  130
 Counts: {'g': 98, 'r': 113, 'i': 127, 'z': 130}
 Mu: {'g': 0.24886346, 'r': 0.6065955, 'i': 0.85010564, 'z': 1.0307806}
 Variable??
 0.02216136480732577
-1.127358331372669
+1.1275123205726871
 Non-Variable source in g
 Variable??
 0.019272670409127227
-1.9901237914027725
+1.7885181149593452
 Non-Variable source in r
 Variable??
 0.024346208241972027
-1.2840482507200945
+1.285158281266277
 Non-Variable source in i
 Variable??
 0.029373497294413197
-0.7436172144106463
+0.8125667606364619
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -881,32 +984,34 @@ Int Error:   [0.040057222400612914, 0, 0.010759236721317412, 0.00855420009778517
 StDev:       [0.06949586, 0.077564865, 0.08342762, 0.1411521]
 Not variable, closing plots & going to next row
 Running object 62461
-Min gap is: 51.851562
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  47
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  46
 Min gap is: 0.00390625
 New time_gap is :0.00790625
-Counts: {'g': 3, 'r': 46, 'i': 45, 'z': 101}
-Mu: {'g': 0.12808947, 'r': 0.13961199, 'i': 0.24005774, 'z': 0.3953315}
+Number of observations now:  113
+Counts: {'r': 46, 'i': 45, 'z': 101}
+Mu: {'g': 0.0, 'r': 0.13961199, 'i': 0.24005774, 'z': 0.3953315}
 No handles with labels found to put in legend.
 Variable??
-0.03379787807912331
-7.53519174679063
-Variable Source in g!!
-Not enough observations in g
+0
+0
+Non-Variable source in g
 Variable??
 0.02307373177741016
-2.5202939690395723
+2.3081663733876403
 Non-Variable source in r
 Variable??
 0.04194538006324555
-2.4392631967773664
+2.4424271909496778
 Non-Variable source in i
 Variable??
 0.06245285486932311
-2.871810332451941
+3.145459474397561
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -919,29 +1024,33 @@ Not variable, closing plots & going to next row
 Running object 62462
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  77
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  98
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  122
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  165
 Counts: {'g': 74, 'r': 97, 'i': 121, 'z': 160}
 Mu: {'g': 0.18419322, 'r': 0.24277718, 'i': 0.38154417, 'z': 0.5208256}
 Variable??
 0.025519700237221755
-1.0476964841955732
+1.0478456636533173
 Non-Variable source in g
 Variable??
 0.0189982806460065
-1.111264712296047
+1.0145701093797739
 Non-Variable source in r
 Variable??
 0.02526464918628335
-0.49202597440115503
+0.49263177850972756
 Non-Variable source in i
 Variable??
 0.039378282992349176
-0.9145318433357446
+1.0012460982492593
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -954,29 +1063,33 @@ Not variable, closing plots & going to next row
 Running object 62463
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  91
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  108
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  123
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  134
 Counts: {'g': 91, 'r': 108, 'i': 123, 'z': 133}
 Mu: {'g': 0.2631004, 'r': 0.49723727, 'i': 0.63155425, 'z': 0.7210763}
 Variable??
 0.023778256160367134
-0.8234830196257212
+0.8235987583880482
 Non-Variable source in g
 Variable??
 0.019762075103709444
-0.5720728533857189
+0.5191637852352884
 Non-Variable source in r
 Variable??
 0.024827608674507364
-0.5190137458491142
+0.5195877061454769
 Non-Variable source in i
 Variable??
 0.03140348493338788
-0.5447895470115073
+0.5963197837100126
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -989,29 +1102,33 @@ Not variable, closing plots & going to next row
 Running object 62464
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  84
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  106
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  121
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  157
 Counts: {'g': 83, 'r': 106, 'i': 121, 'z': 151}
 Mu: {'g': 0.20687981, 'r': 0.32023624, 'i': 0.38220215, 'z': 0.4482701}
 Variable??
 0.023085855387408732
-1.4884835992215335
+1.4886910858907823
 Non-Variable source in g
 Variable??
 0.01845353417124119
-1.2516543613106812
+1.1389214070938265
 Non-Variable source in r
 Variable??
 0.02489276695996523
-0.6564495604979943
+0.6572402415118438
 Non-Variable source in i
 Variable??
 0.0458929268413487
-1.2823460405138558
+1.40412432699578
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1024,29 +1141,33 @@ Not variable, closing plots & going to next row
 Running object 62465
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  10
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  41
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  83
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  77
 Counts: {'g': 10, 'r': 38, 'i': 79, 'z': 74}
 Mu: {'g': 0.13525079, 'r': 0.14147706, 'i': 0.23656309, 'z': 0.38777786}
 Variable??
 0.028656270331784486
-2.115760803243739
+2.1160736344383464
 Non-Variable source in g
 Variable??
 0.023308755437285708
-3.41383662182204
+3.1283052416088766
 Non-Variable source in r
 Variable??
 0.03316201896506796
-0.9972638800994664
+0.9985374903606871
 Non-Variable source in i
 Variable??
 0.06707815047689064
-3.2345537284766386
+3.5418429839373764
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1057,12 +1178,16 @@ Int Error:   [0.27108986220485837, 0, 0.04463881631228625, 0.0715870070078922]
 StDev:       [0.1388664, 0.06168786, 0.059937157, 0.122082695]
 Not variable, closing plots & going to next row
 Running object 62466
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  28
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  115
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  150
 Counts: {'r': 28, 'i': 114, 'z': 149}
 Mu: {'g': 0.0, 'r': 0.15619712, 'i': 0.36248708, 'z': 0.62386405}
 No handles with labels found to put in legend.
@@ -1072,15 +1197,15 @@ Variable??
 Non-Variable source in g
 Variable??
 0.021653912694948624
-1.380883435278994
+1.262819153706218
 Non-Variable source in r
 Variable??
 0.026664941876466352
-0.7878935410324158
+0.7888548902519199
 Non-Variable source in i
 Variable??
 0.036448987240152324
-0.8748501867282591
+0.9576348377206318
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1093,29 +1218,33 @@ Not variable, closing plots & going to next row
 Running object 62467
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  17
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  88
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  119
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  148
 Counts: {'g': 16, 'r': 88, 'i': 117, 'z': 148}
 Mu: {'g': 0.14446923, 'r': 0.16340373, 'i': 0.33306396, 'z': 0.53199637}
 Variable??
 0.028753366321325302
-2.6824127374589875
+2.6828029409337733
 Non-Variable source in g
 Variable??
 0.02019279002204119
-1.5931127778924175
+1.4576194784013072
 Non-Variable source in r
 Variable??
 0.02488513690345154
-1.0795312171367557
+1.0808933166270949
 Non-Variable source in i
 Variable??
 0.03588387307081057
-0.8991022847097672
+0.9844083808301278
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1126,13 +1255,17 @@ Int Error:   [0.27973132271085616, 0, 0.015766184381315725, 0.020451260239064302
 StDev:       [0.1608224, 0.057378273, 0.060939386, 0.1194466]
 Not variable, closing plots & going to next row
 Running object 62468
-Min gap is: 0.0078125
+Not enough g observations!
+Not enough r observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  50
 Min gap is: 0.00390625
 New time_gap is :0.00790625
-Counts: {'r': 4, 'i': 50, 'z': 157}
-Mu: {'g': 0.0, 'r': 0.12559012, 'i': 0.2573229, 'z': 0.5649066}
+Number of observations now:  158
+Counts: {'i': 50, 'z': 157}
+Mu: {'g': 0.0, 'r': 0.0, 'i': 0.2573229, 'z': 0.5649066}
+No handles with labels found to put in legend.
 No handles with labels found to put in legend.
 No handles with labels found to put in legend.
 Variable??
@@ -1140,51 +1273,55 @@ Variable??
 0
 Non-Variable source in g
 Variable??
-0.022526152431964874
-1.7467645355804355
+0
+0
 Non-Variable source in r
 Variable??
 0.03174792365057575
-1.415055300139709
+1.416817411157701
 Non-Variable source in i
 Variable??
 0.040295863228821865
-1.011267831944545
+1.1070273512781525
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
 Slope:       [1, 1, 1, 1]
-Slope Error: [0.0, 0, 0.0, 0.893328675018956]
-intercepts:  [0, 0, 0, 0.009646330012565537]
-Int Error:   [0.0, 0, 0.0, 0.060389225794918074]
+Slope Error: [0.0, 0, 0.0, 0.0]
+intercepts:  [0, 0, 0, 0]
+Int Error:   [0.0, 0, 0.0, 0.0]
 StDev:       [0.0, 0.031585712, 0.062187288, 0.10333809]
 Not variable, closing plots & going to next row
 Running object 62469
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  64
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  105
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  125
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  125
 Counts: {'g': 62, 'r': 105, 'i': 125, 'z': 125}
 Mu: {'g': 0.17686799, 'r': 0.3470438, 'i': 0.77010614, 'z': 1.0669422}
 Variable??
 0.026390712907841785
-1.0832962410731388
+1.083455239557307
 Non-Variable source in g
 Variable??
 0.01902467898420307
-1.430214301694255
+1.2994362754814865
 Non-Variable source in r
 Variable??
 0.025227979578037116
-1.7066190744923306
+1.7082824378507222
 Non-Variable source in i
 Variable??
 0.02892289789244055
-1.0354636832645463
+1.1314266880922288
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1197,29 +1334,33 @@ Not variable, closing plots & going to next row
 Running object 62470
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  48
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  79
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  100
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  87
 Counts: {'g': 47, 'r': 77, 'i': 100, 'z': 87}
 Mu: {'g': 0.19187033, 'r': 0.2027129, 'i': 0.2973836, 'z': 0.46345115}
 Variable??
 0.027847871455481073
-1.6544476115705786
+1.6546852663523444
 Non-Variable source in g
 Variable??
 0.02271242450303373
-1.9802590540335334
+1.8091027569122726
 Non-Variable source in r
 Variable??
 0.03409192897379398
-1.2423244540759733
+1.2439053421033772
 Non-Variable source in i
 Variable??
 0.0702969366622048
-1.391560778456617
+1.5237234201918952
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1232,29 +1373,33 @@ Not variable, closing plots & going to next row
 Running object 62471
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  78
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  91
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  93
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  86
 Counts: {'g': 78, 'r': 86, 'i': 90, 'z': 79}
 Mu: {'g': 0.21772856, 'r': 0.21764949, 'i': 0.27001107, 'z': 0.4125373}
 Variable??
 0.02563594698178312
-1.6419779065902902
+1.6422080285696596
 Non-Variable source in g
 Variable??
 0.020629760817516947
-0.8664744152787598
+0.7913525839957365
 Non-Variable source in r
 Variable??
 0.03593245200330995
-1.2362939984948786
+1.2378870454558224
 Non-Variable source in i
 Variable??
 0.07824246688768424
-1.2393184938231747
+1.357332601794585
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1267,29 +1412,33 @@ Not variable, closing plots & going to next row
 Running object 62472
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  19
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  65
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  118
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  145
 Counts: {'g': 19, 'r': 61, 'i': 110, 'z': 137}
 Mu: {'g': 0.17779174, 'r': 0.15099776, 'i': 0.28987747, 'z': 0.43846437}
 Variable??
 0.035091768364124316
-2.7351758854025636
+2.7355866187559634
 Non-Variable source in g
 Variable??
 0.01978621167209497
-1.5306925804436473
+1.3975988260005494
 Non-Variable source in r
 Variable??
 0.02747666655647347
-2.3107179825252997
+2.3131993738863135
 Non-Variable source in i
 Variable??
 0.04937126344036168
-1.3572032188181964
+1.4862448974888798
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1300,12 +1449,16 @@ Int Error:   [0.07451187031538467, 0, 0.0405322406903232, 0.031016031720705228]
 StDev:       [0.05647747, 0.154758, 0.12816742, 0.097388715]
 Not variable, closing plots & going to next row
 Running object 62473
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  53
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  122
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  130
 Counts: {'r': 48, 'i': 122, 'z': 130}
 Mu: {'g': 0.0, 'r': 0.15547001, 'i': 0.37478796, 'z': 0.76427406}
 No handles with labels found to put in legend.
@@ -1315,15 +1468,15 @@ Variable??
 Non-Variable source in g
 Variable??
 0.02481414807630944
-2.30616205538527
+2.1081866367668587
 Non-Variable source in r
 Variable??
 0.027079723049923336
-0.9479618571717559
+0.9491208144850691
 Non-Variable source in i
 Variable??
 0.030520092448211765
-0.7342505184781178
+0.8031814913104471
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1336,29 +1489,33 @@ Not variable, closing plots & going to next row
 Running object 62474
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  18
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  71
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  98
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  104
 Counts: {'g': 16, 'r': 70, 'i': 94, 'z': 95}
 Mu: {'g': 0.1638039, 'r': 0.1785941, 'i': 0.2983023, 'z': 0.42846435}
 Variable??
 0.03736567497253418
-0.743768217361534
+0.7438772873803559
 Non-Variable source in g
 Variable??
 0.02504323496333898
-1.209620296870382
+1.1066143362097063
 Non-Variable source in r
 Variable??
 0.03473618528091502
-1.069993485111402
+1.0713549796083992
 Non-Variable source in i
 Variable??
 0.07179512973233326
-2.0785192880826635
+2.2764788549805814
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1371,27 +1528,31 @@ Not variable, closing plots & going to next row
 Running object 62475
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  18
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  35
 Min gap is: 0.01171875
+Number of observations now:  24
 Min gap is: 0.015625
+Number of observations now:  22
 Counts: {'g': 14, 'r': 33, 'i': 16, 'z': 20}
 Mu: {'g': 0.14077023, 'r': 0.12764342, 'i': 0.2130199, 'z': 0.369148}
 Variable??
 0.030459319771023067
-2.7178631810649283
+2.7182799378431324
 Non-Variable source in g
 Variable??
 0.024581816753708144
-2.7926329077426555
+2.5588838291181673
 Non-Variable source in r
 Variable??
 0.04666382446885109
-0.9734376711003091
+0.9746876901190439
 Non-Variable source in i
 Variable??
 0.09183769273451253
-1.5219097376330497
+1.66732469463135
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1404,29 +1565,33 @@ Not variable, closing plots & going to next row
 Running object 62476
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  34
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  89
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  95
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  86
 Counts: {'g': 34, 'r': 89, 'i': 95, 'z': 86}
 Mu: {'g': 0.16603784, 'r': 0.24623543, 'i': 0.3247384, 'z': 0.44665775}
 Variable??
 0.03062452558636558
-1.4530451287441313
+1.4532567993868397
 Non-Variable source in g
 Variable??
 0.019009858345781335
-1.0589041827004184
+0.9657371110178954
 Non-Variable source in r
 Variable??
 0.029753254661837168
-0.9825755181208217
+0.983771106622772
 Non-Variable source in i
 Variable??
 0.0609080959162202
-0.9671146440818307
+1.05872148627609
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1439,29 +1604,33 @@ Not variable, closing plots & going to next row
 Running object 62477
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  67
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  108
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  122
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  128
 Counts: {'g': 67, 'r': 108, 'i': 122, 'z': 128}
 Mu: {'g': 0.18411547, 'r': 0.3308056, 'i': 0.71638703, 'z': 1.0074949}
 Variable??
 0.022122857653340575
-1.1850176798605119
+1.1851858369491863
 Non-Variable source in g
 Variable??
 0.018471509179166106
-1.4753450387400677
+1.342675067736054
 Non-Variable source in r
 Variable??
 0.02347977203084733
-1.2310983093697623
+1.2322665565325404
 Non-Variable source in i
 Variable??
 0.029272469333047883
-1.0371182389116855
+1.1334686769206117
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1474,29 +1643,33 @@ Not variable, closing plots & going to next row
 Running object 62478
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  9
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  41
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  31
 Min gap is: 48.910156
+Number of observations now:  6
 Counts: {'g': 9, 'r': 39, 'i': 30, 'z': 6}
 Mu: {'g': 0.1729096, 'r': 0.1400497, 'i': 0.21909493, 'z': 0.39353228}
 No handles with labels found to put in legend.
 Variable??
 0.03177179116755724
-1.499581662555573
+1.4998053481615352
 Non-Variable source in g
 Variable??
 0.022378228686124206
-3.35182648716314
+3.0701874722088194
 Non-Variable source in r
 Variable??
 0.0378311140098877
-1.921648780165536
+1.9241537045245403
 Non-Variable source in i
 Variable??
 0.07789917128641681
-1.9043901487615287
+2.085156051135892
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1509,29 +1682,33 @@ Not variable, closing plots & going to next row
 Running object 62479
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  99
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  106
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  123
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  141
 Counts: {'g': 97, 'r': 106, 'i': 123, 'z': 139}
 Mu: {'g': 0.2713604, 'r': 0.3202259, 'i': 0.41827226, 'z': 0.61983824}
 Variable??
 0.021411155671754733
-0.558714593487795
+0.5587919613487758
 Non-Variable source in g
 Variable??
 0.01838266517771669
-1.3446335552122115
+1.2238025606829714
 Non-Variable source in r
 Variable??
 0.024379013069048307
-0.5180587908023994
+0.518667596490762
 Non-Variable source in i
 Variable??
 0.03276929301642216
-0.7310865745247973
+0.8002293536527956
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1542,12 +1719,16 @@ Int Error:   [0.02228120031565588, 0, 0.013160339059059774, 0.01815319117477789]
 StDev:       [0.055607807, 0.058007013, 0.06701316, 0.115073115]
 Not variable, closing plots & going to next row
 Running object 62480
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  50
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  79
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  61
 Counts: {'r': 49, 'i': 77, 'z': 50}
 Mu: {'g': 0.0, 'r': 0.1578987, 'i': 0.26058638, 'z': 0.39318037}
 No handles with labels found to put in legend.
@@ -1557,15 +1738,15 @@ Variable??
 Non-Variable source in g
 Variable??
 0.022512168157845736
-1.6201116738782966
+1.4839158113234305
 Non-Variable source in r
 Variable??
 0.03807900580600918
-0.9180537556411748
+0.919223425231339
 Non-Variable source in i
 Variable??
 0.07243205261300904
-1.2807492555565776
+1.40269558847248
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1578,29 +1759,33 @@ Not variable, closing plots & going to next row
 Running object 62481
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  65
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  108
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  124
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  131
 Counts: {'g': 62, 'r': 108, 'i': 124, 'z': 131}
 Mu: {'g': 0.19025098, 'r': 0.6627016, 'i': 1.5815101, 'z': 2.260473}
 Variable??
 0.030587479229618013
-3.694883590350302
+3.6954173389653304
 Non-Variable source in g
 Variable??
 0.020428339430257094
-2.6356196864637487
+2.3608805596849796
 Non-Variable source in r
 Variable??
 0.025659471437189784
-5.023430894249345
+5.025737508267455
 Variable Source in i!!
 Variable??
 0.03114316983686611
-3.736106002926606
+4.063893430898036
 Variable Source in z!!
 Variable:    2/4
 Var Bands:   iz
@@ -1622,29 +1807,33 @@ Continuing to next row
 Running object 62482
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  98
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  107
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  124
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  125
 Counts: {'g': 97, 'r': 107, 'i': 124, 'z': 125}
 Mu: {'g': 0.23145497, 'r': 0.33422136, 'i': 0.62873083, 'z': 0.87719434}
 Variable??
 0.022296403892967772
-1.2974416311288268
+1.297619873388287
 Non-Variable source in g
 Variable??
 0.018652785355679786
-1.0930927243437067
+0.9940142084526563
 Non-Variable source in r
 Variable??
 0.02413661989767253
-0.753825544462086
+0.7545898672717054
 Non-Variable source in i
 Variable??
 0.028801639089579698
-0.6972561442440355
+0.7623699145437784
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1657,29 +1846,33 @@ Not variable, closing plots & going to next row
 Running object 62483
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  10
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  85
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  112
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  137
 Counts: {'g': 9, 'r': 84, 'i': 112, 'z': 129}
 Mu: {'g': 0.16041327, 'r': 0.19627929, 'i': 0.29438332, 'z': 0.4214384}
 Variable??
 0.034907788038253784
-6.838757011736344
+6.839780926200409
 Variable Source in g!!
 Variable??
 0.01855928267101852
-1.383299600901997
+1.2642503872068838
 Non-Variable source in r
 Variable??
 0.02831350240807896
-0.8800641561024795
+0.8811670704253787
 Non-Variable source in i
 Variable??
 0.05585547048097512
-2.0934973317716183
+2.292463702294502
 Non-Variable source in z
 Variable:    1/4
 Var Bands:   g
@@ -1690,36 +1883,50 @@ Int Error:   [0.506609175868898, 0, 0.01975681976398797, 0.029102722989281536]
 StDev:       [0.12311125, 0.043407157, 0.05561071, 0.101788186]
 Spread:      0/4
 Spread values: 
-ROW: 62483all Tau: 0.7859230406106104 V: -0.9923325023553654
-ROW: 62483g Tau: 2.9518948795115447 V: -0.32380461976301544
+ROW: 62483all Tau: 0.8100065330241293 V: -1.0051877531678803
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+Number of mags :316
+ROW: 62483g Tau: 2.962266515153594 V: -0.32044410626328856
+Good Row mags:9
 Close extra plots
-Row 62483 ran in 15.0989 seconds
+Row 62483 ran in 17.8742 seconds
 Running object 62484
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  99
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  110
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  119
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  129
 Counts: {'g': 99, 'r': 108, 'i': 119, 'z': 129}
 Mu: {'g': 0.24677593, 'r': 0.3509167, 'i': 0.6241299, 'z': 0.8768974}
 Variable??
 0.022255033774027422
-1.2238290577711568
+1.2240015672434754
 Non-Variable source in g
 Variable??
 0.01891858494055094
-0.960676738010887
+0.87568393829834
 Non-Variable source in r
 Variable??
 0.023607605542235028
-0.6956751321901082
+0.6964676253050232
 Non-Variable source in i
 Variable??
 0.029386965320449362
-0.40804907009721325
+0.4463349480709736
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1732,29 +1939,33 @@ Not variable, closing plots & going to next row
 Running object 62485
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  70
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  101
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  115
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  68
 Counts: {'g': 70, 'r': 99, 'i': 114, 'z': 63}
 Mu: {'g': 0.1926186, 'r': 0.23619492, 'i': 0.2808789, 'z': 0.41477245}
 Variable??
 0.02745212316715711
-1.9994358784727688
+1.9997229036568756
 Non-Variable source in g
 Variable??
 0.019621903990146402
-1.4432258412938117
+1.3164650237459565
 Non-Variable source in r
 Variable??
 0.03132046683980233
-1.2850855934064918
+1.2866799444311883
 Non-Variable source in i
 Variable??
 0.0784624685620594
-2.1784166615921823
+2.3860687876285316
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1767,29 +1978,33 @@ Not variable, closing plots & going to next row
 Running object 62486
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  16
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  61
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  111
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  143
 Counts: {'g': 13, 'r': 55, 'i': 110, 'z': 135}
 Mu: {'g': 0.18267167, 'r': 0.16368908, 'i': 0.30344132, 'z': 0.45836726}
 Variable??
 0.039782157533620514
-3.616472346852545
+3.61698134805637
 Variable Source in g!!
 Variable??
 0.027241724420648553
-2.6377624857175817
+2.408707671969978
 Non-Variable source in r
 Variable??
 0.03529646661091715
-1.3660021845073131
+1.367736220808375
 Non-Variable source in i
 Variable??
 0.060560338624358924
-1.2639968155628523
+1.3842241875355639
 Non-Variable source in z
 Variable:    1/4
 Var Bands:   g
@@ -1800,36 +2015,50 @@ Int Error:   [0.0667911761344002, 0, 0.03861092667805292, 0.03156944670827063]
 StDev:       [0.22877061, 0.07645446, 0.085276075, 0.094821006]
 Spread:      0/4
 Spread values: 
-ROW: 62486all Tau: 0.781397417397317 V: -0.6520888137524746
-ROW: 62486g Tau: 2.914533645672502 V: -0.6294584022045397
+ROW: 62486all Tau: 0.7875914204906388 V: -0.6672521941595086
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+ClusterEmcee2_linear_mu_all_and_single_fast.py:252: RuntimeWarning: invalid value encountered in log10
+  mag = 22.5-2.5*np.log10(delta_f*mu['r'] + mu['r'])
+Number of mags :290
+ROW: 62486g Tau: 2.906576776400462 V: -0.6347016670178005
+Good Row mags:13
 Close extra plots
-Row 62486 ran in 15.5373 seconds
+Row 62486 ran in 19.3263 seconds
 Running object 62487
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  79
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  94
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  112
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  126
 Counts: {'g': 79, 'r': 94, 'i': 112, 'z': 126}
 Mu: {'g': 0.22249821, 'r': 0.29889268, 'i': 0.33330858, 'z': 0.4470504}
 Variable??
 0.024335374564561935
-0.7551923422097041
+0.755297894627139
 Non-Variable source in g
 Variable??
 0.018538743440019583
-0.8181965179288622
+0.7455349576477285
 Non-Variable source in r
 Variable??
 0.026944068350208898
-1.1797902099999376
+1.1812352613501853
 Non-Variable source in i
 Variable??
 0.05229553371625332
-1.2816025249289023
+1.4030637120415046
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1840,12 +2069,16 @@ Int Error:   [0.03418538097108069, 0, 0.02231508789453356, 0.023140390647495436]
 StDev:       [0.04786688, 0.072438926, 0.06476515, 0.10558217]
 Not variable, closing plots & going to next row
 Running object 62488
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  34
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  110
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  151
 Counts: {'r': 33, 'i': 106, 'z': 148}
 Mu: {'g': 0.0, 'r': 0.13964333, 'i': 0.28673828, 'z': 0.4445281}
 No handles with labels found to put in legend.
@@ -1855,15 +2088,15 @@ Variable??
 Non-Variable source in g
 Variable??
 0.020584325063094717
-3.7000476746430566
+3.3833851157709294
 Variable Source in r!!
 Variable??
 0.030442053757049312
-0.9444917554565434
+0.9456760292089216
 Non-Variable source in i
 Variable??
 0.05413280096691446
-1.5527539952972644
+1.700214489861608
 Non-Variable source in z
 Variable:    1/4
 Var Bands:   r
@@ -1874,38 +2107,44 @@ Int Error:   [0.0, 0, 0.030050211670564642, 0.03104866936715918]
 StDev:       [0.3086715, 0.08358945, 0.055338796, 0.09511848]
 Spread:      0/4
 Spread values: 
-ROW: 62488all Tau: 0.8625133845769245 V: -0.9097369119939728
-ClusterEmcee2_linear_mu_all_and_single_fast.py:638: RuntimeWarning: divide by zero encountered in log10
+ROW: 62488all Tau: 0.8689810352350602 V: -0.9037567208978018
+Number of mags :287
+ClusterEmcee2_linear_mu_all_and_single_fast.py:643: RuntimeWarning: divide by zero encountered in log10
   mu_list = [22.5-2.5*np.log10(mu[i]) for i in mu]
-ROW: 62488r Tau: 0.28550083496010226 V: -0.5724643974583098
+ROW: 62488r Tau: 0.2930457598475571 V: -0.6066040713833252
+Good Row mags:33
 Close extra plots
-Row 62488 ran in 24.0445 seconds
+Row 62488 ran in 18.5398 seconds
 Running object 62489
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  24
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  108
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  122
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  126
 Counts: {'g': 22, 'r': 107, 'i': 122, 'z': 126}
 Mu: {'g': 0.1850509, 'r': 0.37312904, 'i': 0.6913152, 'z': 0.95329356}
 Variable??
 0.035565877418044095
-2.1921693764461914
+2.1924855945290886
 Non-Variable source in g
 Variable??
 0.020601863382001935
-1.8901410179011522
+1.718511383933192
 Non-Variable source in r
 Variable??
 0.025824227549985597
-1.109317101103741
+1.110446545021271
 Non-Variable source in i
 Variable??
 0.030291112042823153
-0.8350645614383995
+0.9130077657156523
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1918,29 +2157,33 @@ Not variable, closing plots & going to next row
 Running object 62490
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  109
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  112
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  126
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  128
 Counts: {'g': 109, 'r': 110, 'i': 126, 'z': 128}
 Mu: {'g': 0.2965947, 'r': 0.6736711, 'i': 0.9227309, 'z': 1.0653769}
 Variable??
 0.02483732097857212
-1.4521782360084592
+1.4523761941257318
 Non-Variable source in g
 Variable??
 0.020074313916701354
-3.84631303293962
+3.442205950351277
 Variable Source in r!!
 Variable??
 0.025186959422144006
-2.5172036934198685
+2.5193654633239966
 Non-Variable source in i
 Variable??
 0.029630201246496225
-1.3890194329906045
+1.5179044760583853
 Non-Variable source in z
 Variable:    1/4
 Var Bands:   r
@@ -1964,29 +2207,33 @@ Continuing to next row
 Running object 62491
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  91
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  117
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  135
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  155
 Counts: {'g': 89, 'r': 116, 'i': 135, 'z': 155}
 Mu: {'g': 0.22540653, 'r': 0.5622147, 'i': 1.386001, 'z': 1.959004}
 Variable??
 0.02236461197390176
-0.9804591068334002
+0.9805974050605883
 Non-Variable source in g
 Variable??
 0.021041219087129075
-1.3079488375084443
+1.1792048296936826
 Non-Variable source in r
 Variable??
 0.027571104591718607
-1.2738474687817771
+1.274562630395962
 Non-Variable source in i
 Variable??
 0.03423306114970657
-0.8030485473455174
+0.8743181008700607
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -1999,29 +2246,33 @@ Not variable, closing plots & going to next row
 Running object 62492
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  82
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  104
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  118
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  147
 Counts: {'g': 82, 'r': 104, 'i': 115, 'z': 142}
 Mu: {'g': 0.20478544, 'r': 0.20502193, 'i': 0.29098812, 'z': 0.4264444}
 Variable??
 0.022274291824037038
-0.9714873056798835
+0.9716215565619718
 Non-Variable source in g
 Variable??
 0.019136337368095297
-1.2469281968373345
+1.1390745739001458
 Non-Variable source in r
 Variable??
 0.027117371836987886
-0.8478785441467093
+0.8489479292114473
 Non-Variable source in i
 Variable??
 0.056921309737312235
-2.4633474323936575
+2.697987937575686
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -2034,29 +2285,33 @@ Not variable, closing plots & going to next row
 Running object 62493
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  43
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  82
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  69
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  9
 Counts: {'g': 40, 'r': 82, 'i': 65, 'z': 8}
 Mu: {'g': 0.1545076, 'r': 0.18392773, 'i': 0.24476512, 'z': 0.39789754}
 Variable??
 0.024106640681670666
-2.2002816145840187
+2.2006019572108926
 Non-Variable source in g
 Variable??
 0.019023934090486853
-1.1730861424503933
+1.0722531419780148
 Non-Variable source in r
 Variable??
 0.03358541025848733
-2.468306650431128
+2.471516999472562
 Non-Variable source in i
 Variable??
 0.06525126617580827
-0.5012839673872808
+0.5489016489454599
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -2069,29 +2324,33 @@ Not variable, closing plots & going to next row
 Running object 62494
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  111
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  114
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  121
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  134
 Counts: {'g': 111, 'r': 112, 'i': 121, 'z': 134}
 Mu: {'g': 0.3919025, 'r': 0.6864315, 'i': 0.83239186, 'z': 0.83832014}
 Variable??
 0.022930626383647526
-0.9378096805024729
+0.9379361005006918
 Non-Variable source in g
 Variable??
 0.019423864315149565
-0.5948807204793986
+0.5338948913684524
 Non-Variable source in r
 Variable??
 0.024537342600524426
-0.31511136962979436
+0.31542035544048075
 Non-Variable source in i
 Variable??
 0.03014879198741332
-0.3933654305031795
+0.43031145402779847
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -2104,29 +2363,33 @@ Not variable, closing plots & going to next row
 Running object 62495
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  55
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  113
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  123
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  123
 Counts: {'g': 55, 'r': 113, 'i': 123, 'z': 123}
 Mu: {'g': 0.18526115, 'r': 0.53918964, 'i': 0.9896281, 'z': 1.3411155}
 Variable??
 0.02880401594086831
-1.0913376430321067
+1.0914917652958451
 Non-Variable source in g
 Variable??
 0.02079374571934359
-0.6621577933348047
+0.600076464557749
 Non-Variable source in r
 Variable??
 0.025261725790630928
-0.29104437227651925
+0.29130003909163993
 Non-Variable source in i
 Variable??
 0.029493635614386123
-0.16350807670398865
+0.17853667488801733
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -2137,31 +2400,34 @@ Int Error:   [0.09837273433700111, 0, 0.004265069094507708, 0.003336961831987344
 StDev:       [0.08600545, 0.056122135, 0.06769021, 0.11521816]
 Not variable, closing plots & going to next row
 Running object 62496
-Min gap is: 290.08984
+Not enough g observations!
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  43
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  35
 Min gap is: 0.00390625
 New time_gap is :0.00790625
-Counts: {'g': 4, 'r': 41, 'i': 33, 'z': 63}
-Mu: {'g': 0.24168058, 'r': 0.14934811, 'i': 0.21277109, 'z': 0.3949536}
+Number of observations now:  72
+Counts: {'r': 41, 'i': 33, 'z': 63}
+Mu: {'g': 0.0, 'r': 0.14934811, 'i': 0.21277109, 'z': 0.3949536}
 No handles with labels found to put in legend.
 Variable??
-0.05388370528817177
-3.7491737825270115
+0
+0
 Non-Variable source in g
 Variable??
 0.023414868070140777
-2.1210515040341065
+1.9421242992960341
 Non-Variable source in r
 Variable??
 0.040486193562259375
-2.9617505675642453
+2.965620605089367
 Non-Variable source in i
 Variable??
 0.07262207622134746
-1.1995533276096029
+1.313888341730778
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -2174,29 +2440,33 @@ Not variable, closing plots & going to next row
 Running object 62497
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  20
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  80
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  121
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  162
 Counts: {'g': 16, 'r': 77, 'i': 120, 'z': 162}
 Mu: {'g': 0.14659876, 'r': 0.18100473, 'i': 0.3601914, 'z': 0.522376}
 Variable??
 0.026407530531287193
-0.8432105004139188
+0.8433318035058489
 Non-Variable source in g
 Variable??
 0.02015072831555996
-1.0802509396346398
+0.9879125494616751
 Non-Variable source in r
 Variable??
 0.028069820296970582
-0.5411103634012385
+0.541790376495917
 Non-Variable source in i
 Variable??
 0.04220029071480585
-1.757752474507985
+1.924169196797341
 Non-Variable source in z
 Variable:    0/4
 Var Bands:   
@@ -2209,29 +2479,33 @@ Not variable, closing plots & going to next row
 Running object 62498
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  117
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  110
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  128
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  127
 Counts: {'g': 117, 'r': 110, 'i': 128, 'z': 127}
 Mu: {'g': 1.4973578, 'r': 2.763053, 'i': 3.5474472, 'z': 3.9799597}
 Variable??
 0.02638697839179597
-1.308289066038138
+1.3083043981754416
 Non-Variable source in g
 Variable??
 0.0220107606768598
-9.323087845378355
+7.85090024767573
 Variable Source in r!!
 Variable??
 0.026700897810401907
-8.136929359201455
+8.13323996160845
 Variable Source in i!!
 Variable??
 0.03015847228294788
-3.8641088152593945
+4.1765762109283315
 Variable Source in z!!
 Variable:    3/4
 Var Bands:   riz
@@ -2255,29 +2529,33 @@ Continuing to next row
 Running object 62499
 Min gap is: 0.0
 New time_gap is :0.004
+Number of observations now:  102
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  110
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  124
 Min gap is: 0.00390625
 New time_gap is :0.00790625
+Number of observations now:  129
 Counts: {'g': 102, 'r': 110, 'i': 124, 'z': 129}
 Mu: {'g': 0.31225237, 'r': 0.9162631, 'i': 1.8786716, 'z': 2.6296642}
 Variable??
 0.021748935697420247
-1.0353447373668028
+1.0354754068673762
 Non-Variable source in g
 Variable??
 0.01930882658650099
-11.53334363074067
+10.270644693207656
 Variable Source in r!!
 Variable??
 0.024911090798842364
-8.191716590019833
+8.193971899160461
 Variable Source in i!!
 Variable??
 0.029736185804166728
-6.4240376762967255
+6.974665248987045
 Variable Source in z!!
 Variable:    3/4
 Var Bands:   riz
@@ -2299,4 +2577,4 @@ Too spread in bands: ['G', 'R', 'I', 'Z']
 0.012925194
 Continuing to next row
 Successfully finished!
-Rows 62437 to 62500 ran in 108.4708 seconds
+Rows 62437 to 62500 ran in 114.7312 seconds
