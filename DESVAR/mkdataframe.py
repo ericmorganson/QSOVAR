@@ -21,7 +21,7 @@ counter = 0
 #csv_rows = pd.read_csv(txtpath+'/'+csv_file, names=col_allband, skiprows=1, delimiter=",")
 for f in onlyfiles:
     if "optimal" in f:
-        #print("optimal")
+        print("optimal")
         continue    
     #if "C3" in f or "X3" in f:
     #    pass
@@ -39,7 +39,6 @@ for f in onlyfiles:
             print(tmp)
             print(f)
             continue
-        
         with fits.open('/home/thrush2/caps_dir/'+str(tmp['fits'])+'_lc.fits') as hdul:
             ra = hdul[1].data['RA'][int(tmp['object'])]
             dec = hdul[1].data['Dec'][int(tmp['object'])]
@@ -47,8 +46,6 @@ for f in onlyfiles:
         #TODO have if statement checking if V and tau are bad. If so, print fits & tmp_fi data
         if tmp['V']<-3 or tmp['V']>2 or tmp['Tau']<0 or tmp['Tau']>4:
             print("Oh no!  Out of bounds!")
-            if "optimal" in f:
-                print("optimal")
             #print(tmp_fi)
             #print(tmp)
             print(f)
@@ -72,7 +69,7 @@ for f in onlyfiles:
     #if counter%10000 == 0:
         #print(counter)
         #print(tmp_new)
-    data_frame = pd.concat([data_frame,tmp_new], axis=0)
+        data_frame = pd.concat([data_frame,tmp_new], axis=0)
     #if counter > 100:
     #    break
 data_frame = data_frame.sort_values(by=['fits', 'object'])
@@ -80,4 +77,4 @@ data_frame = data_frame.sort_values(by=['fits', 'object'])
 print(data_frame.shape)
 #print(data)
 
-data_frame.to_csv(csvpath+"all_and_sing_df_all_RA_DEC_ID_no_optimal_new.csv")
+data_frame.to_csv(csvpath+"all_and_sing_df_all_RA_DEC_ID_no_optimal_new_mod.csv")

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#SBATCH --job-name=csv_runss      # Job name
+#SBATCH --job-name=csv_runs      # Job name
 #SBATCH --mail-type=END,FAIL         # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=thrush2@illinois.edu    # Where to send mail        
 #SBATCH --nodes=1                    # Run all processes on two  node   
 #SBATCH --ntasks=16                   # Run 80 single tasks             
 #SBATCH --ntasks-per-node=16            # Number of ntasks per node
-#SBATCH --time=8:00:00              # Time limit hrs:min:sec
+#SBATCH --time=09:00:00              # Time limit hrs:min:sec
 #SBATCH --output=csv_debug.log     # Standard output and error log
 #SBATCH --partition=caps
 
