@@ -45,6 +45,7 @@ if FITNAME == "X3" or FITNAME == "C3":
 else:
     print("Running regular code (no point clustering)")
     RUNCLUSTER = False
+time_check_file = "../../SNobs_MJD.fits"
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -102,7 +103,7 @@ def cluster(time, flux, noise, time_gap):
     return new_time, new_flux, new_noise
 
 
-def get_vals(args, ROW):
+def get_vals(args, ROW, FITS):
     color_dict = {"g": 1, "r": 2, "i": 3, "z": 4}
     lc_median = {}
     time = np.array([])
@@ -115,7 +116,7 @@ def get_vals(args, ROW):
     a_b_list = read_a_b_chi2()
     #print(a_b_list)
     for color in "griz":
-        FITS = pyfit.open(args[1])
+        #FITS = pyfit.open(args[1])
         # Obtain flux, err, and time arrays
         try:
             lc_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
@@ -126,7 +127,7 @@ def get_vals(args, ROW):
         lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
         lc_time = FITS[1].data['LC_MJD_'+color][ROW]
         limit = len(lc_time[(lc_time != 0)*(lc_flux_err < 2)])
-        lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW] #change back to median
+        lc_median[color] = FITS[1].data['MEDIAN_PSF_'+color][ROW]
         if limit < 5:
             lc_median[color] = 0.0
             print("Not enough " + color + " observations!")
@@ -207,7 +208,141 @@ def get_vals(args, ROW):
                                                                flux_norm,
                                                                err_norm,
                                                                array_org))))
+    #making sure that things are sorted
+    print(time)
+    print(flux_norm)
+    print(err_norm)
+    print(array_org)
+    print(len(time), len(flux_norm), len(err_norm), len(array_org))
+
+    #fixing the repeat time issue (not enough time precision in fits)
+    time, flux_norm, err_norm, array_org = fix_time_repeats(time, flux_norm, err_norm, array_org, ROW)
+
+    #make sure that things are STILL sorted
+    print(time)
+    print(flux_norm)
+    print(err_norm)
+    print(array_org)
+    print(len(time), len(flux_norm), len(err_norm), len(array_org))
+
     return flux_norm, err_norm, time, lc_median, array_org, FITS, fig
+
+
+def fix_time_repeats(time, flux_norm, err_norm, array_org, ROW):
+    color_dict = {"g": 1, "r": 2, "i": 3, "z": 4}
+    rev_color_dict = {1:"g", 2:"r", 3:"i", 4:"z"}
+    filter = np.vectorize(rev_color_dict.__getitem__)(array_org)
+
+    df = pd.DataFrame({
+                'filter': filter,
+                'time': time,
+                'noise': err_norm,
+                "flux": flux_norm
+            })
+    df_sort = df.sort_values(by=['time'])
+    print(df_sort.dtypes)
+
+    times = df_sort["time"]
+    repeats = df_sort[times.isin(times[times.duplicated()])].sort_values("time")
+    df_unique = df_sort.drop_duplicates(["time"], False)
+    repeats_bool = times.isin(times[times.duplicated()])
+    three_peat = 0
+
+    repeats_dict = repeats.groupby('time').apply(lambda dfg: dfg.to_dict(orient='list')).to_dict()
+    print(repeats_dict)
+
+    if len(repeats.index)>=2:
+        print(ROW)
+        print("Two or more repeated rows!")
+        print(len(df_sort))
+        print("repeating in "+ str(len(repeats.index)) + " rows")
+        if len(repeats.index)%2 ==1:
+            print("Odd number of repeats!")
+        row_count = 0
+        for idx, row in repeats.iterrows():
+            print(row)
+            row_count +=1
+
+
+            print(repeats_bool.loc[idx], repeats.loc[idx, "filter"], repeats.loc[idx, "time"])
+            df_repl = df_time["MJD_OBS"][(df_time["BAND"] == repeats.loc[idx,"filter"]) & (df_time["FIELD"] == "SN-"+fit_str) & (df_time["MJD_SNGL"] == repeats.loc[idx, "time"])]
+            df_replace = np.array(df_repl)
+
+
+            #TODO: check to see if there are any triplicates or more, maybe with a dictionary?
+            #TODO: (cont) have key be time, values be filter. Look up repeats in the dict
+            #TODO: (cont) If the filter is repeated 3 times, then shenanigans ensue,
+            #TODO: (cont) otherwise, proceed as below with the if elif and don't invoke the else
+
+
+            print("df_replace    :"+str(df_replace))
+            print(df_replace.shape[0])
+            print(df_replace)
+            if df_replace.shape[0] == 1: #just one choice for the replacing time in that filter
+                repeats.loc[idx, "time"] = df_replace[0]  #.iloc[[0]] #you just replace it, easy
+
+            elif df_replace.shape[0] == 2: #more than one option on repeated times for the filter
+                print(row_count)
+                if row_count%2==0: #if we are in the second of the two pairs of matching times
+                    if repeats.loc[idx, "filter"] == prev_filter: #if the filter matches the previous filter, choose the second time
+                        repeats.loc[idx, "time"] = df_replace[1]
+                        print("second replace")
+                    else: #if the filter doesn't match the previous filter, just choose the first time
+                        repeats.loc[idx, "time"] = df_replace[0]
+                else: #we are on the first of the two pairs of matching times, choose the first time
+                    repeats.loc[idx, "time"] = df_replace[0]
+                    print("first replace")
+
+            elif df_replace.shape[0] >=3:
+                if len(repeats_dict[repeats.loc[idx, "time"]]["filter"]) <= 2: #use len(set to find unique number
+                    # JUST REPLACE THE TWO CASES AS BEST YOU CAN AND
+                    # REPLACE WITH THE FIRST TWO CASES IN DF_REPLACE
+                    if row_count%2==0: #if we are in the second of the two pairs of matching times
+                        if repeats.loc[idx, "filter"] == prev_filter: #if the filter matches the previous filter, choose the second time
+                            repeats.loc[idx, "time"] = df_replace[1]
+                        else: #if the filter doesn't match the previous filter, just choose the first time
+                            repeats.loc[idx, "time"] = df_replace[0]
+                    else: #we are on the first of the two pairs of matching times, choose the first time
+                        repeats.loc[idx, "time"] = df_replace[0]
+
+                elif len(repeats_dict[repeats.loc[idx, "time"]]["filter"]) >2: #3 repeated filters
+                    print("Three repeated filters!!")
+                    print(repeats_dict)
+                    if len(set(repeats_dict[repeats.loc[idx, "time"]]["filter"])) ==1:
+                        repeats.loc[idx, "time"] = df_replace[three_peat]
+                        three_peat+=1
+                        if three_peat ==3:
+                            three_peat =0
+                            row_count = math.ceil(f / 2.) * 2
+                    else:
+                        print("Three repeat obs in 2 filters")
+                        break
+                        #if row_count%2==0: #if we are in the second of the two pairs of matching times
+                        #    if repeats.loc[idx, "filter"] == prev_filter: #if the filter matches the previous filter, choose the second time
+                        #        repeats.loc[idx, "time"] = df_replace[1]
+                        #    else: #if the filter doesn't match the previous filter, just choose the first time
+                        #        repeats.loc[idx, "time"] = df_replace[0]
+                        #else: #we are on the first of the two pairs of matching times, choose the first time
+                        #    repeats.loc[idx, "time"] = df_replace[0]
+
+
+            ### WORK IN PROGRESS
+            prev_filter = repeats.loc[idx, "filter"]
+    result = pd.concat([df_unique, repeats])
+    result_sort = result.sort_values(by=['time'])
+    #if any residual cases remain (two round obs for one exact), remove
+    result_sort = result_sort.drop_duplicates(subset=['time'])
+
+
+    filter = result_sort["filter"].to_numpy()
+    time = result_sort["time"].to_numpy()
+    err_norm = result_sort["noise"].to_numpy()
+    flux_norm = result_sort["flux"].to_numpy()
+
+    array_org = np.vectorize(color_dict.__getitem__)(filter)
+
+    return time, flux_norm, err_norm, array_org
+
 
 
 def lnprior_step2(theta):
@@ -718,7 +853,8 @@ if __name__ == "__main__":
         if SKIPCOMPROW and os.path.exists(filename_all):
             print("Already analyzed "+ str(ROW) + " in " + fit_str)
             continue
-        flux, err, time, mu, color_sort, FITS, fig = get_vals(sys.argv, ROW)
+        FITS = pyfit.open(sys.argv[1])
+        flux, err, time, mu, color_sort, FITS, fig = get_vals(sys.argv, ROW, FITS)
 
         # TODO: Add in criteria to kick out flux measure/entire row if err is too large
 
@@ -778,7 +914,7 @@ if __name__ == "__main__":
         slope = [p_g[0]+1, 1, p_i[0]+1, p_z[0]+1]
         slope_err = [np.sqrt(res_g[0][0]), 0, np.sqrt(res_i[0][0]), np.sqrt(res_z[0][0])]
         int_err = [np.sqrt(res_g[1][1]), 0, np.sqrt(res_i[1][1]), np.sqrt(res_z[1][1])]
-        
+
         for i in range(len(slope_err)):
             if slope_err[i] == 'nan':
                 slope_err[i] = -np.inf
@@ -890,4 +1026,5 @@ if __name__ == "__main__":
     end_tick = timer()
     full_time = round(end_tick-start_tick, 4)
     print("Rows "+ str(sys.argv[2]) + " to " + str(sys.argv[3]) +" ran in "+ str(full_time) + " seconds")
+    FITS.close()
     exit()
