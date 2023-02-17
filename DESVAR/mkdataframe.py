@@ -7,8 +7,8 @@ from astropy.io import fits
 from astropy.table import Table
 import csv
 
-txtpath = "/home/thrush2/QSOVAR/DESVAR/scratch_cc"
-csvpath = "/home/thrush2/QSOVAR/DESVAR/"
+txtpath = "/home/thrush2/caps_dir/QSOVAR/DESVAR/scratch_cluster"
+csvpath = "/home/thrush2/caps_dir/QSOVAR/DESVAR/"
 onlyfiles = [f for f in listdir(txtpath) if isfile(join(txtpath, f))]
 #csv_file = "all_and_sing_df_all.csv"
 pd.set_option('display.max_rows', None)
@@ -77,4 +77,4 @@ data_frame = data_frame.sort_values(by=['fits', 'object'])
 print(data_frame.shape)
 #print(data)
 
-data_frame.to_csv(csvpath+"all_and_sing_df_all_RA_DEC_ID_no_optimal_new_mod.csv")
+data_frame.to_csv(csvpath+"DESVAR_cluster.csv")

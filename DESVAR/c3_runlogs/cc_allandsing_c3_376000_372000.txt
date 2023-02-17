@@ -1,4 +1,0 @@
-Running cluster for deep fits
-376000 372000 normal
-Successfully finished!
-Rows 376000 to 372000 ran in 0.0 seconds

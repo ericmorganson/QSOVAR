@@ -1,2 +1,0 @@
-Band, Fits-Object, Tau, V, Num_Obs, Mu_Bright 
-All 	C1	2877	3.999662182386842	-1.7754236685997573	108	inf

@@ -16,7 +16,7 @@ import itertools
 import pandas as pd
 import os
 from timeit import default_timer as timer
-
+import math
 
 
 if len(sys.argv) < 7:
@@ -32,11 +32,11 @@ if len(sys.argv) < 7:
 # Initial MCMC guesses
 FIGPATH = str(sys.argv[6])
 
-FILEPATH = "scratch_cc/" #"scratch_new/"
+FILEPATH = "scratch_cluster/" #"scratch_new/"
 if not os.path.exists(FILEPATH):
     os.makedirs(FILEPATH)
 
-PLOTTING = True
+PLOTTING = False
 SKIPCOMPROW = False #skips already completed rows if True
 FITNAME = ((str(sys.argv[1]).split("/")[-1]).split(".")[-2]).split("_")[-2]
 if FITNAME == "X3" or FITNAME == "C3":
@@ -45,7 +45,7 @@ if FITNAME == "X3" or FITNAME == "C3":
 else:
     print("Running regular code (no point clustering)")
     RUNCLUSTER = False
-time_check_file = "../../SNobs_MJD.fits"
+time_check_file = "/home/thrush2/caps_dir/SNobs_MJD.fits"
 V = 0.3
 Tau = 365.0
 dMu = 0.0
@@ -103,7 +103,7 @@ def cluster(time, flux, noise, time_gap):
     return new_time, new_flux, new_noise
 
 
-def get_vals(args, ROW, FITS):
+def get_vals(args, ROW, FITS, df_time):
     color_dict = {"g": 1, "r": 2, "i": 3, "z": 4}
     lc_median = {}
     time = np.array([])
@@ -121,7 +121,7 @@ def get_vals(args, ROW, FITS):
         try:
             lc_flux = FITS[1].data['LC_FLUX_PSF_'+color][ROW]
         except IndexError:
-            print('Error')
+            print('Index Error: Out of range.  Successful finish.')
             exit()
 
         lc_flux_err = FITS[1].data['LC_FLUXERR_PSF_'+color][ROW]
@@ -209,26 +209,26 @@ def get_vals(args, ROW, FITS):
                                                                err_norm,
                                                                array_org))))
     #making sure that things are sorted
-    print(time)
-    print(flux_norm)
-    print(err_norm)
-    print(array_org)
-    print(len(time), len(flux_norm), len(err_norm), len(array_org))
+    #print(time)
+    #print(flux_norm)
+    #print(err_norm)
+    #print(array_org)
+    #print(len(time), len(flux_norm), len(err_norm), len(array_org))
 
     #fixing the repeat time issue (not enough time precision in fits)
-    time, flux_norm, err_norm, array_org = fix_time_repeats(time, flux_norm, err_norm, array_org, ROW)
+    time, flux_norm, err_norm, array_org = fix_time_repeats(time, flux_norm, err_norm, array_org, ROW, df_time)
 
     #make sure that things are STILL sorted
-    print(time)
-    print(flux_norm)
-    print(err_norm)
-    print(array_org)
-    print(len(time), len(flux_norm), len(err_norm), len(array_org))
+    #print(time)
+    #print(flux_norm)
+    #print(err_norm)
+    #print(array_org)
+    #print(len(time), len(flux_norm), len(err_norm), len(array_org))
 
     return flux_norm, err_norm, time, lc_median, array_org, FITS, fig
 
 
-def fix_time_repeats(time, flux_norm, err_norm, array_org, ROW):
+def fix_time_repeats(time, flux_norm, err_norm, array_org, ROW, df_time):
     color_dict = {"g": 1, "r": 2, "i": 3, "z": 4}
     rev_color_dict = {1:"g", 2:"r", 3:"i", 4:"z"}
     filter = np.vectorize(rev_color_dict.__getitem__)(array_org)
@@ -313,7 +313,7 @@ def fix_time_repeats(time, flux_norm, err_norm, array_org, ROW):
                         three_peat+=1
                         if three_peat ==3:
                             three_peat =0
-                            row_count = math.ceil(f / 2.) * 2
+                            row_count = math.ceil(row_count / 2.) * 2
                     else:
                         print("Three repeat obs in 2 filters")
                         break
@@ -333,11 +333,11 @@ def fix_time_repeats(time, flux_norm, err_norm, array_org, ROW):
     #if any residual cases remain (two round obs for one exact), remove
     result_sort = result_sort.drop_duplicates(subset=['time'])
 
-
-    filter = result_sort["filter"].to_numpy()
-    time = result_sort["time"].to_numpy()
-    err_norm = result_sort["noise"].to_numpy()
-    flux_norm = result_sort["flux"].to_numpy()
+    #print(pd.__version__)
+    filter = np.array(result_sort["filter"])# .to_numpy()
+    time = np.array(result_sort["time"]) #.to_numpy()
+    err_norm = np.array(result_sort["noise"]) #.to_numpy()
+    flux_norm = np.array(result_sort["flux"]) # .to_numpy()
 
     array_org = np.vectorize(color_dict.__getitem__)(filter)
 
@@ -840,6 +840,9 @@ def plot_lin(flux, ax, y_label):
 
 if __name__ == "__main__":
     start_tick = timer()
+    FITS = pyfit.open(sys.argv[1])
+    dat = pyfit.open(time_check_file)
+    df_time = pd.DataFrame(dat[1].data)
     for ROW in range(int(sys.argv[2]), int(sys.argv[3])):
         logprobs = []
         logvals = []
@@ -853,8 +856,8 @@ if __name__ == "__main__":
         if SKIPCOMPROW and os.path.exists(filename_all):
             print("Already analyzed "+ str(ROW) + " in " + fit_str)
             continue
-        FITS = pyfit.open(sys.argv[1])
-        flux, err, time, mu, color_sort, FITS, fig = get_vals(sys.argv, ROW, FITS)
+        #FITS = pyfit.open(sys.argv[1])
+        flux, err, time, mu, color_sort, FITS, fig = get_vals(sys.argv, ROW, FITS, df_time)
 
         # TODO: Add in criteria to kick out flux measure/entire row if err is too large
 
@@ -1027,4 +1030,5 @@ if __name__ == "__main__":
     full_time = round(end_tick-start_tick, 4)
     print("Rows "+ str(sys.argv[2]) + " to " + str(sys.argv[3]) +" ran in "+ str(full_time) + " seconds")
     FITS.close()
+    dat.close()
     exit()
